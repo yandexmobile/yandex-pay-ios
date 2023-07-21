@@ -1,7 +1,7 @@
 import UIKit
 import YandexPaySDK
 
-class ViewController: UIViewController {
+final class PaymentURLViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         let configuration = YandexPayButtonConfiguration(theme: theme)
 
         // Создайте кнопку
-        let button = YandexPaySDKApi.instance.createButton(configuration: configuration, asyncDelegate: self)
+        let button = YandexPaySDKApi.instance.createButton(configuration: configuration, dataSource: self, delegate: self)
 
         // Добавьте кнопку в иерархию
         view.addSubview(button)
@@ -46,10 +46,39 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: - YandexPayButtonDataSource
+
+extension PaymentURLViewController: YandexPayButtonDataSource {
+  func paymentUrl(for yandexPayButton: YandexPayButton) async throws -> String {
+    // Запросите paymentUrl (создайте заказ) асинхронно с вашего бекенда
+    await withCheckedContinuation { continuation in
+      // Это пример реализации async кода, скорее всего здесь будет сетевой запрос
+      DispatchQueue.main.async {
+        continuation.resume(returning: "payment-url.ru")
+      }
+    }
+  }
+  
+  func requiredFields(for yandexPayButton: YandexPayButton) async -> Set<YPRequiredField> {
+    // Набор обязательных полей, которые должен предоставить клиент
+    [.billingContactEmail]
+  }
+  
+  func billingContact(for yandexPayButton: YandexPaySDK.YandexPayButton) async -> YPBillingContact? {
+    // Email клиента для заказа, можно вернуть либо сразу значение, либо асинхронно, либо nil
+    YPBillingContact(email: "example@yandex.ru")
+  }
+  
+  func viewControllerForPresentation(_ yandexPayButton: YandexPayButton) -> UIViewController? {
+    // Предоставьте UIViewController, с которого необходимо показать форму YandexPay по нажатию на кнопку
+    self
+  }
+}
+
 // MARK: - YandexPayButtonDelegate
 
-extension ViewController: YandexPayButtonAsyncDelegate {
-    func yandexPayButton(_ button: YandexPayButton, didCompletePaymentWithResult result: YPPaymentResult) {
+extension PaymentURLViewController: YandexPayButtonDelegate {
+    func yandexPayButton(_ button: YandexPayButton, didCompletePaymentWithResult result: YPYandexPayPaymentResult) {
         let title: String
         let message: String
         switch result {
@@ -60,6 +89,8 @@ extension ViewController: YandexPayButtonAsyncDelegate {
             title = "Cancelled!"
             message = "Payment has been cancelled by user."
         case .failed:
+            fallthrough
+        @unknown default:
             title = "Error!"
             message = "An error occured while payment processing."
         }
@@ -67,39 +98,5 @@ extension ViewController: YandexPayButtonAsyncDelegate {
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
         controller.addAction(UIAlertAction(title: "OK", style: .default))
         present(controller, animated: true)
-    }
-
-    func yandexPayButtonDidRequestViewControllerForPresentation(_ button: YandexPayButton) -> UIViewController? {
-        return self
-    }
-
-    func yandexPayButtonDidRequestPaymentSheet(_ button: YandexPayButton, completion: @escaping (YPPaymentSheet?) -> Void) {
-        let paymentSheet = YPPaymentSheet(
-            countryCode: .ru,
-            currencyCode: .rub,
-            order: YPOrder(
-                id: "ORDER1",
-                label: "ORDER1",
-                amount: "15000.00",
-                items: [
-                    YPOrderItem(label: "ITEM1", amount: "10000.00"),
-                    YPOrderItem(label: "ITEM2", amount: "5000.00")
-                ]
-            ),
-            paymentMethods: [
-                .card(
-                    YPCardPaymentMethod(
-                        gateway: "yandex-trust",
-                        gatewayMerchantId: "MerchantGW1",
-                        allowedAuthMethods: [.panOnly, .cloudToken],
-                        allowedCardNetworks: [.visa, .mastercard, .mir]
-                    )
-                )
-            ],
-            requiredFields: [.billingContactEmail]
-        )
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            completion(paymentSheet)
-        }
     }
 }

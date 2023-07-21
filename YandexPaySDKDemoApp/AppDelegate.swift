@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         // Инициализируйте UIWindow и ViewController
-        let controller = ViewController()
+        let controller = PaymentURLViewController()
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = controller
         window.makeKeyAndVisible()

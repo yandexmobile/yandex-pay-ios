@@ -8,21 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		10DE01A999CE3FE98DF12ECF /* Pods_YandexPaySDKDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964E7DBFD77EB445A6CFC7EC /* Pods_YandexPaySDKDemoApp.framework */; };
+		78FD06F02A6014030064DBA6 /* PaymentURLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FD06EF2A6014030064DBA6 /* PaymentURLViewController.swift */; };
 		9EBEF4E629F187FC005E5289 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEF4E529F187FC005E5289 /* AppDelegate.swift */; };
-		9EBEF4E829F187FC005E5289 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEF4E729F187FC005E5289 /* SceneDelegate.swift */; };
-		9EBEF4EA29F187FC005E5289 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEF4E929F187FC005E5289 /* ViewController.swift */; };
-		9EBEF4ED29F187FC005E5289 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EBEF4EB29F187FC005E5289 /* Main.storyboard */; };
+		9EBEF4EA29F187FC005E5289 /* PaymentTokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEF4E929F187FC005E5289 /* PaymentTokenViewController.swift */; };
 		9EBEF4F229F187FC005E5289 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EBEF4F029F187FC005E5289 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		19CEC95DE98663A1755755A4 /* Pods-YandexPaySDKDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexPaySDKDemoApp.release.xcconfig"; path = "Target Support Files/Pods-YandexPaySDKDemoApp/Pods-YandexPaySDKDemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		78FD06EF2A6014030064DBA6 /* PaymentURLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentURLViewController.swift; sourceTree = "<group>"; };
+		78FD06F12A6014250064DBA6 /* YandexPaySDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = YandexPaySDK.xcframework; path = "../../Downloads/YandexPaySDK-test/Old/YandexPaySDK.xcframework"; sourceTree = "<group>"; };
 		964E7DBFD77EB445A6CFC7EC /* Pods_YandexPaySDKDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YandexPaySDKDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBEF4E229F187FC005E5289 /* YandexPaySDKDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexPaySDKDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBEF4E529F187FC005E5289 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9EBEF4E729F187FC005E5289 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9EBEF4E929F187FC005E5289 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9EBEF4EC29F187FC005E5289 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9EBEF4E929F187FC005E5289 /* PaymentTokenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTokenViewController.swift; sourceTree = "<group>"; };
 		9EBEF4F129F187FC005E5289 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EBEF4F329F187FC005E5289 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EBEF4F929F18BC9005E5289 /* YandexPaySDKDemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YandexPaySDKDemoApp.entitlements; sourceTree = "<group>"; };
@@ -64,9 +63,8 @@
 			children = (
 				9EBEF4F929F18BC9005E5289 /* YandexPaySDKDemoApp.entitlements */,
 				9EBEF4E529F187FC005E5289 /* AppDelegate.swift */,
-				9EBEF4E729F187FC005E5289 /* SceneDelegate.swift */,
-				9EBEF4E929F187FC005E5289 /* ViewController.swift */,
-				9EBEF4EB29F187FC005E5289 /* Main.storyboard */,
+				9EBEF4E929F187FC005E5289 /* PaymentTokenViewController.swift */,
+				78FD06EF2A6014030064DBA6 /* PaymentURLViewController.swift */,
 				9EBEF4F029F187FC005E5289 /* LaunchScreen.storyboard */,
 				9EBEF4F329F187FC005E5289 /* Info.plist */,
 			);
@@ -85,6 +83,7 @@
 		ED85A4D8CF5033927B36F004 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				78FD06F12A6014250064DBA6 /* YandexPaySDK.xcframework */,
 				964E7DBFD77EB445A6CFC7EC /* Pods_YandexPaySDKDemoApp.framework */,
 			);
 			name = Frameworks;
@@ -152,7 +151,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EBEF4F229F187FC005E5289 /* LaunchScreen.storyboard in Resources */,
-				9EBEF4ED29F187FC005E5289 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,23 +220,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EBEF4EA29F187FC005E5289 /* ViewController.swift in Sources */,
+				9EBEF4EA29F187FC005E5289 /* PaymentTokenViewController.swift in Sources */,
+				78FD06F02A6014030064DBA6 /* PaymentURLViewController.swift in Sources */,
 				9EBEF4E629F187FC005E5289 /* AppDelegate.swift in Sources */,
-				9EBEF4E829F187FC005E5289 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9EBEF4EB29F187FC005E5289 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9EBEF4EC29F187FC005E5289 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9EBEF4F029F187FC005E5289 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -378,8 +368,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YandexPaySDKDemoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -411,8 +400,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YandexPaySDKDemoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
