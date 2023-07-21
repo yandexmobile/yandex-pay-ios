@@ -2,7 +2,7 @@
 
 ## Documentation
 
-- https://pay.yandex.ru/ru/docs/custom/ios-sdk
+- https://pay.yandex.ru/ru/docs/about
 
 ## Installation
 
