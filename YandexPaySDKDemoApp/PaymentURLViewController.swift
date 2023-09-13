@@ -69,7 +69,7 @@ extension PaymentURLViewController: YandexPayButtonDataSource {
     YPBillingContact(email: "example@yandex.ru")
   }
   
-  func viewControllerForPresentation(_ yandexPayButton: YandexPayButton) -> UIViewController? {
+  func viewControllerForPresentation(for yandexPayButton: YandexPayButton) -> UIViewController {
     // Предоставьте UIViewController, с которого необходимо показать форму YandexPay по нажатию на кнопку
     self
   }
