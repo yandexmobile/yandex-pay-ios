@@ -46,13 +46,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         YandexPaySDKApi.instance.applicationDidReceiveOpen(url, sourceApplication: options[.sourceApplication] as? String)
         return true
     }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        YandexPaySDKApi.instance.applicationWillEnterForeground()
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        YandexPaySDKApi.instance.applicationDidBecomeActive()
-    }
 }
 
