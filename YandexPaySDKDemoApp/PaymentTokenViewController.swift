@@ -17,21 +17,8 @@ final class PaymentTokenViewController: UIViewController {
           return
         }
 
-        // Укажите тему для кнопки
-        let theme: YandexPayButtonTheme
-        if #available(iOS 13.0, *) {
-            // Параметр `dynamic` позволяет указать, нужно ли кнопке
-            // менять свою цветовую палитру вместе со сменой системной темы
-            theme = YandexPayButtonTheme(appearance: .dark, dynamic: true)
-        } else {
-            theme = YandexPayButtonTheme(appearance: .dark)
-        }
-
-        // Инициализируйте конфигурацию
-        let configuration = YandexPayButtonConfiguration(theme: theme)
-
         // Создайте кнопку
-        let button = YandexPaySDKApi.instance.createButton(configuration: configuration, asyncDelegate: self)
+        let button = YandexPaySDKApi.instance.createButton(asyncDelegate: self)
 
         // Добавьте кнопку в иерархию
         view.addSubview(button)

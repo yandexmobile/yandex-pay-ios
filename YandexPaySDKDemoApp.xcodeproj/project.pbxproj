@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10DE01A999CE3FE98DF12ECF /* Pods_YandexPaySDKDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964E7DBFD77EB445A6CFC7EC /* Pods_YandexPaySDKDemoApp.framework */; };
+		22EDE5F8389E8D09F50CEA76 /* libPods-YandexPaySDKDemoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C12C66C2285990E0A89263A /* libPods-YandexPaySDKDemoApp.a */; };
+		78CE093B2B8771B300DD52DE /* PaymentURLFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CE093A2B8771B300DD52DE /* PaymentURLFormViewController.swift */; };
 		78FD06F02A6014030064DBA6 /* PaymentURLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FD06EF2A6014030064DBA6 /* PaymentURLViewController.swift */; };
 		9EBEF4E629F187FC005E5289 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEF4E529F187FC005E5289 /* AppDelegate.swift */; };
 		9EBEF4EA29F187FC005E5289 /* PaymentTokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEF4E929F187FC005E5289 /* PaymentTokenViewController.swift */; };
@@ -16,9 +17,10 @@
 
 /* Begin PBXFileReference section */
 		19CEC95DE98663A1755755A4 /* Pods-YandexPaySDKDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexPaySDKDemoApp.release.xcconfig"; path = "Target Support Files/Pods-YandexPaySDKDemoApp/Pods-YandexPaySDKDemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		78CE093A2B8771B300DD52DE /* PaymentURLFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentURLFormViewController.swift; sourceTree = "<group>"; };
 		78FD06EF2A6014030064DBA6 /* PaymentURLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentURLViewController.swift; sourceTree = "<group>"; };
 		78FD06F12A6014250064DBA6 /* YandexPaySDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = YandexPaySDK.xcframework; path = "../../Downloads/YandexPaySDK-test/Old/YandexPaySDK.xcframework"; sourceTree = "<group>"; };
-		964E7DBFD77EB445A6CFC7EC /* Pods_YandexPaySDKDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YandexPaySDKDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C12C66C2285990E0A89263A /* libPods-YandexPaySDKDemoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YandexPaySDKDemoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBEF4E229F187FC005E5289 /* YandexPaySDKDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexPaySDKDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBEF4E529F187FC005E5289 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EBEF4E929F187FC005E5289 /* PaymentTokenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTokenViewController.swift; sourceTree = "<group>"; };
@@ -33,7 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10DE01A999CE3FE98DF12ECF /* Pods_YandexPaySDKDemoApp.framework in Frameworks */,
+				22EDE5F8389E8D09F50CEA76 /* libPods-YandexPaySDKDemoApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,7 +50,9 @@
 				B3C3EB38F1386095FDF26933 /* Pods */,
 				ED85A4D8CF5033927B36F004 /* Frameworks */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		9EBEF4E329F187FC005E5289 /* Products */ = {
 			isa = PBXGroup;
@@ -65,6 +69,7 @@
 				9EBEF4E529F187FC005E5289 /* AppDelegate.swift */,
 				9EBEF4E929F187FC005E5289 /* PaymentTokenViewController.swift */,
 				78FD06EF2A6014030064DBA6 /* PaymentURLViewController.swift */,
+				78CE093A2B8771B300DD52DE /* PaymentURLFormViewController.swift */,
 				9EBEF4F029F187FC005E5289 /* LaunchScreen.storyboard */,
 				9EBEF4F329F187FC005E5289 /* Info.plist */,
 			);
@@ -84,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				78FD06F12A6014250064DBA6 /* YandexPaySDK.xcframework */,
-				964E7DBFD77EB445A6CFC7EC /* Pods_YandexPaySDKDemoApp.framework */,
+				8C12C66C2285990E0A89263A /* libPods-YandexPaySDKDemoApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -100,7 +105,6 @@
 				9EBEF4DE29F187FC005E5289 /* Sources */,
 				9EBEF4DF29F187FC005E5289 /* Frameworks */,
 				9EBEF4E029F187FC005E5289 /* Resources */,
-				DD61B36161771CC60866CEC4 /* [CP] Embed Pods Frameworks */,
 				3319A01E984A612E4C810701 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -196,23 +200,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DD61B36161771CC60866CEC4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YandexPaySDKDemoApp/Pods-YandexPaySDKDemoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YandexPaySDKDemoApp/Pods-YandexPaySDKDemoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexPaySDKDemoApp/Pods-YandexPaySDKDemoApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -221,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EBEF4EA29F187FC005E5289 /* PaymentTokenViewController.swift in Sources */,
+				78CE093B2B8771B300DD52DE /* PaymentURLFormViewController.swift in Sources */,
 				78FD06F02A6014030064DBA6 /* PaymentURLViewController.swift in Sources */,
 				9EBEF4E629F187FC005E5289 /* AppDelegate.swift in Sources */,
 			);
@@ -364,7 +352,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = EK7Z26L6D4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YandexPaySDKDemoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -376,7 +364,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sagintayev.YandexPaySDKDemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.YandexPaySDKDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -396,7 +384,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = EK7Z26L6D4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YandexPaySDKDemoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -408,7 +396,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sagintayev.YandexPaySDKDemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.YandexPaySDKDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

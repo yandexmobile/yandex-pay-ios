@@ -17,21 +17,16 @@ final class PaymentURLViewController: UIViewController {
           return
         }
 
-        // Укажите тему для кнопки
-        let theme: YandexPayButtonTheme
-        if #available(iOS 13.0, *) {
-            // Параметр `dynamic` позволяет указать, нужно ли кнопке
-            // менять свою цветовую палитру вместе со сменой системной темы
-            theme = YandexPayButtonTheme(appearance: .dark, dynamic: true)
-        } else {
-            theme = YandexPayButtonTheme(appearance: .dark)
-        }
-
-        // Инициализируйте конфигурацию
-        let configuration = YandexPayButtonConfiguration(theme: theme)
-
         // Создайте кнопку
-        let button = YandexPaySDKApi.instance.createButton(configuration: configuration, dataSource: self, delegate: self)
+        let button = YandexPaySDKApi.instance.createButton(dataSource: self, delegate: self)
+      
+        // Есть возможность настроить отображение кнопки
+        button.preferredPaymentMethods = [.card, .split]
+        button.appearance = .system
+        button.order = ("100", .rub)
+        button.cornerRadius = 0
+        button.isBordered = false
+        button.isLoading = false
 
         // Добавьте кнопку в иерархию
         view.addSubview(button)

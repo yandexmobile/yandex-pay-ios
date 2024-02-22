@@ -1,13 +1,10 @@
-source 'https://cdn.cocoapods.org/'
 DEPLOYMENT_VERSION = '13.0'
 
 platform :ios, DEPLOYMENT_VERSION
 
-#use_frameworks! linkage: :static
 inhibit_all_warnings!
 
 target 'YandexPaySDKDemoApp' do
-  use_frameworks!
   pod 'YandexPaySDK/Static'
 end
 
