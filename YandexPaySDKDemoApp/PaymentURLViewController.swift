@@ -20,7 +20,7 @@ final class PaymentURLViewController: UIViewController {
         button.preferredPaymentMethods = [.card, .split]
         button.appearance = .system
         button.order = (100, .rub)
-        button.cornerRadius = 0
+        button.cornerRadius = 16
         button.isBordered = false
         button.isLoading = false
 
