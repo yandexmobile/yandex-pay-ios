@@ -9,9 +9,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         do {
             // Укажите конфигурацию
             let merchant = YandexPaySDKMerchant(
-                id: "ID продавца в системе Yandex Pay",
-                name: "Имя продавца",
-                url: "URL продавца"
+                // ID продавца в системе Яндекс Пэй
+                id: "MERCHANT_ID",
+                // Имя продавца
+                name: "MERCHANT_NAME",
+                // URL продавца
+                url: "https://example.org/"
             )
             let configuration = YandexPaySDKConfiguration(
                 // Необходимое окружение
@@ -38,11 +41,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-        YandexPaySDKApi.instance.applicationDidReceiveUserActivity(userActivity)
+        // Проверьте, что SDK проинициализирован
+        guard YandexPaySDKApi.isInitialized else {
+          assertionFailure("YandexPaySDK is not initialized.")
+          return false
+        }
+
+        return YandexPaySDKApi.instance.applicationDidReceiveUserActivity(userActivity)
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        YandexPaySDKApi.instance.applicationDidReceiveOpen(url, options: options)
+        // Проверьте, что SDK проинициализирован
+        guard YandexPaySDKApi.isInitialized else {
+          assertionFailure("YandexPaySDK is not initialized.")
+          return false
+        }
+
+        return YandexPaySDKApi.instance.applicationDidReceiveOpen(url, options: options)
     }
 }
 
