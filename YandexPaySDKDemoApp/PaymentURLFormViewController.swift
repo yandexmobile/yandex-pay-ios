@@ -7,11 +7,7 @@ final class PaymentURLFormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if #available(iOS 13.0, *) {
-            view.backgroundColor = .systemBackground
-        } else {
-            view.backgroundColor = .white
-        }
+        view.backgroundColor = .systemBackground
 
         // Создайте кнопку
         let button = UIButton(type: .system)
@@ -54,7 +50,8 @@ private extension PaymentURLFormViewController {
 
 extension PaymentURLFormViewController: YandexPayFormDelegate {
     func yandexPayForm(
-        _ from: YandexPaySDK.YandexPayForm,
+        _ form: YandexPaySDK.YandexPayForm,
+        data: YandexPaySDK.YPYandexPayPaymentData,
         didCompletePaymentWithResult result: YandexPaySDK.YPYandexPayPaymentResult) {
             let title: String
             let message: String

@@ -5,7 +5,7 @@ platform :ios, DEPLOYMENT_VERSION
 inhibit_all_warnings!
 
 target 'YandexPaySDKDemoApp' do
-  pod 'YandexPaySDK/Static'
+  pod 'YandexPaySDK/Static', '~> 1.6.0'
 end
 
 post_install do |installer|

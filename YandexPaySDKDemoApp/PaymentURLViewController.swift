@@ -5,11 +5,7 @@ final class PaymentURLViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if #available(iOS 13.0, *) {
-            view.backgroundColor = .systemBackground
-        } else {
-            view.backgroundColor = .white
-        }
+        view.backgroundColor = .systemBackground
 
         // Проверьте, что SDK проинициализирован
         guard YandexPaySDKApi.isInitialized else {
@@ -23,7 +19,7 @@ final class PaymentURLViewController: UIViewController {
         // Есть возможность настроить отображение кнопки
         button.preferredPaymentMethods = [.card, .split]
         button.appearance = .system
-        button.order = ("100", .rub)
+        button.order = (100, .rub)
         button.cornerRadius = 0
         button.isBordered = false
         button.isLoading = false
@@ -44,7 +40,7 @@ final class PaymentURLViewController: UIViewController {
 // MARK: - YandexPayButtonDataSource
 
 extension PaymentURLViewController: YandexPayButtonDataSource {
-  func paymentUrl(for yandexPayButton: YandexPayButton) async throws -> String {
+  func paymentUrl(for yandexPayButton: YandexPayButtonProtocol) async throws -> String {
     // Запросите paymentUrl (создайте заказ) асинхронно с вашего бекенда
     await withCheckedContinuation { continuation in
       // Это пример реализации async кода, скорее всего здесь будет сетевой запрос
@@ -53,18 +49,8 @@ extension PaymentURLViewController: YandexPayButtonDataSource {
       }
     }
   }
-  
-  func requiredFields(for yandexPayButton: YandexPayButton) async -> Set<YPRequiredField> {
-    // Набор обязательных полей, которые должен предоставить клиент
-    [.billingContactEmail]
-  }
-  
-  func billingContact(for yandexPayButton: YandexPaySDK.YandexPayButton) async -> YPBillingContact? {
-    // Email клиента для заказа, можно вернуть либо сразу значение, либо асинхронно, либо nil
-    YPBillingContact(email: "example@yandex.ru")
-  }
-  
-  func viewControllerForPresentation(for yandexPayButton: YandexPayButton) -> UIViewController {
+
+  func viewControllerForPresentation(for yandexPayButton: YandexPayButtonProtocol) -> UIViewController {
     // Предоставьте UIViewController, с которого необходимо показать форму YandexPay по нажатию на кнопку
     self
   }
@@ -73,7 +59,11 @@ extension PaymentURLViewController: YandexPayButtonDataSource {
 // MARK: - YandexPayButtonDelegate
 
 extension PaymentURLViewController: YandexPayButtonDelegate {
-    func yandexPayButton(_ button: YandexPayButton, didCompletePaymentWithResult result: YPYandexPayPaymentResult) {
+    func yandexPayButton(
+        _ button: YandexPayButtonProtocol,
+        didCompletePaymentWithResult result: YPYandexPayPaymentResult,
+        data: YandexPaySDK.YPYandexPayPaymentData
+    ) {
         let title: String
         let message: String
         switch result {

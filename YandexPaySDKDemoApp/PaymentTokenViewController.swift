@@ -5,11 +5,7 @@ final class PaymentTokenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if #available(iOS 13.0, *) {
-            view.backgroundColor = .systemBackground
-        } else {
-            view.backgroundColor = .white
-        }
+        view.backgroundColor = .systemBackground
 
         // Проверьте, что SDK проинициализирован
         guard YandexPaySDKApi.isInitialized else {
@@ -69,10 +65,10 @@ extension PaymentTokenViewController: YandexPayButtonAsyncDelegate {
             order: YPOrder(
                 id: "ORDER1",
                 label: "ORDER1",
-                amount: "15000.00",
+                amount: 15000,
                 items: [
-                    YPOrderItem(label: "ITEM1", amount: "10000.00"),
-                    YPOrderItem(label: "ITEM2", amount: "5000.00")
+                    YPOrderItem(label: "ITEM1", amount: 10000),
+                    YPOrderItem(label: "ITEM2", amount: 5000)
                 ]
             ),
             paymentMethods: [

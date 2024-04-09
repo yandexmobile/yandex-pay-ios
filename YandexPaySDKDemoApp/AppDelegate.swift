@@ -39,12 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         YandexPaySDKApi.instance.applicationDidReceiveUserActivity(userActivity)
-        return true
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        YandexPaySDKApi.instance.applicationDidReceiveOpen(url, sourceApplication: options[.sourceApplication] as? String)
-        return true
+        YandexPaySDKApi.instance.applicationDidReceiveOpen(url, options: options)
     }
 }
 
