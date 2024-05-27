@@ -12,7 +12,7 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "YandexPaySDK",
-      url: "https://yandexpay-ios-sdk.s3.yandex.net/1.6.0/YandexPaySDK.xcframework.zip",
-      checksum: "5bba75b35dc0abd60daf1d4df85b7d1966f018d64459b69e65f21a3318f6a681")
+      url: "https://github.com/yandexmobile/yandex-pay-ios/releases/download/v1.7.0/YandexPaySDK.xcframework.zip",
+      checksum: "36f7fb91e688a1fd5127707b7d4e4580033cbd063ea07c28f048b055e5591079")
   ]
 )
