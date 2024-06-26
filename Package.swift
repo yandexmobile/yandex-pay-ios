@@ -12,8 +12,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "YandexPaySDK",
-      url: "https://github.com/yandexmobile/yandex-pay-ios/releases/download/v1.8.0/YandexPaySDK.xcframework.zip",
-      checksum: "d2f224ea0f6dfb6dce043ca7bfdaa1fb04b5fd8676d34ff85cd1bb7b5f2959ab"
+      url: "https://github.com/yandexmobile/yandex-pay-ios/releases/download/v1.9.0/YandexPaySDK.xcframework.zip",
+      checksum: "59de8879f232fd3f2302eec672937b3c89c923bc0ee0ed12ebc9fd3d04fd04e7"
     ),
     .binaryTarget(
       name: "Varioqub",

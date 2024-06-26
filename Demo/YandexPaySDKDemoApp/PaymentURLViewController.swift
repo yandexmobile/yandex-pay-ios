@@ -13,16 +13,24 @@ final class PaymentURLViewController: UIViewController {
           return
         }
 
-        // Создайте кнопку
-        let button = YandexPaySDKApi.instance.createButton(dataSource: self, delegate: self)
-      
         // Есть возможность настроить отображение кнопки
-        button.preferredPaymentMethods = [.card, .split]
-        button.appearance = .system
-        button.order = (100, .rub)
-        button.cornerRadius = 16
-        button.isBordered = false
-        button.isLoading = false
+        let buttonModel = YPButtonModel(
+            amount: 1000,
+            currency: .rub,
+            preferredPaymentMethods: [.card, .split],
+            appearance: .system,
+            cornerRadius: 16,
+            isLoading: false,
+            isBordered: false
+        )
+
+        // Создайте кнопку
+        let button: UIView = YandexPaySDKApi.instance.createButton(
+            model: buttonModel,
+            paymentDataProvider: self,
+            presentationContextProvider: self,
+            delegate: self
+        )
 
         // Добавьте кнопку в иерархию
         view.addSubview(button)
@@ -37,9 +45,9 @@ final class PaymentURLViewController: UIViewController {
     }
 }
 
-// MARK: - YandexPayButtonDataSource
+// MARK: - YPButtonPaymentDataProviding
 
-extension PaymentURLViewController: YandexPayButtonDataSource {
+extension PaymentURLViewController: YPButtonPaymentDataProviding {
   func paymentUrl(for yandexPayButton: YandexPayButtonProtocol) async throws -> String {
     // Запросите paymentUrl (создайте заказ) асинхронно с вашего бекенда
     await withCheckedContinuation { continuation in
@@ -49,11 +57,14 @@ extension PaymentURLViewController: YandexPayButtonDataSource {
       }
     }
   }
+}
 
-  func viewControllerForPresentation(for yandexPayButton: YandexPayButtonProtocol) -> UIViewController {
-    // Предоставьте UIViewController, с которого необходимо показать форму YandexPay по нажатию на кнопку
-    self
-  }
+// MARK: - YPButtonPaymentDataProviding
+
+extension PaymentURLViewController: YPButtonPresentationContextProviding {
+    func anchorForPresentation(for yandexPayButton: any YandexPayButtonProtocol) -> YPPresentationContext {
+        .viewController(self)
+    }
 }
 
 // MARK: - YandexPayButtonDelegate
