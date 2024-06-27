@@ -48,15 +48,15 @@ final class PaymentURLViewController: UIViewController {
 // MARK: - YPButtonPaymentDataProviding
 
 extension PaymentURLViewController: YPButtonPaymentDataProviding {
-  func paymentUrl(for yandexPayButton: YandexPayButtonProtocol) async throws -> String {
-    // Запросите paymentUrl (создайте заказ) асинхронно с вашего бекенда
-    await withCheckedContinuation { continuation in
-      // Это пример реализации async кода, скорее всего здесь будет сетевой запрос
-      DispatchQueue.main.async {
-        continuation.resume(returning: "payment-url.ru")
-      }
+    func paymentUrl(for yandexPayButton: YandexPayButtonProtocol) async throws -> String {
+        // Запросите paymentUrl (создайте заказ) асинхронно с вашего бекенда
+        await withCheckedContinuation { continuation in
+            // Это пример реализации async кода, скорее всего здесь будет сетевой запрос
+            DispatchQueue.main.async {
+                continuation.resume(returning: "payment-url.ru")
+            }
+        }
     }
-  }
 }
 
 // MARK: - YPButtonPaymentDataProviding
