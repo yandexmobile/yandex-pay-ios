@@ -1,0 +1,903 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Varioqub
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Darwin
+import Dispatch
+import Foundation
+import Swift
+import UIKit
+import VQSwiftProtobuf
+import _Concurrency
+import _StringProcessing
+public let networkLoggerString: Varioqub.LoggerModule
+final public class Logger {
+  public init(moduleName: Varioqub.LoggerModule)
+  final public let destination: Varioqub.LoggerDestination
+  final public func error(_ error: @autoclosure () -> Swift.Error)
+  final public func error(_ msg: @autoclosure () -> Swift.String)
+  final public func warning(_ error: @autoclosure () -> Swift.Error)
+  final public func warning(_ msg: @autoclosure () -> Swift.String)
+  final public func info(_ msg: @autoclosure () -> Swift.String)
+  final public func trace(_ msg: @autoclosure () -> Swift.String)
+  final public func debug(_ msg: @autoclosure () -> Swift.String)
+  @objc deinit
+}
+public protocol StringValueConvertible {
+  var stringValue: Swift.String? { get }
+  var stringValueOrDefault: Swift.String { get }
+}
+public protocol DoubleValueConvertible {
+  var doubleValue: Swift.Double? { get }
+  var doubleValueOrDefault: Swift.Double { get }
+}
+public protocol IntValueConvertible {
+  var intValue: Swift.Int? { get }
+  var intValueOrDefault: Swift.Int { get }
+}
+public protocol Int64ValueConvertible {
+  var int64Value: Swift.Int64? { get }
+  var int64ValueOrDefault: Swift.Int64 { get }
+}
+public protocol BoolValueConvertible {
+  var boolValue: Swift.Bool? { get }
+  var boolValueOrDefault: Swift.Bool { get }
+}
+public struct VarioqubConfigValue : Swift.Equatable, Swift.CustomStringConvertible {
+  public enum Source {
+    case defaultValue
+    case inappDefault
+    case server
+    public static func == (a: Varioqub.VarioqubConfigValue.Source, b: Varioqub.VarioqubConfigValue.Source) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public var source: Varioqub.VarioqubConfigValue.Source
+  public var value: Varioqub.VarioqubValue?
+  public var triggeredTestID: Varioqub.VarioqubTestID?
+  public init(source: Varioqub.VarioqubConfigValue.Source, value: Varioqub.VarioqubValue?, triggeredTestID: Varioqub.VarioqubTestID?)
+  public var description: Swift.String {
+    get
+  }
+  public static func == (a: Varioqub.VarioqubConfigValue, b: Varioqub.VarioqubConfigValue) -> Swift.Bool
+}
+extension Varioqub.VarioqubConfigValue {
+  public var isDefault: Swift.Bool {
+    get
+  }
+  public var isUserDefaults: Swift.Bool {
+    get
+  }
+  public var isServer: Swift.Bool {
+    get
+  }
+}
+extension Varioqub.VarioqubConfigValue : Varioqub.StringValueConvertible, Varioqub.DoubleValueConvertible, Varioqub.BoolValueConvertible, Varioqub.Int64ValueConvertible, Varioqub.IntValueConvertible {
+  public var stringValue: Swift.String? {
+    get
+  }
+  public var stringValueOrDefault: Swift.String {
+    get
+  }
+  public var doubleValue: Swift.Double? {
+    get
+  }
+  public var doubleValueOrDefault: Swift.Double {
+    get
+  }
+  public var boolValue: Swift.Bool? {
+    get
+  }
+  public var boolValueOrDefault: Swift.Bool {
+    get
+  }
+  public var intValue: Swift.Int? {
+    get
+  }
+  public var intValueOrDefault: Swift.Int {
+    get
+  }
+  public var int64Value: Swift.Int64? {
+    get
+  }
+  public var int64ValueOrDefault: Swift.Int64 {
+    get
+  }
+}
+public struct VarioqubFlag : Swift.RawRepresentable, Swift.ExpressibleByStringLiteral, Swift.Equatable, Swift.Hashable, Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+  public var rawValue: Swift.String
+  public init(rawValue: Swift.String)
+  public init(stringLiteral value: Swift.String)
+  public static func == (lhs: Varioqub.VarioqubFlag, rhs: Varioqub.VarioqubFlag) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var description: Swift.String {
+    get
+  }
+  public var debugDescription: Swift.String {
+    get
+  }
+  public typealias ExtendedGraphemeClusterLiteralType = Swift.String
+  public typealias RawValue = Swift.String
+  public typealias StringLiteralType = Swift.String
+  public typealias UnicodeScalarLiteralType = Swift.String
+}
+public protocol Optionable {
+  associatedtype Wrapped
+  init(wrapped: Self.Wrapped?)
+  var wrapped: Self.Wrapped? { get }
+}
+extension Swift.Optional : Varioqub.Optionable {
+  public typealias Wrapped = Wrapped
+  public init(wrapped: Wrapped?)
+  public var wrapped: Wrapped? {
+    get
+  }
+}
+public typealias ExecutorClosure = () -> Swift.Void
+public typealias ExecutorReturnClosure<T> = () throws -> T
+public protocol AsyncExecutor {
+  func execute(_ closure: @escaping Varioqub.ExecutorClosure)
+}
+public protocol AsyncResultExecutor {
+  func executeAndReturn<T>(_ closure: @escaping Varioqub.ExecutorReturnClosure<T>) rethrows -> T
+}
+public typealias CombinedAsyncExecutor = Varioqub.AsyncExecutor & Varioqub.AsyncResultExecutor
+final public class USNetworkRequestCreator {
+  public init(config: Foundation.URLSessionConfiguration, queue: Dispatch.DispatchQueue)
+  @objc deinit
+}
+extension Varioqub.USNetworkRequestCreator : Varioqub.NetworkRequestCreator {
+  final public func makeRequest(_ request: Varioqub.Request, baseURL: Foundation.URL) -> Varioqub.NetworkRequestable
+}
+extension Foundation.URLSessionConfiguration {
+  public static var varioqubDefault: Foundation.URLSessionConfiguration {
+    get
+  }
+}
+public struct VarioqubTestIDSet {
+  public var set: Swift.Set<Varioqub.VarioqubTestID>
+  public init()
+  public init(testIdSet: Swift.Set<Varioqub.VarioqubTestID>)
+  public init<T>(seq: T) where T : Swift.Sequence, T.Element == Varioqub.VarioqubTestID
+}
+@_hasMissingDesignatedInitializers final public class VarioqubFacade {
+  public static let shared: Varioqub.VarioqubFacade
+  @objc deinit
+}
+extension Varioqub.VarioqubFacade {
+  final public func initialize(clientId: Swift.String, config: Varioqub.VarioqubConfig = .default, idProvider: Varioqub.VarioqubIdProvider?, reporter: Varioqub.VarioqubReporter?)
+}
+extension Varioqub.VarioqubFacade : Varioqub.RuntimeOptionable {
+  final public var clientFeatures: Varioqub.ClientFeatures {
+    get
+    set
+  }
+  final public var sendEventOnChangeConfig: Swift.Bool {
+    get
+    set
+  }
+}
+extension Varioqub.VarioqubFacade {
+  final public var varioqubId: Swift.String? {
+    get
+  }
+}
+extension Varioqub.VarioqubFacade : Varioqub.VarioqubConfigurable {
+  final public func fetchConfig(_ callback: Varioqub.VarioqubFacade.FetchCallback?)
+  final public func activateConfig(_ callback: Varioqub.VarioqubFacade.ActivateCallback?)
+  final public func activateConfigAndWait()
+  final public func fetchAndActivateConfig(_ callback: Varioqub.VarioqubFacade.FetchCallback?)
+}
+extension Varioqub.VarioqubFacade : Varioqub.VarioqubDefaultsSetupable {
+  final public func setDefaults(_ defaults: [Varioqub.VarioqubFlag : Swift.String], callback: Varioqub.VarioqubFacade.DefaultsCallback?)
+  final public func loadXml(at path: Foundation.URL, callback: Varioqub.VarioqubFacade.XmlParserCallback?)
+  final public func loadXml(from data: Foundation.Data, callback: Varioqub.VarioqubFacade.XmlParserCallback?)
+  final public func setDefaultsAndWait(_ defaults: [Varioqub.VarioqubFlag : Swift.String])
+  final public func loadXmlAndWait(at path: Foundation.URL) throws
+  final public func loadXmlAndWait(from data: Foundation.Data) throws
+}
+extension Varioqub.VarioqubFacade : Varioqub.FlagProvider {
+  final public var allItems: [Varioqub.VarioqubFlag : Varioqub.VarioqubConfigValue] {
+    get
+  }
+  final public var allKeys: Swift.Set<Varioqub.VarioqubFlag> {
+    get
+  }
+  final public func get<T>(for flag: Varioqub.VarioqubFlag, type: T.Type, defaultValue: T?) -> T where T : Varioqub.VarioqubInitializableByValue
+  final public func getValue(for flag: Varioqub.VarioqubFlag) -> Varioqub.VarioqubConfigValue
+}
+final public class DefaultLoggerDestination : Varioqub.LoggerDestination {
+  final public var logLevel: Varioqub.LogLevel
+  public init()
+  final public func log(module: Varioqub.LoggerModule, level: Varioqub.LogLevel, message: @autoclosure () -> Swift.String)
+  final public func log(module: Varioqub.LoggerModule, level: Varioqub.LogLevel, error: @autoclosure () -> Swift.Error)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class VQVarioqubFacade : ObjectiveC.NSObject {
+  @objc(sharedVarioqub) public static let shared: Varioqub.VQVarioqubFacade
+  @objc deinit
+}
+@objc public protocol VQSettingsProtocol : ObjectiveC.NSObjectProtocol {
+  @objc var lastFetchDate: Foundation.Date? { get set }
+  @objc var isShouldNotifyExperimentChanged: Swift.Bool { get set }
+  @objc var lastEtag: Swift.String? { get set }
+  @objc var reporterData: Foundation.Data? { get set }
+  @objc func storeNetworkData(_ data: Foundation.Data?, for key: Swift.String)
+  @objc func loadNetworkData(for key: Swift.String) -> Foundation.Data?
+}
+@_hasMissingDesignatedInitializers @objc public class VQClientFeatures : ObjectiveC.NSObject, Foundation.NSCopying, Foundation.NSMutableCopying {
+  @objc required public init(dictionary: [Swift.String : Swift.String])
+  @objc public var features: [Swift.String : Swift.String] {
+    @objc get
+  }
+  @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc public func mutableCopy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc public class func clientFeatures(with dict: [Swift.String : Swift.String]) -> Self
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class VQMutableClientFeatures : Varioqub.VQClientFeatures {
+  @objc final public func setFeature(_ feature: Swift.String, forKey key: Swift.String)
+  @objc final public func removeFeature(forKey key: Swift.String)
+  @objc final public func mergeWith(_ other: [Swift.String : Swift.String])
+  @objc final public func clearFeatures()
+  @objc override final public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc override final public func mutableCopy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc required public init(dictionary: [Swift.String : Swift.String])
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class VQConfig : ObjectiveC.NSObject {
+  @objc final public var baseURL: Foundation.URL?
+  @objc final public var settings: Varioqub.VQSettingsProtocol?
+  @objc final public var fetchThrottle: Swift.Double
+  @objc final public var initialClientFeatures: Varioqub.VQClientFeatures?
+  @objc final public var varioqubQueue: Dispatch.DispatchQueue?
+  @objc final public var outputQueue: Dispatch.DispatchQueue
+  @objc(defaultConfig) public static var `default`: Varioqub.VQConfig {
+    @objc get
+  }
+  @objc deinit
+}
+public struct NetworkStatusCode : Swift.RawRepresentable {
+  public var rawValue: Swift.Int
+  public init(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+}
+extension Varioqub.NetworkStatusCode {
+  public var isOk: Swift.Bool {
+    get
+  }
+  public static let success: Varioqub.NetworkStatusCode
+  public static let notModified: Varioqub.NetworkStatusCode
+}
+@objc extension Varioqub.VQVarioqubFacade {
+  @objc final public var varioqubId: Swift.String? {
+    @objc get
+  }
+}
+@_hasMissingDesignatedInitializers @objc final public class VQTestIDSet : ObjectiveC.NSObject {
+  @objc public init(set: Swift.Set<Varioqub.VQTestID>)
+  @objc public init(array: [Varioqub.VQTestID])
+  @objc final public var set: Swift.Set<Varioqub.VQTestID> {
+    @objc get
+  }
+  @objc deinit
+}
+extension Varioqub.VQTestIDSet {
+  convenience public init(set: Varioqub.VarioqubTestIDSet)
+  final public var testIDSet: Varioqub.VarioqubTestIDSet {
+    get
+  }
+}
+@objc public enum VQSource : Swift.Int {
+  case defaultValue
+  case inappConfig
+  case server
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc final public class VQConfigValue : ObjectiveC.NSObject {
+  public init(configValue: Varioqub.VarioqubConfigValue)
+  @objc final public var source: Varioqub.VQSource {
+    @objc get
+  }
+  @objc final public var testID: Varioqub.VQTestID {
+    @objc get
+  }
+  @objc final public var value: Swift.String? {
+    @objc get
+  }
+  @objc final public var numberValue: Foundation.NSNumber? {
+    @objc get
+  }
+  @objc final public var stringValueOrDefault: Swift.String? {
+    @objc get
+  }
+  @objc final public var intValueOrDefault: Swift.Int {
+    @objc get
+  }
+  @objc final public var int64ValueOrDefault: Swift.Int {
+    @objc get
+  }
+  @objc final public var boolValueOrDefault: Swift.Bool {
+    @objc get
+  }
+  @objc deinit
+}
+public struct ClientFeatures : Swift.Equatable {
+  public init()
+  public init(dictionary: [Swift.String : Swift.String])
+  public var features: [Swift.String : Swift.String] {
+    get
+  }
+  public mutating func setFeature(_ feature: Swift.String, forKey key: Swift.String)
+  public mutating func removeFeature(forKey key: Swift.String)
+  public mutating func mergeWith(_ other: [Swift.String : Swift.String])
+  public mutating func clearFeatures()
+  public static func == (a: Varioqub.ClientFeatures, b: Varioqub.ClientFeatures) -> Swift.Bool
+}
+public struct VarioqubIdentifiers {
+  public var deviceId: Swift.String
+  public var userId: Swift.String
+  public init(deviceId: Swift.String, userId: Swift.String)
+  public var isValid: Swift.Bool {
+    get
+  }
+  public static let empty: Varioqub.VarioqubIdentifiers
+}
+public enum VarioqubProviderError : Swift.Error {
+  case general
+  case underlying(error: Swift.Error)
+}
+public protocol VarioqubNameProvider {
+  var varioqubName: Swift.String { get }
+}
+public protocol VarioqubIdProvider : Varioqub.VarioqubNameProvider {
+  typealias Completion = (Swift.Result<Varioqub.VarioqubIdentifiers, Varioqub.VarioqubProviderError>) -> ()
+  func fetchIdentifiers(completion: @escaping Self.Completion)
+}
+public struct VarioqubEventData {
+  public var fetchDate: Foundation.Date?
+  public var oldVersion: Swift.String?
+  public var newVersion: Swift.String
+  public init(fetchDate: Foundation.Date? = nil, oldVersion: Swift.String? = nil, newVersion: Swift.String)
+}
+public protocol VarioqubReporter : AnyObject, Varioqub.VarioqubNameProvider {
+  func setExperiments(_ experiments: Swift.String)
+  func setTriggeredTestIds(_ triggeredTestIds: Varioqub.VarioqubTestIDSet)
+  func sendActivateEvent(_ eventData: Varioqub.VarioqubEventData)
+}
+public struct VarioqubConfig {
+  public var baseURL: Foundation.URL?
+  public var settings: Varioqub.VarioqubSettingsProtocol?
+  public var network: Varioqub.NetworkRequestCreator?
+  public var fetchThrottle: Foundation.TimeInterval?
+  public var initialClientFeatures: Varioqub.ClientFeatures
+  public var varioqubQueue: Dispatch.DispatchQueue?
+  public var outputQueue: Dispatch.DispatchQueue
+  public static var `default`: Varioqub.VarioqubConfig
+}
+public protocol VarioqubConfigurable : AnyObject {
+  typealias FetchCallback = (Varioqub.ConfigFetcherAnswer) -> Swift.Void
+  typealias ActivateCallback = () -> ()
+  func fetchConfig(_ callback: Self.FetchCallback?)
+  func activateConfig(_ callback: Self.ActivateCallback?)
+  func activateConfigAndWait()
+  func fetchAndActivateConfig(_ callback: Self.FetchCallback?)
+}
+public protocol VarioqubDefaultsSetupable : AnyObject {
+  typealias DefaultsCallback = () -> Swift.Void
+  typealias XmlParserCallback = (Swift.Error?) -> Swift.Void
+  func setDefaults(_ defaults: [Varioqub.VarioqubFlag : Swift.String], callback: Self.DefaultsCallback?)
+  func setDefaultsAndWait(_ defaults: [Varioqub.VarioqubFlag : Swift.String])
+  func loadXml(at path: Foundation.URL, callback: Self.XmlParserCallback?)
+  func loadXmlAndWait(at path: Foundation.URL) throws
+  func loadXml(from data: Foundation.Data, callback: Self.XmlParserCallback?)
+  func loadXmlAndWait(from data: Foundation.Data) throws
+}
+public protocol RuntimeOptionable : AnyObject {
+  var sendEventOnChangeConfig: Swift.Bool { get set }
+  var clientFeatures: Varioqub.ClientFeatures { get set }
+}
+public typealias LoggerBootstrap = (Varioqub.LoggerModule) -> Varioqub.LoggerDestination
+@_hasMissingDesignatedInitializers final public class LoggerFactory {
+  @objc deinit
+}
+public protocol NetworkRequestable : AnyObject {
+  typealias Callback = (Varioqub.NetworkResponse) -> Swift.Void
+  @discardableResult
+  func execute() -> Varioqub.NetworkRequestable
+  @discardableResult
+  func onCallback(_ callback: @escaping Self.Callback) -> Varioqub.NetworkRequestable
+  func cancel()
+}
+public protocol NetworkRequestCreator {
+  func makeRequest(_ request: Varioqub.Request, baseURL: Foundation.URL) -> Varioqub.NetworkRequestable
+}
+public protocol VarioqubSettingsProtocol : AnyObject {
+  var lastFetchDate: Foundation.Date? { get set }
+  var isShouldNotifyExperimentChanged: Swift.Bool { get set }
+  var lastEtag: Swift.String? { get set }
+  var reporterData: Foundation.Data? { get set }
+  func storeNetworkData(_ data: Foundation.Data?, for key: Swift.String)
+  func loadNetworkData(for key: Swift.String) -> Foundation.Data?
+}
+final public class UserDefaultsSettings : Varioqub.VarioqubSettingsProtocol {
+  public init(userDefaults: Foundation.UserDefaults)
+  final public var lastFetchDate: Foundation.Date? {
+    get
+    set
+  }
+  final public var isShouldNotifyExperimentChanged: Swift.Bool {
+    get
+    set
+  }
+  final public var lastEtag: Swift.String? {
+    get
+    set
+  }
+  final public var reporterData: Foundation.Data? {
+    get
+    set
+  }
+  final public func storeNetworkData(_ data: Foundation.Data?, for key: Swift.String)
+  final public func loadNetworkData(for key: Swift.String) -> Foundation.Data?
+  @objc deinit
+}
+public enum ConfigFetcherResponseError : Swift.Error {
+  case emptyBody
+  case serverError
+  case networkError(Swift.Error)
+}
+public enum ConfigFetcherAnswer {
+  case success
+  case throttled
+  case cached
+  case error(Varioqub.ConfigFetcherError)
+  public var isSuccess: Swift.Bool {
+    get
+  }
+  public var isThrottled: Swift.Bool {
+    get
+  }
+  public var isCached: Swift.Bool {
+    get
+  }
+  public var isError: Swift.Bool {
+    get
+  }
+}
+public enum ConfigFetcherError : Swift.Error {
+  case emptyResult
+  case nullIdentifiers
+  case request
+  case response(Swift.Error)
+  case parse(Swift.Error)
+  case network(Swift.Error)
+  case underlying(Swift.Error)
+}
+public typealias ConfigFetchCallback = (Varioqub.ConfigFetcherAnswer) -> Swift.Void
+@objc extension Varioqub.VQVarioqubFacade {
+  @objc final public func initialize(clientId: Swift.String, config: Varioqub.VQConfig, idProvider: Varioqub.VQIdProvider?, reporter: Varioqub.VQReporter?)
+}
+public struct VarioqubValue : Swift.Equatable, Swift.CustomStringConvertible {
+  public let rawValue: Swift.String
+  public init(string: Swift.String)
+  public var stringValue: Swift.String? {
+    get
+  }
+  public var boolValue: Swift.Bool? {
+    get
+  }
+  public var doubleValue: Swift.Double? {
+    get
+  }
+  public var intValue: Swift.Int? {
+    get
+  }
+  public var int64Value: Swift.Int64? {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public static func == (a: Varioqub.VarioqubValue, b: Varioqub.VarioqubValue) -> Swift.Bool
+}
+public protocol VarioqubInitializableByValue {
+  init?(value: Varioqub.VarioqubValue)
+  static var defaultValue: Self { get }
+}
+extension Swift.Int : Varioqub.VarioqubInitializableByValue {
+  public init?(value: Varioqub.VarioqubValue)
+  public static var defaultValue: Swift.Int {
+    get
+  }
+}
+extension Swift.Int64 : Varioqub.VarioqubInitializableByValue {
+  public init?(value: Varioqub.VarioqubValue)
+  public static var defaultValue: Swift.Int64 {
+    get
+  }
+}
+extension Swift.String : Varioqub.VarioqubInitializableByValue {
+  public init(value: Varioqub.VarioqubValue)
+  public static var defaultValue: Swift.String {
+    get
+  }
+}
+extension Swift.Double : Varioqub.VarioqubInitializableByValue {
+  public init?(value: Varioqub.VarioqubValue)
+  public static var defaultValue: Swift.Double {
+    get
+  }
+}
+extension Swift.Bool : Varioqub.VarioqubInitializableByValue {
+  public init?(value: Varioqub.VarioqubValue)
+  public static var defaultValue: Swift.Bool {
+    get
+  }
+}
+public typealias VQTestID = Swift.Int64
+public typealias VQFlag = Swift.String
+@objc final public class VQTransferValue : ObjectiveC.NSObject {
+  public init(transferValue: Varioqub.VarioqubTransferValue)
+  @objc final public var value: Swift.String? {
+    @objc get
+  }
+  @objc final public var testId: Varioqub.VQTestID {
+    @objc get
+  }
+  @objc deinit
+}
+extension Foundation.OperationQueue : Varioqub.AsyncExecutor {
+  public func execute(_ closure: @escaping Varioqub.ExecutorClosure)
+}
+public struct VarioqubTestID : Swift.RawRepresentable, Swift.ExpressibleByIntegerLiteral, Swift.Equatable, Swift.Hashable, Swift.CustomStringConvertible {
+  public var rawValue: Swift.Int64
+  public init(rawValue: Swift.Int64)
+  public init(integerLiteral value: Swift.Int64)
+  public static func == (lhs: Varioqub.VarioqubTestID, rhs: Varioqub.VarioqubTestID) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var description: Swift.String {
+    get
+  }
+  public typealias IntegerLiteralType = Swift.Int64
+  public typealias RawValue = Swift.Int64
+}
+@objc extension Varioqub.VQVarioqubFacade {
+  @objc final public var allItems: [Varioqub.VQFlag : Varioqub.VQConfigValue] {
+    @objc get
+  }
+  @objc final public var allKeys: Swift.Set<Varioqub.VQFlag> {
+    @objc get
+  }
+  @objc final public func getValue(for flag: Varioqub.VQFlag) -> Varioqub.VQConfigValue
+  @objc final public func getString(for flag: Varioqub.VQFlag, defaultValue: Swift.String) -> Swift.String
+  @objc final public func getString(for flag: Varioqub.VQFlag) -> Swift.String
+  @objc final public func getDouble(for flag: Varioqub.VQFlag, defaultValue: Swift.Double) -> Swift.Double
+  @objc final public func getDouble(for flag: Varioqub.VQFlag) -> Swift.Double
+  @objc final public func getLong(for flag: Varioqub.VQFlag, defaultValue: Swift.Int64) -> Swift.Int64
+  @objc final public func getLong(for flag: Varioqub.VQFlag) -> Swift.Int64
+  @objc final public func getInt(for flag: Varioqub.VQFlag) -> Swift.Int
+  @objc final public func getBool(for flag: Varioqub.VQFlag, defaultValue: Swift.Bool) -> Swift.Bool
+  @objc final public func getBool(for flag: Varioqub.VQFlag) -> Swift.Bool
+}
+public typealias VQLoggerModule = Swift.String
+public typealias VQLoggerBoostrap = (Varioqub.VQLoggerModule) -> Varioqub.VQLoggerDestination
+@_inheritsConvenienceInitializers @objc public class VQLoggerFactory : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum VQLogLevel : Swift.Int, Swift.Equatable, Swift.Comparable, Swift.CustomStringConvertible {
+  case error
+  case warning
+  case info
+  case debug
+  case trace
+  public static func < (lhs: Varioqub.VQLogLevel, rhs: Varioqub.VQLogLevel) -> Swift.Bool
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol VQLoggerDestination : ObjectiveC.NSObjectProtocol {
+  @objc func isAccepted(module: Varioqub.VQLoggerModule, level: Varioqub.VQLogLevel) -> Swift.Bool
+  @objc func log(module: Varioqub.VQLoggerModule, level: Varioqub.VQLogLevel, message: Swift.String)
+  @objc func log(module: Varioqub.VQLoggerModule, level: Varioqub.VQLogLevel, error: Foundation.NSError)
+}
+public struct VarioqubTransferValue {
+  public var value: Varioqub.VarioqubValue?
+  public var testId: Varioqub.VarioqubTestID?
+  public init(value: Varioqub.VarioqubValue?, testId: Varioqub.VarioqubTestID?)
+}
+public typealias MetricaUserID = Swift.String
+public typealias MetricaDeviceID = Swift.String
+public typealias VQIdCompletion = (Varioqub.MetricaUserID?, Varioqub.MetricaDeviceID?, Foundation.NSError?) -> ()
+@_hasMissingDesignatedInitializers @objc public class VQActivateEventData : ObjectiveC.NSObject {
+  final public let fetchDate: Foundation.Date?
+  final public let oldVersion: Swift.String?
+  final public let newVersion: Swift.String
+  @objc deinit
+}
+@objc public protocol VQNameProvider : ObjectiveC.NSObjectProtocol {
+  @objc var varioqubName: Swift.String { get }
+}
+@objc public protocol VQIdProvider : Varioqub.VQNameProvider {
+  @objc func fetchIdentifiers(completion: @escaping Varioqub.VQIdCompletion)
+}
+@objc public protocol VQReporter : Varioqub.VQNameProvider {
+  @objc optional func setExperiments(_ experiments: Swift.String)
+  @objc optional func setTriggeredTestIds(_ testIds: Varioqub.VQTestIDSet)
+  @objc optional func sendActivateEvent(_ eventData: Varioqub.VQActivateEventData)
+}
+extension Dispatch.DispatchQueue : Varioqub.AsyncExecutor, Varioqub.AsyncResultExecutor {
+  public func execute(_ closure: @escaping Varioqub.ExecutorClosure)
+  public func executeAndReturn<T>(_ closure: @escaping Varioqub.ExecutorReturnClosure<T>) rethrows -> T
+}
+public struct NetworkHeaders {
+  public init(rawValues: [Swift.String : Swift.String] = [:])
+}
+extension Varioqub.NetworkHeaders {
+  public var etag: Swift.String? {
+    get
+  }
+  public mutating func setIfNoneMatch(_ etag: Swift.String)
+}
+public protocol FlagProvider {
+  func get<T>(for flag: Varioqub.VarioqubFlag, type: T.Type, defaultValue: T?) -> T where T : Varioqub.VarioqubInitializableByValue
+  func getValue(for flag: Varioqub.VarioqubFlag) -> Varioqub.VarioqubConfigValue
+  var allItems: [Varioqub.VarioqubFlag : Varioqub.VarioqubConfigValue] { get }
+  var allKeys: Swift.Set<Varioqub.VarioqubFlag> { get }
+}
+extension Varioqub.FlagProvider {
+  public var allKeys: Swift.Set<Varioqub.VarioqubFlag> {
+    get
+  }
+}
+extension Varioqub.FlagProvider {
+  public func get<T>(for flag: Varioqub.VarioqubFlag, type: T.Type) -> T where T : Varioqub.VarioqubInitializableByValue
+}
+extension Varioqub.FlagProvider {
+  public func getString(for flag: Varioqub.VarioqubFlag, defaultValue: Swift.String? = nil) -> Swift.String
+  public func getDouble(for flag: Varioqub.VarioqubFlag, defaultValue: Swift.Double? = nil) -> Swift.Double
+  public func getInt64(for flag: Varioqub.VarioqubFlag, defaultValue: Swift.Int64? = nil) -> Swift.Int64
+  public func getInt(for flag: Varioqub.VarioqubFlag, defaultValue: Swift.Int? = nil) -> Swift.Int
+  public func getBool(for flag: Varioqub.VarioqubFlag, defaultValue: Swift.Bool? = nil) -> Swift.Bool
+}
+public protocol GetParameterConvertible {
+  var GETValue: Swift.String { get }
+}
+public enum RequestMethod : Swift.String, Swift.Equatable {
+  case GET
+  case HEAD
+  case POST
+  case PUT
+  case PATCH
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct Request {
+  public var path: Swift.String
+  public var method: Varioqub.RequestMethod
+  public var params: [Swift.String : Varioqub.GetParameterConvertible]
+  public var body: Foundation.Data?
+  public var headers: Varioqub.NetworkHeaders
+  public static func get(path: Swift.String, params: [Swift.String : Varioqub.GetParameterConvertible] = [:]) -> Varioqub.Request
+  public static func post(path: Swift.String, body: Foundation.Data? = nil, params: [Swift.String : Varioqub.GetParameterConvertible] = [:]) -> Varioqub.Request
+  public mutating func addHeader(_ value: Swift.String, for key: Swift.String)
+  public mutating func removeHeader(for key: Swift.String)
+  public func withHeader(_ value: Swift.String, for key: Swift.String) -> Varioqub.Request
+  public func withContentType(_ contentType: Swift.String) -> Varioqub.Request
+  public func withIfNoneMatch(_ etag: Swift.String?) -> Varioqub.Request
+}
+extension Swift.String : Varioqub.GetParameterConvertible {
+  public var GETValue: Swift.String {
+    get
+  }
+}
+@objc extension Varioqub.VQVarioqubFacade {
+  @objc final public var sendEventOnChangeConfig: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc final public var clientFeatures: Varioqub.VQClientFeatures {
+    @objc get
+    @objc set
+  }
+}
+final public class UnfairLock {
+  @usableFromInline
+  final internal var lock: Darwin.os_unfair_lock
+  public init()
+  @inlinable final public func lock<T>(_ closure: () throws -> T) rethrows -> T {
+        os_unfair_lock_lock(&lock)
+        defer { os_unfair_lock_unlock(&lock) }
+        return try closure()
+    }
+  @objc deinit
+}
+@propertyWrapper final public class UnfairLocker<Value> {
+  @usableFromInline
+  final internal var lock: Darwin.os_unfair_lock
+  @usableFromInline
+  final internal var value: Value
+  public init(wrappedValue value: Value)
+  @discardableResult
+  @inlinable final public func updateLock<T>(_ closure: (inout Value) throws -> T) rethrows -> T {
+        os_unfair_lock_lock(&lock)
+        defer { os_unfair_lock_unlock(&lock) }
+
+        return try closure(&value)
+    }
+  @discardableResult
+  @inlinable final public func update(_ closure: (Value) throws -> Value) rethrows -> Value {
+        os_unfair_lock_lock(&lock)
+        defer { os_unfair_lock_unlock(&lock) }
+
+        let newValue = try closure(value)
+        value = newValue
+        return newValue
+    }
+  @discardableResult
+  @inlinable final public func inplaceUpdate(_ closure: (inout Value) throws -> Swift.Void) rethrows -> Value {
+        os_unfair_lock_lock(&lock)
+        defer { os_unfair_lock_unlock(&lock) }
+
+        try closure(&value)
+        return value
+    }
+  @inlinable final public var wrappedValue: Value {
+    get {
+            os_unfair_lock_lock(&lock)
+            defer { os_unfair_lock_unlock(&lock) }
+            return value
+        }
+    set {
+            update { _ in newValue }
+        }
+  }
+  @objc deinit
+}
+extension Varioqub.UnfairLocker where Value : Varioqub.Optionable {
+  @inlinable final public func takeValue() -> Value {
+        os_unfair_lock_lock(&lock)
+        defer {
+            value = .init(wrapped: nil)
+            os_unfair_lock_unlock(&lock)
+        }
+
+        return value
+    }
+}
+final public class ThreadChecker {
+  @usableFromInline
+  final internal let queue: Dispatch.DispatchQueue?
+  public init()
+  public init(queue: Dispatch.DispatchQueue?)
+  @inlinable final public func check() {
+        if let queue = queue {
+            dispatchPrecondition(condition: .onQueue(queue))
+        }
+    }
+  @objc deinit
+}
+extension Foundation.NSError {
+  @objc public static let CONFIG_FETCH_DOMAIN: Swift.String
+  @objc public static let CONFIG_FETCH_OTHER_CODE: Swift.Int
+  @objc public static let CONFIG_FETCH_EMPTY_RESULT_CODE: Swift.Int
+  @objc public static let CONFIG_FETCH_NULL_IDENTIFIER_CODE: Swift.Int
+  @objc public static let CONFIG_FETCH_RESPONSE_ERROR_CODE: Swift.Int
+  @objc public static let CONFIG_FETCH_NETWORK_ERROR_CODE: Swift.Int
+  @objc public static let CONFIG_FETCH_PARSE_ERROR_CODE: Swift.Int
+}
+@objc public enum VQFetchStatus : Swift.Int {
+  case success
+  case throttled
+  case cached
+  case error
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public typealias VQFetchCompletion = (Varioqub.VQFetchStatus, Foundation.NSError?) -> Swift.Void
+public typealias VQActivateCompletion = () -> Swift.Void
+@objc extension Varioqub.VQVarioqubFacade {
+  @objc(fetchConfigWithCompletion:) final public func fetchConfig(_ callback: Varioqub.VQFetchCompletion?)
+  @objc(activateConfigWithCompletion:) final public func activateConfig(_ callback: Varioqub.VQActivateCompletion?)
+  @objc final public func activateConfigAndWait()
+  @objc(fetchAndActivateConfigWithCompletion:) final public func fetchAndActivateConfig(_ callback: Varioqub.VQFetchCompletion?)
+}
+public let varioqubLoggerString: Varioqub.LoggerModule
+extension Swift.Dictionary {
+  public func mapKeys<T>(_ transform: (Key) throws -> T, uniquingKeysWith combine: (Value, Value) throws -> Value) rethrows -> [T : Value] where T : Swift.Hashable
+}
+public struct ServerResponse {
+  public var body: Foundation.Data?
+  public var statusCode: Varioqub.NetworkStatusCode
+  public var headers: Varioqub.NetworkHeaders
+}
+public enum NetworkError : Swift.Error {
+  case urlEncodingError
+  case serverAnswerError
+  case connectionError(error: Swift.Error)
+}
+@frozen public enum Response<ValidAnswer, ServerErrorAnswer, NetworkError> where NetworkError : Swift.Error {
+  case validAnswer(ValidAnswer)
+  case serverError(ServerErrorAnswer)
+  case networkError(NetworkError)
+}
+public typealias NetworkResponse = Varioqub.Response<Varioqub.ServerResponse, Varioqub.ServerResponse, Varioqub.NetworkError>
+extension Varioqub.Response {
+  public func map<T>(_ closure: (ValidAnswer) throws -> T) rethrows -> Varioqub.Response<T, ServerErrorAnswer, NetworkError>
+  public func flatMap<T>(_ closure: (ValidAnswer) throws -> Varioqub.Response<T, ServerErrorAnswer, NetworkError>) rethrows -> Varioqub.Response<T, ServerErrorAnswer, NetworkError>
+  public func mapServerError<T>(_ closure: (ServerErrorAnswer) throws -> T) rethrows -> Varioqub.Response<ValidAnswer, T, NetworkError>
+  public func flatMapServerError<T>(_ closure: (ServerErrorAnswer) throws -> Varioqub.Response<ValidAnswer, T, NetworkError>) rethrows -> Varioqub.Response<ValidAnswer, T, NetworkError>
+  public func mapNetworkError<E>(_ closure: (NetworkError) throws -> E) rethrows -> Varioqub.Response<ValidAnswer, ServerErrorAnswer, E> where E : Swift.Error
+}
+extension Varioqub.Response where ServerErrorAnswer : Swift.Error, ServerErrorAnswer == NetworkError {
+  public var result: Swift.Result<ValidAnswer, ServerErrorAnswer> {
+    get
+  }
+}
+public struct LoggerModule : Swift.RawRepresentable, Swift.CustomStringConvertible, Swift.Hashable {
+  public var rawValue: Swift.String
+  public init(rawValue: Swift.String)
+  public var description: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.String
+}
+public enum LogLevel : Swift.Int, Swift.Comparable {
+  case error
+  case warning
+  case info
+  case debug
+  case trace
+  public static func < (lhs: Varioqub.LogLevel, rhs: Varioqub.LogLevel) -> Swift.Bool
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol LoggerDestination {
+  func log(module: Varioqub.LoggerModule, level: Varioqub.LogLevel, message: @autoclosure () -> Swift.String)
+  func log(module: Varioqub.LoggerModule, level: Varioqub.LogLevel, error: @autoclosure () -> Swift.Error)
+}
+public typealias VQDefaultsCompletion = () -> ()
+public typealias VQXmlCompletion = (Foundation.NSError?) -> ()
+@objc extension Varioqub.VQVarioqubFacade {
+  @objc final public func setDefaults(_ defaults: [Varioqub.VQFlag : Swift.String], callback: Varioqub.VQDefaultsCompletion?)
+  @objc final public func setDefaultsAndWait(_ defaults: [Varioqub.VQFlag : Swift.String])
+  @objc final public func loadXml(at path: Foundation.URL, completion: Varioqub.VQXmlCompletion?)
+  @objc final public func loadXmlAndWait(at path: Foundation.URL) throws
+  @objc final public func loadXml(from data: Foundation.Data, completion: Varioqub.VQXmlCompletion?)
+  @objc final public func loadXmlAndWait(from data: Foundation.Data) throws
+}
+extension Varioqub.VarioqubConfigValue.Source : Swift.Equatable {}
+extension Varioqub.VarioqubConfigValue.Source : Swift.Hashable {}
+extension Varioqub.LogLevel : Swift.Hashable {}
+extension Varioqub.LogLevel : Swift.RawRepresentable {}
+extension Varioqub.VQSource : Swift.Equatable {}
+extension Varioqub.VQSource : Swift.Hashable {}
+extension Varioqub.VQSource : Swift.RawRepresentable {}
+extension Varioqub.VQLogLevel : Swift.Hashable {}
+extension Varioqub.VQLogLevel : Swift.RawRepresentable {}
+extension Varioqub.RequestMethod : Swift.Hashable {}
+extension Varioqub.RequestMethod : Swift.RawRepresentable {}
+extension Varioqub.VQFetchStatus : Swift.Equatable {}
+extension Varioqub.VQFetchStatus : Swift.Hashable {}
+extension Varioqub.VQFetchStatus : Swift.RawRepresentable {}
