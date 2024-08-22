@@ -11,7 +11,7 @@ let package = Package(
   ],
   targets: [
     .binaryTarget(name: "YandexPaySDK", path: "Frameworks/YandexPaySDK.xcframework"),
-    .binaryTarget(name: "Varioqub", path: "Frameworks/VQSwiftProtobuf.xcframework"),
+    .binaryTarget(name: "Varioqub", path: "Frameworks/Varioqub.xcframework"),
     .binaryTarget(name: "VQSwiftProtobuf", path: "Frameworks/VQSwiftProtobuf.xcframework")
   ]
 )
