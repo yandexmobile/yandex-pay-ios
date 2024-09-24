@@ -156,12 +156,13 @@ extension YandexPaySDK.YPCreditLimitSettings {
     public let splitID: Swift.String?
   }
 }
-public protocol YPBankService : YandexPaySDK.YPBankDataService, YandexPaySDK.YPBankNavigationService, YandexPaySDK.YPBankSplitPaymentService {
+public protocol YPBankService : YandexPaySDK.YPAuthTokenInjectable, YandexPaySDK.YPBankDataService, YandexPaySDK.YPBankNavigationService, YandexPaySDK.YPBankSplitPaymentService {
 }
 public protocol YPBankNavigationService {
   func handleAction(_ action: Foundation.URL, presentationHandler: UIKit.UIViewController, flowCompletionHandler: ((YandexPaySDK.YPBankFlowResult) -> Swift.Void)?)
   func topup(amount: YandexPaySDK.YPMoney?, presentationHandler: UIKit.UIViewController, flowCompletionHandler: ((YandexPaySDK.YPBankFlowResult) -> Swift.Void)?)
   func createCreditLimitApplication(originatingSystem: Swift.String?, merchantData: [Swift.String : Any], completion: @escaping (Swift.Result<YandexPaySDK.YPBankCreditLimitApplicationResult, any Swift.Error>) -> Swift.Void)
+  func openPlus(presentationHandler: UIKit.UIViewController, flowCompletionHandler: ((Swift.Bool) -> Swift.Void)?)
 }
 public protocol YPBankDataService {
   var isNormalAccount: Swift.Bool { get }
@@ -288,7 +289,7 @@ public protocol YandexPayFormDelegate : AnyObject {
 public protocol YPPresentationContextProviding : AnyObject {
   func anchorForPresentation() -> YandexPaySDK.YPPresentationContext
 }
-@objc @_hasMissingDesignatedInitializers final public class YandexPaySDKApi : ObjectiveC.NSObject {
+@_hasMissingDesignatedInitializers final public class YandexPaySDKApi {
   final public func createTokenYandexPayForm(paymentSheet: YandexPaySDK.YPPaymentSheet, delegate: any YandexPaySDK.YandexPayTokenFormDelegate) -> any YandexPaySDK.YandexPayForm
   final public func createYandexPayForm(paymentURL: Swift.String, delegate: any YandexPaySDK.YandexPayFormDelegate) -> any YandexPaySDK.YandexPayForm
   final public func createButton(delegate: any YandexPaySDK.YandexPayButtonSyncDelegate) -> any YandexPaySDK.YandexPayButton
@@ -310,31 +311,31 @@ public protocol YPPresentationContextProviding : AnyObject {
   final public func createCheckoutButton(delegate: any YandexPaySDK.YandexPayCheckoutButtonDelegate) -> any YandexPaySDK.YandexPayButton
   final public func createCheckoutButton(asyncDelegate: any YandexPaySDK.YandexPayCheckoutButtonAsyncDelegate) -> any YandexPaySDK.YandexPayButton
   @discardableResult
-  @objc final public func applicationDidReceiveOpen(_ url: Foundation.URL, options: [UIKit.UIApplication.OpenURLOptionsKey : Any]) -> Swift.Bool
+  final public func applicationDidReceiveOpen(_ url: Foundation.URL, options: [UIKit.UIApplication.OpenURLOptionsKey : Any]) -> Swift.Bool
   @discardableResult
-  @objc final public func applicationDidReceiveUserActivity(_ userActivity: Foundation.NSUserActivity) -> Swift.Bool
+  final public func applicationDidReceiveUserActivity(_ userActivity: Foundation.NSUserActivity) -> Swift.Bool
   @objc deinit
 }
 extension YandexPaySDK.YandexPaySDKApi {
-  @objc public static var instance: YandexPaySDK.YandexPaySDKApi {
-    @objc get
+  public static var instance: YandexPaySDK.YandexPaySDKApi {
+    get
   }
-  @objc public static var isInitialized: Swift.Bool {
-    @objc get
+  public static var isInitialized: Swift.Bool {
+    get
   }
-  @objc public static let currentVersion: Swift.String
+  public static let currentVersion: Swift.String
 }
 extension YandexPaySDK.YandexPaySDKApi {
-  @objc(initializeWithConfiguration:error:) public static func initialize(configuration: YandexPaySDK.YandexPaySDKConfiguration) throws
+  public static func initialize(configuration: YandexPaySDK.YandexPaySDKConfiguration) throws
+  public static func createInstance(with configuration: YandexPaySDK.YandexPaySDKConfiguration) throws -> YandexPaySDK.YandexPaySDKApi
 }
-@objc final public class YandexPaySDKConfiguration : ObjectiveC.NSObject {
-  @objc final public let environment: YandexPaySDK.YandexPaySDKEnvironment
-  @objc final public let merchant: YandexPaySDK.YandexPaySDKMerchant
-  @objc final public let locale: YandexPaySDK.YandexPaySDKLocale
-  @objc public init(environment: YandexPaySDK.YandexPaySDKEnvironment, merchant: YandexPaySDK.YandexPaySDKMerchant, locale: YandexPaySDK.YandexPaySDKLocale)
-  @objc deinit
+public struct YandexPaySDKConfiguration {
+  public let environment: YandexPaySDK.YandexPaySDKEnvironment
+  public let merchant: YandexPaySDK.YandexPaySDKMerchant
+  public let locale: YandexPaySDK.YandexPaySDKLocale
+  public init(environment: YandexPaySDK.YandexPaySDKEnvironment, merchant: YandexPaySDK.YandexPaySDKMerchant, locale: YandexPaySDK.YandexPaySDKLocale)
 }
-@objc public enum YandexPaySDKEnvironment : Swift.Int {
+public enum YandexPaySDKEnvironment : Swift.Int {
   case sandbox
   case production
   public init?(rawValue: Swift.Int)
@@ -343,12 +344,11 @@ extension YandexPaySDK.YandexPaySDKApi {
     get
   }
 }
-@objc final public class YandexPaySDKMerchant : ObjectiveC.NSObject {
-  @objc(merchantId) final public let id: Swift.String
-  @objc final public let name: Swift.String
-  @objc final public let url: Swift.String?
-  @objc(initWithMerchantId:name:url:) public init(id: Swift.String, name: Swift.String, url: Swift.String?)
-  @objc deinit
+public struct YandexPaySDKMerchant {
+  public let id: Swift.String
+  public let name: Swift.String
+  public let url: Swift.String?
+  public init(id: Swift.String, name: Swift.String, url: Swift.String?)
 }
 public enum ButtonPaymentType {
   case token
@@ -431,7 +431,9 @@ public enum YPAuthMethod : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct YPAuthorizationToken : Swift.Codable, Swift.Equatable {
-  public init(value: Swift.String)
+  public let value: Swift.String
+  public let uid: Swift.String?
+  public init(value: Swift.String, uid: Swift.String? = nil)
   public static func == (a: YandexPaySDK.YPAuthorizationToken, b: YandexPaySDK.YPAuthorizationToken) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
@@ -663,7 +665,7 @@ public struct YPOrder : Swift.Codable {
   public let label: Swift.String?
   public let amount: Foundation.Decimal
   public let items: [YandexPaySDK.YPOrderItem]?
-  public init(id: YandexPaySDK.YPOrderID, label: Swift.String? = nil, amount: Foundation.Decimal, items: [YandexPaySDK.YPOrderItem]? = nil)
+  public init(id: YandexPaySDK.YPOrderID, label: Swift.String?, amount: Foundation.Decimal, items: [YandexPaySDK.YPOrderItem]? = nil)
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -679,8 +681,8 @@ public struct YPOrderItem : Swift.Codable {
 }
 public struct YPOrderItemQuantity : Swift.Codable {
   public let label: Swift.String?
-  public let count: Swift.Int
-  public init(label: Swift.String? = nil, count: Swift.Int)
+  public let count: Swift.Double
+  public init(label: Swift.String? = nil, count: Swift.Double)
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -886,15 +888,19 @@ public enum YPAuthError : Swift.Error {
     get
   }
 }
+public protocol YPAuthTokenInjectable {
+  func injectAuthToken(_ token: Swift.Result<YandexPaySDK.YPAuthorizationToken, YandexPaySDK.YPAuthError>)
+}
 public struct YandexPaySDKPaymentDeeplinkParams {
   public let merchantId: Swift.String
   public let clientId: Swift.String?
   public let sessionId: Swift.String
   public let paymentURL: Swift.String
+  public let requestedFeatures: Swift.Set<Swift.String>
   public let environment: YandexPaySDK.YandexPaySDKEnvironment
   public let redirectWebOnly: Swift.Bool
 }
-@objc public enum YandexPaySDKLocale : Swift.Int {
+public enum YandexPaySDKLocale : Swift.Int {
   case ru
   case en
   case system

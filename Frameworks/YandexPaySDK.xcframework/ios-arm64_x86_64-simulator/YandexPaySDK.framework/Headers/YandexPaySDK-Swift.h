@@ -277,8 +277,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
-@import Foundation;
-@import ObjectiveC;
 @import UIKit;
 #endif
 
@@ -345,78 +343,12 @@ SWIFT_CLASS("_TtC12YandexPaySDK29FullscreenContainerController")
 
 
 
+
 @class UIEvent;
 
 @interface UIWindow (SWIFT_EXTENSION(YandexPaySDK))
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent * _Nullable)event;
 @end
-
-@class NSURL;
-@class NSUserActivity;
-
-SWIFT_CLASS("_TtC12YandexPaySDK15YandexPaySDKApi")
-@interface YandexPaySDKApi : NSObject
-- (BOOL)applicationDidReceiveOpen:(NSURL * _Nonnull)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> * _Nonnull)options;
-- (BOOL)applicationDidReceiveUserActivity:(NSUserActivity * _Nonnull)userActivity;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@class YandexPaySDKConfiguration;
-
-@interface YandexPaySDKApi (SWIFT_EXTENSION(YandexPaySDK))
-+ (BOOL)initializeWithConfiguration:(YandexPaySDKConfiguration * _Nonnull)configuration error:(NSError * _Nullable * _Nullable)error;
-@end
-
-
-
-
-@interface YandexPaySDKApi (SWIFT_EXTENSION(YandexPaySDK))
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) YandexPaySDKApi * _Nonnull instance;)
-+ (YandexPaySDKApi * _Nonnull)instance SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL isInitialized;)
-+ (BOOL)isInitialized SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull currentVersion;)
-+ (NSString * _Nonnull)currentVersion SWIFT_WARN_UNUSED_RESULT;
-@end
-
-enum YandexPaySDKEnvironment : NSInteger;
-@class YandexPaySDKMerchant;
-enum YandexPaySDKLocale : NSInteger;
-
-SWIFT_CLASS("_TtC12YandexPaySDK25YandexPaySDKConfiguration")
-@interface YandexPaySDKConfiguration : NSObject
-@property (nonatomic, readonly) enum YandexPaySDKEnvironment environment;
-@property (nonatomic, readonly, strong) YandexPaySDKMerchant * _Nonnull merchant;
-@property (nonatomic, readonly) enum YandexPaySDKLocale locale;
-- (nonnull instancetype)initWithEnvironment:(enum YandexPaySDKEnvironment)environment merchant:(YandexPaySDKMerchant * _Nonnull)merchant locale:(enum YandexPaySDKLocale)locale OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-typedef SWIFT_ENUM(NSInteger, YandexPaySDKEnvironment, open) {
-  YandexPaySDKEnvironmentSandbox = 0,
-  YandexPaySDKEnvironmentProduction = 1,
-};
-
-typedef SWIFT_ENUM(NSInteger, YandexPaySDKLocale, open) {
-  YandexPaySDKLocaleRu = 0,
-  YandexPaySDKLocaleEn = 1,
-  YandexPaySDKLocaleSystem = 2,
-};
-
-
-SWIFT_CLASS("_TtC12YandexPaySDK20YandexPaySDKMerchant")
-@interface YandexPaySDKMerchant : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull merchantId;
-@property (nonatomic, readonly, copy) NSString * _Nonnull name;
-@property (nonatomic, readonly, copy) NSString * _Nullable url;
-- (nonnull instancetype)initWithMerchantId:(NSString * _Nonnull)id name:(NSString * _Nonnull)name url:(NSString * _Nullable)url OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
 
 #endif
 #if __has_attribute(external_source_symbol)
@@ -705,8 +637,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
-@import Foundation;
-@import ObjectiveC;
 @import UIKit;
 #endif
 
@@ -773,78 +703,12 @@ SWIFT_CLASS("_TtC12YandexPaySDK29FullscreenContainerController")
 
 
 
+
 @class UIEvent;
 
 @interface UIWindow (SWIFT_EXTENSION(YandexPaySDK))
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent * _Nullable)event;
 @end
-
-@class NSURL;
-@class NSUserActivity;
-
-SWIFT_CLASS("_TtC12YandexPaySDK15YandexPaySDKApi")
-@interface YandexPaySDKApi : NSObject
-- (BOOL)applicationDidReceiveOpen:(NSURL * _Nonnull)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> * _Nonnull)options;
-- (BOOL)applicationDidReceiveUserActivity:(NSUserActivity * _Nonnull)userActivity;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@class YandexPaySDKConfiguration;
-
-@interface YandexPaySDKApi (SWIFT_EXTENSION(YandexPaySDK))
-+ (BOOL)initializeWithConfiguration:(YandexPaySDKConfiguration * _Nonnull)configuration error:(NSError * _Nullable * _Nullable)error;
-@end
-
-
-
-
-@interface YandexPaySDKApi (SWIFT_EXTENSION(YandexPaySDK))
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) YandexPaySDKApi * _Nonnull instance;)
-+ (YandexPaySDKApi * _Nonnull)instance SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL isInitialized;)
-+ (BOOL)isInitialized SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull currentVersion;)
-+ (NSString * _Nonnull)currentVersion SWIFT_WARN_UNUSED_RESULT;
-@end
-
-enum YandexPaySDKEnvironment : NSInteger;
-@class YandexPaySDKMerchant;
-enum YandexPaySDKLocale : NSInteger;
-
-SWIFT_CLASS("_TtC12YandexPaySDK25YandexPaySDKConfiguration")
-@interface YandexPaySDKConfiguration : NSObject
-@property (nonatomic, readonly) enum YandexPaySDKEnvironment environment;
-@property (nonatomic, readonly, strong) YandexPaySDKMerchant * _Nonnull merchant;
-@property (nonatomic, readonly) enum YandexPaySDKLocale locale;
-- (nonnull instancetype)initWithEnvironment:(enum YandexPaySDKEnvironment)environment merchant:(YandexPaySDKMerchant * _Nonnull)merchant locale:(enum YandexPaySDKLocale)locale OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-typedef SWIFT_ENUM(NSInteger, YandexPaySDKEnvironment, open) {
-  YandexPaySDKEnvironmentSandbox = 0,
-  YandexPaySDKEnvironmentProduction = 1,
-};
-
-typedef SWIFT_ENUM(NSInteger, YandexPaySDKLocale, open) {
-  YandexPaySDKLocaleRu = 0,
-  YandexPaySDKLocaleEn = 1,
-  YandexPaySDKLocaleSystem = 2,
-};
-
-
-SWIFT_CLASS("_TtC12YandexPaySDK20YandexPaySDKMerchant")
-@interface YandexPaySDKMerchant : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull merchantId;
-@property (nonatomic, readonly, copy) NSString * _Nonnull name;
-@property (nonatomic, readonly, copy) NSString * _Nullable url;
-- (nonnull instancetype)initWithMerchantId:(NSString * _Nonnull)id name:(NSString * _Nonnull)name url:(NSString * _Nullable)url OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
 
 #endif
 #if __has_attribute(external_source_symbol)
