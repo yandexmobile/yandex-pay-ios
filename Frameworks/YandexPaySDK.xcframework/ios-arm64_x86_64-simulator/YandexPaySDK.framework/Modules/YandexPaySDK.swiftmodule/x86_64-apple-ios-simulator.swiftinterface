@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
-// swift-module-flags: -target x86_64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name YandexPaySDK
+// swift-module-flags: -target x86_64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature AccessLevelOnImport -enable-bare-slash-regex -module-name YandexPaySDK
 import AuthenticationServices
 import Combine
 import Darwin
@@ -86,9 +86,13 @@ public struct RequiredShippingTypes : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
+public enum CookieAuthURLError : Swift.Error {
+  case noCurrentUser
+  case cookieExchangeFailed(any Swift.Error)
+}
 public protocol YPBankDataObserver : AnyObject {
   func observableEvent(_ event: any YandexPaySDK.YPBankEvent)
-  func stateChanged(isNormal: Swift.Bool)
+  func stateChanged()
 }
 public struct YPBankCreditLimitApplicationResult {
   public let applicationID: Swift.String
@@ -99,8 +103,7 @@ public protocol YPBankEvent {
 }
 public struct YPCreditLimitUpgradeEvent : YandexPaySDK.YPBankEvent {
   public let result: YandexPaySDK.YPCreditLimitUpgradeEvent.Result
-  public let params: [Swift.String : Any]
-  public init(result: YandexPaySDK.YPCreditLimitUpgradeEvent.Result, params: [Swift.String : Any])
+  public init(result: YandexPaySDK.YPCreditLimitUpgradeEvent.Result)
 }
 extension YandexPaySDK.YPCreditLimitUpgradeEvent {
   public enum Result {
@@ -116,8 +119,7 @@ extension YandexPaySDK.YPCreditLimitUpgradeEvent {
 }
 public struct YPDepositEvent : YandexPaySDK.YPBankEvent {
   public let result: YandexPaySDK.YPDepositEvent.Result
-  public let params: [Swift.String : Any]
-  public init(result: YandexPaySDK.YPDepositEvent.Result, params: [Swift.String : Any])
+  public init(result: YandexPaySDK.YPDepositEvent.Result)
 }
 extension YandexPaySDK.YPDepositEvent {
   public enum Result {
@@ -161,7 +163,7 @@ public protocol YPBankService : YandexPaySDK.YPAuthTokenInjectable, YandexPaySDK
 public protocol YPBankNavigationService {
   func handleAction(_ action: Foundation.URL, presentationHandler: UIKit.UIViewController, flowCompletionHandler: ((YandexPaySDK.YPBankFlowResult) -> Swift.Void)?)
   func topup(amount: YandexPaySDK.YPMoney?, presentationHandler: UIKit.UIViewController, flowCompletionHandler: ((YandexPaySDK.YPBankFlowResult) -> Swift.Void)?)
-  func createCreditLimitApplication(originatingSystem: Swift.String?, merchantData: [Swift.String : Any], completion: @escaping (Swift.Result<YandexPaySDK.YPBankCreditLimitApplicationResult, any Swift.Error>) -> Swift.Void)
+  func createCreditLimitApplication(selectedTerm: Swift.Int?, promoId: Swift.String?, originatingSystem: Swift.String?, merchantData: [Swift.String : Any], completion: @escaping (Swift.Result<YandexPaySDK.YPBankCreditLimitApplicationResult, any Swift.Error>) -> Swift.Void)
   func openPlus(presentationHandler: UIKit.UIViewController, flowCompletionHandler: ((Swift.Bool) -> Swift.Void)?)
 }
 public protocol YPBankDataService {
@@ -711,7 +713,7 @@ public struct YPProduct {
 public struct YPQuantity {
   public init(count: Swift.String)
 }
-public enum YPPaymentError : Swift.Error {
+public enum YPPaymentError : Swift.String, Swift.Error {
   case authenticationProblem
   case wrongMerchantId
   case orderExpired
@@ -720,9 +722,9 @@ public enum YPPaymentError : Swift.Error {
   case invalidArgs
   case orderNotFound
   case unknownError
-  public static func == (a: YandexPaySDK.YPPaymentError, b: YandexPaySDK.YPPaymentError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
     get
   }
 }
@@ -789,7 +791,8 @@ public struct YPSplitData {
   public let splitCardID: Swift.String?
   public let upgradedSplitDocuments: YandexPaySDK.YPDocument?
   public var defaultPaymentMethod: YandexPaySDK.YPSplitPaymentMethod?
-  public init(defaultPlan: Swift.String, plans: [YandexPaySDK.YPSplitPlan], upgradeStatus: YandexPaySDK.YPSplitUpgradeStatus, splitCardID: Swift.String? = nil, upgradedSplitDocuments: YandexPaySDK.YPDocument? = nil, defaultPaymentMethod: YandexPaySDK.YPSplitPaymentMethod?)
+  public let splitRmsContextId: Swift.String?
+  public init(defaultPlan: Swift.String, plans: [YandexPaySDK.YPSplitPlan], upgradeStatus: YandexPaySDK.YPSplitUpgradeStatus, splitCardID: Swift.String? = nil, upgradedSplitDocuments: YandexPaySDK.YPDocument? = nil, defaultPaymentMethod: YandexPaySDK.YPSplitPaymentMethod?, splitRmsContextId: Swift.String?)
 }
 extension YandexPaySDK.YPSplitData {
   public static let empty: YandexPaySDK.YPSplitData
@@ -804,7 +807,8 @@ public struct YPSplitPlan {
   public let annotation: YandexPaySDK.YPSplitPlanAnnotation
   public let needUpgrade: Swift.Bool
   public let creditLengthInMonths: Swift.Int?
-  public init(id: Swift.String, productType: Swift.String, constructor: Swift.String, sum: Foundation.Decimal, visualProperties: YandexPaySDK.YPSplitVisualProperties, payments: [YandexPaySDK.YPSplitPayment], annotation: YandexPaySDK.YPSplitPlanAnnotation, needUpgrade: Swift.Bool, creditLengthInMonths: Swift.Int? = nil)
+  public let promoId: Swift.String?
+  public init(id: Swift.String, productType: Swift.String, constructor: Swift.String, sum: Foundation.Decimal, visualProperties: YandexPaySDK.YPSplitVisualProperties, payments: [YandexPaySDK.YPSplitPayment], annotation: YandexPaySDK.YPSplitPlanAnnotation, needUpgrade: Swift.Bool, creditLengthInMonths: Swift.Int? = nil, promoId: Swift.String? = nil)
 }
 public enum YPSplitUpgradeStatus {
   case upgraded
@@ -923,6 +927,7 @@ extension YandexPaySDK.YPCurrencyCode : Swift.Hashable {}
 extension YandexPaySDK.YPCurrencyCode : Swift.RawRepresentable {}
 extension YandexPaySDK.YPPaymentError : Swift.Equatable {}
 extension YandexPaySDK.YPPaymentError : Swift.Hashable {}
+extension YandexPaySDK.YPPaymentError : Swift.RawRepresentable {}
 extension YandexPaySDK.YPDiscountBadgeModel.Size : Swift.Equatable {}
 extension YandexPaySDK.YPDiscountBadgeModel.Size : Swift.Hashable {}
 extension YandexPaySDK.YPDiscountBadgeModel.DiscountType : Swift.Equatable {}
