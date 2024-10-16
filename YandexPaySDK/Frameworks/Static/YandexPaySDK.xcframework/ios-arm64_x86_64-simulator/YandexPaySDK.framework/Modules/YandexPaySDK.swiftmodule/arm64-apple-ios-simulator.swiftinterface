@@ -40,7 +40,6 @@ public enum ValidationError : Foundation.LocalizedError {
   }
 }
 
-
 extension _Concurrency.Task : Combine.Cancellable {
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class FullscreenContainerController : UIKit.UIViewController {
@@ -81,19 +80,6 @@ extension YandexPaySDK.YPDiscountBadgeModel {
   }
 }
 infix operator <=> : DefaultPrecedence
-extension Foundation.Bundle {
-  public static let bundleName: Swift.String
-  public static let facadeBundleDirectory: Swift.String
-  public static var spmBundle: Foundation.Bundle? {
-    get
-  }
-  public static var spmResources: Foundation.Bundle? {
-    get
-  }
-  public static var resources: Foundation.Bundle? {
-    get
-  }
-}
 
 public struct RequiredShippingTypes : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
