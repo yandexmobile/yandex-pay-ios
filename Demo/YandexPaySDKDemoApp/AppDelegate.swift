@@ -1,5 +1,6 @@
 import UIKit
 import YandexPaySDK
+import SwiftUI
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -10,7 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Укажите конфигурацию
             let merchant = YandexPaySDKMerchant(
                 // ID продавца в системе Яндекс Пэй
-                id: "MERCHANT_ID",
+                id: "a5f49c84-0baa-41e1-814f-6f99746a6987",
                 // Имя продавца
                 name: "MERCHANT_NAME",
                 // URL продавца
@@ -32,9 +33,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         // Инициализируйте UIWindow и ViewController
-        let controller = PaymentURLViewController()
+        let navigationController = UINavigationController()
+        let mainControllerViewModel = MainMenuViewModel(navigationController: navigationController)
+        let mainController = UIHostingController(
+            rootView: MainMenuView(viewModel: mainControllerViewModel)
+        )
+        navigationController.pushViewController(mainController, animated: false)
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = controller
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
         self.window = window
         return true
@@ -49,6 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return YandexPaySDKApi.instance.applicationDidReceiveUserActivity(userActivity)
     }
+
+//    func application
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         // Проверьте, что SDK проинициализирован
