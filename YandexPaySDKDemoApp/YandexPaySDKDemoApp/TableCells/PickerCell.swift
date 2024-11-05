@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class PickerCell<Values: Titelable>: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
+class PickerCell<Values: Titleable>: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
   private var onPickerChanged: ((Values) -> Void)?
   private lazy var label = UILabel()
 

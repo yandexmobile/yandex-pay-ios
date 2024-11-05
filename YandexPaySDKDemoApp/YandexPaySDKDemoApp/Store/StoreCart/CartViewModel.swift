@@ -1,20 +1,42 @@
 //
-//  PayFormViewModel.swift
-//  YandexPaySDKDemoApp
+//  CartViewModel.swift
 //
-//  Created by Angelina Reshetnikova on 17.10.2024.
 //
-import YandexPaySDK
-import UIKit
+//  Created by Angelina Reshetnikova on 02.11.2024.
+//
 
-final class PayFormViewModel {
-  private let navigationController: UINavigationController?
+import Foundation
+import UIKit
+import YandexPaySDK
+
+final class CartViewModel {
+  private let navigationController: UINavigationController
   private var form: YandexPayForm?
   private var paymentURLService: PaymentURLService = PaymentURLService()
+  var cart: [Product]
 
-  init(form: YandexPayForm? = nil, navigationController: UINavigationController) {
+
+  var cartTotal: Decimal {
+    cart.map { $0.amount }.reduce(0, +)
+  }
+
+  var widgetModel: YPCheckoutWidgetModel {
+    YPCheckoutWidgetModel(
+      amount: cartTotal,
+      currency: .rub,
+      style: .fullBox,
+      appearance: .init()
+    )
+  }
+
+  init(form: YandexPayForm? = nil, navigationController: UINavigationController, cart: [Product]) {
     self.form = form
     self.navigationController = navigationController
+    self.cart = cart
+  }
+
+  func close() {
+    navigationController.popViewController(animated: true)
   }
 
   func openPayForm() {
@@ -33,8 +55,7 @@ final class PayFormViewModel {
         form = YandexPaySDKApi.instance.createYandexPayForm(paymentURL: paymentUrl, delegate: self)
       }
 
-      // Презентуйте экран ожидания оплаты в своем магазине, пока клиент оплачивает на форме Яндекс Пэй
-      if let topController = navigationController?.topViewController {
+      if let topController = navigationController.topViewController {
         form?.present(from: topController, animated: true, completion: nil)
       }
     }
@@ -45,8 +66,8 @@ final class PayFormViewModel {
       return URL(string: paymentUrl)
     } else if let responce = await paymentURLService.requestLink(
       preferredPaymentMethods: Constants.preferredPaymentMethods,
-      cartItems: PaymentURLService.defaultCartItems(amount: Constants.amount),
-      amount: Constants.amount
+      cartItems: cart,
+      amount: cartTotal
     ) {
       if let paymentURL = paymentURLService.paymentURL {
         return URL(string: paymentURL)
@@ -60,7 +81,7 @@ final class PayFormViewModel {
 
 // MARK: - YandexPayFormDelegate
 
-extension PayFormViewModel: YandexPayFormDelegate {
+extension CartViewModel: YandexPayFormDelegate {
   func yandexPayForm(
     _ form: YandexPaySDK.YandexPayForm,
     data: YandexPaySDK.YPYandexPayPaymentData,
@@ -84,17 +105,17 @@ extension PayFormViewModel: YandexPayFormDelegate {
     }
 }
 
-extension PayFormViewModel {
+extension CartViewModel {
   func makeAlert(with title: String, message: String? = nil) {
     DispatchQueue.main.async {
       let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
       controller.addAction(UIAlertAction(title: "OK", style: .default))
-      self.navigationController?.present(controller, animated: true)
+      self.navigationController.present(controller, animated: true)
     }
   }
 }
 
-extension PayFormViewModel {
+extension CartViewModel {
   enum Constants {
     static let preferredPaymentMethods: [YPAvailablePaymentMethod] = [.card, .split]
     static let amount: Decimal = 1000

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class SegmentCell<Values: Titelable>: UITableViewCell {
+class SegmentCell<Values: Titleable>: UITableViewCell {
   private var onSegmentChanged: ((Values) -> Void)?
   
   private lazy var label = UILabel()

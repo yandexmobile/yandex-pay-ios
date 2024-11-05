@@ -7,12 +7,14 @@
 
 import YandexPaySDK
 import Foundation
+import SwiftUI
 
 final class PaymentURLService {
   var paymentURL: String?
 
   func requestLink(
     preferredPaymentMethods: [YPAvailablePaymentMethod],
+    cartItems: [Product],
     amount: Decimal
   ) async -> ResponseData? {
     guard let url = URL(string: "https://sandbox.pay.yandex.ru/api/merchant/v1/orders") else {
@@ -26,6 +28,7 @@ final class PaymentURLService {
     request.httpMethod = "POST"
     request.httpBody = try? JSONSerialization.data(withJSONObject: PaymentURLService.order(
       preferredPaymentMethods: preferredPaymentMethods,
+      cartItems: cartItems,
       amount: amount
     ))
 
@@ -50,9 +53,10 @@ struct PaymentUrl: Codable {
   let paymentUrl: String
 }
 
-private extension PaymentURLService {
-  static func order(
+extension PaymentURLService {
+  private static func order(
     preferredPaymentMethods: [YPAvailablePaymentMethod],
+    cartItems: [Product],
     amount: Decimal
   ) -> [String: Any] {
     [
@@ -67,16 +71,25 @@ private extension PaymentURLService {
         "total": [
           "amount": "\(amount)"
         ],
-        "items": [
-          [
-            "total": "\(amount)",
-            "productId": "id",
-            "quantity": [
-              "count": "1"
-            ]
-          ] as [String: Any]
-        ]
+        "items":
+          cartItems.map { $0.toAny }
       ] as [String: Any]
+    ]
+  }
+
+  static func defaultCartItems(amount: Decimal) -> [Product] {
+    [Product(
+      title: "Продукт",
+      description: "",
+      amount: amount/2,
+      image: Image(systemName: "bag")
+    ),
+     Product(
+       title: "Продукт",
+       description: "",
+       amount: amount/2,
+       image: Image(systemName: "bag")
+     )
     ]
   }
 }

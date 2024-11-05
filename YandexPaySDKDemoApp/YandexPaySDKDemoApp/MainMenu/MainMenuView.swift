@@ -15,21 +15,35 @@ struct MainMenuView: View {
   }
   
   var body: some View {
-    VStack(spacing: 0) {
-      Image("logoPay")
-        .frame(height: 28)
-      HStack(spacing: 28) {
-        ForEach(MainMenuViewModel.Framework.allCases, id: \.rawValue) { framework in
-          makeButton(for: framework)
+    ScrollView {
+      VStack(spacing: 0) {
+        Image("logoPay")
+          .frame(height: 28)
+        makeRow(for: MainMenuViewModel.Integration.demoApp)
+        HStack {
+          Rectangle()
+            .frame(height: 1)
+          Text("Варианты интеграций")
+            .font(.system(size: 24, weight: .bold))
+            .padding(.vertical, 20)
+            .fixedSize()
+          Rectangle()
+            .frame(height: 1)
         }
+        HStack(spacing: 28) {
+          ForEach(MainMenuViewModel.Framework.allCases, id: \.rawValue) { framework in
+            makeButton(for: framework)
+          }
+        }
+        .padding(.vertical, 20)
+        ForEach(MainMenuViewModel.Integration.allCases.dropLast(), id: \.rawValue) { method in
+          makeRow(for: method)
+        }
+        Spacer()
       }
-      .padding(.vertical, 20)
-      ForEach(MainMenuViewModel.Integration.allCases, id: \.rawValue) { method in
-        makeRow(for: method)
-      }
-      Spacer()
+      .padding(.horizontal, 36)
     }
-    .padding(.horizontal, 36)
+    .navigationBarHidden(false)
   }
   
   private func makeRow(for method: MainMenuViewModel.Integration) -> some View {

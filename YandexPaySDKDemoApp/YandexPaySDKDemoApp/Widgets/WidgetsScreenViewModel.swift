@@ -13,7 +13,7 @@ final class WidgetsScreenViewModel: ObservableObject {
 
   // MARK: - Nested type
 
-  enum WidgetType: String, Titelable {
+  enum WidgetType: String, Titleable {
     case item
     case checkout
     case bnplPreview
@@ -70,17 +70,17 @@ extension WidgetsScreenViewModel: YandexPayBnplPreviewWidgetDelegate {
   }
 }
 
-extension YPCheckoutWidgetModel.Style: Titelable {
+extension YPCheckoutWidgetModel.Style: Titleable {
   public static let allCases: [YPCheckoutWidgetModel.Style] = [.fullBox, .cashbackOnly, .splitOnly]
   static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }
 
-extension YPItemWidgetModel.Style: Titelable {
+extension YPItemWidgetModel.Style: Titleable {
   public static let allCases: [YPItemWidgetModel.Style] = [.fullSize, .cashback, .split]
   static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }
 
-extension YPBnplPreviewWidgetModel.Appearance.Background: Titelable {
+extension YPBnplPreviewWidgetModel.Appearance.Background: Titleable {
   public static let allCases: [YPBnplPreviewWidgetModel.Appearance.Background] = [.default, .transparent]
   static let allCasesTitles: [String] = allCases.map { $0.title }
 
@@ -98,7 +98,7 @@ extension YPBnplPreviewWidgetModel.Appearance.Background: Titelable {
   }
 }
 
-extension YPBnplPreviewWidgetModel.Appearance.WidgetSize: Titelable {
+extension YPBnplPreviewWidgetModel.Appearance.WidgetSize: Titleable {
   public static let allCases: [YPBnplPreviewWidgetModel.Appearance.WidgetSize] = [.small, .medium]
   static let allCasesTitles: [String] = allCases.map { $0.title }
 
@@ -114,7 +114,7 @@ extension YPBnplPreviewWidgetModel.Appearance.WidgetSize: Titelable {
   }
 }
 
-extension YPBnplPreviewWidgetModel.HeaderStyle: Titelable {
+extension YPBnplPreviewWidgetModel.HeaderStyle: Titleable {
   public static let allCases: [YPBnplPreviewWidgetModel.HeaderStyle] = [.minified, .standard, .standardWithCustomAction]
   static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }

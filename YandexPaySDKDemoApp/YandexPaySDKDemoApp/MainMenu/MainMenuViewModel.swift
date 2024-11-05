@@ -31,7 +31,7 @@ final class MainMenuViewModel: ObservableObject {
       navigationController.pushViewController(WidgetViewController(), animated: true)
     case (.SwiftUI, .button):
       navigationController.pushViewController(
-        UIHostingController(rootView: PayButtonScreen(viewModel: .init(navigationController: navigationController))),
+        UIHostingController(rootView: PayButtonScreen(viewModel: PayButtonViewModel(navigationController: navigationController))),
         animated: true
       )
     case (.SwiftUI, .form):
@@ -49,6 +49,11 @@ final class MainMenuViewModel: ObservableObject {
         UIHostingController(rootView: WidgetsScreen(viewModel: .init())),
         animated: true
       )
+    case (_, .demoApp):
+      navigationController.pushViewController(
+        UIHostingController(rootView: StoreMainScreen(viewModel: .init(navigationController: navigationController))),
+        animated: true
+      )
     }
   }
 }
@@ -64,10 +69,12 @@ extension MainMenuViewModel {
     case form = "Бескнопочная интеграция"
     case badge = "Бейджи"
     case widget = "Виджеты"
-    
+    case demoApp = "Демо магазин с Яндекс Пэй"
+
     var iconView: some View {
       image
         .resizable()
+        .aspectRatio(contentMode: .fit)
         .frame(width: 120, height: 120)
         .padding(.bottom, 36)
     }
@@ -82,6 +89,8 @@ extension MainMenuViewModel {
         Color("purple")
       case .widget:
         Color("orange")
+      case .demoApp:
+        Color("pink")
       }
     }
     
@@ -95,6 +104,8 @@ extension MainMenuViewModel {
         Image("badge")
       case .widget:
         Image("widget")
+      case .demoApp:
+        Image("bag")
       }
     }
   }

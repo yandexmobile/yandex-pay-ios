@@ -44,27 +44,27 @@ final class BadgesScreenViewModel: ObservableObject {
   }
 }
 
-extension YPBadgeModel.Align: Titelable {
+extension YPBadgeModel.Align: Titleable {
     public static let allCases: [YPBadgeModel.Align] = [.left, .center, .right]
     static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }
 
-extension YPBadgeModel.CashbackColor: Titelable {
+extension YPBadgeModel.CashbackColor: Titleable {
     public static let allCases: [YPBadgeModel.CashbackColor] = [.primary, .grey, .transparent]
     static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }
 
-extension YPBadgeModel.CashbackVariant: Titelable {
+extension YPBadgeModel.CashbackVariant: Titleable {
     public static let allCases: [YPBadgeModel.CashbackVariant] = [.default, .compact]
     static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }
 
-extension YPBadgeModel.SplitColor: Titelable {
+extension YPBadgeModel.SplitColor: Titleable {
     public static let allCases: [YPBadgeModel.SplitColor] = [.primary, .green, .grey, .transparent]
     static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }
 
-extension YPBadgeModel.SplitVariant: Titelable {
+extension YPBadgeModel.SplitVariant: Titleable {
     public static let allCases: [YPBadgeModel.SplitVariant] = [.simple, .detailed]
     static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }

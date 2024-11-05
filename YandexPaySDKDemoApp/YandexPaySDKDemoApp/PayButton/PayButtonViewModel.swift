@@ -71,6 +71,7 @@ extension PayButtonViewModel: YPButtonPaymentDataProviding {
       return paymentUrl
     } else if let response = await paymentURLService.requestLink(
       preferredPaymentMethods: preferredPaymentMethods,
+      cartItems: PaymentURLService.defaultCartItems(amount: amountNumber),
       amount: amountNumber
     ) {
       if let paymentURL = response.data?.paymentUrl {
@@ -131,7 +132,7 @@ extension PayButtonViewModel {
   }
 }
 
-extension YPTheme: CaseIterable, Titelable {
+extension YPTheme: CaseIterable, Titleable {
   static let allCasesTitles: [String] = YPTheme.allCases.map { $0.rawValue }
   public static let allCases: [YPTheme] = [.system, .light, .dark]
 }
