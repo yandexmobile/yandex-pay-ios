@@ -64,13 +64,13 @@ extension SizeCell {
     title: String,
     sliderMinValue: Float,
     sliderMaxValue: Float,
-    sliderValue: Float,
+    initialValue: Float,
     onSliderChanged: @escaping (Float) -> Void
   ) {
     label.text = title
     slider.maximumValue = sliderMaxValue
     slider.minimumValue = sliderMinValue
-    slider.setValue(sliderValue, animated: false)
+    slider.setValue(initialValue, animated: false)
     size.text = slider.value.formatted()
     self.onSliderChanged = onSliderChanged
   }

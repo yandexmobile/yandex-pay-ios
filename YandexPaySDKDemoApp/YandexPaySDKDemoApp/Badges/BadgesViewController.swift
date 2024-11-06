@@ -106,21 +106,16 @@ final class BadgesViewController: UIViewController {
   }
   
   private func observeViewModel() {
-    Publishers.CombineLatest4(
-      viewModel.$amount,
-      viewModel.$theme,
-      viewModel.$align,
-      viewModel.$cashbackColor
-    )
-    .combineLatest(viewModel.$cashbackVariant)
-    .combineLatest(viewModel.$splitColor)
-    .combineLatest(viewModel.$splitVariant)
-    .receive(on: DispatchQueue.main)
-    .sink(receiveValue: { [weak self] viewModel in
-      self?.view.backgroundColor = (viewModel.0.0.0.1 == .dark) ? UIColor(named: "blueDark")!.withAlphaComponent(1) : UIColor(named: "blue")!.withAlphaComponent(1)
-      self?.updateBadges()
-    })
-    .store(in: &cancellable)
+      viewModel
+          .objectWillChange
+          .receive(on: DispatchQueue.main)
+          .sink { [weak self] output in
+              self?.view.backgroundColor = UIColor(
+                named: self?.viewModel.theme == .dark ? "blueDark" : "blue"
+              )?.withAlphaComponent(1)
+              self?.updateBadges()
+          }
+          .store(in: &cancellable)
   }
 }
 
@@ -155,7 +150,7 @@ extension BadgesViewController: UITableViewDataSource {
         title: "Height",
         sliderMinValue: 10,
         sliderMaxValue: 40,
-        sliderValue: Float(badgeHeight.rounded()),
+        initialValue: Float(badgeHeight.rounded()),
         onSliderChanged: { [weak self] newValue in
           self?.splitBadgeHeightConstraint.constant = CGFloat(newValue)
           self?.cashbackBadgeHeightConstraint.constant = CGFloat(newValue)

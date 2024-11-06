@@ -151,7 +151,7 @@ extension PayButtonViewController: UITableViewDataSource {
         title: "Width",
         sliderMinValue: 100,
         sliderMaxValue: 360,
-        sliderValue: 250,
+        initialValue: 250,
         onSliderChanged: { [weak self] newValue in
           self?.payButtonWidthConstraint.constant = CGFloat(newValue)
         }
@@ -163,7 +163,7 @@ extension PayButtonViewController: UITableViewDataSource {
         title: "Corner radius",
         sliderMinValue: 0,
         sliderMaxValue: 30,
-        sliderValue: 16,
+        initialValue: 16,
         onSliderChanged: { [weak self] newValue in
           self?.viewModel.cornerRadius = CGFloat(newValue)
         }

@@ -11,35 +11,32 @@ import Combine
 
 final class WidgetViewController: UIViewController {
   private var viewModel: WidgetsScreenViewModel = .init()
+  private var sections: [Section] = []
   private var widgetWidthConstraint: NSLayoutConstraint = .init()
-  private var widgetWidth: CGFloat = 300
   private var cancellable: Set<AnyCancellable> = Set()
-  private var isTypeChanged: Bool = true
-
-  lazy var yaPayWidget = UIView()
-
-  lazy var settingsTable: UITableView = {
+  private var widgetContainer = UIStackView()
+  private lazy var settingsTable: UITableView = {
     let tableView = UITableView(frame: .zero, style: .insetGrouped)
-    tableView.register(SizeCell.self, forCellReuseIdentifier: "SizeCell")
-    tableView.register(SegmentCell<WidgetsScreenViewModel.WidgetType>.self, forCellReuseIdentifier: "SegmentCellWidgetType")
-    tableView.register(SegmentCell<YPCheckoutWidgetModel.Style>.self, forCellReuseIdentifier: "SegmentCellCheckoutStyle")
-    tableView.register(SegmentCell<YPItemWidgetModel.Style>.self, forCellReuseIdentifier: "SegmentCellItemStyle")
-    tableView.register(SegmentCell<YPTheme>.self, forCellReuseIdentifier: "SegmentCellTheme")
-    tableView.register(SegmentCell<YPBnplPreviewWidgetModel.Appearance.Background>.self, forCellReuseIdentifier: "SegmentCellBnplBackground")
-    tableView.register(SegmentCell<YPBnplPreviewWidgetModel.Appearance.WidgetSize>.self, forCellReuseIdentifier: "SegmentCellBnplSize")
-    tableView.register(PickerCell<YPBnplPreviewWidgetModel.HeaderStyle>.self, forCellReuseIdentifier: "PickerCellHeader")
-    tableView.register(StringInputCell.self, forCellReuseIdentifier: "StringInputCell")
-    tableView.register(ToggleCell.self, forCellReuseIdentifier: "ToggleCell")
-    tableView.delegate = self
+    tableView.registerCells(types: [
+      SizeCell.self,
+      SegmentCell<WidgetsScreenViewModel.WidgetType>.self,
+      SegmentCell<YPCheckoutWidgetModel.Style>.self,
+      SegmentCell<YPItemWidgetModel.Style>.self,
+      SegmentCell<YPTheme>.self,
+      SegmentCell<YPBnplPreviewWidgetModel.Appearance.Background>.self,
+      SegmentCell<YPBnplPreviewWidgetModel.Appearance.WidgetSize>.self,
+      PickerCell<YPBnplPreviewWidgetModel.HeaderStyle>.self,
+      StringInputCell.self,
+      ToggleCell.self
+    ])
     tableView.dataSource = self
-    tableView.translatesAutoresizingMaskIntoConstraints = false
     return tableView
   }()
 
   override func viewDidLoad() {
     super.viewDidLoad()
     navigationItem.title = "Widgets"
-    view.backgroundColor = UIColor(named: "blue")!.withAlphaComponent(1)
+    view.backgroundColor = UIColor(named: "blue")?.withAlphaComponent(1)
 
     // Проверьте, что SDK проинициализирован
     guard YandexPaySDKApi.isInitialized else {
@@ -47,175 +44,106 @@ final class WidgetViewController: UIViewController {
       return
     }
 
-    view.addSubview(settingsTable)
-    createYaPayItemWidget()
-
+    setupLayout()
     observeViewModel()
   }
 
-  private func addWidget() {
-    // Добавьте виджет в иерархию
-    view.addSubview(yaPayWidget)
-    yaPayWidget.translatesAutoresizingMaskIntoConstraints = false
-    // Установите layout для виджета
+  private func setupLayout() {
+    view.addSubview(settingsTable)
+    view.addSubview(widgetContainer)
+    settingsTable.translatesAutoresizingMaskIntoConstraints = false
+    widgetContainer.translatesAutoresizingMaskIntoConstraints = false
+    widgetWidthConstraint = widgetContainer.widthAnchor.constraint(
+      equalToConstant: 300
+    )
     NSLayoutConstraint.activate([
-      yaPayWidget.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      yaPayWidget.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8)
-    ])
-
-    widgetWidthConstraint = yaPayWidget.widthAnchor.constraint(equalToConstant: widgetWidth)
-    widgetWidthConstraint.isActive = true
-  }
-
-  private func makeTableViewConstraints() {
-    NSLayoutConstraint.activate([
+      widgetContainer.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      widgetContainer.topAnchor.constraint(
+        equalTo: view.safeAreaLayoutGuide.topAnchor,
+        constant: 8
+      ),
+      widgetWidthConstraint,
       settingsTable.bottomAnchor.constraint(equalTo: view.bottomAnchor),
       settingsTable.leadingAnchor.constraint(equalTo: view.leadingAnchor),
       settingsTable.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-      settingsTable.topAnchor.constraint(equalTo: yaPayWidget.bottomAnchor, constant: 16)
+      settingsTable.topAnchor.constraint(
+        equalTo: widgetContainer.bottomAnchor,
+        constant: 16
+      )
     ])
   }
 
-  private func createYaPayItemWidget() {
-    yaPayWidget.removeFromSuperview()
-    // Создайте нужный виджет
-    yaPayWidget = YandexPaySDKApi.instance.createItemWidgetView(
-      model: YPItemWidgetModel(
-        amount: Decimal(string: viewModel.amount, locale: Locale.current) ?? .zero,
-        currency: .rub,
-        style: viewModel.style,
-        appearance: viewModel.appearance
-      ),
-      presentationContextProvider: viewModel
-    )
+  private func createYaPayWidget(
+    type: WidgetsScreenViewModel.WidgetType
+  ) {
+    widgetContainer.arrangedSubviews.forEach { $0.removeFromSuperview() }
 
-    addWidget()
-    if isTypeChanged {
-      makeTableViewConstraints()
-    }
-  }
-
-  private func createYaPayCheckoutWidget() {
-    yaPayWidget.removeFromSuperview()
-    yaPayWidget = YandexPaySDKApi.instance.createCheckoutWidgetView(
-      model: YPCheckoutWidgetModel(
-        amount: Decimal(string: viewModel.amount, locale: Locale.current) ?? .zero,
-        currency: .rub,
-        style: viewModel.infoWidgetCheckoutStyle,
-        appearance: viewModel.infoWidgetCheckoutAppearance
+    let amount = Decimal(string: viewModel.amount, locale: Locale.current) ?? .zero
+    let yaPayWidget: UIView = switch type {
+    case .item:
+      YandexPaySDKApi.instance.createItemWidgetView(
+        model: YPItemWidgetModel(
+          amount: amount,
+          currency: .rub,
+          style: viewModel.style,
+          appearance: viewModel.appearance
+        ),
+        presentationContextProvider: viewModel
       )
-    )
-    addWidget()
-    if isTypeChanged {
-      makeTableViewConstraints()
+    case .checkout:
+      YandexPaySDKApi.instance.createCheckoutWidgetView(
+        model: YPCheckoutWidgetModel(
+          amount: amount,
+          currency: .rub,
+          style: viewModel.infoWidgetCheckoutStyle,
+          appearance: viewModel.infoWidgetCheckoutAppearance
+        )
+      )
+    case .bnplPreview:
+      YandexPaySDKApi.instance.createBnplPreviewWidgetView(
+        model: YPBnplPreviewWidgetModel(
+          amount: amount,
+          currency: .rub,
+          appearance: viewModel.bnplPreviewWidgetAppearance,
+          header: viewModel.bnplPreviewWidgetHeaderAppearance
+        ),
+        presentationContextProvider: viewModel,
+        delegate: viewModel
+      )
     }
-  }
 
-  private func createYaPayBnplWidget() {
-    yaPayWidget.removeFromSuperview()
-    yaPayWidget = YandexPaySDKApi.instance.createBnplPreviewWidgetView(
-      model: YPBnplPreviewWidgetModel(
-        amount: Decimal(string: viewModel.amount, locale: Locale.current) ?? .zero,
-        currency: .rub,
-        appearance: viewModel.bnplPreviewWidgetAppearance,
-        header: viewModel.bnplPreviewWidgetHeaderAppearance
-      ),
-      presentationContextProvider: viewModel,
-      delegate: viewModel
-    )
-    addWidget()
-    if isTypeChanged {
-      makeTableViewConstraints()
-    }
+    widgetContainer.addArrangedSubview(yaPayWidget)
   }
 
   private func observeViewModel() {
-    Publishers.CombineLatest4(
-      viewModel.$amount,
-      viewModel.$appearance,
-      viewModel.$infoWidgetCheckoutAppearance,
-      viewModel.$infoWidgetCheckoutStyle
-    )
-    .combineLatest(viewModel.$style)
-    .combineLatest(viewModel.$bnplPreviewWidgetAppearance)
-    .combineLatest(viewModel.$bnplPreviewWidgetHeaderAppearance)
-    .combineLatest(viewModel.$bnplPreviewWidgetBackgroundColor)
-    .combineLatest(viewModel.$widgetType)
-    .receive(on: DispatchQueue.main)
-    .sink(receiveValue: { [weak self] viewModel in
-      guard let self else { return }
-      settingsTable.reloadData()
-      switch viewModel.1 {
-      case .item:
-        createYaPayItemWidget()
-      case .checkout:
-        createYaPayCheckoutWidget()
-      case .bnplPreview:
-        createYaPayBnplWidget()
+    viewModel
+      .objectWillChange
+      .prepend(())
+      .receive(on: DispatchQueue.main)
+      .sink { [unowned self] output in
+        sections = [.size, .order]
+        switch viewModel.widgetType {
+        case .item:
+          sections += [.general([.amout, .style]), .appearance([.theme, .transparent])]
+        case .checkout:
+          sections += [.general([.amout, .style]), .appearance([.theme])]
+        case .bnplPreview:
+          sections += [
+            .general([.amout]),
+            .appearance([.theme, .radius, .background, .widgetSize, .outline, .padding]),
+            .headerStyle([.headerSelection, .button])
+          ]
+        }
+        createYaPayWidget(type: viewModel.widgetType)
+        settingsTable.reloadData()
       }
-    })
-    .store(in: &cancellable)
-  }
-}
-
-extension WidgetViewController: UITableViewDelegate {
-}
-
-extension WidgetViewController: UITableViewDataSource {
-  func numberOfSections(in tableView: UITableView) -> Int {
-    5
+      .store(in: &cancellable)
   }
 
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    switch (section, viewModel.widgetType) {
-    case (0, _):
-      1
-    case (1, _):
-      1
-    case (2, .bnplPreview):
-      1
-    case (2, _):
-      2
-    case (3, .checkout):
-      1
-    case (3, .item):
-      2
-    case (3, .bnplPreview):
-      6
-    case (4, .bnplPreview):
-      2
-    default:
-      0
-    }
-  }
-
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    switch (indexPath.section, indexPath.row, viewModel.widgetType) {
-    case (0, 0, _):
-      let cell = tableView.dequeueReusableCell(withIdentifier: "SizeCell") as! SizeCell
-      cell.configure(
-        title: "Width",
-        sliderMinValue: 280,
-        sliderMaxValue: 360,
-        sliderValue: Float(widgetWidth.rounded()),
-        onSliderChanged: { [weak self] newValue in
-          self?.widgetWidthConstraint.constant = CGFloat(newValue)
-          self?.widgetWidth = CGFloat(newValue)
-        }
-      )
-      return cell
-    case (1, 0, _):
-      let cell = tableView.dequeueReusableCell(withIdentifier: "SegmentCellWidgetType") as! SegmentCell<WidgetsScreenViewModel.WidgetType>
-      cell.configure(
-        title: "Type",
-        onSegmentChanged: { [weak self] newValue in
-          self?.isTypeChanged = (self?.viewModel.widgetType != newValue)
-          self?.viewModel.widgetType = newValue
-        }
-      )
-      return cell
-    case (2, 0, _):
-      let cell = tableView.dequeueReusableCell(withIdentifier: "StringInputCell") as! StringInputCell
+  private func makeGeneralCell(item: GeneralItem) -> UITableViewCell {
+    switch (item, viewModel.widgetType) {
+    case (.amout, _):
+      let cell = settingsTable.dequeueCell(withType: StringInputCell.self)
       cell.configure(
         title: "Amount",
         value: viewModel.amount,
@@ -225,8 +153,8 @@ extension WidgetViewController: UITableViewDataSource {
         }
       )
       return cell
-    case (2, 1, .checkout):
-      let cell = tableView.dequeueReusableCell(withIdentifier: "SegmentCellCheckoutStyle") as! SegmentCell<YPCheckoutWidgetModel.Style>
+    case (.style, .checkout):
+      let cell = settingsTable.dequeueCell(withType: SegmentCell<YPCheckoutWidgetModel.Style>.self)
       cell.configure(
         title: "Style",
         onSegmentChanged: { [weak self] newValue in
@@ -234,8 +162,8 @@ extension WidgetViewController: UITableViewDataSource {
         }
       )
       return cell
-    case (2, 1, .item):
-      let cell = tableView.dequeueReusableCell(withIdentifier: "SegmentCellItemStyle") as! SegmentCell<YPItemWidgetModel.Style>
+    case (.style, .item):
+      let cell = settingsTable.dequeueCell(withType: SegmentCell<YPItemWidgetModel.Style>.self)
       cell.configure(
         title: "Style",
         onSegmentChanged: { [weak self] newValue in
@@ -243,8 +171,15 @@ extension WidgetViewController: UITableViewDataSource {
         }
       )
       return cell
-    case (3, 0, _):
-      let cell = tableView.dequeueReusableCell(withIdentifier: "SegmentCellTheme") as! SegmentCell<YPTheme>
+    case (.style, .bnplPreview):
+      return UITableViewCell()
+    }
+  }
+
+  private func makeAppearanceCell(item: AppearanceItem) -> UITableViewCell {
+    switch item {
+    case .theme:
+      let cell = settingsTable.dequeueCell(withType: SegmentCell<YPTheme>.self)
       cell.configure(
         title: "Theme",
         onSegmentChanged: { [weak self] newValue in
@@ -253,8 +188,8 @@ extension WidgetViewController: UITableViewDataSource {
         }
       )
       return cell
-    case (3, 1, .item):
-      let cell = tableView.dequeueReusableCell(withIdentifier: "ToggleCell") as! ToggleCell
+    case .transparent:
+      let cell = settingsTable.dequeueCell(withType: ToggleCell.self)
       cell.configure(
         title: "Transparent",
         isOn: viewModel.appearance.isTransparent,
@@ -263,20 +198,20 @@ extension WidgetViewController: UITableViewDataSource {
         }
       )
       return cell
-    case (3, 1, .bnplPreview):
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SizeCell") as! SizeCell
-        cell.configure(
-            title: "Radius",
-            sliderMinValue: 0,
-            sliderMaxValue: 32,
-            sliderValue: Float(viewModel.bnplPreviewWidgetAppearance.radius.rounded()),
-            onSliderChanged: { [weak self] newValue in
-              self?.viewModel.bnplPreviewWidgetAppearance.radius = CGFloat(newValue)
-            }
-        )
-        return cell
-    case (3, 2, .bnplPreview):
-      let cell = tableView.dequeueReusableCell(withIdentifier: "SegmentCellBnplBackground") as! SegmentCell<YPBnplPreviewWidgetModel.Appearance.Background>
+    case .radius:
+      let cell = settingsTable.dequeueCell(withType: SizeCell.self)
+      cell.configure(
+        title: "Radius",
+        sliderMinValue: 0,
+        sliderMaxValue: 32,
+        initialValue: Float(viewModel.bnplPreviewWidgetAppearance.radius.rounded()),
+        onSliderChanged: { [weak self] newValue in
+          self?.viewModel.bnplPreviewWidgetAppearance.radius = CGFloat(newValue)
+        }
+      )
+      return cell
+    case .background:
+      let cell = settingsTable.dequeueCell(withType: SegmentCell<YPBnplPreviewWidgetModel.Appearance.Background>.self)
       cell.configure(
         title: "Background",
         onSegmentChanged: { [weak self] newValue in
@@ -284,8 +219,8 @@ extension WidgetViewController: UITableViewDataSource {
         }
       )
       return cell
-    case (3, 3, .bnplPreview):
-      let cell = tableView.dequeueReusableCell(withIdentifier: "SegmentCellBnplSize") as! SegmentCell<YPBnplPreviewWidgetModel.Appearance.WidgetSize>
+    case .widgetSize:
+      let cell = settingsTable.dequeueCell(withType: SegmentCell<YPBnplPreviewWidgetModel.Appearance.WidgetSize>.self)
       cell.configure(
         title: "Widget Size",
         onSegmentChanged: { [weak self] newValue in
@@ -293,8 +228,8 @@ extension WidgetViewController: UITableViewDataSource {
         }
       )
       return cell
-    case (3, 4, .bnplPreview):
-      let cell = tableView.dequeueReusableCell(withIdentifier: "ToggleCell") as! ToggleCell
+    case .outline:
+      let cell = settingsTable.dequeueCell(withType: ToggleCell.self)
       cell.configure(
         title: "Outline",
         isOn: viewModel.bnplPreviewWidgetAppearance.hasOutline,
@@ -303,8 +238,8 @@ extension WidgetViewController: UITableViewDataSource {
         }
       )
       return cell
-    case (3, 5, .bnplPreview):
-      let cell = tableView.dequeueReusableCell(withIdentifier: "ToggleCell") as! ToggleCell
+    case .padding:
+      let cell = settingsTable.dequeueCell(withType: ToggleCell.self)
       cell.configure(
         title: "Padding",
         isOn: viewModel.bnplPreviewWidgetAppearance.hasPadding,
@@ -313,8 +248,13 @@ extension WidgetViewController: UITableViewDataSource {
         }
       )
       return cell
-    case (4, 0, .bnplPreview):
-      let cell = tableView.dequeueReusableCell(withIdentifier: "PickerCellHeader") as! PickerCell<YPBnplPreviewWidgetModel.HeaderStyle>
+    }
+  }
+
+  private func makeHeaderCell(item: HeaderItem) -> UITableViewCell {
+    switch item {
+    case .headerSelection:
+      let cell = settingsTable.dequeueCell(withType: PickerCell<YPBnplPreviewWidgetModel.HeaderStyle>.self)
       cell.configure(
         title: "Select header style",
         onPickerChanged: { [weak self] newValue in
@@ -322,8 +262,8 @@ extension WidgetViewController: UITableViewDataSource {
         }
       )
       return cell
-    case (4, 1, .bnplPreview):
-      let cell = tableView.dequeueReusableCell(withIdentifier: "ToggleCell") as! ToggleCell
+    case .button:
+      let cell = settingsTable.dequeueCell(withType: ToggleCell.self)
       cell.configure(
         title: "Show button",
         isOn: viewModel.bnplPreviewWidgetAppearance.hasCheckoutButton,
@@ -332,34 +272,52 @@ extension WidgetViewController: UITableViewDataSource {
         }
       )
       return cell
-    default:
-      return UITableViewCell()
     }
   }
+}
 
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    if (indexPath.section, indexPath.row) == (4, 0) {
-      return 160
-    }
-    return 44
+extension WidgetViewController: UITableViewDataSource {
+  func numberOfSections(in tableView: UITableView) -> Int {
+    sections.count
   }
 
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    tableView.deselectRow(at: indexPath, animated: false)
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    sections[section].rowNumbers
+  }
+
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    switch sections[indexPath.section] {
+    case .size:
+      let cell = tableView.dequeueCell(withType: SizeCell.self)
+      cell.configure(
+        title: "Width",
+        sliderMinValue: 280,
+        sliderMaxValue: 360,
+        initialValue: Float(widgetWidthConstraint.constant.rounded()),
+        onSliderChanged: { [weak self] newValue in
+          self?.widgetWidthConstraint.constant = CGFloat(newValue)
+        }
+      )
+      return cell
+    case .order:
+      let cell = tableView.dequeueCell(withType: SegmentCell<WidgetsScreenViewModel.WidgetType>.self)
+      cell.configure(
+        title: "Type",
+        onSegmentChanged: { [weak self] newValue in
+          self?.viewModel.widgetType = newValue
+        }
+      )
+      return cell
+    case let .general(items):
+      return makeGeneralCell(item: items[indexPath.row])
+    case let .appearance(items):
+      return makeAppearanceCell(item: items[indexPath.row])
+    case let .headerStyle(items):
+      return makeHeaderCell(item: items[indexPath.row])
+    }
   }
 
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    switch section {
-    case 0:
-      "Size"
-    case 1:
-      "Order"
-    case 2:
-      "General"
-    case 3:
-      "Appearance"
-    default:
-      nil
-    }
+    sections[section].name
   }
 }

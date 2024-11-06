@@ -40,6 +40,9 @@
 		780AF9982CC918D00084E65A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780AF9912CC918D00084E65A /* AppDelegate.swift */; };
 		780AF99B2CC91A1D0084E65A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 780AF9992CC91A1D0084E65A /* Preview Assets.xcassets */; };
 		7D1CF7912CDB7243007423FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D1CF7902CDB7243007423FC /* Assets.xcassets */; };
+		7D6F31A32CDBACC5000249B6 /* WidgetViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F31A22CDBACC5000249B6 /* WidgetViewController+Ext.swift */; };
+		7D6F31A52CDBB408000249B6 /* UITableViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F31A42CDBB408000249B6 /* UITableViewCell+Ext.swift */; };
+		7D6F31A72CDBB462000249B6 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F31A62CDBB462000249B6 /* UITableView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +81,9 @@
 		780AF9912CC918D00084E65A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		780AF9992CC91A1D0084E65A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7D1CF7902CDB7243007423FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7D6F31A22CDBACC5000249B6 /* WidgetViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WidgetViewController+Ext.swift"; sourceTree = "<group>"; };
+		7D6F31A42CDBB408000249B6 /* UITableViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Ext.swift"; sourceTree = "<group>"; };
+		7D6F31A62CDBB462000249B6 /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,7 @@
 				34692C412CCBE6820031624E /* WidgetsScreen.swift */,
 				34692C422CCBE6820031624E /* WidgetsScreenViewModel.swift */,
 				34692C432CCBE6820031624E /* WidgetViewController.swift */,
+				7D6F31A22CDBACC5000249B6 /* WidgetViewController+Ext.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -202,6 +209,7 @@
 				780AF9912CC918D00084E65A /* AppDelegate.swift */,
 				34692C4F2CCBE7E80031624E /* Services */,
 				34692C4C2CCBE6B20031624E /* MainMenu */,
+				7D6F31A82CDBB81D000249B6 /* UIKit+Extensions */,
 			);
 			path = YandexPaySDKDemoApp;
 			sourceTree = "<group>";
@@ -219,6 +227,15 @@
 				780AF9992CC91A1D0084E65A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7D6F31A82CDBB81D000249B6 /* UIKit+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7D6F31A42CDBB408000249B6 /* UITableViewCell+Ext.swift */,
+				7D6F31A62CDBB462000249B6 /* UITableView+Ext.swift */,
+			);
+			path = "UIKit+Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,12 +311,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D6F31A72CDBB462000249B6 /* UITableView+Ext.swift in Sources */,
 				34E5A09D2CD5F498009A3B4A /* PaymentSystemsView.swift in Sources */,
 				34E5A09A2CD5F20E009A3B4A /* CartViewModel.swift in Sources */,
 				34E5A09B2CD5F20E009A3B4A /* CartView.swift in Sources */,
 				34E5A0962CD505B6009A3B4A /* ProductViewModel.swift in Sources */,
 				34E5A0972CD505B6009A3B4A /* ProductView.swift in Sources */,
 				34E5A0912CD4C6C8009A3B4A /* StoreMainScreenViewModel.swift in Sources */,
+				7D6F31A32CDBACC5000249B6 /* WidgetViewController+Ext.swift in Sources */,
 				34E5A08F2CD4C6BB009A3B4A /* Product.swift in Sources */,
 				34E5A08D2CD4AB5C009A3B4A /* StoreMainScreen.swift in Sources */,
 				34692C3D2CCBE67D0031624E /* SegmentCell.swift in Sources */,
@@ -310,6 +329,7 @@
 				34692C512CCC080D0031624E /* PickerCell.swift in Sources */,
 				34692C372CCBE6700031624E /* PaymentURLService.swift in Sources */,
 				34692C262CCBE6580031624E /* BadgesScreenViewModel.swift in Sources */,
+				7D6F31A52CDBB408000249B6 /* UITableViewCell+Ext.swift in Sources */,
 				34692C532CCC084C0031624E /* Titleable.swift in Sources */,
 				34692C272CCBE6580031624E /* BadgesViewController.swift in Sources */,
 				34692C472CCBE6820031624E /* WidgetViewController.swift in Sources */,
