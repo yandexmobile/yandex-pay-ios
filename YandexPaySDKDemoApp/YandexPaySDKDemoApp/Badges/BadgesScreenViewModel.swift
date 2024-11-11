@@ -18,11 +18,11 @@ final class BadgesScreenViewModel: ObservableObject {
   @Published var cashbackVariant: YPBadgeModel.CashbackVariant = .default
   @Published var splitColor: YPBadgeModel.SplitColor = .primary
   @Published var splitVariant: YPBadgeModel.SplitVariant = .detailed
-
+  
   private var amountNumber: Decimal {
     Decimal(string: amount, locale: Locale.current) ?? .zero
   }
-
+  
   var cashbackModel: YPBadgeModel {
     YPBadgeModel(
       amount: amountNumber,
@@ -32,7 +32,7 @@ final class BadgesScreenViewModel: ObservableObject {
       type: .cashback(color: cashbackColor, variant: cashbackVariant)
     )
   }
-
+  
   var splitModel: YPBadgeModel {
     YPBadgeModel(
       amount: amountNumber,
@@ -45,26 +45,26 @@ final class BadgesScreenViewModel: ObservableObject {
 }
 
 extension YPBadgeModel.Align: Titleable {
-    public static let allCases: [YPBadgeModel.Align] = [.left, .center, .right]
-    static let allCasesTitles: [String] = allCases.map { $0.rawValue }
+  public static let allCases: [YPBadgeModel.Align] = [.left, .center, .right]
+  static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }
 
 extension YPBadgeModel.CashbackColor: Titleable {
-    public static let allCases: [YPBadgeModel.CashbackColor] = [.primary, .grey, .transparent]
-    static let allCasesTitles: [String] = allCases.map { $0.rawValue }
+  public static let allCases: [YPBadgeModel.CashbackColor] = [.primary, .grey, .transparent]
+  static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }
 
 extension YPBadgeModel.CashbackVariant: Titleable {
-    public static let allCases: [YPBadgeModel.CashbackVariant] = [.default, .compact]
-    static let allCasesTitles: [String] = allCases.map { $0.rawValue }
+  public static let allCases: [YPBadgeModel.CashbackVariant] = [.default, .compact]
+  static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }
 
 extension YPBadgeModel.SplitColor: Titleable {
-    public static let allCases: [YPBadgeModel.SplitColor] = [.primary, .green, .grey, .transparent]
-    static let allCasesTitles: [String] = allCases.map { $0.rawValue }
+  public static let allCases: [YPBadgeModel.SplitColor] = [.primary, .green, .grey, .transparent]
+  static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }
 
 extension YPBadgeModel.SplitVariant: Titleable {
-    public static let allCases: [YPBadgeModel.SplitVariant] = [.simple, .detailed]
-    static let allCasesTitles: [String] = allCases.map { $0.rawValue }
+  public static let allCases: [YPBadgeModel.SplitVariant] = [.simple, .detailed]
+  static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }

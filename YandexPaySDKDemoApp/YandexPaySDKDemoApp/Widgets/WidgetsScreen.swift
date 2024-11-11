@@ -10,14 +10,14 @@ import SwiftUI
 import YandexPaySDK
 
 struct WidgetsScreen: View {
-
+  
   @ObservedObject private var viewModel: WidgetsScreenViewModel
   @State private var widgetWidth: CGFloat = Constants.defaultWidgetWidth
-
+  
   init(viewModel: WidgetsScreenViewModel) {
     self.viewModel = viewModel
   }
-
+  
   var body: some View {
     NavigationStack {
       ZStack {
@@ -26,7 +26,7 @@ struct WidgetsScreen: View {
           .ignoresSafeArea(.all)
         VStack {
           switch viewModel.widgetType {
-          // Создайте нужный виджет
+            // Создайте нужный виджет
           case .item:
             YandexPaySDKApi.instance.createItemWidgetView(
               model: YPItemWidgetModel(
@@ -88,7 +88,7 @@ struct WidgetsScreen: View {
       }
     }
   }
-
+  
   private var sizeSection: some View {
     Section {
       HStack {
@@ -106,7 +106,7 @@ struct WidgetsScreen: View {
       Text("Size")
     }
   }
-
+  
   private var typeSection: some View {
     Section {
       Picker("Type", selection: $viewModel.widgetType) {
@@ -118,7 +118,7 @@ struct WidgetsScreen: View {
       Text("Type")
     }
   }
-
+  
   private var infoWidgetGeneralSection: some View {
     Section {
       HStack {
@@ -138,7 +138,7 @@ struct WidgetsScreen: View {
       Text("General")
     }
   }
-
+  
   private var infoCheckoutWidgetGeneralSection: some View {
     Section {
       HStack {
@@ -164,7 +164,7 @@ struct WidgetsScreen: View {
       Text("General")
     }
   }
-
+  
   private var bnplPreviewWidgetGeneralSection: some View {
     Section {
       HStack {
@@ -181,7 +181,7 @@ struct WidgetsScreen: View {
       Text("General")
     }
   }
-
+  
   private var bnplPreviewWidgetAppearanceSection: some View {
     Section {
       HStack {
@@ -223,7 +223,7 @@ struct WidgetsScreen: View {
       Text("Appearance")
     }
   }
-
+  
   private var bnplPreviewWidgetControlsSection: some View {
     Section {
       VStack(alignment: .leading, spacing: 0) {
@@ -248,7 +248,7 @@ struct WidgetsScreen: View {
       Text("Controls")
     }
   }
-
+  
   private var infoWidgetAppearanceSection: some View {
     Section {
       Picker("Theme", selection: $viewModel.appearance.theme) {
@@ -269,7 +269,7 @@ struct WidgetsScreen: View {
       Text("Appearance")
     }
   }
-
+  
   private var infoCheckoutWidgetAppearanceSection: some View {
     Section {
       Picker("Theme", selection: $viewModel.infoWidgetCheckoutAppearance.theme) {

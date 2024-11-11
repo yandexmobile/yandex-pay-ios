@@ -10,28 +10,28 @@ import SwiftUI
 import YandexPaySDK
 
 final class WidgetsScreenViewModel: ObservableObject {
-
+  
   // MARK: - Nested type
-
+  
   enum WidgetType: String, Titleable {
     case item
     case checkout
     case bnplPreview
-
+    
     static var allCasesTitles: [String] = WidgetType.allCases.map { $0.rawValue }
   }
   
   // MARK: - Public and internal properties
-
+  
   @Published var widgetType: WidgetType = .item
   @Published var amount: String = "1000"
-
+  
   @Published var style: YPItemWidgetModel.Style = .fullSize
   @Published var appearance: YPItemWidgetModel.Appearance = .init()
-
+  
   @Published var infoWidgetCheckoutStyle: YPCheckoutWidgetModel.Style = .fullBox
   @Published var infoWidgetCheckoutAppearance: YPCheckoutWidgetModel.Appearance = .init()
-
+  
   @Published var bnplPreviewWidgetAppearance: YPBnplPreviewWidgetModel.Appearance = .init()
   @Published var bnplPreviewWidgetHeaderAppearance: YPBnplPreviewWidgetModel.HeaderStyle = .standard
   @Published var bnplPreviewWidgetBackgroundColor: Color = .green {
@@ -41,9 +41,9 @@ final class WidgetsScreenViewModel: ObservableObject {
   }
   @Published var showToast = false
   @Published var toastText = ""
-
+  
   // MARK: - Public and internal methods
-
+  
   func updateViewModels() {
     objectWillChange.send()
   }
@@ -83,7 +83,7 @@ extension YPItemWidgetModel.Style: Titleable {
 extension YPBnplPreviewWidgetModel.Appearance.Background: Titleable {
   public static let allCases: [YPBnplPreviewWidgetModel.Appearance.Background] = [.default, .transparent]
   static let allCasesTitles: [String] = allCases.map { $0.title }
-
+  
   private var title: String {
     switch self {
     case .transparent:
@@ -101,7 +101,7 @@ extension YPBnplPreviewWidgetModel.Appearance.Background: Titleable {
 extension YPBnplPreviewWidgetModel.Appearance.WidgetSize: Titleable {
   public static let allCases: [YPBnplPreviewWidgetModel.Appearance.WidgetSize] = [.small, .medium]
   static let allCasesTitles: [String] = allCases.map { $0.title }
-
+  
   private var title: String {
     switch self {
     case .medium:
