@@ -39,6 +39,13 @@ struct MainMenuView: View {
         ForEach(MainMenuViewModel.Integration.allCases.dropLast(), id: \.rawValue) { method in
           makeRow(for: method)
         }
+        Text("O приложении")
+          .font(.system(size: 16, weight: .medium))
+          .foregroundColor(.secondary)
+          .padding(4)
+        Text("Версия SDK \(viewModel.sdkVersion)")
+          .font(.system(size: 12))
+          .foregroundColor(.secondary)
         Spacer()
       }
       .padding(.horizontal, 36)

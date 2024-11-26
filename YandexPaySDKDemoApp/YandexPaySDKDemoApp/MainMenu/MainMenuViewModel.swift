@@ -8,15 +8,16 @@
 import Foundation
 import SwiftUI
 import UIKit
+import YandexPaySDK
 
 final class MainMenuViewModel: ObservableObject {
   @Published var selectedFramework: Framework = .UIKit
   private let navigationController: UINavigationController
-  
+
   init(navigationController: UINavigationController) {
     self.navigationController = navigationController
   }
-  
+
   func routeTo(integration: Integration) {
     switch (selectedFramework, integration) {
     case (.UIKit, .button):
@@ -55,6 +56,10 @@ final class MainMenuViewModel: ObservableObject {
         animated: true
       )
     }
+  }
+
+  var sdkVersion: String {
+    YandexPaySDKApi.currentVersion
   }
 }
 
