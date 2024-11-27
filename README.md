@@ -6,5 +6,5 @@
 
 ## Installation
 
-- The project is using [CocoaPods](https://guides.cocoapods.org/using/getting-started.html). To install dependencies run `pod install --repo-update`.
+- The project is using [Swift Package Manager](https://www.swift.org/documentation/package-manager/).
 - Configure the project with your client id. In the demo it is located in xcode project user-defined settings.
