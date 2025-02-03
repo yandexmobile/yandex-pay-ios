@@ -48,13 +48,13 @@ struct WidgetsScreen: View {
               )
             )
             .frame(width: widgetWidth)
-          case .bnplPreview:
-            YandexPaySDKApi.instance.createBnplPreviewWidgetView(
-              model: YPBnplPreviewWidgetModel(
+          case .ultimate:
+            YandexPaySDKApi.instance.createUltimateWidgetView(
+              model: YPUltimateWidgetModel(
                 amount: Decimal(string: viewModel.amount, locale: Locale.current) ?? .zero,
                 currency: .rub,
-                appearance: viewModel.bnplPreviewWidgetAppearance,
-                header: viewModel.bnplPreviewWidgetHeaderAppearance
+                appearance: viewModel.ultimateWidgetAppearance,
+                header: viewModel.ultimateWidgetHeaderAppearance
               ),
               presentationContextProvider: viewModel,
               delegate: viewModel
@@ -71,10 +71,10 @@ struct WidgetsScreen: View {
             case .checkout:
               infoCheckoutWidgetGeneralSection
               infoCheckoutWidgetAppearanceSection
-            case .bnplPreview:
-              bnplPreviewWidgetGeneralSection
-              bnplPreviewWidgetAppearanceSection
-              bnplPreviewWidgetControlsSection
+            case .ultimate:
+              ultimateWidgetGeneralSection
+              ultimateWidgetAppearanceSection
+              ultimateWidgetControlsSection
             }
           }
         }
@@ -112,7 +112,7 @@ struct WidgetsScreen: View {
       Picker("Type", selection: $viewModel.widgetType) {
         Text("Item").tag(WidgetsScreenViewModel.WidgetType.item)
         Text("Checkout").tag(WidgetsScreenViewModel.WidgetType.checkout)
-        Text("BNPL-Preview").tag(WidgetsScreenViewModel.WidgetType.bnplPreview)
+        Text("Ultimate").tag(WidgetsScreenViewModel.WidgetType.ultimate)
       }
     } header: {
       Text("Type")
@@ -165,7 +165,7 @@ struct WidgetsScreen: View {
     }
   }
   
-  private var bnplPreviewWidgetGeneralSection: some View {
+  private var ultimateWidgetGeneralSection: some View {
     Section {
       HStack {
         Text("Amount")
@@ -182,13 +182,13 @@ struct WidgetsScreen: View {
     }
   }
   
-  private var bnplPreviewWidgetAppearanceSection: some View {
+  private var ultimateWidgetAppearanceSection: some View {
     Section {
       HStack {
-        Text("Radius: \(Int(viewModel.bnplPreviewWidgetAppearance.radius.rounded()))")
-        Slider(value: $viewModel.bnplPreviewWidgetAppearance.radius.animation(.easeIn), in: 0...32)
+        Text("Radius: \(Int(viewModel.ultimateWidgetAppearance.radius.rounded()))")
+        Slider(value: $viewModel.ultimateWidgetAppearance.radius.animation(.easeIn), in: 0...32)
       }
-      Picker("Theme", selection: $viewModel.bnplPreviewWidgetAppearance.theme) {
+      Picker("Theme", selection: $viewModel.ultimateWidgetAppearance.theme) {
         Text("System").tag(
           YPTheme.system
         )
@@ -199,49 +199,46 @@ struct WidgetsScreen: View {
           YPTheme.dark
         )
       }
-      Picker("Background", selection: $viewModel.bnplPreviewWidgetAppearance.background) {
+      Picker("Background", selection: $viewModel.ultimateWidgetAppearance.background) {
         Text("Default").tag(
-          YPBnplPreviewWidgetModel.Appearance.Background.default
+          YPUltimateWidgetModel.Appearance.Background.default
         )
         Text("Transparent").tag(
-          YPBnplPreviewWidgetModel.Appearance.Background.transparent
+          YPUltimateWidgetModel.Appearance.Background.transparent
         )
-        Text("Custom").tag(
-          YPBnplPreviewWidgetModel.Appearance.Background.custom(viewModel.bnplPreviewWidgetBackgroundColor)
+        Text("Light").tag(
+          YPUltimateWidgetModel.Appearance.Background.light
         )
       }
-      Picker("Widget Size", selection: $viewModel.bnplPreviewWidgetAppearance.size) {
-        Text("S").tag(YPBnplPreviewWidgetModel.Appearance.WidgetSize.small)
-        Text("M").tag(YPBnplPreviewWidgetModel.Appearance.WidgetSize.medium)
+      Picker("Widget Size", selection: $viewModel.ultimateWidgetAppearance.size) {
+        Text("S").tag(YPUltimateWidgetModel.Appearance.WidgetSize.small)
+        Text("M").tag(YPUltimateWidgetModel.Appearance.WidgetSize.medium)
       }
-      if case .custom = viewModel.bnplPreviewWidgetAppearance.background {
-        ColorPicker("Background Color", selection: $viewModel.bnplPreviewWidgetBackgroundColor)
-      }
-      Toggle("Outline", isOn: $viewModel.bnplPreviewWidgetAppearance.hasOutline)
-      Toggle("Padding", isOn: $viewModel.bnplPreviewWidgetAppearance.hasPadding)
+      Toggle("Outline", isOn: $viewModel.ultimateWidgetAppearance.hasOutline)
+      Toggle("Padding", isOn: $viewModel.ultimateWidgetAppearance.hasPadding)
     } header: {
       Text("Appearance")
     }
   }
   
-  private var bnplPreviewWidgetControlsSection: some View {
+  private var ultimateWidgetControlsSection: some View {
     Section {
       VStack(alignment: .leading, spacing: 0) {
         Text("Select header style")
-        Picker("Select header style", selection: $viewModel.bnplPreviewWidgetHeaderAppearance) {
+        Picker("Select header style", selection: $viewModel.ultimateWidgetHeaderAppearance) {
           Text("Minified - tiny header")
-            .tag(YPBnplPreviewWidgetModel.HeaderStyle.minified)
+            .tag(YPUltimateWidgetModel.HeaderStyle.minified)
           Text("Standard - yandex landing")
-            .tag(YPBnplPreviewWidgetModel.HeaderStyle.standard)
+            .tag(YPUltimateWidgetModel.HeaderStyle.standard)
           Text("Custom Action - merchant's action")
-            .tag(YPBnplPreviewWidgetModel.HeaderStyle.standardWithCustomAction)
+            .tag(YPUltimateWidgetModel.HeaderStyle.standardWithCustomAction)
         }
         .pickerStyle(.wheel)
         .labelsHidden()
       }
       Toggle(
         "Show button",
-        isOn: $viewModel.bnplPreviewWidgetAppearance.hasCheckoutButton
+        isOn: $viewModel.ultimateWidgetAppearance.hasCheckoutButton
           .animation(.easeInOut)
       )
     } header: {

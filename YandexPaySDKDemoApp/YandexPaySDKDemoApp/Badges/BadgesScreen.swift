@@ -126,6 +126,8 @@ struct BadgesScreen: View {
         .light
     case .dark:
         .dark
+    @unknown default:
+      colorScheme
     }
   }
 }

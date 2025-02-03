@@ -27,9 +27,9 @@ final class WidgetViewController: UIViewController {
       SegmentCell<YPCheckoutWidgetModel.Style>.self,
       SegmentCell<YPItemWidgetModel.Style>.self,
       SegmentCell<YPTheme>.self,
-      SegmentCell<YPBnplPreviewWidgetModel.Appearance.Background>.self,
-      SegmentCell<YPBnplPreviewWidgetModel.Appearance.WidgetSize>.self,
-      PickerCell<YPBnplPreviewWidgetModel.HeaderStyle>.self,
+      SegmentCell<YPUltimateWidgetModel.Appearance.Background>.self,
+      SegmentCell<YPUltimateWidgetModel.Appearance.WidgetSize>.self,
+      PickerCell<YPUltimateWidgetModel.HeaderStyle>.self,
       StringInputCell.self,
       ToggleCell.self
     ])
@@ -105,13 +105,13 @@ final class WidgetViewController: UIViewController {
           appearance: viewModel.infoWidgetCheckoutAppearance
         )
       )
-    case .bnplPreview:
-      YandexPaySDKApi.instance.createBnplPreviewWidgetView(
-        model: YPBnplPreviewWidgetModel(
+    case .ultimate:
+      YandexPaySDKApi.instance.createUltimateWidgetView(
+        model: YPUltimateWidgetModel(
           amount: amount,
           currency: .rub,
-          appearance: viewModel.bnplPreviewWidgetAppearance,
-          header: viewModel.bnplPreviewWidgetHeaderAppearance
+          appearance: viewModel.ultimateWidgetAppearance,
+          header: viewModel.ultimateWidgetHeaderAppearance
         ),
         presentationContextProvider: viewModel,
         delegate: viewModel
@@ -133,7 +133,7 @@ final class WidgetViewController: UIViewController {
           sections += [.general([.amout, .style]), .appearance([.theme, .transparent])]
         case .checkout:
           sections += [.general([.amout, .style]), .appearance([.theme])]
-        case .bnplPreview:
+        case .ultimate:
           sections += [
             .general([.amout]),
             .appearance([.theme, .radius, .background, .widgetSize, .outline, .padding]),
@@ -227,7 +227,7 @@ extension WidgetViewController {
         }
       )
       return cell
-    case (.style, .bnplPreview):
+    case (.style, .ultimate):
       return UITableViewCell()
     }
   }
@@ -260,27 +260,27 @@ extension WidgetViewController {
         title: "Radius",
         sliderMinValue: 0,
         sliderMaxValue: 32,
-        initialValue: Float(viewModel.bnplPreviewWidgetAppearance.radius.rounded()),
+        initialValue: Float(viewModel.ultimateWidgetAppearance.radius.rounded()),
         onSliderChanged: { [weak self] newValue in
-          self?.viewModel.bnplPreviewWidgetAppearance.radius = CGFloat(newValue)
+          self?.viewModel.ultimateWidgetAppearance.radius = CGFloat(newValue)
         }
       )
       return cell
     case .background:
-      let cell = settingsTable.dequeueCell(withType: SegmentCell<YPBnplPreviewWidgetModel.Appearance.Background>.self)
+      let cell = settingsTable.dequeueCell(withType: SegmentCell<YPUltimateWidgetModel.Appearance.Background>.self)
       cell.configure(
         title: "Background",
         onSegmentChanged: { [weak self] newValue in
-          self?.viewModel.bnplPreviewWidgetAppearance.background = newValue
+          self?.viewModel.ultimateWidgetAppearance.background = newValue
         }
       )
       return cell
     case .widgetSize:
-      let cell = settingsTable.dequeueCell(withType: SegmentCell<YPBnplPreviewWidgetModel.Appearance.WidgetSize>.self)
+      let cell = settingsTable.dequeueCell(withType: SegmentCell<YPUltimateWidgetModel.Appearance.WidgetSize>.self)
       cell.configure(
         title: "Widget Size",
         onSegmentChanged: { [weak self] newValue in
-          self?.viewModel.bnplPreviewWidgetAppearance.size = newValue
+          self?.viewModel.ultimateWidgetAppearance.size = newValue
         }
       )
       return cell
@@ -288,9 +288,9 @@ extension WidgetViewController {
       let cell = settingsTable.dequeueCell(withType: ToggleCell.self)
       cell.configure(
         title: "Outline",
-        isOn: viewModel.bnplPreviewWidgetAppearance.hasOutline,
+        isOn: viewModel.ultimateWidgetAppearance.hasOutline,
         onToggleChanged: { [weak self] newValue in
-          self?.viewModel.bnplPreviewWidgetAppearance.hasOutline = newValue
+          self?.viewModel.ultimateWidgetAppearance.hasOutline = newValue
         }
       )
       return cell
@@ -298,9 +298,9 @@ extension WidgetViewController {
       let cell = settingsTable.dequeueCell(withType: ToggleCell.self)
       cell.configure(
         title: "Padding",
-        isOn: viewModel.bnplPreviewWidgetAppearance.hasPadding,
+        isOn: viewModel.ultimateWidgetAppearance.hasPadding,
         onToggleChanged: { [weak self] newValue in
-          self?.viewModel.bnplPreviewWidgetAppearance.hasPadding = newValue
+          self?.viewModel.ultimateWidgetAppearance.hasPadding = newValue
         }
       )
       return cell
@@ -310,11 +310,11 @@ extension WidgetViewController {
   private func makeHeaderCell(item: HeaderItem) -> UITableViewCell {
     switch item {
     case .headerSelection:
-      let cell = settingsTable.dequeueCell(withType: PickerCell<YPBnplPreviewWidgetModel.HeaderStyle>.self)
+      let cell = settingsTable.dequeueCell(withType: PickerCell<YPUltimateWidgetModel.HeaderStyle>.self)
       cell.configure(
         title: "Select header style",
         onPickerChanged: { [weak self] newValue in
-          self?.viewModel.bnplPreviewWidgetHeaderAppearance = newValue
+          self?.viewModel.ultimateWidgetHeaderAppearance = newValue
         }
       )
       return cell
@@ -322,9 +322,9 @@ extension WidgetViewController {
       let cell = settingsTable.dequeueCell(withType: ToggleCell.self)
       cell.configure(
         title: "Show button",
-        isOn: viewModel.bnplPreviewWidgetAppearance.hasCheckoutButton,
+        isOn: viewModel.ultimateWidgetAppearance.hasCheckoutButton,
         onToggleChanged: { [weak self] newValue in
-          self?.viewModel.bnplPreviewWidgetAppearance.hasCheckoutButton = newValue
+          self?.viewModel.ultimateWidgetAppearance.hasCheckoutButton = newValue
         }
       )
       return cell

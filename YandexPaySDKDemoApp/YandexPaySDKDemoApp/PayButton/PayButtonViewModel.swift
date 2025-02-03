@@ -132,7 +132,7 @@ extension PayButtonViewModel {
   }
 }
 
-extension YPTheme: CaseIterable, Titleable {
+extension YPTheme: Titleable, @retroactive CaseIterable {
   static let allCasesTitles: [String] = YPTheme.allCases.map { $0.rawValue }
   public static let allCases: [YPTheme] = [.system, .light, .dark]
 }

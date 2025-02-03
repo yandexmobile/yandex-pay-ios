@@ -44,27 +44,27 @@ final class BadgesScreenViewModel: ObservableObject {
   }
 }
 
-extension YPBadgeModel.Align: Titleable {
+extension YPBadgeModel.Align: Titleable, @retroactive CaseIterable {
   public static let allCases: [YPBadgeModel.Align] = [.left, .center, .right]
   static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }
 
-extension YPBadgeModel.CashbackColor: Titleable {
+extension YPBadgeModel.CashbackColor: Titleable, @retroactive CaseIterable {
   public static let allCases: [YPBadgeModel.CashbackColor] = [.primary, .grey, .transparent]
   static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }
 
-extension YPBadgeModel.CashbackVariant: Titleable {
+extension YPBadgeModel.CashbackVariant: Titleable, @retroactive CaseIterable {
   public static let allCases: [YPBadgeModel.CashbackVariant] = [.default, .compact]
   static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }
 
-extension YPBadgeModel.SplitColor: Titleable {
+extension YPBadgeModel.SplitColor: Titleable, @retroactive CaseIterable {
   public static let allCases: [YPBadgeModel.SplitColor] = [.primary, .green, .grey, .transparent]
   static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }
 
-extension YPBadgeModel.SplitVariant: Titleable {
+extension YPBadgeModel.SplitVariant: Titleable, @retroactive CaseIterable {
   public static let allCases: [YPBadgeModel.SplitVariant] = [.simple, .detailed]
   static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }

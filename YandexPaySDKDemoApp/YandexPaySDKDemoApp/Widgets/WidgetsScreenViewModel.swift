@@ -16,7 +16,7 @@ final class WidgetsScreenViewModel: ObservableObject {
   enum WidgetType: String, Titleable {
     case item
     case checkout
-    case bnplPreview
+    case ultimate
     
     static var allCasesTitles: [String] = WidgetType.allCases.map { $0.rawValue }
   }
@@ -32,13 +32,9 @@ final class WidgetsScreenViewModel: ObservableObject {
   @Published var infoWidgetCheckoutStyle: YPCheckoutWidgetModel.Style = .fullBox
   @Published var infoWidgetCheckoutAppearance: YPCheckoutWidgetModel.Appearance = .init()
   
-  @Published var bnplPreviewWidgetAppearance: YPBnplPreviewWidgetModel.Appearance = .init()
-  @Published var bnplPreviewWidgetHeaderAppearance: YPBnplPreviewWidgetModel.HeaderStyle = .standard
-  @Published var bnplPreviewWidgetBackgroundColor: Color = .green {
-    didSet {
-      bnplPreviewWidgetAppearance.background = .custom(bnplPreviewWidgetBackgroundColor)
-    }
-  }
+  @Published var ultimateWidgetAppearance: YPUltimateWidgetModel.Appearance = .init()
+  @Published var ultimateWidgetHeaderAppearance: YPUltimateWidgetModel.HeaderStyle = .standard
+
   @Published var showToast = false
   @Published var toastText = ""
   
@@ -57,10 +53,10 @@ extension WidgetsScreenViewModel: YPPresentationContextProviding {
   }
 }
 
-// MARK: - YandexPayBnplPreviewWidgetDelegate
+// MARK: - YandexPayUltimateWidgetDelegate
 
-extension WidgetsScreenViewModel: YandexPayBnplPreviewWidgetDelegate {
-  func onYandexPayCheckoutButtonClick(data: YandexPaySDK.YandexPayBnplPreviewWidgetData) {
+extension WidgetsScreenViewModel: YandexPayUltimateWidgetDelegate {
+  func onYandexPayUltimateCheckoutButtonClick(data: YandexPaySDK.YandexPayUltimateWidgetData) {
     toastText = "Split for \(data.splitMonthCount) months was chosen by the user"
     showToast.toggle()
   }
@@ -70,18 +66,18 @@ extension WidgetsScreenViewModel: YandexPayBnplPreviewWidgetDelegate {
   }
 }
 
-extension YPCheckoutWidgetModel.Style: Titleable {
+extension YPCheckoutWidgetModel.Style: Titleable, @retroactive CaseIterable {
   public static let allCases: [YPCheckoutWidgetModel.Style] = [.fullBox, .cashbackOnly, .splitOnly]
   static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }
 
-extension YPItemWidgetModel.Style: Titleable {
+extension YPItemWidgetModel.Style: Titleable, @retroactive CaseIterable {
   public static let allCases: [YPItemWidgetModel.Style] = [.fullSize, .cashback, .split]
   static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }
 
-extension YPBnplPreviewWidgetModel.Appearance.Background: Titleable {
-  public static let allCases: [YPBnplPreviewWidgetModel.Appearance.Background] = [.default, .transparent]
+extension YPUltimateWidgetModel.Appearance.Background: Titleable, @retroactive CaseIterable {
+  public static let allCases: [YPUltimateWidgetModel.Appearance.Background] = [.default, .transparent]
   static let allCasesTitles: [String] = allCases.map { $0.title }
   
   private var title: String {
@@ -90,16 +86,16 @@ extension YPBnplPreviewWidgetModel.Appearance.Background: Titleable {
       "Transparent"
     case .default:
       "Default"
-    case .custom:
-      "Custom"
+    case .light:
+      "Light"
     @unknown default:
-      ""
+      "Unknown"
     }
   }
 }
 
-extension YPBnplPreviewWidgetModel.Appearance.WidgetSize: Titleable {
-  public static let allCases: [YPBnplPreviewWidgetModel.Appearance.WidgetSize] = [.small, .medium]
+extension YPUltimateWidgetModel.Appearance.WidgetSize: Titleable, @retroactive CaseIterable {
+  public static let allCases: [YPUltimateWidgetModel.Appearance.WidgetSize] = [.small, .medium]
   static let allCasesTitles: [String] = allCases.map { $0.title }
   
   private var title: String {
@@ -109,12 +105,12 @@ extension YPBnplPreviewWidgetModel.Appearance.WidgetSize: Titleable {
     case .small:
       "small"
     @unknown default:
-      ""
+      "unknown"
     }
   }
 }
 
-extension YPBnplPreviewWidgetModel.HeaderStyle: Titleable {
-  public static let allCases: [YPBnplPreviewWidgetModel.HeaderStyle] = [.minified, .standard, .standardWithCustomAction]
+extension YPUltimateWidgetModel.HeaderStyle: Titleable, @retroactive CaseIterable {
+  public static let allCases: [YPUltimateWidgetModel.HeaderStyle] = [.minified, .standard, .standardWithCustomAction]
   static let allCasesTitles: [String] = allCases.map { $0.rawValue }
 }
