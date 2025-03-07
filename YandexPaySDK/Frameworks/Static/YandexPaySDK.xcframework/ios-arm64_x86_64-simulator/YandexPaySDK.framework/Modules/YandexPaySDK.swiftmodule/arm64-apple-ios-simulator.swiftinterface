@@ -1051,10 +1051,28 @@ public enum YPTheme : Swift.String {
     get
   }
 }
-public protocol YPAccountManagerService {
-  var currentAccountId: Foundation.NSNumber? { get }
-  func setCurrentAccount(uid: Foundation.NSNumber) async throws -> YandexPaySDK.YPAuthInfo
-  func dropCurrentAccount() async throws
+public protocol YPAppMetricaAdapter {
+  var uuid: Swift.String { get }
+  func reporter(for apiKey: Swift.String) -> (any YandexPaySDK.YPAppMetricaReportingAdapter)?
+  #if compiler(>=5.3) && $TypedThrows
+  func activateReporter(for apiKey: Swift.String) throws(YandexPaySDK.YPAppMetricaActivationError)
+  #endif
+}
+public protocol YPAppMetricaYandexAdapter {
+  func createYandexReporter(for apiKey: Swift.String) -> (any YandexPaySDK.YPAppMetricaYandexReportingAdapter)?
+}
+public protocol YPInternalAppMetricaAdapter : YandexPaySDK.YPAppMetricaAdapter, YandexPaySDK.YPAppMetricaYandexAdapter {
+}
+public enum YPAppMetricaActivationError : Swift.Error {
+  case configCreationError(apiKey: Swift.String)
+  case reporterAlreadyCreated(apiKey: Swift.String)
+}
+public protocol YPAppMetricaReportingAdapter {
+  func report(eventName: Swift.String, params: [Swift.String : Any], onFailure: ((any Swift.Error) -> Swift.Void)?)
+  func setPUID(_ puid: Swift.String?)
+}
+public protocol YPAppMetricaYandexReportingAdapter {
+  func setPUID(_ puid: Swift.String?)
 }
 @available(*, deprecated, renamed: "YPNavigationControllerFactory")
 public typealias NavigationControllerFactory = YandexPaySDK.YPNavigationControllerFactory
@@ -1067,6 +1085,16 @@ public enum YPAuthError : Swift.Error {
   case cancelled
   case authorizationProblem(any Swift.Error)
 }
+public enum YPScreen {
+  case payment
+  case webView(url: Foundation.URL)
+}
+public enum YPDeeplinkAction {
+  case open(screen: YandexPaySDK.YPScreen)
+  public var isOpenWebView: Swift.Bool {
+    get
+  }
+}
 public struct YandexPaySDKPaymentDeeplinkParams {
   public let merchantId: Swift.String
   public let clientId: Swift.String?
@@ -1075,7 +1103,8 @@ public struct YandexPaySDKPaymentDeeplinkParams {
   public let fallbackURL: Foundation.URL?
   public let requestedFeatures: Swift.Set<Swift.String>
   public let environment: YandexPaySDK.YandexPaySDKEnvironment
-  public let redirectWebOnly: Swift.Bool
+  public let action: YandexPaySDK.YPDeeplinkAction
+  public init(merchantId: Swift.String, clientId: Swift.String?, sessionId: Swift.String, paymentURL: Foundation.URL, fallbackURL: Foundation.URL?, requestedFeatures: Swift.Set<Swift.String>, environment: YandexPaySDK.YandexPaySDKEnvironment, action: YandexPaySDK.YPDeeplinkAction)
 }
 public enum YandexPaySDKLocale : Swift.Int {
   case ru
@@ -1172,6 +1201,17 @@ public protocol YandexPayTokenFormDelegate : AnyObject {
 }
 extension YandexPaySDK.YPClamped : Swift.Equatable {
   public static func == (lhs: YandexPaySDK.YPClamped<T>, rhs: YandexPaySDK.YPClamped<T>) -> Swift.Bool
+}
+public enum YPFontWeight {
+  case light
+  case bold
+  case medium
+  case regular
+  public static func == (a: YandexPaySDK.YPFontWeight, b: YandexPaySDK.YPFontWeight) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 extension YandexPaySDK.YandexPaySDKEnvironment : Swift.Equatable {}
 extension YandexPaySDK.YandexPaySDKEnvironment : Swift.Hashable {}
@@ -1276,3 +1316,5 @@ extension YandexPaySDK.YPSplitUpgradeStatus : Swift.Hashable {}
 extension YandexPaySDK.YPTheme : Swift.Equatable {}
 extension YandexPaySDK.YPTheme : Swift.Hashable {}
 extension YandexPaySDK.YPTheme : Swift.RawRepresentable {}
+extension YandexPaySDK.YPFontWeight : Swift.Equatable {}
+extension YandexPaySDK.YPFontWeight : Swift.Hashable {}
