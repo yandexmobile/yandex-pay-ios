@@ -2,11 +2,12 @@
 // swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
 // swift-module-flags: -target x86_64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature AccessLevelOnImport -enable-bare-slash-regex -module-name YandexPaySDK
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import AdSupport
+import AppTrackingTransparency
 import Combine
 import Darwin
 import Foundation
 import QuartzCore
-import SafariServices
 import Swift
 import SwiftUI
 import UIKit.UIFont
@@ -15,6 +16,12 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+@available(*, deprecated, renamed: "YPRequiredShippingTypes")
+public typealias RequiredShippingTypes = YandexPaySDK.YPRequiredShippingTypes
+public struct YPRequiredShippingTypes : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
 public protocol YandexPayCheckoutButtonAsyncDelegate : AnyObject {
   func yandexPayCheckoutButton(_ button: any YandexPaySDK.YandexPayButton, didCompletePaymentWithResult result: YandexPaySDK.YPCheckoutResult)
   func yandexPayCheckoutButtonDidRequestViewControllerForPresentation(_ button: any YandexPaySDK.YandexPayButton) -> UIKit.UIViewController?
@@ -32,14 +39,131 @@ public struct YPCheckoutInfo {
   public let orderId: Swift.String
   public let metadata: Swift.String?
 }
+public struct YPCheckoutPaymentSheet {
+  public let currencyCode: YandexPaySDK.YPCurrencyCode
+  public let cart: YandexPaySDK.YPPaymentCart
+  public let orderId: YandexPaySDK.YPOrderID?
+  public let metadata: YandexPaySDK.YPMetadata?
+  public init(currencyCode: YandexPaySDK.YPCurrencyCode, cart: YandexPaySDK.YPPaymentCart, orderId: YandexPaySDK.YPOrderID?, metadata: YandexPaySDK.YPMetadata?)
+}
 public enum YPCheckoutResult {
   case succeeded(YandexPaySDK.YPCheckoutInfo)
   case cancelled
   case failed(YandexPaySDK.YPCheckoutError)
 }
 
+public struct YPBadgeModel {
+  public let amount: Foundation.Decimal
+  public let currency: YandexPaySDK.YPCurrencyCode
+  public let theme: YandexPaySDK.YPTheme
+  public let align: YandexPaySDK.YPBadgeModel.Align
+  public let type: YandexPaySDK.YPBadgeModel.BadgeType
+  public let hidingPolicy: YandexPaySDK.YPBadgeModel.HidingPolicy
+  public init(amount: Foundation.Decimal, currency: YandexPaySDK.YPCurrencyCode, theme: YandexPaySDK.YPTheme, align: YandexPaySDK.YPBadgeModel.Align, type: YandexPaySDK.YPBadgeModel.BadgeType, hidingPolicy: YandexPaySDK.YPBadgeModel.HidingPolicy = .gone)
+}
+extension YandexPaySDK.YPBadgeModel {
+  public enum SplitVariant : Swift.String {
+    case simple
+    case detailed
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum SplitColor : Swift.String {
+    case primary
+    case green
+    case grey
+    case transparent
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum CashbackVariant : Swift.String {
+    case `default`
+    case compact
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum CashbackColor : Swift.String {
+    case primary
+    case grey
+    case transparent
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum Align : Swift.String {
+    case left
+    case center
+    case right
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum BadgeType {
+    case split(color: YandexPaySDK.YPBadgeModel.SplitColor, variant: YandexPaySDK.YPBadgeModel.SplitVariant)
+    case cashback(color: YandexPaySDK.YPBadgeModel.CashbackColor, variant: YandexPaySDK.YPBadgeModel.CashbackVariant)
+  }
+  public enum HidingPolicy : Swift.String {
+    case invisible
+    case gone
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+}
+extension YandexPaySDK.YPBadgeModel : Swift.Equatable {
+  public static func == (a: YandexPaySDK.YPBadgeModel, b: YandexPaySDK.YPBadgeModel) -> Swift.Bool
+}
+extension YandexPaySDK.YPBadgeModel.BadgeType : Swift.Equatable {
+  public static func == (a: YandexPaySDK.YPBadgeModel.BadgeType, b: YandexPaySDK.YPBadgeModel.BadgeType) -> Swift.Bool
+}
+public struct YPItemWidgetModel {
+  public enum Style : Swift.String {
+    case split
+    case cashback
+    case fullSize
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public struct Appearance {
+    public var theme: YandexPaySDK.YPTheme
+    public var isTransparent: Swift.Bool
+    public init(theme: YandexPaySDK.YPTheme = .system, isTransparent: Swift.Bool = false)
+  }
+  public let amount: Foundation.Decimal
+  public let currency: YandexPaySDK.YPCurrencyCode
+  public let style: YandexPaySDK.YPItemWidgetModel.Style
+  public let appearance: YandexPaySDK.YPItemWidgetModel.Appearance
+  public init(amount: Foundation.Decimal, currency: YandexPaySDK.YPCurrencyCode = .rub, style: YandexPaySDK.YPItemWidgetModel.Style = .fullSize, appearance: YandexPaySDK.YPItemWidgetModel.Appearance = .init())
+}
+extension YandexPaySDK.YPItemWidgetModel : Swift.Equatable {
+  public static func == (a: YandexPaySDK.YPItemWidgetModel, b: YandexPaySDK.YPItemWidgetModel) -> Swift.Bool
+}
+extension YandexPaySDK.YPItemWidgetModel.Appearance : Swift.Equatable {
+  public static func == (a: YandexPaySDK.YPItemWidgetModel.Appearance, b: YandexPaySDK.YPItemWidgetModel.Appearance) -> Swift.Bool
+}
 public protocol YPPresentationContextProviding : AnyObject {
   func anchorForPresentation() -> YandexPaySDK.YPPresentationContext
+}
+extension YandexPaySDK.YandexPaySDKApi {
+  public static let currentVersion: Swift.String
 }
 @_hasMissingDesignatedInitializers final public class YandexPaySDKApi {
   final public func createYandexPayForm(paymentURL: Foundation.URL, delegate: any YandexPaySDK.YandexPayFormDelegate) -> any YandexPaySDK.YandexPayForm
@@ -82,7 +206,6 @@ extension YandexPaySDK.YandexPaySDKApi {
   public static var isInitialized: Swift.Bool {
     get
   }
-  public static let currentVersion: Swift.String
 }
 extension YandexPaySDK.YandexPaySDKApi {
   public static func initialize(configuration: YandexPaySDK.YandexPaySDKConfiguration)
@@ -108,16 +231,6 @@ public struct YandexPaySDKMerchant {
   public let name: Swift.String
   public let url: Swift.String?
   public init(id: Swift.String, name: Swift.String, url: Swift.String?)
-}
-public protocol YandexPayButtonAsyncDelegate : AnyObject {
-  func yandexPayButton(_ button: any YandexPaySDK.YandexPayButton, didCompletePaymentWithResult result: YandexPaySDK.YPPaymentResult)
-  func yandexPayButtonDidRequestViewControllerForPresentation(_ button: any YandexPaySDK.YandexPayButton) -> UIKit.UIViewController?
-  func yandexPayButtonDidRequestPaymentSheet(_ button: any YandexPaySDK.YandexPayButton, completion: @escaping (YandexPaySDK.YPPaymentSheet?) -> Swift.Void)
-}
-public protocol YandexPayButtonSyncDelegate : AnyObject {
-  func yandexPayButton(_ button: any YandexPaySDK.YandexPayButton, didCompletePaymentWithResult result: YandexPaySDK.YPPaymentResult)
-  func yandexPayButtonDidRequestViewControllerForPresentation(_ button: any YandexPaySDK.YandexPayButton) -> UIKit.UIViewController?
-  func yandexPayButtonDidRequestPaymentSheet(_ button: any YandexPaySDK.YandexPayButton) -> YandexPaySDK.YPPaymentSheet?
 }
 public protocol YandexPayButtonDelegate : AnyObject {
   func yandexPayButton(_ button: any YandexPaySDK.YandexPayButtonProtocol, didCompletePaymentWithResult result: YandexPaySDK.YPYandexPayPaymentResult, data: YandexPaySDK.YPYandexPayPaymentData)
@@ -278,50 +391,6 @@ public struct YandexPayUltimateWidgetData {
   public let splitMonthCount: Swift.Int
   public init(splitMonthCount: Swift.Int)
 }
-public protocol YPBDUIAdapterBase {
-  var stateStorage: any YandexPaySDK.YPBDUIStateStorage { get }
-  func makeViewController(query: YandexPaySDK.YPBDUIQuery) throws -> UIKit.UIViewController
-}
-public enum YPBDUIContentType : Swift.String, Swift.CaseIterable {
-  case loading
-  case error
-  public init?(rawValue: Swift.String)
-  public typealias AllCases = [YandexPaySDK.YPBDUIContentType]
-  public typealias RawValue = Swift.String
-  nonisolated public static var allCases: [YandexPaySDK.YPBDUIContentType] {
-    get
-  }
-  public var rawValue: Swift.String {
-    get
-  }
-}
-public protocol YPBDUIContent : Swift.Decodable, Swift.Hashable {
-  static var contentType: YandexPaySDK.YPBDUIContentType { get }
-}
-public enum YPBDUIQuery {
-  case cart
-  case cashback
-  case localhost(request: YandexPaySDK.YPBDUIRequest, preview: YandexPaySDK.YPBDUIPreview)
-}
-public enum YPBDUIPreview {
-  case json(Swift.String)
-  case content(any YandexPaySDK.YPBDUIContent)
-}
-public struct YPBDUIRequest {
-  public let path: Swift.String
-  public let params: [Swift.String : [Swift.String]]?
-  public let body: [Swift.String : Any]?
-  public init(path: Swift.String, params: [Swift.String : [Swift.String]]? = nil, body: [Swift.String : Any]? = nil)
-}
-public protocol YPBDUIStateStorage {
-  var onChange: Combine.AnyPublisher<[Swift.String : Any], Swift.Never> { get }
-  var state: [Swift.String : Any] { get }
-  func update(newState: [Swift.String : Any])
-}
-extension YandexPaySDK.YPCardNetwork : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
-}
 public enum YPCommonValidationError : Foundation.LocalizedError {
   case authenticationProblem
   case unknownMerchantOrigin
@@ -342,160 +411,11 @@ public enum YPCommonValidationError : Foundation.LocalizedError {
     get
   }
 }
-@available(*, deprecated, renamed: "YPRequiredShippingTypes")
-public typealias RequiredShippingTypes = YandexPaySDK.YPRequiredShippingTypes
-public struct YPRequiredShippingTypes : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-public protocol YPBankDataObserver : AnyObject {
-  func observableEvent(_ event: any YandexPaySDK.YPBankEvent)
-  func stateChanged()
-}
-public struct YPBankCreditLimitApplicationResult {
-  public let applicationID: Swift.String
-  public let action: Foundation.URL
-  public init(applicationID: Swift.String, action: Foundation.URL)
-}
-public protocol YPBankEvent {
-}
-public struct YPCreditLimitUpgradeEvent : YandexPaySDK.YPBankEvent {
-  public let result: YandexPaySDK.YPCreditLimitUpgradeEvent.Result
-  public init(result: YandexPaySDK.YPCreditLimitUpgradeEvent.Result)
-}
-extension YandexPaySDK.YPCreditLimitUpgradeEvent {
-  public enum Result {
-    case success
-    case failure
-    case canceled
-    public static func == (a: YandexPaySDK.YPCreditLimitUpgradeEvent.Result, b: YandexPaySDK.YPCreditLimitUpgradeEvent.Result) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-}
-public struct YPDepositEvent : YandexPaySDK.YPBankEvent {
-  public let result: YandexPaySDK.YPDepositEvent.Result
-  public init(result: YandexPaySDK.YPDepositEvent.Result)
-}
-extension YandexPaySDK.YPDepositEvent {
-  public enum Result {
-    case succeededAft
-    case failed
-    case pending
-    case succeededMe2Me
-    case userTerminated
-    case unknown
-    public static func == (a: YandexPaySDK.YPDepositEvent.Result, b: YandexPaySDK.YPDepositEvent.Result) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-}
-public struct YPCreditLimitSettings {
-  public let creditLimitSettings: YandexPaySDK.YPCreditLimitSettings.Settings
-  public let matchingData: YandexPaySDK.YPCreditLimitSettings.SplitMatchingData
-  public init(creditLimitSettings: YandexPaySDK.YPCreditLimitSettings.Settings, matchingData: YandexPaySDK.YPCreditLimitSettings.SplitMatchingData)
-}
-extension YandexPaySDK.YPCreditLimitSettings {
-  public struct Settings {
-    public let creditLengthInMonths: Swift.Int
-    public init(creditLengthInMonths: Swift.Int)
-  }
-}
-extension YandexPaySDK.YPCreditLimitSettings {
-  public struct SplitMatchingData {
-    public let purchaseTimestamp: Foundation.Date
-    public let purchaseSum: YandexPaySDK.YPMoney
-    public let cardID: Swift.String
-    public let merchantID: Swift.String
-    public let externalID: Swift.String
-    public let orderID: Swift.String?
-    public let splitID: Swift.String?
-  }
-}
-public protocol YPBankService : YandexPaySDK.YPAuthInfoReceiver, YandexPaySDK.YPBankDataService, YandexPaySDK.YPBankNavigationService, YandexPaySDK.YPBankSplitPaymentService {
-}
-public protocol YPBankNavigationService {
-  func handleAction(_ action: Foundation.URL, presentationHandler: UIKit.UIViewController, flowCompletionHandler: ((YandexPaySDK.YPBankFlowResult) -> Swift.Void)?)
-  func topup(amount: YandexPaySDK.YPMoney?, presentationHandler: UIKit.UIViewController, flowCompletionHandler: ((YandexPaySDK.YPBankFlowResult) -> Swift.Void)?)
-  func createCreditLimitApplication(selectedTerm: Swift.Int?, promoId: Swift.String?, originatingSystem: Swift.String?, merchantData: [Swift.String : Any], completion: @escaping (Swift.Result<YandexPaySDK.YPBankCreditLimitApplicationResult, any Swift.Error>) -> Swift.Void)
-  func openPlus(presentationHandler: UIKit.UIViewController, flowCompletionHandler: ((Swift.Bool) -> Swift.Void)?)
-}
-public protocol YPBankDataService {
-  var isNormalAccount: Swift.Bool { get }
-  func loadCard() async -> Swift.Result<Swift.String?, any Swift.Error>
-  func fetchBalance() async -> Swift.Result<Foundation.Decimal, any Swift.Error>
-  func getCreditLimitPlanInfo(amount: YandexPaySDK.YPMoney, splitMerchantID: Swift.String) async -> Swift.Result<YandexPaySDK.YPSplitData, any Swift.Error>
-  func addObserver(_ observer: any YandexPaySDK.YPBankDataObserver)
-  func notify(_ url: Foundation.URL) -> Swift.Bool
-  func getActionForURL(_ url: Foundation.URL) -> Foundation.URL?
-}
-public protocol YPBankSplitPaymentService {
-  func setCreditLimitPurchaseSettings(settings: YandexPaySDK.YPCreditLimitSettings) async throws
-  func setDefaultCreditPaymentMethod(selectedCardID: Swift.String, isYaBank: Swift.Bool, shouldContinuePolling: @escaping (Swift.Result<YandexPaySDK.YPCreditPaymentMethodStatusResult, any Swift.Error>) -> Swift.Bool) async throws
-}
-public enum YPBankFlowResult {
-  case userTerminated
-  case unauthorized
-  case unknown
-  public static func == (a: YandexPaySDK.YPBankFlowResult, b: YandexPaySDK.YPBankFlowResult) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-@available(*, deprecated, renamed: "YPBankServiceError")
-public typealias BankServiceError = YandexPaySDK.YPBankServiceError
-public enum YPBankServiceError : Swift.Error {
-  case missedCardID
-  case missedPaymentID
-  case setCreditPaymentMethodError
-  case unknown
-  public enum DefaultCard : Swift.Error {
-    case missed3DS
-    case failedPolling
-    public static func == (a: YandexPaySDK.YPBankServiceError.DefaultCard, b: YandexPaySDK.YPBankServiceError.DefaultCard) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  public enum PaymentMethod : Swift.Error {
-    case failed
-    case empty
-    public static func == (a: YandexPaySDK.YPBankServiceError.PaymentMethod, b: YandexPaySDK.YPBankServiceError.PaymentMethod) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  public static func == (a: YandexPaySDK.YPBankServiceError, b: YandexPaySDK.YPBankServiceError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public struct YPCreditPaymentMethodStatusResult {
-  public let status: YandexPaySDK.YPCreditPaymentMethodStatus
-  public let url3DS: Foundation.URL?
-  public init(status: YandexPaySDK.YPCreditPaymentMethodStatus, url3DS: Foundation.URL? = nil)
-}
-public enum YPCreditPaymentMethodStatus {
-  case pending
-  case required3DS
-  case finished
-  case failed
-  public static func == (a: YandexPaySDK.YPCreditPaymentMethodStatus, b: YandexPaySDK.YPCreditPaymentMethodStatus) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
 public protocol YPNetworkClient {
-  func execute<Endpoint>(endpoint: Endpoint) async throws -> Endpoint.ResultModel where Endpoint : YandexPaySDK.YPNetworkEndpointProvider
+  func execute<Endpoint>(endpoint: Endpoint, retryPolicy: YandexPaySDK.YPRetryPolicy?) async throws -> Endpoint.ResultModel where Endpoint : YandexPaySDK.YPNetworkEndpointProvider
+}
+extension YandexPaySDK.YPNetworkClient {
+  public func execute<Endpoint>(endpoint: Endpoint) async throws -> Endpoint.ResultModel where Endpoint : YandexPaySDK.YPNetworkEndpointProvider
 }
 public enum HTTPMethod : Swift.String {
   case GET
@@ -517,6 +437,7 @@ public protocol YPResponseDecoder {
 public protocol YPNetworkEndpointProvider {
   associatedtype ResultModel where Self.ResultModel == Self.Decoder.Output
   associatedtype Decoder : YandexPaySDK.YPResponseDecoder
+  var headers: [Swift.String : Swift.String]? { get }
   var method: YandexPaySDK.HTTPMethod { get }
   var path: Swift.String { get }
   var queryItems: [Foundation.URLQueryItem]? { get }
@@ -524,6 +445,11 @@ public protocol YPNetworkEndpointProvider {
   var timeoutInSeconds: Foundation.TimeInterval? { get }
   var decoder: Self.Decoder { get }
   var mockFile: Swift.String? { get }
+}
+extension YandexPaySDK.YPNetworkEndpointProvider {
+  public var headers: [Swift.String : Swift.String]? {
+    get
+  }
 }
 extension YandexPaySDK.YPNetworkEndpointProvider {
   public var decoder: Foundation.JSONDecoder? {
@@ -536,9 +462,6 @@ extension YandexPaySDK.YPNetworkEndpointProvider {
     get
   }
 }
-public protocol YPAuthInfoReceiver {
-  func receive(authInfo: YandexPaySDK.YPAuthInfo?)
-}
 @available(*, deprecated, renamed: "YPFullscreenContainerController")
 public typealias FullscreenContainerController = YandexPaySDK.YPFullscreenContainerController
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class YPFullscreenContainerController : UIKit.UIViewController {
@@ -550,67 +473,21 @@ public typealias FullscreenContainerController = YandexPaySDK.YPFullscreenContai
     @objc get
   }
   @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc override final public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
   @objc deinit
-}
-
-extension _Concurrency.Task : Combine.Cancellable {
-}
-public struct YPDiscountBadgeModel {
-  public let discountAmount: Foundation.Decimal
-  public let size: YandexPaySDK.YPDiscountBadgeModel.Size
-  public init(discountAmount: Foundation.Decimal, size: YandexPaySDK.YPDiscountBadgeModel.Size = .s, discountType: YandexPaySDK.YPDiscountBadgeModel.DiscountType = .constant)
-}
-extension YandexPaySDK.YPDiscountBadgeModel {
-  public enum Size {
-    case s
-    case m
-    case l
-    public static func == (a: YandexPaySDK.YPDiscountBadgeModel.Size, b: YandexPaySDK.YPDiscountBadgeModel.Size) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  public enum DiscountType {
-    case upTo
-    case constant
-    public static func == (a: YandexPaySDK.YPDiscountBadgeModel.DiscountType, b: YandexPaySDK.YPDiscountBadgeModel.DiscountType) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class YandexPayViewController : UIKit.UIViewController {
   @objc deinit
 }
-infix operator <=> : DefaultPrecedence
-public enum YPAdditionalField : Swift.Hashable {
-  case comment
-  case acceptCoupon
-  public static func == (a: YandexPaySDK.YPAdditionalField, b: YandexPaySDK.YPAdditionalField) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
+extension _Concurrency.Task : Combine.Cancellable {
 }
+infix operator <=> : DefaultPrecedence
 public struct YPAuthInfo : Swift.Codable, Swift.Equatable {
   public let authToken: Swift.String
   public let uid: Swift.String?
   public init(authToken: Swift.String, uid: Swift.String? = nil)
   public static func == (a: YandexPaySDK.YPAuthInfo, b: YandexPaySDK.YPAuthInfo) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-public enum YPAuthMethod : Swift.Codable {
-  case panOnly
-  case cloudToken
-  public static func == (a: YandexPaySDK.YPAuthMethod, b: YandexPaySDK.YPAuthMethod) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public func encode(to encoder: any Swift.Encoder) throws
-  public var hashValue: Swift.Int {
-    get
-  }
   public init(from decoder: any Swift.Decoder) throws
 }
 public enum YPAvailablePaymentMethod : Swift.String {
@@ -621,125 +498,6 @@ public enum YPAvailablePaymentMethod : Swift.String {
   public var rawValue: Swift.String {
     get
   }
-}
-public struct YPBadgeModel {
-  public let amount: Foundation.Decimal
-  public let currency: YandexPaySDK.YPCurrencyCode
-  public let theme: YandexPaySDK.YPTheme
-  public let align: YandexPaySDK.YPBadgeModel.Align
-  public let type: YandexPaySDK.YPBadgeModel.BadgeType
-  public let hidingPolicy: YandexPaySDK.YPBadgeModel.HidingPolicy
-  public init(amount: Foundation.Decimal, currency: YandexPaySDK.YPCurrencyCode, theme: YandexPaySDK.YPTheme, align: YandexPaySDK.YPBadgeModel.Align, type: YandexPaySDK.YPBadgeModel.BadgeType, hidingPolicy: YandexPaySDK.YPBadgeModel.HidingPolicy = .gone)
-}
-extension YandexPaySDK.YPBadgeModel {
-  public enum SplitVariant : Swift.String {
-    case simple
-    case detailed
-    public init?(rawValue: Swift.String)
-    public typealias RawValue = Swift.String
-    public var rawValue: Swift.String {
-      get
-    }
-  }
-  public enum SplitColor : Swift.String {
-    case primary
-    case green
-    case grey
-    case transparent
-    public init?(rawValue: Swift.String)
-    public typealias RawValue = Swift.String
-    public var rawValue: Swift.String {
-      get
-    }
-  }
-  public enum CashbackVariant : Swift.String {
-    case `default`
-    case compact
-    public init?(rawValue: Swift.String)
-    public typealias RawValue = Swift.String
-    public var rawValue: Swift.String {
-      get
-    }
-  }
-  public enum CashbackColor : Swift.String {
-    case primary
-    case grey
-    case transparent
-    public init?(rawValue: Swift.String)
-    public typealias RawValue = Swift.String
-    public var rawValue: Swift.String {
-      get
-    }
-  }
-  public enum Align : Swift.String {
-    case left
-    case center
-    case right
-    public init?(rawValue: Swift.String)
-    public typealias RawValue = Swift.String
-    public var rawValue: Swift.String {
-      get
-    }
-  }
-  public enum BadgeType {
-    case split(color: YandexPaySDK.YPBadgeModel.SplitColor, variant: YandexPaySDK.YPBadgeModel.SplitVariant)
-    case cashback(color: YandexPaySDK.YPBadgeModel.CashbackColor, variant: YandexPaySDK.YPBadgeModel.CashbackVariant)
-  }
-  public enum HidingPolicy : Swift.String {
-    case invisible
-    case gone
-    public init?(rawValue: Swift.String)
-    public typealias RawValue = Swift.String
-    public var rawValue: Swift.String {
-      get
-    }
-  }
-}
-extension YandexPaySDK.YPBadgeModel : Swift.Equatable {
-  public static func == (a: YandexPaySDK.YPBadgeModel, b: YandexPaySDK.YPBadgeModel) -> Swift.Bool
-}
-extension YandexPaySDK.YPBadgeModel.BadgeType : Swift.Equatable {
-  public static func == (a: YandexPaySDK.YPBadgeModel.BadgeType, b: YandexPaySDK.YPBadgeModel.BadgeType) -> Swift.Bool
-}
-public struct YPBillingContact : Swift.Equatable {
-  public let email: Swift.String?
-  public init(email: Swift.String?)
-  public static func == (a: YandexPaySDK.YPBillingContact, b: YandexPaySDK.YPBillingContact) -> Swift.Bool
-}
-public enum YPCardNetwork {
-  case americanExpress
-  case discover
-  case jcb
-  case mastercard
-  case visa
-  case visaElectron
-  case maestro
-  case mir
-  case unionPay
-  case uzcard
-  case humocard
-  case unknown
-  public static func == (a: YandexPaySDK.YPCardNetwork, b: YandexPaySDK.YPCardNetwork) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public struct YPCardPaymentMethod : Swift.Codable {
-  public let gateway: YandexPaySDK.YPGateway
-  public let gatewayMerchantId: YandexPaySDK.YPGatewayMerchantID
-  public let allowedAuthMethods: [YandexPaySDK.YPAuthMethod]
-  public let allowedCardNetworks: [YandexPaySDK.YPCardNetwork]
-  public let verificationDetails: Swift.Bool
-  public init(gateway: YandexPaySDK.YPGateway, gatewayMerchantId: YandexPaySDK.YPGatewayMerchantID, allowedAuthMethods: [YandexPaySDK.YPAuthMethod], allowedCardNetworks: [YandexPaySDK.YPCardNetwork], verificationDetails: Swift.Bool = false)
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-public struct YPCardPaymentMethodInfo : Swift.Equatable {
-  public let cardLast4: Swift.String?
-  public let cardNetwork: YandexPaySDK.YPCardNetwork?
-  public init(cardLast4: Swift.String?, cardNetwork: YandexPaySDK.YPCardNetwork?)
-  public static func == (a: YandexPaySDK.YPCardPaymentMethodInfo, b: YandexPaySDK.YPCardPaymentMethodInfo) -> Swift.Bool
 }
 public struct YPCheckoutWidgetModel {
   public enum Style : Swift.String {
@@ -768,15 +526,6 @@ extension YandexPaySDK.YPCheckoutWidgetModel : Swift.Equatable {
 extension YandexPaySDK.YPCheckoutWidgetModel.Appearance : Swift.Equatable {
   public static func == (a: YandexPaySDK.YPCheckoutWidgetModel.Appearance, b: YandexPaySDK.YPCheckoutWidgetModel.Appearance) -> Swift.Bool
 }
-public enum YPCountryCode {
-  case ru
-  case us
-  public static func == (a: YandexPaySDK.YPCountryCode, b: YandexPaySDK.YPCountryCode) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
 public enum YPCurrencyCode : Swift.String {
   case rub
   case byn
@@ -803,89 +552,11 @@ public enum YPCurrencyCode : Swift.String {
     get
   }
 }
-public typealias YPGateway = Swift.String
-public typealias YPGatewayMerchantID = Swift.String
-public struct YPItemWidgetModel {
-  public enum Style : Swift.String {
-    case split
-    case cashback
-    case fullSize
-    public init?(rawValue: Swift.String)
-    public typealias RawValue = Swift.String
-    public var rawValue: Swift.String {
-      get
-    }
-  }
-  public struct Appearance {
-    public var theme: YandexPaySDK.YPTheme
-    public var isTransparent: Swift.Bool
-    public init(theme: YandexPaySDK.YPTheme = .system, isTransparent: Swift.Bool = false)
-  }
-  public let amount: Foundation.Decimal
-  public let currency: YandexPaySDK.YPCurrencyCode
-  public let style: YandexPaySDK.YPItemWidgetModel.Style
-  public let appearance: YandexPaySDK.YPItemWidgetModel.Appearance
-  public init(amount: Foundation.Decimal, currency: YandexPaySDK.YPCurrencyCode = .rub, style: YandexPaySDK.YPItemWidgetModel.Style = .fullSize, appearance: YandexPaySDK.YPItemWidgetModel.Appearance = .init())
-}
-extension YandexPaySDK.YPItemWidgetModel : Swift.Equatable {
-  public static func == (a: YandexPaySDK.YPItemWidgetModel, b: YandexPaySDK.YPItemWidgetModel) -> Swift.Bool
-}
-extension YandexPaySDK.YPItemWidgetModel.Appearance : Swift.Equatable {
-  public static func == (a: YandexPaySDK.YPItemWidgetModel.Appearance, b: YandexPaySDK.YPItemWidgetModel.Appearance) -> Swift.Bool
-}
-public typealias YPMerchantID = Swift.String
 public struct YPMetadata {
   public let value: Swift.String
   public init(value: Swift.String)
 }
-public struct YPMoney : Swift.Equatable {
-  public var amount: Foundation.Decimal
-  public var currencyCode: Swift.String
-  public init(amount: Foundation.Decimal, currencyCode: Swift.String)
-  public static func == (a: YandexPaySDK.YPMoney, b: YandexPaySDK.YPMoney) -> Swift.Bool
-}
-extension YandexPaySDK.YPMoney {
-  public static func rub(amount: Foundation.Decimal) -> YandexPaySDK.YPMoney
-}
-public struct YPOrder : Swift.Codable {
-  public let id: YandexPaySDK.YPOrderID
-  public let label: Swift.String?
-  public let amount: Foundation.Decimal
-  public let items: [YandexPaySDK.YPOrderItem]?
-  public init(id: YandexPaySDK.YPOrderID, label: Swift.String?, amount: Foundation.Decimal, items: [YandexPaySDK.YPOrderItem]? = nil)
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
 public typealias YPOrderID = Swift.String
-public struct YPOrderItem : Swift.Codable {
-  public let type: YandexPaySDK.YPOrderItemType?
-  public let label: Swift.String
-  public let amount: Foundation.Decimal
-  public let quantity: YandexPaySDK.YPOrderItemQuantity?
-  public init(type: YandexPaySDK.YPOrderItemType? = nil, label: Swift.String, amount: Foundation.Decimal, quantity: YandexPaySDK.YPOrderItemQuantity? = nil)
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-public struct YPOrderItemQuantity : Swift.Codable {
-  public let label: Swift.String?
-  public let count: Swift.Double
-  public init(label: Swift.String? = nil, count: Swift.Double)
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-public enum YPOrderItemType : Swift.Codable {
-  case pickup
-  case shipping
-  case discount
-  case promocode
-  public static func == (a: YandexPaySDK.YPOrderItemType, b: YandexPaySDK.YPOrderItemType) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public func encode(to encoder: any Swift.Encoder) throws
-  public var hashValue: Swift.Int {
-    get
-  }
-  public init(from decoder: any Swift.Decoder) throws
-}
 public struct YPPaymentCart {
   public init(items: [YandexPaySDK.YPProduct])
 }
@@ -910,64 +581,6 @@ public enum YPPaymentError : Swift.String, Swift.Error {
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
-    get
-  }
-}
-public struct YPPaymentInfo : Swift.Equatable {
-  public let paymentToken: YandexPaySDK.YPPaymentToken
-  public let paymentMethodInfo: YandexPaySDK.YPPaymentMethodInfo
-  public let paymentAmount: Foundation.Decimal
-  public let billingContact: YandexPaySDK.YPBillingContact?
-  public init(paymentToken: YandexPaySDK.YPPaymentToken, paymentMethodInfo: YandexPaySDK.YPPaymentMethodInfo, paymentAmount: Foundation.Decimal, billingContact: YandexPaySDK.YPBillingContact?)
-  public static func == (a: YandexPaySDK.YPPaymentInfo, b: YandexPaySDK.YPPaymentInfo) -> Swift.Bool
-}
-public enum YPPaymentMethod : Swift.Codable {
-  case card(YandexPaySDK.YPCardPaymentMethod)
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-public enum YPPaymentMethodInfo : Swift.Equatable {
-  case card(YandexPaySDK.YPCardPaymentMethodInfo)
-  public static func == (a: YandexPaySDK.YPPaymentMethodInfo, b: YandexPaySDK.YPPaymentMethodInfo) -> Swift.Bool
-}
-public enum YPPaymentResult {
-  case succeeded(YandexPaySDK.YPPaymentInfo)
-  case cancelled
-  case failed(YandexPaySDK.YPPaymentError)
-}
-public enum YPYandexPayPaymentResult {
-  case succeeded
-  case cancelled
-  case failed(YandexPaySDK.YPPaymentError)
-}
-public struct YPPaymentSheet {
-  public let countryCode: YandexPaySDK.YPCountryCode
-  public let currencyCode: YandexPaySDK.YPCurrencyCode
-  public let order: YandexPaySDK.YPOrder
-  public let paymentMethods: [YandexPaySDK.YPPaymentMethod]
-  public let additionalFields: Swift.Set<YandexPaySDK.YPAdditionalField>
-  public let requiredFields: Swift.Set<YandexPaySDK.YPRequiredField>
-  public init(countryCode: YandexPaySDK.YPCountryCode, currencyCode: YandexPaySDK.YPCurrencyCode, order: YandexPaySDK.YPOrder, paymentMethods: [YandexPaySDK.YPPaymentMethod], additionalFields: Swift.Set<YandexPaySDK.YPAdditionalField> = [], requiredFields: Swift.Set<YandexPaySDK.YPRequiredField> = [])
-}
-public struct YPCheckoutPaymentSheet {
-  public let currencyCode: YandexPaySDK.YPCurrencyCode
-  public let cart: YandexPaySDK.YPPaymentCart
-  public let orderId: YandexPaySDK.YPOrderID?
-  public let metadata: YandexPaySDK.YPMetadata?
-  public init(currencyCode: YandexPaySDK.YPCurrencyCode, cart: YandexPaySDK.YPPaymentCart, orderId: YandexPaySDK.YPOrderID?, metadata: YandexPaySDK.YPMetadata?)
-}
-public typealias YPPaymentToken = Swift.String
-public enum YPRequiredField : Swift.Hashable {
-  case billingContactEmail
-  case billingContactName
-  case shippingContactEmail
-  case shippingContactName
-  case shippingContactPhone
-  case directShippingType
-  case pickupShippingType
-  public static func == (a: YandexPaySDK.YPRequiredField, b: YandexPaySDK.YPRequiredField) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
     get
   }
 }
@@ -1051,6 +664,11 @@ public enum YPTheme : Swift.String {
     get
   }
 }
+public enum YPYandexPayPaymentResult {
+  case succeeded
+  case cancelled
+  case failed(YandexPaySDK.YPPaymentError)
+}
 public protocol YPAppMetricaAdapter {
   var uuid: Swift.String { get }
   func reporter(for apiKey: Swift.String) -> (any YandexPaySDK.YPAppMetricaReportingAdapter)?
@@ -1058,32 +676,29 @@ public protocol YPAppMetricaAdapter {
   func activateReporter(for apiKey: Swift.String) throws(YandexPaySDK.YPAppMetricaActivationError)
   #endif
 }
-public protocol YPAppMetricaYandexAdapter {
-  func createYandexReporter(for apiKey: Swift.String) -> (any YandexPaySDK.YPAppMetricaYandexReportingAdapter)?
+public protocol YPAppMetricaReportingAdapter {
+  func report(eventName: Swift.String, params: [Swift.String : Any], onFailure: ((any Swift.Error) -> Swift.Void)?)
+  func setPUID(_ puid: Swift.String?)
 }
-public protocol YPInternalAppMetricaAdapter : YandexPaySDK.YPAppMetricaAdapter, YandexPaySDK.YPAppMetricaYandexAdapter {
+public protocol YPRTMAdapter {
+  func reportError(params: [Swift.String : Swift.String], message: Swift.String, type: Swift.String, source: Swift.String)
+}
+public protocol YPRTMAdapterFactory {
+  func create(userAgent: Swift.String, projectName: Swift.String, appVersion: Swift.String, userID: Swift.UInt64, environment: YandexPaySDK.YandexPaySDKEnvironment, reqID: Swift.String) -> (any YandexPaySDK.YPRTMAdapter)?
 }
 public enum YPAppMetricaActivationError : Swift.Error {
   case configCreationError(apiKey: Swift.String)
   case reporterAlreadyCreated(apiKey: Swift.String)
 }
-public protocol YPAppMetricaReportingAdapter {
-  func report(eventName: Swift.String, params: [Swift.String : Any], onFailure: ((any Swift.Error) -> Swift.Void)?)
-  func setPUID(_ puid: Swift.String?)
-}
-public protocol YPAppMetricaYandexReportingAdapter {
-  func setPUID(_ puid: Swift.String?)
-}
-@available(*, deprecated, renamed: "YPNavigationControllerFactory")
-public typealias NavigationControllerFactory = YandexPaySDK.YPNavigationControllerFactory
-public protocol YPNavigationControllerFactory {
-  func callAsFunction() -> UIKit.UINavigationController
-}
-public enum YPAuthError : Swift.Error {
-  case reloginRecoverable
-  case notAuthorized
-  case cancelled
-  case authorizationProblem(any Swift.Error)
+public enum YPFlow : Swift.String {
+  case offline
+  case online
+  case payBoxOffline
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
 }
 public enum YPScreen {
   case payment
@@ -1104,7 +719,8 @@ public struct YandexPaySDKPaymentDeeplinkParams {
   public let requestedFeatures: Swift.Set<Swift.String>
   public let environment: YandexPaySDK.YandexPaySDKEnvironment
   public let action: YandexPaySDK.YPDeeplinkAction
-  public init(merchantId: Swift.String, clientId: Swift.String?, sessionId: Swift.String, paymentURL: Foundation.URL, fallbackURL: Foundation.URL?, requestedFeatures: Swift.Set<Swift.String>, environment: YandexPaySDK.YandexPaySDKEnvironment, action: YandexPaySDK.YPDeeplinkAction)
+  public let flow: YandexPaySDK.YPFlow
+  public init(merchantId: Swift.String, clientId: Swift.String?, sessionId: Swift.String, paymentURL: Foundation.URL, fallbackURL: Foundation.URL?, requestedFeatures: Swift.Set<Swift.String>, environment: YandexPaySDK.YandexPaySDKEnvironment, action: YandexPaySDK.YPDeeplinkAction, flow: YandexPaySDK.YPFlow)
 }
 public enum YandexPaySDKLocale : Swift.Int {
   case ru
@@ -1189,10 +805,6 @@ public protocol YandexPayFormPresenter : AnyObject {
 }
 extension UIKit.UIViewController : YandexPaySDK.YandexPayFormPresenter {
 }
-public protocol YandexPayTokenFormDelegate : AnyObject {
-  func yandexPayForm(_ from: any YandexPaySDK.YandexPayForm, didCompletePaymentWithResult result: YandexPaySDK.YPPaymentResult)
-  func yandexPayFormDidHandleRelogin(_ form: any YandexPaySDK.YandexPayForm)
-}
 @propertyWrapper public struct YPClamped<T> where T : Swift.BinaryFloatingPoint {
   public var wrappedValue: T {
     get
@@ -1213,6 +825,23 @@ public enum YPFontWeight {
     get
   }
 }
+public enum YPFontFamily {
+  case text
+  case italic
+  public static func == (a: YandexPaySDK.YPFontFamily, b: YandexPaySDK.YPFontFamily) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+final public class YPRetryPolicy {
+  public init(maxAttempts: Swift.Int, delay: Foundation.TimeInterval, shouldRetry: @escaping (any Swift.Error) -> Swift.Bool)
+  final public func execute<T>(operation: @escaping () async throws -> T) async throws -> T
+  @objc deinit
+}
+extension YandexPaySDK.YandexPaySDKLocale : Swift.Equatable {}
+extension YandexPaySDK.YandexPaySDKLocale : Swift.Hashable {}
+extension YandexPaySDK.YandexPaySDKLocale : Swift.RawRepresentable {}
 extension YandexPaySDK.YandexPaySDKEnvironment : Swift.Equatable {}
 extension YandexPaySDK.YandexPaySDKEnvironment : Swift.Hashable {}
 extension YandexPaySDK.YandexPaySDKEnvironment : Swift.RawRepresentable {}
@@ -1225,6 +854,18 @@ extension YandexPaySDK.YPBadgeModel.SplitVariant : Swift.RawRepresentable {}
 extension YandexPaySDK.YPBadgeModel.Align : Swift.Equatable {}
 extension YandexPaySDK.YPBadgeModel.Align : Swift.Hashable {}
 extension YandexPaySDK.YPBadgeModel.Align : Swift.RawRepresentable {}
+extension YandexPaySDK.YPBadgeModel.SplitColor : Swift.Equatable {}
+extension YandexPaySDK.YPBadgeModel.SplitColor : Swift.Hashable {}
+extension YandexPaySDK.YPBadgeModel.SplitColor : Swift.RawRepresentable {}
+extension YandexPaySDK.YPBadgeModel.CashbackColor : Swift.Equatable {}
+extension YandexPaySDK.YPBadgeModel.CashbackColor : Swift.Hashable {}
+extension YandexPaySDK.YPBadgeModel.CashbackColor : Swift.RawRepresentable {}
+extension YandexPaySDK.YPBadgeModel.HidingPolicy : Swift.Equatable {}
+extension YandexPaySDK.YPBadgeModel.HidingPolicy : Swift.Hashable {}
+extension YandexPaySDK.YPBadgeModel.HidingPolicy : Swift.RawRepresentable {}
+extension YandexPaySDK.YPItemWidgetModel.Style : Swift.Equatable {}
+extension YandexPaySDK.YPItemWidgetModel.Style : Swift.Hashable {}
+extension YandexPaySDK.YPItemWidgetModel.Style : Swift.RawRepresentable {}
 @available(*, deprecated, renamed: "YPUltimateWidgetModel.HeaderStyle")
 extension YandexPaySDK.YPBnplPreviewWidgetModel.HeaderStyle : Swift.Equatable {}
 @available(*, deprecated, renamed: "YPUltimateWidgetModel.HeaderStyle")
@@ -1250,71 +891,32 @@ extension YandexPaySDK.YPUltimateWidgetModel.Appearance.Background : Swift.RawRe
 extension YandexPaySDK.YPUltimateWidgetModel.Appearance.WidgetSize : Swift.Equatable {}
 extension YandexPaySDK.YPUltimateWidgetModel.Appearance.WidgetSize : Swift.Hashable {}
 extension YandexPaySDK.YPUltimateWidgetModel.Appearance.WidgetSize : Swift.RawRepresentable {}
-extension YandexPaySDK.YPBDUIContentType : Swift.Equatable {}
-extension YandexPaySDK.YPBDUIContentType : Swift.Hashable {}
-extension YandexPaySDK.YPBDUIContentType : Swift.RawRepresentable {}
-extension YandexPaySDK.YPAuthMethod : Swift.Equatable {}
-extension YandexPaySDK.YPAuthMethod : Swift.Hashable {}
-extension YandexPaySDK.YPCardNetwork : Swift.Equatable {}
-extension YandexPaySDK.YPCardNetwork : Swift.Hashable {}
-extension YandexPaySDK.YPCountryCode : Swift.Equatable {}
-extension YandexPaySDK.YPCountryCode : Swift.Hashable {}
 extension YandexPaySDK.YPCurrencyCode : Swift.Equatable {}
 extension YandexPaySDK.YPCurrencyCode : Swift.Hashable {}
 extension YandexPaySDK.YPCurrencyCode : Swift.RawRepresentable {}
-extension YandexPaySDK.YPPaymentError : Swift.Equatable {}
-extension YandexPaySDK.YPPaymentError : Swift.Hashable {}
-extension YandexPaySDK.YPPaymentError : Swift.RawRepresentable {}
 extension YandexPaySDK.YPCommonValidationError : Swift.Equatable {}
 extension YandexPaySDK.YPCommonValidationError : Swift.Hashable {}
-extension YandexPaySDK.YPOrderItemType : Swift.Equatable {}
-extension YandexPaySDK.YPOrderItemType : Swift.Hashable {}
-extension YandexPaySDK.YandexPaySDKLocale : Swift.Equatable {}
-extension YandexPaySDK.YandexPaySDKLocale : Swift.Hashable {}
-extension YandexPaySDK.YandexPaySDKLocale : Swift.RawRepresentable {}
-extension YandexPaySDK.YPCreditLimitUpgradeEvent.Result : Swift.Equatable {}
-extension YandexPaySDK.YPCreditLimitUpgradeEvent.Result : Swift.Hashable {}
-extension YandexPaySDK.YPDepositEvent.Result : Swift.Equatable {}
-extension YandexPaySDK.YPDepositEvent.Result : Swift.Hashable {}
-extension YandexPaySDK.YPBankFlowResult : Swift.Equatable {}
-extension YandexPaySDK.YPBankFlowResult : Swift.Hashable {}
-extension YandexPaySDK.YPBankServiceError : Swift.Equatable {}
-extension YandexPaySDK.YPBankServiceError : Swift.Hashable {}
-extension YandexPaySDK.YPBankServiceError.DefaultCard : Swift.Equatable {}
-extension YandexPaySDK.YPBankServiceError.DefaultCard : Swift.Hashable {}
-extension YandexPaySDK.YPBankServiceError.PaymentMethod : Swift.Equatable {}
-extension YandexPaySDK.YPBankServiceError.PaymentMethod : Swift.Hashable {}
-extension YandexPaySDK.YPCreditPaymentMethodStatus : Swift.Equatable {}
-extension YandexPaySDK.YPCreditPaymentMethodStatus : Swift.Hashable {}
 extension YandexPaySDK.HTTPMethod : Swift.Equatable {}
 extension YandexPaySDK.HTTPMethod : Swift.Hashable {}
 extension YandexPaySDK.HTTPMethod : Swift.RawRepresentable {}
-extension YandexPaySDK.YPDiscountBadgeModel.Size : Swift.Equatable {}
-extension YandexPaySDK.YPDiscountBadgeModel.Size : Swift.Hashable {}
-extension YandexPaySDK.YPDiscountBadgeModel.DiscountType : Swift.Equatable {}
-extension YandexPaySDK.YPDiscountBadgeModel.DiscountType : Swift.Hashable {}
 extension YandexPaySDK.YPAvailablePaymentMethod : Swift.Equatable {}
 extension YandexPaySDK.YPAvailablePaymentMethod : Swift.Hashable {}
 extension YandexPaySDK.YPAvailablePaymentMethod : Swift.RawRepresentable {}
-extension YandexPaySDK.YPBadgeModel.SplitColor : Swift.Equatable {}
-extension YandexPaySDK.YPBadgeModel.SplitColor : Swift.Hashable {}
-extension YandexPaySDK.YPBadgeModel.SplitColor : Swift.RawRepresentable {}
-extension YandexPaySDK.YPBadgeModel.CashbackColor : Swift.Equatable {}
-extension YandexPaySDK.YPBadgeModel.CashbackColor : Swift.Hashable {}
-extension YandexPaySDK.YPBadgeModel.CashbackColor : Swift.RawRepresentable {}
-extension YandexPaySDK.YPBadgeModel.HidingPolicy : Swift.Equatable {}
-extension YandexPaySDK.YPBadgeModel.HidingPolicy : Swift.Hashable {}
-extension YandexPaySDK.YPBadgeModel.HidingPolicy : Swift.RawRepresentable {}
 extension YandexPaySDK.YPCheckoutWidgetModel.Style : Swift.Equatable {}
 extension YandexPaySDK.YPCheckoutWidgetModel.Style : Swift.Hashable {}
 extension YandexPaySDK.YPCheckoutWidgetModel.Style : Swift.RawRepresentable {}
-extension YandexPaySDK.YPItemWidgetModel.Style : Swift.Equatable {}
-extension YandexPaySDK.YPItemWidgetModel.Style : Swift.Hashable {}
-extension YandexPaySDK.YPItemWidgetModel.Style : Swift.RawRepresentable {}
+extension YandexPaySDK.YPPaymentError : Swift.Equatable {}
+extension YandexPaySDK.YPPaymentError : Swift.Hashable {}
+extension YandexPaySDK.YPPaymentError : Swift.RawRepresentable {}
 extension YandexPaySDK.YPSplitUpgradeStatus : Swift.Equatable {}
 extension YandexPaySDK.YPSplitUpgradeStatus : Swift.Hashable {}
 extension YandexPaySDK.YPTheme : Swift.Equatable {}
 extension YandexPaySDK.YPTheme : Swift.Hashable {}
 extension YandexPaySDK.YPTheme : Swift.RawRepresentable {}
+extension YandexPaySDK.YPFlow : Swift.Equatable {}
+extension YandexPaySDK.YPFlow : Swift.Hashable {}
+extension YandexPaySDK.YPFlow : Swift.RawRepresentable {}
 extension YandexPaySDK.YPFontWeight : Swift.Equatable {}
 extension YandexPaySDK.YPFontWeight : Swift.Hashable {}
+extension YandexPaySDK.YPFontFamily : Swift.Equatable {}
+extension YandexPaySDK.YPFontFamily : Swift.Hashable {}

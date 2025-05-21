@@ -336,6 +336,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 @class NSCoder;
+@class UITraitCollection;
 @class NSString;
 @class NSBundle;
 
@@ -345,6 +346,7 @@ SWIFT_CLASS("_TtC12YandexPaySDK31YPFullscreenContainerController")
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
 @property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
 - (void)viewDidLoad;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
@@ -701,6 +703,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 @class NSCoder;
+@class UITraitCollection;
 @class NSString;
 @class NSBundle;
 
@@ -710,6 +713,7 @@ SWIFT_CLASS("_TtC12YandexPaySDK31YPFullscreenContainerController")
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
 @property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
 - (void)viewDidLoad;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
