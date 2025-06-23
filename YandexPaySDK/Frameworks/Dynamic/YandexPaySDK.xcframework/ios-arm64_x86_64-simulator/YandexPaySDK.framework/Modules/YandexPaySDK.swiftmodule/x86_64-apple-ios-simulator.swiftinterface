@@ -16,41 +16,6 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-@available(*, deprecated, renamed: "YPRequiredShippingTypes")
-public typealias RequiredShippingTypes = YandexPaySDK.YPRequiredShippingTypes
-public struct YPRequiredShippingTypes : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-public protocol YandexPayCheckoutButtonAsyncDelegate : AnyObject {
-  func yandexPayCheckoutButton(_ button: any YandexPaySDK.YandexPayButton, didCompletePaymentWithResult result: YandexPaySDK.YPCheckoutResult)
-  func yandexPayCheckoutButtonDidRequestViewControllerForPresentation(_ button: any YandexPaySDK.YandexPayButton) -> UIKit.UIViewController?
-  func yandexPayCheckoutButtonDidRequestPaymentSheet(_ button: any YandexPaySDK.YandexPayButton, completion: @escaping (YandexPaySDK.YPCheckoutPaymentSheet?) -> Swift.Void)
-}
-public protocol YandexPayCheckoutButtonDelegate : AnyObject {
-  func yandexPayCheckoutButton(_ button: any YandexPaySDK.YandexPayButton, didCompletePaymentWithResult result: YandexPaySDK.YPCheckoutResult)
-  func yandexPayCheckoutButtonDidRequestViewControllerForPresentation(_ button: any YandexPaySDK.YandexPayButton) -> UIKit.UIViewController?
-  func yandexPayCheckoutButtonDidRequestPaymentSheet(_ button: any YandexPaySDK.YandexPayButton) -> YandexPaySDK.YPCheckoutPaymentSheet?
-}
-public struct YPCheckoutError : Swift.Error {
-  public let reason: Swift.String?
-}
-public struct YPCheckoutInfo {
-  public let orderId: Swift.String
-  public let metadata: Swift.String?
-}
-public struct YPCheckoutPaymentSheet {
-  public let currencyCode: YandexPaySDK.YPCurrencyCode
-  public let cart: YandexPaySDK.YPPaymentCart
-  public let orderId: YandexPaySDK.YPOrderID?
-  public let metadata: YandexPaySDK.YPMetadata?
-  public init(currencyCode: YandexPaySDK.YPCurrencyCode, cart: YandexPaySDK.YPPaymentCart, orderId: YandexPaySDK.YPOrderID?, metadata: YandexPaySDK.YPMetadata?)
-}
-public enum YPCheckoutResult {
-  case succeeded(YandexPaySDK.YPCheckoutInfo)
-  case cancelled
-  case failed(YandexPaySDK.YPCheckoutError)
-}
 
 public struct YPBadgeModel {
   public let amount: Foundation.Decimal
@@ -91,6 +56,19 @@ extension YandexPaySDK.YPBadgeModel {
       get
     }
   }
+  public enum UltimateVariant : Swift.String {
+    case `default`
+    case compact
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public struct UltimatePayload : Swift.Equatable {
+    public init(source: Swift.String?, skuID: Swift.String?)
+    public static func == (a: YandexPaySDK.YPBadgeModel.UltimatePayload, b: YandexPaySDK.YPBadgeModel.UltimatePayload) -> Swift.Bool
+  }
   public enum CashbackColor : Swift.String {
     case primary
     case grey
@@ -114,6 +92,7 @@ extension YandexPaySDK.YPBadgeModel {
   public enum BadgeType {
     case split(color: YandexPaySDK.YPBadgeModel.SplitColor, variant: YandexPaySDK.YPBadgeModel.SplitVariant)
     case cashback(color: YandexPaySDK.YPBadgeModel.CashbackColor, variant: YandexPaySDK.YPBadgeModel.CashbackVariant)
+    case ultimate(variant: YandexPaySDK.YPBadgeModel.UltimateVariant, payload: YandexPaySDK.YPBadgeModel.UltimatePayload?)
   }
   public enum HidingPolicy : Swift.String {
     case invisible
@@ -191,8 +170,6 @@ extension YandexPaySDK.YandexPaySDKApi {
   final public func createUltimateWidgetView(model: YandexPaySDK.YPUltimateWidgetModel, presentationContextProvider: any YandexPaySDK.YPPresentationContextProviding, delegate: (any YandexPaySDK.YandexPayUltimateWidgetDelegate)? = nil) -> some SwiftUICore.View
   
   final public func createUltimateWidgetView(model: YandexPaySDK.YPUltimateWidgetModel, presentationContextProvider: any YandexPaySDK.YPPresentationContextProviding, delegate: (any YandexPaySDK.YandexPayUltimateWidgetDelegate)? = nil) -> UIKit.UIView
-  final public func createCheckoutButton(delegate: any YandexPaySDK.YandexPayCheckoutButtonDelegate) -> any YandexPaySDK.YandexPayButton
-  final public func createCheckoutButton(asyncDelegate: any YandexPaySDK.YandexPayCheckoutButtonAsyncDelegate) -> any YandexPaySDK.YandexPayButton
   @discardableResult
   final public func applicationDidReceiveOpen(_ url: Foundation.URL, options: [UIKit.UIApplication.OpenURLOptionsKey : Any]) -> Swift.Bool
   @discardableResult
@@ -690,10 +667,19 @@ public enum YPAppMetricaActivationError : Swift.Error {
   case configCreationError(apiKey: Swift.String)
   case reporterAlreadyCreated(apiKey: Swift.String)
 }
+public enum YPDeepinkHandlingCapability : Swift.Equatable {
+  case notSupported
+  case supported(requiresAuth: Swift.Bool)
+  public var canHandle: Swift.Bool {
+    get
+  }
+  public static func == (a: YandexPaySDK.YPDeepinkHandlingCapability, b: YandexPaySDK.YPDeepinkHandlingCapability) -> Swift.Bool
+}
 public enum YPFlow : Swift.String {
-  case offline
-  case online
+  case payboxOnline
   case payBoxOffline
+  case payboxMobsdk
+  case payOffline
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -702,7 +688,7 @@ public enum YPFlow : Swift.String {
 }
 public enum YPScreen {
   case payment
-  case webView(url: Foundation.URL)
+  case webView(url: Foundation.URL, requiresAuth: Swift.Bool)
 }
 public enum YPDeeplinkAction {
   case open(screen: YandexPaySDK.YPScreen)
@@ -839,9 +825,6 @@ final public class YPRetryPolicy {
   final public func execute<T>(operation: @escaping () async throws -> T) async throws -> T
   @objc deinit
 }
-extension YandexPaySDK.YandexPaySDKLocale : Swift.Equatable {}
-extension YandexPaySDK.YandexPaySDKLocale : Swift.Hashable {}
-extension YandexPaySDK.YandexPaySDKLocale : Swift.RawRepresentable {}
 extension YandexPaySDK.YandexPaySDKEnvironment : Swift.Equatable {}
 extension YandexPaySDK.YandexPaySDKEnvironment : Swift.Hashable {}
 extension YandexPaySDK.YandexPaySDKEnvironment : Swift.RawRepresentable {}
@@ -851,6 +834,9 @@ extension YandexPaySDK.YPBadgeModel.CashbackVariant : Swift.RawRepresentable {}
 extension YandexPaySDK.YPBadgeModel.SplitVariant : Swift.Equatable {}
 extension YandexPaySDK.YPBadgeModel.SplitVariant : Swift.Hashable {}
 extension YandexPaySDK.YPBadgeModel.SplitVariant : Swift.RawRepresentable {}
+extension YandexPaySDK.YPBadgeModel.UltimateVariant : Swift.Equatable {}
+extension YandexPaySDK.YPBadgeModel.UltimateVariant : Swift.Hashable {}
+extension YandexPaySDK.YPBadgeModel.UltimateVariant : Swift.RawRepresentable {}
 extension YandexPaySDK.YPBadgeModel.Align : Swift.Equatable {}
 extension YandexPaySDK.YPBadgeModel.Align : Swift.Hashable {}
 extension YandexPaySDK.YPBadgeModel.Align : Swift.RawRepresentable {}
@@ -899,6 +885,9 @@ extension YandexPaySDK.YPCommonValidationError : Swift.Hashable {}
 extension YandexPaySDK.HTTPMethod : Swift.Equatable {}
 extension YandexPaySDK.HTTPMethod : Swift.Hashable {}
 extension YandexPaySDK.HTTPMethod : Swift.RawRepresentable {}
+extension YandexPaySDK.YandexPaySDKLocale : Swift.Equatable {}
+extension YandexPaySDK.YandexPaySDKLocale : Swift.Hashable {}
+extension YandexPaySDK.YandexPaySDKLocale : Swift.RawRepresentable {}
 extension YandexPaySDK.YPAvailablePaymentMethod : Swift.Equatable {}
 extension YandexPaySDK.YPAvailablePaymentMethod : Swift.Hashable {}
 extension YandexPaySDK.YPAvailablePaymentMethod : Swift.RawRepresentable {}
