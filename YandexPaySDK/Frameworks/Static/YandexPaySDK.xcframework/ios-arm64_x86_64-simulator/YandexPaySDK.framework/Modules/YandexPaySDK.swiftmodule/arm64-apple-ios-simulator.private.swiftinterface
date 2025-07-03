@@ -368,26 +368,6 @@ public struct YandexPayUltimateWidgetData {
   public let splitMonthCount: Swift.Int
   public init(splitMonthCount: Swift.Int)
 }
-public enum YPCommonValidationError : Foundation.LocalizedError {
-  case authenticationProblem
-  case unknownMerchantOrigin
-  case unknownMerchant
-  case unknownGateway
-  case insecureMerchantOrigin
-  case amountLimitExceeded
-  case invalidAmount
-  case invalidCountry
-  case invalidCurrency
-  case amountMismatch
-  case orderExpired
-  case orderNotFound
-  case unknownValidationProblem
-  public static func == (a: YandexPaySDK.YPCommonValidationError, b: YandexPaySDK.YPCommonValidationError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
 public protocol YPNetworkClient {
   func execute<Endpoint>(endpoint: Endpoint, retryPolicy: YandexPaySDK.YPRetryPolicy?) async throws -> Endpoint.ResultModel where Endpoint : YandexPaySDK.YPNetworkEndpointProvider
 }
@@ -880,8 +860,6 @@ extension YandexPaySDK.YPUltimateWidgetModel.Appearance.WidgetSize : Swift.RawRe
 extension YandexPaySDK.YPCurrencyCode : Swift.Equatable {}
 extension YandexPaySDK.YPCurrencyCode : Swift.Hashable {}
 extension YandexPaySDK.YPCurrencyCode : Swift.RawRepresentable {}
-extension YandexPaySDK.YPCommonValidationError : Swift.Equatable {}
-extension YandexPaySDK.YPCommonValidationError : Swift.Hashable {}
 extension YandexPaySDK.HTTPMethod : Swift.Equatable {}
 extension YandexPaySDK.HTTPMethod : Swift.Hashable {}
 extension YandexPaySDK.HTTPMethod : Swift.RawRepresentable {}
