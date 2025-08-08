@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target arm64-apple-ios14.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature AccessLevelOnImport -enable-bare-slash-regex -module-name YandexPaySDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios14.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature AccessLevelOnImport -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name YandexPaySDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import AdSupport
 import AppTrackingTransparency
 import Combine
@@ -276,6 +276,16 @@ extension YandexPaySDK.YPBnplPreviewWidgetModel.Appearance {
   }
 }
 public struct YPUltimateWidgetModel {
+  public enum Style : Swift.String {
+    case split
+    case cashback
+    case fullSize
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
   public struct Appearance {
     public var theme: YandexPaySDK.YPTheme
     @YandexPaySDK.YPClamped public var radius: CoreFoundation.CGFloat {
@@ -302,9 +312,10 @@ public struct YPUltimateWidgetModel {
   }
   public let amount: Foundation.Decimal
   public let currency: YandexPaySDK.YPCurrencyCode
+  public let style: YandexPaySDK.YPUltimateWidgetModel.Style
   public let appearance: YandexPaySDK.YPUltimateWidgetModel.Appearance
   public var header: YandexPaySDK.YPUltimateWidgetModel.HeaderStyle
-  public init(amount: Foundation.Decimal, currency: YandexPaySDK.YPCurrencyCode = .rub, appearance: YandexPaySDK.YPUltimateWidgetModel.Appearance = .init(), header: YandexPaySDK.YPUltimateWidgetModel.HeaderStyle = .standard)
+  public init(amount: Foundation.Decimal, currency: YandexPaySDK.YPCurrencyCode = .rub, style: YandexPaySDK.YPUltimateWidgetModel.Style, appearance: YandexPaySDK.YPUltimateWidgetModel.Appearance = .init(), header: YandexPaySDK.YPUltimateWidgetModel.HeaderStyle = .standard)
 }
 extension YandexPaySDK.YPUltimateWidgetModel.Appearance {
   public enum Background : Swift.String {
@@ -628,10 +639,9 @@ public enum YPYandexPayPaymentResult {
 }
 public protocol YPAppMetricaAdapter {
   var uuid: Swift.String { get }
+  var deviceID: Swift.String? { get }
   func reporter(for apiKey: Swift.String) -> (any YandexPaySDK.YPAppMetricaReportingAdapter)?
-  #if compiler(>=5.3) && $TypedThrows
   func activateReporter(for apiKey: Swift.String) throws(YandexPaySDK.YPAppMetricaActivationError)
-  #endif
 }
 public protocol YPAppMetricaReportingAdapter {
   func report(eventName: Swift.String, params: [Swift.String : Any], onFailure: ((any Swift.Error) -> Swift.Void)?)
@@ -660,6 +670,7 @@ public enum YPFlow : Swift.String {
   case payBoxOffline
   case payboxMobsdk
   case payOffline
+  case payboxUz
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -668,7 +679,7 @@ public enum YPFlow : Swift.String {
 }
 public enum YPScreen {
   case payment
-  case webView(url: Foundation.URL, requiresAuth: Swift.Bool)
+  case webView(url: Foundation.URL)
 }
 public enum YPDeeplinkAction {
   case open(screen: YandexPaySDK.YPScreen)
@@ -850,6 +861,9 @@ extension YandexPaySDK.YPBnplPreviewWidgetModel.Appearance.WidgetSize : Swift.Eq
 extension YandexPaySDK.YPBnplPreviewWidgetModel.Appearance.WidgetSize : Swift.Hashable {}
 @available(*, deprecated, renamed: "YPUltimateWidgetModel.Appearance.WidgetSize")
 extension YandexPaySDK.YPBnplPreviewWidgetModel.Appearance.WidgetSize : Swift.RawRepresentable {}
+extension YandexPaySDK.YPUltimateWidgetModel.Style : Swift.Equatable {}
+extension YandexPaySDK.YPUltimateWidgetModel.Style : Swift.Hashable {}
+extension YandexPaySDK.YPUltimateWidgetModel.Style : Swift.RawRepresentable {}
 extension YandexPaySDK.YPUltimateWidgetModel.HeaderStyle : Swift.Equatable {}
 extension YandexPaySDK.YPUltimateWidgetModel.HeaderStyle : Swift.Hashable {}
 extension YandexPaySDK.YPUltimateWidgetModel.HeaderStyle : Swift.RawRepresentable {}
