@@ -53,6 +53,7 @@ struct WidgetsScreen: View {
               model: YPUltimateWidgetModel(
                 amount: Decimal(string: viewModel.amount, locale: Locale.current) ?? .zero,
                 currency: .rub,
+                style: viewModel.ultimateWidgetStyle,
                 appearance: viewModel.ultimateWidgetAppearance,
                 header: viewModel.ultimateWidgetHeaderAppearance
               ),
@@ -177,6 +178,17 @@ struct WidgetsScreen: View {
       }
       .multilineTextAlignment(.trailing)
       .keyboardType(.decimalPad)
+      Picker("Style", selection: $viewModel.ultimateWidgetStyle) {
+        Text("Cashback").tag(
+          YPUltimateWidgetModel.Style.cashback
+        )
+        Text("Split").tag(
+          YPUltimateWidgetModel.Style.split
+        )
+        Text("Full Size").tag(
+          YPUltimateWidgetModel.Style.fullSize
+        )
+      }
     } header: {
       Text("General")
     }

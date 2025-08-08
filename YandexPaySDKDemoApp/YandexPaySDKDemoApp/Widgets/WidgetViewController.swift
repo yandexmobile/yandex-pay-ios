@@ -110,6 +110,7 @@ final class WidgetViewController: UIViewController {
         model: YPUltimateWidgetModel(
           amount: amount,
           currency: .rub,
+          style: viewModel.ultimateWidgetStyle,
           appearance: viewModel.ultimateWidgetAppearance,
           header: viewModel.ultimateWidgetHeaderAppearance
         ),

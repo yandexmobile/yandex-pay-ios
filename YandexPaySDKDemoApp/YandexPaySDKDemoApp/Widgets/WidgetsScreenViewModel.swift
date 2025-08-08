@@ -31,7 +31,8 @@ final class WidgetsScreenViewModel: ObservableObject {
   
   @Published var infoWidgetCheckoutStyle: YPCheckoutWidgetModel.Style = .fullBox
   @Published var infoWidgetCheckoutAppearance: YPCheckoutWidgetModel.Appearance = .init()
-  
+
+  @Published var ultimateWidgetStyle: YPUltimateWidgetModel.Style = .fullSize
   @Published var ultimateWidgetAppearance: YPUltimateWidgetModel.Appearance = .init()
   @Published var ultimateWidgetHeaderAppearance: YPUltimateWidgetModel.HeaderStyle = .standard
 
