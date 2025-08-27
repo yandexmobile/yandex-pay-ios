@@ -149,27 +149,27 @@ extension YandexPaySDK.YandexPaySDKApi {
   @available(*, deprecated, message: "Please, use a new signature with a strict URL type for paymentURL")
   final public func createYandexPayForm(paymentURL: Swift.String, delegate: any YandexPaySDK.YandexPayFormDelegate) -> any YandexPaySDK.YandexPayForm
   @available(*, deprecated, message: "Please, use new signature createButton(model:paymentDataProvider:presentationContextProvider:)")
-  final public func createButton(dataSource: any YandexPaySDK.YandexPayButtonDataSource, delegate: any YandexPaySDK.YandexPayButtonDelegate) -> any YandexPaySDK.YandexPayButton
-  final public func createButton(model: YandexPaySDK.YPButtonModel = .default, paymentDataProvider: any YandexPaySDK.YPButtonPaymentDataProviding, presentationContextProvider: any YandexPaySDK.YPButtonPresentationContextProviding, delegate: any YandexPaySDK.YandexPayButtonDelegate) -> any YandexPaySDK.YandexPayButton
-  final public func createButton(model: YandexPaySDK.YPButtonModel, paymentDataProvider: any YandexPaySDK.YPButtonPaymentDataProviding, presentationContextProvider: any YandexPaySDK.YPButtonPresentationContextProviding, delegate: any YandexPaySDK.YandexPayButtonDelegate) -> some SwiftUICore.View
+  @_Concurrency.MainActor final public func createButton(dataSource: any YandexPaySDK.YandexPayButtonDataSource, delegate: any YandexPaySDK.YandexPayButtonDelegate) -> any YandexPaySDK.YandexPayButton
+  @_Concurrency.MainActor final public func createButton(model: YandexPaySDK.YPButtonModel = .default, paymentDataProvider: any YandexPaySDK.YPButtonPaymentDataProviding, presentationContextProvider: any YandexPaySDK.YPButtonPresentationContextProviding, delegate: any YandexPaySDK.YandexPayButtonDelegate) -> any YandexPaySDK.YandexPayButton
+  @_Concurrency.MainActor final public func createButton(model: YandexPaySDK.YPButtonModel, paymentDataProvider: any YandexPaySDK.YPButtonPaymentDataProviding, presentationContextProvider: any YandexPaySDK.YPButtonPresentationContextProviding, delegate: any YandexPaySDK.YandexPayButtonDelegate) -> some SwiftUICore.View
   
-  final public func createBadgeView(model: YandexPaySDK.YPBadgeModel) -> some SwiftUICore.View
+  @_Concurrency.MainActor final public func createBadgeView(model: YandexPaySDK.YPBadgeModel) -> some SwiftUICore.View
   
-  final public func createBadgeView(model: YandexPaySDK.YPBadgeModel) -> UIKit.UIView
-  final public func createItemWidgetView(model: YandexPaySDK.YPItemWidgetModel, presentationContextProvider: any YandexPaySDK.YPPresentationContextProviding) -> some SwiftUICore.View
+  @_Concurrency.MainActor final public func createBadgeView(model: YandexPaySDK.YPBadgeModel) -> UIKit.UIView
+  @_Concurrency.MainActor final public func createItemWidgetView(model: YandexPaySDK.YPItemWidgetModel, presentationContextProvider: any YandexPaySDK.YPPresentationContextProviding) -> some SwiftUICore.View
   
-  final public func createItemWidgetView(model: YandexPaySDK.YPItemWidgetModel, presentationContextProvider: any YandexPaySDK.YPPresentationContextProviding) -> UIKit.UIView
-  final public func createCheckoutWidgetView(model: YandexPaySDK.YPCheckoutWidgetModel) -> some SwiftUICore.View
+  @_Concurrency.MainActor final public func createItemWidgetView(model: YandexPaySDK.YPItemWidgetModel, presentationContextProvider: any YandexPaySDK.YPPresentationContextProviding) -> UIKit.UIView
+  @_Concurrency.MainActor final public func createCheckoutWidgetView(model: YandexPaySDK.YPCheckoutWidgetModel) -> some SwiftUICore.View
   
-  final public func createCheckoutWidgetView(model: YandexPaySDK.YPCheckoutWidgetModel) -> UIKit.UIView
+  @_Concurrency.MainActor final public func createCheckoutWidgetView(model: YandexPaySDK.YPCheckoutWidgetModel) -> UIKit.UIView
   @available(*, deprecated, renamed: "createUltimateWidgetView")
-  final public func createBnplPreviewWidgetView(model: YandexPaySDK.YPBnplPreviewWidgetModel, presentationContextProvider: any YandexPaySDK.YPPresentationContextProviding, delegate: (any YandexPaySDK.YandexPayBnplPreviewWidgetDelegate)? = nil) -> some SwiftUICore.View
+  @_Concurrency.MainActor final public func createBnplPreviewWidgetView(model: YandexPaySDK.YPBnplPreviewWidgetModel, presentationContextProvider: any YandexPaySDK.YPPresentationContextProviding, delegate: (any YandexPaySDK.YandexPayBnplPreviewWidgetDelegate)? = nil) -> some SwiftUICore.View
   
   @available(*, deprecated, renamed: "createUltimateWidgetView")
-  final public func createBnplPreviewWidgetView(model: YandexPaySDK.YPBnplPreviewWidgetModel, presentationContextProvider: any YandexPaySDK.YPPresentationContextProviding, delegate: (any YandexPaySDK.YandexPayBnplPreviewWidgetDelegate)? = nil) -> UIKit.UIView
-  final public func createUltimateWidgetView(model: YandexPaySDK.YPUltimateWidgetModel, presentationContextProvider: any YandexPaySDK.YPPresentationContextProviding, delegate: (any YandexPaySDK.YandexPayUltimateWidgetDelegate)? = nil) -> some SwiftUICore.View
+  @_Concurrency.MainActor final public func createBnplPreviewWidgetView(model: YandexPaySDK.YPBnplPreviewWidgetModel, presentationContextProvider: any YandexPaySDK.YPPresentationContextProviding, delegate: (any YandexPaySDK.YandexPayBnplPreviewWidgetDelegate)? = nil) -> UIKit.UIView
+  @_Concurrency.MainActor final public func createUltimateWidgetView(model: YandexPaySDK.YPUltimateWidgetModel, presentationContextProvider: any YandexPaySDK.YPPresentationContextProviding, delegate: (any YandexPaySDK.YandexPayUltimateWidgetDelegate)? = nil) -> some SwiftUICore.View
   
-  final public func createUltimateWidgetView(model: YandexPaySDK.YPUltimateWidgetModel, presentationContextProvider: any YandexPaySDK.YPPresentationContextProviding, delegate: (any YandexPaySDK.YandexPayUltimateWidgetDelegate)? = nil) -> UIKit.UIView
+  @_Concurrency.MainActor final public func createUltimateWidgetView(model: YandexPaySDK.YPUltimateWidgetModel, presentationContextProvider: any YandexPaySDK.YPPresentationContextProviding, delegate: (any YandexPaySDK.YandexPayUltimateWidgetDelegate)? = nil) -> UIKit.UIView
   @discardableResult
   final public func applicationDidReceiveOpen(_ url: Foundation.URL, options: [UIKit.UIApplication.OpenURLOptionsKey : Any]) -> Swift.Bool
   @discardableResult
@@ -453,6 +453,7 @@ infix operator <=> : DefaultPrecedence
 public struct YPAuthInfo : Swift.Codable, Swift.Equatable {
   public let authToken: Swift.String
   public let uid: Swift.String?
+  public let hasStaffFeatures: Swift.Bool
   public init(authToken: Swift.String, uid: Swift.String? = nil)
   public static func == (a: YandexPaySDK.YPAuthInfo, b: YandexPaySDK.YPAuthInfo) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
@@ -671,6 +672,7 @@ public enum YPFlow : Swift.String {
   case payboxMobsdk
   case payOffline
   case payboxUz
+  case tv
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
