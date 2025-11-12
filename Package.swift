@@ -21,7 +21,15 @@ let package = Package(
   dependencies: [
     .package(
       url: "https://github.com/appmetrica/appmetrica-sdk-ios",
-      .upToNextMajor(from: "5.8.1")
+      .upToNextMajor(from: "5.15.0")
+    ),
+    .package(
+      url: "https://github.com/divkit/divkit-ios",
+      .upToNextMajor(from: "32.25.0")
+    ),
+    .package(
+      url: "https://github.com/yandex/vgsl.git",
+      .upToNextMajor(from: "7.9.1")
     )
   ],
   targets: [
@@ -32,6 +40,8 @@ let package = Package(
       dependencies: [
         .target(name: "YandexPaySDK_Static"),
         .product(name: "AppMetricaCore", package: "appmetrica-sdk-ios"),
+        .product(name: "DivKit", package: "divkit-ios"),
+        .product(name: "VGSL", package: "vgsl"),
       ],
       path: "YandexPaySDK",
       exclude: [
