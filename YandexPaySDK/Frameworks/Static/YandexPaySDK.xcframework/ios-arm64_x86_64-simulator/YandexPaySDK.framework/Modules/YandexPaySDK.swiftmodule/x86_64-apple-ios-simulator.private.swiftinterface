@@ -303,6 +303,7 @@ public struct YPUltimateWidgetModel {
   public enum HeaderStyle : Swift.String {
     case minified
     case standard
+    @available(*, deprecated, message: "Поддержка Custom Action будет прекращена")
     case standardWithCustomAction
     public init?(rawValue: Swift.String)
     public typealias RawValue = Swift.String
@@ -314,8 +315,9 @@ public struct YPUltimateWidgetModel {
   public let currency: YandexPaySDK.YPCurrencyCode
   public let style: YandexPaySDK.YPUltimateWidgetModel.Style
   public let appearance: YandexPaySDK.YPUltimateWidgetModel.Appearance
+  public let skuId: Swift.String?
   public var header: YandexPaySDK.YPUltimateWidgetModel.HeaderStyle
-  public init(amount: Foundation.Decimal, currency: YandexPaySDK.YPCurrencyCode = .rub, style: YandexPaySDK.YPUltimateWidgetModel.Style, appearance: YandexPaySDK.YPUltimateWidgetModel.Appearance = .init(), header: YandexPaySDK.YPUltimateWidgetModel.HeaderStyle = .standard)
+  public init(amount: Foundation.Decimal, currency: YandexPaySDK.YPCurrencyCode = .rub, style: YandexPaySDK.YPUltimateWidgetModel.Style, appearance: YandexPaySDK.YPUltimateWidgetModel.Appearance = .init(), header: YandexPaySDK.YPUltimateWidgetModel.HeaderStyle = .standard, skuId: Swift.String? = nil)
 }
 extension YandexPaySDK.YPUltimateWidgetModel.Appearance {
   public enum Background : Swift.String {
@@ -619,7 +621,7 @@ public struct YPSplitPlanAnnotation {
   public init(payment: Foundation.Decimal, loan: Foundation.Decimal, fee: Foundation.Decimal)
 }
 public enum YPSplitPaymentMethod {
-  case yaBankCard
+  case ybCard
   case card(id: Swift.String)
   public init(trustCardID: Swift.String?)
 }
@@ -689,6 +691,10 @@ public enum YPDeeplinkAction {
     get
   }
 }
+public enum YandexPaySDKPaymentDeeplinkType {
+  case payment(params: YandexPaySDK.YandexPaySDKPaymentDeeplinkParams)
+  case redirectHost(params: YandexPaySDK.YandexPaySDKRedirectHostDeeplinkParams)
+}
 public struct YandexPaySDKPaymentDeeplinkParams {
   public let merchantId: Swift.String
   public let clientId: Swift.String?
@@ -700,6 +706,10 @@ public struct YandexPaySDKPaymentDeeplinkParams {
   public let action: YandexPaySDK.YPDeeplinkAction
   public let flow: YandexPaySDK.YPFlow
   public init(merchantId: Swift.String, clientId: Swift.String?, sessionId: Swift.String, paymentURL: Foundation.URL, fallbackURL: Foundation.URL?, requestedFeatures: Swift.Set<Swift.String>, environment: YandexPaySDK.YandexPaySDKEnvironment, action: YandexPaySDK.YPDeeplinkAction, flow: YandexPaySDK.YPFlow)
+}
+public struct YandexPaySDKRedirectHostDeeplinkParams {
+  public let checkoutOrderId: Swift.String
+  public init(checkoutOrderId: Swift.String)
 }
 public enum YandexPaySDKLocale : Swift.Int {
   case ru
