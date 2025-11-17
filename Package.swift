@@ -7,6 +7,7 @@ let yandexPay_Dynamic_Path = "Frameworks/Dynamic/YandexPaySDK.xcframework"
 
 let package = Package(
   name: "YandexPaySDK",
+  defaultLocalization: "ru",
   platforms: [
     .iOS(.v14),
   ],
@@ -14,9 +15,9 @@ let package = Package(
     .library(name: "YandexPaySDK", targets: [
       "YandexPaySDK_Facade",
     ]),
-    .library(name: "YandexPaySDK_Dynamic", targets: [
-      "YandexPaySDK_Dynamic",
-    ])
+    .library(name: "YandexPaySDK_Dynamic", type: .dynamic, targets: [
+      "YandexPaySDK_Dynamic_Facade",
+    ]),
   ],
   dependencies: [
     .package(
@@ -29,7 +30,7 @@ let package = Package(
     ),
     .package(
       url: "https://github.com/yandex/vgsl.git",
-      .upToNextMajor(from: "7.9.1")
+      .upToNextMajor(from: "7.12.3")
     )
   ],
   targets: [
@@ -49,11 +50,25 @@ let package = Package(
         yandexPay_Dynamic_Path,
       ],
       sources: [
-        "Dummy.swift"
+        "Frameworks/Static/Dummy.swift"
       ],
       resources: [
         .copy(yandexPay_Resources_Path)
       ]
-    )
+    ),
+    .target(
+      name: "YandexPaySDK_Dynamic_Facade",
+      dependencies: [
+        .target(name: "YandexPaySDK_Dynamic"),
+      ],
+      path: "YandexPaySDK",
+      exclude: [
+        yandexPay_Static_Path,
+        yandexPay_Dynamic_Path,
+      ],
+      sources: [
+        "Frameworks/Dynamic/Dummy.swift"
+      ]
+    ),
   ]
 )
