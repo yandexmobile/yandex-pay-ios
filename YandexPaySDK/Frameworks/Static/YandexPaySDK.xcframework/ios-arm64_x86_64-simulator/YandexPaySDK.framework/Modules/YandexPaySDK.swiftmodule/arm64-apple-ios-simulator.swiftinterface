@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
 // swift-module-flags: -target arm64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature AccessLevelOnImport -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name YandexPaySDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 import AdSupport
 import AppTrackingTransparency
 import Combine
@@ -30,7 +30,9 @@ extension YandexPaySDK.YPBadgeModel {
   public enum SplitVariant : Swift.String {
     case simple
     case detailed
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -41,7 +43,9 @@ extension YandexPaySDK.YPBadgeModel {
     case green
     case grey
     case transparent
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -50,7 +54,9 @@ extension YandexPaySDK.YPBadgeModel {
   public enum CashbackVariant : Swift.String {
     case `default`
     case compact
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -59,21 +65,27 @@ extension YandexPaySDK.YPBadgeModel {
   public enum UltimateVariant : Swift.String {
     case `default`
     case compact
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
     }
   }
   public struct UltimatePayload : Swift.Equatable {
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(source: Swift.String?, skuID: Swift.String?)
+    #endif
     public static func == (a: YandexPaySDK.YPBadgeModel.UltimatePayload, b: YandexPaySDK.YPBadgeModel.UltimatePayload) -> Swift.Bool
   }
   public enum CashbackColor : Swift.String {
     case primary
     case grey
     case transparent
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -83,7 +95,9 @@ extension YandexPaySDK.YPBadgeModel {
     case left
     case center
     case right
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -97,7 +111,9 @@ extension YandexPaySDK.YPBadgeModel {
   public enum HidingPolicy : Swift.String {
     case invisible
     case gone
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -115,7 +131,9 @@ public struct YPItemWidgetModel {
     case split
     case cashback
     case fullSize
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -162,14 +180,22 @@ extension YandexPaySDK.YandexPaySDKApi {
   @_Concurrency.MainActor final public func createCheckoutWidgetView(model: YandexPaySDK.YPCheckoutWidgetModel) -> some SwiftUICore.View
   
   @_Concurrency.MainActor final public func createCheckoutWidgetView(model: YandexPaySDK.YPCheckoutWidgetModel) -> UIKit.UIView
+  #if compiler(>=5.3) && $NonescapableTypes
   @available(*, deprecated, renamed: "createUltimateWidgetView")
   @_Concurrency.MainActor final public func createBnplPreviewWidgetView(model: YandexPaySDK.YPBnplPreviewWidgetModel, presentationContextProvider: any YandexPaySDK.YPPresentationContextProviding, delegate: (any YandexPaySDK.YandexPayBnplPreviewWidgetDelegate)? = nil) -> some SwiftUICore.View
   
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @available(*, deprecated, renamed: "createUltimateWidgetView")
   @_Concurrency.MainActor final public func createBnplPreviewWidgetView(model: YandexPaySDK.YPBnplPreviewWidgetModel, presentationContextProvider: any YandexPaySDK.YPPresentationContextProviding, delegate: (any YandexPaySDK.YandexPayBnplPreviewWidgetDelegate)? = nil) -> UIKit.UIView
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor final public func createUltimateWidgetView(model: YandexPaySDK.YPUltimateWidgetModel, presentationContextProvider: any YandexPaySDK.YPPresentationContextProviding, delegate: (any YandexPaySDK.YandexPayUltimateWidgetDelegate)? = nil) -> some SwiftUICore.View
   
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor final public func createUltimateWidgetView(model: YandexPaySDK.YPUltimateWidgetModel, presentationContextProvider: any YandexPaySDK.YPPresentationContextProviding, delegate: (any YandexPaySDK.YandexPayUltimateWidgetDelegate)? = nil) -> UIKit.UIView
+  #endif
   @discardableResult
   final public func applicationDidReceiveOpen(_ url: Foundation.URL, options: [UIKit.UIApplication.OpenURLOptionsKey : Any]) -> Swift.Bool
   @discardableResult
@@ -197,7 +223,9 @@ public struct YandexPaySDKConfiguration {
 public enum YandexPaySDKEnvironment : Swift.Int {
   case sandbox
   case production
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -207,7 +235,9 @@ public struct YandexPaySDKMerchant {
   public let id: Swift.String
   public let name: Swift.String
   public let url: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(id: Swift.String, name: Swift.String, url: Swift.String?)
+  #endif
 }
 public protocol YandexPayButtonDelegate : AnyObject {
   func yandexPayButton(_ button: any YandexPaySDK.YandexPayButtonProtocol, didCompletePaymentWithResult result: YandexPaySDK.YPYandexPayPaymentResult, data: YandexPaySDK.YPYandexPayPaymentData)
@@ -236,7 +266,9 @@ public struct YPBnplPreviewWidgetModel {
     case minified
     case standard
     case standardWithCustomAction
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     @available(*, deprecated, renamed: "YPUltimateWidgetModel.HeaderStyle")
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
@@ -256,7 +288,9 @@ extension YandexPaySDK.YPBnplPreviewWidgetModel.Appearance {
     case transparent
     case `default`
     case light
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     @available(*, deprecated, renamed: "YPUltimateWidgetModel.Appearance.Background")
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
@@ -267,7 +301,9 @@ extension YandexPaySDK.YPBnplPreviewWidgetModel.Appearance {
   public enum WidgetSize : Swift.String {
     case medium
     case small
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     @available(*, deprecated, renamed: "YPUltimateWidgetModel.Appearance.WidgetSize")
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
@@ -280,7 +316,9 @@ public struct YPUltimateWidgetModel {
     case split
     case cashback
     case fullSize
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -305,7 +343,9 @@ public struct YPUltimateWidgetModel {
     case standard
     @available(*, deprecated, message: "Поддержка Custom Action будет прекращена")
     case standardWithCustomAction
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -317,14 +357,18 @@ public struct YPUltimateWidgetModel {
   public let appearance: YandexPaySDK.YPUltimateWidgetModel.Appearance
   public let skuId: Swift.String?
   public var header: YandexPaySDK.YPUltimateWidgetModel.HeaderStyle
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(amount: Foundation.Decimal, currency: YandexPaySDK.YPCurrencyCode = .rub, style: YandexPaySDK.YPUltimateWidgetModel.Style, appearance: YandexPaySDK.YPUltimateWidgetModel.Appearance = .init(), header: YandexPaySDK.YPUltimateWidgetModel.HeaderStyle = .standard, skuId: Swift.String? = nil)
+  #endif
 }
 extension YandexPaySDK.YPUltimateWidgetModel.Appearance {
   public enum Background : Swift.String {
     case transparent
     case `default`
     case light
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -333,7 +377,9 @@ extension YandexPaySDK.YPUltimateWidgetModel.Appearance {
   public enum WidgetSize : Swift.String {
     case medium
     case small
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -382,7 +428,9 @@ public struct YandexPayUltimateWidgetData {
   public init(splitMonthCount: Swift.Int)
 }
 public protocol YPNetworkClient {
+  #if compiler(>=5.3) && $NonescapableTypes
   func execute<Endpoint>(endpoint: Endpoint, retryPolicy: YandexPaySDK.YPRetryPolicy?) async throws -> Endpoint.ResultModel where Endpoint : YandexPaySDK.YPNetworkEndpointProvider
+  #endif
 }
 extension YandexPaySDK.YPNetworkClient {
   public func execute<Endpoint>(endpoint: Endpoint) async throws -> Endpoint.ResultModel where Endpoint : YandexPaySDK.YPNetworkEndpointProvider
@@ -394,7 +442,9 @@ public enum HTTPMethod : Swift.String {
   case PUT
   case PATCH
   case DELETE
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -407,30 +457,48 @@ public protocol YPResponseDecoder {
 public protocol YPNetworkEndpointProvider {
   associatedtype ResultModel where Self.ResultModel == Self.Decoder.Output
   associatedtype Decoder : YandexPaySDK.YPResponseDecoder
+  #if compiler(>=5.3) && $NonescapableTypes
   var headers: [Swift.String : Swift.String]? { get }
+  #endif
   var method: YandexPaySDK.HTTPMethod { get }
   var path: Swift.String { get }
+  #if compiler(>=5.3) && $NonescapableTypes
   var queryItems: [Foundation.URLQueryItem]? { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   var body: [Swift.String : Any]? { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   var timeoutInSeconds: Foundation.TimeInterval? { get }
+  #endif
   var decoder: Self.Decoder { get }
+  #if compiler(>=5.3) && $NonescapableTypes
   var mockFile: Swift.String? { get }
+  #endif
 }
 extension YandexPaySDK.YPNetworkEndpointProvider {
+  #if compiler(>=5.3) && $NonescapableTypes
   public var headers: [Swift.String : Swift.String]? {
     get
   }
+  #endif
 }
 extension YandexPaySDK.YPNetworkEndpointProvider {
+  #if compiler(>=5.3) && $NonescapableTypes
   public var decoder: Foundation.JSONDecoder? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var timeoutInSeconds: Foundation.TimeInterval? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var mockFile: Swift.String? {
     get
   }
+  #endif
 }
 @available(*, deprecated, renamed: "YPFullscreenContainerController")
 public typealias FullscreenContainerController = YandexPaySDK.YPFullscreenContainerController
@@ -443,7 +511,9 @@ public typealias FullscreenContainerController = YandexPaySDK.YPFullscreenContai
     @objc get
   }
   @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override final public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  #endif
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class YandexPayViewController : UIKit.UIViewController {
@@ -456,7 +526,9 @@ public struct YPAuthInfo : Swift.Codable, Swift.Equatable {
   public let authToken: Swift.String
   public let uid: Swift.String?
   public let hasStaffFeatures: Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(authToken: Swift.String, uid: Swift.String? = nil)
+  #endif
   public static func == (a: YandexPaySDK.YPAuthInfo, b: YandexPaySDK.YPAuthInfo) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
@@ -464,7 +536,9 @@ public struct YPAuthInfo : Swift.Codable, Swift.Equatable {
 public enum YPAvailablePaymentMethod : Swift.String {
   case card
   case split
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -475,7 +549,9 @@ public struct YPCheckoutWidgetModel {
     case cashbackOnly
     case splitOnly
     case fullBox
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -517,7 +593,9 @@ public enum YPCurrencyCode : Swift.String {
   case brl
   case aud
   case uzs
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -535,7 +613,9 @@ public struct YPProduct {
   public let id: Swift.String
   public let total: Foundation.Decimal
   public let quantity: YandexPaySDK.YPQuantity?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(id: Swift.String, total: Foundation.Decimal, quantity: YandexPaySDK.YPQuantity?)
+  #endif
 }
 public struct YPQuantity {
   public init(count: Swift.String)
@@ -549,7 +629,9 @@ public enum YPPaymentError : Swift.String, Swift.Error {
   case invalidArgs
   case orderNotFound
   case unknownError
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -563,7 +645,9 @@ public struct YPSplitData {
   public let upgradedSplitDocuments: YandexPaySDK.YPDocument?
   public var defaultPaymentMethod: YandexPaySDK.YPSplitPaymentMethod?
   public let splitRmsContextId: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(defaultPlan: Swift.String, plans: [YandexPaySDK.YPSplitPlan], upgradeStatus: YandexPaySDK.YPSplitUpgradeStatus, splitCardID: Swift.String? = nil, upgradedSplitDocuments: YandexPaySDK.YPDocument? = nil, defaultPaymentMethod: YandexPaySDK.YPSplitPaymentMethod?, splitRmsContextId: Swift.String?)
+  #endif
 }
 extension YandexPaySDK.YPSplitData {
   public static let empty: YandexPaySDK.YPSplitData
@@ -579,7 +663,9 @@ public struct YPSplitPlan {
   public let needUpgrade: Swift.Bool
   public let creditLengthInMonths: Swift.Int?
   public let promoId: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(id: Swift.String, productType: Swift.String, constructor: Swift.String, sum: Foundation.Decimal, visualProperties: YandexPaySDK.YPSplitVisualProperties, payments: [YandexPaySDK.YPSplitPayment], annotation: YandexPaySDK.YPSplitPlanAnnotation, needUpgrade: Swift.Bool, creditLengthInMonths: Swift.Int? = nil, promoId: Swift.String? = nil)
+  #endif
 }
 public enum YPSplitUpgradeStatus {
   case upgraded
@@ -612,7 +698,9 @@ public struct YPSplitPayment {
   public let status: Swift.String?
   public let amount: Foundation.Decimal
   public let dateTime: Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(status: Swift.String?, amount: Foundation.Decimal, dateTime: Swift.String)
+  #endif
 }
 public struct YPSplitPlanAnnotation {
   public let payment: Foundation.Decimal
@@ -623,13 +711,17 @@ public struct YPSplitPlanAnnotation {
 public enum YPSplitPaymentMethod {
   case ybCard
   case card(id: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(trustCardID: Swift.String?)
+  #endif
 }
 public enum YPTheme : Swift.String {
   case light
   case dark
   case system
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -642,19 +734,29 @@ public enum YPYandexPayPaymentResult {
 }
 public protocol YPAppMetricaAdapter {
   var uuid: Swift.String { get }
+  #if compiler(>=5.3) && $NonescapableTypes
   var deviceID: Swift.String? { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func reporter(for apiKey: Swift.String) -> (any YandexPaySDK.YPAppMetricaReportingAdapter)?
+  #endif
   func activateReporter(for apiKey: Swift.String) throws(YandexPaySDK.YPAppMetricaActivationError)
 }
 public protocol YPAppMetricaReportingAdapter {
+  #if compiler(>=5.3) && $NonescapableTypes
   func report(eventName: Swift.String, params: [Swift.String : Any], onFailure: ((any Swift.Error) -> Swift.Void)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func setPUID(_ puid: Swift.String?)
+  #endif
 }
 public protocol YPRTMAdapter {
   func reportError(params: [Swift.String : Swift.String], message: Swift.String, type: Swift.String, source: Swift.String)
 }
 public protocol YPRTMAdapterFactory {
+  #if compiler(>=5.3) && $NonescapableTypes
   func create(userAgent: Swift.String, projectName: Swift.String, appVersion: Swift.String, userID: Swift.UInt64, environment: YandexPaySDK.YandexPaySDKEnvironment, reqID: Swift.String) -> (any YandexPaySDK.YPRTMAdapter)?
+  #endif
 }
 public enum YPAppMetricaActivationError : Swift.Error {
   case configCreationError(apiKey: Swift.String)
@@ -675,7 +777,9 @@ public enum YPFlow : Swift.String {
   case payOffline
   case payboxUz
   case tv
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -705,7 +809,9 @@ public struct YandexPaySDKPaymentDeeplinkParams {
   public let environment: YandexPaySDK.YandexPaySDKEnvironment
   public let action: YandexPaySDK.YPDeeplinkAction
   public let flow: YandexPaySDK.YPFlow
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(merchantId: Swift.String, clientId: Swift.String?, sessionId: Swift.String, paymentURL: Foundation.URL, fallbackURL: Foundation.URL?, requestedFeatures: Swift.Set<Swift.String>, environment: YandexPaySDK.YandexPaySDKEnvironment, action: YandexPaySDK.YPDeeplinkAction, flow: YandexPaySDK.YPFlow)
+  #endif
 }
 public struct YandexPaySDKRedirectHostDeeplinkParams {
   public let checkoutOrderId: Swift.String
@@ -715,7 +821,9 @@ public enum YandexPaySDKLocale : Swift.Int {
   case ru
   case en
   case system
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -729,7 +837,9 @@ public struct YPButtonModel {
   public let cornerRadius: CoreFoundation.CGFloat
   public let isLoading: Swift.Bool
   public let isBordered: Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(amount: Foundation.Decimal?, currency: YandexPaySDK.YPCurrencyCode = .rub, preferredPaymentMethods: [YandexPaySDK.YPAvailablePaymentMethod] = [.card], appearance: YandexPaySDK.YPTheme = .system, cornerRadius: CoreFoundation.CGFloat = 16, isLoading: Swift.Bool = false, isBordered: Swift.Bool = false)
+  #endif
 }
 extension YandexPaySDK.YPButtonModel : Swift.Equatable {
   public static func == (a: YandexPaySDK.YPButtonModel, b: YandexPaySDK.YPButtonModel) -> Swift.Bool
@@ -756,7 +866,9 @@ extension YandexPaySDK.YPButtonPaymentType : Swift.LosslessStringConvertible {
 }
 @_Concurrency.MainActor public protocol YandexPayButtonProtocol : AnyObject {
   @_Concurrency.MainActor var preferredPaymentMethods: [YandexPaySDK.YPAvailablePaymentMethod] { get set }
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor var order: (Foundation.Decimal, YandexPaySDK.YPCurrencyCode)? { get set }
+  #endif
   @_Concurrency.MainActor var appearance: YandexPaySDK.YPTheme { get set }
   @_Concurrency.MainActor var isLoading: Swift.Bool { get set }
   @_Concurrency.MainActor var cornerRadius: CoreFoundation.CGFloat { get set }
@@ -782,15 +894,25 @@ public enum YPPresentationContext {
   case keyWindow
 }
 public protocol YandexPayForm : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   func present(from anchor: YandexPaySDK.YPPresentationContext, animated: Swift.Bool, completion: (() -> Swift.Void)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func present(from presenter: any YandexPaySDK.YandexPayFormPresenter, animated: Swift.Bool, completion: (() -> Swift.Void)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func dismiss(animated: Swift.Bool, completion: (() -> Swift.Void)?)
+  #endif
 }
 extension YandexPaySDK.YandexPayForm {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func present(from anchor: YandexPaySDK.YPPresentationContext, animated: Swift.Bool, completion: (() -> Swift.Void)?)
+  #endif
 }
 public protocol YandexPayFormPresenter : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   func present(_ controller: UIKit.UIViewController, animated: Swift.Bool, completion: (() -> Swift.Void)?)
+  #endif
 }
 extension UIKit.UIViewController : YandexPaySDK.YandexPayFormPresenter {
 }
