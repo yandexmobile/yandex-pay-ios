@@ -1,0 +1,220 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name YandexPayWithRedirect -package-name yandexpaywithredirect
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import ExternalBduiAdapter
+import FintechSDKAuthInterfaces
+import FintechSDKFontsAdapter
+import FintechSDKRealTimeAnalyticsAdapter
+import FintechSDKRealUserMonitoringAdapter
+import Foundation
+import Swift
+import SwiftUI
+import UIKit
+import YandexPayConfiguration
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class YPButton : UIKit.UIView {
+  @_Concurrency.MainActor final public var preferredPaymentMethods: [YandexPayWithRedirect.YPAvailablePaymentMethod] {
+    get
+    set
+  }
+  @_Concurrency.MainActor final public var order: (Foundation.Decimal, YandexPayConfiguration.YPCurrencyCode)? {
+    get
+    set
+  }
+  @_Concurrency.MainActor final public var isLoading: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor final public var buttonCornerRadius: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor final public var isBordered: Swift.Bool {
+    get
+    set
+  }
+  @objc deinit
+}
+extension YandexPayWithRedirect.YPButton : YandexPayWithRedirect.YPButtonProtocol {
+}
+public protocol YPButtonProtocol : AnyObject {
+}
+public protocol YPButtonDelegate : AnyObject {
+  func yandexPayButton(_ button: any YandexPayWithRedirect.YPButtonProtocol, didCompletePaymentWithResult result: YandexPayWithRedirect.YPPaymentResult, data: YandexPayWithRedirect.YPPaymentData)
+}
+public struct YPButtonModel {
+  public static let `default`: YandexPayWithRedirect.YPButtonModel
+  public let amount: Foundation.Decimal?
+  public let currency: YandexPayConfiguration.YPCurrencyCode
+  public let preferredPaymentMethods: [YandexPayWithRedirect.YPAvailablePaymentMethod]
+  public let cornerRadius: CoreFoundation.CGFloat
+  public let isLoading: Swift.Bool
+  public let isBordered: Swift.Bool
+  public init(amount: Foundation.Decimal?, currency: YandexPayConfiguration.YPCurrencyCode = .rub, preferredPaymentMethods: [YandexPayWithRedirect.YPAvailablePaymentMethod] = [.card], cornerRadius: CoreFoundation.CGFloat = 16, isLoading: Swift.Bool = false, isBordered: Swift.Bool = false)
+}
+public protocol YPButtonPaymentDataProviding : AnyObject {
+  func paymentUrl(for yandexPayButton: any YandexPayWithRedirect.YPButtonProtocol) async throws -> Swift.String
+}
+public protocol YPForm : AnyObject {
+  @_Concurrency.MainActor func present(anchor: YandexPayConfiguration.YPPresentationContext, animated: Swift.Bool, completion: (() -> Swift.Void)?)
+  @_Concurrency.MainActor func dismiss(animated: Swift.Bool, completion: (() -> Swift.Void)?)
+}
+public protocol YPFormDelegate : AnyObject {
+  func yandexPayForm(_ payForm: any YandexPayWithRedirect.YPForm, data: YandexPayWithRedirect.YPPaymentData, didCompletePaymentWithResult result: YandexPayWithRedirect.YPPaymentResult)
+}
+public enum YPAvailablePaymentMethod : Swift.String {
+  case card
+  case split
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct YPPaymentData {
+  public let orderId: Swift.String?
+  public init(orderId: Swift.String?)
+}
+public enum YPPaymentError : Swift.String, Swift.Error {
+  case authenticationProblem
+  case wrongMerchantId
+  case orderExpired
+  case paymentFailed
+  case appError
+  case invalidArgs
+  case orderNotFound
+  case unknownError
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum YPPaymentResult {
+  case succeeded
+  case cancelled
+  case failed(YandexPayWithRedirect.YPPaymentError)
+}
+public struct YPSplitPlan {
+  public let id: Swift.String
+  public let amount: Foundation.Decimal
+  public let payments: Swift.Int
+  public init(id: Swift.String, amount: Foundation.Decimal, payments: Swift.Int)
+}
+public protocol YPUltimateWidgetDelegate : AnyObject {
+  func onYandexPayUltimateCheckoutButtonClick(data: YandexPayWithRedirect.YandexPayUltimateWidgetData)
+  func onYandexPayHeaderClick()
+}
+@_Concurrency.MainActor public struct YPUltimateWidgetModel {
+  public enum Style : Swift.String {
+    case split
+    case cashback
+    case fullSize
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum HeaderStyle : Swift.String {
+    case minified
+    case standard
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  @_Concurrency.MainActor public let amount: Foundation.Decimal
+  @_Concurrency.MainActor public let currency: YandexPayConfiguration.YPCurrencyCode
+  @_Concurrency.MainActor public let style: YandexPayWithRedirect.YPUltimateWidgetModel.Style
+  @_Concurrency.MainActor public let appearance: YandexPayWithRedirect.YPUltimateWidgetModel.Appearance
+  @_Concurrency.MainActor public let skuId: Swift.String?
+  @_Concurrency.MainActor public var header: YandexPayWithRedirect.YPUltimateWidgetModel.HeaderStyle
+  @_Concurrency.MainActor public init(amount: Foundation.Decimal, currency: YandexPayConfiguration.YPCurrencyCode = .rub, style: YandexPayWithRedirect.YPUltimateWidgetModel.Style, appearance: YandexPayWithRedirect.YPUltimateWidgetModel.Appearance = .init(), header: YandexPayWithRedirect.YPUltimateWidgetModel.HeaderStyle = .standard, skuId: Swift.String? = nil)
+}
+extension YandexPayWithRedirect.YPUltimateWidgetModel {
+  public struct Appearance {
+    public enum Background : Swift.String {
+      case transparent
+      case `default`
+      case light
+      public init?(rawValue: Swift.String)
+      public typealias RawValue = Swift.String
+      public var rawValue: Swift.String {
+        get
+      }
+    }
+    public enum WidgetSize : Swift.String {
+      case medium
+      case small
+      public init?(rawValue: Swift.String)
+      public typealias RawValue = Swift.String
+      public var rawValue: Swift.String {
+        get
+      }
+    }
+    public var radius: CoreFoundation.CGFloat
+    public var hasOutline: Swift.Bool
+    public var hasPadding: Swift.Bool
+    public var background: YandexPayWithRedirect.YPUltimateWidgetModel.Appearance.Background
+    public var hasCheckoutButton: Swift.Bool
+    public var size: YandexPayWithRedirect.YPUltimateWidgetModel.Appearance.WidgetSize
+    public init(radius: CoreFoundation.CGFloat = 20, hasOutline: Swift.Bool = false, hasPadding: Swift.Bool = true, hasCheckoutButton: Swift.Bool = false, background: YandexPayWithRedirect.YPUltimateWidgetModel.Appearance.Background = .default, size: YandexPayWithRedirect.YPUltimateWidgetModel.Appearance.WidgetSize = .medium)
+  }
+}
+public struct YandexPayUltimateWidgetData {
+  public let splitMonthCount: Swift.Int
+  public init(splitMonthCount: Swift.Int)
+}
+extension YandexPayConfiguration.YPay {
+  @_Concurrency.MainActor final public var payWithRedirect: YandexPayWithRedirect.YandexPayWithRedirectModuleAPI {
+    get
+  }
+}
+@_Concurrency.MainActor public enum YPayWithRedirect {
+  @_Concurrency.MainActor public static func module(merchant: YandexPayConfiguration.YPSDKMerchant) -> YandexPayWithRedirect.YandexPayWithRedirectModuleDescriptor
+}
+@_hasMissingDesignatedInitializers final public class YandexPayWithRedirectModuleDescriptor : YandexPayConfiguration.YPayModule {
+  @_Concurrency.MainActor final public func configure(with configuration: YandexPayConfiguration.YPay)
+  final public var urlHandlers: [any YandexPayConfiguration.YPayURLHandler] {
+    get
+  }
+  final public var userActivityHandlers: [any YandexPayConfiguration.YPayUserActivityHandler] {
+    get
+  }
+  @objc deinit
+}
+extension YandexPayWithRedirect.YandexPayWithRedirectModuleDescriptor {
+  @_Concurrency.MainActor final public func update(locale: YandexPayConfiguration.YPSDKLocale)
+  @_Concurrency.MainActor final public func update(theme: YandexPayConfiguration.YPSDKThemeColorScheme)
+}
+@_hasMissingDesignatedInitializers final public class YandexPayWithRedirectModuleAPI {
+  final public func createYandexPayForm(paymentURL: Foundation.URL, delegate: any YandexPayWithRedirect.YPFormDelegate) -> any YandexPayWithRedirect.YPForm
+  @_Concurrency.MainActor final public func createButton(model: YandexPayWithRedirect.YPButtonModel = .default, paymentDataProvider: any YandexPayWithRedirect.YPButtonPaymentDataProviding, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, delegate: any YandexPayWithRedirect.YPButtonDelegate) -> YandexPayWithRedirect.YPButton
+  @_Concurrency.MainActor final public func createButton(model: YandexPayWithRedirect.YPButtonModel, paymentDataProvider: any YandexPayWithRedirect.YPButtonPaymentDataProviding, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, delegate: any YandexPayWithRedirect.YPButtonDelegate) -> any SwiftUICore.View
+  @objc deinit
+}
+extension YandexPayWithRedirect.YPAvailablePaymentMethod : Swift.Equatable {}
+extension YandexPayWithRedirect.YPAvailablePaymentMethod : Swift.Hashable {}
+extension YandexPayWithRedirect.YPAvailablePaymentMethod : Swift.RawRepresentable {}
+extension YandexPayWithRedirect.YPPaymentError : Swift.Equatable {}
+extension YandexPayWithRedirect.YPPaymentError : Swift.Hashable {}
+extension YandexPayWithRedirect.YPPaymentError : Swift.RawRepresentable {}
+extension YandexPayWithRedirect.YPUltimateWidgetModel : Swift.Sendable {}
+extension YandexPayWithRedirect.YPUltimateWidgetModel.Style : Swift.Equatable {}
+extension YandexPayWithRedirect.YPUltimateWidgetModel.Style : Swift.Hashable {}
+extension YandexPayWithRedirect.YPUltimateWidgetModel.Style : Swift.RawRepresentable {}
+extension YandexPayWithRedirect.YPUltimateWidgetModel.HeaderStyle : Swift.Equatable {}
+extension YandexPayWithRedirect.YPUltimateWidgetModel.HeaderStyle : Swift.Hashable {}
+extension YandexPayWithRedirect.YPUltimateWidgetModel.HeaderStyle : Swift.RawRepresentable {}
+extension YandexPayWithRedirect.YPUltimateWidgetModel.Appearance.Background : Swift.Equatable {}
+extension YandexPayWithRedirect.YPUltimateWidgetModel.Appearance.Background : Swift.Hashable {}
+extension YandexPayWithRedirect.YPUltimateWidgetModel.Appearance.Background : Swift.RawRepresentable {}
+extension YandexPayWithRedirect.YPUltimateWidgetModel.Appearance.WidgetSize : Swift.Equatable {}
+extension YandexPayWithRedirect.YPUltimateWidgetModel.Appearance.WidgetSize : Swift.Hashable {}
+extension YandexPayWithRedirect.YPUltimateWidgetModel.Appearance.WidgetSize : Swift.RawRepresentable {}
+extension YandexPayWithRedirect.YPayWithRedirect : Swift.Sendable {}

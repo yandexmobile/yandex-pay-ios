@@ -1,0 +1,178 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKAuthInterfaces -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import Combine
+import Foundation
+import Swift
+import UIKit/*.UIViewController*/
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct FintechAccount {
+  public let uid: Foundation.NSNumber?
+  public let isStaff: Swift.Bool
+  public init(uid: Foundation.NSNumber?, isStaff: Swift.Bool)
+}
+@_Concurrency.MainActor public protocol FintechAccountManagerAdapter {
+  @_Concurrency.MainActor var partition: Swift.String { get }
+  @_Concurrency.MainActor func account(with uid: Foundation.NSNumber) -> FintechSDKAuthInterfaces.FintechAccount?
+  @_Concurrency.MainActor func clearOAuthCache(for uid: Foundation.NSNumber)
+  @_Concurrency.MainActor func obtainAuthToken(for uid: Foundation.NSNumber, credentials: FintechSDKAuthInterfaces.FintechClientIdentifier?) async throws -> Swift.String?
+  @_Concurrency.MainActor func trySetCurrentAccount(with uid: Foundation.NSNumber?) async throws
+}
+extension FintechSDKAuthInterfaces.FintechAccountManagerAdapter {
+  @_Concurrency.MainActor public func obtainAuthToken(for uid: Foundation.NSNumber) async throws -> Swift.String?
+}
+public struct FintechClientIdentifier {
+  public let clientID: Swift.String
+  public let clientSecret: Swift.String
+  public init(clientID: Swift.String, clientSecret: Swift.String)
+}
+public enum FintechServiceEnvironment {
+  case testing
+  case sandbox
+  case prod
+  public static func == (a: FintechSDKAuthInterfaces.FintechServiceEnvironment, b: FintechSDKAuthInterfaces.FintechServiceEnvironment) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol FintechCookieExchanger {
+  func exchangeCookie(url: Foundation.URL) async throws(FintechSDKAuthInterfaces.FintechCookieExchangerError) -> Foundation.URL
+}
+public protocol FintechCookieExchangerAdapter {
+  func requestCookieAuthURL(uid: Foundation.NSNumber?, retPath: Swift.String) async throws(FintechSDKAuthInterfaces.FintechCookieExchangerError) -> Foundation.URL
+}
+public enum FintechCookieExchangerError : Foundation.LocalizedError {
+  case notAuthorized
+  case failedToExchangeCookies(underlyingError: any Swift.Error)
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public protocol FintechDPoPKey {
+  var publicKey: FintechSDKAuthInterfaces.FintechJWK { get }
+  var isInvalid: Swift.Bool { get }
+  var requiresBiometry: Swift.Bool { get }
+  var keyType: FintechSDKAuthInterfaces.PublicKeyType { get }
+  func makeDPoP(method: Swift.String, path: Swift.String, tokenForAuth: Swift.String) async throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> Swift.String
+  func invalidate()
+}
+public enum FintechCryptoKeyError : Foundation.LocalizedError {
+  case biometryNotAvailable(Foundation.NSError)
+  case keyCreationFailed(any Swift.Error)
+  case keyLoadingFailed(any Swift.Error)
+  case serializationFailed(any Swift.Error)
+  case signatureFailed(Foundation.NSError)
+  case keyInvalidated(Foundation.NSError)
+  case userCancelled
+  case systemCancelled
+  case notInteractive
+  public var needToLogout: Swift.Bool {
+    get
+  }
+}
+public enum PublicKeyType : Swift.String, Swift.Sendable, Swift.Codable {
+  case biometric
+  case regular
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol FintechDPoPService : Swift.Sendable {
+  func key(_ type: FintechSDKAuthInterfaces.PublicKeyType) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> any FintechSDKAuthInterfaces.FintechDPoPKey
+  func invalidateKey()
+  func checkDeviceAuth() throws(FintechSDKAuthInterfaces.FintechCryptoKeyError)
+}
+public struct FintechJWK {
+  public init(kty: Swift.String, crv: Swift.String, x: Swift.String, y: Swift.String)
+}
+extension FintechSDKAuthInterfaces.FintechJWK {
+  public var asDictionary: [Swift.String : Swift.String] {
+    get
+  }
+}
+public protocol FintechAuthAdapter {
+  func makeAccountManager() -> any FintechSDKAuthInterfaces.FintechAccountManagerAdapter
+  func makeCookieExchangerService() -> any FintechSDKAuthInterfaces.FintechCookieExchangerAdapter
+}
+public protocol FintechAuthAdapterFactory {
+  func make(environment: FintechSDKAuthInterfaces.FintechServiceEnvironment, clientIdentifier: FintechSDKAuthInterfaces.FintechClientIdentifier, authLocale: Swift.String, partition: Swift.String?) -> any FintechSDKAuthInterfaces.FintechAuthAdapter
+}
+public struct FintechAuthModel : Swift.Codable, Swift.Sendable {
+  public let token: Swift.String
+  public let uid: Swift.Int
+  public let jwt: Swift.String?
+  public init(token: Swift.String, uid: Swift.Int, jwt: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension FintechSDKAuthInterfaces.FintechAuthModel {
+  public var uidNumber: Foundation.NSNumber {
+    get
+  }
+}
+public struct FintechAuthSession : Swift.Sendable {
+  public let sessionToken: Swift.String
+  public let expiresAt: Foundation.Date
+  public init(sessionToken: Swift.String, expiresAt: Foundation.Date)
+}
+public enum FintechAuthType {
+  case `internal`
+  case external
+  public static func == (a: FintechSDKAuthInterfaces.FintechAuthType, b: FintechSDKAuthInterfaces.FintechAuthType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum FintechAuthorizationStrategy : Swift.String {
+  case `default`
+  case webOnly
+  case primaryOnly
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum FintechLoginServiceError : Foundation.LocalizedError {
+  case clientIDNotSet
+  case userCancelled
+  case sdkError(message: Swift.String, underlying: any Swift.Error)
+  case concurrencyError(underlying: (any Swift.Error)?)
+}
+public protocol FintechLoginServiceDelegate : AnyObject {
+  @_Concurrency.MainActor func loginService(_ service: any FintechSDKAuthInterfaces.FintechLoginService, didAuthorize model: FintechSDKAuthInterfaces.FintechAuthModel)
+  @_Concurrency.MainActor func loginService(_ service: any FintechSDKAuthInterfaces.FintechLoginService, didFailWith error: FintechSDKAuthInterfaces.FintechLoginServiceError)
+}
+public protocol FintechLoginService : AnyObject {
+  typealias Model = FintechSDKAuthInterfaces.FintechAuthModel
+  var delegate: (any FintechSDKAuthInterfaces.FintechLoginServiceDelegate)? { get set }
+  @_Concurrency.MainActor func getCurrentAuth(for type: FintechSDKAuthInterfaces.FintechAuthType) -> Self.Model?
+  @_Concurrency.MainActor func authorize(for type: FintechSDKAuthInterfaces.FintechAuthType, strategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy, with presenter: UIKit.UIViewController) async throws(FintechSDKAuthInterfaces.FintechLoginServiceError) -> Self.Model
+  @_Concurrency.MainActor func logout(for type: FintechSDKAuthInterfaces.FintechAuthType)
+  func isURLRelatedToSDK(url: Foundation.URL) -> Swift.Bool
+  func handle(_ url: Foundation.URL) -> Swift.Bool
+  func handle(_ userActivity: Foundation.NSUserActivity) -> Swift.Bool
+}
+public protocol FTCheckHasAuthUseCase : Swift.Sendable {
+  func execute() async -> Swift.Bool
+}
+public protocol FTGetPuidUseCase : Swift.Sendable {
+  @_Concurrency.MainActor func getPuid() -> Foundation.NSNumber?
+}
+extension FintechSDKAuthInterfaces.FintechServiceEnvironment : Swift.Equatable {}
+extension FintechSDKAuthInterfaces.FintechServiceEnvironment : Swift.Hashable {}
+extension FintechSDKAuthInterfaces.PublicKeyType : Swift.Equatable {}
+extension FintechSDKAuthInterfaces.PublicKeyType : Swift.Hashable {}
+extension FintechSDKAuthInterfaces.PublicKeyType : Swift.RawRepresentable {}
+extension FintechSDKAuthInterfaces.FintechAuthType : Swift.Equatable {}
+extension FintechSDKAuthInterfaces.FintechAuthType : Swift.Hashable {}
+extension FintechSDKAuthInterfaces.FintechAuthorizationStrategy : Swift.Equatable {}
+extension FintechSDKAuthInterfaces.FintechAuthorizationStrategy : Swift.Hashable {}
+extension FintechSDKAuthInterfaces.FintechAuthorizationStrategy : Swift.RawRepresentable {}

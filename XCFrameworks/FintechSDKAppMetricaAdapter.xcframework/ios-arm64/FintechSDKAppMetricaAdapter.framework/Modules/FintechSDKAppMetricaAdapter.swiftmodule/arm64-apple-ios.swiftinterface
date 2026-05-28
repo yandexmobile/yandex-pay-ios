@@ -1,0 +1,31 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKAppMetricaAdapter -package-name appmetrica
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import FintechSDKAnalyticsInterfaces
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+final public class FintechAppMetricaAdapterImpl : FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter {
+  public init(logsEnabled: Swift.Bool = false)
+  final public var uuid: Swift.String {
+    get
+  }
+  final public var deviceID: Swift.String? {
+    get
+  }
+  final public func isReporterCreated(for apiKey: Swift.String) -> Swift.Bool
+  final public func reporter(for apiKey: Swift.String) throws(FintechSDKAnalyticsInterfaces.FintechAppMetricaError) -> any FintechSDKAnalyticsInterfaces.FintechAppMetricaReportingAdapter
+  final public func extendedReporter(for apiKey: Swift.String) throws(FintechSDKAnalyticsInterfaces.FintechAppMetricaError) -> any FintechSDKAnalyticsInterfaces.FintechAppMetricaReportingAdapter
+  final public func activateReporter(for apiKey: Swift.String) throws(FintechSDKAnalyticsInterfaces.FintechAppMetricaError)
+  @objc deinit
+}
+final public class FintechAppMetricaReporterImpl : FintechSDKAnalyticsInterfaces.FintechAppMetricaReportingAdapter {
+  public init(reporter: Swift.AnyObject)
+  final public func report(eventName: Swift.String, params: [Swift.String : Any], onFailure: ((any Swift.Error) -> Swift.Void)?)
+  final public func setPUID(_ puid: Swift.String?)
+  final public func setAppEnvironment(_ value: Swift.String, for key: Swift.String)
+  @objc deinit
+}

@@ -1,0 +1,90 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name YandexPayAuth -package-name yandexpayauth
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import FintechSDKAuthInterfaces
+import FintechSDKCoreUtils
+import Foundation
+import Swift
+import UIKit
+import YandexPayConfiguration
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public enum YPPayAuthState : Swift.Sendable, Swift.Equatable {
+  case initial
+  case authorized
+  case unauthorized
+  public static func == (a: YandexPayAuth.YPPayAuthState, b: YandexPayAuth.YPPayAuthState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_Concurrency.MainActor public protocol YPPayAuthStateListener : AnyObject {
+  @_Concurrency.MainActor func onAuthStateChanged(_ state: YandexPayAuth.YPPayAuthState)
+}
+public enum YPAuthorizationStrategy {
+  case `default`
+  case webOnly
+  case primaryOnly
+  public static func == (a: YandexPayAuth.YPAuthorizationStrategy, b: YandexPayAuth.YPAuthorizationStrategy) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct YPAuthModel : Swift.Sendable {
+  public let token: Swift.String
+  public let uid: Swift.Int
+  public let jwt: Swift.String?
+  public init(token: Swift.String, uid: Swift.Int, jwt: Swift.String? = nil)
+}
+@_Concurrency.MainActor public protocol YPLoginObserver : AnyObject {
+  @_Concurrency.MainActor func didFinishLogin(with result: Swift.Result<YandexPayAuth.YPAuthModel, any Swift.Error>)
+}
+extension YandexPayConfiguration.YPay {
+  @_Concurrency.MainActor final public var auth: YandexPayAuth.YPayAuth {
+    get
+  }
+}
+final public class YPayAuthModule : YandexPayConfiguration.YPayModule {
+  public init()
+  @_Concurrency.MainActor final public func configure(with configuration: YandexPayConfiguration.YPay)
+  final public var urlHandlers: [any YandexPayConfiguration.YPayURLHandler] {
+    get
+  }
+  final public var userActivityHandlers: [any YandexPayConfiguration.YPayUserActivityHandler] {
+    get
+  }
+  @objc deinit
+}
+extension YandexPayAuth.YPayAuthModule {
+  final public func update(locale: YandexPayConfiguration.YPSDKLocale)
+  final public func update(theme: YandexPayConfiguration.YPSDKThemeColorScheme)
+}
+extension YandexPayAuth.YPayAuth {
+  @_Concurrency.MainActor public static func module() -> YandexPayAuth.YPayAuthModule
+}
+@_Concurrency.MainActor final public class YPayAuth {
+  @_Concurrency.MainActor final public var payAuthState: YandexPayAuth.YPPayAuthState {
+    get
+  }
+  @discardableResult
+  @_Concurrency.MainActor final public func authorize(strategy: YandexPayAuth.YPAuthorizationStrategy = .default, with presenter: UIKit.UIViewController) async throws -> YandexPayAuth.YPAuthModel
+  @_Concurrency.MainActor final public func logout()
+  @_Concurrency.MainActor final public func addObserver(_ observer: any YandexPayAuth.YPLoginObserver)
+  @_Concurrency.MainActor final public func removeObserver(_ observer: any YandexPayAuth.YPLoginObserver)
+  @_Concurrency.MainActor final public func setPartnerAuthState(isUserAuthorized: Swift.Bool)
+  @_Concurrency.MainActor final public func addPayAuthStateListener(_ observer: any YandexPayAuth.YPPayAuthStateListener)
+  @_Concurrency.MainActor final public func removePayAuthStateListener(_ observer: any YandexPayAuth.YPPayAuthStateListener)
+  @objc deinit
+}
+extension YandexPayAuth.YPayAuth : FintechSDKAuthInterfaces.FintechLoginServiceDelegate {
+  @_Concurrency.MainActor final public func loginService(_ service: any FintechSDKAuthInterfaces.FintechLoginService, didAuthorize model: FintechSDKAuthInterfaces.FintechAuthModel)
+  @_Concurrency.MainActor final public func loginService(_ service: any FintechSDKAuthInterfaces.FintechLoginService, didFailWith error: FintechSDKAuthInterfaces.FintechLoginServiceError)
+}
+extension YandexPayAuth.YPPayAuthState : Swift.Hashable {}
+extension YandexPayAuth.YPAuthorizationStrategy : Swift.Equatable {}
+extension YandexPayAuth.YPAuthorizationStrategy : Swift.Hashable {}
+extension YandexPayAuth.YPayAuth : Swift.Sendable {}

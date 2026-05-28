@@ -1,0 +1,409 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "ExternalBduiAdapter",
+    "printedName": "ExternalBduiAdapter",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "os",
+        "printedName": "os",
+        "declKind": "Import",
+        "moduleName": "ExternalBduiAdapter"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "ExternalBduiAdapter"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ExternalBduiAdapter"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKBDUICore",
+        "printedName": "FintechSDKBDUICore",
+        "declKind": "Import",
+        "moduleName": "ExternalBduiAdapter"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKBDUIFeatures",
+        "printedName": "FintechSDKBDUIFeatures",
+        "declKind": "Import",
+        "moduleName": "ExternalBduiAdapter"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "ExternalBduiAdapter"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKFontsInterfaces",
+        "printedName": "FintechSDKFontsInterfaces",
+        "declKind": "Import",
+        "moduleName": "ExternalBduiAdapter"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "ExternalBduiAdapter"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechBDUIWrapper",
+        "printedName": "FintechBDUIWrapper",
+        "declKind": "Import",
+        "moduleName": "ExternalBduiAdapter",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FintechBDUIAdapterFactoryImpl",
+        "printedName": "FintechBDUIAdapterFactoryImpl",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechBDUIAdapterFactoryImpl",
+                "printedName": "ExternalBduiAdapter.FintechBDUIAdapterFactoryImpl",
+                "usr": "s:19ExternalBduiAdapter29FintechBDUIAdapterFactoryImplC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19ExternalBduiAdapter29FintechBDUIAdapterFactoryImplCACycfc",
+            "mangledName": "$s19ExternalBduiAdapter29FintechBDUIAdapterFactoryImplCACycfc",
+            "moduleName": "ExternalBduiAdapter",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "make",
+            "printedName": "make(networkClient:router:requestTimeoutSec:fontAdapter:errorLogger:themeKind:contentFactories:errorContentFactory:actionHandlers:divCustomFactories:localImageProvider:renderingEventsListener:firstInteractionListener:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechBDUIAdapter",
+                "printedName": "any FintechSDKBDUICore.FintechBDUIAdapter",
+                "usr": "s:18FintechSDKBDUICore0A11BDUIAdapterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkClient",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkClient",
+                "usr": "s:27FintechSDKNetworkInterfaces0A13NetworkClientP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechBDUIRouter",
+                "printedName": "any FintechSDKBDUICore.FintechBDUIRouter",
+                "usr": "s:18FintechSDKBDUICore0A10BDUIRouterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechFontsAdapter",
+                "printedName": "any FintechSDKFontsInterfaces.FintechFontsAdapter",
+                "usr": "s:25FintechSDKFontsInterfaces0A12FontsAdapterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsErrorReporter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsErrorReporterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechBDUIThemeKind",
+                "printedName": "FintechSDKBDUICore.FintechBDUIThemeKind",
+                "usr": "s:18FintechSDKBDUICore0A13BDUIThemeKindO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKBDUICore.FintechBDUIContentFactory]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechBDUIContentFactory",
+                    "printedName": "any FintechSDKBDUICore.FintechBDUIContentFactory",
+                    "usr": "s:18FintechSDKBDUICore0A18BDUIContentFactoryP"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechBDUIContentFactory",
+                "printedName": "any FintechSDKBDUICore.FintechBDUIContentFactory",
+                "usr": "s:18FintechSDKBDUICore0A18BDUIContentFactoryP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKBDUICore.FintechBDUIActionHandler]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechBDUIActionHandler",
+                    "printedName": "any FintechSDKBDUICore.FintechBDUIActionHandler",
+                    "usr": "s:18FintechSDKBDUICore0A17BDUIActionHandlerP"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKBDUICore.FintechBDUIDivCustomFactory]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechBDUIDivCustomFactory",
+                    "printedName": "any FintechSDKBDUICore.FintechBDUIDivCustomFactory",
+                    "usr": "s:18FintechSDKBDUICore0A20BDUIDivCustomFactoryP"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKBDUICore.FintechBDUILocalImageProviding)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechBDUILocalImageProviding",
+                    "printedName": "any FintechSDKBDUICore.FintechBDUILocalImageProviding",
+                    "usr": "s:18FintechSDKBDUICore0A23BDUILocalImageProvidingP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKAnalyticsInterfaces.FTRenderingEventsListener)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTRenderingEventsListener",
+                    "printedName": "any FintechSDKAnalyticsInterfaces.FTRenderingEventsListener",
+                    "usr": "s:29FintechSDKAnalyticsInterfaces25FTRenderingEventsListenerP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKAnalyticsInterfaces.FTFirstInteractionEventsListener)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTFirstInteractionEventsListener",
+                    "printedName": "any FintechSDKAnalyticsInterfaces.FTFirstInteractionEventsListener",
+                    "usr": "s:29FintechSDKAnalyticsInterfaces32FTFirstInteractionEventsListenerP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19ExternalBduiAdapter29FintechBDUIAdapterFactoryImplC4make13networkClient6router17requestTimeoutSec04fontC011errorLogger9themeKind16contentFactories0p7ContentF014actionHandlers09divCustomU018localImageProvider23renderingEventsListener24firstInteractionListener0D11SDKBDUICore0dE0_p0D20SDKNetworkInterfaces0d7NetworkJ0_p_AR0D10BDUIRouter_pSi0D18SDKFontsInterfaces0d5FontsC0_p0D22SDKAnalyticsInterfaces0D22AnalyticsErrorReporter_pAR0d9BDUIThemeS0OSayAR0d11BDUIContentF0_pGARA1__pSayAR0D17BDUIActionHandler_pGSayAR0d7BDUIDivzF0_pGAR0D23BDUILocalImageProviding_pSgAY25FTRenderingEventsListener_pSgAY32FTFirstInteractionEventsListener_pSgtF",
+            "mangledName": "$s19ExternalBduiAdapter29FintechBDUIAdapterFactoryImplC4make13networkClient6router17requestTimeoutSec04fontC011errorLogger9themeKind16contentFactories0p7ContentF014actionHandlers09divCustomU018localImageProvider23renderingEventsListener24firstInteractionListener0D11SDKBDUICore0dE0_p0D20SDKNetworkInterfaces0d7NetworkJ0_p_AR0D10BDUIRouter_pSi0D18SDKFontsInterfaces0d5FontsC0_p0D22SDKAnalyticsInterfaces0D22AnalyticsErrorReporter_pAR0d9BDUIThemeS0OSayAR0d11BDUIContentF0_pGARA1__pSayAR0D17BDUIActionHandler_pGSayAR0d7BDUIDivzF0_pGAR0D23BDUILocalImageProviding_pSgAY25FTRenderingEventsListener_pSgAY32FTFirstInteractionEventsListener_pSgtF",
+            "moduleName": "ExternalBduiAdapter",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "flexVersion",
+            "printedName": "flexVersion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19ExternalBduiAdapter29FintechBDUIAdapterFactoryImplC11flexVersionSSvp",
+            "mangledName": "$s19ExternalBduiAdapter29FintechBDUIAdapterFactoryImplC11flexVersionSSvp",
+            "moduleName": "ExternalBduiAdapter",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19ExternalBduiAdapter29FintechBDUIAdapterFactoryImplC11flexVersionSSvg",
+                "mangledName": "$s19ExternalBduiAdapter29FintechBDUIAdapterFactoryImplC11flexVersionSSvg",
+                "moduleName": "ExternalBduiAdapter",
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "divKitVersion",
+            "printedName": "divKitVersion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19ExternalBduiAdapter29FintechBDUIAdapterFactoryImplC13divKitVersionSSvp",
+            "mangledName": "$s19ExternalBduiAdapter29FintechBDUIAdapterFactoryImplC13divKitVersionSSvp",
+            "moduleName": "ExternalBduiAdapter",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19ExternalBduiAdapter29FintechBDUIAdapterFactoryImplC13divKitVersionSSvg",
+                "mangledName": "$s19ExternalBduiAdapter29FintechBDUIAdapterFactoryImplC13divKitVersionSSvg",
+                "moduleName": "ExternalBduiAdapter",
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:19ExternalBduiAdapter29FintechBDUIAdapterFactoryImplC",
+        "mangledName": "$s19ExternalBduiAdapter29FintechBDUIAdapterFactoryImplC",
+        "moduleName": "ExternalBduiAdapter",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechBDUIAdapterFactory",
+            "printedName": "FintechBDUIAdapterFactory",
+            "usr": "s:22FintechSDKBDUIFeatures0A18BDUIAdapterFactoryP",
+            "mangledName": "$s22FintechSDKBDUIFeatures0A18BDUIAdapterFactoryP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ExternalBduiAdapter"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "ExternalBduiAdapter"
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/AdapterBinary\/ExternalBduiAdapter\/Sources\/BDUIAdapterImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 298,
+      "length": 14,
+      "value": "\"YandexPaySDK\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/AdapterBinary\/ExternalBduiAdapter\/Sources\/BDUIAdapterImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 324,
+      "length": 13,
+      "value": "\"BDUIAdapter\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/AdapterBinary\/ExternalBduiAdapter\/Sources\/BDUIAdapterImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 388,
+      "length": 58,
+      "value": "\"Some symbols were lost in the framework. Using stub BDUI\""
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "FintechSDKPayMerchantData",
+    "printedName": "FintechSDKPayMerchantData",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayMerchantData"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayMerchantData"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKPayBoxEntity",
+        "printedName": "FintechSDKPayBoxEntity",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayMerchantData"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkImplementation",
+        "printedName": "FintechSDKNetworkImplementation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayMerchantData",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKPayBoxEntity",
+        "printedName": "FintechSDKPayBoxEntity",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayMerchantData"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayMerchantData"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTMerchantApiService",
+        "printedName": "FTMerchantApiService",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "loadMerchantPublicData",
+            "printedName": "loadMerchantPublicData(merchantID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[FintechSDKPayBoxEntity.FTPaymentMethod]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTPaymentMethod",
+                    "printedName": "FintechSDKPayBoxEntity.FTPaymentMethod",
+                    "usr": "s:22FintechSDKPayBoxEntity15FTPaymentMethodO"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:25FintechSDKPayMerchantData20FTMerchantApiServiceP04loadc6PublicD010merchantIDSay0aB9BoxEntity15FTPaymentMethodOGSS_tYaKF",
+            "mangledName": "$s25FintechSDKPayMerchantData20FTMerchantApiServiceP04loadc6PublicD010merchantIDSay0aB9BoxEntity15FTPaymentMethodOGSS_tYaKF",
+            "moduleName": "FintechSDKPayMerchantData",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKPayMerchantData.FTMerchantApiService>",
+            "sugared_genericSig": "<Self where Self : FintechSDKPayMerchantData.FTMerchantApiService>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:25FintechSDKPayMerchantData20FTMerchantApiServiceP",
+        "mangledName": "$s25FintechSDKPayMerchantData20FTMerchantApiServiceP",
+        "moduleName": "FintechSDKPayMerchantData",
+        "genericSig": "<τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTMerchantApiServiceImpl",
+        "printedName": "FTMerchantApiServiceImpl",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(networkClient:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTMerchantApiServiceImpl",
+                "printedName": "FintechSDKPayMerchantData.FTMerchantApiServiceImpl",
+                "usr": "s:25FintechSDKPayMerchantData24FTMerchantApiServiceImplC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkClient",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkClient",
+                "usr": "s:27FintechSDKNetworkInterfaces0A13NetworkClientP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:25FintechSDKPayMerchantData24FTMerchantApiServiceImplC13networkClientAC0A20SDKNetworkInterfaces0a7NetworkJ0_p_tcfc",
+            "mangledName": "$s25FintechSDKPayMerchantData24FTMerchantApiServiceImplC13networkClientAC0A20SDKNetworkInterfaces0a7NetworkJ0_p_tcfc",
+            "moduleName": "FintechSDKPayMerchantData",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "loadMerchantPublicData",
+            "printedName": "loadMerchantPublicData(merchantID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[FintechSDKPayBoxEntity.FTPaymentMethod]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTPaymentMethod",
+                    "printedName": "FintechSDKPayBoxEntity.FTPaymentMethod",
+                    "usr": "s:22FintechSDKPayBoxEntity15FTPaymentMethodO"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:25FintechSDKPayMerchantData24FTMerchantApiServiceImplC04loadc6PublicD010merchantIDSay0aB9BoxEntity15FTPaymentMethodOGSS_tYaKF",
+            "mangledName": "$s25FintechSDKPayMerchantData24FTMerchantApiServiceImplC04loadc6PublicD010merchantIDSay0aB9BoxEntity15FTPaymentMethodOGSS_tYaKF",
+            "moduleName": "FintechSDKPayMerchantData",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:25FintechSDKPayMerchantData24FTMerchantApiServiceImplC",
+        "mangledName": "$s25FintechSDKPayMerchantData24FTMerchantApiServiceImplC",
+        "moduleName": "FintechSDKPayMerchantData",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTMerchantApiService",
+            "printedName": "FTMerchantApiService",
+            "usr": "s:25FintechSDKPayMerchantData20FTMerchantApiServiceP",
+            "mangledName": "$s25FintechSDKPayMerchantData20FTMerchantApiServiceP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Data\/PayMerchant\/Endpoints\/MerchantPublicDataEndpoint.swift",
+      "kind": "IntegerLiteral",
+      "offset": 499,
+      "length": 2,
+      "value": "10"
+    }
+  ]
+}

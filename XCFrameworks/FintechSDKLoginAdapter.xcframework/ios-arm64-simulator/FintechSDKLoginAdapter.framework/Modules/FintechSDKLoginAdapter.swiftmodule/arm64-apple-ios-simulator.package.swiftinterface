@@ -1,0 +1,46 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKLoginAdapter -package-name loginsdk
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import AuthenticationServices
+import FintechSDKAuthInterfaces
+import Foundation
+import Swift
+import UIKit/*.UIViewController*/
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_hasMissingDesignatedInitializers final public class FintechAccountManagerAdapterImpl {
+  convenience public init()
+  @objc deinit
+}
+extension FintechSDKLoginAdapter.FintechAccountManagerAdapterImpl : FintechSDKAuthInterfaces.FintechAccountManagerAdapter {
+  final public var currentAccountId: Foundation.NSNumber? {
+    get
+  }
+  @_Concurrency.MainActor final public func account(with uid: Foundation.NSNumber) -> FintechSDKAuthInterfaces.FintechAccount?
+  @_Concurrency.MainActor final public func clearOAuthCache(for uid: Foundation.NSNumber)
+  @_Concurrency.MainActor final public func obtainAuthToken(for uid: Foundation.NSNumber, credentials: FintechSDKAuthInterfaces.FintechClientIdentifier?) async throws -> Swift.String?
+  @_Concurrency.MainActor final public func trySetCurrentAccount(with uid: Foundation.NSNumber?) async throws
+  @_Concurrency.MainActor final public var partition: Swift.String {
+    get
+  }
+}
+final public class FintechCookieExchangerAdapterImpl {
+  public init()
+  @objc deinit
+}
+extension FintechSDKLoginAdapter.FintechCookieExchangerAdapterImpl : FintechSDKAuthInterfaces.FintechCookieExchangerAdapter {
+  final public func requestCookieAuthURL(uid: Foundation.NSNumber?, retPath: Swift.String) async throws(FintechSDKAuthInterfaces.FintechCookieExchangerError) -> Foundation.URL
+}
+@_hasMissingDesignatedInitializers final public class LoginServiceImpl : FintechSDKAuthInterfaces.FintechLoginService {
+  weak final public var delegate: (any FintechSDKAuthInterfaces.FintechLoginServiceDelegate)?
+  convenience public init(environment: FintechSDKAuthInterfaces.FintechServiceEnvironment = .prod)
+  @objc deinit
+  @_Concurrency.MainActor final public func getCurrentAuth(for type: FintechSDKAuthInterfaces.FintechAuthType) -> FintechSDKLoginAdapter.LoginServiceImpl.Model?
+  @_Concurrency.MainActor final public func authorize(for type: FintechSDKAuthInterfaces.FintechAuthType, strategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy, with presenter: UIKit.UIViewController) async throws(FintechSDKAuthInterfaces.FintechLoginServiceError) -> FintechSDKAuthInterfaces.FintechAuthModel
+  @_Concurrency.MainActor final public func logout(for type: FintechSDKAuthInterfaces.FintechAuthType)
+  final public func isURLRelatedToSDK(url: Foundation.URL) -> Swift.Bool
+  final public func handle(_ url: Foundation.URL) -> Swift.Bool
+  final public func handle(_ userActivity: Foundation.NSUserActivity) -> Swift.Bool
+}

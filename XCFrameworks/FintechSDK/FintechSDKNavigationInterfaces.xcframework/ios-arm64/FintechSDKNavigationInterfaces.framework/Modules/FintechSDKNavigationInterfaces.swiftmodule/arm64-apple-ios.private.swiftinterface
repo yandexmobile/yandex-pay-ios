@@ -1,0 +1,55 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKNavigationInterfaces -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_spi(Internal) public protocol FintechRouter : AnyObject {
+  @_spi(Internal) @_Concurrency.MainActor func push(fintechViewController: FintechSDKNavigationInterfaces.FintechSDKViewController, animated: Swift.Bool, options: FintechSDKNavigationInterfaces.FintechRouterPushOptions)
+  @_spi(Internal) @_Concurrency.MainActor func present(fintechViewController: FintechSDKNavigationInterfaces.FintechSDKViewController, animated: Swift.Bool, completion: (() -> Swift.Void)?)
+  @_spi(Internal) @_Concurrency.MainActor func set(fintechViewControllers: [FintechSDKNavigationInterfaces.FintechSDKViewController], animated: Swift.Bool)
+  @_spi(Internal) @_Concurrency.MainActor func pull(animated: Swift.Bool, completion: ((_ top: UIKit.UIViewController?) -> Swift.Void)?)
+  @_spi(Internal) @_Concurrency.MainActor func popToRoot(animated: Swift.Bool)
+  @_spi(Internal) @_Concurrency.MainActor func dismissPresentedViewControllers(_ currentViewController: UIKit.UIViewController, animated: Swift.Bool, completion: ((UIKit.UIViewController?) -> Swift.Void)?)
+  @_spi(Internal) @_Concurrency.MainActor func dismissRootViewController(animated: Swift.Bool, completion: ((UIKit.UIViewController?) -> Swift.Void)?)
+}
+@_spi(Internal) extension FintechSDKNavigationInterfaces.FintechRouter {
+  @_spi(Internal) @_Concurrency.MainActor public func pull()
+  @_spi(Internal) @_Concurrency.MainActor public func pull(completion: @escaping (_ top: UIKit.UIViewController?) -> Swift.Void)
+  @_spi(Internal) @_Concurrency.MainActor public func popToRoot()
+  @_spi(Internal) @_Concurrency.MainActor public func present(fintechViewController: FintechSDKNavigationInterfaces.FintechSDKViewController, animated: Swift.Bool)
+  @_spi(Internal) @_Concurrency.MainActor public func push(fintechViewController: FintechSDKNavigationInterfaces.FintechSDKViewController, animated: Swift.Bool)
+  @_spi(Internal) @_Concurrency.MainActor public func replace(with fintechViewController: FintechSDKNavigationInterfaces.FintechSDKViewController, animated: Swift.Bool)
+}
+@_spi(Internal) public enum FintechRouterPushOptions : Swift.Equatable {
+  @_spi(Internal) case `default`
+  @_spi(Internal) case clearNavigationStack
+  @_spi(Internal) case clearNavigationStackExceptRoot
+  @_spi(Internal) case replaceLast
+  @_spi(Internal) public static func == (a: FintechSDKNavigationInterfaces.FintechRouterPushOptions, b: FintechSDKNavigationInterfaces.FintechRouterPushOptions) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+}
+@objc @_Concurrency.MainActor @preconcurrency open class FintechSDKViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor @preconcurrency public var permitNavigationGestures: FintechSDKNavigationInterfaces.FintechGesturePermition
+  @_Concurrency.MainActor @preconcurrency public init(permitNavigationGestures: FintechSDKNavigationInterfaces.FintechGesturePermition)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public enum FintechGesturePermition {
+  case allow
+  case forbid
+  public static func == (a: FintechSDKNavigationInterfaces.FintechGesturePermition, b: FintechSDKNavigationInterfaces.FintechGesturePermition) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_spi(Internal) extension FintechSDKNavigationInterfaces.FintechRouterPushOptions : Swift.Hashable {}
+extension FintechSDKNavigationInterfaces.FintechGesturePermition : Swift.Equatable {}
+extension FintechSDKNavigationInterfaces.FintechGesturePermition : Swift.Hashable {}

@@ -1,0 +1,329 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKBDUIFeatures -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import Combine
+import CoreGraphics
+import CoreHaptics
+import CoreImage
+import FintechPlusSDKInterfaces
+import FintechSDKAnalyticsInterfaces
+import FintechSDKAuthInterfaces
+@_spi(Internal) import FintechSDKBDUICore
+import FintechSDKCoreAnalytics
+@_spi(Internal) import FintechSDKCoreUI
+@_spi(Internal) import FintechSDKCoreUtils
+import FintechSDKFontsInterfaces
+@_spi(Internal) import FintechSDKNetworkImplementation
+import FintechSDKNetworkInterfaces
+@_spi(Internal) import FintechSDKRemoteResourcesData
+import FintechYBSDKInterfaces
+import Foundation
+import Swift
+import UIKit
+import UIKit/*.UIScreen*/
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public protocol DeviceChallengeSignatureProviderApi {
+  func getSignature(request: FintechSDKBDUIFeatures.DeviceChallengeSignatureRequest, completion: @escaping (FintechSDKBDUIFeatures.DeviceChallengeSignatureResult) -> Swift.Void)
+}
+public struct DeviceChallengeSignatureRequest {
+  public let purchaseToken: Swift.String
+  public let paymentMethodId: Swift.String
+  public let deviceChallengeStartDelay: Swift.Int
+  public let deviceChallengePostDelay: Swift.Int
+  public init(purchaseToken: Swift.String, paymentMethodId: Swift.String, deviceChallengeStartDelay: Swift.Int, deviceChallengePostDelay: Swift.Int)
+}
+public struct DeviceChallengeSignatureResult {
+  public let data: Swift.String?
+  public let signature: Swift.String?
+  public init(data: Swift.String?, signature: Swift.String?)
+}
+public protocol DevicePubkeyProviderApi {
+  func getPublicKey() -> Swift.String?
+}
+@_spi(Internal) public enum FTAuthorizeActionError : Swift.Error {
+  @_spi(Internal) case handlerNotConfigured
+  @_spi(Internal) public static func == (a: FintechSDKBDUIFeatures.FTAuthorizeActionError, b: FintechSDKBDUIFeatures.FTAuthorizeActionError) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public protocol FTAuthorizeActionHandling {
+  @_spi(Internal) func authorize() async throws
+}
+@_spi(Internal) public protocol FTRefreshTokenHandling : Swift.Sendable {
+  @_spi(Internal) func handleRefreshToken() async throws
+}
+@_spi(Internal) public struct FTActionQuery : Swift.Hashable, Swift.Decodable {
+  @_spi(Internal) public let path: Swift.String
+  @_spi(Internal) public let params: [Swift.String : [Swift.String]]?
+  @_spi(Internal) public let body: [Swift.String : FintechSDKCoreUtils.FTAnyDecodable]?
+  @_spi(Internal) public init(path: Swift.String, params: [Swift.String : [Swift.String]]? = nil, body: [Swift.String : FintechSDKCoreUtils.FTAnyDecodable]? = nil)
+  @_spi(Internal) public static func == (a: FintechSDKBDUIFeatures.FTActionQuery, b: FintechSDKBDUIFeatures.FTActionQuery) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
+}
+@_spi(Internal) public protocol FTRemoteActionHandling {
+  @_spi(Internal) func handleRemoteAction(query: FintechSDKBDUIFeatures.FTActionQuery) async throws -> Swift.Int
+}
+public struct FTFinishFlowParams {
+  public let urlParams: [Swift.String : Swift.String]?
+  public let params: [Swift.String : Swift.String]?
+  public init(urlParams: [Swift.String : Swift.String]? = nil, params: [Swift.String : Swift.String]? = nil)
+}
+public struct FintechSDKAuthorizationDependencies {
+  public let accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter
+  public let errorReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)?
+  public let uid: Foundation.NSNumber?
+  public init(accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, uid: Foundation.NSNumber?, errorReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)? = nil)
+}
+@_spi(Internal) public protocol FTWidgetReloading {
+  @_spi(Internal) func refreshWidget()
+}
+@_spi(Internal) public protocol FTSetOrderResultFailHandling {
+  @_spi(Internal) func handleSetOrderResultFail() async
+}
+@_spi(Internal) public protocol FTSessionExpiredHandling : Swift.Sendable {
+  @_spi(Internal) func handleSessionExpired() async
+}
+@_spi(Internal) public protocol FTStartOrderStatusPollingHandling : Swift.Sendable {
+  @_spi(Internal) func startOrderStatusPolling(transactionId: Swift.String, paymentUrl: Swift.String) async
+}
+@_spi(Internal) public protocol FTTransportBannerBDUIApi {
+  @_spi(Internal) func reload()
+  @_spi(Internal) func setLastUsedCardId(_ cardId: Swift.String)
+}
+@_hasMissingDesignatedInitializers public class FintechBDUIFeatures {
+  final public let actionHandlers: [any FintechSDKBDUICore.FintechBDUIActionHandler]
+  final public let divCustomFactories: [any FintechSDKBDUICore.FintechBDUIDivCustomFactory]
+  public static func create() -> FintechSDKBDUIFeatures.FintechBDUIFeaturesBuilder
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class FintechBDUIFeaturesBuilder {
+  public func add<T>(_ dependency: T) -> Self
+  public func build() -> FintechSDKBDUIFeatures.FintechBDUIFeatures
+  @objc deinit
+}
+public protocol FintechBDUIAdapterFactory {
+  func make(networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, router: any FintechSDKBDUICore.FintechBDUIRouter, requestTimeoutSec: Swift.Int, fontAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter, errorLogger: any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter, themeKind: FintechSDKBDUICore.FintechBDUIThemeKind, contentFactories: [any FintechSDKBDUICore.FintechBDUIContentFactory], errorContentFactory: any FintechSDKBDUICore.FintechBDUIContentFactory, actionHandlers: [any FintechSDKBDUICore.FintechBDUIActionHandler], divCustomFactories: [any FintechSDKBDUICore.FintechBDUIDivCustomFactory], localImageProvider: (any FintechSDKBDUICore.FintechBDUILocalImageProviding)?, renderingEventsListener: (any FintechSDKAnalyticsInterfaces.FTRenderingEventsListener)?, firstInteractionListener: (any FintechSDKAnalyticsInterfaces.FTFirstInteractionEventsListener)?) -> any FintechSDKBDUICore.FintechBDUIAdapter
+  var flexVersion: Swift.String { get }
+  var divKitVersion: Swift.String { get }
+}
+@available(*, deprecated, renamed: "FintechAnalyticsEventReporter", message: "Use FintechAnalyticsEventReporter instead")
+public protocol AnalyticsEventHandlerApi {
+  func handle(eventName: Swift.String, params: [Swift.String : Swift.String])
+}
+public protocol ExternalEventHandlerApi {
+  func handle(eventName: Swift.String, params: [Swift.String : Swift.String]?)
+}
+public protocol ExternalNativePayloadHandlerApi {
+  func handle(name: Swift.String, payload: [Swift.String : FintechSDKCoreUtils.FTAnyCodable]?)
+}
+public protocol FintechDocumentLoadedApi {
+  func onDocumentLoaded(path: Swift.String, params: [Swift.String : Any]?)
+}
+public protocol FintechNativeRouterApi {
+  func goToMainScreen()
+  func goToOpenPlus()
+  func goToOpenPayCard()
+  func goToProfile()
+  func showLoader()
+  func goToPaymentFlow(params: [Swift.String : Swift.String]?)
+  func goToBindCardFlow(params: [Swift.String : Swift.String]?)
+  func finishFlowCancel(_ params: FintechSDKBDUIFeatures.FTFinishFlowParams?)
+  func finishFlowSuccess(_ params: FintechSDKBDUIFeatures.FTFinishFlowParams?)
+  func finishFlowError(_ params: FintechSDKBDUIFeatures.FTFinishFlowParams?)
+  func popToRoot(animated: Swift.Bool)
+  @available(*, deprecated, message: "Use finishFlowCancel(_ params: FTFinishFlowParams?)")
+  func finishFlowCancel(params: [Swift.String : Swift.String]?)
+  @available(*, deprecated, message: "Use finishFlowSuccess(_ params: FTFinishFlowParams?)")
+  func finishFlowSuccess(params: [Swift.String : Swift.String]?)
+  @available(*, deprecated, message: "Use finishFlowError(_ params: FTFinishFlowParams?)")
+  func finishFlowError(params: [Swift.String : Swift.String]?)
+  @available(*, deprecated, message: "Use finishFlowCancel(_ params: FTFinishFlowParams?)")
+  func finishFlowCancel()
+  @available(*, deprecated, message: "Use finishFlowSuccess(_ params: FTFinishFlowParams?)")
+  func finishFlowSuccess()
+  @available(*, deprecated, message: "Use finishFlowError(_ params: FTFinishFlowParams?)")
+  func finishFlowError(params: [Swift.String : Swift.String])
+  func openWebViewController(url: Foundation.URL, params: [Swift.String : Swift.String]?)
+}
+@available(*, deprecated)
+extension FintechSDKBDUIFeatures.FintechNativeRouterApi {
+  public func finishFlowCancel(_ params: FintechSDKBDUIFeatures.FTFinishFlowParams?)
+  public func finishFlowSuccess(_ params: FintechSDKBDUIFeatures.FTFinishFlowParams?)
+  public func finishFlowError(_ params: FintechSDKBDUIFeatures.FTFinishFlowParams?)
+  public func finishFlowCancel(params: [Swift.String : Swift.String]?)
+  public func finishFlowSuccess(params: [Swift.String : Swift.String]?)
+  public func finishFlowError(params: [Swift.String : Swift.String]?)
+}
+public protocol FintechPlusApi {
+  func openPlus(completion: @escaping (Swift.Bool) -> Swift.Void)
+}
+public protocol FintechWebViewConfiguration {
+  var cookies: [Foundation.HTTPCookie] { get }
+  var userAgent: Swift.String? { get }
+  var delegate: (any WebKit.WKNavigationDelegate)? { get }
+  var messageHandlers: [Swift.String : any WebKit.WKScriptMessageHandler] { get }
+  var onPostMessageReceived: ((_ type: Swift.String, _ body: [Swift.String : Any]) -> Swift.Void)? { get }
+  var onWebViewCreated: ((WebKit.WKWebView) -> Swift.Void)? { get }
+  var onPageLoadStarted: (() -> Swift.Void)? { get }
+  var onPageLoadFinished: ((Swift.String) -> Swift.Void)? { get }
+  var onPageLoadError: ((any Swift.Error) -> Swift.Void)? { get }
+}
+extension FintechSDKBDUIFeatures.FintechWebViewConfiguration {
+  public var onPostMessageReceived: ((_ type: Swift.String, _ body: [Swift.String : Any]) -> Swift.Void)? {
+    get
+  }
+  public var onWebViewCreated: ((WebKit.WKWebView) -> Swift.Void)? {
+    get
+  }
+  public var onPageLoadStarted: (() -> Swift.Void)? {
+    get
+  }
+  public var onPageLoadFinished: ((Swift.String) -> Swift.Void)? {
+    get
+  }
+  public var onPageLoadError: ((any Swift.Error) -> Swift.Void)? {
+    get
+  }
+}
+public protocol FintechYBSDKApi {
+  func getPayCardTrustId(completion: @escaping (Swift.String?) -> Swift.Void)
+  func openPayCard(amount: Foundation.Decimal?, currency: Swift.String?, completion: @escaping () -> Swift.Void)
+  func topUp(amount: Foundation.Decimal?, currency: Swift.String?, completion: @escaping () -> Swift.Void)
+  func upgradeSplit(deeplink: Swift.String, completion: @escaping (FintechYBSDKInterfaces.FintechUpgradeSplitResult) -> Swift.Void)
+  func setCreditLimitPurchaseSettings(settings: FintechYBSDKInterfaces.FintechCreditLimitPurchaseSettings, completion: @escaping (FintechYBSDKInterfaces.FintechSetCreditLimitPurchaseSettingsResult) -> Swift.Void)
+}
+@_spi(Internal) final public class FTBDUINativeRouter : FintechSDKBDUICore.FintechBDUIRouter, FintechSDKBDUIFeatures.FintechNativeRouterApi {
+  @_spi(Internal) public init(rootViewController: UIKit.UIViewController?)
+  @_spi(Internal) public init(contextProvider: (any FintechSDKCoreUI.FTPresentationContextProviding)?)
+  @_spi(Internal) final public func pop(animated: Swift.Bool)
+  @_spi(Internal) final public func dismiss(animated: Swift.Bool, completion: ((UIKit.UIViewController?) -> Swift.Void)?)
+  @_spi(Internal) final public func popToRoot(animated: Swift.Bool)
+  @_spi(Internal) final public func finishFlowCancel(_ params: FintechSDKBDUIFeatures.FTFinishFlowParams?)
+  @_spi(Internal) final public func finishFlowSuccess(_ params: FintechSDKBDUIFeatures.FTFinishFlowParams?)
+  @_spi(Internal) final public func finishFlowError(_ params: FintechSDKBDUIFeatures.FTFinishFlowParams?)
+  @_spi(Internal) final public func finishFlowCancel()
+  @_spi(Internal) final public func finishFlowSuccess()
+  @_spi(Internal) final public func finishFlowError(params: [Swift.String : Swift.String])
+  @_spi(Internal) final public func push(viewController: UIKit.UIViewController, animated: Swift.Bool)
+  @_spi(Internal) final public func replace(with viewController: UIKit.UIViewController, animated: Swift.Bool)
+  @_spi(Internal) final public func set(viewControllers: [UIKit.UIViewController], animated: Swift.Bool)
+  @_spi(Internal) final public func present(viewController: UIKit.UIViewController, animated: Swift.Bool, completion: (() -> Swift.Void)?)
+  @_spi(Internal) final public func goToMainScreen()
+  @_spi(Internal) final public func goToOpenPlus()
+  @_spi(Internal) final public func goToOpenPayCard()
+  @_spi(Internal) final public func goToProfile()
+  @_spi(Internal) final public func showLoader()
+  @_spi(Internal) final public func goToPaymentFlow(params: [Swift.String : Swift.String]?)
+  @_spi(Internal) final public func goToBindCardFlow(params: [Swift.String : Swift.String]?)
+  @_spi(Internal) final public func openWebViewController(url: Foundation.URL, params: [Swift.String : Swift.String]?)
+  @_spi(Internal) @objc deinit
+}
+@_spi(Internal) @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class FTBDUINavigationController : UIKit.UINavigationController {
+  @_spi(Internal) @_Concurrency.MainActor final public var onViewDidDisapper: ((UIKit.UINavigationController) -> Swift.Void)?
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(backGestureEnabledDefault: Swift.Bool, onViewDidDisapper: ((UIKit.UINavigationController) -> Swift.Void)? = nil)
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency convenience public init(rootViewController: UIKit.UIViewController, backGestureEnabledDefault: Swift.Bool, onViewDidDisapper: ((UIKit.UINavigationController) -> Swift.Void)? = nil)
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidDisappear(_ animated: Swift.Bool)
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override final public func pushViewController(_ viewController: UIKit.UIViewController, animated: Swift.Bool)
+  @_spi(Internal) @objc deinit
+}
+@_spi(Internal) extension FintechSDKBDUIFeatures.FTBDUINavigationController : UIKit.UINavigationControllerDelegate {
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc final public func navigationController(_ navigationController: UIKit.UINavigationController, didShow _: UIKit.UIViewController, animated: Swift.Bool)
+}
+@_spi(Internal) extension FintechSDKBDUIFeatures.FTBDUINavigationController : UIKit.UIGestureRecognizerDelegate {
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc final public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc final public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+}
+@_spi(Internal) final public class FTFlexRouter : FintechSDKBDUICore.FintechBDUIRouter {
+  @_spi(Internal) public init(presenterViewController: UIKit.UIViewController?, backGestureEnabledDefault: Swift.Bool)
+  @_spi(Internal) public init(contextProvider: (any FintechSDKCoreUI.FTPresentationContextProviding)?, backGestureEnabledDefault: Swift.Bool)
+  @_spi(Internal) final public func push(viewController: UIKit.UIViewController, animated: Swift.Bool)
+  @_spi(Internal) final public func pop(animated: Swift.Bool)
+  @_spi(Internal) final public func replace(with viewController: UIKit.UIViewController, animated: Swift.Bool)
+  @_spi(Internal) final public func set(viewControllers: [UIKit.UIViewController], animated: Swift.Bool)
+  @_spi(Internal) final public func present(viewController: UIKit.UIViewController, animated: Swift.Bool, completion: (() -> Swift.Void)?)
+  @_spi(Internal) final public func dismiss(animated: Swift.Bool, completion: ((UIKit.UIViewController?) -> Swift.Void)?)
+  @_spi(Internal) final public func popToRoot(animated: Swift.Bool)
+  @_spi(Internal) @objc deinit
+}
+final public class FintechPlusSDK : FintechSDKBDUIFeatures.FintechPlusApi {
+  public init(rootViewControllerProvider: any FintechSDKBDUIFeatures.FintechRootViewControllerProvider, plusSDKAdapterFactory: @escaping () async throws -> any FintechPlusSDKInterfaces.FintechPlusSDKAdapter)
+  final public func openPlus(completion: @escaping (Swift.Bool) -> Swift.Void)
+  @objc deinit
+}
+@_spi(Internal) final public class FTRemoteResourcesProvideInteractor : FintechSDKCoreUI.FTRemoteResourceProvideUseCase {
+  @_spi(Internal) public init(frontbackService: any FintechSDKRemoteResourcesData.FTRemoteResourcesAPIService)
+  @_spi(Internal) final public func execute() async throws -> FintechSDKCoreUI.FTRemoteResourcesModel
+  @_spi(Internal) @objc deinit
+}
+final public class FintechDocumentLoadedImpl : FintechSDKBDUIFeatures.FintechDocumentLoadedApi {
+  public init()
+  final public func onDocumentLoaded(path: Swift.String, params: [Swift.String : Any]?)
+  @objc deinit
+}
+public enum HapticFeedbackType : Swift.String, Swift.Decodable {
+  case shake
+  case selection
+  case keyboard
+  case success
+  case fail
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct FintechSDKTokenizationDependencies {
+  public let fontAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter
+  public let accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter
+  public let networkChallengeHandler: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler
+  public let eventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)?
+  public let errorReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)?
+  public let uid: Foundation.NSNumber?
+  public let devicePubkeyProvider: (any FintechSDKBDUIFeatures.DevicePubkeyProviderApi)?
+  public let deviceChallengeSignatureProvider: (any FintechSDKBDUIFeatures.DeviceChallengeSignatureProviderApi)?
+  public init(fontAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, networkChallengeHandler: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler, uid: Foundation.NSNumber?, eventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)? = nil, errorReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)? = nil, devicePubkeyProvider: (any FintechSDKBDUIFeatures.DevicePubkeyProviderApi)? = nil, deviceChallengeSignatureProvider: (any FintechSDKBDUIFeatures.DeviceChallengeSignatureProviderApi)? = nil)
+}
+extension UIKit.UIImage {
+  public static func named(_ name: Swift.String) -> UIKit.UIImage?
+}
+@_spi(Internal) final public class FTBDUIWebViewConfiguration : FintechSDKBDUIFeatures.FintechWebViewConfiguration {
+  @_spi(Internal) final public var cookies: [Foundation.HTTPCookie]
+  @_spi(Internal) final public var userAgent: Swift.String?
+  @_spi(Internal) final public var delegate: (any WebKit.WKNavigationDelegate)?
+  @_spi(Internal) final public var messageHandlers: [Swift.String : any WebKit.WKScriptMessageHandler]
+  @_spi(Internal) final public var onPostMessageReceived: ((_ type: Swift.String, _ body: [Swift.String : Any]) -> Swift.Void)?
+  @_spi(Internal) final public var onWebViewCreated: ((WebKit.WKWebView) -> Swift.Void)?
+  @_spi(Internal) final public var onPageLoadStarted: (() -> Swift.Void)?
+  @_spi(Internal) final public var onPageLoadFinished: ((Swift.String) -> Swift.Void)?
+  @_spi(Internal) final public var onPageLoadError: ((any Swift.Error) -> Swift.Void)?
+  @_spi(Internal) public init(userAgentProvider: any FintechSDKCoreUtils.FTUserAgentProvider)
+  @_spi(Internal) @objc deinit
+}
+public protocol FintechRootViewControllerProvider {
+  var rootVC: UIKit.UIViewController? { get }
+}
+final public class FintechYBSDK : FintechSDKBDUIFeatures.FintechYBSDKApi {
+  public init(rootViewControllerProvider: any FintechSDKBDUIFeatures.FintechRootViewControllerProvider, ybSDKAdapter: any FintechYBSDKInterfaces.FintechYBSDKAdapter)
+  final public func getPayCardTrustId(completion: @escaping (Swift.String?) -> Swift.Void)
+  final public func openPayCard(amount: Foundation.Decimal?, currency: Swift.String?, completion: @escaping () -> Swift.Void)
+  final public func topUp(amount: Foundation.Decimal?, currency: Swift.String?, completion: @escaping () -> Swift.Void)
+  final public func upgradeSplit(deeplink: Swift.String, completion: @escaping (FintechYBSDKInterfaces.FintechUpgradeSplitResult) -> Swift.Void)
+  final public func setCreditLimitPurchaseSettings(settings: FintechYBSDKInterfaces.FintechCreditLimitPurchaseSettings, completion: @escaping (FintechYBSDKInterfaces.FintechSetCreditLimitPurchaseSettingsResult) -> Swift.Void)
+  @objc deinit
+}
+@_spi(Internal) extension FintechSDKBDUIFeatures.FTAuthorizeActionError : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKBDUIFeatures.FTAuthorizeActionError : Swift.Hashable {}
+extension FintechSDKBDUIFeatures.HapticFeedbackType : Swift.Equatable {}
+extension FintechSDKBDUIFeatures.HapticFeedbackType : Swift.Hashable {}
+extension FintechSDKBDUIFeatures.HapticFeedbackType : Swift.RawRepresentable {}

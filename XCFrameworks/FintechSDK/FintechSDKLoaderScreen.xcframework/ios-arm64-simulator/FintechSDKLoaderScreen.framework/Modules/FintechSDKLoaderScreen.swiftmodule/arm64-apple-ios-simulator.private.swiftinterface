@@ -1,0 +1,54 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKLoaderScreen -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import Combine
+@_spi(Internal) import FintechSDKCoreUI
+import FintechSDKFontsInterfaces
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_spi(Internal) @_Concurrency.MainActor @preconcurrency public struct FTNativeLoaderScreen<ViewModel> : SwiftUICore.View where ViewModel : FintechSDKLoaderScreen.FTNativeLoaderScreenViewModel {
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(viewModel: ViewModel)
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public var navBar: some SwiftUICore.View {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public typealias Body = @_opaqueReturnTypeOf("$s22FintechSDKLoaderScreen014FTNativeLoaderC0V4bodyQrvp", 0) __<ViewModel>
+}
+@_spi(Internal) public protocol FTNativeLoaderScreenViewModel : Combine.ObservableObject {
+  @_spi(Internal) var title: Swift.String { get }
+  @_spi(Internal) var subtitle: Swift.String? { get }
+  @_spi(Internal) var buttonPayload: FintechSDKCoreUI.FTPrimaryButtonData? { get }
+  @_spi(Internal) var logo: SwiftUICore.Image? { get }
+  @_spi(Internal) func onAppear()
+  @_spi(Internal) func onDisappear()
+}
+@_spi(Internal) final public class FTNativeLoaderScreenViewModelImpl : FintechSDKLoaderScreen.FTNativeLoaderScreenViewModel {
+  @_spi(Internal) final public let title: Swift.String
+  @_spi(Internal) final public let subtitle: Swift.String?
+  @_spi(Internal) @Combine.Published @_projectedValueProperty($buttonPayload) final public var buttonPayload: FintechSDKCoreUI.FTPrimaryButtonData? {
+    @_spi(Internal) get
+    @_spi(Internal) @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @_spi(Internal) @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  @_spi(Internal) final public var $buttonPayload: Combine.Published<FintechSDKCoreUI.FTPrimaryButtonData?>.Publisher {
+    @_spi(Internal) get
+    @_spi(Internal) @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @_spi(Internal) final public let logo: SwiftUICore.Image?
+  @_spi(Internal) public init(title: Swift.String, subtitle: Swift.String?, logo: SwiftUICore.Image?, buttonPayload: FintechSDKCoreUI.FTPrimaryButtonData? = nil, onDisappear: (() -> Swift.Void)? = nil)
+  @_spi(Internal) final public func onAppear()
+  @_spi(Internal) final public func onDisappear()
+  @_spi(Internal) public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @_spi(Internal) @objc deinit
+}
+@_spi(Internal) extension FintechSDKLoaderScreen.FTNativeLoaderScreen : Swift.Sendable {}

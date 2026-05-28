@@ -1,0 +1,167 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKUltimateWidget -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import FintechSDKBDUICore
+import FintechSDKCommonEntity
+@_spi(Internal) import FintechSDKCoreUI
+@_spi(Internal) import FintechSDKDivKitWidgetsFeatures
+import FintechSDKNetworkImplementation
+import FintechSDKNetworkInterfaces
+import FintechSDKPayBoxEntity
+import Foundation
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_spi(Internal) public struct FTUltimateWidgetEndpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider {
+  @_spi(Internal) public typealias Decoder = FintechSDKNetworkImplementation.FTRawDataResponseDecoder
+  @_spi(Internal) public typealias ResultModel = Foundation.Data
+  @_spi(Internal) public let method: FintechSDKNetworkInterfaces.HTTPMethod
+  @_spi(Internal) public let path: Swift.String
+  @_spi(Internal) public let queryItems: [Foundation.URLQueryItem]?
+  @_spi(Internal) public let timeoutInSeconds: Swift.Double
+  @_spi(Internal) public var body: [Swift.String : Any]? {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public var decoder: FintechSDKNetworkImplementation.FTRawDataResponseDecoder {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public init(model: FintechSDKUltimateWidget.FTUltimateWidgetModel)
+}
+public struct FTUltimateWidgetFactory {
+  @_Concurrency.MainActor public static func createUltimateWidget(presenterViewController: UIKit.UIViewController, model: FintechSDKUltimateWidget.FTUltimateWidgetModel, delegate: (any FintechSDKUltimateWidget.FTUltimateWidgetDelegate)?, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, flexClient: any FintechSDKNetworkInterfaces.FintechNetworkClient) -> some SwiftUICore.View
+  
+}
+public struct FTUltimateWidgetData {
+  public let splitMonthCount: Swift.Int
+  public init(splitMonthCount: Swift.Int)
+}
+public protocol FTUltimateWidgetDelegate : AnyObject {
+  func onYandexPayUltimateCheckoutButtonClick(data: FintechSDKUltimateWidget.FTUltimateWidgetData)
+  func onYandexPayHeaderClick()
+}
+extension FintechSDKUltimateWidget.FTUltimateWidgetDelegate {
+  public func onYandexPayHeaderClick()
+  public func onYandexPayUltimateCheckoutButtonClick(data: FintechSDKUltimateWidget.FTUltimateWidgetData)
+}
+public struct FTUltimateWidgetModel {
+  public enum Style : Swift.String {
+    case split
+    case cashback
+    case fullSize
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public struct Appearance {
+    public var theme: FintechSDKCommonEntity.FintechSDKTheme
+    public var radius: CoreFoundation.CGFloat
+    public var hasOutline: Swift.Bool
+    public var hasPadding: Swift.Bool
+    public var background: FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance.Background
+    public var hasCheckoutButton: Swift.Bool
+    public var size: FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance.WidgetSize
+    public init(theme: FintechSDKCommonEntity.FintechSDKTheme, radius: CoreFoundation.CGFloat, hasOutline: Swift.Bool, hasPadding: Swift.Bool, hasCheckoutButton: Swift.Bool, background: FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance.Background, size: FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance.WidgetSize)
+  }
+  public enum HeaderStyle : Swift.String {
+    case minified
+    case standard
+    @available(*, deprecated, message: "Поддержка Custom Action будет прекращена")
+    case standardWithCustomAction
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public let amount: Foundation.Decimal
+  public let currency: FintechSDKPayBoxEntity.FTCurrencyCode
+  public let style: FintechSDKUltimateWidget.FTUltimateWidgetModel.Style
+  public let appearance: FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance
+  public let skuId: Swift.String?
+  public var header: FintechSDKUltimateWidget.FTUltimateWidgetModel.HeaderStyle
+  public init(amount: Foundation.Decimal, currency: FintechSDKPayBoxEntity.FTCurrencyCode, style: FintechSDKUltimateWidget.FTUltimateWidgetModel.Style, appearance: FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance, header: FintechSDKUltimateWidget.FTUltimateWidgetModel.HeaderStyle, skuId: Swift.String?)
+}
+extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance {
+  public var padding: CoreFoundation.CGFloat {
+    get
+  }
+  public var horizontalSpacing: CoreFoundation.CGFloat {
+    get
+  }
+  public var spacing: CoreFoundation.CGFloat {
+    get
+  }
+  public var cornerRadius: CoreFoundation.CGFloat {
+    get
+  }
+  public var minimalWidth: CoreFoundation.CGFloat {
+    get
+  }
+}
+extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance {
+  public enum Background : Swift.String {
+    case transparent
+    case `default`
+    case light
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum WidgetSize : Swift.String {
+    case medium
+    case small
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+}
+extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance.Background {
+  public var color: SwiftUICore.Color {
+    get
+  }
+}
+extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Style {
+  public var content: [FintechSDKUltimateWidget.UltimateWidgetContent] {
+    get
+  }
+}
+public enum UltimateWidgetContent : Swift.String {
+  case cashback
+  case split
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension FintechSDKUltimateWidget.FTUltimateWidgetModel : Swift.Equatable {
+  public static func == (a: FintechSDKUltimateWidget.FTUltimateWidgetModel, b: FintechSDKUltimateWidget.FTUltimateWidgetModel) -> Swift.Bool
+}
+extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance : Swift.Equatable {
+  public static func == (a: FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance, b: FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance) -> Swift.Bool
+}
+extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance.Background : Swift.Equatable, Swift.Hashable {
+}
+extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Style : Swift.Equatable {}
+extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Style : Swift.Hashable {}
+extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Style : Swift.RawRepresentable {}
+extension FintechSDKUltimateWidget.FTUltimateWidgetModel.HeaderStyle : Swift.Equatable {}
+extension FintechSDKUltimateWidget.FTUltimateWidgetModel.HeaderStyle : Swift.Hashable {}
+extension FintechSDKUltimateWidget.FTUltimateWidgetModel.HeaderStyle : Swift.RawRepresentable {}
+extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance.Background : Swift.RawRepresentable {}
+extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance.WidgetSize : Swift.Equatable {}
+extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance.WidgetSize : Swift.Hashable {}
+extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance.WidgetSize : Swift.RawRepresentable {}
+extension FintechSDKUltimateWidget.UltimateWidgetContent : Swift.Equatable {}
+extension FintechSDKUltimateWidget.UltimateWidgetContent : Swift.Hashable {}
+extension FintechSDKUltimateWidget.UltimateWidgetContent : Swift.RawRepresentable {}

@@ -1,0 +1,435 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKRealTimeAnalyticsAdapter -package-name fintechsdkrtmadapter
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import FintechSDKAnalyticsInterfaces
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct FintechRTMAdapterFactoryImpl : FintechSDKAnalyticsInterfaces.FintechRTMAdapterFactory {
+  public init()
+  public func make(userAgent: Swift.String, projectName: Swift.String, appVersion: Swift.String, userID: Swift.UInt64, environment: FintechSDKAnalyticsInterfaces.FintechAnalyticsEnvironment, reqID: Swift.String) throws -> any FintechSDKAnalyticsInterfaces.FintechRTMAdapter
+}
+public struct NetworkingParams {
+  public let baseURL: FintechSDKRealTimeAnalyticsAdapter.Variable<Foundation.URL>
+  public let requestPerformer: any FintechSDKRealTimeAnalyticsAdapter.URLRequestPerforming
+  public let operationQueue: Foundation.OperationQueue
+  public let parsingQueue: Foundation.OperationQueue
+  public let userAgent: FintechSDKRealTimeAnalyticsAdapter.Variable<FintechSDKRealTimeAnalyticsAdapter.UserAgent?>
+  public let errorStrategyFactory: FintechSDKRealTimeAnalyticsAdapter.NetworkErrorHandlingStrategyFactory?
+  public init(baseURL: FintechSDKRealTimeAnalyticsAdapter.Variable<Foundation.URL> = .constant(defaultBaseUrl), requestPerformer: any FintechSDKRealTimeAnalyticsAdapter.URLRequestPerforming = URLRequestPerformer(urlTransform: nil), operationQueue: Foundation.OperationQueue = makeDefaultQueue(with: operationQueueName), parsingQueue: Foundation.OperationQueue = makeDefaultQueue(with: parsingQueueName), userAgent: FintechSDKRealTimeAnalyticsAdapter.Variable<FintechSDKRealTimeAnalyticsAdapter.UserAgent?>, errorStrategyFactory: FintechSDKRealTimeAnalyticsAdapter.NetworkErrorHandlingStrategyFactory? = nil)
+  public init(baseURL: FintechSDKRealTimeAnalyticsAdapter.Variable<Foundation.URL> = .constant(defaultBaseUrl), requestPerformer: any FintechSDKRealTimeAnalyticsAdapter.URLRequestPerforming = URLRequestPerformer(urlTransform: nil), operationQueue: Foundation.OperationQueue = makeDefaultQueue(with: operationQueueName), parsingQueue: Foundation.OperationQueue = makeDefaultQueue(with: parsingQueueName), userAgent: FintechSDKRealTimeAnalyticsAdapter.UserAgent, errorStrategyFactory: FintechSDKRealTimeAnalyticsAdapter.NetworkErrorHandlingStrategyFactory? = nil)
+  public static func makeDefaultQueue(with name: Swift.String) -> Foundation.OperationQueue
+  public static let defaultBaseUrl: Foundation.URL
+  public static let operationQueueName: Swift.String
+  public static let parsingQueueName: Swift.String
+}
+public struct RealTimeError : Swift.Equatable {
+  public enum Silent : FintechSDKRealTimeAnalyticsAdapter.NonEmptyString, Swift.Equatable {
+    case no
+    case yes
+    public init?(rawValue: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString)
+    public typealias RawValue = FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
+    public var rawValue: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString {
+      get
+    }
+  }
+  public enum Level : FintechSDKRealTimeAnalyticsAdapter.NonEmptyString, Swift.Equatable {
+    case info
+    case warning
+    case error
+    case critical
+    case trace
+    case debug
+    public init?(rawValue: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString)
+    public typealias RawValue = FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
+    public var rawValue: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString {
+      get
+    }
+  }
+  public struct Location : Swift.Equatable {
+    public init(file: Swift.String, method: Swift.String, line: Swift.Int, column: Swift.Int)
+    public static func == (a: FintechSDKRealTimeAnalyticsAdapter.RealTimeError.Location, b: FintechSDKRealTimeAnalyticsAdapter.RealTimeError.Location) -> Swift.Bool
+  }
+  public let params: FintechSDKRealTimeAnalyticsAdapter.RealTimeParams
+  public let message: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
+  public let callStack: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString?
+  public let level: FintechSDKRealTimeAnalyticsAdapter.RealTimeError.Level?
+  public let silent: FintechSDKRealTimeAnalyticsAdapter.RealTimeError.Silent?
+  public let type: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString?
+  public let source: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
+  public let location: FintechSDKRealTimeAnalyticsAdapter.RealTimeError.Location?
+  public let block: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString?
+  public init(params: FintechSDKRealTimeAnalyticsAdapter.RealTimeParams, message: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString, callStack: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString? = nil, level: FintechSDKRealTimeAnalyticsAdapter.RealTimeError.Level? = nil, silent: FintechSDKRealTimeAnalyticsAdapter.RealTimeError.Silent? = nil, type: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString? = nil, source: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString, location: FintechSDKRealTimeAnalyticsAdapter.RealTimeError.Location? = nil, block: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString? = nil)
+  public static func == (a: FintechSDKRealTimeAnalyticsAdapter.RealTimeError, b: FintechSDKRealTimeAnalyticsAdapter.RealTimeError) -> Swift.Bool
+}
+public struct RealTimeEvent : Swift.Equatable {
+  public let params: FintechSDKRealTimeAnalyticsAdapter.RealTimeParams
+  public let name: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
+  public let value: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString?
+  public let loggedIn: Swift.Bool?
+  public let table: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
+  public let path: FintechSDKRealTimeAnalyticsAdapter.Path
+  public let type: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString?
+  public let customVars: [FintechSDKRealTimeAnalyticsAdapter.NonEmptyString : FintechSDKRealTimeAnalyticsAdapter.NonEmptyString?]
+  public init(params: FintechSDKRealTimeAnalyticsAdapter.RealTimeParams, name: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString, value: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString? = nil, loggedIn: Swift.Bool? = nil, table: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString = defaultTable, path: FintechSDKRealTimeAnalyticsAdapter.Path = defaultPath, type: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString? = "string", customVars: [FintechSDKRealTimeAnalyticsAdapter.NonEmptyString : FintechSDKRealTimeAnalyticsAdapter.NonEmptyString?] = [:])
+  public static let defaultTable: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
+  public static let defaultPath: FintechSDKRealTimeAnalyticsAdapter.Path
+  public static func == (a: FintechSDKRealTimeAnalyticsAdapter.RealTimeEvent, b: FintechSDKRealTimeAnalyticsAdapter.RealTimeEvent) -> Swift.Bool
+}
+public struct RealTimeParams : Swift.Equatable {
+  public let service: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString?
+  public let page: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString?
+  public let referrer: Foundation.URL?
+  public let additional: FintechSDKRealTimeAnalyticsAdapter.JSONDictionary?
+  public init(service: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString? = nil, page: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString? = nil, referrer: Foundation.URL? = nil, additional: FintechSDKRealTimeAnalyticsAdapter.JSONDictionary? = nil)
+  public static func == (a: FintechSDKRealTimeAnalyticsAdapter.RealTimeParams, b: FintechSDKRealTimeAnalyticsAdapter.RealTimeParams) -> Swift.Bool
+}
+final public class RealTimeReporter : FintechSDKRealTimeAnalyticsAdapter.RealTimeReporting {
+  public init(networkingParams: FintechSDKRealTimeAnalyticsAdapter.NetworkingParams, staticParams: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams)
+  final public func report(_ event: FintechSDKRealTimeAnalyticsAdapter.RealTimeEvent)
+  final public func report(_ error: FintechSDKRealTimeAnalyticsAdapter.RealTimeError)
+  @objc deinit
+}
+public enum RealTimeReporterErrorType : FintechSDKRealTimeAnalyticsAdapter.NonEmptyString {
+  case network
+  case parsing
+  case badData
+  case crash
+  public init?(rawValue: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString)
+  public typealias RawValue = FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
+  public var rawValue: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString {
+    get
+  }
+}
+public protocol RealTimeReporting {
+  func report(_: FintechSDKRealTimeAnalyticsAdapter.RealTimeEvent)
+  func report(_: FintechSDKRealTimeAnalyticsAdapter.RealTimeError)
+}
+public struct RealTimeStaticParams {
+  public enum Platform : FintechSDKRealTimeAnalyticsAdapter.NonEmptyString, Swift.Equatable {
+    case app
+    case touch
+    case pad
+    case tv
+    case tvapp
+    case station
+    case unsupported
+    public init?(rawValue: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString)
+    public typealias RawValue = FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
+    public var rawValue: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString {
+      get
+    }
+  }
+  public enum Environment : FintechSDKRealTimeAnalyticsAdapter.NonEmptyString {
+    case development
+    case testing
+    case prestable
+    case production
+    case preproduction
+    public init?(rawValue: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString)
+    public typealias RawValue = FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
+    public var rawValue: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString {
+      get
+    }
+  }
+  public struct Experiment : Swift.Equatable {
+    public let testId: Swift.Int
+    public let slot: Swift.Int
+    public let bucket: Swift.Int
+    public init(testId: Swift.Int, slot: Swift.Int, bucket: Swift.Int)
+    public static func == (a: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Experiment, b: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Experiment) -> Swift.Bool
+  }
+  public struct OverflowProtectionParams : Swift.Equatable {
+    public struct ThrottleEventParams : Swift.Equatable {
+      public let message: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
+      public let source: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
+      public let type: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
+      public init(message: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString, source: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString, type: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString)
+      public static func == (a: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.OverflowProtectionParams.ThrottleEventParams, b: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.OverflowProtectionParams.ThrottleEventParams) -> Swift.Bool
+    }
+    public let throttleInterval: Foundation.TimeInterval
+    public let maxBatchSize: Swift.Int
+    public let throttleEventParams: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.OverflowProtectionParams.ThrottleEventParams
+    public init(throttleInterval: Foundation.TimeInterval, maxBatchSize: Swift.Int, throttleEventParams: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.OverflowProtectionParams.ThrottleEventParams)
+    public static func == (a: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.OverflowProtectionParams, b: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.OverflowProtectionParams) -> Swift.Bool
+  }
+  public let projectName: FintechSDKRealTimeAnalyticsAdapter.ProjectName
+  public let platform: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Platform
+  public let appVersion: FintechSDKRealTimeAnalyticsAdapter.AppVersion
+  public let region: FintechSDKRealTimeAnalyticsAdapter.Variable<Swift.UInt32?>
+  public let userAgent: FintechSDKRealTimeAnalyticsAdapter.Variable<FintechSDKRealTimeAnalyticsAdapter.UserAgent?>
+  public let experiments: FintechSDKRealTimeAnalyticsAdapter.Variable<[FintechSDKRealTimeAnalyticsAdapter.NonEmptyString]?>
+  public let slots: FintechSDKRealTimeAnalyticsAdapter.Variable<[FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Experiment]?>
+  public let userID: FintechSDKRealTimeAnalyticsAdapter.Future<FintechSDKRealTimeAnalyticsAdapter.UserID>
+  public let environment: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Environment
+  public let reqID: FintechSDKRealTimeAnalyticsAdapter.ReqID
+  public let overflowProtection: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.OverflowProtectionParams?
+  public init(projectName: FintechSDKRealTimeAnalyticsAdapter.ProjectName, platform: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Platform, appVersion: FintechSDKRealTimeAnalyticsAdapter.AppVersion, region: FintechSDKRealTimeAnalyticsAdapter.Variable<Swift.UInt32?>, userAgent: FintechSDKRealTimeAnalyticsAdapter.Variable<FintechSDKRealTimeAnalyticsAdapter.UserAgent?>, experiments: FintechSDKRealTimeAnalyticsAdapter.Variable<[FintechSDKRealTimeAnalyticsAdapter.NonEmptyString]?>, slots: FintechSDKRealTimeAnalyticsAdapter.Variable<[FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Experiment]?>, userID: FintechSDKRealTimeAnalyticsAdapter.Future<FintechSDKRealTimeAnalyticsAdapter.UserID>, environment: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Environment, reqID: FintechSDKRealTimeAnalyticsAdapter.ReqID, overflowProtection: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.OverflowProtectionParams? = nil)
+  public init(projectName: FintechSDKRealTimeAnalyticsAdapter.ProjectName, platform: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Platform, appVersion: FintechSDKRealTimeAnalyticsAdapter.AppVersion, region: FintechSDKRealTimeAnalyticsAdapter.Variable<Swift.UInt32?>, userAgent: FintechSDKRealTimeAnalyticsAdapter.UserAgent, experiments: FintechSDKRealTimeAnalyticsAdapter.Variable<[FintechSDKRealTimeAnalyticsAdapter.NonEmptyString]?>, slots: FintechSDKRealTimeAnalyticsAdapter.Variable<[FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Experiment]?>, userID: FintechSDKRealTimeAnalyticsAdapter.Future<FintechSDKRealTimeAnalyticsAdapter.UserID>, environment: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Environment, reqID: FintechSDKRealTimeAnalyticsAdapter.ReqID, overflowProtection: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.OverflowProtectionParams? = nil)
+}
+extension FintechSDKRealTimeAnalyticsAdapter.RealTimeReporting {
+  public func withUUID<UUID>(uuidProvider: FintechSDKRealTimeAnalyticsAdapter.Variable<UUID?>) -> any FintechSDKRealTimeAnalyticsAdapter.RealTimeReporting where UUID : Swift.RawRepresentable, UUID.RawValue == Swift.String
+}
+public enum PathTag {
+}
+public enum ReqIDTag {
+}
+public enum ProjectNameTag {
+}
+public enum AppVersionTag {
+}
+public enum UserIDTag {
+}
+public enum UserAgentTag {
+}
+public typealias Path = FintechSDKRealTimeAnalyticsAdapter.Tagged<FintechSDKRealTimeAnalyticsAdapter.PathTag, FintechSDKRealTimeAnalyticsAdapter.NonEmptyString>
+public typealias ReqID = FintechSDKRealTimeAnalyticsAdapter.Tagged<FintechSDKRealTimeAnalyticsAdapter.ReqIDTag, FintechSDKRealTimeAnalyticsAdapter.NonEmptyString>
+public typealias ProjectName = FintechSDKRealTimeAnalyticsAdapter.Tagged<FintechSDKRealTimeAnalyticsAdapter.ProjectNameTag, FintechSDKRealTimeAnalyticsAdapter.NonEmptyString>
+public typealias AppVersion = FintechSDKRealTimeAnalyticsAdapter.Tagged<FintechSDKRealTimeAnalyticsAdapter.AppVersionTag, FintechSDKRealTimeAnalyticsAdapter.NonEmptyString>
+public typealias UserID = FintechSDKRealTimeAnalyticsAdapter.Tagged<FintechSDKRealTimeAnalyticsAdapter.UserIDTag, Swift.UInt64>
+public typealias UserAgent = FintechSDKRealTimeAnalyticsAdapter.Tagged<FintechSDKRealTimeAnalyticsAdapter.UserAgentTag, FintechSDKRealTimeAnalyticsAdapter.NonEmptyString>
+public typealias Action = () -> Swift.Void
+public struct NonEmpty<C> where C : Swift.Collection {
+  public var head: C.Element {
+    get
+  }
+  public var tail: C {
+    get
+  }
+  public init(_ head: C.Element, _ tail: C)
+}
+extension FintechSDKRealTimeAnalyticsAdapter.NonEmpty : Swift.Equatable where C : Swift.Equatable, C.Element : Swift.Equatable {
+  public static func == (a: FintechSDKRealTimeAnalyticsAdapter.NonEmpty<C>, b: FintechSDKRealTimeAnalyticsAdapter.NonEmpty<C>) -> Swift.Bool
+}
+extension FintechSDKRealTimeAnalyticsAdapter.NonEmpty : Swift.Hashable where C : Swift.Hashable, C.Element : Swift.Hashable {
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension FintechSDKRealTimeAnalyticsAdapter.NonEmpty : Swift.Sendable where C : Swift.Sendable, C.Element : Swift.Sendable {
+}
+public typealias NonEmptyString = FintechSDKRealTimeAnalyticsAdapter.NonEmpty<Swift.String>
+extension FintechSDKRealTimeAnalyticsAdapter.NonEmpty where C == Swift.String {
+  public init?(_ value: some LosslessStringConvertible)
+  public var string: Swift.String {
+    get
+  }
+  public func lowercased() -> FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
+}
+extension FintechSDKRealTimeAnalyticsAdapter.NonEmpty : Swift.CustomStringConvertible where C == Swift.String {
+}
+extension FintechSDKRealTimeAnalyticsAdapter.NonEmpty : Swift.LosslessStringConvertible where C == Swift.String {
+  public var description: Swift.String {
+    get
+  }
+  public init?(_ description: Swift.String)
+}
+extension FintechSDKRealTimeAnalyticsAdapter.NonEmpty : Swift.ExpressibleByStringLiteral, Swift.ExpressibleByExtendedGraphemeClusterLiteral, Swift.ExpressibleByUnicodeScalarLiteral where C == Swift.String {
+  public init(stringLiteral value: Swift.String)
+  public init(extendedGraphemeClusterLiteral value: Swift.Character)
+  public init(unicodeScalarLiteral value: Swift.Unicode.Scalar)
+  public typealias ExtendedGraphemeClusterLiteralType = Swift.Character
+  public typealias StringLiteralType = Swift.String
+  public typealias UnicodeScalarLiteralType = Swift.Unicode.Scalar
+}
+public struct Tagged<Tag, RawValue> : Swift.RawRepresentable {
+  public var rawValue: RawValue
+  public init(rawValue: RawValue)
+}
+extension FintechSDKRealTimeAnalyticsAdapter.Tagged : Swift.Sendable where RawValue : Swift.Sendable {
+}
+extension FintechSDKRealTimeAnalyticsAdapter.Tagged : Swift.Equatable where RawValue : Swift.Equatable {
+}
+extension FintechSDKRealTimeAnalyticsAdapter.Tagged : Swift.Hashable where RawValue : Swift.Hashable {
+}
+extension FintechSDKRealTimeAnalyticsAdapter.Tagged : Swift.Comparable where RawValue : Swift.Comparable {
+  public static func < (lhs: FintechSDKRealTimeAnalyticsAdapter.Tagged<Tag, RawValue>, rhs: FintechSDKRealTimeAnalyticsAdapter.Tagged<Tag, RawValue>) -> Swift.Bool
+}
+extension FintechSDKRealTimeAnalyticsAdapter.Tagged : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension FintechSDKRealTimeAnalyticsAdapter.Tagged : Swift.Encodable where RawValue : Swift.Encodable {
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+extension FintechSDKRealTimeAnalyticsAdapter.Tagged : Swift.Decodable where RawValue : Swift.Decodable {
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension FintechSDKRealTimeAnalyticsAdapter.Tagged : Swift.ExpressibleByIntegerLiteral where RawValue : Swift.ExpressibleByIntegerLiteral {
+  public typealias IntegerLiteralType = RawValue.IntegerLiteralType
+  public init(integerLiteral value: FintechSDKRealTimeAnalyticsAdapter.Tagged<Tag, RawValue>.IntegerLiteralType)
+}
+extension FintechSDKRealTimeAnalyticsAdapter.Tagged : Swift.ExpressibleByUnicodeScalarLiteral where RawValue : Swift.ExpressibleByUnicodeScalarLiteral {
+  public typealias UnicodeScalarLiteralType = RawValue.UnicodeScalarLiteralType
+  public init(unicodeScalarLiteral value: FintechSDKRealTimeAnalyticsAdapter.Tagged<Tag, RawValue>.UnicodeScalarLiteralType)
+}
+extension FintechSDKRealTimeAnalyticsAdapter.Tagged : Swift.ExpressibleByExtendedGraphemeClusterLiteral where RawValue : Swift.ExpressibleByExtendedGraphemeClusterLiteral {
+  public typealias ExtendedGraphemeClusterLiteralType = RawValue.ExtendedGraphemeClusterLiteralType
+  public init(extendedGraphemeClusterLiteral value: FintechSDKRealTimeAnalyticsAdapter.Tagged<Tag, RawValue>.ExtendedGraphemeClusterLiteralType)
+}
+extension FintechSDKRealTimeAnalyticsAdapter.Tagged : Swift.ExpressibleByStringLiteral where RawValue : Swift.ExpressibleByStringLiteral {
+  public typealias StringLiteralType = RawValue.StringLiteralType
+  public init(stringLiteral value: FintechSDKRealTimeAnalyticsAdapter.Tagged<Tag, RawValue>.StringLiteralType)
+}
+@dynamicMemberLookup @propertyWrapper public struct Variable<T> {
+  public var wrappedValue: T {
+    get
+  }
+  public var projectedValue: FintechSDKRealTimeAnalyticsAdapter.Variable<T> {
+    get
+  }
+  public init(_ getter: @escaping () -> T)
+  public var value: T {
+    get
+  }
+  public subscript<U>(dynamicMember path: Swift.KeyPath<T, U>) -> FintechSDKRealTimeAnalyticsAdapter.Variable<U> {
+    get
+  }
+  public subscript<ValueType, UnderlyingType>(dynamicMember path: Swift.KeyPath<UnderlyingType, ValueType>) -> FintechSDKRealTimeAnalyticsAdapter.Variable<ValueType?> where T == UnderlyingType? {
+    get
+  }
+  public subscript<ValueType, UnderlyingType>(dynamicMember path: Swift.KeyPath<UnderlyingType, ValueType?>) -> FintechSDKRealTimeAnalyticsAdapter.Variable<ValueType?> where T == UnderlyingType? {
+    get
+  }
+  public static func constant(_ value: T) -> FintechSDKRealTimeAnalyticsAdapter.Variable<T>
+  public init<U>(_ object: U, keyPath: Swift.KeyPath<U, T>)
+  public func map<U>(_ transform: @escaping (T) -> U) -> FintechSDKRealTimeAnalyticsAdapter.Variable<U>
+}
+@_hasMissingDesignatedInitializers final public class Future<T> {
+  public typealias Callback = (T) -> Swift.Void
+  public init(payload: T)
+  final public func resolved(_ callback: @escaping FintechSDKRealTimeAnalyticsAdapter.Future<T>.Callback)
+  final public func unwrap() -> T?
+  public static func resolved(_ payload: T) -> FintechSDKRealTimeAnalyticsAdapter.Future<T>
+  final public func map<U>(_ transform: @escaping (T) -> U) -> FintechSDKRealTimeAnalyticsAdapter.Future<U>
+  @objc deinit
+}
+public typealias Milliseconds = Swift.Int64
+public typealias Nanoseconds = Swift.Int64
+extension Swift.Double {
+  public var milliseconds: FintechSDKRealTimeAnalyticsAdapter.Milliseconds {
+    get
+  }
+  public var nanoseconds: FintechSDKRealTimeAnalyticsAdapter.Nanoseconds {
+    get
+  }
+}
+public typealias JSONDictionary = FintechSDKRealTimeAnalyticsAdapter.JSONObject.Object
+public enum JSONObject : Swift.Equatable, Swift.Sendable {
+  public typealias Array = [FintechSDKRealTimeAnalyticsAdapter.JSONObject]
+  public typealias Object = [Swift.String : FintechSDKRealTimeAnalyticsAdapter.JSONObject]
+  case bool(Swift.Bool)
+  case number(Swift.Double)
+  case string(Swift.String)
+  case null
+  indirect case array(FintechSDKRealTimeAnalyticsAdapter.JSONObject.Array)
+  indirect case object(FintechSDKRealTimeAnalyticsAdapter.JSONObject.Object)
+  public static func number(_ integer: some BinaryInteger) -> FintechSDKRealTimeAnalyticsAdapter.JSONObject
+  public init(dictionary: [Swift.String : Any]) throws
+  public static func == (a: FintechSDKRealTimeAnalyticsAdapter.JSONObject, b: FintechSDKRealTimeAnalyticsAdapter.JSONObject) -> Swift.Bool
+}
+extension FintechSDKRealTimeAnalyticsAdapter.JSONObject : Swift.Encodable {
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+extension FintechSDKRealTimeAnalyticsAdapter.JSONObject : Swift.ExpressibleByStringLiteral {
+  public init(stringLiteral value: Swift.String)
+  public typealias ExtendedGraphemeClusterLiteralType = Swift.String
+  public typealias StringLiteralType = Swift.String
+  public typealias UnicodeScalarLiteralType = Swift.String
+}
+extension FintechSDKRealTimeAnalyticsAdapter.JSONObject : Swift.ExpressibleByDictionaryLiteral {
+  public init(dictionaryLiteral elements: (Swift.String, FintechSDKRealTimeAnalyticsAdapter.JSONObject)...)
+  public typealias Key = Swift.String
+  public typealias Value = FintechSDKRealTimeAnalyticsAdapter.JSONObject
+}
+extension FintechSDKRealTimeAnalyticsAdapter.JSONObject : Swift.ExpressibleByIntegerLiteral {
+  public init(integerLiteral value: Swift.Int)
+  public typealias IntegerLiteralType = Swift.Int
+}
+public func modified<T>(_ value: T, _ modificator: (inout T) throws -> Swift.Void) rethrows -> T
+public func onMainThread(_ block: @escaping () -> Swift.Void)
+public func compose<A, B, C>(_ f: @escaping (B) -> C, after g: @escaping (A) -> B) -> (A) -> C
+public func compose<B, C>(_ f: @escaping (B) -> C, after g: @escaping () -> B) -> () -> C
+extension Swift.String {
+  public func percentEncoded() -> Swift.String
+}
+extension Foundation.Thread {
+  public static func assertIsMain()
+}
+public protocol OperationQueueType : AnyObject {
+  func addOperation(_ operation: Foundation.Operation)
+  func addOperation(_ block: @escaping @Sendable () -> Swift.Void)
+  func cancelAllOperations()
+}
+extension Foundation.OperationQueue : FintechSDKRealTimeAnalyticsAdapter.OperationQueueType {
+  convenience public init(name: Swift.String, qos: Foundation.QualityOfService)
+}
+public func + <K, V>(lhs: [K : V], rhs: [K : V]) -> [K : V] where K : Swift.Hashable
+public enum HTTPMethod : Swift.String, Swift.Sendable {
+  case GET
+  case POST
+  case PUT
+  case DELETE
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct HTTPHeaders : Swift.Equatable, Swift.Sendable {
+  public let headersDictionary: [Swift.String : Swift.String]
+  public init(headersDictionary: [Swift.String : Swift.String])
+  public static let empty: FintechSDKRealTimeAnalyticsAdapter.HTTPHeaders
+  public static func == (a: FintechSDKRealTimeAnalyticsAdapter.HTTPHeaders, b: FintechSDKRealTimeAnalyticsAdapter.HTTPHeaders) -> Swift.Bool
+}
+public struct Resource<T> {
+  public typealias Parser = (Foundation.Data, Foundation.HTTPURLResponse) throws -> T
+  public let path: Swift.String?
+  public let method: FintechSDKRealTimeAnalyticsAdapter.HTTPMethod
+  public let headers: FintechSDKRealTimeAnalyticsAdapter.HTTPHeaders?
+  public let body: Foundation.Data?
+  public let parser: FintechSDKRealTimeAnalyticsAdapter.Resource<T>.Parser
+  public init(path: Swift.String?, method: FintechSDKRealTimeAnalyticsAdapter.HTTPMethod = .GET, GETParameters: [Swift.String : Swift.String] = [:], headers: FintechSDKRealTimeAnalyticsAdapter.HTTPHeaders? = nil, body: Foundation.Data? = nil, parser: @escaping FintechSDKRealTimeAnalyticsAdapter.Resource<T>.Parser)
+}
+public protocol URLRequestPerforming : AnyObject {
+}
+final public class URLRequestPerformer : FintechSDKRealTimeAnalyticsAdapter.URLRequestPerforming {
+  public init(urlTransform: ((Foundation.URL?) -> Foundation.URL?)?)
+  @objc deinit
+}
+public typealias NetworkErrorHandlingStrategyFactory = () -> Swift.AnyObject
+@_hasMissingDesignatedInitializers final public class NetworkActivityIndicatorController {
+  public static var stub: FintechSDKRealTimeAnalyticsAdapter.NetworkActivityIndicatorController {
+    get
+  }
+  @objc deinit
+}
+final public class NetworkOperationServer<RequestArgs, Response> {
+  public typealias Completion = (Swift.Result<Response, Foundation.NSError>) -> Swift.Void
+  public init(baseURL: FintechSDKRealTimeAnalyticsAdapter.Variable<Foundation.URL>, resourceFactory: @escaping (RequestArgs) -> FintechSDKRealTimeAnalyticsAdapter.Resource<Response>?, requestPerformer: any FintechSDKRealTimeAnalyticsAdapter.URLRequestPerforming, parsingQueue: any FintechSDKRealTimeAnalyticsAdapter.OperationQueueType, userAgent: FintechSDKRealTimeAnalyticsAdapter.Variable<Swift.String?>, errorStrategyFactory: FintechSDKRealTimeAnalyticsAdapter.NetworkErrorHandlingStrategyFactory? = nil, operationQueue: any FintechSDKRealTimeAnalyticsAdapter.OperationQueueType, shouldCancelCurrentOperation: Swift.Bool = true, networkActivityIndicator: FintechSDKRealTimeAnalyticsAdapter.NetworkActivityIndicatorController)
+  convenience public init(baseURL: FintechSDKRealTimeAnalyticsAdapter.Variable<Foundation.URL>, resourceFactory: @escaping (RequestArgs) -> FintechSDKRealTimeAnalyticsAdapter.Resource<Response>?, requestPerformer: any FintechSDKRealTimeAnalyticsAdapter.URLRequestPerforming, parsingQueue: any FintechSDKRealTimeAnalyticsAdapter.OperationQueueType, userAgent: Swift.String, errorStrategyFactory: FintechSDKRealTimeAnalyticsAdapter.NetworkErrorHandlingStrategyFactory? = nil, operationQueue: any FintechSDKRealTimeAnalyticsAdapter.OperationQueueType, shouldCancelCurrentOperation: Swift.Bool = true, networkActivityIndicator: FintechSDKRealTimeAnalyticsAdapter.NetworkActivityIndicatorController)
+  @discardableResult
+  final public func performRequest(_ args: RequestArgs, completion: FintechSDKRealTimeAnalyticsAdapter.NetworkOperationServer<RequestArgs, Response>.Completion? = nil) -> Foundation.Operation
+  final public func cancel()
+  @objc deinit
+}
+extension FintechSDKRealTimeAnalyticsAdapter.RealTimeError.Silent : Swift.Hashable {}
+extension FintechSDKRealTimeAnalyticsAdapter.RealTimeError.Silent : Swift.RawRepresentable {}
+extension FintechSDKRealTimeAnalyticsAdapter.RealTimeError.Level : Swift.Hashable {}
+extension FintechSDKRealTimeAnalyticsAdapter.RealTimeError.Level : Swift.RawRepresentable {}
+extension FintechSDKRealTimeAnalyticsAdapter.RealTimeReporterErrorType : Swift.Equatable {}
+extension FintechSDKRealTimeAnalyticsAdapter.RealTimeReporterErrorType : Swift.Hashable {}
+extension FintechSDKRealTimeAnalyticsAdapter.RealTimeReporterErrorType : Swift.RawRepresentable {}
+extension FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Platform : Swift.Hashable {}
+extension FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Platform : Swift.RawRepresentable {}
+extension FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Environment : Swift.Equatable {}
+extension FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Environment : Swift.Hashable {}
+extension FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Environment : Swift.RawRepresentable {}
+extension FintechSDKRealTimeAnalyticsAdapter.HTTPMethod : Swift.Equatable {}
+extension FintechSDKRealTimeAnalyticsAdapter.HTTPMethod : Swift.Hashable {}
+extension FintechSDKRealTimeAnalyticsAdapter.HTTPMethod : Swift.RawRepresentable {}

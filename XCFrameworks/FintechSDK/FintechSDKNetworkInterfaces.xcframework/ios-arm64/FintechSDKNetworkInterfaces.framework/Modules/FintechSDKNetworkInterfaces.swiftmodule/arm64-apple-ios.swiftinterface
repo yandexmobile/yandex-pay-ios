@@ -1,0 +1,154 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKNetworkInterfaces -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public protocol DiehardNetworkClientFactory {
+  func makeClient(baseURL: Swift.String) -> any FintechSDKNetworkInterfaces.FintechNetworkClient
+}
+public protocol FTAuthorizationProviding : Swift.Sendable {
+  var authorization: Swift.String? { get }
+}
+public protocol FTSessionProviderServing : Swift.Sendable {
+  var merchantID: Swift.String { get }
+  var clientID: Swift.String? { get }
+  var sessionID: Swift.String { get }
+  func dropSession()
+}
+public protocol FintechNetworkAuthManager {
+  var uidString: Swift.String { get async }
+  @_Concurrency.MainActor var partition: Swift.String { get }
+  @_Concurrency.MainActor func obtainToken() async throws -> Swift.String
+  @_Concurrency.MainActor func dropToken() async
+  func obtainSessionToken() async -> Swift.String?
+}
+public protocol FintechNetworkChallengeHandler {
+  func handleChallenge(challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+}
+public protocol FintechNetworkChallengeHandlerFactory {
+  func make() -> any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler
+}
+public protocol FintechNetworkClient : Swift.Sendable {
+  func execute<Endpoint>(endpoint: Endpoint) async throws -> Endpoint.ResultModel where Endpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider
+}
+extension FintechSDKNetworkInterfaces.FintechNetworkClient {
+  public func executeStrictly<Endpoint>(endpoint: Endpoint) async throws(FintechSDKNetworkInterfaces.NetworkClientError) -> Endpoint.ResultModel where Endpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider
+}
+public enum HTTPMethod : Swift.String, Swift.Decodable {
+  case GET
+  case POST
+  case HEAD
+  case PUT
+  case PATCH
+  case DELETE
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol FintechResponseDecoder {
+  associatedtype Output
+  func decode(data: Foundation.Data, response: Foundation.HTTPURLResponse) async throws -> Self.Output
+}
+public protocol FintechNetworkEndpointProvider {
+  associatedtype ResultModel where Self.ResultModel == Self.Decoder.Output
+  associatedtype Decoder : FintechSDKNetworkInterfaces.FintechResponseDecoder
+  var method: FintechSDKNetworkInterfaces.HTTPMethod { get }
+  var headers: [Swift.String : Swift.String]? { get }
+  var path: Swift.String { get }
+  var queryItems: [Foundation.URLQueryItem]? { get }
+  var body: [Swift.String : Any]? { get }
+  var timeoutInSeconds: Foundation.TimeInterval { get }
+  var decoder: Self.Decoder { get }
+}
+extension FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider {
+  public var headers: [Swift.String : Swift.String]? {
+    get
+  }
+}
+public protocol FintechNetworkEventObserver {
+  func didStart(endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider)
+  func didFinishCollectingMetrics(endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider, metrics: Foundation.URLSessionTaskMetrics)
+  func didSucceed(endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider, response: Foundation.HTTPURLResponse, data: Foundation.Data)
+  func didFail(endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider, error: FintechSDKNetworkInterfaces.NetworkClientError, response: Foundation.HTTPURLResponse?, data: Foundation.Data?)
+}
+public protocol FintechNetworkRequestMiddleware {
+  func process(request: Foundation.URLRequest) async throws -> Foundation.URLRequest
+}
+public protocol FintechNetworkResponseMiddleware {
+  func process(response: Foundation.HTTPURLResponse) throws -> Foundation.HTTPURLResponse
+}
+public enum NetworkClientError : Swift.Error {
+  case invalidRequestURL
+  case invalidRequestBody(any Swift.Error)
+  case invalidResponse
+  case invalidStatusCode(code: Swift.Int)
+  case decodeError(any Swift.Error)
+  case processRequestError(any Swift.Error)
+  case processResponseError(any Swift.Error)
+  case silentError(any Swift.Error)
+  case urlError(FintechSDKNetworkInterfaces.URLSessionError)
+  case noTokenForAccount(uid: Foundation.NSNumber, error: (any Swift.Error)?)
+}
+public enum URLSessionError : Swift.Error, Swift.Equatable {
+  case cancelled
+  case badServerResponse
+  case callIsActive
+  case cannotConnectToHost
+  case cannotFindHost
+  case cannotDecodeContentData
+  case cannotDecodeRawData
+  case cannotParseResponse
+  case clientCertificateRejected
+  case clientCertificateRequired
+  case dataLengthExceedsMaximum
+  case httpTooManyRedirects
+  case redirectToNonExistentLocation
+  case serverCertificateHasUnknownRoot
+  case serverCertificateUntrusted
+  case unsupportedURL
+  case userAuthenticationRequired
+  case userCancelledAuthentication
+  case zeroByteResource
+  case resourceUnavailable
+  case cannotLoadFromNetwork
+  case dataNotAllowed
+  case dnsLookupFailed
+  case internationalRoamingOff
+  case networkConnectionLost
+  case notConnectedToInternet
+  case secureConnectionFailed
+  case serverCertificateHasBadDate
+  case serverCertificateNotYetValid
+  case badURL
+  case timedOut
+  case metaInjectionFailed
+  case unknown(Foundation.NSError?)
+  public static func == (a: FintechSDKNetworkInterfaces.URLSessionError, b: FintechSDKNetworkInterfaces.URLSessionError) -> Swift.Bool
+}
+extension FintechSDKNetworkInterfaces.NetworkClientError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public var name: Swift.String {
+    get
+  }
+}
+extension FintechSDKNetworkInterfaces.URLSessionError {
+  public var isReasonablyRetriable: Swift.Bool {
+    get
+  }
+}
+extension FintechSDKNetworkInterfaces.URLSessionError : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension FintechSDKNetworkInterfaces.HTTPMethod : Swift.Equatable {}
+extension FintechSDKNetworkInterfaces.HTTPMethod : Swift.Hashable {}
+extension FintechSDKNetworkInterfaces.HTTPMethod : Swift.RawRepresentable {}

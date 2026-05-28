@@ -1,0 +1,35 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKRemoteResourcesData -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+@_spi(Internal) import FintechSDKNetworkImplementation
+import FintechSDKNetworkInterfaces
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_spi(Internal) public struct FTRemoteResourcesEndpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider {
+  @_spi(Internal) public typealias Decoder = FintechSDKNetworkImplementation.FTDefaultResponseDecoder<FintechSDKRemoteResourcesData.FTRemoteResourcesEndpoint.ResultModel>
+  @_spi(Internal) public typealias ResultModel = FintechSDKRemoteResourcesData.FTRemoteResourcesContainer
+  @_spi(Internal) public let method: FintechSDKNetworkInterfaces.HTTPMethod
+  @_spi(Internal) public let path: Swift.String
+  @_spi(Internal) public let queryItems: [Foundation.URLQueryItem]?
+  @_spi(Internal) public let body: [Swift.String : Any]?
+  @_spi(Internal) public let timeoutInSeconds: Swift.Double
+  @_spi(Internal) public var decoder: FintechSDKNetworkImplementation.FTDefaultResponseDecoder<FintechSDKRemoteResourcesData.FTRemoteResourcesEndpoint.ResultModel> {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public init()
+}
+@_spi(Internal) public struct FTRemoteResourcesContainer : Swift.Decodable {
+  @_spi(Internal) public let resources: FintechSDKRemoteResourcesData.FTRemoteResourcesDTO
+  @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
+}
+@_spi(Internal) public struct FTRemoteResourcesDTO : Swift.Decodable {
+  @_spi(Internal) public let cassaNew: Swift.String
+  @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
+}
+@_spi(Internal) public protocol FTRemoteResourcesAPIService : Swift.Sendable {
+  @_spi(Internal) func remoteResourcesInfo() async throws -> FintechSDKRemoteResourcesData.FTRemoteResourcesDTO
+}

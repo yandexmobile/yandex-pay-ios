@@ -1,0 +1,1575 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "FintechSDKPayWidget",
+    "printedName": "FintechSDKPayWidget",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkImplementation",
+        "printedName": "FintechSDKNetworkImplementation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayWidget",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayWidget"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayWidget"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTPayWidgetEndpoint",
+        "printedName": "FTPayWidgetEndpoint",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "method",
+            "printedName": "method",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPMethod",
+                "printedName": "FintechSDKNetworkInterfaces.HTTPMethod",
+                "usr": "s:27FintechSDKNetworkInterfaces10HTTPMethodO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC8EndpointV6method0A20SDKNetworkInterfaces10HTTPMethodOvp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC8EndpointV6method0A20SDKNetworkInterfaces10HTTPMethodOvp",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPMethod",
+                    "printedName": "FintechSDKNetworkInterfaces.HTTPMethod",
+                    "usr": "s:27FintechSDKNetworkInterfaces10HTTPMethodO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC8EndpointV6method0A20SDKNetworkInterfaces10HTTPMethodOvg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC8EndpointV6method0A20SDKNetworkInterfaces10HTTPMethodOvg",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "path",
+            "printedName": "path",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC8EndpointV4pathSSvp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC8EndpointV4pathSSvp",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC8EndpointV4pathSSvg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC8EndpointV4pathSSvg",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "queryItems",
+            "printedName": "queryItems",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Foundation.URLQueryItem]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Foundation.URLQueryItem]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "URLQueryItem",
+                        "printedName": "Foundation.URLQueryItem",
+                        "usr": "s:10Foundation12URLQueryItemV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC8EndpointV10queryItemsSay10Foundation12URLQueryItemVGSgvp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC8EndpointV10queryItemsSay10Foundation12URLQueryItemVGSgvp",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Foundation.URLQueryItem]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[Foundation.URLQueryItem]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "URLQueryItem",
+                            "printedName": "Foundation.URLQueryItem",
+                            "usr": "s:10Foundation12URLQueryItemV"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC8EndpointV10queryItemsSay10Foundation12URLQueryItemVGSgvg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC8EndpointV10queryItemsSay10Foundation12URLQueryItemVGSgvg",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "timeoutInSeconds",
+            "printedName": "timeoutInSeconds",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC8EndpointV16timeoutInSecondsSdvp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC8EndpointV16timeoutInSecondsSdvp",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC8EndpointV16timeoutInSecondsSdvg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC8EndpointV16timeoutInSecondsSdvg",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "decoder",
+            "printedName": "decoder",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTRawDataResponseDecoder",
+                "printedName": "FintechSDKNetworkImplementation.FTRawDataResponseDecoder",
+                "usr": "s:31FintechSDKNetworkImplementation24FTRawDataResponseDecoderV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC8EndpointV7decoder0A24SDKNetworkImplementation24FTRawDataResponseDecoderVvp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC8EndpointV7decoder0A24SDKNetworkImplementation24FTRawDataResponseDecoderVvp",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTRawDataResponseDecoder",
+                    "printedName": "FintechSDKNetworkImplementation.FTRawDataResponseDecoder",
+                    "usr": "s:31FintechSDKNetworkImplementation24FTRawDataResponseDecoderV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC8EndpointV7decoder0A24SDKNetworkImplementation24FTRawDataResponseDecoderVvg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC8EndpointV7decoder0A24SDKNetworkImplementation24FTRawDataResponseDecoderVvg",
+                "moduleName": "FintechSDKPayWidget",
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(model:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTPayWidgetEndpoint",
+                "printedName": "FintechSDKPayWidget.FTPayWidgetEndpoint",
+                "usr": "s:19FintechSDKPayWidget05FTPayC8EndpointV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTPayWidgetModel",
+                "printedName": "FintechSDKPayWidget.FTPayWidgetModel",
+                "usr": "s:19FintechSDKPayWidget05FTPayC5ModelV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19FintechSDKPayWidget05FTPayC8EndpointV5modelAcA0dC5ModelV_tcfc",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC8EndpointV5modelAcA0dC5ModelV_tcfc",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "body",
+            "printedName": "body",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC8EndpointV4bodySDySSypGSgvp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC8EndpointV4bodySDySSypGSgvp",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.String : Any]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : Any]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ProtocolComposition",
+                            "printedName": "Any"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC8EndpointV4bodySDySSypGSgvg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC8EndpointV4bodySDySSypGSgvg",
+                "moduleName": "FintechSDKPayWidget",
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19FintechSDKPayWidget05FTPayC8EndpointV",
+        "mangledName": "$s19FintechSDKPayWidget05FTPayC8EndpointV",
+        "moduleName": "FintechSDKPayWidget",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechNetworkEndpointProvider",
+            "printedName": "FintechNetworkEndpointProvider",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "ResultModel",
+                "printedName": "ResultModel",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Decoder",
+                "printedName": "Decoder",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTRawDataResponseDecoder",
+                    "printedName": "FintechSDKNetworkImplementation.FTRawDataResponseDecoder",
+                    "usr": "s:31FintechSDKNetworkImplementation24FTRawDataResponseDecoderV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkEndpointProviderP",
+            "mangledName": "$s27FintechSDKNetworkInterfaces0A23NetworkEndpointProviderP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayWidget"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayWidget"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKBDUICore",
+        "printedName": "FintechSDKBDUICore",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayWidget"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayWidget"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKBDUIFeatures",
+        "printedName": "FintechSDKBDUIFeatures",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayWidget",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKDivKitWidgetsFeatures",
+        "printedName": "FintechSDKDivKitWidgetsFeatures",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayWidget",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUI",
+        "printedName": "FintechSDKCoreUI",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayWidget",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTPayWidgetFactory",
+        "printedName": "FTPayWidgetFactory",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "createPayWidgetView",
+            "printedName": "createPayWidgetView(presenterViewController:model:bduiAdapter:flexClient:widgetReloader:onAppearTask:authorizeHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OpaqueTypeArchetype",
+                "printedName": "some SwiftUI.View",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "View",
+                    "printedName": "SwiftUI.View",
+                    "usr": "s:7SwiftUI4ViewP"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTPayWidgetModel",
+                "printedName": "FintechSDKPayWidget.FTPayWidgetModel",
+                "usr": "s:19FintechSDKPayWidget05FTPayC5ModelV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechBDUIAdapter",
+                "printedName": "any FintechSDKBDUICore.FintechBDUIAdapter",
+                "usr": "s:18FintechSDKBDUICore0A11BDUIAdapterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkClient",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkClient",
+                "usr": "s:27FintechSDKNetworkInterfaces0A13NetworkClientP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTWidgetReloader",
+                "printedName": "FintechSDKDivKitWidgetsFeatures.FTWidgetReloader",
+                "usr": "s:31FintechSDKDivKitWidgetsFeatures16FTWidgetReloaderC"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() async throws -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTAuthorizeActionHandling",
+                "printedName": "any FintechSDKBDUIFeatures.FTAuthorizeActionHandling",
+                "usr": "s:22FintechSDKBDUIFeatures25FTAuthorizeActionHandlingP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKPayWidget05FTPayC7FactoryO09createPayC4View09presenterH10Controller5model11bduiAdapter10flexClient14widgetReloader12onAppearTask16authorizeHandlerQrSo06UIViewJ0C_AA0dC5ModelV0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkO0_p0A24SDKDivKitWidgetsFeatures08FTWidgetQ0CyyYaKc0A15SDKBDUIFeatures25FTAuthorizeActionHandling_ptFZ",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC7FactoryO09createPayC4View09presenterH10Controller5model11bduiAdapter10flexClient14widgetReloader12onAppearTask16authorizeHandlerQrSo06UIViewJ0C_AA0dC5ModelV0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkO0_p0A24SDKDivKitWidgetsFeatures08FTWidgetQ0CyyYaKc0A15SDKBDUIFeatures25FTAuthorizeActionHandling_ptFZ",
+            "moduleName": "FintechSDKPayWidget",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "Custom"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "createPayWidgetUIView",
+            "printedName": "createPayWidgetUIView(presenterViewController:model:bduiAdapter:flexClient:widgetReloader:onAppearTask:authorizeHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIView",
+                "printedName": "UIKit.UIView",
+                "usr": "c:objc(cs)UIView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTPayWidgetModel",
+                "printedName": "FintechSDKPayWidget.FTPayWidgetModel",
+                "usr": "s:19FintechSDKPayWidget05FTPayC5ModelV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechBDUIAdapter",
+                "printedName": "any FintechSDKBDUICore.FintechBDUIAdapter",
+                "usr": "s:18FintechSDKBDUICore0A11BDUIAdapterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkClient",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkClient",
+                "usr": "s:27FintechSDKNetworkInterfaces0A13NetworkClientP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTWidgetReloader",
+                "printedName": "FintechSDKDivKitWidgetsFeatures.FTWidgetReloader",
+                "usr": "s:31FintechSDKDivKitWidgetsFeatures16FTWidgetReloaderC"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() async throws -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTAuthorizeActionHandling",
+                "printedName": "any FintechSDKBDUIFeatures.FTAuthorizeActionHandling",
+                "usr": "s:22FintechSDKBDUIFeatures25FTAuthorizeActionHandlingP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKPayWidget05FTPayC7FactoryO09createPayC6UIView23presenterViewController5model11bduiAdapter10flexClient14widgetReloader12onAppearTask16authorizeHandlerSo0H0CSo0hK0C_AA0dC5ModelV0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkP0_p0A24SDKDivKitWidgetsFeatures08FTWidgetR0CyyYaKc0A15SDKBDUIFeatures25FTAuthorizeActionHandling_ptFZ",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC7FactoryO09createPayC6UIView23presenterViewController5model11bduiAdapter10flexClient14widgetReloader12onAppearTask16authorizeHandlerSo0H0CSo0hK0C_AA0dC5ModelV0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkP0_p0A24SDKDivKitWidgetsFeatures08FTWidgetR0CyyYaKc0A15SDKBDUIFeatures25FTAuthorizeActionHandling_ptFZ",
+            "moduleName": "FintechSDKPayWidget",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "Custom"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:19FintechSDKPayWidget05FTPayC7FactoryO",
+        "mangledName": "$s19FintechSDKPayWidget05FTPayC7FactoryO",
+        "moduleName": "FintechSDKPayWidget",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayWidget"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCommonEntity",
+        "printedName": "FintechSDKCommonEntity",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayWidget"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKPayBoxEntity",
+        "printedName": "FintechSDKPayBoxEntity",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayWidget"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTPayWidgetOrderAmount",
+        "printedName": "FTPayWidgetOrderAmount",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "amount",
+            "printedName": "amount",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Decimal",
+                "printedName": "Foundation.Decimal",
+                "usr": "c:@SA@NSDecimal"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC11OrderAmountV6amountSo9NSDecimalavp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC11OrderAmountV6amountSo9NSDecimalavp",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Decimal",
+                    "printedName": "Foundation.Decimal",
+                    "usr": "c:@SA@NSDecimal"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC11OrderAmountV6amountSo9NSDecimalavg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC11OrderAmountV6amountSo9NSDecimalavg",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "currency",
+            "printedName": "currency",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTCurrencyCode",
+                "printedName": "FintechSDKPayBoxEntity.FTCurrencyCode",
+                "usr": "s:22FintechSDKPayBoxEntity14FTCurrencyCodeO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC11OrderAmountV8currency0aB9BoxEntity14FTCurrencyCodeOvp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC11OrderAmountV8currency0aB9BoxEntity14FTCurrencyCodeOvp",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTCurrencyCode",
+                    "printedName": "FintechSDKPayBoxEntity.FTCurrencyCode",
+                    "usr": "s:22FintechSDKPayBoxEntity14FTCurrencyCodeO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC11OrderAmountV8currency0aB9BoxEntity14FTCurrencyCodeOvg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC11OrderAmountV8currency0aB9BoxEntity14FTCurrencyCodeOvg",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(amount:currency:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTPayWidgetOrderAmount",
+                "printedName": "FintechSDKPayWidget.FTPayWidgetOrderAmount",
+                "usr": "s:19FintechSDKPayWidget05FTPayC11OrderAmountV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decimal",
+                "printedName": "Foundation.Decimal",
+                "usr": "c:@SA@NSDecimal"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTCurrencyCode",
+                "printedName": "FintechSDKPayBoxEntity.FTCurrencyCode",
+                "usr": "s:22FintechSDKPayBoxEntity14FTCurrencyCodeO"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19FintechSDKPayWidget05FTPayC11OrderAmountV6amount8currencyACSo9NSDecimala_0aB9BoxEntity14FTCurrencyCodeOtcfc",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC11OrderAmountV6amount8currencyACSo9NSDecimala_0aB9BoxEntity14FTCurrencyCodeOtcfc",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19FintechSDKPayWidget05FTPayC11OrderAmountV",
+        "mangledName": "$s19FintechSDKPayWidget05FTPayC11OrderAmountV",
+        "moduleName": "FintechSDKPayWidget",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTPayWidgetModel",
+        "printedName": "FTPayWidgetModel",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "theme",
+            "printedName": "theme",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechSDKTheme",
+                "printedName": "FintechSDKCommonEntity.FintechSDKTheme",
+                "usr": "s:22FintechSDKCommonEntity0A8SDKThemeO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC5ModelV5theme0A15SDKCommonEntity0A8SDKThemeOvp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC5ModelV5theme0A15SDKCommonEntity0A8SDKThemeOvp",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechSDKTheme",
+                    "printedName": "FintechSDKCommonEntity.FintechSDKTheme",
+                    "usr": "s:22FintechSDKCommonEntity0A8SDKThemeO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC5ModelV5theme0A15SDKCommonEntity0A8SDKThemeOvg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC5ModelV5theme0A15SDKCommonEntity0A8SDKThemeOvg",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechSDKTheme",
+                    "printedName": "FintechSDKCommonEntity.FintechSDKTheme",
+                    "usr": "s:22FintechSDKCommonEntity0A8SDKThemeO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC5ModelV5theme0A15SDKCommonEntity0A8SDKThemeOvs",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC5ModelV5theme0A15SDKCommonEntity0A8SDKThemeOvs",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC5ModelV5theme0A15SDKCommonEntity0A8SDKThemeOvM",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC5ModelV5theme0A15SDKCommonEntity0A8SDKThemeOvM",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "paymentInProgress",
+            "printedName": "paymentInProgress",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC5ModelV17paymentInProgressSbvp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC5ModelV17paymentInProgressSbvp",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC5ModelV17paymentInProgressSbvg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC5ModelV17paymentInProgressSbvg",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC5ModelV17paymentInProgressSbvs",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC5ModelV17paymentInProgressSbvs",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC5ModelV17paymentInProgressSbvM",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC5ModelV17paymentInProgressSbvM",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "orderAmount",
+            "printedName": "orderAmount",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FintechSDKPayWidget.FTPayWidgetOrderAmount?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTPayWidgetOrderAmount",
+                    "printedName": "FintechSDKPayWidget.FTPayWidgetOrderAmount",
+                    "usr": "s:19FintechSDKPayWidget05FTPayC11OrderAmountV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC5ModelV11orderAmountAA0dc5OrderG0VSgvp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC5ModelV11orderAmountAA0dc5OrderG0VSgvp",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "FintechSDKPayWidget.FTPayWidgetOrderAmount?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTPayWidgetOrderAmount",
+                        "printedName": "FintechSDKPayWidget.FTPayWidgetOrderAmount",
+                        "usr": "s:19FintechSDKPayWidget05FTPayC11OrderAmountV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC5ModelV11orderAmountAA0dc5OrderG0VSgvg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC5ModelV11orderAmountAA0dc5OrderG0VSgvg",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "FintechSDKPayWidget.FTPayWidgetOrderAmount?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTPayWidgetOrderAmount",
+                        "printedName": "FintechSDKPayWidget.FTPayWidgetOrderAmount",
+                        "usr": "s:19FintechSDKPayWidget05FTPayC11OrderAmountV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC5ModelV11orderAmountAA0dc5OrderG0VSgvs",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC5ModelV11orderAmountAA0dc5OrderG0VSgvs",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC5ModelV11orderAmountAA0dc5OrderG0VSgvM",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC5ModelV11orderAmountAA0dc5OrderG0VSgvM",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(theme:paymentInProgress:orderAmount:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTPayWidgetModel",
+                "printedName": "FintechSDKPayWidget.FTPayWidgetModel",
+                "usr": "s:19FintechSDKPayWidget05FTPayC5ModelV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechSDKTheme",
+                "printedName": "FintechSDKCommonEntity.FintechSDKTheme",
+                "hasDefaultArg": true,
+                "usr": "s:22FintechSDKCommonEntity0A8SDKThemeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FintechSDKPayWidget.FTPayWidgetOrderAmount?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTPayWidgetOrderAmount",
+                    "printedName": "FintechSDKPayWidget.FTPayWidgetOrderAmount",
+                    "usr": "s:19FintechSDKPayWidget05FTPayC11OrderAmountV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19FintechSDKPayWidget05FTPayC5ModelV5theme17paymentInProgress11orderAmountAC0A15SDKCommonEntity0A8SDKThemeO_SbAA0dc5OrderK0VSgtcfc",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC5ModelV5theme17paymentInProgress11orderAmountAC0A15SDKCommonEntity0A8SDKThemeO_SbAA0dc5OrderK0VSgtcfc",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19FintechSDKPayWidget05FTPayC5ModelV",
+        "mangledName": "$s19FintechSDKPayWidget05FTPayC5ModelV",
+        "moduleName": "FintechSDKPayWidget",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayWidget"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUI",
+        "printedName": "FintechSDKCoreUI",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayWidget",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTPayWidgetShimmerView",
+        "printedName": "FTPayWidgetShimmerView",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTPayWidgetShimmerView",
+                "printedName": "FintechSDKPayWidget.FTPayWidgetShimmerView",
+                "usr": "s:19FintechSDKPayWidget05FTPayC11ShimmerViewV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19FintechSDKPayWidget05FTPayC11ShimmerViewVACycfc",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC11ShimmerViewVACycfc",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "body",
+            "printedName": "body",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OpaqueTypeArchetype",
+                "printedName": "some SwiftUI.View",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "View",
+                    "printedName": "SwiftUI.View",
+                    "usr": "s:7SwiftUI4ViewP"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC11ShimmerViewV4bodyQrvp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC11ShimmerViewV4bodyQrvp",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OpaqueTypeArchetype",
+                    "printedName": "some SwiftUI.View",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "View",
+                        "printedName": "SwiftUI.View",
+                        "usr": "s:7SwiftUI4ViewP"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC11ShimmerViewV4bodyQrvg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC11ShimmerViewV4bodyQrvg",
+                "moduleName": "FintechSDKPayWidget",
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19FintechSDKPayWidget05FTPayC11ShimmerViewV",
+        "mangledName": "$s19FintechSDKPayWidget05FTPayC11ShimmerViewV",
+        "moduleName": "FintechSDKPayWidget",
+        "declAttributes": [
+          "Preconcurrency",
+          "Custom",
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "View",
+            "printedName": "View",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Body",
+                "printedName": "Body",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OpaqueTypeArchetype",
+                    "printedName": "some SwiftUI.View",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "View",
+                        "printedName": "SwiftUI.View",
+                        "usr": "s:7SwiftUI4ViewP"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "usr": "s:7SwiftUI4ViewP",
+            "mangledName": "$s7SwiftUI4ViewP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Endpoints\/FTPayWidgetEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 356,
+      "length": 35,
+      "value": "\"\/pay\/v1\/public\/widgets\/pay-widget\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Endpoints\/FTPayWidgetEndpoint.swift",
+      "kind": "FloatLiteral",
+      "offset": 485,
+      "length": 4,
+      "value": "30.0"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
+      "kind": "StringLiteral",
+      "offset": 3426,
+      "length": 20,
+      "value": "\"YandexPayPayWidget\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Model\/FTPayWidgetModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 600,
+      "length": 5,
+      "value": "false"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKPayWidget -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import FintechSDKBDUICore
+@_spi(Internal) import FintechSDKBDUIFeatures
+import FintechSDKCommonEntity
+@_spi(Internal) import FintechSDKCoreUI
+@_spi(Internal) import FintechSDKDivKitWidgetsFeatures
+@_spi(Internal) import FintechSDKNetworkImplementation
+import FintechSDKNetworkInterfaces
+import FintechSDKPayBoxEntity
+import Foundation
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_spi(Internal) public struct FTPayWidgetEndpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider {
+  @_spi(Internal) public typealias Decoder = FintechSDKNetworkImplementation.FTRawDataResponseDecoder
+  @_spi(Internal) public typealias ResultModel = Foundation.Data
+  @_spi(Internal) public let method: FintechSDKNetworkInterfaces.HTTPMethod
+  @_spi(Internal) public let path: Swift.String
+  @_spi(Internal) public let queryItems: [Foundation.URLQueryItem]?
+  @_spi(Internal) public let timeoutInSeconds: Swift.Double
+  @_spi(Internal) public var decoder: FintechSDKNetworkImplementation.FTRawDataResponseDecoder {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public init(model: FintechSDKPayWidget.FTPayWidgetModel)
+  @_spi(Internal) public var body: [Swift.String : Any]? {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public typealias FTPayWidgetAuthorizedEndpoint = FintechSDKPayWidget.FTPayWidgetEndpoint
+@_spi(Internal) public enum FTPayWidgetFactory {
+  @_spi(Internal) @_Concurrency.MainActor public static func createPayWidgetView(presenterViewController: UIKit.UIViewController, model: FintechSDKPayWidget.FTPayWidgetModel, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, flexClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, widgetReloader: FintechSDKDivKitWidgetsFeatures.FTWidgetReloader, onAppearTask: @escaping () async throws -> Swift.Void, authorizeHandler: any FintechSDKBDUIFeatures.FTAuthorizeActionHandling) -> some SwiftUICore.View
+  
+  @_spi(Internal) @_Concurrency.MainActor public static func createPayWidgetUIView(presenterViewController: UIKit.UIViewController, model: FintechSDKPayWidget.FTPayWidgetModel, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, flexClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, widgetReloader: FintechSDKDivKitWidgetsFeatures.FTWidgetReloader, onAppearTask: @escaping () async throws -> Swift.Void, authorizeHandler: any FintechSDKBDUIFeatures.FTAuthorizeActionHandling) -> UIKit.UIView
+}
+@_spi(Internal) public struct FTPayWidgetOrderAmount : Swift.Sendable {
+  @_spi(Internal) public let amount: Foundation.Decimal
+  @_spi(Internal) public let currency: FintechSDKPayBoxEntity.FTCurrencyCode
+  @_spi(Internal) public init(amount: Foundation.Decimal, currency: FintechSDKPayBoxEntity.FTCurrencyCode)
+}
+@_spi(Internal) public struct FTPayWidgetModel : Swift.Sendable {
+  @_spi(Internal) public var theme: FintechSDKCommonEntity.FintechSDKTheme
+  @_spi(Internal) public var paymentInProgress: Swift.Bool
+  @_spi(Internal) public var orderAmount: FintechSDKPayWidget.FTPayWidgetOrderAmount?
+  @_spi(Internal) public init(theme: FintechSDKCommonEntity.FintechSDKTheme = .system, paymentInProgress: Swift.Bool = false, orderAmount: FintechSDKPayWidget.FTPayWidgetOrderAmount? = nil)
+}
+@_spi(Internal) @_Concurrency.MainActor @preconcurrency public struct FTPayWidgetShimmerView : SwiftUICore.View {
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init()
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public typealias Body = @_opaqueReturnTypeOf("$s19FintechSDKPayWidget05FTPayC11ShimmerViewV4bodyQrvp", 0) __
+}
+@_spi(Internal) extension FintechSDKPayWidget.FTPayWidgetShimmerView : Swift.Sendable {}

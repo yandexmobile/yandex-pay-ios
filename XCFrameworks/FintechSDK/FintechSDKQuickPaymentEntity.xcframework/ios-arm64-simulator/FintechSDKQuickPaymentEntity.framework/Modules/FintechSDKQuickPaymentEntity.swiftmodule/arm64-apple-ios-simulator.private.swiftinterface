@@ -1,0 +1,113 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKQuickPaymentEntity -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import FintechSDKBDUICore
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_spi(Internal) public struct FTActiveOrderData : Swift.Sendable {
+  @_spi(Internal) public let transactionId: Swift.String
+  @_spi(Internal) public let paymentUrl: Swift.String
+  @_spi(Internal) public let status: FintechSDKQuickPaymentEntity.FTOrderStatus
+  @_spi(Internal) public init(transactionId: Swift.String, paymentUrl: Swift.String, status: FintechSDKQuickPaymentEntity.FTOrderStatus)
+}
+@_spi(Internal) public struct FTAnalyticsEventData {
+  @_spi(Internal) public let name: Swift.String
+  @_spi(Internal) public let params: [Swift.String : Swift.String]
+  @_spi(Internal) public let shouldReportAsError: Swift.Bool
+  @_spi(Internal) public init(name: Swift.String, params: [Swift.String : Swift.String] = [:], shouldReportAsError: Swift.Bool = false)
+}
+@_spi(Internal) public struct FTBDUIPaymentSkeletonContent : FintechSDKBDUICore.FintechBDUIContent {
+  @_spi(Internal) public static var contentType: Swift.String {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public init()
+  @_spi(Internal) public static func == (a: FintechSDKQuickPaymentEntity.FTBDUIPaymentSkeletonContent, b: FintechSDKQuickPaymentEntity.FTBDUIPaymentSkeletonContent) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
+}
+@_spi(Internal) public enum FTOrderStatus : Swift.String, Swift.Decodable, Swift.Sendable {
+  @_spi(Internal) case new
+  @_spi(Internal) case inProcess
+  @_spi(Internal) case userInteraction
+  @_spi(Internal) case success
+  @_spi(Internal) case fail
+  @_spi(Internal) public init?(rawValue: Swift.String)
+  @_spi(Internal) public typealias RawValue = Swift.String
+  @_spi(Internal) public var rawValue: Swift.String {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public struct FTOrderStatusPollingResponse : Swift.Decodable, Swift.Sendable {
+  @_spi(Internal) public let order: FintechSDKQuickPaymentEntity.FTOrderStatusInfo
+  @_spi(Internal) public init(order: FintechSDKQuickPaymentEntity.FTOrderStatusInfo)
+  @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
+}
+@_spi(Internal) public struct FTOrderStatusInfo : Swift.Decodable, Swift.Sendable {
+  @_spi(Internal) public let transactionId: Swift.String
+  @_spi(Internal) public let status: FintechSDKQuickPaymentEntity.FTOrderStatus
+  @_spi(Internal) public let isRetryable: Swift.Bool?
+  @_spi(Internal) public init(transactionId: Swift.String, status: FintechSDKQuickPaymentEntity.FTOrderStatus, isRetryable: Swift.Bool?)
+  @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
+}
+@_spi(Internal) public struct FTOrdersPollingResponse : Swift.Decodable, Swift.Sendable {
+  @_spi(Internal) public let orders: [FintechSDKQuickPaymentEntity.FTOrderInfo]
+  @_spi(Internal) public init(orders: [FintechSDKQuickPaymentEntity.FTOrderInfo])
+  @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
+}
+@_spi(Internal) public struct FTOrderInfo : Swift.Decodable, Swift.Sendable {
+  @_spi(Internal) public let url: Swift.String
+  @_spi(Internal) public let transactionId: Swift.String
+  @_spi(Internal) public let status: FintechSDKQuickPaymentEntity.FTOrderStatus
+  @_spi(Internal) public init(url: Swift.String, transactionId: Swift.String, status: FintechSDKQuickPaymentEntity.FTOrderStatus)
+  @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
+}
+@_spi(Internal) public struct FTPollingPaymentResult : Swift.Sendable {
+  @_spi(Internal) public let result: FintechSDKQuickPaymentEntity.FTQuickPayResult
+  @_spi(Internal) public init(result: FintechSDKQuickPaymentEntity.FTQuickPayResult)
+}
+@_spi(Internal) public enum FTPollingServiceError : Swift.Error {
+  @_spi(Internal) case sessionExpired
+  @_spi(Internal) case invalidAuth
+  @_spi(Internal) case cancelled
+  @_spi(Internal) case otherError(any Swift.Error)
+}
+@_spi(Internal) public enum FTQPBDUIQuery : Swift.Equatable {
+  @_spi(Internal) case status(transactionId: Swift.String, paymentUrl: Swift.String)
+  @_spi(Internal) case faq
+  @_spi(Internal) case onboardingStories
+  @_spi(Internal) case yandexQr
+  @_spi(Internal) case addPaymentMethod(type: Swift.String)
+  @_spi(Internal) case sorry(targetViewId: Swift.String)
+  @_spi(Internal) public var entryPoint: FintechSDKBDUICore.FintechBDUIEntryPoint {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public var preview: any FintechSDKBDUICore.FintechBDUIContent {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public static func == (a: FintechSDKQuickPaymentEntity.FTQPBDUIQuery, b: FintechSDKQuickPaymentEntity.FTQPBDUIQuery) -> Swift.Bool
+}
+@_spi(Internal) public enum FTQPDivVariable {
+  @_spi(Internal) public static let isPaymentProcess: Swift.String
+  @_spi(Internal) public static let currentTransactionId: Swift.String
+  @_spi(Internal) public static let currentPaymentUrl: Swift.String
+}
+public enum FTQuickPayResult : Swift.Sendable, Swift.Equatable {
+  case success
+  case failure(retryable: Swift.Bool)
+  public static func == (a: FintechSDKQuickPaymentEntity.FTQuickPayResult, b: FintechSDKQuickPaymentEntity.FTQuickPayResult) -> Swift.Bool
+}
+@_spi(Internal) public struct FintechPayTicket : Swift.Sendable {
+  @_spi(Internal) public let payTicket: Swift.String
+  @_spi(Internal) public let expiresAt: Foundation.Date
+  @_spi(Internal) public init(payTicket: Swift.String, expiresAt: Foundation.Date)
+}
+@_spi(Internal) extension FintechSDKQuickPaymentEntity.FTOrderStatus : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKQuickPaymentEntity.FTOrderStatus : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKQuickPaymentEntity.FTOrderStatus : Swift.RawRepresentable {}

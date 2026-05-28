@@ -1,0 +1,220 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKCoreUtils -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import AdSupport
+import AppTrackingTransparency
+import FintechSDKAnalyticsInterfaces
+import Foundation
+import Security
+import Swift
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+extension Swift.Encodable {
+  public func ftcToDictionary() -> [Swift.String : Any]?
+}
+extension Swift.Dictionary {
+  public func ftcAsyncMapValues<NewValue>(_ transform: @escaping (Value) async throws -> NewValue) async rethrows -> [Key : NewValue]
+}
+extension Swift.Dictionary where Key == Swift.String, Value == Any {
+  public mutating func ftcStoreValueRecursive(path: [Swift.String], value: Any)
+}
+extension Swift.Sequence {
+  @inlinable public func ftcMap<Value>(to path: Swift.KeyPath<Self.Element, Value>) -> [Value] {
+    map { $0[keyPath: path] }
+  }
+  @inlinable public func ftcReduce<Result, Value>(_ initial: Result, _ nextPartialResult: (Result, Value) throws -> Result, by path: Swift.KeyPath<Self.Element, Value>) rethrows -> Result {
+    try reduce(initial) { try nextPartialResult($0, $1[keyPath: path]) }
+  }
+  @inlinable public func ftcToDictionary<KeyType, ValueType>(keyMapper: (Self.Element) throws -> KeyType, valueMapper: (Self.Element) throws -> ValueType) rethrows -> [KeyType : ValueType] where KeyType : Swift.Hashable {
+    var result = [:] as [KeyType: ValueType]
+    for element in self {
+      try result[keyMapper(element)] = try valueMapper(element)
+    }
+    return result
+  }
+  @inlinable public func ftcAsyncMap<NewElement>(_ transform: @escaping (Self.Element) async throws -> NewElement) async rethrows -> [NewElement] {
+    var result = [NewElement]()
+
+    try await withThrowingTaskGroup(of: NewElement.self) { group in
+      for element in self {
+        group.addTask {
+          try await transform(element)
+        }
+      }
+
+      for try await value in group {
+        result.append(value)
+      }
+    }
+
+    return result
+  }
+}
+@frozen public struct FTAnyCodable : Swift.Codable, FintechSDKCoreUtils.FTAnyValueBox {
+  public let value: Any
+  public init<T>(_ value: T?)
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+extension FintechSDKCoreUtils.FTAnyCodable {
+  public func `as`<T>(_ type: T.Type) -> T? where T : Swift.Decodable
+}
+extension FintechSDKCoreUtils.FTAnyCodable : Swift.Equatable {
+  public static func == (lhs: FintechSDKCoreUtils.FTAnyCodable, rhs: FintechSDKCoreUtils.FTAnyCodable) -> Swift.Bool
+}
+extension FintechSDKCoreUtils.FTAnyCodable : Swift.Hashable {
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension FintechSDKCoreUtils.FTAnyCodable : Swift.ExpressibleByNilLiteral {
+  public init(nilLiteral _: ())
+}
+extension FintechSDKCoreUtils.FTAnyCodable : Swift.ExpressibleByBooleanLiteral {
+  public init(booleanLiteral value: Swift.Bool)
+  public typealias BooleanLiteralType = Swift.Bool
+}
+extension FintechSDKCoreUtils.FTAnyCodable : Swift.ExpressibleByIntegerLiteral {
+  public init(integerLiteral value: Swift.Int)
+  public typealias IntegerLiteralType = Swift.Int
+}
+extension FintechSDKCoreUtils.FTAnyCodable : Swift.ExpressibleByFloatLiteral {
+  public init(floatLiteral value: Swift.Double)
+  public typealias FloatLiteralType = Swift.Double
+}
+extension FintechSDKCoreUtils.FTAnyCodable : Swift.ExpressibleByStringLiteral {
+  public init(stringLiteral value: Swift.String)
+  public typealias ExtendedGraphemeClusterLiteralType = Swift.String
+  public typealias StringLiteralType = Swift.String
+  public typealias UnicodeScalarLiteralType = Swift.String
+}
+extension FintechSDKCoreUtils.FTAnyCodable : Swift.ExpressibleByArrayLiteral {
+  public init(arrayLiteral elements: Any...)
+  public typealias ArrayLiteralElement = Any
+}
+extension FintechSDKCoreUtils.FTAnyCodable : Swift.ExpressibleByDictionaryLiteral {
+  public init(dictionaryLiteral elements: (Swift.String, Any)...)
+  public typealias Key = Swift.String
+  public typealias Value = Any
+}
+extension FintechSDKCoreUtils.FTAnyCodable : Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+public enum FTAnyCodableHelper {
+  public static func convert<T>(_ any: any FintechSDKCoreUtils.FTAnyValueBox, to type: T.Type) -> T? where T : Swift.Decodable
+}
+public struct FTAnyDecodable : Swift.Decodable, Swift.Equatable, Swift.Hashable, FintechSDKCoreUtils.FTAnyValueBox {
+  public let value: Any
+  public init<T>(_ value: T?)
+  public init(from decoder: any Swift.Decoder) throws
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (lhs: FintechSDKCoreUtils.FTAnyDecodable, rhs: FintechSDKCoreUtils.FTAnyDecodable) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension FintechSDKCoreUtils.FTAnyDecodable {
+  public func `as`<T>(_ type: T.Type) -> T? where T : Swift.Decodable
+}
+extension Swift.Dictionary where Key == Swift.String, Value == Any {
+  public init(from decoder: any Swift.Decoder) throws
+}
+@frozen public struct FTAnyEncodable : Swift.Encodable, FintechSDKCoreUtils.FTAnyValueBox {
+  public let value: Any
+  public init<T>(_ value: T?)
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public enum FTAnyHelper {
+  public static func stringRepresentation(anyValue: Any?) -> Swift.String?
+}
+public protocol FTAnyValueBox {
+  var value: Any { get }
+}
+@propertyWrapper public struct FTSafeOptional<Wrapped> : Swift.Codable where Wrapped : Swift.Decodable, Wrapped : Swift.Encodable {
+  public var wrappedValue: Wrapped?
+  public init(wrappedValue: Wrapped?)
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+extension FintechSDKCoreUtils.FTSafeOptional : Swift.Equatable where Wrapped : Swift.Equatable {
+  public static func == (a: FintechSDKCoreUtils.FTSafeOptional<Wrapped>, b: FintechSDKCoreUtils.FTSafeOptional<Wrapped>) -> Swift.Bool
+}
+extension FintechSDKCoreUtils.FTSafeOptional : Swift.Hashable where Wrapped : Swift.Hashable {
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension Swift.KeyedDecodingContainer {
+  public func decode<T>(_: FintechSDKCoreUtils.FTSafeOptional<T>.Type, forKey key: Swift.KeyedDecodingContainer<K>.Key) throws -> FintechSDKCoreUtils.FTSafeOptional<T> where T : Swift.Decodable, T : Swift.Encodable
+}
+extension Swift.KeyedEncodingContainer {
+  public mutating func encode<T>(_ value: FintechSDKCoreUtils.FTSafeOptional<T>, forKey key: Swift.KeyedEncodingContainer<K>.Key) throws where T : Swift.Decodable, T : Swift.Encodable
+}
+public protocol NumericTag : Swift.Sendable {
+}
+public protocol FTCancellableTask {
+  func cancel()
+}
+public protocol FTDelayedActionScheduler {
+  @discardableResult
+  func schedule(afterMilliseconds ms: Swift.Int, _ action: @escaping @Sendable () -> Swift.Void) -> any FintechSDKCoreUtils.FTCancellableTask
+}
+final public class FTTaskDelayedActionScheduler : FintechSDKCoreUtils.FTDelayedActionScheduler {
+  public init()
+  @discardableResult
+  final public func schedule(afterMilliseconds ms: Swift.Int, _ action: @escaping @Sendable () -> Swift.Void) -> any FintechSDKCoreUtils.FTCancellableTask
+  @objc deinit
+}
+public enum FTURLUtils {
+  public static func sanitize(_ original: Foundation.URL?) -> Swift.String
+}
+public enum FintechApiBaseUrlType : Swift.String, Swift.CaseIterable {
+  case payBackend
+  case frontback
+  case tovarisch
+  public var getUrl: Swift.String? {
+    get
+  }
+  public func setUrl(value: Swift.String?)
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [FintechSDKCoreUtils.FintechApiBaseUrlType]
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [FintechSDKCoreUtils.FintechApiBaseUrlType] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum FintechSDKInfo {
+  public static let currentVersion: Swift.String
+}
+final public class LogIdGenerator {
+  public init(timeProvider: any FintechSDKCoreUtils.TimeProvider = DefaultTimeProvider())
+  @discardableResult
+  final public func getId() -> Swift.Int64
+  @objc deinit
+}
+public protocol TimeProvider {
+  func getCurrentTimeMs() -> Swift.Int64
+}
+final public class DefaultTimeProvider : FintechSDKCoreUtils.TimeProvider {
+  public init()
+  @discardableResult
+  final public func getCurrentTimeMs() -> Swift.Int64
+  @objc deinit
+}
+extension FintechSDKCoreUtils.FintechApiBaseUrlType : Swift.Equatable {}
+extension FintechSDKCoreUtils.FintechApiBaseUrlType : Swift.Hashable {}
+extension FintechSDKCoreUtils.FintechApiBaseUrlType : Swift.RawRepresentable {}
