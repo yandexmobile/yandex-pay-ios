@@ -126,7 +126,7 @@ YANDEX_CLIENT_ID     = <ваш идентификатор>
         <array>
             <!-- Схема для YANDEX_PAY_CLIENT_ID -->
             <string>yx$(YANDEX_PAY_CLIENT_ID)</string>
-            <!-- Схема для YANDEX_CLIENT_ID
+            <!-- Схема для YANDEX_CLIENT_ID -->
             <string>yx$(YANDEX_CLIENT_ID)</string>
         </array>
     </dict>
