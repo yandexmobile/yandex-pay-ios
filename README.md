@@ -18,8 +18,7 @@
    - [Client ID](#1-client-id)
    - [URL-схемы](#2-url-схемы)
    - [Инициализация](#3-инициализация)
-   - [Контекст представления](#4-контекст-представления)
-   - [Обработка диплинков](#5-обработка-диплинков)
+   - [Обработка диплинков](#4-обработка-диплинков)
 
 ---
 
@@ -183,24 +182,7 @@ YPay.initialize(
 | `enableLogging` | `Bool` | `false` | Включить отладочные логи |
 | `modules` | `[YandexPaySDKModule]` | — | Список подключаемых модулей |
 
-### 4. Контекст представления
-
-SDK необходимо знать, поверх какого экрана показывать свои UI-потоки. Для этого реализуйте протокол `YPPresentationContextProviding` и передайте его в `presentationContextProvider` при инициализации.
-
-```swift
-import YandexPayConfiguration
-
-extension MySceneDelegate: YPPresentationContextProviding {
-    func anchorForPresentation() -> YPPresentationContext {
-        // Варианты:
-        .viewController(rootViewController)   // конкретный UIViewController
-        // .window(myWindow)                  // конкретный UIWindow
-        // .keyWindow                         // ключевое окно приложения
-    }
-}
-```
-
-### 5. Обработка диплинков
+### 4. Обработка диплинков
 
 Передавайте входящие URL и user activity в SDK из `SceneDelegate`. Метод `deeplinkHandler` автоматически маршрутизирует их к нужному модулю.
 
