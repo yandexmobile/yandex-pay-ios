@@ -180,7 +180,7 @@ YPay.initialize(
 | `locale` | `YPSDKLocale` | — | `.ru`, `.en` или `.system` |
 | `theme` | `YPSDKThemeColorScheme` | `.system` | Цветовая схема: `.light`, `.dark`, `.system` |
 | `enableLogging` | `Bool` | `false` | Включить отладочные логи |
-| `modules` | `[YandexPaySDKModule]` | — | Список подключаемых модулей |
+| `modules` | `[YPayModule]` | — | Список подключаемых модулей |
 
 ### 4. Обработка диплинков
 
