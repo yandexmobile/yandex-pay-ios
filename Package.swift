@@ -184,6 +184,8 @@ let package = Package(
         "FintechSDKAppMetricaAdapter",
         "FintechSDKFontsAdapter",
         "FintechSDKLoginAdapter",
+        "FintechSDKRealTimeAnalyticsAdapter",
+        "FintechSDKRealUserMonitoringAdapter",
         "YandexPayConfiguration",
         .product(name: "AppMetricaCore", package: "appmetrica-sdk-ios"),
       ],

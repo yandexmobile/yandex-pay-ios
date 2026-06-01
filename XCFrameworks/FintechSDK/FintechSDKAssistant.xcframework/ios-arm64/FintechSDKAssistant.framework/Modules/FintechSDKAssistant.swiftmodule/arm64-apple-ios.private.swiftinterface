@@ -2,7 +2,7 @@
 // swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKAssistant -package-name FintechSDK
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
-import FintechSDKAnalyticsInterfaces
+@_spi(Internal) import FintechSDKAnalyticsInterfaces
 @_spi(Internal) import FintechSDKAuthCoreImplementation
 @_spi(Internal) import FintechSDKAuthInterfaces
 @_spi(Internal) import FintechSDKAuthorizationScenario
@@ -77,7 +77,7 @@ import _SwiftConcurrencyShims
   }
 }
 @_spi(Internal) final public class FTYandexPayAssistantHandler {
-  @_spi(Internal) @_Concurrency.MainActor public init(merchantId: Swift.String, environment: FintechSDKCommonEntity.FintechSDKEnvironment, locale: FintechSDKCoreUI.FintechLocale, bduiAdapterFactory: any FintechSDKBDUIFeatures.FintechBDUIAdapterFactory, fontsAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter, accountManagerAdapter: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, loginService: any FintechSDKAuthInterfaces.FintechLoginService, networkChallengeHandlerFactory: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory, partnerAuthStateProvider: (() -> Swift.Bool?)?)
+  @_spi(Internal) @_Concurrency.MainActor public init(merchantId: Swift.String, environment: FintechSDKCommonEntity.FintechSDKEnvironment, locale: FintechSDKCoreUI.FintechLocale, bduiAdapterFactory: any FintechSDKBDUIFeatures.FintechBDUIAdapterFactory, fontsAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter, appMetricaAdapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter, rtmFactory: any FintechSDKAnalyticsInterfaces.FintechRTMAdapterFactory, rumFactory: any FintechSDKAnalyticsInterfaces.FintechRUMAdapterFactory, accountManagerAdapter: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, loginService: any FintechSDKAuthInterfaces.FintechLoginService, networkChallengeHandlerFactory: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory, partnerAuthStateProvider: (() -> Swift.Bool?)?)
   @_spi(Internal) @_Concurrency.MainActor final public func createBenefitsWidget(screen: FintechSDKAssistant.FTBenefitsWidgetScreen?, presentationContextProvider: any FintechSDKCoreUI.FTPresentationContextProviding, clickability: FintechSDKAssistant.FTBenefitsWidgetClickability = .always, metaInfo: [Swift.String : Swift.String]? = nil) -> any SwiftUICore.View
   @_spi(Internal) @_Concurrency.MainActor final public func createBenefitsWidget(screen: FintechSDKAssistant.FTBenefitsWidgetScreen?, presentationContextProvider: any FintechSDKCoreUI.FTPresentationContextProviding, clickability: FintechSDKAssistant.FTBenefitsWidgetClickability = .always, metaInfo: [Swift.String : Swift.String]? = nil) -> UIKit.UIView
   @_spi(Internal) @_Concurrency.MainActor final public func createBenefitsSimpleUIKitWidgetProvider(presentationContextProvider: any FintechSDKCoreUI.FTPresentationContextProviding, metaInfo: [Swift.String : Swift.String]? = nil) -> any FintechSDKAssistant.FTYABenefitsSimpleUIKitWidgetProvider

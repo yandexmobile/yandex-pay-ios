@@ -30,6 +30,12 @@ public protocol FintechAppMetricaReportingAdapter : Swift.Sendable {
 public protocol FintechAppMetricaYandexReportingAdapter {
   func setPUID(_ puid: Swift.String?)
 }
+@_spi(Internal) public protocol FintechIdentifiersProviding : Swift.Sendable {
+  @_spi(Internal) var installationID: Swift.String { get }
+  @_spi(Internal) var sdkSessionID: Swift.String { get }
+  @_spi(Internal) var appMetricaUUID: Swift.String? { get }
+  @_spi(Internal) var appMetricaDeviceID: Swift.String? { get }
+}
 public enum FTCommonKeys {
   public static let description: Swift.String
 }
@@ -85,6 +91,9 @@ public protocol FintechAnalyticsErrorReporter {
 }
 public protocol FintechAnalyticsEventReporter : Swift.Sendable {
   func reportEvent(name: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
+}
+extension FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter {
+  public func reportEvent(name: Swift.String, params: [Swift.String : Swift.String])
 }
 public protocol FintechTelemetryAdapter : Swift.Sendable {
   func startTrace()

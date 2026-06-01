@@ -314,6 +314,11 @@ SWIFT_CLASS("_TtC31FintechSDKDivKitWidgetsFeatures23FTWidgetContainerUIView")
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
+@class UIGestureRecognizer;
+@interface FTWidgetContainerUIView (SWIFT_EXTENSION(FintechSDKDivKitWidgetsFeatures)) <UIGestureRecognizerDelegate>
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+@end
+
 #endif
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

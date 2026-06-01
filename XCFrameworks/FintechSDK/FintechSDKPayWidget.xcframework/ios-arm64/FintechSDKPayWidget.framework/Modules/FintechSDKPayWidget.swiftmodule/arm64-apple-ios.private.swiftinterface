@@ -2,9 +2,11 @@
 // swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKPayWidget -package-name FintechSDK
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import FintechSDKAnalyticsInterfaces
 import FintechSDKBDUICore
 @_spi(Internal) import FintechSDKBDUIFeatures
 import FintechSDKCommonEntity
+@_spi(Internal) import FintechSDKCoreAnalytics
 @_spi(Internal) import FintechSDKCoreUI
 @_spi(Internal) import FintechSDKDivKitWidgetsFeatures
 @_spi(Internal) import FintechSDKNetworkImplementation
@@ -17,6 +19,10 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+public enum FTPayWidgetAnalyticsEvent {
+  public static let loadSuccess: Swift.String
+  public static let clicked: Swift.String
+}
 @_spi(Internal) public struct FTPayWidgetEndpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider {
   @_spi(Internal) public typealias Decoder = FintechSDKNetworkImplementation.FTRawDataResponseDecoder
   @_spi(Internal) public typealias ResultModel = Foundation.Data
@@ -27,16 +33,25 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public var decoder: FintechSDKNetworkImplementation.FTRawDataResponseDecoder {
     @_spi(Internal) get
   }
-  @_spi(Internal) public init(model: FintechSDKPayWidget.FTPayWidgetModel)
+  @_spi(Internal) public init(model: FintechSDKPayWidget.FTPayWidgetModel, paymentInProgressProvider: @escaping () -> Swift.Bool)
   @_spi(Internal) public var body: [Swift.String : Any]? {
     @_spi(Internal) get
   }
 }
 @_spi(Internal) public typealias FTPayWidgetAuthorizedEndpoint = FintechSDKPayWidget.FTPayWidgetEndpoint
+@_spi(Internal) public struct FTPayWidgetAnalyticsTracking {
+  @_spi(Internal) public let eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter
+  @_spi(Internal) public let eventType: Swift.String
+  @_spi(Internal) public let surface: Swift.String
+  @_spi(Internal) public let isWidgetAuthorized: @_Concurrency.MainActor @Sendable () -> Swift.Bool
+  @_spi(Internal) public let isMerchantAuthorized: @_Concurrency.MainActor @Sendable () -> Swift.Bool
+  @_spi(Internal) public init(eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, eventType: Swift.String = "payWidget", surface: Swift.String, isWidgetAuthorized: @escaping @_Concurrency.MainActor @Sendable () -> Swift.Bool, isMerchantAuthorized: @escaping @_Concurrency.MainActor @Sendable () -> Swift.Bool)
+}
 @_spi(Internal) public enum FTPayWidgetFactory {
-  @_spi(Internal) @_Concurrency.MainActor public static func createPayWidgetView(presenterViewController: UIKit.UIViewController, model: FintechSDKPayWidget.FTPayWidgetModel, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, flexClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, widgetReloader: FintechSDKDivKitWidgetsFeatures.FTWidgetReloader, onAppearTask: @escaping () async throws -> Swift.Void, authorizeHandler: any FintechSDKBDUIFeatures.FTAuthorizeActionHandling) -> some SwiftUICore.View
+  @_spi(Internal) @_Concurrency.MainActor public static func makeAnalyticsTracking(eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, eventType: Swift.String = "payWidget", surface: Swift.String = "checkout", isWidgetAuthorized: @escaping @_Concurrency.MainActor @Sendable () -> Swift.Bool, isMerchantAuthorized: @escaping @_Concurrency.MainActor @Sendable () -> Swift.Bool) -> FintechSDKPayWidget.FTPayWidgetAnalyticsTracking
+  @_spi(Internal) @_Concurrency.MainActor public static func createPayWidgetView(presenterViewController: UIKit.UIViewController, model: FintechSDKPayWidget.FTPayWidgetModel, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, flexClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, widgetReloader: FintechSDKDivKitWidgetsFeatures.FTWidgetReloader, paymentInProgressProvider: @escaping () -> Swift.Bool, onAppearTask: @escaping () async throws -> Swift.Void, authorizeHandler: any FintechSDKBDUIFeatures.FTAuthorizeActionHandling, onFlexScreenDismiss: (@Sendable () -> Swift.Void)? = nil, analyticsTracking: FintechSDKPayWidget.FTPayWidgetAnalyticsTracking? = nil) -> some SwiftUICore.View
   
-  @_spi(Internal) @_Concurrency.MainActor public static func createPayWidgetUIView(presenterViewController: UIKit.UIViewController, model: FintechSDKPayWidget.FTPayWidgetModel, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, flexClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, widgetReloader: FintechSDKDivKitWidgetsFeatures.FTWidgetReloader, onAppearTask: @escaping () async throws -> Swift.Void, authorizeHandler: any FintechSDKBDUIFeatures.FTAuthorizeActionHandling) -> UIKit.UIView
+  @_spi(Internal) @_Concurrency.MainActor public static func createPayWidgetUIView(presenterViewController: UIKit.UIViewController, model: FintechSDKPayWidget.FTPayWidgetModel, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, flexClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, widgetReloader: FintechSDKDivKitWidgetsFeatures.FTWidgetReloader, paymentInProgressProvider: @escaping () -> Swift.Bool, onAppearTask: @escaping () async throws -> Swift.Void, authorizeHandler: any FintechSDKBDUIFeatures.FTAuthorizeActionHandling, onFlexScreenDismiss: (@Sendable () -> Swift.Void)? = nil, analyticsTracking: FintechSDKPayWidget.FTPayWidgetAnalyticsTracking? = nil) -> UIKit.UIView
 }
 @_spi(Internal) public struct FTPayWidgetOrderAmount : Swift.Sendable {
   @_spi(Internal) public let amount: Foundation.Decimal

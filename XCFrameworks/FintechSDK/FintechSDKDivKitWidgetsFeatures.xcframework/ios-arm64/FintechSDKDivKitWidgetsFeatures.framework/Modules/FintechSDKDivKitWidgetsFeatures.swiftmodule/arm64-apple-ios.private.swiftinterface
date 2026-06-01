@@ -3,7 +3,7 @@
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKDivKitWidgetsFeatures -package-name FintechSDK
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import Combine
-import FintechSDKAnalyticsInterfaces
+@_spi(Internal) import FintechSDKAnalyticsInterfaces
 import FintechSDKAuthInterfaces
 import FintechSDKBDUICore
 @_spi(Internal) import FintechSDKBDUIFeatures
@@ -85,12 +85,16 @@ import _SwiftConcurrencyShims
       @_spi(Internal) get
     }
   }
-  @_spi(Internal) public init(presentationContextProvider: any FintechSDKCoreUI.FTPresentationContextProviding, webViewActionHandlersProvider: @escaping @_Concurrency.MainActor (FintechSDKDivKitWidgetsFeatures.FTOpenWebViewDivUrlHandler.AuthLevel) -> [any FintechSDKWebViewFeatures.FTWebViewActionHandler], eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, networkChallengeHandlerFactory: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory, initialBSTProvider: (@Sendable () async -> Swift.String?)? = nil, additionalQueryParametersProvider: (any FintechSDKDivKitWidgetsFeatures.FTOpenWebViewQueryParametersProviding)? = nil)
+  @_spi(Internal) public init(presentationContextProvider: any FintechSDKCoreUI.FTPresentationContextProviding, webViewActionHandlersProvider: @escaping @_Concurrency.MainActor (FintechSDKDivKitWidgetsFeatures.FTOpenWebViewDivUrlHandler.AuthLevel) -> [any FintechSDKWebViewFeatures.FTWebViewActionHandler], eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, networkChallengeHandlerFactory: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory, initialBSTProvider: (@Sendable () async -> Swift.String?)? = nil, additionalQueryParametersProvider: (any FintechSDKDivKitWidgetsFeatures.FTOpenWebViewQueryParametersProviding)? = nil, extraHeadersBuilder: (@Sendable () -> [Swift.String : Swift.String])? = nil)
   @_spi(Internal) @_Concurrency.MainActor final public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) public protocol FTOpenWebViewQueryParametersProviding {
   @_spi(Internal) @_Concurrency.MainActor func queryParameters() -> [Swift.String : Swift.String]
+}
+@_spi(Internal) public struct FTWebViewAnalyticsHeadersBuilder : Swift.Sendable {
+  @_spi(Internal) public init(identifiersProvider: any FintechSDKAnalyticsInterfaces.FintechIdentifiersProviding)
+  @_spi(Internal) public func build() -> [Swift.String : Swift.String]
 }
 public struct FTRemoteActionResponse {
   public let statusCode: Swift.Int
@@ -188,9 +192,9 @@ final public class FTRemoteDivUrlHandler : @preconcurrency FintechSDKBDUICore.Fi
 @_spi(Internal) public class FTWidgetsFactory {
   @_spi(Internal) public init(bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, presenterViewController: UIKit.UIViewController?)
   @_spi(Internal) public init(bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, presentationContextProvider: (any FintechSDKCoreUI.FTPresentationContextProviding)?)
-  @_spi(Internal) public func makeWidget<ShimmerView, Endpoint>(divComponents: FintechSDKDivKitWidgetsFeatures.FTDivKitComponents, endpoint: Endpoint, shimmerView: ShimmerView, reloader: FintechSDKDivKitWidgetsFeatures.FTWidgetReloader? = nil, silentReloadAvailable: Swift.Bool = true, loadingStrategy: FintechSDKDivKitWidgetsFeatures.FTWidgetLoadingStrategy = .onAppear, onAppearTask: @escaping () async throws -> Swift.Void = {}, onStateChanged: ((FintechSDKDivKitWidgetsFeatures.FintechWidgetState) -> Swift.Void)? = nil, onDataStateChanged: ((FintechSDKDivKitWidgetsFeatures.FTWidgetDataState) -> Swift.Void)? = nil) -> some SwiftUICore.View where ShimmerView : SwiftUICore.View, Endpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider, Endpoint.ResultModel : FintechSDKDivKitWidgetsFeatures.FTDivKitDataProvider
+  @_spi(Internal) public func makeWidget<ShimmerView, Endpoint>(divComponents: FintechSDKDivKitWidgetsFeatures.FTDivKitComponents, endpoint: Endpoint, shimmerView: ShimmerView, reloader: FintechSDKDivKitWidgetsFeatures.FTWidgetReloader? = nil, silentReloadAvailable: Swift.Bool = true, loadingStrategy: FintechSDKDivKitWidgetsFeatures.FTWidgetLoadingStrategy = .onAppear, onAppearTask: @escaping () async throws -> Swift.Void = {}, onStateChanged: ((FintechSDKDivKitWidgetsFeatures.FintechWidgetState) -> Swift.Void)? = nil, onDataStateChanged: ((FintechSDKDivKitWidgetsFeatures.FTWidgetDataState) -> Swift.Void)? = nil, onFlexScreenDismiss: (@Sendable () -> Swift.Void)? = nil) -> some SwiftUICore.View where ShimmerView : SwiftUICore.View, Endpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider, Endpoint.ResultModel : FintechSDKDivKitWidgetsFeatures.FTDivKitDataProvider
   
-  @_spi(Internal) public func makeWidget<Endpoint>(divComponents: FintechSDKDivKitWidgetsFeatures.FTDivKitComponents, endPoint: Endpoint, shimmerView: UIKit.UIView, reloader: FintechSDKDivKitWidgetsFeatures.FTWidgetReloader? = nil, silentReloadAvailable: Swift.Bool = true, loadingStrategy: FintechSDKDivKitWidgetsFeatures.FTWidgetLoadingStrategy = .onAppear, onAppearTask: @escaping () async throws -> Swift.Void = {}, onStateChanged: ((FintechSDKDivKitWidgetsFeatures.FintechWidgetState) -> Swift.Void)? = nil, onDataStateChanged: ((FintechSDKDivKitWidgetsFeatures.FTWidgetDataState) -> Swift.Void)? = nil) -> UIKit.UIView where Endpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider, Endpoint.ResultModel : FintechSDKDivKitWidgetsFeatures.FTDivKitDataProvider
+  @_spi(Internal) public func makeWidget<Endpoint>(divComponents: FintechSDKDivKitWidgetsFeatures.FTDivKitComponents, endPoint: Endpoint, shimmerView: UIKit.UIView, reloader: FintechSDKDivKitWidgetsFeatures.FTWidgetReloader? = nil, silentReloadAvailable: Swift.Bool = true, loadingStrategy: FintechSDKDivKitWidgetsFeatures.FTWidgetLoadingStrategy = .onAppear, onAppearTask: @escaping () async throws -> Swift.Void = {}, onStateChanged: ((FintechSDKDivKitWidgetsFeatures.FintechWidgetState) -> Swift.Void)? = nil, onDataStateChanged: ((FintechSDKDivKitWidgetsFeatures.FTWidgetDataState) -> Swift.Void)? = nil, onFlexScreenDismiss: (@Sendable () -> Swift.Void)? = nil) -> UIKit.UIView where Endpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider, Endpoint.ResultModel : FintechSDKDivKitWidgetsFeatures.FTDivKitDataProvider
   @_spi(Internal) @objc deinit
 }
 public enum FintechWidgetState {
@@ -235,13 +239,16 @@ public enum FintechWidgetState {
   @_spi(Internal) public init(widgetFactory: FintechSDKDivKitWidgetsFeatures.FTWidgetsFactory, reloader: FintechSDKDivKitWidgetsFeatures.FTWidgetReloader, divComponents: FintechSDKDivKitWidgetsFeatures.FTDivKitComponents)
 }
 @_spi(Internal) @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class FTWidgetContainerUIView : UIKit.UIView, FintechSDKDivKitWidgetsFeatures.FTWidgetRefreshObserver {
-  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(reloader: any FintechSDKDivKitWidgetsFeatures.FTWidgetRefreshing, widget: UIKit.UIView, onUserInterfaceChange: (@_Concurrency.MainActor (UIKit.UIUserInterfaceStyle) -> Swift.Void)? = nil)
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(reloader: any FintechSDKDivKitWidgetsFeatures.FTWidgetRefreshing, widget: UIKit.UIView, onUserInterfaceChange: (@_Concurrency.MainActor (UIKit.UIUserInterfaceStyle) -> Swift.Void)? = nil, onTap: (() -> Swift.Void)? = nil)
   @_spi(Internal) @objc deinit
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency final public func widgetShouldRefresh()
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override final public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
 }
+@_spi(Internal) extension FintechSDKDivKitWidgetsFeatures.FTWidgetContainerUIView : UIKit.UIGestureRecognizerDelegate {
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc final public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+}
 @_spi(Internal) @_Concurrency.MainActor @preconcurrency public struct FTWidgetContainerView<Content> : SwiftUICore.View where Content : SwiftUICore.View {
-  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(reloader: any FintechSDKDivKitWidgetsFeatures.FTWidgetRefreshing, onUserInterfaceChange: (@_Concurrency.MainActor (UIKit.UIUserInterfaceStyle) -> Swift.Void)? = nil, @SwiftUICore.ViewBuilder content: () -> Content)
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(reloader: any FintechSDKDivKitWidgetsFeatures.FTWidgetRefreshing, onUserInterfaceChange: (@_Concurrency.MainActor (UIKit.UIUserInterfaceStyle) -> Swift.Void)? = nil, onTap: (() -> Swift.Void)? = nil, @SwiftUICore.ViewBuilder content: () -> Content)
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     @_spi(Internal) get
   }

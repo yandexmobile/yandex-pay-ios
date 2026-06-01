@@ -21,10 +21,11 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 @_spi(Internal) public actor FTQPSPollingInteractor {
+  @_spi(Internal) public typealias BDUIQueryBuilder = (_ transactionId: Swift.String, _ paymentUrl: Swift.String) -> FintechSDKQuickPaymentEntity.FTQPBDUIQuery
   @_spi(Internal) public var isBSTTTLCheckActive: Swift.Bool {
     @_spi(Internal) get
   }
-  @_spi(Internal) public init(ordersAPIService: any FintechSDKQuickPaymentShared.FTQPSGetOrderAPIService, notifyAboutPolling: any FintechSDKQuickPaymentShared.FTQPSNotifyAboutPollingUseCase, pollingScreenUseCases: any FintechSDKPollingScenario.FTPollingScreenUseCases, analyticsService: any FintechSDKQuickPaymentShared.FTQPSPollingAnalyticsReporting, pollingParamsInteractions: any FintechSDKPollingScenario.FTGetPollingParams & FintechSDKPollingScenario.FTProvidePollingParams, refreshInteractor: any FintechSDKQuickPaymentShared.FTQPSRefreshUseCase, currentPayment: any FintechSDKQuickPaymentShared.FTQPSCurrentPaymentVariablesUseCase)
+  @_spi(Internal) public init(ordersAPIService: any FintechSDKQuickPaymentShared.FTQPSGetOrderAPIService, notifyAboutPolling: any FintechSDKQuickPaymentShared.FTQPSNotifyAboutPollingUseCase, pollingScreenUseCases: any FintechSDKPollingScenario.FTPollingScreenUseCases, analyticsService: any FintechSDKQuickPaymentShared.FTQPSPollingAnalyticsReporting, pollingParamsInteractions: any FintechSDKPollingScenario.FTGetPollingParams & FintechSDKPollingScenario.FTProvidePollingParams, refreshInteractor: any FintechSDKQuickPaymentShared.FTQPSRefreshUseCase, currentPayment: any FintechSDKQuickPaymentShared.FTQPSCurrentPaymentVariablesUseCase, bduiQueryBuilder: @escaping FintechSDKQuickPaymentShared.FTQPSPollingInteractor.BDUIQueryBuilder)
   @_spi(Internal) public func startPolling(deadline: Foundation.Date) async
   @_spi(Internal) public func stopPolling()
   @_spi(Internal) @objc deinit

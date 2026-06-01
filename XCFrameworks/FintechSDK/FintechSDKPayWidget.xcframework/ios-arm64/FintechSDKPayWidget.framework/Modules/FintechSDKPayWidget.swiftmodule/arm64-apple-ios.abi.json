@@ -5,6 +5,130 @@
     "printedName": "FintechSDKPayWidget",
     "children": [
       {
+        "kind": "TypeDecl",
+        "name": "FTPayWidgetAnalyticsEvent",
+        "printedName": "FTPayWidgetAnalyticsEvent",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "loadSuccess",
+            "printedName": "loadSuccess",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC14AnalyticsEventO11loadSuccessSSvpZ",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC14AnalyticsEventO11loadSuccessSSvpZ",
+            "moduleName": "FintechSDKPayWidget",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC14AnalyticsEventO11loadSuccessSSvgZ",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC14AnalyticsEventO11loadSuccessSSvgZ",
+                "moduleName": "FintechSDKPayWidget",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "clicked",
+            "printedName": "clicked",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC14AnalyticsEventO7clickedSSvpZ",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC14AnalyticsEventO7clickedSSvpZ",
+            "moduleName": "FintechSDKPayWidget",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC14AnalyticsEventO7clickedSSvgZ",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC14AnalyticsEventO7clickedSSvgZ",
+                "moduleName": "FintechSDKPayWidget",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:19FintechSDKPayWidget05FTPayC14AnalyticsEventO",
+        "mangledName": "$s19FintechSDKPayWidget05FTPayC14AnalyticsEventO",
+        "moduleName": "FintechSDKPayWidget",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "FintechSDKNetworkImplementation",
         "printedName": "FintechSDKNetworkImplementation",
@@ -318,7 +442,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(model:)",
+            "printedName": "init(model:paymentInProgressProvider:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -331,11 +455,29 @@
                 "name": "FTPayWidgetModel",
                 "printedName": "FintechSDKPayWidget.FTPayWidgetModel",
                 "usr": "s:19FintechSDKPayWidget05FTPayC5ModelV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> Swift.Bool",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:19FintechSDKPayWidget05FTPayC8EndpointV5modelAcA0dC5ModelV_tcfc",
-            "mangledName": "$s19FintechSDKPayWidget05FTPayC8EndpointV5modelAcA0dC5ModelV_tcfc",
+            "usr": "s:19FintechSDKPayWidget05FTPayC8EndpointV5model25paymentInProgressProviderAcA0dC5ModelV_Sbyctcfc",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC8EndpointV5model25paymentInProgressProviderAcA0dC5ModelV_Sbyctcfc",
             "moduleName": "FintechSDKPayWidget",
             "declAttributes": [
               "AccessControl"
@@ -520,6 +662,13 @@
       },
       {
         "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayWidget"
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -556,14 +705,517 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "FintechSDKCoreAnalytics",
+        "printedName": "FintechSDKCoreAnalytics",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayWidget",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTPayWidgetAnalyticsTracking",
+        "printedName": "FTPayWidgetAnalyticsTracking",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "eventReporter",
+            "printedName": "eventReporter",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsEventReporter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV13eventReporter0A22SDKAnalyticsInterfaces0ae5EventH0_pvp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV13eventReporter0A22SDKAnalyticsInterfaces0ae5EventH0_pvp",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechAnalyticsEventReporter",
+                    "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter",
+                    "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV13eventReporter0A22SDKAnalyticsInterfaces0ae5EventH0_pvg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV13eventReporter0A22SDKAnalyticsInterfaces0ae5EventH0_pvg",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "eventType",
+            "printedName": "eventType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV9eventTypeSSvp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV9eventTypeSSvp",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV9eventTypeSSvg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV9eventTypeSSvg",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "surface",
+            "printedName": "surface",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV7surfaceSSvp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV7surfaceSSvp",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV7surfaceSSvg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV7surfaceSSvg",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isWidgetAuthorized",
+            "printedName": "isWidgetAuthorized",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> Swift.Bool",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV02isC10AuthorizedSbyYbScMYccvp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV02isC10AuthorizedSbyYbScMYccvp",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> Swift.Bool",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV02isC10AuthorizedSbyYbScMYccvg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV02isC10AuthorizedSbyYbScMYccvg",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isMerchantAuthorized",
+            "printedName": "isMerchantAuthorized",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> Swift.Bool",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV20isMerchantAuthorizedSbyYbScMYccvp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV20isMerchantAuthorizedSbyYbScMYccvp",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> Swift.Bool",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV20isMerchantAuthorizedSbyYbScMYccvg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV20isMerchantAuthorizedSbyYbScMYccvg",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(eventReporter:eventType:surface:isWidgetAuthorized:isMerchantAuthorized:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTPayWidgetAnalyticsTracking",
+                "printedName": "FintechSDKPayWidget.FTPayWidgetAnalyticsTracking",
+                "usr": "s:19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsEventReporter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> Swift.Bool",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> Swift.Bool",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV13eventReporter0G4Type7surface02isC10Authorized0k8MerchantL0AC0A22SDKAnalyticsInterfaces0ae5EventH0_p_S2SSbyYbScMYccSbyYbScMYcctcfc",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV13eventReporter0G4Type7surface02isC10Authorized0k8MerchantL0AC0A22SDKAnalyticsInterfaces0ae5EventH0_p_S2SSbyYbScMYccSbyYbScMYcctcfc",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV",
+        "mangledName": "$s19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV",
+        "moduleName": "FintechSDKPayWidget",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "FTPayWidgetFactory",
         "printedName": "FTPayWidgetFactory",
         "children": [
           {
             "kind": "Function",
+            "name": "makeAnalyticsTracking",
+            "printedName": "makeAnalyticsTracking(eventReporter:eventType:surface:isWidgetAuthorized:isMerchantAuthorized:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTPayWidgetAnalyticsTracking",
+                "printedName": "FintechSDKPayWidget.FTPayWidgetAnalyticsTracking",
+                "usr": "s:19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsEventReporter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> Swift.Bool",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> Swift.Bool",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKPayWidget05FTPayC7FactoryO21makeAnalyticsTracking13eventReporter0I4Type7surface02isC10Authorized0m8MerchantN0AA0dcgH0V0A22SDKAnalyticsInterfaces0ag5EventJ0_p_S2SSbyYbScMYccSbyYbScMYcctFZ",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC7FactoryO21makeAnalyticsTracking13eventReporter0I4Type7surface02isC10Authorized0m8MerchantN0AA0dcgH0V0A22SDKAnalyticsInterfaces0ag5EventJ0_p_S2SSbyYbScMYccSbyYbScMYcctFZ",
+            "moduleName": "FintechSDKPayWidget",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "Custom"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "createPayWidgetView",
-            "printedName": "createPayWidgetView(presenterViewController:model:bduiAdapter:flexClient:widgetReloader:onAppearTask:authorizeHandler:)",
+            "printedName": "createPayWidgetView(presenterViewController:model:bduiAdapter:flexClient:widgetReloader:paymentInProgressProvider:onAppearTask:authorizeHandler:onFlexScreenDismiss:analyticsTracking:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -611,6 +1263,24 @@
               {
                 "kind": "TypeFunc",
                 "name": "Function",
+                "printedName": "() -> Swift.Bool",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
                 "printedName": "() async throws -> ()",
                 "children": [
                   {
@@ -630,11 +1300,52 @@
                 "name": "FTAuthorizeActionHandling",
                 "printedName": "any FintechSDKBDUIFeatures.FTAuthorizeActionHandling",
                 "usr": "s:22FintechSDKBDUIFeatures25FTAuthorizeActionHandlingP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FintechSDKPayWidget.FTPayWidgetAnalyticsTracking?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTPayWidgetAnalyticsTracking",
+                    "printedName": "FintechSDKPayWidget.FTPayWidgetAnalyticsTracking",
+                    "usr": "s:19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:19FintechSDKPayWidget05FTPayC7FactoryO09createPayC4View09presenterH10Controller5model11bduiAdapter10flexClient14widgetReloader12onAppearTask16authorizeHandlerQrSo06UIViewJ0C_AA0dC5ModelV0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkO0_p0A24SDKDivKitWidgetsFeatures08FTWidgetQ0CyyYaKc0A15SDKBDUIFeatures25FTAuthorizeActionHandling_ptFZ",
-            "mangledName": "$s19FintechSDKPayWidget05FTPayC7FactoryO09createPayC4View09presenterH10Controller5model11bduiAdapter10flexClient14widgetReloader12onAppearTask16authorizeHandlerQrSo06UIViewJ0C_AA0dC5ModelV0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkO0_p0A24SDKDivKitWidgetsFeatures08FTWidgetQ0CyyYaKc0A15SDKBDUIFeatures25FTAuthorizeActionHandling_ptFZ",
+            "usr": "s:19FintechSDKPayWidget05FTPayC7FactoryO09createPayC4View09presenterH10Controller5model11bduiAdapter10flexClient14widgetReloader25paymentInProgressProvider12onAppearTask16authorizeHandler0V17FlexScreenDismiss17analyticsTrackingQrSo06UIViewJ0C_AA0dC5ModelV0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkO0_p0A24SDKDivKitWidgetsFeatures08FTWidgetQ0CSbycyyYaKc0A15SDKBDUIFeatures25FTAuthorizeActionHandling_pyyYbcSgAA0dC17AnalyticsTrackingVSgtFZ",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC7FactoryO09createPayC4View09presenterH10Controller5model11bduiAdapter10flexClient14widgetReloader25paymentInProgressProvider12onAppearTask16authorizeHandler0V17FlexScreenDismiss17analyticsTrackingQrSo06UIViewJ0C_AA0dC5ModelV0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkO0_p0A24SDKDivKitWidgetsFeatures08FTWidgetQ0CSbycyyYaKc0A15SDKBDUIFeatures25FTAuthorizeActionHandling_pyyYbcSgAA0dC17AnalyticsTrackingVSgtFZ",
             "moduleName": "FintechSDKPayWidget",
             "static": true,
             "declAttributes": [
@@ -649,7 +1360,7 @@
           {
             "kind": "Function",
             "name": "createPayWidgetUIView",
-            "printedName": "createPayWidgetUIView(presenterViewController:model:bduiAdapter:flexClient:widgetReloader:onAppearTask:authorizeHandler:)",
+            "printedName": "createPayWidgetUIView(presenterViewController:model:bduiAdapter:flexClient:widgetReloader:paymentInProgressProvider:onAppearTask:authorizeHandler:onFlexScreenDismiss:analyticsTracking:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -690,6 +1401,24 @@
               {
                 "kind": "TypeFunc",
                 "name": "Function",
+                "printedName": "() -> Swift.Bool",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
                 "printedName": "() async throws -> ()",
                 "children": [
                   {
@@ -709,11 +1438,52 @@
                 "name": "FTAuthorizeActionHandling",
                 "printedName": "any FintechSDKBDUIFeatures.FTAuthorizeActionHandling",
                 "usr": "s:22FintechSDKBDUIFeatures25FTAuthorizeActionHandlingP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FintechSDKPayWidget.FTPayWidgetAnalyticsTracking?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTPayWidgetAnalyticsTracking",
+                    "printedName": "FintechSDKPayWidget.FTPayWidgetAnalyticsTracking",
+                    "usr": "s:19FintechSDKPayWidget05FTPayC17AnalyticsTrackingV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:19FintechSDKPayWidget05FTPayC7FactoryO09createPayC6UIView23presenterViewController5model11bduiAdapter10flexClient14widgetReloader12onAppearTask16authorizeHandlerSo0H0CSo0hK0C_AA0dC5ModelV0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkP0_p0A24SDKDivKitWidgetsFeatures08FTWidgetR0CyyYaKc0A15SDKBDUIFeatures25FTAuthorizeActionHandling_ptFZ",
-            "mangledName": "$s19FintechSDKPayWidget05FTPayC7FactoryO09createPayC6UIView23presenterViewController5model11bduiAdapter10flexClient14widgetReloader12onAppearTask16authorizeHandlerSo0H0CSo0hK0C_AA0dC5ModelV0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkP0_p0A24SDKDivKitWidgetsFeatures08FTWidgetR0CyyYaKc0A15SDKBDUIFeatures25FTAuthorizeActionHandling_ptFZ",
+            "usr": "s:19FintechSDKPayWidget05FTPayC7FactoryO09createPayC6UIView23presenterViewController5model11bduiAdapter10flexClient14widgetReloader25paymentInProgressProvider12onAppearTask16authorizeHandler0W17FlexScreenDismiss17analyticsTrackingSo0H0CSo0hK0C_AA0dC5ModelV0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkP0_p0A24SDKDivKitWidgetsFeatures08FTWidgetR0CSbycyyYaKc0A15SDKBDUIFeatures25FTAuthorizeActionHandling_pyyYbcSgAA0dC17AnalyticsTrackingVSgtFZ",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC7FactoryO09createPayC6UIView23presenterViewController5model11bduiAdapter10flexClient14widgetReloader25paymentInProgressProvider12onAppearTask16authorizeHandler0W17FlexScreenDismiss17analyticsTrackingSo0H0CSo0hK0C_AA0dC5ModelV0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkP0_p0A24SDKDivKitWidgetsFeatures08FTWidgetR0CSbycyyYaKc0A15SDKBDUIFeatures25FTAuthorizeActionHandling_pyyYbcSgAA0dC17AnalyticsTrackingVSgtFZ",
             "moduleName": "FintechSDKPayWidget",
             "static": true,
             "declAttributes": [
@@ -1544,28 +2314,98 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Endpoints\/FTPayWidgetEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 74,
+      "length": 25,
+      "value": "\"pay_widget_load_success\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 130,
+      "length": 20,
+      "value": "\"pay_widget_clicked\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 217,
+      "length": 14,
+      "value": "\"widget_state\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 266,
+      "length": 22,
+      "value": "\"merchant_auth_status\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 312,
+      "length": 9,
+      "value": "\"surface\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 389,
+      "length": 12,
+      "value": "\"authorized\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 430,
+      "length": 14,
+      "value": "\"unauthorized\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Endpoints\/FTPayWidgetEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 356,
       "length": 35,
       "value": "\"\/pay\/v1\/public\/widgets\/pay-widget\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Endpoints\/FTPayWidgetEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Endpoints\/FTPayWidgetEndpoint.swift",
       "kind": "FloatLiteral",
       "offset": 485,
       "length": 4,
       "value": "30.0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
       "kind": "StringLiteral",
-      "offset": 3426,
+      "offset": 705,
+      "length": 11,
+      "value": "\"payWidget\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
+      "kind": "StringLiteral",
+      "offset": 1251,
+      "length": 11,
+      "value": "\"payWidget\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
+      "kind": "StringLiteral",
+      "offset": 1286,
+      "length": 10,
+      "value": "\"checkout\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
+      "kind": "StringLiteral",
+      "offset": 5883,
       "length": 20,
       "value": "\"YandexPayPayWidget\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Model\/FTPayWidgetModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Model\/FTPayWidgetModel.swift",
       "kind": "BooleanLiteral",
       "offset": 600,
       "length": 5,

@@ -86,6 +86,9 @@ public protocol FintechAnalyticsErrorReporter {
 public protocol FintechAnalyticsEventReporter : Swift.Sendable {
   func reportEvent(name: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
 }
+extension FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter {
+  public func reportEvent(name: Swift.String, params: [Swift.String : Swift.String])
+}
 public protocol FintechTelemetryAdapter : Swift.Sendable {
   func startTrace()
   func reportSpan(name: Swift.String, attributes: [Swift.String : Swift.String])

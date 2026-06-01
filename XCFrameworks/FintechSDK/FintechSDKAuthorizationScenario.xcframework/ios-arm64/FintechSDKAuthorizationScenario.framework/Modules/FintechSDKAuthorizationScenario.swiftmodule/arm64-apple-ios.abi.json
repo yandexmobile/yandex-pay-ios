@@ -303,6 +303,99 @@
             "funcSelfKind": "NonMutating"
           },
           {
+            "kind": "Var",
+            "name": "currentAuth",
+            "printedName": "currentAuth",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FintechSDKAuthInterfaces.FintechAuthModel?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechAuthModel",
+                    "printedName": "FintechSDKAuthInterfaces.FintechAuthModel",
+                    "usr": "s:24FintechSDKAuthInterfaces0A9AuthModelV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKAuthorizationScenario06FTAuthC0P11currentAuth0A17SDKAuthInterfaces0aF5ModelVSgvp",
+            "mangledName": "$s31FintechSDKAuthorizationScenario06FTAuthC0P11currentAuth0A17SDKAuthInterfaces0aF5ModelVSgvp",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "protocolReq": true,
+            "declAttributes": [
+              "Custom"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "FintechSDKAuthInterfaces.FintechAuthModel?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FintechAuthModel",
+                        "printedName": "FintechSDKAuthInterfaces.FintechAuthModel",
+                        "usr": "s:24FintechSDKAuthInterfaces0A9AuthModelV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKAuthorizationScenario06FTAuthC0P11currentAuth0A17SDKAuthInterfaces0aF5ModelVSgvg",
+                "mangledName": "$s31FintechSDKAuthorizationScenario06FTAuthC0P11currentAuth0A17SDKAuthInterfaces0aF5ModelVSgvg",
+                "moduleName": "FintechSDKAuthorizationScenario",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthorizationScenario.FTAuthScenario>",
+                "sugared_genericSig": "<Self where Self : FintechSDKAuthorizationScenario.FTAuthScenario>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "runBstOnly",
+            "printedName": "runBstOnly(mode:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAuthSession",
+                "printedName": "FintechSDKAuthInterfaces.FintechAuthSession",
+                "usr": "s:24FintechSDKAuthInterfaces0A11AuthSessionV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTAuthSessionAcquisitionMode",
+                "printedName": "FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode",
+                "usr": "s:31FintechSDKAuthorizationScenario28FTAuthSessionAcquisitionModeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario06FTAuthC0P10runBstOnly4mode0A17SDKAuthInterfaces0A11AuthSessionVAA0dL15AcquisitionModeO_tYa14FTSessionErrorQzYKF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario06FTAuthC0P10runBstOnly4mode0A17SDKAuthInterfaces0A11AuthSessionVAA0dL15AcquisitionModeO_tYa14FTSessionErrorQzYKF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthorizationScenario.FTAuthScenario>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthorizationScenario.FTAuthScenario>",
+            "protocolReq": true,
+            "declAttributes": [
+              "Custom"
+            ],
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
             "kind": "Function",
             "name": "logout",
             "printedName": "logout()",
@@ -937,7 +1030,10 @@
         "name": "FintechSDKAuthInterfaces",
         "printedName": "FintechSDKAuthInterfaces",
         "declKind": "Import",
-        "moduleName": "FintechSDKAuthorizationScenario"
+        "moduleName": "FintechSDKAuthorizationScenario",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
       },
       {
         "kind": "Import",
@@ -1261,6 +1357,73 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "currentAuth",
+            "printedName": "currentAuth",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FintechSDKAuthInterfaces.FintechAuthModel?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechAuthModel",
+                    "printedName": "FintechSDKAuthInterfaces.FintechAuthModel",
+                    "usr": "s:24FintechSDKAuthInterfaces0A9AuthModelV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKAuthorizationScenario06FTAuthC4ImplC11currentAuth0A17SDKAuthInterfaces0aG5ModelVSgvp",
+            "mangledName": "$s31FintechSDKAuthorizationScenario06FTAuthC4ImplC11currentAuth0A17SDKAuthInterfaces0aG5ModelVSgvp",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "Custom"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "FintechSDKAuthInterfaces.FintechAuthModel?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FintechAuthModel",
+                        "printedName": "FintechSDKAuthInterfaces.FintechAuthModel",
+                        "usr": "s:24FintechSDKAuthInterfaces0A9AuthModelV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKAuthorizationScenario06FTAuthC4ImplC11currentAuth0A17SDKAuthInterfaces0aG5ModelVSgvg",
+                "mangledName": "$s31FintechSDKAuthorizationScenario06FTAuthC4ImplC11currentAuth0A17SDKAuthInterfaces0aG5ModelVSgvg",
+                "moduleName": "FintechSDKAuthorizationScenario",
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "logout",
             "printedName": "logout()",
@@ -1364,6 +1527,39 @@
               "AccessControl",
               "Custom",
               "DiscardableResult"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "runBstOnly",
+            "printedName": "runBstOnly(mode:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAuthSession",
+                "printedName": "FintechSDKAuthInterfaces.FintechAuthSession",
+                "usr": "s:24FintechSDKAuthInterfaces0A11AuthSessionV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTAuthSessionAcquisitionMode",
+                "printedName": "FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode",
+                "usr": "s:31FintechSDKAuthorizationScenario28FTAuthSessionAcquisitionModeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario06FTAuthC4ImplC10runBstOnly4mode0A17SDKAuthInterfaces0A11AuthSessionVAA0dM15AcquisitionModeO_tYaAA14FTSessionErrorOYKF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario06FTAuthC4ImplC10runBstOnly4mode0A17SDKAuthInterfaces0A11AuthSessionVAA0dM15AcquisitionModeO_tYaAA14FTSessionErrorOYKF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "Custom"
             ],
             "spi_group_names": [
               "Internal"
@@ -2243,6 +2439,46 @@
           },
           {
             "kind": "Var",
+            "name": "noOAuth",
+            "printedName": "noOAuth",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FintechSDKAuthorizationScenario.FTSessionError.Type) -> FintechSDKAuthorizationScenario.FTSessionError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTSessionError",
+                    "printedName": "FintechSDKAuthorizationScenario.FTSessionError",
+                    "usr": "s:31FintechSDKAuthorizationScenario14FTSessionErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "FintechSDKAuthorizationScenario.FTSessionError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTSessionError",
+                        "printedName": "FintechSDKAuthorizationScenario.FTSessionError",
+                        "usr": "s:31FintechSDKAuthorizationScenario14FTSessionErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:31FintechSDKAuthorizationScenario14FTSessionErrorO7noOAuthyA2CmF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario14FTSessionErrorO7noOAuthyA2CmF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "spi_group_names": [
+              "Internal"
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "needToLogout",
             "printedName": "needToLogout",
             "children": [
@@ -2423,6 +2659,200 @@
         "declKind": "Protocol",
         "usr": "s:31FintechSDKAuthorizationScenario37FTRetriableAuthErrorProcessingUseCaseP",
         "mangledName": "$s31FintechSDKAuthorizationScenario37FTRetriableAuthErrorProcessingUseCaseP",
+        "moduleName": "FintechSDKAuthorizationScenario",
+        "genericSig": "<τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTRefreshBstUseCase",
+        "printedName": "FTRefreshBstUseCase",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "refreshBst",
+            "printedName": "refreshBst(mode:cancelPending:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAuthSession",
+                "printedName": "FintechSDKAuthInterfaces.FintechAuthSession",
+                "usr": "s:24FintechSDKAuthInterfaces0A11AuthSessionV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTAuthSessionAcquisitionMode",
+                "printedName": "FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode",
+                "usr": "s:31FintechSDKAuthorizationScenario28FTAuthSessionAcquisitionModeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario19FTRefreshBstUseCaseP07refreshE04mode13cancelPending0A17SDKAuthInterfaces0A11AuthSessionVAA06FTAuthO15AcquisitionModeO_SbtYaKF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario19FTRefreshBstUseCaseP07refreshE04mode13cancelPending0A17SDKAuthInterfaces0A11AuthSessionVAA06FTAuthO15AcquisitionModeO_SbtYaKF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthorizationScenario.FTRefreshBstUseCase>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthorizationScenario.FTRefreshBstUseCase>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "obtainBstForExistingAuth",
+            "printedName": "obtainBstForExistingAuth(mode:cancelPending:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAuthSession",
+                "printedName": "FintechSDKAuthInterfaces.FintechAuthSession",
+                "usr": "s:24FintechSDKAuthInterfaces0A11AuthSessionV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTAuthSessionAcquisitionMode",
+                "printedName": "FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode",
+                "usr": "s:31FintechSDKAuthorizationScenario28FTAuthSessionAcquisitionModeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario19FTRefreshBstUseCaseP06obtainE15ForExistingAuth4mode13cancelPending0A17SDKAuthInterfaces0aK7SessionVAA06FTAuthQ15AcquisitionModeO_SbtYaKF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario19FTRefreshBstUseCaseP06obtainE15ForExistingAuth4mode13cancelPending0A17SDKAuthInterfaces0aK7SessionVAA06FTAuthQ15AcquisitionModeO_SbtYaKF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthorizationScenario.FTRefreshBstUseCase>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthorizationScenario.FTRefreshBstUseCase>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:31FintechSDKAuthorizationScenario19FTRefreshBstUseCaseP",
+        "mangledName": "$s31FintechSDKAuthorizationScenario19FTRefreshBstUseCaseP",
+        "moduleName": "FintechSDKAuthorizationScenario",
+        "genericSig": "<τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTObtainOAuthUseCase",
+        "printedName": "FTObtainOAuthUseCase",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "obtainOAuth",
+            "printedName": "obtainOAuth(cancelPending:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAuthModel",
+                "printedName": "FintechSDKAuthInterfaces.FintechAuthModel",
+                "usr": "s:24FintechSDKAuthInterfaces0A9AuthModelV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario20FTObtainOAuthUseCaseP06obtainE013cancelPending0A17SDKAuthInterfaces0A9AuthModelVSb_tYaKF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario20FTObtainOAuthUseCaseP06obtainE013cancelPending0A17SDKAuthInterfaces0A9AuthModelVSb_tYaKF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthorizationScenario.FTObtainOAuthUseCase>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthorizationScenario.FTObtainOAuthUseCase>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:31FintechSDKAuthorizationScenario20FTObtainOAuthUseCaseP",
+        "mangledName": "$s31FintechSDKAuthorizationScenario20FTObtainOAuthUseCaseP",
         "moduleName": "FintechSDKAuthorizationScenario",
         "genericSig": "<τ_0_0 : Swift.Sendable>",
         "sugared_genericSig": "<Self : Swift.Sendable>",
@@ -4180,6 +4610,114 @@
           },
           {
             "kind": "Function",
+            "name": "refreshBst",
+            "printedName": "refreshBst(mode:cancelPending:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAuthSession",
+                "printedName": "FintechSDKAuthInterfaces.FintechAuthSession",
+                "usr": "s:24FintechSDKAuthInterfaces0A11AuthSessionV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTAuthSessionAcquisitionMode",
+                "printedName": "FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode",
+                "usr": "s:31FintechSDKAuthorizationScenario28FTAuthSessionAcquisitionModeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario20FTAuthFlowInteractorC10refreshBst4mode13cancelPending0A17SDKAuthInterfaces0A11AuthSessionVAA0dO15AcquisitionModeO_SbtYaKF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario20FTAuthFlowInteractorC10refreshBst4mode13cancelPending0A17SDKAuthInterfaces0A11AuthSessionVAA0dO15AcquisitionModeO_SbtYaKF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "obtainBstForExistingAuth",
+            "printedName": "obtainBstForExistingAuth(mode:cancelPending:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAuthSession",
+                "printedName": "FintechSDKAuthInterfaces.FintechAuthSession",
+                "usr": "s:24FintechSDKAuthInterfaces0A11AuthSessionV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTAuthSessionAcquisitionMode",
+                "printedName": "FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode",
+                "usr": "s:31FintechSDKAuthorizationScenario28FTAuthSessionAcquisitionModeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario20FTAuthFlowInteractorC24obtainBstForExistingAuth4mode13cancelPending0A17SDKAuthInterfaces0aK7SessionVAA0dQ15AcquisitionModeO_SbtYaKF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario20FTAuthFlowInteractorC24obtainBstForExistingAuth4mode13cancelPending0A17SDKAuthInterfaces0aK7SessionVAA0dQ15AcquisitionModeO_SbtYaKF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "obtainOAuth",
+            "printedName": "obtainOAuth(cancelPending:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAuthModel",
+                "printedName": "FintechSDKAuthInterfaces.FintechAuthModel",
+                "usr": "s:24FintechSDKAuthInterfaces0A9AuthModelV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario20FTAuthFlowInteractorC11obtainOAuth13cancelPending0A17SDKAuthInterfaces0A9AuthModelVSb_tYaKF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario20FTAuthFlowInteractorC11obtainOAuth13cancelPending0A17SDKAuthInterfaces0A9AuthModelVSb_tYaKF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "execute",
             "printedName": "execute(mode:cancelPending:)",
             "children": [
@@ -4313,6 +4851,20 @@
             "printedName": "FTAuthSignedInStateProviding",
             "usr": "s:31FintechSDKAuthorizationScenario28FTAuthSignedInStateProvidingP",
             "mangledName": "$s31FintechSDKAuthorizationScenario28FTAuthSignedInStateProvidingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTRefreshBstUseCase",
+            "printedName": "FTRefreshBstUseCase",
+            "usr": "s:31FintechSDKAuthorizationScenario19FTRefreshBstUseCaseP",
+            "mangledName": "$s31FintechSDKAuthorizationScenario19FTRefreshBstUseCaseP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTObtainOAuthUseCase",
+            "printedName": "FTObtainOAuthUseCase",
+            "usr": "s:31FintechSDKAuthorizationScenario20FTObtainOAuthUseCaseP",
+            "mangledName": "$s31FintechSDKAuthorizationScenario20FTObtainOAuthUseCaseP"
           },
           {
             "kind": "Conformance",
@@ -5250,10 +5802,30 @@
       },
       {
         "kind": "Import",
+        "name": "FintechSDKAuthInterfaces",
+        "printedName": "FintechSDKAuthInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAuthorizationScenario",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "FintechSDKAuthorizationScenario"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAuthInterfaces",
+        "printedName": "FintechSDKAuthInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAuthorizationScenario",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
       },
       {
         "kind": "Import",
@@ -5772,98 +6344,98 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTAuthScenarioImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTAuthScenarioImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 10678,
+      "offset": 12277,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTAuthScenarioImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTAuthScenarioImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 10893,
+      "offset": 12492,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTAuthScenarioImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTAuthScenarioImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 11104,
+      "offset": 12703,
       "length": 13,
       "value": "5000000000"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTAuthAPIServiceImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTAuthAPIServiceImpl.swift",
       "kind": "Array",
       "offset": 757,
       "length": 149,
       "value": "[401, 403]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTAuthAPIServiceImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTAuthAPIServiceImpl.swift",
       "kind": "IntegerLiteral",
       "offset": 943,
       "length": 3,
       "value": "409"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTBindEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTBindEndpoint.swift",
       "kind": "IntegerLiteral",
       "offset": 484,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTBindEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTBindEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 901,
       "length": 28,
       "value": "\"\/api\/v1\/authenticator\/bind\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTGenerateSessionEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTGenerateSessionEndpoint.swift",
       "kind": "IntegerLiteral",
       "offset": 587,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTGenerateSessionEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTGenerateSessionEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 851,
       "length": 41,
       "value": "\"\/api\/v1\/authenticator\/sessions\/generate\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTMerchAuthConfigEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTMerchAuthConfigEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 350,
       "length": 41,
       "value": "\"\/pay\/v1\/public\/configuration\/merch-auth\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTMerchAuthConfigEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTMerchAuthConfigEndpoint.swift",
       "kind": "IntegerLiteral",
       "offset": 471,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTMerchAuthConfigEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTMerchAuthConfigEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 724,
       "length": 10,
       "value": "\"web_only\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTRevokeTokenEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTRevokeTokenEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 300,
       "length": 37,
       "value": "\"\/api\/v1\/authenticator\/tokens\/revoke\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/4\/3\/4189693334\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTRevokeTokenEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/1\/4209558916\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTRevokeTokenEndpoint.swift",
       "kind": "FloatLiteral",
       "offset": 451,
       "length": 4,

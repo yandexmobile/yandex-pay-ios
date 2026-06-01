@@ -47,6 +47,10 @@ public struct DiehardNetworkClientFactoryImpl : FintechSDKNetworkInterfaces.Dieh
 }
 @_spi(Internal) public enum FTHeaderConstants {
   @_spi(Internal) public static let bstHeader: Swift.String
+  @_spi(Internal) public static let appMetricaUuid: Swift.String
+  @_spi(Internal) public static let deviceId: Swift.String
+  @_spi(Internal) public static let sdkInstallationId: Swift.String
+  @_spi(Internal) public static let sdkSessionId: Swift.String
 }
 @_spi(Internal) final public class NetworkAuthManagerImpl : FintechSDKNetworkInterfaces.FintechNetworkAuthManager {
   @_spi(Internal) final public var uidString: Swift.String {
