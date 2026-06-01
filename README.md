@@ -155,17 +155,16 @@ let merchant = YPSDKMerchant(
 YPay.initialize(
     environment: .production,
     locale: .ru,
-    presentationContextProvider: self,
     modules: [
         // Только необходимые модули здесь нужно указать
-        YPayWithRedirect.module(merchant: baseMerchant),
-        YPayInApp.module(merchant: baseMerchant),
-        YPAssistantModule.module(merchant: baseMerchant),
-        YPayInventory.module(merchant: baseMerchant),
+        YPayWithRedirect.module(merchant: merchant),
+        YPayInApp.module(merchant: merchant),
+        YPAssistantModule.module(merchant: merchant),
+        YPayInventory.module(merchant: merchant),
         YPayAuth.module(),
         YQuickPay.module(
           stateListener: stateListener,
-          merchant: baseMerchant,
+          merchant: merchant,
           presentationContextProvider: presentationContextProvider
         )
     ]
@@ -182,7 +181,6 @@ YPay.initialize(
 | `locale` | `YPSDKLocale` | — | `.ru`, `.en` или `.system` |
 | `theme` | `YPSDKThemeColorScheme` | `.system` | Цветовая схема: `.light`, `.dark`, `.system` |
 | `enableLogging` | `Bool` | `false` | Включить отладочные логи |
-| `presentationContextProvider` | `YPPresentationContextProviding?` | `nil` | Поставщик `UIViewController` для показа экранов SDK |
 | `modules` | `[YandexPaySDKModule]` | — | Список подключаемых модулей |
 
 ### 4. Контекст представления
