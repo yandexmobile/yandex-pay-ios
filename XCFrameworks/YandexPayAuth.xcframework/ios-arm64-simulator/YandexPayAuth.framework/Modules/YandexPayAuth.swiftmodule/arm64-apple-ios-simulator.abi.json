@@ -11,43 +11,6 @@
         "children": [
           {
             "kind": "Var",
-            "name": "initial",
-            "printedName": "initial",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(YandexPayAuth.YPPayAuthState.Type) -> YandexPayAuth.YPPayAuthState",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "YPPayAuthState",
-                    "printedName": "YandexPayAuth.YPPayAuthState",
-                    "usr": "s:13YandexPayAuth05YPPayC5StateO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "YandexPayAuth.YPPayAuthState.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "YPPayAuthState",
-                        "printedName": "YandexPayAuth.YPPayAuthState",
-                        "usr": "s:13YandexPayAuth05YPPayC5StateO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:13YandexPayAuth05YPPayC5StateO7initialyA2CmF",
-            "mangledName": "$s13YandexPayAuth05YPPayC5StateO7initialyA2CmF",
-            "moduleName": "YandexPayAuth"
-          },
-          {
-            "kind": "Var",
             "name": "authorized",
             "printedName": "authorized",
             "children": [
@@ -906,16 +869,6 @@
       },
       {
         "kind": "Import",
-        "name": "YandexPayConfiguration",
-        "printedName": "YandexPayConfiguration",
-        "declKind": "Import",
-        "moduleName": "YandexPayAuth",
-        "declAttributes": [
-          "SPIAccessControl"
-        ]
-      },
-      {
-        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -1114,38 +1067,6 @@
           },
           {
             "kind": "Function",
-            "name": "handleEvent",
-            "printedName": "handleEvent(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "YPayEventResult",
-                "printedName": "YandexPayConfiguration.YPayEventResult",
-                "usr": "s:22YandexPayConfiguration15YPayEventResultV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "YPayEvent",
-                "printedName": "YandexPayConfiguration.YPayEvent",
-                "usr": "s:22YandexPayConfiguration9YPayEventV"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:13YandexPayAuth04YPayC6ModuleC11handleEventy0aB13Configuration0dG6ResultVAE0dG0VYaF",
-            "mangledName": "$s13YandexPayAuth04YPayC6ModuleC11handleEventy0aB13Configuration0dG6ResultVAE0dG0VYaF",
-            "moduleName": "YandexPayAuth",
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "spi_group_names": [
-              "Internal"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "update",
             "printedName": "update(locale:)",
             "children": [
@@ -1228,13 +1149,6 @@
             "printedName": "YPayModule",
             "usr": "s:22YandexPayConfiguration10YPayModuleP",
             "mangledName": "$s22YandexPayConfiguration10YPayModuleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "YPayEventSubscriber",
-            "printedName": "YPayEventSubscriber",
-            "usr": "s:22YandexPayConfiguration19YPayEventSubscriberP",
-            "mangledName": "$s22YandexPayConfiguration19YPayEventSubscriberP"
           }
         ]
       },
@@ -1294,14 +1208,10 @@
             "mangledName": "$s13YandexPayAuth04YPayC0C03payC5StateAA05YPPaycF0Ovp",
             "moduleName": "YandexPayAuth",
             "declAttributes": [
-              "HasInitialValue",
               "Final",
               "Custom",
-              "HasStorage",
-              "SetterAccess",
               "AccessControl"
             ],
-            "hasStorage": true,
             "accessors": [
               {
                 "kind": "Accessor",
@@ -1319,7 +1229,6 @@
                 "usr": "s:13YandexPayAuth04YPayC0C03payC5StateAA05YPPaycF0Ovg",
                 "mangledName": "$s13YandexPayAuth04YPayC0C03payC5StateAA05YPPaycF0Ovg",
                 "moduleName": "YandexPayAuth",
-                "implicit": true,
                 "declAttributes": [
                   "Final"
                 ],
@@ -1590,7 +1499,7 @@
           {
             "kind": "Function",
             "name": "loginService",
-            "printedName": "loginService(_:didAuthorize:)",
+            "printedName": "loginService(_:didAuthorize:for:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1608,11 +1517,17 @@
                 "name": "FintechAuthModel",
                 "printedName": "FintechSDKAuthInterfaces.FintechAuthModel",
                 "usr": "s:24FintechSDKAuthInterfaces0A9AuthModelV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAuthType",
+                "printedName": "FintechSDKAuthInterfaces.FintechAuthType",
+                "usr": "s:24FintechSDKAuthInterfaces0A8AuthTypeO"
               }
             ],
             "declKind": "Func",
-            "usr": "s:13YandexPayAuth04YPayC0C12loginService_12didAuthorizey24FintechSDKAuthInterfaces0i5LoginF0_p_AF0iC5ModelVtF",
-            "mangledName": "$s13YandexPayAuth04YPayC0C12loginService_12didAuthorizey24FintechSDKAuthInterfaces0i5LoginF0_p_AF0iC5ModelVtF",
+            "usr": "s:13YandexPayAuth04YPayC0C12loginService_12didAuthorize3fory24FintechSDKAuthInterfaces0j5LoginF0_p_AG0jC5ModelVAG0jC4TypeOtF",
+            "mangledName": "$s13YandexPayAuth04YPayC0C12loginService_12didAuthorize3fory24FintechSDKAuthInterfaces0j5LoginF0_p_AG0jC5ModelVAG0jC4TypeOtF",
             "moduleName": "YandexPayAuth",
             "declAttributes": [
               "Custom",
@@ -1625,7 +1540,7 @@
           {
             "kind": "Function",
             "name": "loginService",
-            "printedName": "loginService(_:didFailWith:)",
+            "printedName": "loginService(_:didFailWith:for:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1643,11 +1558,52 @@
                 "name": "FintechLoginServiceError",
                 "printedName": "FintechSDKAuthInterfaces.FintechLoginServiceError",
                 "usr": "s:24FintechSDKAuthInterfaces0A17LoginServiceErrorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAuthType",
+                "printedName": "FintechSDKAuthInterfaces.FintechAuthType",
+                "usr": "s:24FintechSDKAuthInterfaces0A8AuthTypeO"
               }
             ],
             "declKind": "Func",
-            "usr": "s:13YandexPayAuth04YPayC0C12loginService_11didFailWithy24FintechSDKAuthInterfaces0j5LoginF0_p_AF0jmF5ErrorOtF",
-            "mangledName": "$s13YandexPayAuth04YPayC0C12loginService_11didFailWithy24FintechSDKAuthInterfaces0j5LoginF0_p_AF0jmF5ErrorOtF",
+            "usr": "s:13YandexPayAuth04YPayC0C12loginService_11didFailWith3fory24FintechSDKAuthInterfaces0k5LoginF0_p_AG0knF5ErrorOAG0kC4TypeOtF",
+            "mangledName": "$s13YandexPayAuth04YPayC0C12loginService_11didFailWith3fory24FintechSDKAuthInterfaces0k5LoginF0_p_AG0knF5ErrorOAG0kC4TypeOtF",
+            "moduleName": "YandexPayAuth",
+            "declAttributes": [
+              "Custom",
+              "Final",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "loginService",
+            "printedName": "loginService(_:didLogoutFor:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechLoginService",
+                "printedName": "any FintechSDKAuthInterfaces.FintechLoginService",
+                "usr": "s:24FintechSDKAuthInterfaces0A12LoginServiceP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAuthType",
+                "printedName": "FintechSDKAuthInterfaces.FintechAuthType",
+                "usr": "s:24FintechSDKAuthInterfaces0A8AuthTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13YandexPayAuth04YPayC0C12loginService_12didLogoutFory24FintechSDKAuthInterfaces0j5LoginF0_p_AF0jC4TypeOtF",
+            "mangledName": "$s13YandexPayAuth04YPayC0C12loginService_12didLogoutFory24FintechSDKAuthInterfaces0j5LoginF0_p_AF0jC4TypeOtF",
             "moduleName": "YandexPayAuth",
             "declAttributes": [
               "Custom",

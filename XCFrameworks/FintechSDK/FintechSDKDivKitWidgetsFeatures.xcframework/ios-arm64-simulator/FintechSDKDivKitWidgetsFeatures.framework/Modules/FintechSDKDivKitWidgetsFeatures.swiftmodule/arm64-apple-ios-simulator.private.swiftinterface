@@ -74,6 +74,20 @@ import _SwiftConcurrencyShims
   @_spi(Internal) @_Concurrency.MainActor final public func handle(model: FintechSDKDivKitWidgetsFeatures.FTWebViewLogoutHandler.Model, requestId: Swift.String) async
   @_spi(Internal) @objc deinit
 }
+@_spi(Internal) final public class FTWebViewOpenExternalURLHandler : FintechSDKWebViewFeatures.FTWebViewActionHandler {
+  @_spi(Internal) final public let name: Swift.String
+  @_spi(Internal) public init(presentationContextProvider: any FintechSDKCoreUI.FTPresentationContextProviding, cookieExchanger: (any FintechSDKAuthInterfaces.FintechCookieExchanger)? = nil)
+  @_spi(Internal) @_Concurrency.MainActor final public func handle(model: FintechSDKDivKitWidgetsFeatures.FTWebViewOpenExternalURLHandler.Model, requestId: Swift.String) async
+  @_spi(Internal) @objc deinit
+}
+@_spi(Internal) extension FintechSDKDivKitWidgetsFeatures.FTWebViewOpenExternalURLHandler {
+  @_spi(Internal) public struct Model : Swift.Decodable {
+    @_spi(Internal) public let url: Foundation.URL
+    @_spi(Internal) public let isWebViewClosed: Swift.Bool
+    @_spi(Internal) public let isAuthUrlRequired: Swift.Bool
+    @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
+  }
+}
 @_spi(Internal) final public class FTOpenWebViewDivUrlHandler : @preconcurrency FintechSDKBDUICore.FintechDivUrlHandler {
   @_spi(Internal) public enum AuthLevel : Swift.String {
     @_spi(Internal) case bstBiometric
@@ -85,7 +99,7 @@ import _SwiftConcurrencyShims
       @_spi(Internal) get
     }
   }
-  @_spi(Internal) public init(presentationContextProvider: any FintechSDKCoreUI.FTPresentationContextProviding, webViewActionHandlersProvider: @escaping @_Concurrency.MainActor (FintechSDKDivKitWidgetsFeatures.FTOpenWebViewDivUrlHandler.AuthLevel) -> [any FintechSDKWebViewFeatures.FTWebViewActionHandler], eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, networkChallengeHandlerFactory: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory, initialBSTProvider: (@Sendable () async -> Swift.String?)? = nil, additionalQueryParametersProvider: (any FintechSDKDivKitWidgetsFeatures.FTOpenWebViewQueryParametersProviding)? = nil, extraHeadersBuilder: (@Sendable () -> [Swift.String : Swift.String])? = nil)
+  @_spi(Internal) public init(presentationContextProvider: any FintechSDKCoreUI.FTPresentationContextProviding, webViewActionHandlersProvider: @escaping @_Concurrency.MainActor (FintechSDKDivKitWidgetsFeatures.FTOpenWebViewDivUrlHandler.AuthLevel) -> [any FintechSDKWebViewFeatures.FTWebViewActionHandler], eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, networkChallengeHandlerFactory: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory, cookieExchanger: (any FintechSDKAuthInterfaces.FintechCookieExchanger)? = nil, initialBSTProvider: (@Sendable () async -> Swift.String?)? = nil, additionalQueryParametersProvider: (any FintechSDKDivKitWidgetsFeatures.FTOpenWebViewQueryParametersProviding)? = nil, extraHeadersBuilder: (@Sendable () -> [Swift.String : Swift.String])? = nil)
   @_spi(Internal) @_Concurrency.MainActor final public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
   @_spi(Internal) @objc deinit
 }

@@ -161,8 +161,9 @@ public enum FintechLoginServiceError : Foundation.LocalizedError {
   case concurrencyError(underlying: (any Swift.Error)?)
 }
 public protocol FintechLoginServiceDelegate : AnyObject {
-  @_Concurrency.MainActor func loginService(_ service: any FintechSDKAuthInterfaces.FintechLoginService, didAuthorize model: FintechSDKAuthInterfaces.FintechAuthModel)
-  @_Concurrency.MainActor func loginService(_ service: any FintechSDKAuthInterfaces.FintechLoginService, didFailWith error: FintechSDKAuthInterfaces.FintechLoginServiceError)
+  @_Concurrency.MainActor func loginService(_ service: any FintechSDKAuthInterfaces.FintechLoginService, didAuthorize model: FintechSDKAuthInterfaces.FintechAuthModel, for type: FintechSDKAuthInterfaces.FintechAuthType)
+  @_Concurrency.MainActor func loginService(_ service: any FintechSDKAuthInterfaces.FintechLoginService, didFailWith error: FintechSDKAuthInterfaces.FintechLoginServiceError, for type: FintechSDKAuthInterfaces.FintechAuthType)
+  @_Concurrency.MainActor func loginService(_ service: any FintechSDKAuthInterfaces.FintechLoginService, didLogoutFor type: FintechSDKAuthInterfaces.FintechAuthType)
 }
 public protocol FintechLoginService : AnyObject {
   typealias Model = FintechSDKAuthInterfaces.FintechAuthModel

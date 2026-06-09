@@ -228,21 +228,23 @@ public protocol FintechYBSDKApi {
   @_spi(Internal) final public func openWebViewController(url: Foundation.URL, params: [Swift.String : Swift.String]?)
   @_spi(Internal) @objc deinit
 }
-@_spi(Internal) @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class FTBDUINavigationController : UIKit.UINavigationController {
-  @_spi(Internal) @_Concurrency.MainActor final public var onViewDidDisapper: ((UIKit.UINavigationController) -> Swift.Void)?
+@_spi(Internal) @objc @_Concurrency.MainActor @preconcurrency open class FTBDUINavigationController : UIKit.UINavigationController {
+  @_spi(Internal) @_Concurrency.MainActor public var onViewDidDisapper: ((UIKit.UINavigationController) -> Swift.Void)?
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(backGestureEnabledDefault: Swift.Bool, onViewDidDisapper: ((UIKit.UINavigationController) -> Swift.Void)? = nil)
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency convenience public init(rootViewController: UIKit.UIViewController, backGestureEnabledDefault: Swift.Bool, onViewDidDisapper: ((UIKit.UINavigationController) -> Swift.Void)? = nil)
-  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
-  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidDisappear(_ animated: Swift.Bool)
-  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override final public func pushViewController(_ viewController: UIKit.UIViewController, animated: Swift.Bool)
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidDisappear(_ animated: Swift.Bool)
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override dynamic public func pushViewController(_ viewController: UIKit.UIViewController, animated: Swift.Bool)
+  @_spi(Internal) @available(*, unavailable)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) extension FintechSDKBDUIFeatures.FTBDUINavigationController : UIKit.UINavigationControllerDelegate {
-  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc final public func navigationController(_ navigationController: UIKit.UINavigationController, didShow _: UIKit.UIViewController, animated: Swift.Bool)
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc dynamic public func navigationController(_ navigationController: UIKit.UINavigationController, didShow _: UIKit.UIViewController, animated: Swift.Bool)
 }
 @_spi(Internal) extension FintechSDKBDUIFeatures.FTBDUINavigationController : UIKit.UIGestureRecognizerDelegate {
-  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc final public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
-  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc final public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc dynamic public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc dynamic public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
 }
 @_spi(Internal) final public class FTFlexRouter : FintechSDKBDUICore.FintechBDUIRouter {
   @_spi(Internal) public init(presenterViewController: UIKit.UIViewController?, backGestureEnabledDefault: Swift.Bool)

@@ -4281,7 +4281,7 @@
           {
             "kind": "Function",
             "name": "loginService",
-            "printedName": "loginService(_:didAuthorize:)",
+            "printedName": "loginService(_:didAuthorize:for:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -4299,11 +4299,17 @@
                 "name": "FintechAuthModel",
                 "printedName": "FintechSDKAuthInterfaces.FintechAuthModel",
                 "usr": "s:24FintechSDKAuthInterfaces0A9AuthModelV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAuthType",
+                "printedName": "FintechSDKAuthInterfaces.FintechAuthType",
+                "usr": "s:24FintechSDKAuthInterfaces0A8AuthTypeO"
               }
             ],
             "declKind": "Func",
-            "usr": "s:24FintechSDKAuthInterfaces0A20LoginServiceDelegateP05loginE0_12didAuthorizeyAA0adE0_p_AA0A9AuthModelVtF",
-            "mangledName": "$s24FintechSDKAuthInterfaces0A20LoginServiceDelegateP05loginE0_12didAuthorizeyAA0adE0_p_AA0A9AuthModelVtF",
+            "usr": "s:24FintechSDKAuthInterfaces0A20LoginServiceDelegateP05loginE0_12didAuthorize3foryAA0adE0_p_AA0A9AuthModelVAA0aK4TypeOtF",
+            "mangledName": "$s24FintechSDKAuthInterfaces0A20LoginServiceDelegateP05loginE0_12didAuthorize3foryAA0adE0_p_AA0A9AuthModelVAA0aK4TypeOtF",
             "moduleName": "FintechSDKAuthInterfaces",
             "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthInterfaces.FintechLoginServiceDelegate>",
             "sugared_genericSig": "<Self where Self : FintechSDKAuthInterfaces.FintechLoginServiceDelegate>",
@@ -4317,7 +4323,7 @@
           {
             "kind": "Function",
             "name": "loginService",
-            "printedName": "loginService(_:didFailWith:)",
+            "printedName": "loginService(_:didFailWith:for:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -4335,11 +4341,53 @@
                 "name": "FintechLoginServiceError",
                 "printedName": "FintechSDKAuthInterfaces.FintechLoginServiceError",
                 "usr": "s:24FintechSDKAuthInterfaces0A17LoginServiceErrorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAuthType",
+                "printedName": "FintechSDKAuthInterfaces.FintechAuthType",
+                "usr": "s:24FintechSDKAuthInterfaces0A8AuthTypeO"
               }
             ],
             "declKind": "Func",
-            "usr": "s:24FintechSDKAuthInterfaces0A20LoginServiceDelegateP05loginE0_11didFailWithyAA0adE0_p_AA0adE5ErrorOtF",
-            "mangledName": "$s24FintechSDKAuthInterfaces0A20LoginServiceDelegateP05loginE0_11didFailWithyAA0adE0_p_AA0adE5ErrorOtF",
+            "usr": "s:24FintechSDKAuthInterfaces0A20LoginServiceDelegateP05loginE0_11didFailWith3foryAA0adE0_p_AA0adE5ErrorOAA0A8AuthTypeOtF",
+            "mangledName": "$s24FintechSDKAuthInterfaces0A20LoginServiceDelegateP05loginE0_11didFailWith3foryAA0adE0_p_AA0adE5ErrorOAA0A8AuthTypeOtF",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthInterfaces.FintechLoginServiceDelegate>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthInterfaces.FintechLoginServiceDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "Custom"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "loginService",
+            "printedName": "loginService(_:didLogoutFor:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechLoginService",
+                "printedName": "any FintechSDKAuthInterfaces.FintechLoginService",
+                "usr": "s:24FintechSDKAuthInterfaces0A12LoginServiceP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAuthType",
+                "printedName": "FintechSDKAuthInterfaces.FintechAuthType",
+                "usr": "s:24FintechSDKAuthInterfaces0A8AuthTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKAuthInterfaces0A20LoginServiceDelegateP05loginE0_12didLogoutForyAA0adE0_p_AA0A8AuthTypeOtF",
+            "mangledName": "$s24FintechSDKAuthInterfaces0A20LoginServiceDelegateP05loginE0_12didLogoutForyAA0adE0_p_AA0A8AuthTypeOtF",
             "moduleName": "FintechSDKAuthInterfaces",
             "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthInterfaces.FintechLoginServiceDelegate>",
             "sugared_genericSig": "<Self where Self : FintechSDKAuthInterfaces.FintechLoginServiceDelegate>",
