@@ -1,0 +1,50 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKNetworkImplementation -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import FintechSDKAnalyticsInterfaces
+import FintechSDKAuthInterfaces
+import FintechSDKCommonEntity
+import FintechSDKCoreAnalytics
+import FintechSDKCoreUI
+import FintechSDKCoreUtils
+import FintechSDKNetworkInterfaces
+import Foundation
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct DiehardNetworkClientFactoryImpl : FintechSDKNetworkInterfaces.DiehardNetworkClientFactory {
+  public init(uid: Foundation.NSNumber?, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, networkChallengeHandler: (any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler)?, observers: [any FintechSDKNetworkInterfaces.FintechNetworkEventObserver]?)
+  public func makeClient(baseURL: Swift.String) -> any FintechSDKNetworkInterfaces.FintechNetworkClient
+}
+public protocol FTFrontbackUrlProvider : Swift.Sendable {
+  var frontbackBaseUrl: Swift.String { get }
+}
+public protocol FTFrontbackServiceTokenProvider : Swift.Sendable {
+  var frontbackServiceToken: Swift.String { get }
+}
+extension FintechSDKCommonEntity.FintechSDKEnvironment : FintechSDKNetworkImplementation.FTFrontbackUrlProvider {
+  public var frontbackBaseUrl: Swift.String {
+    get
+  }
+}
+extension FintechSDKCommonEntity.FintechSDKEnvironment : FintechSDKNetworkImplementation.FTFrontbackServiceTokenProvider {
+  public var frontbackServiceToken: Swift.String {
+    get
+  }
+}
+public protocol FTPayBackendUrlProvider : Swift.Sendable {
+  var payBackendBaseUrl: Swift.String { get }
+}
+extension FintechSDKCommonEntity.FintechSDKEnvironment : FintechSDKNetworkImplementation.FTPayBackendUrlProvider {
+  public var payBackendBaseUrl: Swift.String {
+    get
+  }
+}
+public struct FTRawDataResponseDecoder : FintechSDKNetworkInterfaces.FintechResponseDecoder {
+  public init()
+  public func decode(data: Foundation.Data, response: Foundation.HTTPURLResponse) async throws -> Foundation.Data
+  public typealias Output = Foundation.Data
+}

@@ -1,0 +1,145 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKQuickPayment -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+@_spi(Internal) import FintechSDKAnalyticsInterfaces
+@_spi(Internal) import FintechSDKAuthCoreImplementation
+@_spi(Internal) import FintechSDKAuthInterfaces
+@_spi(Internal) import FintechSDKAuthorizationScenario
+@_spi(Internal) import FintechSDKBDUICore
+@_spi(Internal) import FintechSDKBDUIFeatures
+import FintechSDKCommonEntity
+@_spi(Internal) import FintechSDKCoreAnalytics
+@_spi(Internal) import FintechSDKCoreUI
+@_spi(Internal) import FintechSDKCoreUtils
+@_spi(Internal) import FintechSDKDivKitWidgetsFeatures
+@_spi(Internal) import FintechSDKDivKitWidgetsFeatures/*.FTWidgetExpandState*/
+import FintechSDKFontsInterfaces
+@_spi(Internal) import FintechSDKNetworkImplementation
+@_spi(Internal) import FintechSDKNetworkInterfaces
+@_spi(Internal) import FintechSDKPollingScenario
+@_spi(Internal) import FintechSDKQuickPaymentEntity
+@_spi(Internal) import FintechSDKQuickPaymentShared
+@_spi(Internal) import FintechSDKRemoteResourcesData
+import Foundation
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public typealias FintechQuickPayStateChangedHandler = (Swift.Bool) -> Swift.Void
+@_spi(Internal) extension FintechSDKDivKitWidgetsFeatures.FTWidgetRefreshManager : FintechSDKBDUIFeatures.FTWidgetReloading {
+}
+public enum FTQuickPayAuthState : Swift.Equatable {
+  public enum SecurityCheckFailReason : Swift.Equatable {
+    case userCancelled
+    case biometryNotAvailable
+    case notInteractive
+    case unknownError
+    public static func == (a: FintechSDKQuickPayment.FTQuickPayAuthState.SecurityCheckFailReason, b: FintechSDKQuickPayment.FTQuickPayAuthState.SecurityCheckFailReason) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  case notAuthorized
+  case authorizationInProgress
+  case accountAuthorizedNotActivated
+  case accountAuthorized
+  case securityCheckInProgress
+  case securityCheckFailed(reason: FintechSDKQuickPayment.FTQuickPayAuthState.SecurityCheckFailReason)
+  case securityCheckRequired
+  case securityCheckCompleted
+  public static func == (a: FintechSDKQuickPayment.FTQuickPayAuthState, b: FintechSDKQuickPayment.FTQuickPayAuthState) -> Swift.Bool
+}
+public struct FTQuickPayConfig {
+  public let merchantId: Swift.String
+  public let locale: FintechSDKCoreUI.FintechLocale
+  public let theme: FintechSDKCommonEntity.FintechSDKTheme
+  public let environment: FintechSDKCommonEntity.FintechSDKEnvironment
+  public let enableLogging: Swift.Bool
+  public let isActivatedByDefault: Swift.Bool
+  public init(merchantId: Swift.String, locale: FintechSDKCoreUI.FintechLocale, theme: FintechSDKCommonEntity.FintechSDKTheme, environment: FintechSDKCommonEntity.FintechSDKEnvironment, enableLogging: Swift.Bool, isActivatedByDefault: Swift.Bool = true)
+}
+@_spi(Internal) public struct FTQuickPayPaymentMethodType : Swift.Equatable, Swift.Sendable {
+  @_spi(Internal) public let rawValue: Swift.String
+  @_spi(Internal) public static let sbp: FintechSDKQuickPayment.FTQuickPayPaymentMethodType
+  @_spi(Internal) public static let card: FintechSDKQuickPayment.FTQuickPayPaymentMethodType
+  @_spi(Internal) public static let yabank: FintechSDKQuickPayment.FTQuickPayPaymentMethodType
+  @_spi(Internal) public static func == (a: FintechSDKQuickPayment.FTQuickPayPaymentMethodType, b: FintechSDKQuickPayment.FTQuickPayPaymentMethodType) -> Swift.Bool
+}
+public enum FTQuickPayWidgetExpandState : Swift.String {
+  case collapsed
+  case expanded
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol FTQuickPaymentStateListener : AnyObject {
+  func onPaymentEnabledStateChanged(isEnabled: Swift.Bool)
+  func onSessionExpired()
+  func onPaymentResult(quickpayResult: FintechSDKQuickPaymentEntity.FTQuickPayResult)
+  func onAuthStateChanged(_ state: FintechSDKQuickPayment.FTQuickPayAuthState)
+  func onPaymentMethodSelected()
+  func onPaymentMethodSelectionError()
+}
+extension FintechSDKQuickPayment.FTQuickPaymentStateListener {
+  public func onAuthStateChanged(_ state: FintechSDKQuickPayment.FTQuickPayAuthState)
+  public func onPaymentMethodSelected()
+  public func onPaymentMethodSelectionError()
+}
+public enum FintechQuickPaymentError : Swift.Error {
+  case noAuth
+  case cannotAuth
+  case cannotCreateNewSession(underlying: any Swift.Error)
+  case noPresentationContext
+  case widgetNotActivated
+}
+@_spi(Internal) final public class FintechQuickPayHandler {
+  @_spi(Internal) @_Concurrency.MainActor public init(config: FintechSDKQuickPayment.FTQuickPayConfig, stateListener: any FintechSDKQuickPayment.FTQuickPaymentStateListener, appMetricaAdapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter, fontsAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter, bduiAdapterFactory: any FintechSDKBDUIFeatures.FintechBDUIAdapterFactory, rtmFactory: any FintechSDKAnalyticsInterfaces.FintechRTMAdapterFactory, rumFactory: any FintechSDKAnalyticsInterfaces.FintechRUMAdapterFactory, accountManagerAdapter: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, loginService: any FintechSDKAuthInterfaces.FintechLoginService, presentationContextProvider: (any FintechSDKCoreUI.FTPresentationContextProviding)?)
+  @_spi(Internal) @_Concurrency.MainActor final public func createPaymentMethodsWidget(allowSilentReload: Swift.Bool = true) -> any SwiftUICore.View
+  @_spi(Internal) @_Concurrency.MainActor final public func createPaymentMethodsWidget(allowSilentReload: Swift.Bool = true) -> UIKit.UIView
+  @_spi(Internal) @_Concurrency.MainActor final public func createActivePaymentMethodBadge(allowSilentReload: Swift.Bool = true) -> any SwiftUICore.View
+  @_spi(Internal) @_Concurrency.MainActor final public func createActivePaymentMethodBadge(allowSilentReload: Swift.Bool = true) -> UIKit.UIView
+  @_spi(Internal) @_Concurrency.MainActor final public func enableActivePaymentMethodBadge()
+  @_spi(Internal) @_Concurrency.MainActor final public func disableActivePaymentMethodBadge()
+  @_spi(Internal) final public func isQuickPaymentEnabled() async throws -> Swift.Bool
+  @_spi(Internal) final public func enableQuickPayment(showOnboardingAfterAuth: Swift.Bool = true) async throws
+  @_spi(Internal) final public func disableQuickPayment() async throws
+  @_spi(Internal) final public func getPaymentSessionId() async throws -> Swift.String
+  @_spi(Internal) final public func login() async throws
+  @_spi(Internal) final public func logout() async throws
+  @_spi(Internal) final public func activateQuickPay(showOnboardingAfterAuth: Swift.Bool = true) async throws
+  @_spi(Internal) final public func deactivateQuickPay() async throws
+  @_spi(Internal) final public func isQuickPayActivated() async -> Swift.Bool
+  @_spi(Internal) final public func getAuthState() async -> FintechSDKQuickPayment.FTQuickPayAuthState
+  @_spi(Internal) final public func isSecurityCheckRequired() async throws -> Swift.Bool
+  @_spi(Internal) final public func hasAvailablePaymentMethods() async throws -> Swift.Bool
+  @_spi(Internal) final public func stopPaymentPolling() async
+  @_spi(Internal) final public func showFaqScreen() async
+  @_spi(Internal) final public func showOnboardingStoriesScreen() async
+  @_spi(Internal) final public func showAddPaymentMethodScreen(_ type: FintechSDKQuickPayment.FTQuickPayPaymentMethodType) async throws
+  @_spi(Internal) final public func showSorryScreen(targetViewId: Swift.String) async
+  @_spi(Internal) @_Concurrency.MainActor final public func showSorryScreen(anchor: UIKit.UIView, shape: FintechSDKBDUICore.FTBDUIAnchorShape = .capsule) async
+  @_spi(Internal) @_Concurrency.MainActor final public func showSorryScreen(anchor: FintechSDKBDUICore.FTSorryAnchor) async
+  @_spi(Internal) final public func handleUserActivity(_ userActivity: Foundation.NSUserActivity) -> Swift.Bool
+  @_spi(Internal) final public func handleOpenURL(_ url: Foundation.URL) -> Swift.Bool
+  @_spi(Internal) @_Concurrency.MainActor final public func createExpandablePaymentMethodsWidget(expandState: FintechSDKQuickPayment.FTQuickPayWidgetExpandState, allowSilentReload: Swift.Bool = true) -> any SwiftUICore.View
+  @_spi(Internal) @_Concurrency.MainActor final public func createExpandablePaymentMethodsWidget(expandState: FintechSDKQuickPayment.FTQuickPayWidgetExpandState, allowSilentReload: Swift.Bool = true) -> UIKit.UIView
+  @_spi(Internal) final public func addWidgetExpandChangeObserver(_ callback: @escaping (_ state: FintechSDKQuickPayment.FTQuickPayWidgetExpandState) -> Swift.Void) async -> Foundation.UUID
+  @_spi(Internal) final public func removeWidgetExpandChangeObserver(forId id: Foundation.UUID) async
+  @_spi(Internal) @_Concurrency.MainActor final public func setWidgetExpanded(_ state: FintechSDKQuickPayment.FTQuickPayWidgetExpandState)
+  @_spi(Internal) @_Concurrency.MainActor final public func isWidgetExpanded() -> FintechSDKQuickPayment.FTQuickPayWidgetExpandState?
+  @_spi(Internal) @objc deinit
+}
+@_spi(Internal) extension FintechSDKQuickPayment.FintechQuickPayHandler {
+  @_spi(Internal) @_Concurrency.MainActor final public func update(locale: FintechSDKCoreUI.FintechLocale)
+  @_spi(Internal) @_Concurrency.MainActor final public func update(theme: FintechSDKCommonEntity.FintechSDKTheme)
+}
+extension FintechSDKQuickPayment.FTQuickPayAuthState.SecurityCheckFailReason : Swift.Hashable {}
+extension FintechSDKQuickPayment.FTQuickPayWidgetExpandState : Swift.Equatable {}
+extension FintechSDKQuickPayment.FTQuickPayWidgetExpandState : Swift.Hashable {}
+extension FintechSDKQuickPayment.FTQuickPayWidgetExpandState : Swift.RawRepresentable {}

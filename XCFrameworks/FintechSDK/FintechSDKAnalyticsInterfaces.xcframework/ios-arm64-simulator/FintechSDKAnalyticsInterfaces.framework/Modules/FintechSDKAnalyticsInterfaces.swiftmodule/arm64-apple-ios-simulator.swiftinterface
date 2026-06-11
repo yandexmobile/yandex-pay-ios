@@ -1,0 +1,105 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKAnalyticsInterfaces -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public protocol FintechAppMetricaAdapter : Swift.Sendable {
+  var uuid: Swift.String { get }
+  var deviceID: Swift.String? { get }
+  func isReporterCreated(for apiKey: Swift.String) -> Swift.Bool
+  func reporter(for apiKey: Swift.String) throws(FintechSDKAnalyticsInterfaces.FintechAppMetricaError) -> any FintechSDKAnalyticsInterfaces.FintechAppMetricaReportingAdapter
+  func extendedReporter(for apiKey: Swift.String) throws(FintechSDKAnalyticsInterfaces.FintechAppMetricaError) -> any FintechSDKAnalyticsInterfaces.FintechAppMetricaReportingAdapter
+  func activateReporter(for apiKey: Swift.String) throws(FintechSDKAnalyticsInterfaces.FintechAppMetricaError)
+}
+public protocol FintechAppMetricaYandexAdapter {
+  func createYandexReporter(for apiKey: Swift.String) throws(FintechSDKAnalyticsInterfaces.FintechAppMetricaError) -> any FintechSDKAnalyticsInterfaces.FintechAppMetricaYandexReportingAdapter
+}
+public enum FintechAppMetricaError : Swift.Error {
+  case configCreationError(apiKey: Swift.String)
+  case reporterCreationError(apiKey: Swift.String)
+}
+public protocol FintechAppMetricaReportingAdapter : Swift.Sendable {
+  func report(eventName: Swift.String, params: [Swift.String : Any], onFailure: ((any Swift.Error) -> Swift.Void)?)
+  func setPUID(_ puid: Swift.String?)
+  func setAppEnvironment(_ value: Swift.String, for key: Swift.String)
+}
+public protocol FintechAppMetricaYandexReportingAdapter {
+  func setPUID(_ puid: Swift.String?)
+}
+public enum FTCommonKeys {
+  public static let description: Swift.String
+}
+public enum FTEventType {
+  public static let native: Swift.String
+}
+public protocol FTFirstInteractionEventsListener : AnyObject, Swift.Sendable {
+  func onFirstInteraction(screenPath: Swift.String, navigationStartTimeNanos: Swift.UInt64) async -> Swift.Bool
+}
+public protocol FTNetworkEventsListener : AnyObject, Swift.Sendable {
+  func onNetworkRequestStarted(path: Swift.String) async
+  func onFirstByteReceived(durationMs: Swift.Int64, path: Swift.String) async
+  func onNetworkRequestCompleted(durationMs: Swift.Int64, path: Swift.String, sizeBytes: Swift.Int64) async
+  func onNetworkRequestFailed(path: Swift.String) async
+}
+public protocol FTRenderingEventsListener : AnyObject, Swift.Sendable {
+  func onScreenDecodingCompleted(durationMs: Swift.Int64, screenPath: Swift.String, sizeBytes: Swift.Int64) async
+  func onScreenRenderingCompleted(durationMs: Swift.Int64, screenPath: Swift.String) async
+  func getCurrentPath() async -> Swift.String?
+}
+public enum FintechAnalyticsEnvironment : Swift.Sendable {
+  case development
+  case testing
+  case production
+  public static func == (a: FintechSDKAnalyticsInterfaces.FintechAnalyticsEnvironment, b: FintechSDKAnalyticsInterfaces.FintechAnalyticsEnvironment) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol FintechRTMAdapter : Swift.Sendable {
+  func reportEvent(_ name: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
+  func reportError(params: [Swift.String : Swift.String], message: Swift.String, type: Swift.String, source: Swift.String)
+}
+public protocol FintechRTMAdapterFactory : Swift.Sendable {
+  func make(userAgent: Swift.String, projectName: Swift.String, appVersion: Swift.String, userID: Swift.UInt64, environment: FintechSDKAnalyticsInterfaces.FintechAnalyticsEnvironment, reqID: Swift.String) throws -> any FintechSDKAnalyticsInterfaces.FintechRTMAdapter
+}
+public protocol FintechRUMAdapter : Swift.Sendable {
+  func reportEvent(_ name: Swift.String, params: [Swift.String : Swift.String]) async throws(FintechSDKAnalyticsInterfaces.FintechRUMError)
+  func reportEvent(_ name: Swift.String, params: [Swift.String : Swift.String], table: Swift.String) async throws(FintechSDKAnalyticsInterfaces.FintechRUMError)
+}
+public protocol FintechRUMAdapterFactory : Swift.Sendable {
+  func make(uid: Swift.String?) -> any FintechSDKAnalyticsInterfaces.FintechRUMAdapter
+}
+public enum FintechRUMError : Foundation.LocalizedError {
+  case networkError(underlyingError: any Swift.Error)
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public protocol FintechAnalyticsErrorReporter {
+  func reportError(message: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
+}
+public protocol FintechAnalyticsEventReporter : Swift.Sendable {
+  func reportEvent(name: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
+}
+extension FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter {
+  public func reportEvent(name: Swift.String, params: [Swift.String : Swift.String])
+}
+public protocol FintechTelemetryAdapter : Swift.Sendable {
+  func startTrace()
+  func reportSpan(name: Swift.String, attributes: [Swift.String : Swift.String])
+  func startRequestSpan(url: Swift.String, method: Swift.String) -> (any FintechSDKAnalyticsInterfaces.FintechRequestSpan)?
+  func endRequestSpan(_ span: any FintechSDKAnalyticsInterfaces.FintechRequestSpan, statusCode: Swift.Int?, error: (any Swift.Error)?)
+}
+public protocol FintechRequestSpan {
+  var traceparent: Swift.String { get }
+}
+public protocol FintechTelemetryAdapterFactory {
+  func make(backendURL: Swift.String, rootSpanName: Swift.String, traceId: Swift.String?, spanId: Swift.String?) -> (any FintechSDKAnalyticsInterfaces.FintechTelemetryAdapter)?
+}
+extension FintechSDKAnalyticsInterfaces.FintechAnalyticsEnvironment : Swift.Equatable {}
+extension FintechSDKAnalyticsInterfaces.FintechAnalyticsEnvironment : Swift.Hashable {}

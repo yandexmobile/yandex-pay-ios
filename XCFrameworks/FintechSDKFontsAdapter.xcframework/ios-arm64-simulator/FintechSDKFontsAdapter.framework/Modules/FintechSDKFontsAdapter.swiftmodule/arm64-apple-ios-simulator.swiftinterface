@@ -1,0 +1,21 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKFontsAdapter -package-name fonts
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import CoreGraphics
+import CoreText
+import FintechSDKFontsInterfaces
+import Foundation/*.Bundle*/
+import Foundation/*.ProcessInfo*/
+import Foundation/*.URL*/
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+final public class FintechFontsAdapterImpl : FintechSDKFontsInterfaces.FintechFontsAdapter {
+  public init()
+  final public func font(family: FintechSDKFontsInterfaces.FintechFontFamily, weight: FintechSDKFontsInterfaces.FintechFontWeight, size: CoreFoundation.CGFloat) -> UIKit.UIFont
+  final public func fontWithProportionalNumbers(family: FintechSDKFontsInterfaces.FintechFontFamily, weight: FintechSDKFontsInterfaces.FintechFontWeight, size: CoreFoundation.CGFloat) -> UIKit.UIFont
+  @objc deinit
+}

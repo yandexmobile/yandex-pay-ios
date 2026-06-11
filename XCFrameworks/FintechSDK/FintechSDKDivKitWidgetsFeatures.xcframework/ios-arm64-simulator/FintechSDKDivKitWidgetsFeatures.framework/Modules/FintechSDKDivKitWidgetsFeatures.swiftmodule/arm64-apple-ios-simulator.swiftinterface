@@ -1,0 +1,47 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKDivKitWidgetsFeatures -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import Combine
+import FintechSDKAnalyticsInterfaces
+import FintechSDKAuthInterfaces
+import FintechSDKBDUICore
+import FintechSDKBDUIFeatures
+import FintechSDKCoreUI
+import FintechSDKCoreUtils
+import FintechSDKNativeErrorFeature
+import FintechSDKNetworkImplementation
+import FintechSDKNetworkInterfaces
+import FintechSDKWebViewFeatures
+import Foundation
+import Swift
+import SwiftUI
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct FTRemoteActionResponse {
+  public let statusCode: Swift.Int
+  public let body: [Swift.String : Any]
+  public subscript<T>(key: Swift.String) -> T? {
+    get
+  }
+  public subscript<T>(path keyPath: Swift.String...) -> T? {
+    get
+  }
+}
+public protocol FTRemoteActionResponseHandler {
+  func canHandle(path: Swift.String) -> Swift.Bool
+  func handle(response: FintechSDKDivKitWidgetsFeatures.FTRemoteActionResponse, for path: Swift.String)
+}
+final public class FTRemoteDivUrlHandler : @preconcurrency FintechSDKBDUICore.FintechDivUrlHandler {
+  public init(bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, responseHandler: (any FintechSDKDivKitWidgetsFeatures.FTRemoteActionResponseHandler)? = nil, cardId: Swift.String? = nil)
+  @_Concurrency.MainActor final public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
+  @objc deinit
+}
+public enum FintechWidgetState {
+  case loading
+  case loaded(CoreFoundation.CGSize)
+  case failed
+}

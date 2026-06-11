@@ -1,0 +1,4757 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "FintechSDKNetworkImplementation",
+    "printedName": "FintechSDKNetworkImplementation",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAuthInterfaces",
+        "printedName": "FintechSDKAuthInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DiehardNetworkClientFactoryImpl",
+        "printedName": "DiehardNetworkClientFactoryImpl",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(uid:accountManager:networkChallengeHandler:observers:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DiehardNetworkClientFactoryImpl",
+                "printedName": "FintechSDKNetworkImplementation.DiehardNetworkClientFactoryImpl",
+                "usr": "s:31FintechSDKNetworkImplementation31DiehardNetworkClientFactoryImplV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSNumber?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAccountManagerAdapter",
+                "printedName": "any FintechSDKAuthInterfaces.FintechAccountManagerAdapter",
+                "usr": "s:24FintechSDKAuthInterfaces0A21AccountManagerAdapterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkChallengeHandler",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkChallengeHandlerP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[any FintechSDKNetworkInterfaces.FintechNetworkEventObserver]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[any FintechSDKNetworkInterfaces.FintechNetworkEventObserver]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FintechNetworkEventObserver",
+                        "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkEventObserver",
+                        "usr": "s:27FintechSDKNetworkInterfaces0A20NetworkEventObserverP"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKNetworkImplementation31DiehardNetworkClientFactoryImplV3uid14accountManager23networkChallengeHandler9observersACSo8NSNumberCSg_0A17SDKAuthInterfaces0a7AccountK7Adapter_p0abR00aemN0_pSgSayAM0aE13EventObserver_pGSgtcfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation31DiehardNetworkClientFactoryImplV3uid14accountManager23networkChallengeHandler9observersACSo8NSNumberCSg_0A17SDKAuthInterfaces0a7AccountK7Adapter_p0abR00aemN0_pSgSayAM0aE13EventObserver_pGSgtcfc",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "makeClient",
+            "printedName": "makeClient(baseURL:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkClient",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkClient",
+                "usr": "s:27FintechSDKNetworkInterfaces0A13NetworkClientP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation31DiehardNetworkClientFactoryImplV04makeF07baseURL0aB10Interfaces0aeF0_pSS_tF",
+            "mangledName": "$s31FintechSDKNetworkImplementation31DiehardNetworkClientFactoryImplV04makeF07baseURL0aB10Interfaces0aeF0_pSS_tF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:31FintechSDKNetworkImplementation31DiehardNetworkClientFactoryImplV",
+        "mangledName": "$s31FintechSDKNetworkImplementation31DiehardNetworkClientFactoryImplV",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "DiehardNetworkClientFactory",
+            "printedName": "DiehardNetworkClientFactory",
+            "usr": "s:27FintechSDKNetworkInterfaces27DiehardNetworkClientFactoryP",
+            "mangledName": "$s27FintechSDKNetworkInterfaces27DiehardNetworkClientFactoryP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCommonEntity",
+        "printedName": "FintechSDKCommonEntity",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTBasicSessionProviderService",
+        "printedName": "FTBasicSessionProviderService",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "merchantID",
+            "printedName": "merchantID",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation29FTBasicSessionProviderServiceC10merchantIDSSvp",
+            "mangledName": "$s31FintechSDKNetworkImplementation29FTBasicSessionProviderServiceC10merchantIDSSvp",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation29FTBasicSessionProviderServiceC10merchantIDSSvg",
+                "mangledName": "$s31FintechSDKNetworkImplementation29FTBasicSessionProviderServiceC10merchantIDSSvg",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "clientID",
+            "printedName": "clientID",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation29FTBasicSessionProviderServiceC8clientIDSSSgvp",
+            "mangledName": "$s31FintechSDKNetworkImplementation29FTBasicSessionProviderServiceC8clientIDSSSgvp",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation29FTBasicSessionProviderServiceC8clientIDSSSgvg",
+                "mangledName": "$s31FintechSDKNetworkImplementation29FTBasicSessionProviderServiceC8clientIDSSSgvg",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "sessionID",
+            "printedName": "sessionID",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation29FTBasicSessionProviderServiceC9sessionIDSSvp",
+            "mangledName": "$s31FintechSDKNetworkImplementation29FTBasicSessionProviderServiceC9sessionIDSSvp",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation29FTBasicSessionProviderServiceC9sessionIDSSvg",
+                "mangledName": "$s31FintechSDKNetworkImplementation29FTBasicSessionProviderServiceC9sessionIDSSvg",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(merchantID:environment:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTBasicSessionProviderService",
+                "printedName": "FintechSDKNetworkImplementation.FTBasicSessionProviderService",
+                "usr": "s:31FintechSDKNetworkImplementation29FTBasicSessionProviderServiceC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechSDKEnvironment",
+                "printedName": "FintechSDKCommonEntity.FintechSDKEnvironment",
+                "usr": "s:22FintechSDKCommonEntity0A14SDKEnvironmentO"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKNetworkImplementation29FTBasicSessionProviderServiceC10merchantID11environmentACSS_0A15SDKCommonEntity0A14SDKEnvironmentOtcfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation29FTBasicSessionProviderServiceC10merchantID11environmentACSS_0A15SDKCommonEntity0A14SDKEnvironmentOtcfc",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "dropSession",
+            "printedName": "dropSession()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation29FTBasicSessionProviderServiceC04dropE0yyF",
+            "mangledName": "$s31FintechSDKNetworkImplementation29FTBasicSessionProviderServiceC04dropE0yyF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:31FintechSDKNetworkImplementation29FTBasicSessionProviderServiceC",
+        "mangledName": "$s31FintechSDKNetworkImplementation29FTBasicSessionProviderServiceC",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTSessionProviderServing",
+            "printedName": "FTSessionProviderServing",
+            "usr": "s:27FintechSDKNetworkInterfaces24FTSessionProviderServingP",
+            "mangledName": "$s27FintechSDKNetworkInterfaces24FTSessionProviderServingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCommonEntity",
+        "printedName": "FintechSDKCommonEntity",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreAnalytics",
+        "printedName": "FintechSDKCoreAnalytics",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTPayBackendAPIFactory",
+        "printedName": "FTPayBackendAPIFactory",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(environment:urlProvider:sessionProvider:additionalRequestMiddlewares:additionalResponseMiddlewares:authorizationProvider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTPayBackendAPIFactory",
+                "printedName": "FintechSDKNetworkImplementation.FTPayBackendAPIFactory",
+                "usr": "s:31FintechSDKNetworkImplementation22FTPayBackendAPIFactoryV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechSDKEnvironment",
+                "printedName": "FintechSDKCommonEntity.FintechSDKEnvironment",
+                "usr": "s:22FintechSDKCommonEntity0A14SDKEnvironmentO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkImplementation.FTPayBackendUrlProvider)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTPayBackendUrlProvider",
+                    "printedName": "any FintechSDKNetworkImplementation.FTPayBackendUrlProvider",
+                    "usr": "s:31FintechSDKNetworkImplementation23FTPayBackendUrlProviderP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkInterfaces.FTSessionProviderServing)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTSessionProviderServing",
+                    "printedName": "any FintechSDKNetworkInterfaces.FTSessionProviderServing",
+                    "usr": "s:27FintechSDKNetworkInterfaces24FTSessionProviderServingP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkRequestMiddleware",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkResponseMiddleware",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A25NetworkResponseMiddlewareP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkInterfaces.FTAuthorizationProviding)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTAuthorizationProviding",
+                    "printedName": "any FintechSDKNetworkInterfaces.FTAuthorizationProviding",
+                    "usr": "s:27FintechSDKNetworkInterfaces24FTAuthorizationProvidingP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKNetworkImplementation22FTPayBackendAPIFactoryV11environment11urlProvider07sessionI028additionalRequestMiddlewares0k8ResponseM0013authorizationI0AC0A15SDKCommonEntity0A14SDKEnvironmentO_AA0de3UrlI0_pSg0aB10Interfaces09FTSessionI7Serving_pSgSayAO0a7NetworkL10Middleware_pGSayAO0awnX0_pGAO24FTAuthorizationProviding_pSgtcfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation22FTPayBackendAPIFactoryV11environment11urlProvider07sessionI028additionalRequestMiddlewares0k8ResponseM0013authorizationI0AC0A15SDKCommonEntity0A14SDKEnvironmentO_AA0de3UrlI0_pSg0aB10Interfaces09FTSessionI7Serving_pSgSayAO0a7NetworkL10Middleware_pGSayAO0awnX0_pGAO24FTAuthorizationProviding_pSgtcfc",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "makeNetworkClient",
+            "printedName": "makeNetworkClient(with:errorReporter:eventReporter:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkClient",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkClient",
+                "usr": "s:27FintechSDKNetworkInterfaces0A13NetworkClientP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkInterfaces.FintechNetworkAuthManager)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkAuthManager",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkAuthManager",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A18NetworkAuthManagerP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsErrorReporter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsErrorReporterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsEventReporter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation22FTPayBackendAPIFactoryV17makeNetworkClient4with13errorReporter05eventL00aB10Interfaces0ahI0_pAH0aH11AuthManager_pSg_0a12SDKAnalyticsN00a14AnalyticsErrorL0_pAL0ar5EventL0_ptF",
+            "mangledName": "$s31FintechSDKNetworkImplementation22FTPayBackendAPIFactoryV17makeNetworkClient4with13errorReporter05eventL00aB10Interfaces0ahI0_pAH0aH11AuthManager_pSg_0a12SDKAnalyticsN00a14AnalyticsErrorL0_pAL0ar5EventL0_ptF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:31FintechSDKNetworkImplementation22FTPayBackendAPIFactoryV",
+        "mangledName": "$s31FintechSDKNetworkImplementation22FTPayBackendAPIFactoryV",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCommonEntity",
+        "printedName": "FintechSDKCommonEntity",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUI",
+        "printedName": "FintechSDKCoreUI",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreAnalytics",
+        "printedName": "FintechSDKCoreAnalytics",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTFlexAPIFactory",
+        "printedName": "FTFlexAPIFactory",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(environment:sessionService:urlProvider:userAgentProvider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTFlexAPIFactory",
+                "printedName": "FintechSDKNetworkImplementation.FTFlexAPIFactory",
+                "usr": "s:31FintechSDKNetworkImplementation16FTFlexAPIFactoryV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechSDKEnvironment",
+                "printedName": "FintechSDKCommonEntity.FintechSDKEnvironment",
+                "usr": "s:22FintechSDKCommonEntity0A14SDKEnvironmentO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkInterfaces.FTSessionProviderServing)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTSessionProviderServing",
+                    "printedName": "any FintechSDKNetworkInterfaces.FTSessionProviderServing",
+                    "usr": "s:27FintechSDKNetworkInterfaces24FTSessionProviderServingP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkImplementation.FTFrontbackUrlProvider)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTFrontbackUrlProvider",
+                    "printedName": "any FintechSDKNetworkImplementation.FTFrontbackUrlProvider",
+                    "usr": "s:31FintechSDKNetworkImplementation22FTFrontbackUrlProviderP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTUserAgentProvider",
+                "printedName": "any FintechSDKCoreUtils.FTUserAgentProvider",
+                "usr": "s:19FintechSDKCoreUtils19FTUserAgentProviderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKNetworkImplementation16FTFlexAPIFactoryV11environment14sessionService11urlProvider09userAgentJ0AC0A15SDKCommonEntity0A14SDKEnvironmentO_0aB10Interfaces09FTSessionJ7Serving_pSgAA014FTFrontbackUrlJ0_pSg0A12SDKCoreUtils06FTUserlJ0_ptcfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation16FTFlexAPIFactoryV11environment14sessionService11urlProvider09userAgentJ0AC0A15SDKCommonEntity0A14SDKEnvironmentO_0aB10Interfaces09FTSessionJ7Serving_pSgAA014FTFrontbackUrlJ0_pSg0A12SDKCoreUtils06FTUserlJ0_ptcfc",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "makeBDUIApiClient",
+            "printedName": "makeBDUIApiClient(with:flexVersion:divKitVersion:paymentURL:clientId:errorReporter:eventReporter:locale:additionalRequestMiddlewares:additionalResponseMiddlewares:serviceTokenProvider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkClient",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkClient",
+                "usr": "s:27FintechSDKNetworkInterfaces0A13NetworkClientP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkInterfaces.FintechNetworkAuthManager)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkAuthManager",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkAuthManager",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A18NetworkAuthManagerP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.URL?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsErrorReporter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsErrorReporterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsEventReporter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechLocale",
+                "printedName": "FintechSDKCoreUI.FintechLocale",
+                "usr": "s:16FintechSDKCoreUI0A6LocaleO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkRequestMiddleware",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkResponseMiddleware",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A25NetworkResponseMiddlewareP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkImplementation.FTFrontbackServiceTokenProvider)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTFrontbackServiceTokenProvider",
+                    "printedName": "any FintechSDKNetworkImplementation.FTFrontbackServiceTokenProvider",
+                    "usr": "s:31FintechSDKNetworkImplementation31FTFrontbackServiceTokenProviderP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation16FTFlexAPIFactoryV17makeBDUIApiClient4with11flexVersion06divKitK010paymentURL8clientId13errorReporter05eventS06locale28additionalRequestMiddlewares0v8ResponseX020serviceTokenProvider0aB10Interfaces0a7NetworkH0_pAP0A18NetworkAuthManager_pSg_S2S10Foundation0O0VSgSSSg0A22SDKAnalyticsInterfaces0a14AnalyticsErrorS0_pAY0a14AnalyticsEventS0_p0A9SDKCoreUI0A6LocaleOSayAP0a7NetworkW10Middleware_pGSayAP0a7NetworkY10Middleware_pGAA31FTFrontbackServiceTokenProvider_pSgtF",
+            "mangledName": "$s31FintechSDKNetworkImplementation16FTFlexAPIFactoryV17makeBDUIApiClient4with11flexVersion06divKitK010paymentURL8clientId13errorReporter05eventS06locale28additionalRequestMiddlewares0v8ResponseX020serviceTokenProvider0aB10Interfaces0a7NetworkH0_pAP0A18NetworkAuthManager_pSg_S2S10Foundation0O0VSgSSSg0A22SDKAnalyticsInterfaces0a14AnalyticsErrorS0_pAY0a14AnalyticsEventS0_p0A9SDKCoreUI0A6LocaleOSayAP0a7NetworkW10Middleware_pGSayAP0a7NetworkY10Middleware_pGAA31FTFrontbackServiceTokenProvider_pSgtF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:31FintechSDKNetworkImplementation16FTFlexAPIFactoryV",
+        "mangledName": "$s31FintechSDKNetworkImplementation16FTFlexAPIFactoryV",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCommonEntity",
+        "printedName": "FintechSDKCommonEntity",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreAnalytics",
+        "printedName": "FintechSDKCoreAnalytics",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTFrontbackAPIFactory",
+        "printedName": "FTFrontbackAPIFactory",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(environment:sessionService:urlProvider:userAgentProvider:additionalRequestMiddlewares:additionalResponseMiddlewares:serviceTokenProvider:authorizationProvider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTFrontbackAPIFactory",
+                "printedName": "FintechSDKNetworkImplementation.FTFrontbackAPIFactory",
+                "usr": "s:31FintechSDKNetworkImplementation21FTFrontbackAPIFactoryV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechSDKEnvironment",
+                "printedName": "FintechSDKCommonEntity.FintechSDKEnvironment",
+                "usr": "s:22FintechSDKCommonEntity0A14SDKEnvironmentO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkInterfaces.FTSessionProviderServing)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTSessionProviderServing",
+                    "printedName": "any FintechSDKNetworkInterfaces.FTSessionProviderServing",
+                    "usr": "s:27FintechSDKNetworkInterfaces24FTSessionProviderServingP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkImplementation.FTFrontbackUrlProvider)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTFrontbackUrlProvider",
+                    "printedName": "any FintechSDKNetworkImplementation.FTFrontbackUrlProvider",
+                    "usr": "s:31FintechSDKNetworkImplementation22FTFrontbackUrlProviderP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTUserAgentProvider",
+                "printedName": "any FintechSDKCoreUtils.FTUserAgentProvider",
+                "usr": "s:19FintechSDKCoreUtils19FTUserAgentProviderP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkRequestMiddleware",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkResponseMiddleware",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A25NetworkResponseMiddlewareP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkImplementation.FTFrontbackServiceTokenProvider)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTFrontbackServiceTokenProvider",
+                    "printedName": "any FintechSDKNetworkImplementation.FTFrontbackServiceTokenProvider",
+                    "usr": "s:31FintechSDKNetworkImplementation31FTFrontbackServiceTokenProviderP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkInterfaces.FTAuthorizationProviding)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTAuthorizationProviding",
+                    "printedName": "any FintechSDKNetworkInterfaces.FTAuthorizationProviding",
+                    "usr": "s:27FintechSDKNetworkInterfaces24FTAuthorizationProvidingP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKNetworkImplementation21FTFrontbackAPIFactoryV11environment14sessionService11urlProvider09userAgentJ028additionalRequestMiddlewares0m8ResponseO0012serviceTokenJ0013authorizationJ0AC0A15SDKCommonEntity0A14SDKEnvironmentO_0aB10Interfaces09FTSessionJ7Serving_pSgAA0d3UrlJ0_pSg0A12SDKCoreUtils06FTUserlJ0_pSayAO0a7NetworkN10Middleware_pGSayAO0a7NetworkP10Middleware_pGAA0dhrJ0_pSgAO24FTAuthorizationProviding_pSgtcfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation21FTFrontbackAPIFactoryV11environment14sessionService11urlProvider09userAgentJ028additionalRequestMiddlewares0m8ResponseO0012serviceTokenJ0013authorizationJ0AC0A15SDKCommonEntity0A14SDKEnvironmentO_0aB10Interfaces09FTSessionJ7Serving_pSgAA0d3UrlJ0_pSg0A12SDKCoreUtils06FTUserlJ0_pSayAO0a7NetworkN10Middleware_pGSayAO0a7NetworkP10Middleware_pGAA0dhrJ0_pSgAO24FTAuthorizationProviding_pSgtcfc",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "makeNetworkClient",
+            "printedName": "makeNetworkClient(with:errorReporter:eventReporter:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkClient",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkClient",
+                "usr": "s:27FintechSDKNetworkInterfaces0A13NetworkClientP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkInterfaces.FintechNetworkAuthManager)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkAuthManager",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkAuthManager",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A18NetworkAuthManagerP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsErrorReporter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsErrorReporterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsEventReporter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation21FTFrontbackAPIFactoryV17makeNetworkClient4with13errorReporter05eventK00aB10Interfaces0agH0_pAH0aG11AuthManager_pSg_0a12SDKAnalyticsM00a14AnalyticsErrorK0_pAL0aq5EventK0_ptF",
+            "mangledName": "$s31FintechSDKNetworkImplementation21FTFrontbackAPIFactoryV17makeNetworkClient4with13errorReporter05eventK00aB10Interfaces0agH0_pAH0aG11AuthManager_pSg_0a12SDKAnalyticsM00a14AnalyticsErrorK0_pAL0aq5EventK0_ptF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:31FintechSDKNetworkImplementation21FTFrontbackAPIFactoryV",
+        "mangledName": "$s31FintechSDKNetworkImplementation21FTFrontbackAPIFactoryV",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCommonEntity",
+        "printedName": "FintechSDKCommonEntity",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTHeaderConstants",
+        "printedName": "FTHeaderConstants",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "bstHeader",
+            "printedName": "bstHeader",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation17FTHeaderConstantsO9bstHeaderSSvpZ",
+            "mangledName": "$s31FintechSDKNetworkImplementation17FTHeaderConstantsO9bstHeaderSSvpZ",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation17FTHeaderConstantsO9bstHeaderSSvgZ",
+                "mangledName": "$s31FintechSDKNetworkImplementation17FTHeaderConstantsO9bstHeaderSSvgZ",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "static": true,
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "appMetricaUuid",
+            "printedName": "appMetricaUuid",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation17FTHeaderConstantsO14appMetricaUuidSSvpZ",
+            "mangledName": "$s31FintechSDKNetworkImplementation17FTHeaderConstantsO14appMetricaUuidSSvpZ",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation17FTHeaderConstantsO14appMetricaUuidSSvgZ",
+                "mangledName": "$s31FintechSDKNetworkImplementation17FTHeaderConstantsO14appMetricaUuidSSvgZ",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "static": true,
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "deviceId",
+            "printedName": "deviceId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation17FTHeaderConstantsO8deviceIdSSvpZ",
+            "mangledName": "$s31FintechSDKNetworkImplementation17FTHeaderConstantsO8deviceIdSSvpZ",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation17FTHeaderConstantsO8deviceIdSSvgZ",
+                "mangledName": "$s31FintechSDKNetworkImplementation17FTHeaderConstantsO8deviceIdSSvgZ",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "static": true,
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "sdkInstallationId",
+            "printedName": "sdkInstallationId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation17FTHeaderConstantsO17sdkInstallationIdSSvpZ",
+            "mangledName": "$s31FintechSDKNetworkImplementation17FTHeaderConstantsO17sdkInstallationIdSSvpZ",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation17FTHeaderConstantsO17sdkInstallationIdSSvgZ",
+                "mangledName": "$s31FintechSDKNetworkImplementation17FTHeaderConstantsO17sdkInstallationIdSSvgZ",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "static": true,
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "sdkSessionId",
+            "printedName": "sdkSessionId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation17FTHeaderConstantsO12sdkSessionIdSSvpZ",
+            "mangledName": "$s31FintechSDKNetworkImplementation17FTHeaderConstantsO12sdkSessionIdSSvpZ",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation17FTHeaderConstantsO12sdkSessionIdSSvgZ",
+                "mangledName": "$s31FintechSDKNetworkImplementation17FTHeaderConstantsO12sdkSessionIdSSvgZ",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "static": true,
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:31FintechSDKNetworkImplementation17FTHeaderConstantsO",
+        "mangledName": "$s31FintechSDKNetworkImplementation17FTHeaderConstantsO",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAuthInterfaces",
+        "printedName": "FintechSDKAuthInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "NetworkAuthManagerImpl",
+        "printedName": "NetworkAuthManagerImpl",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "uidString",
+            "printedName": "uidString",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation22NetworkAuthManagerImplC9uidStringSSvp",
+            "mangledName": "$s31FintechSDKNetworkImplementation22NetworkAuthManagerImplC9uidStringSSvp",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation22NetworkAuthManagerImplC9uidStringSSvg",
+                "mangledName": "$s31FintechSDKNetworkImplementation22NetworkAuthManagerImplC9uidStringSSvg",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "partition",
+            "printedName": "partition",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation22NetworkAuthManagerImplC9partitionSSvp",
+            "mangledName": "$s31FintechSDKNetworkImplementation22NetworkAuthManagerImplC9partitionSSvp",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "Custom"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation22NetworkAuthManagerImplC9partitionSSvg",
+                "mangledName": "$s31FintechSDKNetworkImplementation22NetworkAuthManagerImplC9partitionSSvg",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(accountManager:uid:authSession:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NetworkAuthManagerImpl",
+                "printedName": "FintechSDKNetworkImplementation.NetworkAuthManagerImpl",
+                "usr": "s:31FintechSDKNetworkImplementation22NetworkAuthManagerImplC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAccountManagerAdapter",
+                "printedName": "any FintechSDKAuthInterfaces.FintechAccountManagerAdapter",
+                "usr": "s:24FintechSDKAuthInterfaces0A21AccountManagerAdapterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSNumber",
+                "printedName": "Foundation.NSNumber",
+                "usr": "c:objc(cs)NSNumber"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FintechSDKAuthInterfaces.FintechAuthSession?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechAuthSession",
+                    "printedName": "FintechSDKAuthInterfaces.FintechAuthSession",
+                    "usr": "s:24FintechSDKAuthInterfaces0A11AuthSessionV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKNetworkImplementation22NetworkAuthManagerImplC07accountF03uid11authSessionAC0A17SDKAuthInterfaces0a7AccountF7Adapter_p_So8NSNumberCAG0aeK0VSgtcfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation22NetworkAuthManagerImplC07accountF03uid11authSessionAC0A17SDKAuthInterfaces0a7AccountF7Adapter_p_So8NSNumberCAG0aeK0VSgtcfc",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "obtainToken",
+            "printedName": "obtainToken()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation22NetworkAuthManagerImplC11obtainTokenSSyYaKF",
+            "mangledName": "$s31FintechSDKNetworkImplementation22NetworkAuthManagerImplC11obtainTokenSSyYaKF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "Custom"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "dropToken",
+            "printedName": "dropToken()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation22NetworkAuthManagerImplC9dropTokenyyYaF",
+            "mangledName": "$s31FintechSDKNetworkImplementation22NetworkAuthManagerImplC9dropTokenyyYaF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "Custom"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "obtainSessionToken",
+            "printedName": "obtainSessionToken()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation22NetworkAuthManagerImplC18obtainSessionTokenSSSgyYaF",
+            "mangledName": "$s31FintechSDKNetworkImplementation22NetworkAuthManagerImplC18obtainSessionTokenSSSgyYaF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:31FintechSDKNetworkImplementation22NetworkAuthManagerImplC",
+        "mangledName": "$s31FintechSDKNetworkImplementation22NetworkAuthManagerImplC",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechNetworkAuthManager",
+            "printedName": "FintechNetworkAuthManager",
+            "usr": "s:27FintechSDKNetworkInterfaces0A18NetworkAuthManagerP",
+            "mangledName": "$s27FintechSDKNetworkInterfaces0A18NetworkAuthManagerP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "NetworkClientImpl",
+        "printedName": "NetworkClientImpl",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(scheme:host:port:configuration:networkChallengeHandler:requestMiddleware:responseMiddleware:observers:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NetworkClientImpl",
+                "printedName": "FintechSDKNetworkImplementation.NetworkClientImpl",
+                "usr": "s:31FintechSDKNetworkImplementation17NetworkClientImplC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLSessionConfiguration",
+                "printedName": "Foundation.URLSessionConfiguration",
+                "usr": "c:objc(cs)NSURLSessionConfiguration"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkChallengeHandler",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkChallengeHandlerP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkRequestMiddleware",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkResponseMiddleware",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A25NetworkResponseMiddlewareP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKNetworkInterfaces.FintechNetworkEventObserver]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkEventObserver",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkEventObserver",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A20NetworkEventObserverP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKNetworkImplementation17NetworkClientImplC6scheme4host4port13configuration23networkChallengeHandler17requestMiddleware08responseO09observersACSS_SSSiSgSo25NSURLSessionConfigurationC0aB10Interfaces0adlM0_pSgSayAO0ad7RequestO0_pGSayAO0ad8ResponseO0_pGSayAO0aD13EventObserver_pGtcfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation17NetworkClientImplC6scheme4host4port13configuration23networkChallengeHandler17requestMiddleware08responseO09observersACSS_SSSiSgSo25NSURLSessionConfigurationC0aB10Interfaces0adlM0_pSgSayAO0ad7RequestO0_pGSayAO0ad8ResponseO0_pGSayAO0aD13EventObserver_pGtcfc",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(baseUrl:configuration:networkChallengeHandler:requestMiddleware:responseMiddleware:observers:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NetworkClientImpl",
+                "printedName": "FintechSDKNetworkImplementation.NetworkClientImpl",
+                "usr": "s:31FintechSDKNetworkImplementation17NetworkClientImplC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLSessionConfiguration",
+                "printedName": "Foundation.URLSessionConfiguration",
+                "usr": "c:objc(cs)NSURLSessionConfiguration"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkChallengeHandler",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkChallengeHandlerP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkRequestMiddleware",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkResponseMiddleware",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A25NetworkResponseMiddlewareP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKNetworkInterfaces.FintechNetworkEventObserver]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkEventObserver",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkEventObserver",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A20NetworkEventObserverP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKNetworkImplementation17NetworkClientImplC7baseUrl13configuration23networkChallengeHandler17requestMiddleware08responseN09observersACSS_So25NSURLSessionConfigurationC0aB10Interfaces0adkL0_pSgSayAL0ad7RequestN0_pGSayAL0ad8ResponseN0_pGSayAL0aD13EventObserver_pGtcfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation17NetworkClientImplC7baseUrl13configuration23networkChallengeHandler17requestMiddleware08responseN09observersACSS_So25NSURLSessionConfigurationC0aB10Interfaces0adkL0_pSgSayAL0ad7RequestN0_pGSayAL0ad8ResponseN0_pGSayAL0aD13EventObserver_pGtcfc",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "Convenience",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Convenience"
+          },
+          {
+            "kind": "Function",
+            "name": "execute",
+            "printedName": "execute(endpoint:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DependentMember",
+                "printedName": "τ_0_0.ResultModel"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation17NetworkClientImplC7execute8endpoint11ResultModelQzx_tYa0aB10Interfaces0dE5ErrorOYKAH0aD16EndpointProviderRzlF",
+            "mangledName": "$s31FintechSDKNetworkImplementation17NetworkClientImplC7execute8endpoint11ResultModelQzx_tYa0aB10Interfaces0dE5ErrorOYKAH0aD16EndpointProviderRzlF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider>",
+            "sugared_genericSig": "<Endpoint where Endpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider>",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "cancelAllTasks",
+            "printedName": "cancelAllTasks()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation17NetworkClientImplC14cancelAllTasksyyF",
+            "mangledName": "$s31FintechSDKNetworkImplementation17NetworkClientImplC14cancelAllTasksyyF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:31FintechSDKNetworkImplementation17NetworkClientImplC",
+        "mangledName": "$s31FintechSDKNetworkImplementation17NetworkClientImplC",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechNetworkClient",
+            "printedName": "FintechNetworkClient",
+            "usr": "s:27FintechSDKNetworkInterfaces0A13NetworkClientP",
+            "mangledName": "$s27FintechSDKNetworkInterfaces0A13NetworkClientP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTFrontbackUrlProvider",
+        "printedName": "FTFrontbackUrlProvider",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "frontbackBaseUrl",
+            "printedName": "frontbackBaseUrl",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation22FTFrontbackUrlProviderP013frontbackBaseE0SSvp",
+            "mangledName": "$s31FintechSDKNetworkImplementation22FTFrontbackUrlProviderP013frontbackBaseE0SSvp",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation22FTFrontbackUrlProviderP013frontbackBaseE0SSvg",
+                "mangledName": "$s31FintechSDKNetworkImplementation22FTFrontbackUrlProviderP013frontbackBaseE0SSvg",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKNetworkImplementation.FTFrontbackUrlProvider>",
+                "sugared_genericSig": "<Self where Self : FintechSDKNetworkImplementation.FTFrontbackUrlProvider>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:31FintechSDKNetworkImplementation22FTFrontbackUrlProviderP",
+        "mangledName": "$s31FintechSDKNetworkImplementation22FTFrontbackUrlProviderP",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "genericSig": "<τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTFrontbackServiceTokenProvider",
+        "printedName": "FTFrontbackServiceTokenProvider",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "frontbackServiceToken",
+            "printedName": "frontbackServiceToken",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation31FTFrontbackServiceTokenProviderP09frontbackeF0SSvp",
+            "mangledName": "$s31FintechSDKNetworkImplementation31FTFrontbackServiceTokenProviderP09frontbackeF0SSvp",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation31FTFrontbackServiceTokenProviderP09frontbackeF0SSvg",
+                "mangledName": "$s31FintechSDKNetworkImplementation31FTFrontbackServiceTokenProviderP09frontbackeF0SSvg",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKNetworkImplementation.FTFrontbackServiceTokenProvider>",
+                "sugared_genericSig": "<Self where Self : FintechSDKNetworkImplementation.FTFrontbackServiceTokenProvider>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:31FintechSDKNetworkImplementation31FTFrontbackServiceTokenProviderP",
+        "mangledName": "$s31FintechSDKNetworkImplementation31FTFrontbackServiceTokenProviderP",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "genericSig": "<τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCommonEntity",
+        "printedName": "FintechSDKCommonEntity",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTPayBackendUrlProvider",
+        "printedName": "FTPayBackendUrlProvider",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "payBackendBaseUrl",
+            "printedName": "payBackendBaseUrl",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation23FTPayBackendUrlProviderP03paye4BaseF0SSvp",
+            "mangledName": "$s31FintechSDKNetworkImplementation23FTPayBackendUrlProviderP03paye4BaseF0SSvp",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation23FTPayBackendUrlProviderP03paye4BaseF0SSvg",
+                "mangledName": "$s31FintechSDKNetworkImplementation23FTPayBackendUrlProviderP03paye4BaseF0SSvg",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKNetworkImplementation.FTPayBackendUrlProvider>",
+                "sugared_genericSig": "<Self where Self : FintechSDKNetworkImplementation.FTPayBackendUrlProvider>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:31FintechSDKNetworkImplementation23FTPayBackendUrlProviderP",
+        "mangledName": "$s31FintechSDKNetworkImplementation23FTPayBackendUrlProviderP",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "genericSig": "<τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCommonEntity",
+        "printedName": "FintechSDKCommonEntity",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DiehardRequestMiddleware",
+        "printedName": "DiehardRequestMiddleware",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(networkAuthManager:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DiehardRequestMiddleware",
+                "printedName": "FintechSDKNetworkImplementation.DiehardRequestMiddleware",
+                "usr": "s:31FintechSDKNetworkImplementation24DiehardRequestMiddlewareV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkInterfaces.FintechNetworkAuthManager)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkAuthManager",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkAuthManager",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A18NetworkAuthManagerP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKNetworkImplementation24DiehardRequestMiddlewareV18networkAuthManagerAC0aB10Interfaces0a7NetworkhI0_pSg_tcfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation24DiehardRequestMiddlewareV18networkAuthManagerAC0aB10Interfaces0a7NetworkhI0_pSg_tcfc",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "process",
+            "printedName": "process(request:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation24DiehardRequestMiddlewareV7process7request10Foundation10URLRequestVAH_tYaKF",
+            "mangledName": "$s31FintechSDKNetworkImplementation24DiehardRequestMiddlewareV7process7request10Foundation10URLRequestVAH_tYaKF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:31FintechSDKNetworkImplementation24DiehardRequestMiddlewareV",
+        "mangledName": "$s31FintechSDKNetworkImplementation24DiehardRequestMiddlewareV",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechNetworkRequestMiddleware",
+            "printedName": "FintechNetworkRequestMiddleware",
+            "usr": "s:27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP",
+            "mangledName": "$s27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTAuthorizationProvider",
+        "printedName": "FTAuthorizationProvider",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(authTokenStorage:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTAuthorizationProvider",
+                "printedName": "FintechSDKNetworkImplementation.FTAuthorizationProvider",
+                "usr": "s:31FintechSDKNetworkImplementation23FTAuthorizationProviderC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTAnyStorage",
+                "printedName": "FintechSDKCoreUtils.FTAnyStorage<FintechSDKCoreUtils.FTUserToken>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTUserToken",
+                    "printedName": "FintechSDKCoreUtils.FTUserToken",
+                    "usr": "s:19FintechSDKCoreUtils11FTUserTokenV"
+                  }
+                ],
+                "usr": "s:19FintechSDKCoreUtils12FTAnyStorageC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKNetworkImplementation23FTAuthorizationProviderC16authTokenStorageAC0A12SDKCoreUtils05FTAnyH0CyAE06FTUserG0VG_tcfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation23FTAuthorizationProviderC16authTokenStorageAC0A12SDKCoreUtils05FTAnyH0CyAE06FTUserG0VG_tcfc",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "authorization",
+            "printedName": "authorization",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation23FTAuthorizationProviderC13authorizationSSSgvp",
+            "mangledName": "$s31FintechSDKNetworkImplementation23FTAuthorizationProviderC13authorizationSSSgvp",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation23FTAuthorizationProviderC13authorizationSSSgvg",
+                "mangledName": "$s31FintechSDKNetworkImplementation23FTAuthorizationProviderC13authorizationSSSgvg",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:31FintechSDKNetworkImplementation23FTAuthorizationProviderC",
+        "mangledName": "$s31FintechSDKNetworkImplementation23FTAuthorizationProviderC",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTAuthorizationProviding",
+            "printedName": "FTAuthorizationProviding",
+            "usr": "s:27FintechSDKNetworkInterfaces24FTAuthorizationProvidingP",
+            "mangledName": "$s27FintechSDKNetworkInterfaces24FTAuthorizationProvidingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCommonEntity",
+        "printedName": "FintechSDKCommonEntity",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUI",
+        "printedName": "FintechSDKCoreUI",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTRequestBDUIMiddleware",
+        "printedName": "FTRequestBDUIMiddleware",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(flexVersion:divKitVersion:clientId:paymentUrl:locale:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTRequestBDUIMiddleware",
+                "printedName": "FintechSDKNetworkImplementation.FTRequestBDUIMiddleware",
+                "usr": "s:31FintechSDKNetworkImplementation23FTRequestBDUIMiddlewareV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.URL?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechLocale",
+                "printedName": "FintechSDKCoreUI.FintechLocale",
+                "usr": "s:16FintechSDKCoreUI0A6LocaleO"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKNetworkImplementation23FTRequestBDUIMiddlewareV11flexVersion06divKitG08clientId10paymentUrl6localeACSS_S2SSg10Foundation3URLVSg0A9SDKCoreUI0A6LocaleOtcfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation23FTRequestBDUIMiddlewareV11flexVersion06divKitG08clientId10paymentUrl6localeACSS_S2SSg10Foundation3URLVSg0A9SDKCoreUI0A6LocaleOtcfc",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "process",
+            "printedName": "process(request:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation23FTRequestBDUIMiddlewareV7process7request10Foundation10URLRequestVAH_tKF",
+            "mangledName": "$s31FintechSDKNetworkImplementation23FTRequestBDUIMiddlewareV7process7request10Foundation10URLRequestVAH_tKF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:31FintechSDKNetworkImplementation23FTRequestBDUIMiddlewareV",
+        "mangledName": "$s31FintechSDKNetworkImplementation23FTRequestBDUIMiddlewareV",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechNetworkRequestMiddleware",
+            "printedName": "FintechNetworkRequestMiddleware",
+            "usr": "s:27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP",
+            "mangledName": "$s27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTRequestServiceTokenMiddleware",
+        "printedName": "FTRequestServiceTokenMiddleware",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(serviceToken:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTRequestServiceTokenMiddleware",
+                "printedName": "FintechSDKNetworkImplementation.FTRequestServiceTokenMiddleware",
+                "usr": "s:31FintechSDKNetworkImplementation31FTRequestServiceTokenMiddlewareV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKNetworkImplementation31FTRequestServiceTokenMiddlewareV07serviceF0ACSS_tcfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation31FTRequestServiceTokenMiddlewareV07serviceF0ACSS_tcfc",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "process",
+            "printedName": "process(request:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation31FTRequestServiceTokenMiddlewareV7process7request10Foundation10URLRequestVAH_tKF",
+            "mangledName": "$s31FintechSDKNetworkImplementation31FTRequestServiceTokenMiddlewareV7process7request10Foundation10URLRequestVAH_tKF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:31FintechSDKNetworkImplementation31FTRequestServiceTokenMiddlewareV",
+        "mangledName": "$s31FintechSDKNetworkImplementation31FTRequestServiceTokenMiddlewareV",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechNetworkRequestMiddleware",
+            "printedName": "FintechNetworkRequestMiddleware",
+            "usr": "s:27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP",
+            "mangledName": "$s27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTRequestUserAgentMiddleware",
+        "printedName": "FTRequestUserAgentMiddleware",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(userAgent:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTRequestUserAgentMiddleware",
+                "printedName": "FintechSDKNetworkImplementation.FTRequestUserAgentMiddleware",
+                "usr": "s:31FintechSDKNetworkImplementation28FTRequestUserAgentMiddlewareV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKNetworkImplementation28FTRequestUserAgentMiddlewareV04userF0ACSS_tcfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation28FTRequestUserAgentMiddlewareV04userF0ACSS_tcfc",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "process",
+            "printedName": "process(request:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation28FTRequestUserAgentMiddlewareV7process7request10Foundation10URLRequestVAH_tYaKF",
+            "mangledName": "$s31FintechSDKNetworkImplementation28FTRequestUserAgentMiddlewareV7process7request10Foundation10URLRequestVAH_tYaKF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:31FintechSDKNetworkImplementation28FTRequestUserAgentMiddlewareV",
+        "mangledName": "$s31FintechSDKNetworkImplementation28FTRequestUserAgentMiddlewareV",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechNetworkRequestMiddleware",
+            "printedName": "FintechNetworkRequestMiddleware",
+            "usr": "s:27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP",
+            "mangledName": "$s27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTAuthHeaderType",
+        "printedName": "FTAuthHeaderType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "authorization",
+            "printedName": "authorization",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FintechSDKNetworkImplementation.FTAuthHeaderType.Type) -> FintechSDKNetworkImplementation.FTAuthHeaderType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTAuthHeaderType",
+                    "printedName": "FintechSDKNetworkImplementation.FTAuthHeaderType",
+                    "usr": "s:31FintechSDKNetworkImplementation16FTAuthHeaderTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "FintechSDKNetworkImplementation.FTAuthHeaderType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTAuthHeaderType",
+                        "printedName": "FintechSDKNetworkImplementation.FTAuthHeaderType",
+                        "usr": "s:31FintechSDKNetworkImplementation16FTAuthHeaderTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:31FintechSDKNetworkImplementation16FTAuthHeaderTypeO13authorizationyA2CmF",
+            "mangledName": "$s31FintechSDKNetworkImplementation16FTAuthHeaderTypeO13authorizationyA2CmF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "spi_group_names": [
+              "Internal"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "bst",
+            "printedName": "bst",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FintechSDKNetworkImplementation.FTAuthHeaderType.Type) -> FintechSDKNetworkImplementation.FTAuthHeaderType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTAuthHeaderType",
+                    "printedName": "FintechSDKNetworkImplementation.FTAuthHeaderType",
+                    "usr": "s:31FintechSDKNetworkImplementation16FTAuthHeaderTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "FintechSDKNetworkImplementation.FTAuthHeaderType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTAuthHeaderType",
+                        "printedName": "FintechSDKNetworkImplementation.FTAuthHeaderType",
+                        "usr": "s:31FintechSDKNetworkImplementation16FTAuthHeaderTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:31FintechSDKNetworkImplementation16FTAuthHeaderTypeO3bstyA2CmF",
+            "mangledName": "$s31FintechSDKNetworkImplementation16FTAuthHeaderTypeO3bstyA2CmF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "spi_group_names": [
+              "Internal"
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTAuthHeaderType",
+                "printedName": "FintechSDKNetworkImplementation.FTAuthHeaderType",
+                "usr": "s:31FintechSDKNetworkImplementation16FTAuthHeaderTypeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTAuthHeaderType",
+                "printedName": "FintechSDKNetworkImplementation.FTAuthHeaderType",
+                "usr": "s:31FintechSDKNetworkImplementation16FTAuthHeaderTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation16FTAuthHeaderTypeO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s31FintechSDKNetworkImplementation16FTAuthHeaderTypeO2eeoiySbAC_ACtFZ",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "static": true,
+            "implicit": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation16FTAuthHeaderTypeO9hashValueSivp",
+            "mangledName": "$s31FintechSDKNetworkImplementation16FTAuthHeaderTypeO9hashValueSivp",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "implicit": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation16FTAuthHeaderTypeO9hashValueSivg",
+                "mangledName": "$s31FintechSDKNetworkImplementation16FTAuthHeaderTypeO9hashValueSivg",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation16FTAuthHeaderTypeO4hash4intoys6HasherVz_tF",
+            "mangledName": "$s31FintechSDKNetworkImplementation16FTAuthHeaderTypeO4hash4intoys6HasherVz_tF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "implicit": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:31FintechSDKNetworkImplementation16FTAuthHeaderTypeO",
+        "mangledName": "$s31FintechSDKNetworkImplementation16FTAuthHeaderTypeO",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AuthRequestMiddleware",
+        "printedName": "AuthRequestMiddleware",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(networkAuthManager:headerTypes:authorizationProvider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AuthRequestMiddleware",
+                "printedName": "FintechSDKNetworkImplementation.AuthRequestMiddleware",
+                "usr": "s:31FintechSDKNetworkImplementation21AuthRequestMiddlewareV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkInterfaces.FintechNetworkAuthManager)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkAuthManager",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkAuthManager",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A18NetworkAuthManagerP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Set",
+                "printedName": "Swift.Set<FintechSDKNetworkImplementation.FTAuthHeaderType>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTAuthHeaderType",
+                    "printedName": "FintechSDKNetworkImplementation.FTAuthHeaderType",
+                    "usr": "s:31FintechSDKNetworkImplementation16FTAuthHeaderTypeO"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sh"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkInterfaces.FTAuthorizationProviding)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTAuthorizationProviding",
+                    "printedName": "any FintechSDKNetworkInterfaces.FTAuthorizationProviding",
+                    "usr": "s:27FintechSDKNetworkInterfaces24FTAuthorizationProvidingP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKNetworkImplementation21AuthRequestMiddlewareV07networkD7Manager11headerTypes21authorizationProviderAC0aB10Interfaces0a7NetworkdH0_pSg_ShyAA16FTAuthHeaderTypeOGAG24FTAuthorizationProviding_pSgtcfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation21AuthRequestMiddlewareV07networkD7Manager11headerTypes21authorizationProviderAC0aB10Interfaces0a7NetworkdH0_pSg_ShyAA16FTAuthHeaderTypeOGAG24FTAuthorizationProviding_pSgtcfc",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "process",
+            "printedName": "process(request:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation21AuthRequestMiddlewareV7process7request10Foundation10URLRequestVAH_tYaKF",
+            "mangledName": "$s31FintechSDKNetworkImplementation21AuthRequestMiddlewareV7process7request10Foundation10URLRequestVAH_tYaKF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:31FintechSDKNetworkImplementation21AuthRequestMiddlewareV",
+        "mangledName": "$s31FintechSDKNetworkImplementation21AuthRequestMiddlewareV",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechNetworkRequestMiddleware",
+            "printedName": "FintechNetworkRequestMiddleware",
+            "usr": "s:27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP",
+            "mangledName": "$s27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreAnalytics",
+        "printedName": "FintechSDKCoreAnalytics",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTTraceparentRequestMiddleware",
+        "printedName": "FTTraceparentRequestMiddleware",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTTraceparentRequestMiddleware",
+                "printedName": "FintechSDKNetworkImplementation.FTTraceparentRequestMiddleware",
+                "usr": "s:31FintechSDKNetworkImplementation30FTTraceparentRequestMiddlewareV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKNetworkImplementation30FTTraceparentRequestMiddlewareVACycfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation30FTTraceparentRequestMiddlewareVACycfc",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "process",
+            "printedName": "process(request:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation30FTTraceparentRequestMiddlewareV7process7request10Foundation10URLRequestVAH_tYaKF",
+            "mangledName": "$s31FintechSDKNetworkImplementation30FTTraceparentRequestMiddlewareV7process7request10Foundation10URLRequestVAH_tYaKF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:31FintechSDKNetworkImplementation30FTTraceparentRequestMiddlewareV",
+        "mangledName": "$s31FintechSDKNetworkImplementation30FTTraceparentRequestMiddlewareV",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl",
+          "RawDocComment"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechNetworkRequestMiddleware",
+            "printedName": "FintechNetworkRequestMiddleware",
+            "usr": "s:27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP",
+            "mangledName": "$s27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTDefaultResponseDecoder",
+        "printedName": "FTDefaultResponseDecoder",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTDefaultResponseDecoder",
+                "printedName": "FintechSDKNetworkImplementation.FTDefaultResponseDecoder<τ_0_0>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ],
+                "usr": "s:31FintechSDKNetworkImplementation24FTDefaultResponseDecoderV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKNetworkImplementation24FTDefaultResponseDecoderVACyxGycfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation24FTDefaultResponseDecoderVACyxGycfc",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable>",
+            "sugared_genericSig": "<Output where Output : Swift.Decodable>",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "decode",
+            "printedName": "decode(data:response:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPURLResponse",
+                "printedName": "Foundation.HTTPURLResponse",
+                "usr": "c:objc(cs)NSHTTPURLResponse"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation24FTDefaultResponseDecoderV6decode4data8responsex10Foundation4DataV_So17NSHTTPURLResponseCtYaKF",
+            "mangledName": "$s31FintechSDKNetworkImplementation24FTDefaultResponseDecoderV6decode4data8responsex10Foundation4DataV_So17NSHTTPURLResponseCtYaKF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable>",
+            "sugared_genericSig": "<Output where Output : Swift.Decodable>",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:31FintechSDKNetworkImplementation24FTDefaultResponseDecoderV",
+        "mangledName": "$s31FintechSDKNetworkImplementation24FTDefaultResponseDecoderV",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable>",
+        "sugared_genericSig": "<Output where Output : Swift.Decodable>",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechResponseDecoder",
+            "printedName": "FintechResponseDecoder",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Output",
+                "printedName": "Output",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:27FintechSDKNetworkInterfaces0A15ResponseDecoderP",
+            "mangledName": "$s27FintechSDKNetworkInterfaces0A15ResponseDecoderP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTRawDataResponseDecoder",
+        "printedName": "FTRawDataResponseDecoder",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTRawDataResponseDecoder",
+                "printedName": "FintechSDKNetworkImplementation.FTRawDataResponseDecoder",
+                "usr": "s:31FintechSDKNetworkImplementation24FTRawDataResponseDecoderV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKNetworkImplementation24FTRawDataResponseDecoderVACycfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation24FTRawDataResponseDecoderVACycfc",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "decode",
+            "printedName": "decode(data:response:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPURLResponse",
+                "printedName": "Foundation.HTTPURLResponse",
+                "usr": "c:objc(cs)NSHTTPURLResponse"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation24FTRawDataResponseDecoderV6decode4data8response10Foundation0E0VAI_So17NSHTTPURLResponseCtYaKF",
+            "mangledName": "$s31FintechSDKNetworkImplementation24FTRawDataResponseDecoderV6decode4data8response10Foundation0E0VAI_So17NSHTTPURLResponseCtYaKF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:31FintechSDKNetworkImplementation24FTRawDataResponseDecoderV",
+        "mangledName": "$s31FintechSDKNetworkImplementation24FTRawDataResponseDecoderV",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechResponseDecoder",
+            "printedName": "FintechResponseDecoder",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Output",
+                "printedName": "Output",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:27FintechSDKNetworkInterfaces0A15ResponseDecoderP",
+            "mangledName": "$s27FintechSDKNetworkInterfaces0A15ResponseDecoderP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTSnakeCaseJsonDecoder",
+        "printedName": "FTSnakeCaseJsonDecoder",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTSnakeCaseJsonDecoder",
+                "printedName": "FintechSDKNetworkImplementation.FTSnakeCaseJsonDecoder<τ_0_0>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ],
+                "usr": "s:31FintechSDKNetworkImplementation22FTSnakeCaseJsonDecoderV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKNetworkImplementation22FTSnakeCaseJsonDecoderVACyxGycfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation22FTSnakeCaseJsonDecoderVACyxGycfc",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable>",
+            "sugared_genericSig": "<Output where Output : Swift.Decodable>",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "decode",
+            "printedName": "decode(data:response:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPURLResponse",
+                "printedName": "Foundation.HTTPURLResponse",
+                "usr": "c:objc(cs)NSHTTPURLResponse"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation22FTSnakeCaseJsonDecoderV6decode4data8responsex10Foundation4DataV_So17NSHTTPURLResponseCtYaKF",
+            "mangledName": "$s31FintechSDKNetworkImplementation22FTSnakeCaseJsonDecoderV6decode4data8responsex10Foundation4DataV_So17NSHTTPURLResponseCtYaKF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable>",
+            "sugared_genericSig": "<Output where Output : Swift.Decodable>",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:31FintechSDKNetworkImplementation22FTSnakeCaseJsonDecoderV",
+        "mangledName": "$s31FintechSDKNetworkImplementation22FTSnakeCaseJsonDecoderV",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable>",
+        "sugared_genericSig": "<Output where Output : Swift.Decodable>",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechResponseDecoder",
+            "printedName": "FintechResponseDecoder",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Output",
+                "printedName": "Output",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:27FintechSDKNetworkInterfaces0A15ResponseDecoderP",
+            "mangledName": "$s27FintechSDKNetworkInterfaces0A15ResponseDecoderP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FintechSDKEnvironment",
+        "printedName": "FintechSDKEnvironment",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "frontbackBaseUrl",
+            "printedName": "frontbackBaseUrl",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22FintechSDKCommonEntity0A14SDKEnvironmentO0A24SDKNetworkImplementationE16frontbackBaseUrlSSvp",
+            "mangledName": "$s22FintechSDKCommonEntity0A14SDKEnvironmentO0A24SDKNetworkImplementationE16frontbackBaseUrlSSvp",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22FintechSDKCommonEntity0A14SDKEnvironmentO0A24SDKNetworkImplementationE16frontbackBaseUrlSSvg",
+                "mangledName": "$s22FintechSDKCommonEntity0A14SDKEnvironmentO0A24SDKNetworkImplementationE16frontbackBaseUrlSSvg",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "frontbackServiceToken",
+            "printedName": "frontbackServiceToken",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22FintechSDKCommonEntity0A14SDKEnvironmentO0A24SDKNetworkImplementationE21frontbackServiceTokenSSvp",
+            "mangledName": "$s22FintechSDKCommonEntity0A14SDKEnvironmentO0A24SDKNetworkImplementationE21frontbackServiceTokenSSvp",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22FintechSDKCommonEntity0A14SDKEnvironmentO0A24SDKNetworkImplementationE21frontbackServiceTokenSSvg",
+                "mangledName": "$s22FintechSDKCommonEntity0A14SDKEnvironmentO0A24SDKNetworkImplementationE21frontbackServiceTokenSSvg",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "payBackendBaseUrl",
+            "printedName": "payBackendBaseUrl",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22FintechSDKCommonEntity0A14SDKEnvironmentO0A24SDKNetworkImplementationE17payBackendBaseUrlSSvp",
+            "mangledName": "$s22FintechSDKCommonEntity0A14SDKEnvironmentO0A24SDKNetworkImplementationE17payBackendBaseUrlSSvp",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22FintechSDKCommonEntity0A14SDKEnvironmentO0A24SDKNetworkImplementationE17payBackendBaseUrlSSvg",
+                "mangledName": "$s22FintechSDKCommonEntity0A14SDKEnvironmentO0A24SDKNetworkImplementationE17payBackendBaseUrlSSvg",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:22FintechSDKCommonEntity0A14SDKEnvironmentO",
+        "mangledName": "$s22FintechSDKCommonEntity0A14SDKEnvironmentO",
+        "moduleName": "FintechSDKCommonEntity",
+        "enumRawTypeName": "String",
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTFrontbackUrlProvider",
+            "printedName": "FTFrontbackUrlProvider",
+            "usr": "s:31FintechSDKNetworkImplementation22FTFrontbackUrlProviderP",
+            "mangledName": "$s31FintechSDKNetworkImplementation22FTFrontbackUrlProviderP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTFrontbackServiceTokenProvider",
+            "printedName": "FTFrontbackServiceTokenProvider",
+            "usr": "s:31FintechSDKNetworkImplementation31FTFrontbackServiceTokenProviderP",
+            "mangledName": "$s31FintechSDKNetworkImplementation31FTFrontbackServiceTokenProviderP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTPayBackendUrlProvider",
+            "printedName": "FTPayBackendUrlProvider",
+            "usr": "s:31FintechSDKNetworkImplementation23FTPayBackendUrlProviderP",
+            "mangledName": "$s31FintechSDKNetworkImplementation23FTPayBackendUrlProviderP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTBasicSessionProviderService.swift",
+      "kind": "StringLiteral",
+      "offset": 1997,
+      "length": 18,
+      "value": "\"YANDEX_CLIENT_ID\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTBasicSessionProviderService.swift",
+      "kind": "StringLiteral",
+      "offset": 2044,
+      "length": 23,
+      "value": "\"YANDEX_CLIENT_ID_TEST\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Backend\/FTPayBackendAPIFactory.swift",
+      "kind": "Array",
+      "offset": 854,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Backend\/FTPayBackendAPIFactory.swift",
+      "kind": "Array",
+      "offset": 930,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFlexApiFactoryImpl.swift",
+      "kind": "Array",
+      "offset": 1306,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFlexApiFactoryImpl.swift",
+      "kind": "Array",
+      "offset": 1382,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackAPIFactory.swift",
+      "kind": "Array",
+      "offset": 730,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackAPIFactory.swift",
+      "kind": "Array",
+      "offset": 806,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackClientFactory.swift",
+      "kind": "Array",
+      "offset": 1414,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackClientFactory.swift",
+      "kind": "Array",
+      "offset": 1490,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackClientFactory.swift",
+      "kind": "Array",
+      "offset": 1541,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/HeaderConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 80,
+      "length": 7,
+      "value": "\"X-BST\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/HeaderConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 125,
+      "length": 19,
+      "value": "\"X-AppMetrica-UUID\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/HeaderConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 176,
+      "length": 13,
+      "value": "\"X-Device-Id\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/HeaderConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 230,
+      "length": 23,
+      "value": "\"X-Sdk-Installation-Id\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/HeaderConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 289,
+      "length": 18,
+      "value": "\"X-Sdk-Session-Id\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "kind": "Array",
+      "offset": 946,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "kind": "Array",
+      "offset": 1011,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "kind": "Array",
+      "offset": 1062,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "kind": "Array",
+      "offset": 2299,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "kind": "Array",
+      "offset": 2364,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "kind": "Array",
+      "offset": 2415,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 7384,
+      "length": 3,
+      "value": "\"\/\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Providers\/FTFrontbackComponentsProviderImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 970,
+      "length": 46,
+      "value": "\"payment_sdk_19d9962ddd08e7d52a2668cbcd5f7b7e\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Providers\/FTFrontbackComponentsProviderImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 1042,
+      "length": 58,
+      "value": "\"yandex_pay_plus_backend_f8c528b768e7421ee0e3258995201aaa\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/DiehardRequestMiddleware.swift",
+      "kind": "StringLiteral",
+      "offset": 895,
+      "length": 15,
+      "value": "\"X-Oauth-Token\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/DiehardRequestMiddleware.swift",
+      "kind": "StringLiteral",
+      "offset": 941,
+      "length": 22,
+      "value": "\"X-Passport-Partition\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/DiehardRequestMiddleware.swift",
+      "kind": "StringLiteral",
+      "offset": 988,
+      "length": 7,
+      "value": "\"X-UID\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
+      "kind": "StringLiteral",
+      "offset": 1359,
+      "length": 15,
+      "value": "\"X-SDK-Version\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
+      "kind": "StringLiteral",
+      "offset": 1410,
+      "length": 18,
+      "value": "\"X-Client-Version\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
+      "kind": "StringLiteral",
+      "offset": 1460,
+      "length": 14,
+      "value": "\"X-Client-App\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
+      "kind": "StringLiteral",
+      "offset": 1508,
+      "length": 16,
+      "value": "\"X-SDK-Platform\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
+      "kind": "StringLiteral",
+      "offset": 1562,
+      "length": 20,
+      "value": "\"X-Platform-Version\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
+      "kind": "StringLiteral",
+      "offset": 1611,
+      "length": 11,
+      "value": "\"X-Real-IP\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
+      "kind": "StringLiteral",
+      "offset": 1648,
+      "length": 5,
+      "value": "\"ios\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTRequestServiceTokenMiddleware.swift",
+      "kind": "StringLiteral",
+      "offset": 517,
+      "length": 17,
+      "value": "\"X-Service-Token\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTRequestUserAgentMiddleware.swift",
+      "kind": "StringLiteral",
+      "offset": 514,
+      "length": 12,
+      "value": "\"User-Agent\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTSessionRequestMiddleware.swift",
+      "kind": "StringLiteral",
+      "offset": 775,
+      "length": 15,
+      "value": "\"X-Merchant-ID\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTSessionRequestMiddleware.swift",
+      "kind": "StringLiteral",
+      "offset": 829,
+      "length": 22,
+      "value": "\"X-Merchant-Client-ID\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTSessionRequestMiddleware.swift",
+      "kind": "StringLiteral",
+      "offset": 883,
+      "length": 18,
+      "value": "\"X-Pay-Session-ID\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FrontbackRequestMiddleware.swift",
+      "kind": "StringLiteral",
+      "offset": 2172,
+      "length": 15,
+      "value": "\"Authorization\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FrontbackRequestMiddleware.swift",
+      "kind": "StringLiteral",
+      "offset": 2218,
+      "length": 22,
+      "value": "\"X-Passport-Partition\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FrontbackRequestMiddleware.swift",
+      "kind": "StringLiteral",
+      "offset": 2265,
+      "length": 7,
+      "value": "\"X-UID\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/TraceparentRequestMiddleware.swift",
+      "kind": "StringLiteral",
+      "offset": 927,
+      "length": 13,
+      "value": "\"traceparent\""
+    }
+  ]
+}

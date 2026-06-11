@@ -1,0 +1,29 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechPlusSDKInterfaces -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import Foundation
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct FintechPlusObtainTokenArguments {
+  public var uid: Foundation.NSNumber
+  public var clientId: Swift.String
+  public var clientSecret: Swift.String
+  public var completion: (_ token: Swift.String?, _ error: (any Swift.Error)?) -> Swift.Void
+  public init(uid: Foundation.NSNumber, cliendId: Swift.String, clientSecret: Swift.String, completion: @escaping (Swift.String?, (any Swift.Error)?) -> Swift.Void)
+}
+public struct FintechPlusSDKUser {
+  public let uid: Foundation.NSNumber
+  public let isStaff: Swift.Bool
+  public let token: Swift.String
+  public init?(uid: Foundation.NSNumber?, isStaff: Swift.Bool?, token: Swift.String?)
+}
+public protocol FintechPlusSDKAdapter {
+  func openPlus(controller: UIKit.UIViewController, completion: ((Swift.Bool) -> Swift.Void)?)
+}
+public protocol FintechPlusSDKAdapterFactory {
+  func make(isProduction: Swift.Bool, service: Swift.String, serviceChannel: Swift.String, deeplinkScheme: Swift.String, offer: Swift.String, user: FintechPlusSDKInterfaces.FintechPlusSDKUser?, tokenExchanger: @escaping (FintechPlusSDKInterfaces.FintechPlusObtainTokenArguments) -> Swift.Void) -> any FintechPlusSDKInterfaces.FintechPlusSDKAdapter
+}

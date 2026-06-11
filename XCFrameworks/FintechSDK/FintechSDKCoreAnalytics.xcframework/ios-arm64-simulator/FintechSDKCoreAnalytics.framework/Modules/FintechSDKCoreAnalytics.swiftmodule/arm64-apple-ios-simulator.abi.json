@@ -1,0 +1,3601 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "FintechSDKCoreAnalytics",
+    "printedName": "FintechSDKCoreAnalytics",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCommonEntity",
+        "printedName": "FintechSDKCommonEntity",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTAnalyticsReporterFactory",
+        "printedName": "FTAnalyticsReporterFactory",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(environment:sessionProvider:metricaAPIKey:appMetricaAdapter:rumFactory:rtmFactory:extraParamsProvider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTAnalyticsReporterFactory",
+                "printedName": "FintechSDKCoreAnalytics.FTAnalyticsReporterFactory",
+                "usr": "s:23FintechSDKCoreAnalytics26FTAnalyticsReporterFactoryC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechSDKEnvironment",
+                "printedName": "FintechSDKCommonEntity.FintechSDKEnvironment",
+                "usr": "s:22FintechSDKCommonEntity0A14SDKEnvironmentO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTSessionProviderServing",
+                "printedName": "any FintechSDKNetworkInterfaces.FTSessionProviderServing",
+                "usr": "s:27FintechSDKNetworkInterfaces24FTSessionProviderServingP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAppMetricaAdapter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechRUMAdapterFactory",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechRUMAdapterFactory",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A17RUMAdapterFactoryP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechRTMAdapterFactory",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechRTMAdapterFactory",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A17RTMAdapterFactoryP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKCoreAnalytics.FintechExtraAnalyticsParamsProvider)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechExtraAnalyticsParamsProvider",
+                    "printedName": "any FintechSDKCoreAnalytics.FintechExtraAnalyticsParamsProvider",
+                    "usr": "s:23FintechSDKCoreAnalytics0a5ExtraC14ParamsProviderP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:23FintechSDKCoreAnalytics26FTAnalyticsReporterFactoryC11environment15sessionProvider13metricaAPIKey17appMetricaAdapter03rumF003rtmF0011extraParamsI0AC0A15SDKCommonEntity0A14SDKEnvironmentO_0A20SDKNetworkInterfaces09FTSessionI7Serving_pSS0a12SDKAnalyticsW00a3AppmN0_pAP0a10RUMAdapterF0_pAP0a10RTMAdapterF0_pAA0a5ExtracrI0_pSgtcfc",
+            "mangledName": "$s23FintechSDKCoreAnalytics26FTAnalyticsReporterFactoryC11environment15sessionProvider13metricaAPIKey17appMetricaAdapter03rumF003rtmF0011extraParamsI0AC0A15SDKCommonEntity0A14SDKEnvironmentO_0A20SDKNetworkInterfaces09FTSessionI7Serving_pSS0a12SDKAnalyticsW00a3AppmN0_pAP0a10RUMAdapterF0_pAP0a10RTMAdapterF0_pAA0a5ExtracrI0_pSgtcfc",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "makeEventReporter",
+            "printedName": "makeEventReporter(puid:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsEventReporter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSNumber?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics26FTAnalyticsReporterFactoryC09makeEventE04puid0A22SDKAnalyticsInterfaces0achE0_pSo8NSNumberCSg_tF",
+            "mangledName": "$s23FintechSDKCoreAnalytics26FTAnalyticsReporterFactoryC09makeEventE04puid0A22SDKAnalyticsInterfaces0achE0_pSo8NSNumberCSg_tF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "makeErrorReporter",
+            "printedName": "makeErrorReporter(puid:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsErrorReporter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsErrorReporterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSNumber?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics26FTAnalyticsReporterFactoryC09makeErrorE04puid0A22SDKAnalyticsInterfaces0achE0_pSo8NSNumberCSg_tF",
+            "mangledName": "$s23FintechSDKCoreAnalytics26FTAnalyticsReporterFactoryC09makeErrorE04puid0A22SDKAnalyticsInterfaces0achE0_pSo8NSNumberCSg_tF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:23FintechSDKCoreAnalytics26FTAnalyticsReporterFactoryC",
+        "mangledName": "$s23FintechSDKCoreAnalytics26FTAnalyticsReporterFactoryC",
+        "moduleName": "FintechSDKCoreAnalytics",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FintechAnalyticsAppMetricaReporter",
+        "printedName": "FintechAnalyticsAppMetricaReporter",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(adapter:paramsProvider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsAppMetricaReporter",
+                "printedName": "FintechSDKCoreAnalytics.FintechAnalyticsAppMetricaReporter",
+                "usr": "s:23FintechSDKCoreAnalytics0aC18AppMetricaReporterC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAppMetricaReportingAdapter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAppMetricaReportingAdapter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A26AppMetricaReportingAdapterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsParamsProvider",
+                "printedName": "any FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:23FintechSDKCoreAnalytics0aC18AppMetricaReporterC7adapter14paramsProviderAC0A22SDKAnalyticsInterfaces0adE16ReportingAdapter_p_AA0ac6ParamsI0_ptcfc",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC18AppMetricaReporterC7adapter14paramsProviderAC0A22SDKAnalyticsInterfaces0adE16ReportingAdapter_p_AA0ac6ParamsI0_ptcfc",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "reportEvent",
+            "printedName": "reportEvent(name:params:type:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics0aC18AppMetricaReporterC11reportEvent4name6params4typeySS_SDyS2SGSStF",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC18AppMetricaReporterC11reportEvent4name6params4typeySS_SDyS2SGSStF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:23FintechSDKCoreAnalytics0aC18AppMetricaReporterC",
+        "mangledName": "$s23FintechSDKCoreAnalytics0aC18AppMetricaReporterC",
+        "moduleName": "FintechSDKCoreAnalytics",
+        "declAttributes": [
+          "Final",
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechAnalyticsEventReporter",
+            "printedName": "FintechAnalyticsEventReporter",
+            "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP",
+            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FintechAnalyticsGeneralErrorReporter",
+        "printedName": "FintechAnalyticsGeneralErrorReporter",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(destinations:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsGeneralErrorReporter",
+                "printedName": "FintechSDKCoreAnalytics.FintechAnalyticsGeneralErrorReporter",
+                "usr": "s:23FintechSDKCoreAnalytics0aC20GeneralErrorReporterC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechAnalyticsErrorReporter",
+                    "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter",
+                    "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsErrorReporterP"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:23FintechSDKCoreAnalytics0aC20GeneralErrorReporterC12destinationsACSay0A22SDKAnalyticsInterfaces0aceF0_pG_tcfc",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC20GeneralErrorReporterC12destinationsACSay0A22SDKAnalyticsInterfaces0aceF0_pG_tcfc",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "reportError",
+            "printedName": "reportError(message:params:type:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics0aC20GeneralErrorReporterC06reportE07message6params4typeySS_SDyS2SGSStF",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC20GeneralErrorReporterC06reportE07message6params4typeySS_SDyS2SGSStF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:23FintechSDKCoreAnalytics0aC20GeneralErrorReporterC",
+        "mangledName": "$s23FintechSDKCoreAnalytics0aC20GeneralErrorReporterC",
+        "moduleName": "FintechSDKCoreAnalytics",
+        "declAttributes": [
+          "AccessControl",
+          "Final"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechAnalyticsErrorReporter",
+            "printedName": "FintechAnalyticsErrorReporter",
+            "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsErrorReporterP",
+            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A22AnalyticsErrorReporterP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FintechAnalyticsGeneralEventReporter",
+        "printedName": "FintechAnalyticsGeneralEventReporter",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(destinations:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsGeneralEventReporter",
+                "printedName": "FintechSDKCoreAnalytics.FintechAnalyticsGeneralEventReporter",
+                "usr": "s:23FintechSDKCoreAnalytics0aC20GeneralEventReporterC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechAnalyticsEventReporter",
+                    "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter",
+                    "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:23FintechSDKCoreAnalytics0aC20GeneralEventReporterC12destinationsACSay0A22SDKAnalyticsInterfaces0aceF0_pG_tcfc",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC20GeneralEventReporterC12destinationsACSay0A22SDKAnalyticsInterfaces0aceF0_pG_tcfc",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "reportEvent",
+            "printedName": "reportEvent(name:params:type:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics0aC20GeneralEventReporterC06reportE04name6params4typeySS_SDyS2SGSStF",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC20GeneralEventReporterC06reportE04name6params4typeySS_SDyS2SGSStF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:23FintechSDKCoreAnalytics0aC20GeneralEventReporterC",
+        "mangledName": "$s23FintechSDKCoreAnalytics0aC20GeneralEventReporterC",
+        "moduleName": "FintechSDKCoreAnalytics",
+        "declAttributes": [
+          "AccessControl",
+          "Final"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechAnalyticsEventReporter",
+            "printedName": "FintechAnalyticsEventReporter",
+            "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP",
+            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FintechAnalyticsRTMReporter",
+        "printedName": "FintechAnalyticsRTMReporter",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(adapter:paramsProvider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsRTMReporter",
+                "printedName": "FintechSDKCoreAnalytics.FintechAnalyticsRTMReporter",
+                "usr": "s:23FintechSDKCoreAnalytics0aC11RTMReporterC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechRTMAdapter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechRTMAdapter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A10RTMAdapterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsParamsProvider",
+                "printedName": "any FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:23FintechSDKCoreAnalytics0aC11RTMReporterC7adapter14paramsProviderAC0A22SDKAnalyticsInterfaces0A10RTMAdapter_p_AA0ac6ParamsG0_ptcfc",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC11RTMReporterC7adapter14paramsProviderAC0A22SDKAnalyticsInterfaces0A10RTMAdapter_p_AA0ac6ParamsG0_ptcfc",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "reportError",
+            "printedName": "reportError(message:params:type:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics0aC11RTMReporterC11reportError7message6params4typeySS_SDyS2SGSStF",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC11RTMReporterC11reportError7message6params4typeySS_SDyS2SGSStF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:23FintechSDKCoreAnalytics0aC11RTMReporterC",
+        "mangledName": "$s23FintechSDKCoreAnalytics0aC11RTMReporterC",
+        "moduleName": "FintechSDKCoreAnalytics",
+        "declAttributes": [
+          "Final",
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechAnalyticsErrorReporter",
+            "printedName": "FintechAnalyticsErrorReporter",
+            "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsErrorReporterP",
+            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A22AnalyticsErrorReporterP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FintechAnalyticsRUMReporter",
+        "printedName": "FintechAnalyticsRUMReporter",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(adapter:paramsProvider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsRUMReporter",
+                "printedName": "FintechSDKCoreAnalytics.FintechAnalyticsRUMReporter",
+                "usr": "s:23FintechSDKCoreAnalytics0aC11RUMReporterC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechRUMAdapter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechRUMAdapter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A10RUMAdapterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsParamsProvider",
+                "printedName": "any FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:23FintechSDKCoreAnalytics0aC11RUMReporterC7adapter14paramsProviderAC0A22SDKAnalyticsInterfaces0A10RUMAdapter_p_AA0ac6ParamsG0_ptcfc",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC11RUMReporterC7adapter14paramsProviderAC0A22SDKAnalyticsInterfaces0A10RUMAdapter_p_AA0ac6ParamsG0_ptcfc",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "reportEvent",
+            "printedName": "reportEvent(name:params:type:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics0aC11RUMReporterC11reportEvent4name6params4typeySS_SDyS2SGSStF",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC11RUMReporterC11reportEvent4name6params4typeySS_SDyS2SGSStF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:23FintechSDKCoreAnalytics0aC11RUMReporterC",
+        "mangledName": "$s23FintechSDKCoreAnalytics0aC11RUMReporterC",
+        "moduleName": "FintechSDKCoreAnalytics",
+        "declAttributes": [
+          "Final",
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechAnalyticsEventReporter",
+            "printedName": "FintechAnalyticsEventReporter",
+            "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP",
+            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FintechAnalyticsTelemetryReporter",
+        "printedName": "FintechAnalyticsTelemetryReporter",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(adapter:paramsProvider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsTelemetryReporter",
+                "printedName": "FintechSDKCoreAnalytics.FintechAnalyticsTelemetryReporter",
+                "usr": "s:23FintechSDKCoreAnalytics0aC17TelemetryReporterC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechTelemetryAdapter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechTelemetryAdapter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A16TelemetryAdapterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsParamsProvider",
+                "printedName": "any FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:23FintechSDKCoreAnalytics0aC17TelemetryReporterC7adapter14paramsProviderAC0A22SDKAnalyticsInterfaces0aD7Adapter_p_AA0ac6ParamsH0_ptcfc",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC17TelemetryReporterC7adapter14paramsProviderAC0A22SDKAnalyticsInterfaces0aD7Adapter_p_AA0ac6ParamsH0_ptcfc",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "reportEvent",
+            "printedName": "reportEvent(name:params:type:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics0aC17TelemetryReporterC11reportEvent4name6params4typeySS_SDyS2SGSStF",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC17TelemetryReporterC11reportEvent4name6params4typeySS_SDyS2SGSStF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:23FintechSDKCoreAnalytics0aC17TelemetryReporterC",
+        "mangledName": "$s23FintechSDKCoreAnalytics0aC17TelemetryReporterC",
+        "moduleName": "FintechSDKCoreAnalytics",
+        "declAttributes": [
+          "Final",
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechAnalyticsEventReporter",
+            "printedName": "FintechAnalyticsEventReporter",
+            "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP",
+            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTIdentifiersProvider",
+        "printedName": "FTIdentifiersProvider",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(appMetricaAdapter:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTIdentifiersProvider",
+                "printedName": "FintechSDKCoreAnalytics.FTIdentifiersProvider",
+                "usr": "s:23FintechSDKCoreAnalytics21FTIdentifiersProviderC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAppMetricaAdapter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:23FintechSDKCoreAnalytics21FTIdentifiersProviderC17appMetricaAdapterAC0A22SDKAnalyticsInterfaces0a3AppgH0_p_tcfc",
+            "mangledName": "$s23FintechSDKCoreAnalytics21FTIdentifiersProviderC17appMetricaAdapterAC0A22SDKAnalyticsInterfaces0a3AppgH0_p_tcfc",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "installationID",
+            "printedName": "installationID",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics21FTIdentifiersProviderC14installationIDSSvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics21FTIdentifiersProviderC14installationIDSSvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics21FTIdentifiersProviderC14installationIDSSvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics21FTIdentifiersProviderC14installationIDSSvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "sdkSessionID",
+            "printedName": "sdkSessionID",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics21FTIdentifiersProviderC12sdkSessionIDSSvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics21FTIdentifiersProviderC12sdkSessionIDSSvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics21FTIdentifiersProviderC12sdkSessionIDSSvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics21FTIdentifiersProviderC12sdkSessionIDSSvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "appMetricaUUID",
+            "printedName": "appMetricaUUID",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics21FTIdentifiersProviderC14appMetricaUUIDSSSgvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics21FTIdentifiersProviderC14appMetricaUUIDSSSgvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics21FTIdentifiersProviderC14appMetricaUUIDSSSgvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics21FTIdentifiersProviderC14appMetricaUUIDSSSgvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "appMetricaDeviceID",
+            "printedName": "appMetricaDeviceID",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics21FTIdentifiersProviderC18appMetricaDeviceIDSSSgvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics21FTIdentifiersProviderC18appMetricaDeviceIDSSSgvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics21FTIdentifiersProviderC18appMetricaDeviceIDSSSgvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics21FTIdentifiersProviderC18appMetricaDeviceIDSSSgvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:23FintechSDKCoreAnalytics21FTIdentifiersProviderC",
+        "mangledName": "$s23FintechSDKCoreAnalytics21FTIdentifiersProviderC",
+        "moduleName": "FintechSDKCoreAnalytics",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechIdentifiersProviding",
+            "printedName": "FintechIdentifiersProviding",
+            "usr": "s:29FintechSDKAnalyticsInterfaces0A20IdentifiersProvidingP",
+            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A20IdentifiersProvidingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FintechNetworkReportingObserver",
+        "printedName": "FintechNetworkReportingObserver",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(serviceName:errorReporter:eventReporter:reportOnlyFailures:networkEventsListener:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkReportingObserver",
+                "printedName": "FintechSDKCoreAnalytics.FintechNetworkReportingObserver",
+                "usr": "s:23FintechSDKCoreAnalytics0A24NetworkReportingObserverC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsErrorReporter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsErrorReporterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechAnalyticsEventReporter",
+                    "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter",
+                    "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKAnalyticsInterfaces.FTNetworkEventsListener)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTNetworkEventsListener",
+                    "printedName": "any FintechSDKAnalyticsInterfaces.FTNetworkEventsListener",
+                    "usr": "s:29FintechSDKAnalyticsInterfaces23FTNetworkEventsListenerP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:23FintechSDKCoreAnalytics0A24NetworkReportingObserverC11serviceName13errorReporter05eventJ018reportOnlyFailures21networkEventsListenerACSS_0A22SDKAnalyticsInterfaces0ac5ErrorJ0_pAI0ac5EventJ0_pSgSbAI09FTNetworkpQ0_pSgtcfc",
+            "mangledName": "$s23FintechSDKCoreAnalytics0A24NetworkReportingObserverC11serviceName13errorReporter05eventJ018reportOnlyFailures21networkEventsListenerACSS_0A22SDKAnalyticsInterfaces0ac5ErrorJ0_pAI0ac5EventJ0_pSgSbAI09FTNetworkpQ0_pSgtcfc",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "didStart",
+            "printedName": "didStart(endpoint:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkEndpointProvider",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider",
+                "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkEndpointProviderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics0A24NetworkReportingObserverC8didStart8endpointy0A20SDKNetworkInterfaces0aD16EndpointProvider_p_tF",
+            "mangledName": "$s23FintechSDKCoreAnalytics0A24NetworkReportingObserverC8didStart8endpointy0A20SDKNetworkInterfaces0aD16EndpointProvider_p_tF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didFinishCollectingMetrics",
+            "printedName": "didFinishCollectingMetrics(endpoint:metrics:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkEndpointProvider",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider",
+                "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkEndpointProviderP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLSessionTaskMetrics",
+                "printedName": "Foundation.URLSessionTaskMetrics",
+                "usr": "c:objc(cs)NSURLSessionTaskMetrics"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics0A24NetworkReportingObserverC26didFinishCollectingMetrics8endpoint7metricsy0A20SDKNetworkInterfaces0aD16EndpointProvider_p_So016NSURLSessionTaskJ0CtF",
+            "mangledName": "$s23FintechSDKCoreAnalytics0A24NetworkReportingObserverC26didFinishCollectingMetrics8endpoint7metricsy0A20SDKNetworkInterfaces0aD16EndpointProvider_p_So016NSURLSessionTaskJ0CtF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didSucceed",
+            "printedName": "didSucceed(endpoint:response:data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkEndpointProvider",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider",
+                "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkEndpointProviderP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPURLResponse",
+                "printedName": "Foundation.HTTPURLResponse",
+                "usr": "c:objc(cs)NSHTTPURLResponse"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics0A24NetworkReportingObserverC10didSucceed8endpoint8response4datay0A20SDKNetworkInterfaces0aD16EndpointProvider_p_So17NSHTTPURLResponseC10Foundation4DataVtF",
+            "mangledName": "$s23FintechSDKCoreAnalytics0A24NetworkReportingObserverC10didSucceed8endpoint8response4datay0A20SDKNetworkInterfaces0aD16EndpointProvider_p_So17NSHTTPURLResponseC10Foundation4DataVtF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didFail",
+            "printedName": "didFail(endpoint:error:response:data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkEndpointProvider",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider",
+                "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkEndpointProviderP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NetworkClientError",
+                "printedName": "FintechSDKNetworkInterfaces.NetworkClientError",
+                "usr": "s:27FintechSDKNetworkInterfaces18NetworkClientErrorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.HTTPURLResponse?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPURLResponse",
+                    "printedName": "Foundation.HTTPURLResponse",
+                    "usr": "c:objc(cs)NSHTTPURLResponse"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Data?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics0A24NetworkReportingObserverC7didFail8endpoint5error8response4datay0A20SDKNetworkInterfaces0aD16EndpointProvider_p_AI0D11ClientErrorOSo17NSHTTPURLResponseCSg10Foundation4DataVSgtF",
+            "mangledName": "$s23FintechSDKCoreAnalytics0A24NetworkReportingObserverC7didFail8endpoint5error8response4datay0A20SDKNetworkInterfaces0aD16EndpointProvider_p_AI0D11ClientErrorOSo17NSHTTPURLResponseCSg10Foundation4DataVSgtF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:23FintechSDKCoreAnalytics0A24NetworkReportingObserverC",
+        "mangledName": "$s23FintechSDKCoreAnalytics0A24NetworkReportingObserverC",
+        "moduleName": "FintechSDKCoreAnalytics",
+        "declAttributes": [
+          "Final",
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechNetworkEventObserver",
+            "printedName": "FintechNetworkEventObserver",
+            "usr": "s:27FintechSDKNetworkInterfaces0A20NetworkEventObserverP",
+            "mangledName": "$s27FintechSDKNetworkInterfaces0A20NetworkEventObserverP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTOpenTelemetryNetworkObserver",
+        "printedName": "FTOpenTelemetryNetworkObserver",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(telemetryAdapter:spanStorage:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTOpenTelemetryNetworkObserver",
+                "printedName": "FintechSDKCoreAnalytics.FTOpenTelemetryNetworkObserver",
+                "usr": "s:23FintechSDKCoreAnalytics30FTOpenTelemetryNetworkObserverC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechTelemetryAdapter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechTelemetryAdapter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A16TelemetryAdapterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTRequestSpanStorage",
+                "printedName": "FintechSDKCoreAnalytics.FTRequestSpanStorage",
+                "hasDefaultArg": true,
+                "usr": "s:23FintechSDKCoreAnalytics20FTRequestSpanStorageC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:23FintechSDKCoreAnalytics30FTOpenTelemetryNetworkObserverC16telemetryAdapter11spanStorageAC0A22SDKAnalyticsInterfaces0aeI0_p_AA013FTRequestSpanK0Ctcfc",
+            "mangledName": "$s23FintechSDKCoreAnalytics30FTOpenTelemetryNetworkObserverC16telemetryAdapter11spanStorageAC0A22SDKAnalyticsInterfaces0aeI0_p_AA013FTRequestSpanK0Ctcfc",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "didStart",
+            "printedName": "didStart(endpoint:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkEndpointProvider",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider",
+                "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkEndpointProviderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics30FTOpenTelemetryNetworkObserverC8didStart8endpointy0A20SDKNetworkInterfaces0aF16EndpointProvider_p_tF",
+            "mangledName": "$s23FintechSDKCoreAnalytics30FTOpenTelemetryNetworkObserverC8didStart8endpointy0A20SDKNetworkInterfaces0aF16EndpointProvider_p_tF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didFinishCollectingMetrics",
+            "printedName": "didFinishCollectingMetrics(endpoint:metrics:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkEndpointProvider",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider",
+                "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkEndpointProviderP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLSessionTaskMetrics",
+                "printedName": "Foundation.URLSessionTaskMetrics",
+                "usr": "c:objc(cs)NSURLSessionTaskMetrics"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics30FTOpenTelemetryNetworkObserverC26didFinishCollectingMetrics8endpoint7metricsy0A20SDKNetworkInterfaces0aF16EndpointProvider_p_So016NSURLSessionTaskK0CtF",
+            "mangledName": "$s23FintechSDKCoreAnalytics30FTOpenTelemetryNetworkObserverC26didFinishCollectingMetrics8endpoint7metricsy0A20SDKNetworkInterfaces0aF16EndpointProvider_p_So016NSURLSessionTaskK0CtF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didSucceed",
+            "printedName": "didSucceed(endpoint:response:data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkEndpointProvider",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider",
+                "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkEndpointProviderP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPURLResponse",
+                "printedName": "Foundation.HTTPURLResponse",
+                "usr": "c:objc(cs)NSHTTPURLResponse"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics30FTOpenTelemetryNetworkObserverC10didSucceed8endpoint8response4datay0A20SDKNetworkInterfaces0aF16EndpointProvider_p_So17NSHTTPURLResponseC10Foundation4DataVtF",
+            "mangledName": "$s23FintechSDKCoreAnalytics30FTOpenTelemetryNetworkObserverC10didSucceed8endpoint8response4datay0A20SDKNetworkInterfaces0aF16EndpointProvider_p_So17NSHTTPURLResponseC10Foundation4DataVtF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didFail",
+            "printedName": "didFail(endpoint:error:response:data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkEndpointProvider",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider",
+                "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkEndpointProviderP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NetworkClientError",
+                "printedName": "FintechSDKNetworkInterfaces.NetworkClientError",
+                "usr": "s:27FintechSDKNetworkInterfaces18NetworkClientErrorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.HTTPURLResponse?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPURLResponse",
+                    "printedName": "Foundation.HTTPURLResponse",
+                    "usr": "c:objc(cs)NSHTTPURLResponse"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Data?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics30FTOpenTelemetryNetworkObserverC7didFail8endpoint5error8response4datay0A20SDKNetworkInterfaces0aF16EndpointProvider_p_AI0F11ClientErrorOSo17NSHTTPURLResponseCSg10Foundation4DataVSgtF",
+            "mangledName": "$s23FintechSDKCoreAnalytics30FTOpenTelemetryNetworkObserverC7didFail8endpoint5error8response4datay0A20SDKNetworkInterfaces0aF16EndpointProvider_p_AI0F11ClientErrorOSo17NSHTTPURLResponseCSg10Foundation4DataVSgtF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:23FintechSDKCoreAnalytics30FTOpenTelemetryNetworkObserverC",
+        "mangledName": "$s23FintechSDKCoreAnalytics30FTOpenTelemetryNetworkObserverC",
+        "moduleName": "FintechSDKCoreAnalytics",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "SPIAccessControl",
+          "RawDocComment"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechNetworkEventObserver",
+            "printedName": "FintechNetworkEventObserver",
+            "usr": "s:27FintechSDKNetworkInterfaces0A20NetworkEventObserverP",
+            "mangledName": "$s27FintechSDKNetworkInterfaces0A20NetworkEventObserverP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTRequestSpanStorage",
+        "printedName": "FTRequestSpanStorage",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTRequestSpanStorage",
+                "printedName": "FintechSDKCoreAnalytics.FTRequestSpanStorage",
+                "usr": "s:23FintechSDKCoreAnalytics20FTRequestSpanStorageC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics20FTRequestSpanStorageC6sharedACvpZ",
+            "mangledName": "$s23FintechSDKCoreAnalytics20FTRequestSpanStorageC6sharedACvpZ",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "Nonisolated"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTRequestSpanStorage",
+                    "printedName": "FintechSDKCoreAnalytics.FTRequestSpanStorage",
+                    "usr": "s:23FintechSDKCoreAnalytics20FTRequestSpanStorageC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics20FTRequestSpanStorageC6sharedACvgZ",
+                "mangledName": "$s23FintechSDKCoreAnalytics20FTRequestSpanStorageC6sharedACvgZ",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "store",
+            "printedName": "store(span:for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechRequestSpan",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechRequestSpan",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A11RequestSpanP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkEndpointProvider",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider",
+                "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkEndpointProviderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics20FTRequestSpanStorageC5store4span3fory0A22SDKAnalyticsInterfaces0a7RequestE0_p_0a10SDKNetworkK00A23NetworkEndpointProvider_ptF",
+            "mangledName": "$s23FintechSDKCoreAnalytics20FTRequestSpanStorageC5store4span3fory0A22SDKAnalyticsInterfaces0a7RequestE0_p_0a10SDKNetworkK00A23NetworkEndpointProvider_ptF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "retrieve",
+            "printedName": "retrieve(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKAnalyticsInterfaces.FintechRequestSpan)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechRequestSpan",
+                    "printedName": "any FintechSDKAnalyticsInterfaces.FintechRequestSpan",
+                    "usr": "s:29FintechSDKAnalyticsInterfaces0A11RequestSpanP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkEndpointProvider",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider",
+                "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkEndpointProviderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics20FTRequestSpanStorageC8retrieve3for0A22SDKAnalyticsInterfaces0a7RequestE0_pSg0a10SDKNetworkJ00A23NetworkEndpointProvider_p_tF",
+            "mangledName": "$s23FintechSDKCoreAnalytics20FTRequestSpanStorageC8retrieve3for0A22SDKAnalyticsInterfaces0a7RequestE0_pSg0a10SDKNetworkJ00A23NetworkEndpointProvider_p_tF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "remove",
+            "printedName": "remove(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkEndpointProvider",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider",
+                "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkEndpointProviderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics20FTRequestSpanStorageC6remove3fory0A20SDKNetworkInterfaces0A23NetworkEndpointProvider_p_tF",
+            "mangledName": "$s23FintechSDKCoreAnalytics20FTRequestSpanStorageC6remove3fory0A20SDKNetworkInterfaces0A23NetworkEndpointProvider_p_tF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "retrieve",
+            "printedName": "retrieve(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKAnalyticsInterfaces.FintechRequestSpan)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechRequestSpan",
+                    "printedName": "any FintechSDKAnalyticsInterfaces.FintechRequestSpan",
+                    "usr": "s:29FintechSDKAnalyticsInterfaces0A11RequestSpanP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics20FTRequestSpanStorageC8retrieve3for0A22SDKAnalyticsInterfaces0a7RequestE0_pSg10Foundation10URLRequestV_tF",
+            "mangledName": "$s23FintechSDKCoreAnalytics20FTRequestSpanStorageC8retrieve3for0A22SDKAnalyticsInterfaces0a7RequestE0_pSg10Foundation10URLRequestV_tF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:23FintechSDKCoreAnalytics20FTRequestSpanStorageC",
+        "mangledName": "$s23FintechSDKCoreAnalytics20FTRequestSpanStorageC",
+        "moduleName": "FintechSDKCoreAnalytics",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "SPIAccessControl",
+          "RawDocComment"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCommonEntity",
+        "printedName": "FintechSDKCommonEntity",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTAnalyticsIdentifiersParamsProvider",
+        "printedName": "FTAnalyticsIdentifiersParamsProvider",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTAnalyticsIdentifiersParamsProvider",
+                "printedName": "FintechSDKCoreAnalytics.FTAnalyticsIdentifiersParamsProvider",
+                "usr": "s:23FintechSDKCoreAnalytics36FTAnalyticsIdentifiersParamsProviderV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:23FintechSDKCoreAnalytics36FTAnalyticsIdentifiersParamsProviderVACycfc",
+            "mangledName": "$s23FintechSDKCoreAnalytics36FTAnalyticsIdentifiersParamsProviderVACycfc",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "params",
+            "printedName": "params()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics36FTAnalyticsIdentifiersParamsProviderV6paramsSDyS2SGyF",
+            "mangledName": "$s23FintechSDKCoreAnalytics36FTAnalyticsIdentifiersParamsProviderV6paramsSDyS2SGyF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:23FintechSDKCoreAnalytics36FTAnalyticsIdentifiersParamsProviderV",
+        "mangledName": "$s23FintechSDKCoreAnalytics36FTAnalyticsIdentifiersParamsProviderV",
+        "moduleName": "FintechSDKCoreAnalytics",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechExtraAnalyticsParamsProvider",
+            "printedName": "FintechExtraAnalyticsParamsProvider",
+            "usr": "s:23FintechSDKCoreAnalytics0a5ExtraC14ParamsProviderP",
+            "mangledName": "$s23FintechSDKCoreAnalytics0a5ExtraC14ParamsProviderP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTCompositeExtraAnalyticsParamsProvider",
+        "printedName": "FTCompositeExtraAnalyticsParamsProvider",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(providers:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTCompositeExtraAnalyticsParamsProvider",
+                "printedName": "FintechSDKCoreAnalytics.FTCompositeExtraAnalyticsParamsProvider",
+                "usr": "s:23FintechSDKCoreAnalytics016FTCompositeExtraC14ParamsProviderV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKCoreAnalytics.FintechExtraAnalyticsParamsProvider]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechExtraAnalyticsParamsProvider",
+                    "printedName": "any FintechSDKCoreAnalytics.FintechExtraAnalyticsParamsProvider",
+                    "usr": "s:23FintechSDKCoreAnalytics0a5ExtraC14ParamsProviderP"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:23FintechSDKCoreAnalytics016FTCompositeExtraC14ParamsProviderV9providersACSayAA0aecfG0_pG_tcfc",
+            "mangledName": "$s23FintechSDKCoreAnalytics016FTCompositeExtraC14ParamsProviderV9providersACSayAA0aecfG0_pG_tcfc",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "params",
+            "printedName": "params()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics016FTCompositeExtraC14ParamsProviderV6paramsSDyS2SGyYaF",
+            "mangledName": "$s23FintechSDKCoreAnalytics016FTCompositeExtraC14ParamsProviderV6paramsSDyS2SGyYaF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:23FintechSDKCoreAnalytics016FTCompositeExtraC14ParamsProviderV",
+        "mangledName": "$s23FintechSDKCoreAnalytics016FTCompositeExtraC14ParamsProviderV",
+        "moduleName": "FintechSDKCoreAnalytics",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechExtraAnalyticsParamsProvider",
+            "printedName": "FintechExtraAnalyticsParamsProvider",
+            "usr": "s:23FintechSDKCoreAnalytics0a5ExtraC14ParamsProviderP",
+            "mangledName": "$s23FintechSDKCoreAnalytics0a5ExtraC14ParamsProviderP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FintechAnalyticsParamsProvider",
+        "printedName": "FintechAnalyticsParamsProvider",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "isProduction",
+            "printedName": "isProduction",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP12isProductionSbvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP12isProductionSbvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP12isProductionSbvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP12isProductionSbvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "sugared_genericSig": "<Self where Self : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "userAgent",
+            "printedName": "userAgent",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP9userAgentSSvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP9userAgentSSvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP9userAgentSSvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP9userAgentSSvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "sugared_genericSig": "<Self where Self : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "environment",
+            "printedName": "environment",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP11environmentSSvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP11environmentSSvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP11environmentSSvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP11environmentSSvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "sugared_genericSig": "<Self where Self : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "iosVersion",
+            "printedName": "iosVersion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP10iosVersionSSvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP10iosVersionSSvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP10iosVersionSSvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP10iosVersionSSvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "sugared_genericSig": "<Self where Self : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "appVersion",
+            "printedName": "appVersion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP10appVersionSSvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP10appVersionSSvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP10appVersionSSvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP10appVersionSSvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "sugared_genericSig": "<Self where Self : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "sdkVersion",
+            "printedName": "sdkVersion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP10sdkVersionSSvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP10sdkVersionSSvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP10sdkVersionSSvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP10sdkVersionSSvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "sugared_genericSig": "<Self where Self : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "platform",
+            "printedName": "platform",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP8platformSSvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP8platformSSvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP8platformSSvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP8platformSSvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "sugared_genericSig": "<Self where Self : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "bundleID",
+            "printedName": "bundleID",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP8bundleIDSSvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP8bundleIDSSvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP8bundleIDSSvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP8bundleIDSSvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "sugared_genericSig": "<Self where Self : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "deviceID",
+            "printedName": "deviceID",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP8deviceIDSSSgvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP8deviceIDSSSgvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP8deviceIDSSSgvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP8deviceIDSSSgvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "sugared_genericSig": "<Self where Self : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "currentTimestampMS",
+            "printedName": "currentTimestampMS",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP18currentTimestampMSSSvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP18currentTimestampMSSSvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP18currentTimestampMSSSvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP18currentTimestampMSSSvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "sugared_genericSig": "<Self where Self : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "params",
+            "printedName": "params()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP6paramsSDyS2SGyYaF",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP6paramsSDyS2SGyYaF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+            "sugared_genericSig": "<Self where Self : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "bundleID",
+            "printedName": "bundleID",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE8bundleIDSSvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE8bundleIDSSvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE8bundleIDSSvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE8bundleIDSSvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "sugared_genericSig": "<Self where Self : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "currentTimestampMS",
+            "printedName": "currentTimestampMS",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE18currentTimestampMSSSvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE18currentTimestampMSSSvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE18currentTimestampMSSSvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE18currentTimestampMSSSvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "sugared_genericSig": "<Self where Self : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "deviceID",
+            "printedName": "deviceID",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE8deviceIDSSSgvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE8deviceIDSSSgvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE8deviceIDSSSgvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE8deviceIDSSSgvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "sugared_genericSig": "<Self where Self : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "iosVersion",
+            "printedName": "iosVersion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE10iosVersionSSvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE10iosVersionSSvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE10iosVersionSSvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE10iosVersionSSvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "sugared_genericSig": "<Self where Self : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "appVersion",
+            "printedName": "appVersion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE10appVersionSSvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE10appVersionSSvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE10appVersionSSvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE10appVersionSSvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "sugared_genericSig": "<Self where Self : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "platform",
+            "printedName": "platform",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE8platformSSvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE8platformSSvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE8platformSSvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE8platformSSvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "sugared_genericSig": "<Self where Self : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "userAgent",
+            "printedName": "userAgent",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE9userAgentSSvp",
+            "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE9userAgentSSvp",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE9userAgentSSvg",
+                "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderPAAE9userAgentSSvg",
+                "moduleName": "FintechSDKCoreAnalytics",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "sugared_genericSig": "<Self where Self : FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider>",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP",
+        "mangledName": "$s23FintechSDKCoreAnalytics0aC14ParamsProviderP",
+        "moduleName": "FintechSDKCoreAnalytics",
+        "genericSig": "<τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FintechExtraAnalyticsParamsProvider",
+        "printedName": "FintechExtraAnalyticsParamsProvider",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "params",
+            "printedName": "params()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics0a5ExtraC14ParamsProviderP6paramsSDyS2SGyYaF",
+            "mangledName": "$s23FintechSDKCoreAnalytics0a5ExtraC14ParamsProviderP6paramsSDyS2SGyYaF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreAnalytics.FintechExtraAnalyticsParamsProvider>",
+            "sugared_genericSig": "<Self where Self : FintechSDKCoreAnalytics.FintechExtraAnalyticsParamsProvider>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:23FintechSDKCoreAnalytics0a5ExtraC14ParamsProviderP",
+        "mangledName": "$s23FintechSDKCoreAnalytics0a5ExtraC14ParamsProviderP",
+        "moduleName": "FintechSDKCoreAnalytics",
+        "genericSig": "<τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FintechAnalyticsAppMetricaReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 880,
+      "length": 6,
+      "value": "\"type\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FintechAnalyticsRUMReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 1663,
+      "length": 5,
+      "value": "\"env\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FintechAnalyticsRUMReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 1692,
+      "length": 9,
+      "value": "\"service\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FintechAnalyticsRUMReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 1730,
+      "length": 4,
+      "value": "\"ts\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FintechAnalyticsRUMReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 1764,
+      "length": 9,
+      "value": "\"version\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FintechAnalyticsRUMReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 1794,
+      "length": 6,
+      "value": "\"type\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FintechAnalyticsRUMReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 1827,
+      "length": 12,
+      "value": "\"additional\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FintechAnalyticsTelemetryReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 891,
+      "length": 6,
+      "value": "\"type\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
+      "kind": "BooleanLiteral",
+      "offset": 648,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
+      "kind": "StringLiteral",
+      "offset": 4899,
+      "length": 9,
+      "value": "\"service\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
+      "kind": "StringLiteral",
+      "offset": 4937,
+      "length": 15,
+      "value": "\"endpoint_path\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
+      "kind": "StringLiteral",
+      "offset": 4983,
+      "length": 17,
+      "value": "\"endpoint_method\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
+      "kind": "StringLiteral",
+      "offset": 5032,
+      "length": 26,
+      "value": "\"endpoint_timeout_seconds\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
+      "kind": "StringLiteral",
+      "offset": 5085,
+      "length": 13,
+      "value": "\"duration_ms\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
+      "kind": "StringLiteral",
+      "offset": 5124,
+      "length": 12,
+      "value": "\"size_bytes\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
+      "kind": "StringLiteral",
+      "offset": 5172,
+      "length": 24,
+      "value": "\"first_byte_duration_ms\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechOpenTelemetryNetworkObserver.swift",
+      "kind": "Dictionary",
+      "offset": 2144,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "kind": "StringLiteral",
+      "offset": 2589,
+      "length": 5,
+      "value": "\"env\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "kind": "StringLiteral",
+      "offset": 2621,
+      "length": 13,
+      "value": "\"app_version\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "kind": "StringLiteral",
+      "offset": 2661,
+      "length": 9,
+      "value": "\"version\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "kind": "StringLiteral",
+      "offset": 2697,
+      "length": 13,
+      "value": "\"ios_version\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "kind": "StringLiteral",
+      "offset": 2737,
+      "length": 13,
+      "value": "\"bundle_name\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "kind": "StringLiteral",
+      "offset": 2775,
+      "length": 11,
+      "value": "\"device_id\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "kind": "StringLiteral",
+      "offset": 2817,
+      "length": 6,
+      "value": "\"uuid\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "kind": "StringLiteral",
+      "offset": 2852,
+      "length": 16,
+      "value": "\"sdk_session_id\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "kind": "StringLiteral",
+      "offset": 2892,
+      "length": 9,
+      "value": "\"service\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "kind": "StringLiteral",
+      "offset": 2927,
+      "length": 4,
+      "value": "\"ts\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "kind": "StringLiteral",
+      "offset": 2957,
+      "length": 12,
+      "value": "\"session_id\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "kind": "StringLiteral",
+      "offset": 2996,
+      "length": 13,
+      "value": "\"merchant_id\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "kind": "StringLiteral",
+      "offset": 3040,
+      "length": 17,
+      "value": "\"installation_id\""
+    }
+  ]
+}

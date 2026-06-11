@@ -1,0 +1,35 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKNativeErrorFeature -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+@_spi(Internal) import FintechSDKCoreUI
+import FintechSDKFontsInterfaces
+import Swift
+import SwiftUI
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_spi(Internal) @_Concurrency.MainActor @preconcurrency public struct FTNativeErrorView<ViewModel> : SwiftUICore.View where ViewModel : FintechSDKNativeErrorFeature.FTNativeErrorViewModel {
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(viewModel: ViewModel)
+  @_spi(Internal) public typealias Body = @_opaqueReturnTypeOf("$s28FintechSDKNativeErrorFeature08FTNativeC4ViewV4bodyQrvp", 0) __<ViewModel>
+}
+@_spi(Internal) public protocol FTNativeErrorViewModel {
+  @_spi(Internal) var title: Swift.String { get }
+  @_spi(Internal) var subtitle: Swift.String { get }
+  @_spi(Internal) var image: FintechSDKCoreUI.FTImageProvider { get }
+  @_spi(Internal) var buttonPayload: FintechSDKCoreUI.FTPrimaryButtonData { get }
+  @_spi(Internal) var code: Swift.String? { get }
+}
+@_spi(Internal) final public class FTNativeErrorViewModelImpl : FintechSDKNativeErrorFeature.FTNativeErrorViewModel {
+  @_spi(Internal) final public let title: Swift.String
+  @_spi(Internal) final public let subtitle: Swift.String
+  @_spi(Internal) final public let image: FintechSDKCoreUI.FTImageProvider
+  @_spi(Internal) final public let buttonPayload: FintechSDKCoreUI.FTPrimaryButtonData
+  @_spi(Internal) final public let code: Swift.String?
+  @_spi(Internal) public init(title: Swift.String, subtitle: Swift.String, image: FintechSDKCoreUI.FTImageProvider, buttonPayload: FintechSDKCoreUI.FTPrimaryButtonData, code: Swift.String?)
+  @_spi(Internal) @objc deinit
+}
+@_spi(Internal) extension FintechSDKNativeErrorFeature.FTNativeErrorView : Swift.Sendable {}

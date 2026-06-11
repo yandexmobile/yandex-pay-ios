@@ -1,0 +1,134 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKPayBoxEntity -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import FintechSDKCommonEntity
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct FTSDKConfiguration {
+  public let environment: FintechSDKCommonEntity.FintechSDKEnvironment
+  public let merchant: FintechSDKPayBoxEntity.FTSDKMerchant
+  public let locale: FintechSDKPayBoxEntity.FTSDKLocale
+  public init(environment: FintechSDKCommonEntity.FintechSDKEnvironment, merchant: FintechSDKPayBoxEntity.FTSDKMerchant, locale: FintechSDKPayBoxEntity.FTSDKLocale)
+}
+extension FintechSDKPayBoxEntity.FTSDKConfiguration {
+  public var clientID: Swift.String {
+    get
+  }
+}
+public enum FTSDKLocale {
+  case ru
+  case en
+  case system
+  public static func == (a: FintechSDKPayBoxEntity.FTSDKLocale, b: FintechSDKPayBoxEntity.FTSDKLocale) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct FTSDKMerchant : Swift.Sendable {
+  public let id: Swift.String
+  public let name: Swift.String
+  public let url: Swift.String?
+  public init(id: Swift.String, name: Swift.String, url: Swift.String?)
+}
+public enum FTAvailablePaymentMethod : Swift.String {
+  case card
+  case split
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum FTCurrencyCode : Swift.String, Swift.Sendable {
+  case rub
+  case byn
+  case usd
+  case eur
+  case kzt
+  case uah
+  case amd
+  case gel
+  case azn
+  case kgs
+  case gbp
+  case sek
+  case pln
+  case inr
+  case czk
+  case cad
+  case brl
+  case aud
+  case uzs
+  public var uppercased: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct FTPaymentData {
+  public let orderId: Swift.String?
+  public init(orderId: Swift.String?)
+}
+public enum FTPaymentError : Swift.String, Swift.Error {
+  case authenticationProblem
+  case wrongMerchantId
+  case orderExpired
+  case paymentFailed
+  case appError
+  case invalidArgs
+  case orderNotFound
+  case unknownError
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct FTPaymentMethodDTO : Swift.Decodable {
+  public let availablePaymentMethods: [FintechSDKPayBoxEntity.FTPaymentMethod]
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum FTPaymentMethod : Swift.String, Swift.Decodable, Swift.Sendable {
+  case card
+  case split
+  case sbp
+  case splitSbp
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum FTPaymentResult {
+  case succeeded
+  case cancelled
+  case failed(FintechSDKPayBoxEntity.FTPaymentError)
+}
+public struct FTSplitPlan {
+  public let id: Swift.String
+  public let amount: Foundation.Decimal
+  public let payments: Swift.Int
+  public init(id: Swift.String, amount: Foundation.Decimal, payments: Swift.Int)
+}
+extension FintechSDKPayBoxEntity.FTSDKLocale : Swift.Equatable {}
+extension FintechSDKPayBoxEntity.FTSDKLocale : Swift.Hashable {}
+extension FintechSDKPayBoxEntity.FTAvailablePaymentMethod : Swift.Equatable {}
+extension FintechSDKPayBoxEntity.FTAvailablePaymentMethod : Swift.Hashable {}
+extension FintechSDKPayBoxEntity.FTAvailablePaymentMethod : Swift.RawRepresentable {}
+extension FintechSDKPayBoxEntity.FTCurrencyCode : Swift.Equatable {}
+extension FintechSDKPayBoxEntity.FTCurrencyCode : Swift.Hashable {}
+extension FintechSDKPayBoxEntity.FTCurrencyCode : Swift.RawRepresentable {}
+extension FintechSDKPayBoxEntity.FTPaymentError : Swift.Equatable {}
+extension FintechSDKPayBoxEntity.FTPaymentError : Swift.Hashable {}
+extension FintechSDKPayBoxEntity.FTPaymentError : Swift.RawRepresentable {}
+extension FintechSDKPayBoxEntity.FTPaymentMethod : Swift.Equatable {}
+extension FintechSDKPayBoxEntity.FTPaymentMethod : Swift.Hashable {}
+extension FintechSDKPayBoxEntity.FTPaymentMethod : Swift.RawRepresentable {}

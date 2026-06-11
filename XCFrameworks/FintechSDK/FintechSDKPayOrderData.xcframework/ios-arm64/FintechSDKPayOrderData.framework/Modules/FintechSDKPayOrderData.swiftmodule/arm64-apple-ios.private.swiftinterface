@@ -1,0 +1,27 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKPayOrderData -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+@_spi(Internal) import FintechSDKCoreUtils
+@_spi(Internal) import FintechSDKNetworkImplementation
+import FintechSDKNetworkInterfaces
+@_spi(Internal) import FintechSDKPayBoxEntity
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct FTCheckoutSheet : Swift.Encodable {
+  public init(merchantId: Swift.String, orderTotal: Swift.String, currencyCode: Swift.String)
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@_spi(Internal) public protocol FTOrderApiService : Swift.Sendable {
+  @_spi(Internal) func cashback(cardId: Swift.String?, checkoutSheet: FintechSDKPayOrderData.FTCheckoutSheet) async throws -> FintechSDKPayBoxEntity.FTCashback
+  @_spi(Internal) func loadSplitPlans(merchantID: Swift.String, orderAmount: Foundation.Decimal, currencyCode: Swift.String, inventory: Swift.Bool) async throws -> FintechSDKPayBoxEntity.FTSplitData
+}
+@_spi(Internal) final public class FTOrderApiServiceImpl : FintechSDKPayOrderData.FTOrderApiService {
+  @_spi(Internal) public init(networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient)
+  @_spi(Internal) final public func cashback(cardId: Swift.String?, checkoutSheet: FintechSDKPayOrderData.FTCheckoutSheet) async throws -> FintechSDKPayBoxEntity.FTCashback
+  @_spi(Internal) final public func loadSplitPlans(merchantID: Swift.String, orderAmount: Foundation.Decimal, currencyCode: Swift.String, inventory: Swift.Bool) async throws -> FintechSDKPayBoxEntity.FTSplitData
+  @_spi(Internal) @objc deinit
+}
