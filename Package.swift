@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-  name: "YandexPayModularSDK",
+  name: "YandexPaySDK",
   platforms: [.iOS(.v15)],
   products: [
     .library(name: "YandexPayConfiguration", targets: ["YandexPayConfigurationWrapper"]),
@@ -55,6 +55,17 @@ let package = Package(
         "FintechSDKFontsInterfaces",
         "FintechSDKCoreUI",
         "FintechSDKNetworkInterfaces",
+        "FintechSDKYandexPayAuth",
+        "FintechSDKExternalAuthWebView",
+        "FintechSDKAuthCoreImplementation",
+        "FintechSDKAuthorizationScenario",
+        "FintechSDKLoaderScreen",
+        "FintechSDKNativeErrorFeature",
+        "FintechSDKNetworkImplementation",
+        "FintechSDKPayBoxResources",
+        "FintechSDKWebViewFeatures",
+        "FintechSDKRealTimeAnalyticsAdapter",
+        "FintechSDKRealUserMonitoringAdapter",
         .product(name: "AppMetricaCore", package: "appmetrica-sdk-ios"),
       ],
       path: "Sources/YandexPayAuthWrapper"
@@ -92,6 +103,7 @@ let package = Package(
         "FintechSDKRemoteResourcesData",
         "FintechSDKDivKitWidgetsFeatures",
         "FintechSDKWebViewFeatures",
+        "FintechSDKExternalAuthWebView",
         "FintechPlusSDKInterfaces",
         "FintechYBSDKInterfaces",
         "FintechSDKLoaderScreen",
@@ -139,6 +151,7 @@ let package = Package(
         "FintechSDKRemoteResourcesData",
         "FintechSDKDivKitWidgetsFeatures",
         "FintechSDKWebViewFeatures",
+        "FintechSDKExternalAuthWebView",
         "FintechPlusSDKInterfaces",
         "FintechYBSDKInterfaces",
         "FintechSDKLoaderScreen",
@@ -176,6 +189,7 @@ let package = Package(
         "FintechSDKNetworkImplementation",
         "FintechSDKDivKitWidgetsFeatures",
         "FintechSDKWebViewFeatures",
+        "FintechSDKExternalAuthWebView",
         "FintechSDKRemoteResourcesData",
         "FintechSDKNativeErrorFeature",
         "FintechSDKPayBoxResources",
@@ -224,6 +238,7 @@ let package = Package(
         "FintechSDKRemoteResourcesData",
         "FintechSDKDivKitWidgetsFeatures",
         "FintechSDKWebViewFeatures",
+        "FintechSDKExternalAuthWebView",
         "FintechPlusSDKInterfaces",
         "FintechYBSDKInterfaces",
         "FintechSDKLoaderScreen",
@@ -260,6 +275,7 @@ let package = Package(
         "FintechSDKNetworkInterfaces",
         "FintechSDKNetworkImplementation",
         "FintechSDKDivKitWidgetsFeatures",
+        "FintechSDKExternalAuthWebView",
         "FintechSDKRemoteResourcesData",
         "FintechSDKAuthCoreImplementation",
         "FintechSDKAuthorizationScenario",
@@ -268,6 +284,7 @@ let package = Package(
         "FintechSDKNavigationInterfaces",
         "FintechSDKNavigationImplementation",
         "FintechSDKPayBoxEntity",
+        "FintechSDKPayBoxResources",
         "FintechSDKWebViewFeatures",
         "ExternalBduiAdapter",
         "FintechBDUIWrapper",
@@ -378,6 +395,38 @@ let package = Package(
       path: "XCFrameworks/YandexPayAuth.xcframework"
     ),
     .binaryTarget(
+      name: "FintechSDKYandexPayAuth",
+      path: "XCFrameworks/FintechSDK/FintechSDKYandexPayAuth.xcframework"
+    ),
+    .binaryTarget(
+      name: "FintechSDKExternalAuthWebView",
+      path: "XCFrameworks/FintechSDK/FintechSDKExternalAuthWebView.xcframework"
+    ),
+    .binaryTarget(
+      name: "FintechSDKAuthCoreImplementation",
+      path: "XCFrameworks/FintechSDK/FintechSDKAuthCoreImplementation.xcframework"
+    ),
+    .binaryTarget(
+      name: "FintechSDKAuthorizationScenario",
+      path: "XCFrameworks/FintechSDK/FintechSDKAuthorizationScenario.xcframework"
+    ),
+    .binaryTarget(
+      name: "FintechSDKLoaderScreen",
+      path: "XCFrameworks/FintechSDK/FintechSDKLoaderScreen.xcframework"
+    ),
+    .binaryTarget(
+      name: "FintechSDKNativeErrorFeature",
+      path: "XCFrameworks/FintechSDK/FintechSDKNativeErrorFeature.xcframework"
+    ),
+    .binaryTarget(
+      name: "FintechSDKPayBoxResources",
+      path: "XCFrameworks/FintechSDK/FintechSDKPayBoxResources.xcframework"
+    ),
+    .binaryTarget(
+      name: "FintechSDKWebViewFeatures",
+      path: "XCFrameworks/FintechSDK/FintechSDKWebViewFeatures.xcframework"
+    ),
+    .binaryTarget(
       name: "YandexPayWithRedirect",
       path: "XCFrameworks/YandexPayWithRedirect.xcframework"
     ),
@@ -388,10 +437,6 @@ let package = Package(
     .binaryTarget(
       name: "FintechSDKPollingScenario",
       path: "XCFrameworks/FintechSDK/FintechSDKPollingScenario.xcframework"
-    ),
-    .binaryTarget(
-      name: "FintechSDKPayBoxResources",
-      path: "XCFrameworks/FintechSDK/FintechSDKPayBoxResources.xcframework"
     ),
     .binaryTarget(
       name: "FintechSDKPayOrderData",
@@ -426,28 +471,8 @@ let package = Package(
       path: "XCFrameworks/FintechSDK/FintechSDKUltimateWidget.xcframework"
     ),
     .binaryTarget(
-      name: "FintechSDKAuthCoreImplementation",
-      path: "XCFrameworks/FintechSDK/FintechSDKAuthCoreImplementation.xcframework"
-    ),
-    .binaryTarget(
-      name: "FintechSDKAuthorizationScenario",
-      path: "XCFrameworks/FintechSDK/FintechSDKAuthorizationScenario.xcframework"
-    ),
-    .binaryTarget(
-      name: "FintechSDKNativeErrorFeature",
-      path: "XCFrameworks/FintechSDK/FintechSDKNativeErrorFeature.xcframework"
-    ),
-    .binaryTarget(
       name: "FintechSDKDivKitWidgetsFeatures",
       path: "XCFrameworks/FintechSDK/FintechSDKDivKitWidgetsFeatures.xcframework"
-    ),
-    .binaryTarget(
-      name: "FintechSDKWebViewFeatures",
-      path: "XCFrameworks/FintechSDK/FintechSDKWebViewFeatures.xcframework"
-    ),
-    .binaryTarget(
-      name: "FintechSDKLoaderScreen",
-      path: "XCFrameworks/FintechSDK/FintechSDKLoaderScreen.xcframework"
     ),
     .binaryTarget(
       name: "YandexPayInApp",

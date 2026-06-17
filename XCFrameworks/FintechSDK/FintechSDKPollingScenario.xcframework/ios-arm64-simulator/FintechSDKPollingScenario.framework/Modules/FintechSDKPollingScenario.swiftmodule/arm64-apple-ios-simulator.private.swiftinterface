@@ -50,7 +50,7 @@ import _SwiftConcurrencyShims
 }
 @_spi(Internal) @_Concurrency.MainActor final public class FTPollingScreenRouter : FintechSDKPollingScenario.FTPollingScreenUseCases {
   @_spi(Internal) @_Concurrency.MainActor final public var onScreenDeinit: (@Sendable () -> Swift.Void)?
-  @_spi(Internal) @_Concurrency.MainActor public init(modalPresenting: any FintechSDKCoreUI.FTModalPresenting, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, onScreenDeinit: (@Sendable () -> Swift.Void)? = nil)
+  @_spi(Internal) @_Concurrency.MainActor public init(modalPresenting: any FintechSDKCoreUI.FTModalPresenting, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, onScreenDeinit: (@Sendable () -> Swift.Void)? = nil, configureModal: (@_Concurrency.MainActor (UIKit.UINavigationController) -> Swift.Void)? = nil)
   @_spi(Internal) @_Concurrency.MainActor final public func presentPollingScreen(entryPoint: FintechSDKBDUICore.FintechBDUIEntryPoint, preview: any FintechSDKBDUICore.FintechBDUIContent) async
   @_spi(Internal) @_Concurrency.MainActor final public func removePollingScreen(onDismiss: (@Sendable () -> Swift.Void)?) async
   @_spi(Internal) @_Concurrency.MainActor final public func isPresenting() -> Swift.Bool

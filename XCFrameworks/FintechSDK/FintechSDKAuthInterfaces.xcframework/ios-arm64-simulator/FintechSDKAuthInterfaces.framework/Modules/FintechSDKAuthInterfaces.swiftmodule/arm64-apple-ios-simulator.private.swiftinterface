@@ -24,20 +24,6 @@ public struct FintechAccount {
 extension FintechSDKAuthInterfaces.FintechAccountManagerAdapter {
   @_Concurrency.MainActor public func obtainAuthToken(for uid: Foundation.NSNumber) async throws -> Swift.String?
 }
-@_spi(Internal) public protocol FTAuthFlowAnalyticsReporting : Swift.Sendable {
-  @_spi(Internal) func reportAuthProcessStarted()
-  @_spi(Internal) func reportAuthProcessCompleted()
-  @_spi(Internal) func reportAuthProcessFailed(error: any Swift.Error)
-}
-@_spi(Internal) public enum FTOAuthSource : Swift.String, Swift.Codable, Swift.Sendable {
-  @_spi(Internal) case merch
-  @_spi(Internal) case pay
-  @_spi(Internal) public init?(rawValue: Swift.String)
-  @_spi(Internal) public typealias RawValue = Swift.String
-  @_spi(Internal) public var rawValue: Swift.String {
-    @_spi(Internal) get
-  }
-}
 public struct FintechClientIdentifier {
   public let clientID: Swift.String
   public let clientSecret: Swift.String
@@ -181,9 +167,6 @@ public protocol FTCheckHasAuthUseCase : Swift.Sendable {
 public protocol FTGetPuidUseCase : Swift.Sendable {
   @_Concurrency.MainActor func getPuid() -> Foundation.NSNumber?
 }
-@_spi(Internal) extension FintechSDKAuthInterfaces.FTOAuthSource : Swift.Equatable {}
-@_spi(Internal) extension FintechSDKAuthInterfaces.FTOAuthSource : Swift.Hashable {}
-@_spi(Internal) extension FintechSDKAuthInterfaces.FTOAuthSource : Swift.RawRepresentable {}
 extension FintechSDKAuthInterfaces.FintechServiceEnvironment : Swift.Equatable {}
 extension FintechSDKAuthInterfaces.FintechServiceEnvironment : Swift.Hashable {}
 extension FintechSDKAuthInterfaces.PublicKeyType : Swift.Equatable {}

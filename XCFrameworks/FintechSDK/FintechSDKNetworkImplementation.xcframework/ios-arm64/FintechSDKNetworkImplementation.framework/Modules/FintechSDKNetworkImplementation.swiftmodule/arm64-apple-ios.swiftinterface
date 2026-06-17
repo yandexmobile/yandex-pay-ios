@@ -16,7 +16,7 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 public struct DiehardNetworkClientFactoryImpl : FintechSDKNetworkInterfaces.DiehardNetworkClientFactory {
-  public init(uid: Foundation.NSNumber?, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, networkChallengeHandler: (any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler)?, observers: [any FintechSDKNetworkInterfaces.FintechNetworkEventObserver]?)
+  public init(uid: Foundation.NSNumber?, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, networkChallengeHandler: (any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler)?, observers: [any FintechSDKNetworkInterfaces.FintechNetworkEventObserver]?, eventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)?, errorReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)?)
   public func makeClient(baseURL: Swift.String) -> any FintechSDKNetworkInterfaces.FintechNetworkClient
 }
 public protocol FTFrontbackUrlProvider : Swift.Sendable {

@@ -2,6 +2,7 @@
 // swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKQuickPayment -package-name FintechSDK
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import CoreGraphics
 @_spi(Internal) import FintechSDKAnalyticsInterfaces
 @_spi(Internal) import FintechSDKAuthCoreImplementation
 @_spi(Internal) import FintechSDKAuthInterfaces
@@ -60,7 +61,8 @@ public struct FTQuickPayConfig {
   public let environment: FintechSDKCommonEntity.FintechSDKEnvironment
   public let enableLogging: Swift.Bool
   public let isActivatedByDefault: Swift.Bool
-  public init(merchantId: Swift.String, locale: FintechSDKCoreUI.FintechLocale, theme: FintechSDKCommonEntity.FintechSDKTheme, environment: FintechSDKCommonEntity.FintechSDKEnvironment, enableLogging: Swift.Bool, isActivatedByDefault: Swift.Bool = true)
+  public let pollingModalSize: FintechSDKQuickPayment.FTQuickPayPollingModalSize?
+  public init(merchantId: Swift.String, locale: FintechSDKCoreUI.FintechLocale, theme: FintechSDKCommonEntity.FintechSDKTheme, environment: FintechSDKCommonEntity.FintechSDKEnvironment, enableLogging: Swift.Bool, isActivatedByDefault: Swift.Bool = true, pollingModalSize: FintechSDKQuickPayment.FTQuickPayPollingModalSize? = nil)
 }
 @_spi(Internal) public struct FTQuickPayPaymentMethodType : Swift.Equatable, Swift.Sendable {
   @_spi(Internal) public let rawValue: Swift.String
@@ -68,6 +70,11 @@ public struct FTQuickPayConfig {
   @_spi(Internal) public static let card: FintechSDKQuickPayment.FTQuickPayPaymentMethodType
   @_spi(Internal) public static let yabank: FintechSDKQuickPayment.FTQuickPayPaymentMethodType
   @_spi(Internal) public static func == (a: FintechSDKQuickPayment.FTQuickPayPaymentMethodType, b: FintechSDKQuickPayment.FTQuickPayPaymentMethodType) -> Swift.Bool
+}
+public enum FTQuickPayPollingModalSize : Swift.Sendable {
+  case fraction(Swift.Double)
+  case fixed(CoreFoundation.CGFloat)
+  case topInset(CoreFoundation.CGFloat)
 }
 public enum FTQuickPayWidgetExpandState : Swift.String {
   case collapsed

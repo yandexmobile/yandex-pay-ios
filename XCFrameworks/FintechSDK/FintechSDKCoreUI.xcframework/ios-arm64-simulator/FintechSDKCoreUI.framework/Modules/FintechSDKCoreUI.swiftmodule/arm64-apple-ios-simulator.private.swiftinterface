@@ -93,6 +93,23 @@ import _SwiftConcurrencyShims
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override final public func willMove(toSuperview newSuperview: UIKit.UIView?)
   @_spi(Internal) @objc deinit
 }
+@_spi(Internal) @_Concurrency.MainActor @preconcurrency public struct FTBoundPlaceholderView : SwiftUI.UIViewRepresentable {
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(uiView: FintechSDKCoreUI.FTPlaceholderUIKitView)
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public func makeUIView(context: FintechSDKCoreUI.FTBoundPlaceholderView.Context) -> FintechSDKCoreUI.FTPlaceholderUIKitView
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public func updateUIView(_ uiView: FintechSDKCoreUI.FTPlaceholderUIKitView, context: FintechSDKCoreUI.FTBoundPlaceholderView.Context)
+  @_spi(Internal) public typealias Body = Swift.Never
+  @_spi(Internal) public typealias Coordinator = Swift.Void
+  @_spi(Internal) public typealias UIViewType = FintechSDKCoreUI.FTPlaceholderUIKitView
+}
+@_spi(Internal) final public class FTShimmerUIKitViewHolder : Foundation.ObservableObject {
+  @_spi(Internal) final public let uiView: FintechSDKCoreUI.FTPlaceholderUIKitView
+  @_spi(Internal) public init(style: UIKit.UIUserInterfaceStyle = .unspecified)
+  @_spi(Internal) final public var boundView: FintechSDKCoreUI.FTBoundPlaceholderView {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @_spi(Internal) @objc deinit
+}
 @_spi(Internal) @_Concurrency.MainActor @preconcurrency public struct FTScaffold<Toolbar, Content> : SwiftUICore.View where Toolbar : SwiftUICore.View, Content : SwiftUICore.View {
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(toolbar: Toolbar, content: Content)
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
@@ -164,10 +181,10 @@ import _SwiftConcurrencyShims
   @_spi(Internal) var uiImage: UIKit.UIImage { get }
 }
 @_spi(Internal) public enum FTAssetImages {
-  @_spi(Internal) public static var arrowShortBackNavigation: any FintechSDKCoreUI.FTAssetImage
-  @_spi(Internal) public static var errorImage: any FintechSDKCoreUI.FTAssetImage
-  @_spi(Internal) public static var closeIcon: any FintechSDKCoreUI.FTAssetImage
-  @_spi(Internal) public static var defaultError: any FintechSDKCoreUI.FTAssetImage
+  @_spi(Internal) public static let arrowShortBackNavigation: any FintechSDKCoreUI.FTAssetImage
+  @_spi(Internal) public static let errorImage: any FintechSDKCoreUI.FTAssetImage
+  @_spi(Internal) public static let closeIcon: any FintechSDKCoreUI.FTAssetImage
+  @_spi(Internal) public static let defaultError: any FintechSDKCoreUI.FTAssetImage
   @_spi(Internal) public static func image(_ name: Swift.String) -> UIKit.UIImage?
 }
 @_spi(Internal) public enum FTColors {
@@ -471,6 +488,7 @@ public enum FintechLocale : Swift.String {
   @_Concurrency.MainActor func didReceive(challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
 }
 @_spi(Internal) extension FintechSDKCoreUI.FTPlaceholderView : Swift.Sendable {}
+@_spi(Internal) extension FintechSDKCoreUI.FTBoundPlaceholderView : Swift.Sendable {}
 @_spi(Internal) extension FintechSDKCoreUI.FTScaffold : Swift.Sendable {}
 @_spi(Internal) extension FintechSDKCoreUI.FTToolbar : Swift.Sendable {}
 @_spi(Internal) extension FintechSDKCoreUI.FTPrimaryButton : Swift.Sendable {}

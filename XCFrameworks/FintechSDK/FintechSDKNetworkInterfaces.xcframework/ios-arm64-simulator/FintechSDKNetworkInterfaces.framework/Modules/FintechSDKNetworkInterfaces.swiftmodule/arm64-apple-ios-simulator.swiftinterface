@@ -35,6 +35,10 @@ public protocol FintechNetworkChallengeHandlerFactory {
 public protocol FintechNetworkClient : Swift.Sendable {
   func execute<Endpoint>(endpoint: Endpoint) async throws -> Endpoint.ResultModel where Endpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider
 }
+public protocol FintechNetworkBaseURLUpdatable : Swift.Sendable {
+  func updateBaseUrl(_ baseUrl: Swift.String)
+}
+public typealias FintechNetworkUpdatableClient = FintechSDKNetworkInterfaces.FintechNetworkBaseURLUpdatable & FintechSDKNetworkInterfaces.FintechNetworkClient
 extension FintechSDKNetworkInterfaces.FintechNetworkClient {
   public func executeStrictly<Endpoint>(endpoint: Endpoint) async throws(FintechSDKNetworkInterfaces.NetworkClientError) -> Endpoint.ResultModel where Endpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider
 }

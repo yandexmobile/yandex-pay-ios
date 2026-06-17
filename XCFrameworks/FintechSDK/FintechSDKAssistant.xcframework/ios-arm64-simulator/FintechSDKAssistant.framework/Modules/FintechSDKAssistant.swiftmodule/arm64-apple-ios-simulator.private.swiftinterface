@@ -13,6 +13,7 @@ import FintechSDKCommonEntity
 @_spi(Internal) import FintechSDKCoreUI
 @_spi(Internal) import FintechSDKCoreUtils
 @_spi(Internal) import FintechSDKDivKitWidgetsFeatures
+@_spi(Internal) import FintechSDKExternalAuthWebView
 import FintechSDKFontsInterfaces
 @_spi(Internal) import FintechSDKLoaderScreen
 @_spi(Internal) import FintechSDKNativeErrorFeature
@@ -30,9 +31,6 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 @_spi(Internal) extension FintechSDKAuthorizationScenario.FTAuthFlowInteractor : FintechSDKDivKitWidgetsFeatures.FTWebViewBSTAcquiring {
   @_spi(Internal) public func acquireBSTToken(mode: FintechSDKDivKitWidgetsFeatures.FTWebViewBSTAcquisitionMode) async throws -> Swift.String
-}
-@_spi(Internal) extension FintechSDKAuthorizationScenario.FTAuthFlowInteractor : FintechSDKDivKitWidgetsFeatures.FTWebViewLoginAuthorizing {
-  @_spi(Internal) public func authorize() async throws
 }
 @_spi(Internal) extension FintechSDKAuthorizationScenario.FTAuthFlowInteractor : FintechSDKDivKitWidgetsFeatures.FTWebViewLogoutUseCase {
 }

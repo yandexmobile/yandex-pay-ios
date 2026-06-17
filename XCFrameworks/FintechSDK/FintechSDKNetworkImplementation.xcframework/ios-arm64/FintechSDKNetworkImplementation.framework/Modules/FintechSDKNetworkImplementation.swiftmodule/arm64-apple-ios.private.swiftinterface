@@ -2,7 +2,7 @@
 // swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKNetworkImplementation -package-name FintechSDK
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
-import FintechSDKAnalyticsInterfaces
+@_spi(Internal) import FintechSDKAnalyticsInterfaces
 import FintechSDKAuthInterfaces
 import FintechSDKCommonEntity
 @_spi(Internal) import FintechSDKCoreAnalytics
@@ -16,7 +16,7 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 public struct DiehardNetworkClientFactoryImpl : FintechSDKNetworkInterfaces.DiehardNetworkClientFactory {
-  public init(uid: Foundation.NSNumber?, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, networkChallengeHandler: (any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler)?, observers: [any FintechSDKNetworkInterfaces.FintechNetworkEventObserver]?)
+  public init(uid: Foundation.NSNumber?, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, networkChallengeHandler: (any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler)?, observers: [any FintechSDKNetworkInterfaces.FintechNetworkEventObserver]?, eventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)?, errorReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)?)
   public func makeClient(baseURL: Swift.String) -> any FintechSDKNetworkInterfaces.FintechNetworkClient
 }
 @_spi(Internal) final public class FTBasicSessionProviderService : FintechSDKNetworkInterfaces.FTSessionProviderServing, @unchecked Swift.Sendable {
@@ -59,18 +59,19 @@ public struct DiehardNetworkClientFactoryImpl : FintechSDKNetworkInterfaces.Dieh
   @_spi(Internal) @_Concurrency.MainActor final public var partition: Swift.String {
     @_spi(Internal) get
   }
-  @_spi(Internal) public init(accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, uid: Foundation.NSNumber, authSession: FintechSDKAuthInterfaces.FintechAuthSession? = nil)
+  @_spi(Internal) public init(accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, uid: Foundation.NSNumber, errorReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)? = nil, eventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)? = nil, authSession: FintechSDKAuthInterfaces.FintechAuthSession? = nil)
   @_spi(Internal) @_Concurrency.MainActor final public func obtainToken() async throws -> Swift.String
   @_spi(Internal) @_Concurrency.MainActor final public func dropToken() async
   @_spi(Internal) final public func obtainSessionToken() async -> Swift.String?
   @_spi(Internal) @objc deinit
 }
-@_spi(Internal) final public class NetworkClientImpl : FintechSDKNetworkInterfaces.FintechNetworkClient {
+@_spi(Internal) final public class NetworkClientImpl : FintechSDKNetworkInterfaces.FintechNetworkClient, FintechSDKNetworkInterfaces.FintechNetworkBaseURLUpdatable {
   @_spi(Internal) public init(scheme: Swift.String, host: Swift.String, port: Swift.Int? = nil, configuration: Foundation.URLSessionConfiguration, networkChallengeHandler: (any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler)? = nil, requestMiddleware: [any FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware] = [], responseMiddleware: [any FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware] = [], observers: [any FintechSDKNetworkInterfaces.FintechNetworkEventObserver] = [])
   @_spi(Internal) convenience public init(baseUrl: Swift.String, configuration: Foundation.URLSessionConfiguration, networkChallengeHandler: (any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler)? = nil, requestMiddleware: [any FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware] = [], responseMiddleware: [any FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware] = [], observers: [any FintechSDKNetworkInterfaces.FintechNetworkEventObserver] = [])
   @_spi(Internal) @objc deinit
   @_spi(Internal) final public func execute<Endpoint>(endpoint: Endpoint) async throws(FintechSDKNetworkInterfaces.NetworkClientError) -> Endpoint.ResultModel where Endpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider
   @_spi(Internal) final public func cancelAllTasks()
+  @_spi(Internal) final public func updateBaseUrl(_ baseUrl: Swift.String)
 }
 public protocol FTFrontbackUrlProvider : Swift.Sendable {
   var frontbackBaseUrl: Swift.String { get }
@@ -98,6 +99,10 @@ extension FintechSDKCommonEntity.FintechSDKEnvironment : FintechSDKNetworkImplem
 }
 @_spi(Internal) public struct DiehardRequestMiddleware : FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware {
   @_spi(Internal) public init(networkAuthManager: (any FintechSDKNetworkInterfaces.FintechNetworkAuthManager)?)
+  @_spi(Internal) public func process(request: Foundation.URLRequest) async throws -> Foundation.URLRequest
+}
+@_spi(Internal) public struct FTAnalyticsIdentifiersRequestMiddleware : FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware {
+  @_spi(Internal) public init(identifiersProvider: any FintechSDKAnalyticsInterfaces.FintechIdentifiersProviding)
   @_spi(Internal) public func process(request: Foundation.URLRequest) async throws -> Foundation.URLRequest
 }
 @_spi(Internal) final public class FTAuthorizationProvider : FintechSDKNetworkInterfaces.FTAuthorizationProviding, @unchecked Swift.Sendable {

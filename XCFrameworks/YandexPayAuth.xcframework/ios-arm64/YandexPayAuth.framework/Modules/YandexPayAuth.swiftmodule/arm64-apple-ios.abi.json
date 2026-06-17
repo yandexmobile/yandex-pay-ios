@@ -287,6 +287,20 @@
       },
       {
         "kind": "Import",
+        "name": "FintechSDKCommonEntity",
+        "printedName": "FintechSDKCommonEntity",
+        "declKind": "Import",
+        "moduleName": "YandexPayAuth"
+      },
+      {
+        "kind": "Import",
+        "name": "YandexPayConfiguration",
+        "printedName": "YandexPayConfiguration",
+        "declKind": "Import",
+        "moduleName": "YandexPayAuth"
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -876,6 +890,37 @@
       },
       {
         "kind": "Import",
+        "name": "FintechSDKAuthInterfaces",
+        "printedName": "FintechSDKAuthInterfaces",
+        "declKind": "Import",
+        "moduleName": "YandexPayAuth"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKRealTimeAnalyticsAdapter",
+        "printedName": "FintechSDKRealTimeAnalyticsAdapter",
+        "declKind": "Import",
+        "moduleName": "YandexPayAuth"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKRealUserMonitoringAdapter",
+        "printedName": "FintechSDKRealUserMonitoringAdapter",
+        "declKind": "Import",
+        "moduleName": "YandexPayAuth"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKYandexPayAuth",
+        "printedName": "FintechSDKYandexPayAuth",
+        "declKind": "Import",
+        "moduleName": "YandexPayAuth",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "YandexPayConfiguration",
         "printedName": "YandexPayConfiguration",
         "declKind": "Import",
@@ -885,13 +930,6 @@
         ]
       },
       {
-        "kind": "Import",
-        "name": "FintechSDKAuthInterfaces",
-        "printedName": "FintechSDKAuthInterfaces",
-        "declKind": "Import",
-        "moduleName": "YandexPayAuth"
-      },
-      {
         "kind": "TypeDecl",
         "name": "YPayAuthModule",
         "printedName": "YPayAuthModule",
@@ -899,18 +937,24 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init()",
+            "printedName": "init(merchant:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "YPayAuthModule",
                 "printedName": "YandexPayAuth.YPayAuthModule",
                 "usr": "s:13YandexPayAuth04YPayC6ModuleC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "YPSDKMerchant",
+                "printedName": "YandexPayConfiguration.YPSDKMerchant",
+                "usr": "s:22YandexPayConfiguration13YPSDKMerchantV"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:13YandexPayAuth04YPayC6ModuleCACycfc",
-            "mangledName": "$s13YandexPayAuth04YPayC6ModuleCACycfc",
+            "usr": "s:13YandexPayAuth04YPayC6ModuleC8merchantAC0aB13Configuration13YPSDKMerchantV_tcfc",
+            "mangledName": "$s13YandexPayAuth04YPayC6ModuleC8merchantAC0aB13Configuration13YPSDKMerchantV_tcfc",
             "moduleName": "YandexPayAuth",
             "declAttributes": [
               "AccessControl"
@@ -1118,6 +1162,28 @@
             ],
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "logout",
+            "printedName": "logout()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13YandexPayAuth04YPayC6ModuleC6logoutyyF",
+            "mangledName": "$s13YandexPayAuth04YPayC6ModuleC6logoutyyF",
+            "moduleName": "YandexPayAuth",
+            "declAttributes": [
+              "Final",
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -1168,8 +1234,8 @@
       },
       {
         "kind": "Import",
-        "name": "YandexPayConfiguration",
-        "printedName": "YandexPayConfiguration",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
         "declKind": "Import",
         "moduleName": "YandexPayAuth",
         "declAttributes": [
@@ -1178,8 +1244,18 @@
       },
       {
         "kind": "Import",
-        "name": "FintechSDKCoreUtils",
-        "printedName": "FintechSDKCoreUtils",
+        "name": "FintechSDKYandexPayAuth",
+        "printedName": "FintechSDKYandexPayAuth",
+        "declKind": "Import",
+        "moduleName": "YandexPayAuth",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "YandexPayConfiguration",
+        "printedName": "YandexPayConfiguration",
         "declKind": "Import",
         "moduleName": "YandexPayAuth",
         "declAttributes": [
@@ -1235,38 +1311,6 @@
                 "accessorKind": "get"
               }
             ]
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(loginService:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "YPayAuth",
-                "printedName": "YandexPayAuth.YPayAuth",
-                "usr": "s:13YandexPayAuth04YPayC0C"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "FintechLoginService",
-                "printedName": "any FintechSDKAuthInterfaces.FintechLoginService",
-                "usr": "s:24FintechSDKAuthInterfaces0A12LoginServiceP"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:13YandexPayAuth04YPayC0C12loginServiceAC24FintechSDKAuthInterfaces0g5LoginF0_p_tcfc",
-            "mangledName": "$s13YandexPayAuth04YPayC0C12loginServiceAC24FintechSDKAuthInterfaces0g5LoginF0_p_tcfc",
-            "moduleName": "YandexPayAuth",
-            "declAttributes": [
-              "Custom",
-              "AccessControl",
-              "SPIAccessControl"
-            ],
-            "spi_group_names": [
-              "Internal"
-            ],
-            "init_kind": "Designated"
           },
           {
             "kind": "Function",
@@ -1474,18 +1518,24 @@
           {
             "kind": "Function",
             "name": "module",
-            "printedName": "module()",
+            "printedName": "module(merchant:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "YPayAuthModule",
                 "printedName": "YandexPayAuth.YPayAuthModule",
                 "usr": "s:13YandexPayAuth04YPayC6ModuleC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "YPSDKMerchant",
+                "printedName": "YandexPayConfiguration.YPSDKMerchant",
+                "usr": "s:22YandexPayConfiguration13YPSDKMerchantV"
               }
             ],
             "declKind": "Func",
-            "usr": "s:13YandexPayAuth04YPayC0C6moduleAA0dC6ModuleCyFZ",
-            "mangledName": "$s13YandexPayAuth04YPayC0C6moduleAA0dC6ModuleCyFZ",
+            "usr": "s:13YandexPayAuth04YPayC0C6module8merchantAA0dC6ModuleC0aB13Configuration13YPSDKMerchantV_tFZ",
+            "mangledName": "$s13YandexPayAuth04YPayC0C6module8merchantAA0dC6ModuleC0aB13Configuration13YPSDKMerchantV_tFZ",
             "moduleName": "YandexPayAuth",
             "static": true,
             "declAttributes": [
@@ -1623,6 +1673,7 @@
           "AccessControl",
           "Custom"
         ],
+        "hasMissingDesignatedInitializers": true,
         "conformances": [
           {
             "kind": "Conformance",

@@ -2,6 +2,7 @@
 // swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKAuthorizationScenario -package-name FintechSDK
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import AuthenticationServices
 import FintechSDKAnalyticsInterfaces
 import FintechSDKAuthInterfaces
 import FintechSDKCoreUI
@@ -17,14 +18,19 @@ extension FintechSDKAuthorizationScenario.FTAuthScenario {
   public func runAndGetSession(with presenter: UIKit.UIViewController, mode: FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode) async throws(Self.FTSessionError) -> FintechSDKAuthInterfaces.FintechAuthSession
 }
 public typealias FTAuthResult = (auth: FintechSDKAuthInterfaces.FintechAuthModel, session: FintechSDKAuthInterfaces.FintechAuthSession)
+public struct FTPassportAuthResult : Swift.Sendable {
+  public let payAuth: FintechSDKAuthInterfaces.FintechAuthModel
+  public let merchAuth: FintechSDKAuthInterfaces.FintechAuthModel?
+  public init(payAuth: FintechSDKAuthInterfaces.FintechAuthModel, merchAuth: FintechSDKAuthInterfaces.FintechAuthModel?)
+}
 public protocol FTAuthScenario<FTSessionError> : AnyObject {
   associatedtype FTSessionError : Swift.Error
   var isAuthenticated: Swift.Bool { get }
   var delegate: (any FintechSDKAuthorizationScenario.FTAuthScenarioDelegate<Self.FTSessionError>)? { get set }
-  @_Concurrency.MainActor func run(with presenter: UIKit.UIViewController, mode: FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode) async throws(Self.FTSessionError) -> FintechSDKAuthorizationScenario.FTAuthResult
-  @discardableResult
-  @_Concurrency.MainActor func runPassportAuth(with presenter: UIKit.UIViewController) async throws(Self.FTSessionError) -> FintechSDKAuthInterfaces.FintechAuthModel
   @_Concurrency.MainActor var currentAuth: FintechSDKAuthInterfaces.FintechAuthModel? { get }
+  @_Concurrency.MainActor func runAuthAndBst(with presenter: UIKit.UIViewController, mode: FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode) async throws(Self.FTSessionError) -> FintechSDKAuthorizationScenario.FTAuthResult
+  @discardableResult
+  @_Concurrency.MainActor func runPassportAuth(with presenter: UIKit.UIViewController, strategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy?, performDeviceBind: Swift.Bool) async throws(Self.FTSessionError) -> FintechSDKAuthorizationScenario.FTPassportAuthResult
   @_Concurrency.MainActor func runBstOnly(mode: FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode) async throws(Self.FTSessionError) -> FintechSDKAuthInterfaces.FintechAuthSession
   func logout()
   func handleURL(_ url: Foundation.URL) -> Swift.Bool

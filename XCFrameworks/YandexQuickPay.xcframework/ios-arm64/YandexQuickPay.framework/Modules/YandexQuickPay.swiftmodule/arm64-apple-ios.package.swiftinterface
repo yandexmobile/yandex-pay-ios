@@ -3,6 +3,7 @@
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name YandexQuickPay -package-name yquickpay
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import Combine
+import CoreGraphics
 import ExternalBduiAdapter
 import FintechSDKFontsAdapter
 import FintechSDKLoginAdapter
@@ -97,7 +98,7 @@ public enum YQuickPayAuthState : Swift.Equatable {
   @_Concurrency.MainActor func onAuthStateChanged(_ state: YandexQuickPay.YQuickPayAuthState)
 }
 final public class YQuickPayModuleDescriptor : YandexPayConfiguration.YPayModule {
-  public init(stateListener: any YandexQuickPay.YQuickPaymentStateListener, merchant: YandexPayConfiguration.YPSDKMerchant, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, isActivatedByDefault: Swift.Bool = true)
+  public init(stateListener: any YandexQuickPay.YQuickPaymentStateListener, merchant: YandexPayConfiguration.YPSDKMerchant, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, isActivatedByDefault: Swift.Bool = true, pollingModalSize: YandexQuickPay.YQuickPayPollingModalSize? = nil)
   @_Concurrency.MainActor final public func configure(with configuration: YandexPayConfiguration.YPay)
   final public var urlHandlers: [any YandexPayConfiguration.YPayURLHandler] {
     get
@@ -112,7 +113,7 @@ extension YandexQuickPay.YQuickPayModuleDescriptor {
   @_Concurrency.MainActor final public func update(theme: YandexPayConfiguration.YPSDKThemeColorScheme)
 }
 extension YandexQuickPay.YQuickPay {
-  public static func module(stateListener: any YandexQuickPay.YQuickPaymentStateListener, merchant: YandexPayConfiguration.YPSDKMerchant, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, isActivatedByDefault: Swift.Bool = true) -> YandexQuickPay.YQuickPayModuleDescriptor
+  public static func module(stateListener: any YandexQuickPay.YQuickPaymentStateListener, merchant: YandexPayConfiguration.YPSDKMerchant, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, isActivatedByDefault: Swift.Bool = true, pollingModalSize: YandexQuickPay.YQuickPayPollingModalSize? = nil) -> YandexQuickPay.YQuickPayModuleDescriptor
 }
 public struct YQuickPayPaymentMethodType : Swift.Equatable, Swift.Sendable {
   public let rawValue: Swift.String
@@ -121,9 +122,18 @@ public struct YQuickPayPaymentMethodType : Swift.Equatable, Swift.Sendable {
   public static let yabank: YandexQuickPay.YQuickPayPaymentMethodType
   public static func == (a: YandexQuickPay.YQuickPayPaymentMethodType, b: YandexQuickPay.YQuickPayPaymentMethodType) -> Swift.Bool
 }
+public enum YQuickPayPollingModalSize : Swift.Sendable {
+  case fraction(Swift.Double)
+  case fixed(CoreFoundation.CGFloat)
+  case topInset(CoreFoundation.CGFloat)
+}
 public enum YQuickPayResult {
   case success
-  case failure(retryable: Swift.Bool)
+  case failure(YandexQuickPay.YQuickPayResult.FailureDetails)
+  public struct FailureDetails {
+    public let retryable: Swift.Bool
+    public let error: (any Swift.Error)?
+  }
 }
 public enum YQuickPayWidgetExpandState {
   case collapsed

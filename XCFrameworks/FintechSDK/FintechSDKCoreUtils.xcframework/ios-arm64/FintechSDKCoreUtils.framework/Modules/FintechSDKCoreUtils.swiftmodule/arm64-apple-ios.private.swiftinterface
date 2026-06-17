@@ -84,6 +84,11 @@ extension Swift.Sequence {
   @_spi(Internal) public static let thinSpace: Swift.String
   @_spi(Internal) public func withThinSpaces() -> Swift.String
 }
+@_spi(Internal) extension Swift.Double {
+  @_spi(Internal) public var ftcMS: Swift.Int {
+    @_spi(Internal) get
+  }
+}
 @_spi(Internal) extension Foundation.URL {
   @_spi(Internal) public func addingQueryParameters(_ parameters: [Swift.String : Swift.String]) -> Foundation.URL
 }

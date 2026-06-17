@@ -40,7 +40,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(uid:accountManager:networkChallengeHandler:observers:)",
+            "printedName": "init(uid:accountManager:networkChallengeHandler:observers:eventReporter:errorReporter:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -103,11 +103,39 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechAnalyticsEventReporter",
+                    "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter",
+                    "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechAnalyticsErrorReporter",
+                    "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter",
+                    "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsErrorReporterP"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:31FintechSDKNetworkImplementation31DiehardNetworkClientFactoryImplV3uid14accountManager23networkChallengeHandler9observersACSo8NSNumberCSg_0A17SDKAuthInterfaces0a7AccountK7Adapter_p0abR00aemN0_pSgSayAM0aE13EventObserver_pGSgtcfc",
-            "mangledName": "$s31FintechSDKNetworkImplementation31DiehardNetworkClientFactoryImplV3uid14accountManager23networkChallengeHandler9observersACSo8NSNumberCSg_0A17SDKAuthInterfaces0a7AccountK7Adapter_p0abR00aemN0_pSgSayAM0aE13EventObserver_pGSgtcfc",
+            "usr": "s:31FintechSDKNetworkImplementation31DiehardNetworkClientFactoryImplV3uid14accountManager23networkChallengeHandler9observers13eventReporter05errorQ0ACSo8NSNumberCSg_0A17SDKAuthInterfaces0a7AccountK7Adapter_p0abU00aemN0_pSgSayAO0aE13EventObserver_pGSg0a12SDKAnalyticsU00a9AnalyticsxQ0_pSgAU0a14AnalyticsErrorQ0_pSgtcfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation31DiehardNetworkClientFactoryImplV3uid14accountManager23networkChallengeHandler9observers13eventReporter05errorQ0ACSo8NSNumberCSg_0A17SDKAuthInterfaces0a7AccountK7Adapter_p0abU00aemN0_pSgSayAO0aE13EventObserver_pGSg0a12SDKAnalyticsU00a9AnalyticsxQ0_pSgAU0a14AnalyticsErrorQ0_pSgtcfc",
             "moduleName": "FintechSDKNetworkImplementation",
             "declAttributes": [
               "AccessControl"
@@ -1626,6 +1654,13 @@
       },
       {
         "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
         "name": "FintechSDKAuthInterfaces",
         "printedName": "FintechSDKAuthInterfaces",
         "declKind": "Import",
@@ -1637,6 +1672,16 @@
         "printedName": "FintechSDKNetworkInterfaces",
         "declKind": "Import",
         "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
       },
       {
         "kind": "TypeDecl",
@@ -1747,7 +1792,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(accountManager:uid:authSession:)",
+            "printedName": "init(accountManager:uid:errorReporter:eventReporter:authSession:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1770,6 +1815,36 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
+                "printedName": "(any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechAnalyticsErrorReporter",
+                    "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter",
+                    "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsErrorReporterP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechAnalyticsEventReporter",
+                    "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter",
+                    "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
                 "printedName": "FintechSDKAuthInterfaces.FintechAuthSession?",
                 "children": [
                   {
@@ -1784,8 +1859,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:31FintechSDKNetworkImplementation22NetworkAuthManagerImplC07accountF03uid11authSessionAC0A17SDKAuthInterfaces0a7AccountF7Adapter_p_So8NSNumberCAG0aeK0VSgtcfc",
-            "mangledName": "$s31FintechSDKNetworkImplementation22NetworkAuthManagerImplC07accountF03uid11authSessionAC0A17SDKAuthInterfaces0a7AccountF7Adapter_p_So8NSNumberCAG0aeK0VSgtcfc",
+            "usr": "s:31FintechSDKNetworkImplementation22NetworkAuthManagerImplC07accountF03uid13errorReporter05eventK011authSessionAC0A17SDKAuthInterfaces0a7AccountF7Adapter_p_So8NSNumberC0a12SDKAnalyticsP00a14AnalyticsErrorK0_pSgAM0au5EventK0_pSgAI0aeN0VSgtcfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation22NetworkAuthManagerImplC07accountF03uid13errorReporter05eventK011authSessionAC0A17SDKAuthInterfaces0a7AccountF7Adapter_p_So8NSNumberC0a12SDKAnalyticsP00a14AnalyticsErrorK0_pSgAM0au5EventK0_pSgAI0aeN0VSgtcfc",
             "moduleName": "FintechSDKNetworkImplementation",
             "declAttributes": [
               "AccessControl"
@@ -2205,6 +2280,36 @@
               "Internal"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "updateBaseUrl",
+            "printedName": "updateBaseUrl(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation17NetworkClientImplC13updateBaseUrlyySSF",
+            "mangledName": "$s31FintechSDKNetworkImplementation17NetworkClientImplC13updateBaseUrlyySSF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -2240,6 +2345,13 @@
             "printedName": "FintechNetworkClient",
             "usr": "s:27FintechSDKNetworkInterfaces0A13NetworkClientP",
             "mangledName": "$s27FintechSDKNetworkInterfaces0A13NetworkClientP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechNetworkBaseURLUpdatable",
+            "printedName": "FintechNetworkBaseURLUpdatable",
+            "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkBaseURLUpdatableP",
+            "mangledName": "$s27FintechSDKNetworkInterfaces0A23NetworkBaseURLUpdatableP"
           },
           {
             "kind": "Conformance",
@@ -2627,6 +2739,132 @@
         "declKind": "Struct",
         "usr": "s:31FintechSDKNetworkImplementation24DiehardRequestMiddlewareV",
         "mangledName": "$s31FintechSDKNetworkImplementation24DiehardRequestMiddlewareV",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechNetworkRequestMiddleware",
+            "printedName": "FintechNetworkRequestMiddleware",
+            "usr": "s:27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP",
+            "mangledName": "$s27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTAnalyticsIdentifiersRequestMiddleware",
+        "printedName": "FTAnalyticsIdentifiersRequestMiddleware",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(identifiersProvider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTAnalyticsIdentifiersRequestMiddleware",
+                "printedName": "FintechSDKNetworkImplementation.FTAnalyticsIdentifiersRequestMiddleware",
+                "usr": "s:31FintechSDKNetworkImplementation39FTAnalyticsIdentifiersRequestMiddlewareV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechIdentifiersProviding",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechIdentifiersProviding",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A20IdentifiersProvidingP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKNetworkImplementation39FTAnalyticsIdentifiersRequestMiddlewareV19identifiersProviderAC0A22SDKAnalyticsInterfaces0aE9Providing_p_tcfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation39FTAnalyticsIdentifiersRequestMiddlewareV19identifiersProviderAC0A22SDKAnalyticsInterfaces0aE9Providing_p_tcfc",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "process",
+            "printedName": "process(request:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation39FTAnalyticsIdentifiersRequestMiddlewareV7process7request10Foundation10URLRequestVAH_tYaKF",
+            "mangledName": "$s31FintechSDKNetworkImplementation39FTAnalyticsIdentifiersRequestMiddlewareV7process7request10Foundation10URLRequestVAH_tYaKF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:31FintechSDKNetworkImplementation39FTAnalyticsIdentifiersRequestMiddlewareV",
+        "mangledName": "$s31FintechSDKNetworkImplementation39FTAnalyticsIdentifiersRequestMiddlewareV",
         "moduleName": "FintechSDKNetworkImplementation",
         "declAttributes": [
           "AccessControl",
@@ -4446,308 +4684,357 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTBasicSessionProviderService.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTBasicSessionProviderService.swift",
       "kind": "StringLiteral",
       "offset": 1997,
       "length": 18,
       "value": "\"YANDEX_CLIENT_ID\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTBasicSessionProviderService.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTBasicSessionProviderService.swift",
       "kind": "StringLiteral",
       "offset": 2044,
       "length": 23,
       "value": "\"YANDEX_CLIENT_ID_TEST\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Backend\/FTPayBackendAPIFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Backend\/FTPayBackendAPIFactory.swift",
       "kind": "Array",
       "offset": 854,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Backend\/FTPayBackendAPIFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Backend\/FTPayBackendAPIFactory.swift",
       "kind": "Array",
       "offset": 930,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFlexApiFactoryImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFlexApiFactoryImpl.swift",
       "kind": "Array",
       "offset": 1306,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFlexApiFactoryImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFlexApiFactoryImpl.swift",
       "kind": "Array",
       "offset": 1382,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackAPIFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackAPIFactory.swift",
       "kind": "Array",
       "offset": 730,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackAPIFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackAPIFactory.swift",
       "kind": "Array",
       "offset": 806,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackClientFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackClientFactory.swift",
       "kind": "Array",
       "offset": 1414,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackClientFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackClientFactory.swift",
       "kind": "Array",
       "offset": 1490,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackClientFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackClientFactory.swift",
       "kind": "Array",
       "offset": 1541,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/HeaderConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/HeaderConstants.swift",
       "kind": "StringLiteral",
       "offset": 80,
       "length": 7,
       "value": "\"X-BST\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/HeaderConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/HeaderConstants.swift",
       "kind": "StringLiteral",
       "offset": 125,
       "length": 19,
       "value": "\"X-AppMetrica-UUID\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/HeaderConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/HeaderConstants.swift",
       "kind": "StringLiteral",
       "offset": 176,
       "length": 13,
       "value": "\"X-Device-Id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/HeaderConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/HeaderConstants.swift",
       "kind": "StringLiteral",
       "offset": 230,
       "length": 23,
       "value": "\"X-Sdk-Installation-Id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/HeaderConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/HeaderConstants.swift",
       "kind": "StringLiteral",
       "offset": 289,
       "length": 18,
       "value": "\"X-Sdk-Session-Id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
-      "kind": "Array",
-      "offset": 946,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
-      "kind": "Array",
-      "offset": 1011,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
-      "kind": "Array",
-      "offset": 1062,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
-      "kind": "Array",
-      "offset": 2299,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
-      "kind": "Array",
-      "offset": 2364,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
-      "kind": "Array",
-      "offset": 2415,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
       "kind": "StringLiteral",
-      "offset": 7384,
+      "offset": 2358,
+      "length": 8,
+      "value": "\"reason\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 2395,
+      "length": 13,
+      "value": "\"duration_ms\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 2472,
+      "length": 30,
+      "value": "\"exchange_oauth_token_success\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 2541,
+      "length": 30,
+      "value": "\"exchange_oauth_token_failure\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 2613,
+      "length": 36,
+      "value": "\"passport_token_request_performance\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 2684,
+      "length": 22,
+      "value": "\"network_auth_manager\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
+      "kind": "Dictionary",
+      "offset": 3512,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "kind": "Array",
+      "offset": 1003,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "kind": "Array",
+      "offset": 1068,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "kind": "Array",
+      "offset": 1119,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "kind": "Array",
+      "offset": 2356,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "kind": "Array",
+      "offset": 2421,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "kind": "Array",
+      "offset": 2472,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 7659,
       "length": 3,
       "value": "\"\/\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Providers\/FTFrontbackComponentsProviderImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Providers\/FTFrontbackComponentsProviderImpl.swift",
       "kind": "StringLiteral",
       "offset": 970,
       "length": 46,
       "value": "\"payment_sdk_19d9962ddd08e7d52a2668cbcd5f7b7e\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Providers\/FTFrontbackComponentsProviderImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Providers\/FTFrontbackComponentsProviderImpl.swift",
       "kind": "StringLiteral",
       "offset": 1042,
       "length": 58,
       "value": "\"yandex_pay_plus_backend_f8c528b768e7421ee0e3258995201aaa\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/DiehardRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/DiehardRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 895,
       "length": 15,
       "value": "\"X-Oauth-Token\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/DiehardRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/DiehardRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 941,
       "length": 22,
       "value": "\"X-Passport-Partition\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/DiehardRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/DiehardRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 988,
       "length": 7,
       "value": "\"X-UID\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1359,
       "length": 15,
       "value": "\"X-SDK-Version\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1410,
       "length": 18,
       "value": "\"X-Client-Version\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1460,
       "length": 14,
       "value": "\"X-Client-App\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1508,
       "length": 16,
       "value": "\"X-SDK-Platform\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1562,
       "length": 20,
       "value": "\"X-Platform-Version\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1611,
       "length": 11,
       "value": "\"X-Real-IP\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1648,
       "length": 5,
       "value": "\"ios\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTRequestServiceTokenMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTRequestServiceTokenMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 517,
       "length": 17,
       "value": "\"X-Service-Token\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTRequestUserAgentMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTRequestUserAgentMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 514,
       "length": 12,
       "value": "\"User-Agent\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTSessionRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTSessionRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 775,
       "length": 15,
       "value": "\"X-Merchant-ID\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTSessionRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTSessionRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 829,
       "length": 22,
       "value": "\"X-Merchant-Client-ID\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTSessionRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTSessionRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 883,
       "length": 18,
       "value": "\"X-Pay-Session-ID\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FrontbackRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FrontbackRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 2172,
       "length": 15,
       "value": "\"Authorization\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FrontbackRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FrontbackRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 2218,
       "length": 22,
       "value": "\"X-Passport-Partition\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FrontbackRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FrontbackRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 2265,
       "length": 7,
       "value": "\"X-UID\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/5\/4246905950\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/TraceparentRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/TraceparentRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 927,
       "length": 13,

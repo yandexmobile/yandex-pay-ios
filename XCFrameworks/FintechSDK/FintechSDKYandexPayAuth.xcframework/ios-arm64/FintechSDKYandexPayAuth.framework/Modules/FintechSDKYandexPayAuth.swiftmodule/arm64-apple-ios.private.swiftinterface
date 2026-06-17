@@ -1,0 +1,23 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKYandexPayAuth -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+@_spi(Internal) import FintechSDKAnalyticsInterfaces
+import FintechSDKAuthInterfaces
+import FintechSDKCommonEntity
+import FintechSDKNetworkInterfaces
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_spi(Internal) @_Concurrency.MainActor final public class FTPayAuthHandler {
+  @_spi(Internal) @_Concurrency.MainActor public init(merchantID: Swift.String, environment: FintechSDKCommonEntity.FintechSDKEnvironment, loginService: any FintechSDKAuthInterfaces.FintechLoginService, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, networkChallengeHandlerFactory: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory, appMetricaAdapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter, rumFactory: any FintechSDKAnalyticsInterfaces.FintechRUMAdapterFactory, rtmFactory: any FintechSDKAnalyticsInterfaces.FintechRTMAdapterFactory, partnerAuthStateProvider: (() -> Swift.Bool?)? = nil)
+  @_spi(Internal) @_Concurrency.MainActor final public var isInternallyAuthorized: Swift.Bool {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) @_Concurrency.MainActor final public func authorize(authStrategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy, presenter: UIKit.UIViewController) async throws -> FintechSDKAuthInterfaces.FintechAuthModel
+  @_spi(Internal) @_Concurrency.MainActor final public func logout()
+  @_spi(Internal) @objc deinit
+}
+@_spi(Internal) extension FintechSDKYandexPayAuth.FTPayAuthHandler : Swift.Sendable {}

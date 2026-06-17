@@ -8,8 +8,15 @@ import Swift
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-public enum FTQuickPayResult : Swift.Sendable, Swift.Equatable {
+public enum FTQuickPayResult : Swift.Sendable {
   case success
-  case failure(retryable: Swift.Bool)
-  public static func == (a: FintechSDKQuickPaymentEntity.FTQuickPayResult, b: FintechSDKQuickPaymentEntity.FTQuickPayResult) -> Swift.Bool
+  case failure(FintechSDKQuickPaymentEntity.FTQuickPayResult.FailureDetails)
+  public struct FailureDetails : @unchecked Swift.Sendable {
+    public let retryable: Swift.Bool
+    public let error: (any Swift.Error)?
+    public init(retryable: Swift.Bool, error: (any Swift.Error)? = nil)
+  }
+}
+extension FintechSDKQuickPaymentEntity.FTQuickPayResult : Swift.Equatable {
+  public static func == (lhs: FintechSDKQuickPaymentEntity.FTQuickPayResult, rhs: FintechSDKQuickPaymentEntity.FTQuickPayResult) -> Swift.Bool
 }

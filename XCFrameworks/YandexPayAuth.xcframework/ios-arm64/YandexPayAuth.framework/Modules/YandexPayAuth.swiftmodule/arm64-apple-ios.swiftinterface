@@ -3,7 +3,11 @@
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name YandexPayAuth -package-name yandexpayauth
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import FintechSDKAuthInterfaces
+import FintechSDKCommonEntity
 import FintechSDKCoreUtils
+import FintechSDKRealTimeAnalyticsAdapter
+import FintechSDKRealUserMonitoringAdapter
+import FintechSDKYandexPayAuth
 import Foundation
 import Swift
 import UIKit
@@ -48,7 +52,7 @@ extension YandexPayConfiguration.YPay {
   }
 }
 final public class YPayAuthModule : YandexPayConfiguration.YPayModule {
-  public init()
+  public init(merchant: YandexPayConfiguration.YPSDKMerchant)
   @_Concurrency.MainActor final public func configure(with configuration: YandexPayConfiguration.YPay)
   final public var urlHandlers: [any YandexPayConfiguration.YPayURLHandler] {
     get
@@ -61,11 +65,12 @@ final public class YPayAuthModule : YandexPayConfiguration.YPayModule {
 extension YandexPayAuth.YPayAuthModule {
   final public func update(locale: YandexPayConfiguration.YPSDKLocale)
   final public func update(theme: YandexPayConfiguration.YPSDKThemeColorScheme)
+  @_Concurrency.MainActor final public func logout()
 }
 extension YandexPayAuth.YPayAuth {
-  @_Concurrency.MainActor public static func module() -> YandexPayAuth.YPayAuthModule
+  @_Concurrency.MainActor public static func module(merchant: YandexPayConfiguration.YPSDKMerchant) -> YandexPayAuth.YPayAuthModule
 }
-@_Concurrency.MainActor final public class YPayAuth {
+@_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class YPayAuth {
   @_Concurrency.MainActor final public var payAuthState: YandexPayAuth.YPPayAuthState {
     get
   }

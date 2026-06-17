@@ -19,10 +19,6 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-public enum FTPayWidgetAnalyticsEvent {
-  public static let loadSuccess: Swift.String
-  public static let clicked: Swift.String
-}
 @_spi(Internal) public struct FTPayWidgetEndpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider {
   @_spi(Internal) public typealias Decoder = FintechSDKNetworkImplementation.FTRawDataResponseDecoder
   @_spi(Internal) public typealias ResultModel = Foundation.Data
