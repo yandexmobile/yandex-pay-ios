@@ -16,6 +16,195 @@
         "name": "FintechSDKAuthInterfaces",
         "printedName": "FintechSDKAuthInterfaces",
         "declKind": "Import",
+        "moduleName": "FintechSDKAuthCoreImplementation",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTDPoPStateHolderImpl",
+        "printedName": "FTDPoPStateHolderImpl",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTDPoPStateHolderImpl",
+                "printedName": "FintechSDKAuthCoreImplementation.FTDPoPStateHolderImpl",
+                "usr": "s:32FintechSDKAuthCoreImplementation21FTDPoPStateHolderImplC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:32FintechSDKAuthCoreImplementation21FTDPoPStateHolderImplCACycfc",
+            "mangledName": "$s32FintechSDKAuthCoreImplementation21FTDPoPStateHolderImplCACycfc",
+            "moduleName": "FintechSDKAuthCoreImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "offlinePublicKey",
+            "printedName": "offlinePublicKey(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PublicKeyType",
+                "printedName": "FintechSDKAuthInterfaces.PublicKeyType",
+                "usr": "s:24FintechSDKAuthInterfaces13PublicKeyTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:32FintechSDKAuthCoreImplementation21FTDPoPStateHolderImplC16offlinePublicKey3forSSSg0aB10Interfaces0jK4TypeO_tF",
+            "mangledName": "$s32FintechSDKAuthCoreImplementation21FTDPoPStateHolderImplC16offlinePublicKey3forSSSg0aB10Interfaces0jK4TypeO_tF",
+            "moduleName": "FintechSDKAuthCoreImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setOfflinePublicKey",
+            "printedName": "setOfflinePublicKey(_:for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PublicKeyType",
+                "printedName": "FintechSDKAuthInterfaces.PublicKeyType",
+                "usr": "s:24FintechSDKAuthInterfaces13PublicKeyTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:32FintechSDKAuthCoreImplementation21FTDPoPStateHolderImplC19setOfflinePublicKey_3forySS_0aB10Interfaces0kL4TypeOtF",
+            "mangledName": "$s32FintechSDKAuthCoreImplementation21FTDPoPStateHolderImplC19setOfflinePublicKey_3forySS_0aB10Interfaces0kL4TypeOtF",
+            "moduleName": "FintechSDKAuthCoreImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "clear",
+            "printedName": "clear()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:32FintechSDKAuthCoreImplementation21FTDPoPStateHolderImplC5clearyyF",
+            "mangledName": "$s32FintechSDKAuthCoreImplementation21FTDPoPStateHolderImplC5clearyyF",
+            "moduleName": "FintechSDKAuthCoreImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:32FintechSDKAuthCoreImplementation21FTDPoPStateHolderImplC",
+        "mangledName": "$s32FintechSDKAuthCoreImplementation21FTDPoPStateHolderImplC",
+        "moduleName": "FintechSDKAuthCoreImplementation",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTDPoPStateHolder",
+            "printedName": "FTDPoPStateHolder",
+            "usr": "s:24FintechSDKAuthInterfaces17FTDPoPStateHolderP",
+            "mangledName": "$s24FintechSDKAuthInterfaces17FTDPoPStateHolderP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAuthCoreImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAuthInterfaces",
+        "printedName": "FintechSDKAuthInterfaces",
+        "declKind": "Import",
         "moduleName": "FintechSDKAuthCoreImplementation"
       },
       {
@@ -902,63 +1091,70 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeyImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FTDPoPStateHolderImpl.swift",
+      "kind": "Dictionary",
+      "offset": 255,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeyImpl.swift",
       "kind": "BooleanLiteral",
       "offset": 336,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeySimulatorImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeySimulatorImpl.swift",
       "kind": "BooleanLiteral",
       "offset": 463,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeySimulatorImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeySimulatorImpl.swift",
       "kind": "BooleanLiteral",
       "offset": 494,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeySimulatorImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeySimulatorImpl.swift",
       "kind": "StringLiteral",
       "offset": 3009,
       "length": 28,
       "value": "\"com.fintech.dpop.simulator\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeySimulatorImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeySimulatorImpl.swift",
       "kind": "StringLiteral",
       "offset": 3078,
       "length": 10,
       "value": "\"dpop_key\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeySimulatorImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeySimulatorImpl.swift",
       "kind": "StringLiteral",
       "offset": 3127,
       "length": 22,
       "value": "\"dpop_key.no_biometry\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechKeyStoreRef.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechKeyStoreRef.swift",
       "kind": "StringLiteral",
       "offset": 108,
       "length": 13,
       "value": "\"fintech.sdk\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechKeyStoreRef.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechKeyStoreRef.swift",
       "kind": "StringLiteral",
       "offset": 153,
       "length": 13,
       "value": "\"dpop.se.ref\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/5\/4277526056\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechKeyStoreRef.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechKeyStoreRef.swift",
       "kind": "StringLiteral",
       "offset": 208,
       "length": 25,

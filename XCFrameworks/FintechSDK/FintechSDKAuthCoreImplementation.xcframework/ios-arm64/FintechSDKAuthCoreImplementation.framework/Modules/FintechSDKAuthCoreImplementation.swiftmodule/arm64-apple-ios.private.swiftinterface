@@ -4,13 +4,20 @@
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import CryptoKit
 import CryptoTokenKit
-import FintechSDKAuthInterfaces
+@_spi(Internal) import FintechSDKAuthInterfaces
 import Foundation
 import LocalAuthentication
 import Swift
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+@_spi(Internal) final public class FTDPoPStateHolderImpl : FintechSDKAuthInterfaces.FTDPoPStateHolder, @unchecked Swift.Sendable {
+  @_spi(Internal) public init()
+  @_spi(Internal) final public func offlinePublicKey(for keyType: FintechSDKAuthInterfaces.PublicKeyType) -> Swift.String?
+  @_spi(Internal) final public func setOfflinePublicKey(_ publicKey: Swift.String, for keyType: FintechSDKAuthInterfaces.PublicKeyType)
+  @_spi(Internal) final public func clear()
+  @_spi(Internal) @objc deinit
+}
 public enum FintechDPoPKeyFactory {
   public enum Mode : Swift.Sendable {
     case withBiometry

@@ -136,7 +136,7 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public init(metricaID: Swift.String, deviceID: Swift.String?, idfa: Swift.String?, userToken: Swift.String?)
 }
 @_spi(Internal) public enum FTPayBadgeFactory {
-  @_spi(Internal) @_Concurrency.MainActor public static func createBadgeView(model: FintechSDKPayBadge.FTPayBadgeModel, apiService: any FintechSDKPayBadge.FTPayBadgeAPIService) -> some SwiftUICore.View
+  @_spi(Internal) @_Concurrency.MainActor public static func createBadgeView(model: FintechSDKPayBadge.FTPayBadgeModel, apiService: any FintechSDKPayBadge.FTPayBadgeAPIService, logger: any FintechSDKCoreUtils.FTLogger) -> some SwiftUICore.View
   
 }
 @_spi(Internal) extension FintechSDKPayBadge.FTPayBadgeModel.SplitVariant : Swift.Equatable {}

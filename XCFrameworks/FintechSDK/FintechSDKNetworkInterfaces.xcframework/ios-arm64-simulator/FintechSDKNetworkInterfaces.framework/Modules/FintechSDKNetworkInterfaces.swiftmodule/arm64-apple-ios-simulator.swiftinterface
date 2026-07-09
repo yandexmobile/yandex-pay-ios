@@ -87,6 +87,14 @@ public protocol FintechNetworkRequestMiddleware {
 public protocol FintechNetworkResponseMiddleware {
   func process(response: Foundation.HTTPURLResponse) throws -> Foundation.HTTPURLResponse
 }
+public protocol FintechStaticMerchantDomainProvider : AnyObject {
+  func getMerchantDomain() -> Swift.String?
+}
+final public class FintechStaticMerchantDomainProviderImpl : FintechSDKNetworkInterfaces.FintechStaticMerchantDomainProvider {
+  public init(merchantDomain: Swift.String?)
+  final public func getMerchantDomain() -> Swift.String?
+  @objc deinit
+}
 public enum NetworkClientError : Swift.Error {
   case invalidRequestURL
   case invalidRequestBody(any Swift.Error)

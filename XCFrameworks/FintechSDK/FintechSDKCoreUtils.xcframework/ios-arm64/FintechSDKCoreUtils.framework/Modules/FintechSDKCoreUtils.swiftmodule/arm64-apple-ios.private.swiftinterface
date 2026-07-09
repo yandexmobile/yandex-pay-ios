@@ -13,6 +13,7 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+import os
 @_spi(Internal) public struct FTDebugLogger {
   @_spi(Internal) public static func print(_ items: Any..., separator: Swift.String = " ", terminator: Swift.String = "\n")
 }
@@ -208,6 +209,15 @@ public protocol FTAnyValueBox {
     @_spi(Internal) get
   }
   @_spi(Internal) public var error: E? {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public protocol FTDateProvider : Swift.Sendable {
+  @_spi(Internal) var now: Foundation.Date { get }
+}
+@_spi(Internal) public struct FTSystemDateProvider : FintechSDKCoreUtils.FTDateProvider {
+  @_spi(Internal) public init()
+  @_spi(Internal) public var now: Foundation.Date {
     @_spi(Internal) get
   }
 }
@@ -456,6 +466,37 @@ final public class DefaultTimeProvider : FintechSDKCoreUtils.TimeProvider {
   final public func getCurrentTimeMs() -> Swift.Int64
   @objc deinit
 }
+@_spi(Internal) public protocol FTLogger : Swift.Sendable {
+  @_spi(Internal) func info(_ message: Swift.String, data: any Swift.Sendable)
+  @_spi(Internal) func debug(_ message: Swift.String, data: any Swift.Sendable)
+  @_spi(Internal) func error(_ message: Swift.String, error: (any Swift.Error)?, data: any Swift.Sendable)
+}
+@_spi(Internal) extension FintechSDKCoreUtils.FTLogger {
+  @_spi(Internal) public func info(_ message: Swift.String)
+  @_spi(Internal) public func debug(_ message: Swift.String)
+  @_spi(Internal) public func error(_ message: Swift.String, error: (any Swift.Error)?)
+}
+@_spi(Internal) public enum FTLogKind : Swift.Sendable {
+  @_spi(Internal) case info
+  @_spi(Internal) case debug
+  @_spi(Internal) case error
+  @_spi(Internal) public static func == (a: FintechSDKCoreUtils.FTLogKind, b: FintechSDKCoreUtils.FTLogKind) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public enum FTLogConstants {
+  @_spi(Internal) public static let externalSDK: Swift.String
+  @_spi(Internal) public static let internalSDK: Swift.String
+}
+@_spi(Internal) final public class FTLoggerImpl : FintechSDKCoreUtils.FTLogger, Swift.Sendable {
+  @_spi(Internal) public init(module: Swift.String, subsystem: Swift.String = FTLogConstants.externalSDK, isEnabled: Swift.Bool)
+  @_spi(Internal) final public func info(_ message: Swift.String, data: any Swift.Sendable)
+  @_spi(Internal) final public func debug(_ message: Swift.String, data: any Swift.Sendable)
+  @_spi(Internal) final public func error(_ message: Swift.String, error: (any Swift.Error)? = nil, data: any Swift.Sendable)
+  @_spi(Internal) @objc deinit
+}
 @_spi(Internal) public protocol FTUserAgentProvider {
   @_spi(Internal) var userAgent: Swift.String { get }
 }
@@ -487,7 +528,7 @@ final public class DefaultTimeProvider : FintechSDKCoreUtils.TimeProvider {
   @_spi(Internal) final public func drop()
   @_spi(Internal) @objc deinit
 }
-@_spi(Internal) public protocol FTStorage<Item> {
+@_spi(Internal) public protocol FTStorage<Item> : Swift.Sendable {
   associatedtype Item
   @_spi(Internal) func load() -> Self.Item?
   @_spi(Internal) @discardableResult
@@ -497,3 +538,5 @@ final public class DefaultTimeProvider : FintechSDKCoreUtils.TimeProvider {
 extension FintechSDKCoreUtils.FintechApiBaseUrlType : Swift.Equatable {}
 extension FintechSDKCoreUtils.FintechApiBaseUrlType : Swift.Hashable {}
 extension FintechSDKCoreUtils.FintechApiBaseUrlType : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKCoreUtils.FTLogKind : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKCoreUtils.FTLogKind : Swift.Hashable {}

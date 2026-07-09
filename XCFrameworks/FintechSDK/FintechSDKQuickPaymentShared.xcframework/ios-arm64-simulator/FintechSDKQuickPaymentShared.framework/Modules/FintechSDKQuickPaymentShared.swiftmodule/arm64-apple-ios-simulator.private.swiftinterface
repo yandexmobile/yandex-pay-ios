@@ -21,7 +21,7 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 @_spi(Internal) public actor FTQPSPollingInteractor {
-  @_spi(Internal) public typealias BDUIQueryBuilder = (_ transactionId: Swift.String, _ paymentUrl: Swift.String) -> FintechSDKQuickPaymentEntity.FTQPBDUIQuery
+  @_spi(Internal) public typealias BDUIQueryBuilder = (_ transactionId: Swift.String, _ paymentUrl: Swift.String, _ checkoutOrderId: Swift.String?) -> FintechSDKQuickPaymentEntity.FTQPBDUIQuery
   @_spi(Internal) public var isBSTTTLCheckActive: Swift.Bool {
     @_spi(Internal) get
   }
@@ -49,11 +49,8 @@ import _SwiftConcurrencyShims
   @_spi(Internal) func getActiveOrders() async throws(FintechSDKNetworkInterfaces.NetworkClientError) -> FintechSDKQuickPaymentEntity.FTOrdersPollingResponse
   @_spi(Internal) func getOrderStatus(transactionId: Swift.String, paymentUrl: Swift.String) async throws(FintechSDKNetworkInterfaces.NetworkClientError) -> FintechSDKQuickPaymentEntity.FTOrderStatusPollingResponse
 }
-@_spi(Internal) public protocol FTQPSRemoteActionService : Swift.Sendable {
-  @_spi(Internal) func handleRemoteAction(query: FintechSDKBDUIFeatures.FTActionQuery) async throws -> Swift.Int
-}
 @_spi(Internal) public protocol FTQPSCurrentPaymentVariablesUseCase : Swift.Sendable {
-  @_spi(Internal) func setCurrentPayment(transactionId: Swift.String?, paymentUrl: Swift.String?) async
+  @_spi(Internal) func setCurrentPayment(transactionId: Swift.String?, checkoutOrderId: Swift.String?, paymentUrl: Swift.String?) async
 }
 @_spi(Internal) public protocol FTQPSNotifyAboutPollingUseCase : Swift.Sendable {
   @_spi(Internal) func fetchedNewResult(result: FintechSDKQuickPaymentEntity.FTQuickPayResult)
@@ -80,21 +77,11 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public init()
   @_spi(Internal) public func handleChallenge(challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
 }
-@_spi(Internal) final public class FTQPSRemoteActionServiceImpl : FintechSDKQuickPaymentShared.FTQPSRemoteActionService {
-  @_spi(Internal) public init(networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient)
-  @_spi(Internal) final public func handleRemoteAction(query: FintechSDKBDUIFeatures.FTActionQuery) async throws -> Swift.Int
-  @_spi(Internal) @objc deinit
-}
 @_spi(Internal) public protocol FTQPSPollingAnalyticsReporting {
   @_spi(Internal) func reportTokenExpired()
   @_spi(Internal) func reportPaymentProcessFailed()
   @_spi(Internal) func reportPollingUnmappedError(error: any Swift.Error)
   @_spi(Internal) func reportPaymentProcessCompleted()
-}
-@_spi(Internal) final public class FTQPSRemoteActionHandler : FintechSDKBDUIFeatures.FTRemoteActionHandling {
-  @_spi(Internal) public init(service: any FintechSDKQuickPaymentShared.FTQPSRemoteActionService)
-  @_spi(Internal) final public func handleRemoteAction(query: FintechSDKBDUIFeatures.FTActionQuery) async throws -> Swift.Int
-  @_spi(Internal) @objc deinit
 }
 @_spi(Internal) final public class FTQPSSessionExpiredActionHandler : @unchecked Swift.Sendable {
   @_spi(Internal) public init()

@@ -73,10 +73,26 @@ public protocol DevicePubkeyProviderApi {
 @_spi(Internal) public protocol FTRemoteActionHandling {
   @_spi(Internal) func handleRemoteAction(query: FintechSDKBDUIFeatures.FTActionQuery) async throws -> Swift.Int
 }
+@_spi(Internal) final public class FTRemoteActionServiceImpl : FintechSDKBDUIFeatures.FTRemoteActionHandling {
+  @_spi(Internal) public init(networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient)
+  @_spi(Internal) final public func handleRemoteAction(query: FintechSDKBDUIFeatures.FTActionQuery) async throws -> Swift.Int
+  @_spi(Internal) @objc deinit
+}
 public struct FTFinishFlowParams {
   public let urlParams: [Swift.String : Swift.String]?
   public let params: [Swift.String : Swift.String]?
   public init(urlParams: [Swift.String : Swift.String]? = nil, params: [Swift.String : Swift.String]? = nil)
+}
+@_spi(Internal) public enum FTLogoutActionError : Swift.Error {
+  @_spi(Internal) case handlerNotConfigured
+  @_spi(Internal) public static func == (a: FintechSDKBDUIFeatures.FTLogoutActionError, b: FintechSDKBDUIFeatures.FTLogoutActionError) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public protocol FTLogoutActionHandling {
+  @_spi(Internal) func logout() async throws
 }
 public struct FintechSDKAuthorizationDependencies {
   public let accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter
@@ -292,9 +308,10 @@ public struct FintechSDKTokenizationDependencies {
   public let eventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)?
   public let errorReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)?
   public let uid: Foundation.NSNumber?
+  public let merchantDomainProvider: (any FintechSDKNetworkInterfaces.FintechStaticMerchantDomainProvider)?
   public let devicePubkeyProvider: (any FintechSDKBDUIFeatures.DevicePubkeyProviderApi)?
   public let deviceChallengeSignatureProvider: (any FintechSDKBDUIFeatures.DeviceChallengeSignatureProviderApi)?
-  public init(fontAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, networkChallengeHandler: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler, uid: Foundation.NSNumber?, eventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)? = nil, errorReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)? = nil, devicePubkeyProvider: (any FintechSDKBDUIFeatures.DevicePubkeyProviderApi)? = nil, deviceChallengeSignatureProvider: (any FintechSDKBDUIFeatures.DeviceChallengeSignatureProviderApi)? = nil)
+  public init(fontAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, networkChallengeHandler: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler, uid: Foundation.NSNumber?, eventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)? = nil, errorReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)? = nil, merchantDomainProvider: (any FintechSDKNetworkInterfaces.FintechStaticMerchantDomainProvider)? = nil, devicePubkeyProvider: (any FintechSDKBDUIFeatures.DevicePubkeyProviderApi)? = nil, deviceChallengeSignatureProvider: (any FintechSDKBDUIFeatures.DeviceChallengeSignatureProviderApi)? = nil)
 }
 extension UIKit.UIImage {
   public static func named(_ name: Swift.String) -> UIKit.UIImage?
@@ -326,6 +343,8 @@ final public class FintechYBSDK : FintechSDKBDUIFeatures.FintechYBSDKApi {
 }
 @_spi(Internal) extension FintechSDKBDUIFeatures.FTAuthorizeActionError : Swift.Equatable {}
 @_spi(Internal) extension FintechSDKBDUIFeatures.FTAuthorizeActionError : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKBDUIFeatures.FTLogoutActionError : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKBDUIFeatures.FTLogoutActionError : Swift.Hashable {}
 extension FintechSDKBDUIFeatures.HapticFeedbackType : Swift.Equatable {}
 extension FintechSDKBDUIFeatures.HapticFeedbackType : Swift.Hashable {}
 extension FintechSDKBDUIFeatures.HapticFeedbackType : Swift.RawRepresentable {}

@@ -186,9 +186,10 @@ public struct FintechSDKTokenizationDependencies {
   public let eventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)?
   public let errorReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)?
   public let uid: Foundation.NSNumber?
+  public let merchantDomainProvider: (any FintechSDKNetworkInterfaces.FintechStaticMerchantDomainProvider)?
   public let devicePubkeyProvider: (any FintechSDKBDUIFeatures.DevicePubkeyProviderApi)?
   public let deviceChallengeSignatureProvider: (any FintechSDKBDUIFeatures.DeviceChallengeSignatureProviderApi)?
-  public init(fontAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, networkChallengeHandler: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler, uid: Foundation.NSNumber?, eventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)? = nil, errorReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)? = nil, devicePubkeyProvider: (any FintechSDKBDUIFeatures.DevicePubkeyProviderApi)? = nil, deviceChallengeSignatureProvider: (any FintechSDKBDUIFeatures.DeviceChallengeSignatureProviderApi)? = nil)
+  public init(fontAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, networkChallengeHandler: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler, uid: Foundation.NSNumber?, eventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)? = nil, errorReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)? = nil, merchantDomainProvider: (any FintechSDKNetworkInterfaces.FintechStaticMerchantDomainProvider)? = nil, devicePubkeyProvider: (any FintechSDKBDUIFeatures.DevicePubkeyProviderApi)? = nil, deviceChallengeSignatureProvider: (any FintechSDKBDUIFeatures.DeviceChallengeSignatureProviderApi)? = nil)
 }
 extension UIKit.UIImage {
   public static func named(_ name: Swift.String) -> UIKit.UIImage?

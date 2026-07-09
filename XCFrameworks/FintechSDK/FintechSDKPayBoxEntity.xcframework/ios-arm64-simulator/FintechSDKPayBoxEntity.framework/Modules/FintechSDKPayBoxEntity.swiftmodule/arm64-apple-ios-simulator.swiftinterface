@@ -12,7 +12,8 @@ public struct FTSDKConfiguration {
   public let environment: FintechSDKCommonEntity.FintechSDKEnvironment
   public let merchant: FintechSDKPayBoxEntity.FTSDKMerchant
   public let locale: FintechSDKPayBoxEntity.FTSDKLocale
-  public init(environment: FintechSDKCommonEntity.FintechSDKEnvironment, merchant: FintechSDKPayBoxEntity.FTSDKMerchant, locale: FintechSDKPayBoxEntity.FTSDKLocale)
+  public let enableLogging: Swift.Bool
+  public init(environment: FintechSDKCommonEntity.FintechSDKEnvironment, merchant: FintechSDKPayBoxEntity.FTSDKMerchant, locale: FintechSDKPayBoxEntity.FTSDKLocale, enableLogging: Swift.Bool)
 }
 extension FintechSDKPayBoxEntity.FTSDKConfiguration {
   public var clientID: Swift.String {

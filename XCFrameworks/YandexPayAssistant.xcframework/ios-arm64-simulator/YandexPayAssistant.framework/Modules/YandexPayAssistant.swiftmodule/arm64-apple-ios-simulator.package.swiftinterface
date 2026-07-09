@@ -76,6 +76,9 @@ final public class YPAssistantModuleDescriptor : YandexPayConfiguration.YPayModu
   @_spi(Internal) @_Concurrency.MainActor final public func logout()
   @objc deinit
 }
+@_spi(Internal) extension YandexPayAssistant.YPAssistantModuleDescriptor : YandexPayConfiguration.YPayEventSubscriber {
+  @_spi(Internal) @_Concurrency.MainActor final public func handleEvent(_ event: YandexPayConfiguration.YPayEvent) async -> YandexPayConfiguration.YPayEventResult
+}
 public enum YPBenefitsWidgetClickability : Swift.String, Swift.CaseIterable {
   case always
   case onlyAuthorized

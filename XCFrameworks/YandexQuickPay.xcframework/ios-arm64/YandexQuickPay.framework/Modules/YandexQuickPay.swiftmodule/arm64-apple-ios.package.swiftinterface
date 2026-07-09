@@ -112,6 +112,9 @@ extension YandexQuickPay.YQuickPayModuleDescriptor {
   @_Concurrency.MainActor final public func update(locale: YandexPayConfiguration.YPSDKLocale)
   @_Concurrency.MainActor final public func update(theme: YandexPayConfiguration.YPSDKThemeColorScheme)
 }
+@_spi(Internal) extension YandexQuickPay.YQuickPayModuleDescriptor {
+  @_spi(Internal) @_Concurrency.MainActor final public func logout()
+}
 extension YandexQuickPay.YQuickPay {
   public static func module(stateListener: any YandexQuickPay.YQuickPaymentStateListener, merchant: YandexPayConfiguration.YPSDKMerchant, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, isActivatedByDefault: Swift.Bool = true, pollingModalSize: YandexQuickPay.YQuickPayPollingModalSize? = nil) -> YandexQuickPay.YQuickPayModuleDescriptor
 }

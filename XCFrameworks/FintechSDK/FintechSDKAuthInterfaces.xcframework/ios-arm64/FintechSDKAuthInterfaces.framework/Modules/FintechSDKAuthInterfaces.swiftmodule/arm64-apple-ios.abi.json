@@ -1223,6 +1223,155 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "FTDPoPStateHolder",
+        "printedName": "FTDPoPStateHolder",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "offlinePublicKey",
+            "printedName": "offlinePublicKey(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PublicKeyType",
+                "printedName": "FintechSDKAuthInterfaces.PublicKeyType",
+                "usr": "s:24FintechSDKAuthInterfaces13PublicKeyTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKAuthInterfaces17FTDPoPStateHolderP16offlinePublicKey3forSSSgAA0hI4TypeO_tF",
+            "mangledName": "$s24FintechSDKAuthInterfaces17FTDPoPStateHolderP16offlinePublicKey3forSSSgAA0hI4TypeO_tF",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthInterfaces.FTDPoPStateHolder>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthInterfaces.FTDPoPStateHolder>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setOfflinePublicKey",
+            "printedName": "setOfflinePublicKey(_:for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PublicKeyType",
+                "printedName": "FintechSDKAuthInterfaces.PublicKeyType",
+                "usr": "s:24FintechSDKAuthInterfaces13PublicKeyTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKAuthInterfaces17FTDPoPStateHolderP19setOfflinePublicKey_3forySS_AA0iJ4TypeOtF",
+            "mangledName": "$s24FintechSDKAuthInterfaces17FTDPoPStateHolderP19setOfflinePublicKey_3forySS_AA0iJ4TypeOtF",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthInterfaces.FTDPoPStateHolder>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthInterfaces.FTDPoPStateHolder>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "clear",
+            "printedName": "clear()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKAuthInterfaces17FTDPoPStateHolderP5clearyyF",
+            "mangledName": "$s24FintechSDKAuthInterfaces17FTDPoPStateHolderP5clearyyF",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthInterfaces.FTDPoPStateHolder>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthInterfaces.FTDPoPStateHolder>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:24FintechSDKAuthInterfaces17FTDPoPStateHolderP",
+        "mangledName": "$s24FintechSDKAuthInterfaces17FTDPoPStateHolderP",
+        "moduleName": "FintechSDKAuthInterfaces",
+        "genericSig": "<τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAuthInterfaces"
+      },
+      {
+        "kind": "TypeDecl",
         "name": "FintechDPoPKey",
         "printedName": "FintechDPoPKey",
         "children": [
@@ -4199,7 +4348,7 @@
           {
             "kind": "Function",
             "name": "authorize",
-            "printedName": "authorize(for:strategy:with:)",
+            "printedName": "authorize(for:strategy:with:onStateGenerated:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -4224,11 +4373,37 @@
                 "name": "UIViewController",
                 "printedName": "UIKit.UIViewController",
                 "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Swift.String) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:24FintechSDKAuthInterfaces0A12LoginServiceP9authorize3for8strategy4withAA0A9AuthModelVAA0aJ4TypeO_AA0A21AuthorizationStrategyOSo16UIViewControllerCtYaAA0adE5ErrorOYKF",
-            "mangledName": "$s24FintechSDKAuthInterfaces0A12LoginServiceP9authorize3for8strategy4withAA0A9AuthModelVAA0aJ4TypeO_AA0A21AuthorizationStrategyOSo16UIViewControllerCtYaAA0adE5ErrorOYKF",
+            "usr": "s:24FintechSDKAuthInterfaces0A12LoginServiceP9authorize3for8strategy4with16onStateGeneratedAA0A9AuthModelVAA0aM4TypeO_AA0A21AuthorizationStrategyOSo16UIViewControllerCySSYbScMYccSgtYaAA0adE5ErrorOYKF",
+            "mangledName": "$s24FintechSDKAuthInterfaces0A12LoginServiceP9authorize3for8strategy4with16onStateGeneratedAA0A9AuthModelVAA0aM4TypeO_AA0A21AuthorizationStrategyOSo16UIViewControllerCySSYbScMYccSgtYaAA0adE5ErrorOYKF",
             "moduleName": "FintechSDKAuthInterfaces",
             "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthInterfaces.FintechLoginService>",
             "sugared_genericSig": "<Self where Self : FintechSDKAuthInterfaces.FintechLoginService>",

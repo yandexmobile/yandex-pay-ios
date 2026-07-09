@@ -38,7 +38,7 @@ extension FintechSDKLoginAdapter.FintechCookieExchangerAdapterImpl : FintechSDKA
   convenience public init(environment: FintechSDKAuthInterfaces.FintechServiceEnvironment = .prod)
   @objc deinit
   @_Concurrency.MainActor final public func getCurrentAuth(for type: FintechSDKAuthInterfaces.FintechAuthType) -> FintechSDKLoginAdapter.LoginServiceImpl.Model?
-  @_Concurrency.MainActor final public func authorize(for type: FintechSDKAuthInterfaces.FintechAuthType, strategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy, with presenter: UIKit.UIViewController) async throws(FintechSDKAuthInterfaces.FintechLoginServiceError) -> FintechSDKAuthInterfaces.FintechAuthModel
+  @_Concurrency.MainActor final public func authorize(for type: FintechSDKAuthInterfaces.FintechAuthType, strategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy, with presenter: UIKit.UIViewController, onStateGenerated: (@_Concurrency.MainActor @Sendable (Swift.String) -> Swift.Void)?) async throws(FintechSDKAuthInterfaces.FintechLoginServiceError) -> FintechSDKAuthInterfaces.FintechAuthModel
   @_Concurrency.MainActor final public func logout(for type: FintechSDKAuthInterfaces.FintechAuthType)
   final public func isURLRelatedToSDK(url: Foundation.URL) -> Swift.Bool
   final public func handle(_ url: Foundation.URL) -> Swift.Bool

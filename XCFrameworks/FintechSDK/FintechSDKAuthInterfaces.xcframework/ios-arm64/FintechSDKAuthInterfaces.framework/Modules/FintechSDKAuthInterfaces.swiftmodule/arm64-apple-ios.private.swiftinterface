@@ -52,6 +52,11 @@ public enum FintechCookieExchangerError : Foundation.LocalizedError {
     get
   }
 }
+@_spi(Internal) public protocol FTDPoPStateHolder : Swift.Sendable {
+  @_spi(Internal) func offlinePublicKey(for keyType: FintechSDKAuthInterfaces.PublicKeyType) -> Swift.String?
+  @_spi(Internal) func setOfflinePublicKey(_ publicKey: Swift.String, for keyType: FintechSDKAuthInterfaces.PublicKeyType)
+  @_spi(Internal) func clear()
+}
 public protocol FintechDPoPKey {
   var publicKey: FintechSDKAuthInterfaces.FintechJWK { get }
   var isInvalid: Swift.Bool { get }
@@ -155,7 +160,7 @@ public protocol FintechLoginService : AnyObject {
   typealias Model = FintechSDKAuthInterfaces.FintechAuthModel
   var delegate: (any FintechSDKAuthInterfaces.FintechLoginServiceDelegate)? { get set }
   @_Concurrency.MainActor func getCurrentAuth(for type: FintechSDKAuthInterfaces.FintechAuthType) -> Self.Model?
-  @_Concurrency.MainActor func authorize(for type: FintechSDKAuthInterfaces.FintechAuthType, strategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy, with presenter: UIKit.UIViewController) async throws(FintechSDKAuthInterfaces.FintechLoginServiceError) -> Self.Model
+  @_Concurrency.MainActor func authorize(for type: FintechSDKAuthInterfaces.FintechAuthType, strategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy, with presenter: UIKit.UIViewController, onStateGenerated: (@_Concurrency.MainActor @Sendable (Swift.String) -> Swift.Void)?) async throws(FintechSDKAuthInterfaces.FintechLoginServiceError) -> Self.Model
   @_Concurrency.MainActor func logout(for type: FintechSDKAuthInterfaces.FintechAuthType)
   func isURLRelatedToSDK(url: Foundation.URL) -> Swift.Bool
   func handle(_ url: Foundation.URL) -> Swift.Bool
