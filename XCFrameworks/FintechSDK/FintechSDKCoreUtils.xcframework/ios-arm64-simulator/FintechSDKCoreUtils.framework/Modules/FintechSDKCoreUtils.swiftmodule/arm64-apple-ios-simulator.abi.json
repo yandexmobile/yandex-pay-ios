@@ -7287,6 +7287,821 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreUtils"
+      },
+      {
+        "kind": "Import",
+        "name": "Network",
+        "printedName": "Network",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreUtils"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTConnectivityObserving",
+        "printedName": "FTConnectivityObserving",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "observe",
+            "printedName": "observe()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AsyncStream",
+                "printedName": "_Concurrency.AsyncStream<Swift.Bool>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:ScS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKCoreUtils23FTConnectivityObservingP7observeScSySbGyF",
+            "mangledName": "$s19FintechSDKCoreUtils23FTConnectivityObservingP7observeScSySbGyF",
+            "moduleName": "FintechSDKCoreUtils",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreUtils.FTConnectivityObserving>",
+            "sugared_genericSig": "<Self where Self : FintechSDKCoreUtils.FTConnectivityObserving>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "cancel",
+            "printedName": "cancel()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKCoreUtils23FTConnectivityObservingP6cancelyyF",
+            "mangledName": "$s19FintechSDKCoreUtils23FTConnectivityObservingP6cancelyyF",
+            "moduleName": "FintechSDKCoreUtils",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreUtils.FTConnectivityObserving>",
+            "sugared_genericSig": "<Self where Self : FintechSDKCoreUtils.FTConnectivityObserving>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:19FintechSDKCoreUtils23FTConnectivityObservingP",
+        "mangledName": "$s19FintechSDKCoreUtils23FTConnectivityObservingP",
+        "moduleName": "FintechSDKCoreUtils",
+        "genericSig": "<τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTPathMonitoring",
+        "printedName": "FTPathMonitoring",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "onPathUpdate",
+            "printedName": "onPathUpdate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Swift.Bool) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.Bool) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKCoreUtils16FTPathMonitoringP12onPathUpdateySbcSgvp",
+            "mangledName": "$s19FintechSDKCoreUtils16FTPathMonitoringP12onPathUpdateySbcSgvp",
+            "moduleName": "FintechSDKCoreUtils",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((Swift.Bool) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Swift.Bool) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Bool",
+                            "printedName": "Swift.Bool",
+                            "usr": "s:Sb"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKCoreUtils16FTPathMonitoringP12onPathUpdateySbcSgvg",
+                "mangledName": "$s19FintechSDKCoreUtils16FTPathMonitoringP12onPathUpdateySbcSgvg",
+                "moduleName": "FintechSDKCoreUtils",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreUtils.FTPathMonitoring>",
+                "sugared_genericSig": "<Self where Self : FintechSDKCoreUtils.FTPathMonitoring>",
+                "protocolReq": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((Swift.Bool) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Swift.Bool) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Bool",
+                            "printedName": "Swift.Bool",
+                            "usr": "s:Sb"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKCoreUtils16FTPathMonitoringP12onPathUpdateySbcSgvs",
+                "mangledName": "$s19FintechSDKCoreUtils16FTPathMonitoringP12onPathUpdateySbcSgvs",
+                "moduleName": "FintechSDKCoreUtils",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreUtils.FTPathMonitoring>",
+                "sugared_genericSig": "<Self where Self : FintechSDKCoreUtils.FTPathMonitoring>",
+                "protocolReq": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKCoreUtils16FTPathMonitoringP12onPathUpdateySbcSgvM",
+                "mangledName": "$s19FintechSDKCoreUtils16FTPathMonitoringP12onPathUpdateySbcSgvM",
+                "moduleName": "FintechSDKCoreUtils",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreUtils.FTPathMonitoring>",
+                "sugared_genericSig": "<Self where Self : FintechSDKCoreUtils.FTPathMonitoring>",
+                "protocolReq": true,
+                "implicit": true,
+                "declAttributes": [
+                  "SPIAccessControl"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "start",
+            "printedName": "start()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKCoreUtils16FTPathMonitoringP5startyyF",
+            "mangledName": "$s19FintechSDKCoreUtils16FTPathMonitoringP5startyyF",
+            "moduleName": "FintechSDKCoreUtils",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreUtils.FTPathMonitoring>",
+            "sugared_genericSig": "<Self where Self : FintechSDKCoreUtils.FTPathMonitoring>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "cancel",
+            "printedName": "cancel()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKCoreUtils16FTPathMonitoringP6cancelyyF",
+            "mangledName": "$s19FintechSDKCoreUtils16FTPathMonitoringP6cancelyyF",
+            "moduleName": "FintechSDKCoreUtils",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreUtils.FTPathMonitoring>",
+            "sugared_genericSig": "<Self where Self : FintechSDKCoreUtils.FTPathMonitoring>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:19FintechSDKCoreUtils16FTPathMonitoringP",
+        "mangledName": "$s19FintechSDKCoreUtils16FTPathMonitoringP",
+        "moduleName": "FintechSDKCoreUtils",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTNWPathMonitor",
+        "printedName": "FTNWPathMonitor",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "onPathUpdate",
+            "printedName": "onPathUpdate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Swift.Bool) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.Bool) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKCoreUtils15FTNWPathMonitorC12onPathUpdateySbcSgvp",
+            "mangledName": "$s19FintechSDKCoreUtils15FTNWPathMonitorC12onPathUpdateySbcSgvp",
+            "moduleName": "FintechSDKCoreUtils",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((Swift.Bool) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Swift.Bool) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Bool",
+                            "printedName": "Swift.Bool",
+                            "usr": "s:Sb"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKCoreUtils15FTNWPathMonitorC12onPathUpdateySbcSgvg",
+                "mangledName": "$s19FintechSDKCoreUtils15FTNWPathMonitorC12onPathUpdateySbcSgvg",
+                "moduleName": "FintechSDKCoreUtils",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((Swift.Bool) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Swift.Bool) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Bool",
+                            "printedName": "Swift.Bool",
+                            "usr": "s:Sb"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKCoreUtils15FTNWPathMonitorC12onPathUpdateySbcSgvs",
+                "mangledName": "$s19FintechSDKCoreUtils15FTNWPathMonitorC12onPathUpdateySbcSgvs",
+                "moduleName": "FintechSDKCoreUtils",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKCoreUtils15FTNWPathMonitorC12onPathUpdateySbcSgvM",
+                "mangledName": "$s19FintechSDKCoreUtils15FTNWPathMonitorC12onPathUpdateySbcSgvM",
+                "moduleName": "FintechSDKCoreUtils",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTNWPathMonitor",
+                "printedName": "FintechSDKCoreUtils.FTNWPathMonitor",
+                "usr": "s:19FintechSDKCoreUtils15FTNWPathMonitorC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19FintechSDKCoreUtils15FTNWPathMonitorCACycfc",
+            "mangledName": "$s19FintechSDKCoreUtils15FTNWPathMonitorCACycfc",
+            "moduleName": "FintechSDKCoreUtils",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "start",
+            "printedName": "start()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKCoreUtils15FTNWPathMonitorC5startyyF",
+            "mangledName": "$s19FintechSDKCoreUtils15FTNWPathMonitorC5startyyF",
+            "moduleName": "FintechSDKCoreUtils",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "cancel",
+            "printedName": "cancel()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKCoreUtils15FTNWPathMonitorC6cancelyyF",
+            "mangledName": "$s19FintechSDKCoreUtils15FTNWPathMonitorC6cancelyyF",
+            "moduleName": "FintechSDKCoreUtils",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:19FintechSDKCoreUtils15FTNWPathMonitorC",
+        "mangledName": "$s19FintechSDKCoreUtils15FTNWPathMonitorC",
+        "moduleName": "FintechSDKCoreUtils",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTPathMonitoring",
+            "printedName": "FTPathMonitoring",
+            "usr": "s:19FintechSDKCoreUtils16FTPathMonitoringP",
+            "mangledName": "$s19FintechSDKCoreUtils16FTPathMonitoringP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTConnectivityObserver",
+        "printedName": "FTConnectivityObserver",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTConnectivityObserver",
+                "printedName": "FintechSDKCoreUtils.FTConnectivityObserver",
+                "usr": "s:19FintechSDKCoreUtils22FTConnectivityObserverC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19FintechSDKCoreUtils22FTConnectivityObserverCACycfc",
+            "mangledName": "$s19FintechSDKCoreUtils22FTConnectivityObserverCACycfc",
+            "moduleName": "FintechSDKCoreUtils",
+            "declAttributes": [
+              "Convenience",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Convenience"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(monitor:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTConnectivityObserver",
+                "printedName": "FintechSDKCoreUtils.FTConnectivityObserver",
+                "usr": "s:19FintechSDKCoreUtils22FTConnectivityObserverC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTPathMonitoring",
+                "printedName": "any FintechSDKCoreUtils.FTPathMonitoring",
+                "usr": "s:19FintechSDKCoreUtils16FTPathMonitoringP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19FintechSDKCoreUtils22FTConnectivityObserverC7monitorAcA16FTPathMonitoring_p_tcfc",
+            "mangledName": "$s19FintechSDKCoreUtils22FTConnectivityObserverC7monitorAcA16FTPathMonitoring_p_tcfc",
+            "moduleName": "FintechSDKCoreUtils",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "observe",
+            "printedName": "observe()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AsyncStream",
+                "printedName": "_Concurrency.AsyncStream<Swift.Bool>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:ScS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKCoreUtils22FTConnectivityObserverC7observeScSySbGyF",
+            "mangledName": "$s19FintechSDKCoreUtils22FTConnectivityObserverC7observeScSySbGyF",
+            "moduleName": "FintechSDKCoreUtils",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "cancel",
+            "printedName": "cancel()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKCoreUtils22FTConnectivityObserverC6cancelyyF",
+            "mangledName": "$s19FintechSDKCoreUtils22FTConnectivityObserverC6cancelyyF",
+            "moduleName": "FintechSDKCoreUtils",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:19FintechSDKCoreUtils22FTConnectivityObserverC",
+        "mangledName": "$s19FintechSDKCoreUtils22FTConnectivityObserverC",
+        "moduleName": "FintechSDKCoreUtils",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTConnectivityObserving",
+            "printedName": "FTConnectivityObserving",
+            "usr": "s:19FintechSDKCoreUtils23FTConnectivityObservingP",
+            "mangledName": "$s19FintechSDKCoreUtils23FTConnectivityObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "FTDeviceInfoProvider",
         "printedName": "FTDeviceInfoProvider",
@@ -9478,7 +10293,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(key:)",
+            "printedName": "init(key:accessibility:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -9498,11 +10313,18 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CFString",
+                "printedName": "CoreFoundation.CFString",
+                "hasDefaultArg": true,
+                "usr": "c:@T@CFStringRef"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:19FintechSDKCoreUtils17FTSecurityStorageC3keyACyxGSS_tcfc",
-            "mangledName": "$s19FintechSDKCoreUtils17FTSecurityStorageC3keyACyxGSS_tcfc",
+            "usr": "s:19FintechSDKCoreUtils17FTSecurityStorageC3key13accessibilityACyxGSS_So11CFStringRefatcfc",
+            "mangledName": "$s19FintechSDKCoreUtils17FTSecurityStorageC3key13accessibilityACyxGSS_So11CFStringRefatcfc",
             "moduleName": "FintechSDKCoreUtils",
             "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable, τ_0_0 : Swift.Encodable>",
             "sugared_genericSig": "<Item where Item : Swift.Decodable, Item : Swift.Encodable>",
@@ -10219,6 +11041,45 @@
             "usr": "s:SS19FintechSDKCoreUtilsE14withThinSpacesSSyF",
             "mangledName": "$sSS19FintechSDKCoreUtilsE14withThinSpacesSSyF",
             "moduleName": "FintechSDKCoreUtils",
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "trimmedTruncated",
+            "printedName": "trimmedTruncated(maxLength:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:SS19FintechSDKCoreUtilsE16trimmedTruncated9maxLengthSSSgSi_tF",
+            "mangledName": "$sSS19FintechSDKCoreUtilsE16trimmedTruncated9maxLengthSSSgSi_tF",
+            "moduleName": "FintechSDKCoreUtils",
+            "declAttributes": [
+              "RawDocComment"
+            ],
             "isFromExtension": true,
             "spi_group_names": [
               "Internal"
@@ -13671,259 +14532,273 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/DebugPrint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/DebugPrint.swift",
       "kind": "StringLiteral",
       "offset": 119,
       "length": 3,
       "value": "\" \""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/DebugPrint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/DebugPrint.swift",
       "kind": "StringLiteral",
       "offset": 149,
       "length": 4,
       "value": "\"\n\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/Decimal.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/Decimal.swift",
       "kind": "StringLiteral",
       "offset": 362,
       "length": 3,
       "value": "\",\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/Decimal.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/Decimal.swift",
       "kind": "StringLiteral",
       "offset": 385,
       "length": 3,
       "value": "\".\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/FTSequenceExtensions.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/FTSequenceExtensions.swift",
       "kind": "Dictionary",
       "offset": 631,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/Locale.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/Locale.swift",
       "kind": "StringLiteral",
       "offset": 246,
       "length": 13,
       "value": "\"en_US_POSIX\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/Locale.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/Locale.swift",
       "kind": "StringLiteral",
       "offset": 278,
       "length": 7,
       "value": "\"ru_RU\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/String.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/String.swift",
       "kind": "StringLiteral",
-      "offset": 344,
+      "offset": 723,
       "length": 5,
       "value": "\" \""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTObserverList.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTObserverList.swift",
       "kind": "Array",
       "offset": 373,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
       "kind": "Array",
       "offset": 125,
       "length": 29,
       "value": "[\"fintech-sdk\", \"fintechsdk\"]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
       "kind": "StringLiteral",
       "offset": 187,
       "length": 3,
       "value": "\".\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
       "kind": "StringLiteral",
       "offset": 225,
       "length": 3,
       "value": "\",\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
       "kind": "StringLiteral",
       "offset": 275,
       "length": 3,
       "value": "\"[\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
       "kind": "StringLiteral",
       "offset": 326,
       "length": 3,
       "value": "\"]\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
       "kind": "StringLiteral",
       "offset": 359,
       "length": 3,
       "value": "\"[\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
       "kind": "StringLiteral",
       "offset": 393,
       "length": 3,
       "value": "\"]\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
       "kind": "StringLiteral",
       "offset": 424,
       "length": 3,
       "value": "\"{\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
       "kind": "StringLiteral",
       "offset": 457,
       "length": 4,
       "value": "\"[]\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
       "kind": "StringLiteral",
       "offset": 535,
       "length": 67,
       "value": "\"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_\/\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTTagged.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTTagged.swift",
       "kind": "StringLiteral",
       "offset": 3475,
       "length": 43,
       "value": "\"You don't need to cast value to same type\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FintechApiBaseUrlType.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FintechApiBaseUrlType.swift",
       "kind": "StringLiteral",
       "offset": 97,
       "length": 34,
       "value": "\"FintechApiBaseUrlType.PayBackend\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FintechApiBaseUrlType.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FintechApiBaseUrlType.swift",
       "kind": "StringLiteral",
       "offset": 151,
       "length": 33,
       "value": "\"FintechApiBaseUrlType.Frontback\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FintechApiBaseUrlType.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FintechApiBaseUrlType.swift",
       "kind": "StringLiteral",
       "offset": 204,
       "length": 33,
       "value": "\"FintechApiBaseUrlType.Tovarisch\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FintechSDKCurrentVersion.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FintechSDKCurrentVersion.swift",
       "kind": "StringLiteral",
       "offset": 222,
       "length": 7,
-      "value": "\"2.3.1\""
+      "value": "\"2.4.1\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/OAuth.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/OAuth.swift",
       "kind": "IntegerLiteral",
       "offset": 109,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/OAuth.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/OAuth.swift",
       "kind": "IntegerLiteral",
       "offset": 154,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/OAuth.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/OAuth.swift",
       "kind": "IntegerLiteral",
       "offset": 194,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/OAuth.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/OAuth.swift",
       "kind": "StringLiteral",
       "offset": 235,
       "length": 3,
       "value": "\"*\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/EventusIdGenerator\/LogIdGenerator.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
+      "kind": "StringLiteral",
+      "offset": 480,
+      "length": 42,
+      "value": "\"com.yandex.fintech.connectivity-observer\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1121,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/EventusIdGenerator\/LogIdGenerator.swift",
       "kind": "IntegerLiteral",
       "offset": 82,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
       "kind": "StringLiteral",
       "offset": 1228,
       "length": 16,
       "value": "\"yandex-pay-sdk\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
       "kind": "StringLiteral",
       "offset": 1279,
       "length": 13,
       "value": "\"fintech-sdk\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
       "kind": "StringLiteral",
       "offset": 1330,
       "length": 6,
       "value": "\"INFO\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
       "kind": "StringLiteral",
       "offset": 1360,
       "length": 7,
       "value": "\"DEBUG\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
       "kind": "StringLiteral",
       "offset": 1391,
       "length": 7,
       "value": "\"ERROR\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
       "kind": "StringLiteral",
       "offset": 1440,
       "length": 8,
       "value": "\"ℹ️\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
       "kind": "StringLiteral",
       "offset": 1472,
       "length": 6,
       "value": "\"🔨\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4358227008\/arcadia\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
       "kind": "StringLiteral",
       "offset": 1502,
       "length": 5,

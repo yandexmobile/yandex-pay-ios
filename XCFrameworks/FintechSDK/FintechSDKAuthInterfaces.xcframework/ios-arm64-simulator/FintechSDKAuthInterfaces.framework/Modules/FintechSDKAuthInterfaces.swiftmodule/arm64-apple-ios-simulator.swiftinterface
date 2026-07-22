@@ -3,6 +3,7 @@
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKAuthInterfaces -package-name FintechSDK
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import Combine
+import CryptoKit
 import Foundation
 import Swift
 import UIKit/*.UIViewController*/
@@ -15,13 +16,18 @@ public struct FintechAccount {
   public init(uid: Foundation.NSNumber?, isStaff: Swift.Bool)
 }
 @_Concurrency.MainActor public protocol FintechAccountManagerAdapter {
+  @available(*, deprecated, renamed: "partitions", message: "Use partitions instead")
   @_Concurrency.MainActor var partition: Swift.String { get }
+  @_Concurrency.MainActor var partitions: Swift.Set<Swift.String> { get }
   @_Concurrency.MainActor func account(with uid: Foundation.NSNumber) -> FintechSDKAuthInterfaces.FintechAccount?
   @_Concurrency.MainActor func clearOAuthCache(for uid: Foundation.NSNumber)
   @_Concurrency.MainActor func obtainAuthToken(for uid: Foundation.NSNumber, credentials: FintechSDKAuthInterfaces.FintechClientIdentifier?) async throws -> Swift.String?
   @_Concurrency.MainActor func trySetCurrentAccount(with uid: Foundation.NSNumber?) async throws
 }
 extension FintechSDKAuthInterfaces.FintechAccountManagerAdapter {
+  @_Concurrency.MainActor public var partitions: Swift.Set<Swift.String> {
+    get
+  }
   @_Concurrency.MainActor public func obtainAuthToken(for uid: Foundation.NSNumber) async throws -> Swift.String?
 }
 public struct FintechClientIdentifier {
@@ -101,7 +107,11 @@ public protocol FintechAuthAdapter {
   func makeCookieExchangerService() -> any FintechSDKAuthInterfaces.FintechCookieExchangerAdapter
 }
 public protocol FintechAuthAdapterFactory {
-  func make(environment: FintechSDKAuthInterfaces.FintechServiceEnvironment, clientIdentifier: FintechSDKAuthInterfaces.FintechClientIdentifier, authLocale: Swift.String, partition: Swift.String?) -> any FintechSDKAuthInterfaces.FintechAuthAdapter
+  func make(environment: FintechSDKAuthInterfaces.FintechServiceEnvironment, clientIdentifier: FintechSDKAuthInterfaces.FintechClientIdentifier, authLocale: Swift.String, partitions: Swift.Set<Swift.String>?) -> any FintechSDKAuthInterfaces.FintechAuthAdapter
+}
+extension FintechSDKAuthInterfaces.FintechAuthAdapterFactory {
+  @available(*, deprecated, message: "Use make(..., partitions:) instead")
+  public func make(environment: FintechSDKAuthInterfaces.FintechServiceEnvironment, clientIdentifier: FintechSDKAuthInterfaces.FintechClientIdentifier, authLocale: Swift.String, partition: Swift.String?) -> any FintechSDKAuthInterfaces.FintechAuthAdapter
 }
 public struct FintechAuthModel : Swift.Codable, Swift.Sendable {
   public let token: Swift.String

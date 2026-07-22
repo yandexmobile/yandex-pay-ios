@@ -24,7 +24,7 @@ import _SwiftConcurrencyShims
   @_spi(Internal) final public func loadBadge(for model: FintechSDKPayBadge.FTPayBadgeModel) async throws -> FintechSDKCoreUI.FTSVG
   @_spi(Internal) @objc deinit
 }
-@_spi(Internal) public struct FTPayBadgeModel : Swift.Equatable {
+@_spi(Internal) public struct FTPayBadgeModel : Swift.Equatable, Swift.Sendable {
   @_spi(Internal) public let amount: Foundation.Decimal
   @_spi(Internal) public let currency: FintechSDKPayBoxEntity.FTCurrencyCode
   @_spi(Internal) public let theme: FintechSDKCommonEntity.FintechSDKTheme

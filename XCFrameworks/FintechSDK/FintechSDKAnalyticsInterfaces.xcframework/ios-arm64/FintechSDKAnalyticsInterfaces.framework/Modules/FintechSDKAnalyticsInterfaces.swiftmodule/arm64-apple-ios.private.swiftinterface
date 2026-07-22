@@ -25,7 +25,7 @@ public enum FintechAppMetricaError : Swift.Error {
 public protocol FintechAppMetricaReportingAdapter : Swift.Sendable {
   func report(eventName: Swift.String, params: [Swift.String : Any], onFailure: ((any Swift.Error) -> Swift.Void)?)
   func setPUID(_ puid: Swift.String?)
-  func setAppEnvironment(_ value: Swift.String, for key: Swift.String)
+  func setAppEnvironment(_ value: Swift.String?, for key: Swift.String)
 }
 public protocol FintechAppMetricaYandexReportingAdapter {
   func setPUID(_ puid: Swift.String?)

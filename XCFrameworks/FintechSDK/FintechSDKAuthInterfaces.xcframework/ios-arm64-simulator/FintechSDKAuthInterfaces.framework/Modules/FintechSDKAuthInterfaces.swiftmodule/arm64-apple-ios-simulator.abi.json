@@ -214,9 +214,11 @@
             "usr": "s:24FintechSDKAuthInterfaces0A21AccountManagerAdapterP9partitionSSvp",
             "mangledName": "$s24FintechSDKAuthInterfaces0A21AccountManagerAdapterP9partitionSSvp",
             "moduleName": "FintechSDKAuthInterfaces",
+            "deprecated": true,
             "protocolReq": true,
             "declAttributes": [
-              "Custom"
+              "Custom",
+              "Available"
             ],
             "accessors": [
               {
@@ -234,6 +236,67 @@
                 "declKind": "Accessor",
                 "usr": "s:24FintechSDKAuthInterfaces0A21AccountManagerAdapterP9partitionSSvg",
                 "mangledName": "$s24FintechSDKAuthInterfaces0A21AccountManagerAdapterP9partitionSSvg",
+                "moduleName": "FintechSDKAuthInterfaces",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthInterfaces.FintechAccountManagerAdapter>",
+                "sugared_genericSig": "<Self where Self : FintechSDKAuthInterfaces.FintechAccountManagerAdapter>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "partitions",
+            "printedName": "partitions",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Set",
+                "printedName": "Swift.Set<Swift.String>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sh"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:24FintechSDKAuthInterfaces0A21AccountManagerAdapterP10partitionsShySSGvp",
+            "mangledName": "$s24FintechSDKAuthInterfaces0A21AccountManagerAdapterP10partitionsShySSGvp",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "protocolReq": true,
+            "declAttributes": [
+              "Custom"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Set",
+                    "printedName": "Swift.Set<Swift.String>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sh"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:24FintechSDKAuthInterfaces0A21AccountManagerAdapterP10partitionsShySSGvg",
+                "mangledName": "$s24FintechSDKAuthInterfaces0A21AccountManagerAdapterP10partitionsShySSGvg",
                 "moduleName": "FintechSDKAuthInterfaces",
                 "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthInterfaces.FintechAccountManagerAdapter>",
                 "sugared_genericSig": "<Self where Self : FintechSDKAuthInterfaces.FintechAccountManagerAdapter>",
@@ -392,6 +455,66 @@
             "throwing": true,
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "partitions",
+            "printedName": "partitions",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Set",
+                "printedName": "Swift.Set<Swift.String>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sh"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:24FintechSDKAuthInterfaces0A21AccountManagerAdapterPAAE10partitionsShySSGvp",
+            "mangledName": "$s24FintechSDKAuthInterfaces0A21AccountManagerAdapterPAAE10partitionsShySSGvp",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "declAttributes": [
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Set",
+                    "printedName": "Swift.Set<Swift.String>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sh"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:24FintechSDKAuthInterfaces0A21AccountManagerAdapterPAAE10partitionsShySSGvg",
+                "mangledName": "$s24FintechSDKAuthInterfaces0A21AccountManagerAdapterPAAE10partitionsShySSGvg",
+                "moduleName": "FintechSDKAuthInterfaces",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthInterfaces.FintechAccountManagerAdapter>",
+                "sugared_genericSig": "<Self where Self : FintechSDKAuthInterfaces.FintechAccountManagerAdapter>",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
           },
           {
             "kind": "Function",
@@ -2704,6 +2827,68 @@
           {
             "kind": "Function",
             "name": "make",
+            "printedName": "make(environment:clientIdentifier:authLocale:partitions:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAuthAdapter",
+                "printedName": "any FintechSDKAuthInterfaces.FintechAuthAdapter",
+                "usr": "s:24FintechSDKAuthInterfaces0A11AuthAdapterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechServiceEnvironment",
+                "printedName": "FintechSDKAuthInterfaces.FintechServiceEnvironment",
+                "usr": "s:24FintechSDKAuthInterfaces0A18ServiceEnvironmentO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechClientIdentifier",
+                "printedName": "FintechSDKAuthInterfaces.FintechClientIdentifier",
+                "usr": "s:24FintechSDKAuthInterfaces0A16ClientIdentifierV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Set<Swift.String>?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Set",
+                    "printedName": "Swift.Set<Swift.String>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sh"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKAuthInterfaces0A18AuthAdapterFactoryP4make11environment16clientIdentifier10authLocale10partitionsAA0adE0_pAA0A18ServiceEnvironmentO_AA0a6ClientJ0VSSShySSGSgtF",
+            "mangledName": "$s24FintechSDKAuthInterfaces0A18AuthAdapterFactoryP4make11environment16clientIdentifier10authLocale10partitionsAA0adE0_pAA0A18ServiceEnvironmentO_AA0a6ClientJ0VSSShySSGSgtF",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthInterfaces.FintechAuthAdapterFactory>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthInterfaces.FintechAuthAdapterFactory>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "make",
             "printedName": "make(environment:clientIdentifier:authLocale:partition:)",
             "children": [
               {
@@ -2746,13 +2931,16 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:24FintechSDKAuthInterfaces0A18AuthAdapterFactoryP4make11environment16clientIdentifier10authLocale9partitionAA0adE0_pAA0A18ServiceEnvironmentO_AA0a6ClientJ0VS2SSgtF",
-            "mangledName": "$s24FintechSDKAuthInterfaces0A18AuthAdapterFactoryP4make11environment16clientIdentifier10authLocale9partitionAA0adE0_pAA0A18ServiceEnvironmentO_AA0a6ClientJ0VS2SSgtF",
+            "usr": "s:24FintechSDKAuthInterfaces0A18AuthAdapterFactoryPAAE4make11environment16clientIdentifier10authLocale9partitionAA0adE0_pAA0A18ServiceEnvironmentO_AA0a6ClientJ0VS2SSgtF",
+            "mangledName": "$s24FintechSDKAuthInterfaces0A18AuthAdapterFactoryPAAE4make11environment16clientIdentifier10authLocale9partitionAA0adE0_pAA0A18ServiceEnvironmentO_AA0a6ClientJ0VS2SSgtF",
             "moduleName": "FintechSDKAuthInterfaces",
             "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthInterfaces.FintechAuthAdapterFactory>",
             "sugared_genericSig": "<Self where Self : FintechSDKAuthInterfaces.FintechAuthAdapterFactory>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
+            "deprecated": true,
+            "declAttributes": [
+              "Available"
+            ],
+            "isFromExtension": true,
             "funcSelfKind": "NonMutating"
           }
         ],
@@ -4557,6 +4745,414 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "CryptoKit",
+        "printedName": "CryptoKit",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAuthInterfaces"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAuthInterfaces"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTOfflinePayTicketSignerError",
+        "printedName": "FTOfflinePayTicketSignerError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "invalidTimemark",
+            "printedName": "invalidTimemark",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError.Type) -> FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTOfflinePayTicketSignerError",
+                    "printedName": "FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError",
+                    "usr": "s:24FintechSDKAuthInterfaces29FTOfflinePayTicketSignerErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTOfflinePayTicketSignerError",
+                        "printedName": "FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError",
+                        "usr": "s:24FintechSDKAuthInterfaces29FTOfflinePayTicketSignerErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:24FintechSDKAuthInterfaces29FTOfflinePayTicketSignerErrorO15invalidTimemarkyA2CmF",
+            "mangledName": "$s24FintechSDKAuthInterfaces29FTOfflinePayTicketSignerErrorO15invalidTimemarkyA2CmF",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "spi_group_names": [
+              "Internal"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "invalidServerPublicKey",
+            "printedName": "invalidServerPublicKey",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError.Type) -> (any Swift.Error) -> FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(any Swift.Error) -> FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTOfflinePayTicketSignerError",
+                        "printedName": "FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError",
+                        "usr": "s:24FintechSDKAuthInterfaces29FTOfflinePayTicketSignerErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "any Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTOfflinePayTicketSignerError",
+                        "printedName": "FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError",
+                        "usr": "s:24FintechSDKAuthInterfaces29FTOfflinePayTicketSignerErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:24FintechSDKAuthInterfaces29FTOfflinePayTicketSignerErrorO22invalidServerPublicKeyyACs0H0_pcACmF",
+            "mangledName": "$s24FintechSDKAuthInterfaces29FTOfflinePayTicketSignerErrorO22invalidServerPublicKeyyACs0H0_pcACmF",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "spi_group_names": [
+              "Internal"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "keyAgreementFailed",
+            "printedName": "keyAgreementFailed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError.Type) -> (any Swift.Error) -> FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(any Swift.Error) -> FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTOfflinePayTicketSignerError",
+                        "printedName": "FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError",
+                        "usr": "s:24FintechSDKAuthInterfaces29FTOfflinePayTicketSignerErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "any Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTOfflinePayTicketSignerError",
+                        "printedName": "FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError",
+                        "usr": "s:24FintechSDKAuthInterfaces29FTOfflinePayTicketSignerErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:24FintechSDKAuthInterfaces29FTOfflinePayTicketSignerErrorO18keyAgreementFailedyACs0H0_pcACmF",
+            "mangledName": "$s24FintechSDKAuthInterfaces29FTOfflinePayTicketSignerErrorO18keyAgreementFailedyACs0H0_pcACmF",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "spi_group_names": [
+              "Internal"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "z85EncodingFailed",
+            "printedName": "z85EncodingFailed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError.Type) -> FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTOfflinePayTicketSignerError",
+                    "printedName": "FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError",
+                    "usr": "s:24FintechSDKAuthInterfaces29FTOfflinePayTicketSignerErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTOfflinePayTicketSignerError",
+                        "printedName": "FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError",
+                        "usr": "s:24FintechSDKAuthInterfaces29FTOfflinePayTicketSignerErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:24FintechSDKAuthInterfaces29FTOfflinePayTicketSignerErrorO17z85EncodingFailedyA2CmF",
+            "mangledName": "$s24FintechSDKAuthInterfaces29FTOfflinePayTicketSignerErrorO17z85EncodingFailedyA2CmF",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "spi_group_names": [
+              "Internal"
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:24FintechSDKAuthInterfaces29FTOfflinePayTicketSignerErrorO",
+        "mangledName": "$s24FintechSDKAuthInterfaces29FTOfflinePayTicketSignerErrorO",
+        "moduleName": "FintechSDKAuthInterfaces",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LocalizedError",
+            "printedName": "LocalizedError",
+            "usr": "s:10Foundation14LocalizedErrorP",
+            "mangledName": "$s10Foundation14LocalizedErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTOfflinePayTicketSigner",
+        "printedName": "FTOfflinePayTicketSigner",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "sign",
+            "printedName": "sign(devicePrivateKey:minutesSinceGeneration:rawTicket:serverOfflinePublicKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTOfflineKeyAgreementPrivateKey",
+                "printedName": "any FintechSDKAuthInterfaces.FTOfflineKeyAgreementPrivateKey",
+                "usr": "s:24FintechSDKAuthInterfaces028FTOfflineKeyAgreementPrivateE0P"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKAuthInterfaces24FTOfflinePayTicketSignerP4sign16devicePrivateKey22minutesSinceGeneration03rawF0019serverOfflinePublicK0SSAA0dk9AgreementjK0_p_SiS2StAA0defG5ErrorOYKF",
+            "mangledName": "$s24FintechSDKAuthInterfaces24FTOfflinePayTicketSignerP4sign16devicePrivateKey22minutesSinceGeneration03rawF0019serverOfflinePublicK0SSAA0dk9AgreementjK0_p_SiS2StAA0defG5ErrorOYKF",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthInterfaces.FTOfflinePayTicketSigner>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthInterfaces.FTOfflinePayTicketSigner>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:24FintechSDKAuthInterfaces24FTOfflinePayTicketSignerP",
+        "mangledName": "$s24FintechSDKAuthInterfaces24FTOfflinePayTicketSignerP",
+        "moduleName": "FintechSDKAuthInterfaces",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTOfflineKeyAgreementPrivateKey",
+        "printedName": "FTOfflineKeyAgreementPrivateKey",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "sharedSecretFromKeyAgreement",
+            "printedName": "sharedSecretFromKeyAgreement(with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SharedSecret",
+                "printedName": "CryptoKit.SharedSecret",
+                "usr": "s:9CryptoKit12SharedSecretV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PublicKey",
+                "printedName": "CryptoKit.P256.KeyAgreement.PublicKey",
+                "usr": "s:9CryptoKit4P256O12KeyAgreementO06PublicD0V"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKAuthInterfaces028FTOfflineKeyAgreementPrivateE0P016sharedSecretFromeF04with9CryptoKit06SharedI0VAF4P256O0eF0O06PublicE0V_tKF",
+            "mangledName": "$s24FintechSDKAuthInterfaces028FTOfflineKeyAgreementPrivateE0P016sharedSecretFromeF04with9CryptoKit06SharedI0VAF4P256O0eF0O06PublicE0V_tKF",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthInterfaces.FTOfflineKeyAgreementPrivateKey>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthInterfaces.FTOfflineKeyAgreementPrivateKey>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:24FintechSDKAuthInterfaces028FTOfflineKeyAgreementPrivateE0P",
+        "mangledName": "$s24FintechSDKAuthInterfaces028FTOfflineKeyAgreementPrivateE0P",
+        "moduleName": "FintechSDKAuthInterfaces",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "FTCheckHasAuthUseCase",
         "printedName": "FTCheckHasAuthUseCase",
@@ -4693,6 +5289,151 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PrivateKey",
+        "printedName": "PrivateKey",
+        "declKind": "Struct",
+        "usr": "s:9CryptoKit4P256O12KeyAgreementO07PrivateD0V",
+        "mangledName": "$s9CryptoKit4P256O12KeyAgreementO07PrivateD0V",
+        "moduleName": "CryptoKit",
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTOfflineKeyAgreementPrivateKey",
+            "printedName": "FTOfflineKeyAgreementPrivateKey",
+            "usr": "s:24FintechSDKAuthInterfaces028FTOfflineKeyAgreementPrivateE0P",
+            "mangledName": "$s24FintechSDKAuthInterfaces028FTOfflineKeyAgreementPrivateE0P"
+          },
+          {
+            "kind": "Conformance",
+            "name": "HPKEDiffieHellmanPrivateKeyGeneration",
+            "printedName": "HPKEDiffieHellmanPrivateKeyGeneration",
+            "usr": "s:9CryptoKit37HPKEDiffieHellmanPrivateKeyGenerationP",
+            "mangledName": "$s9CryptoKit37HPKEDiffieHellmanPrivateKeyGenerationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "HPKEDiffieHellmanPrivateKey",
+            "printedName": "HPKEDiffieHellmanPrivateKey",
+            "usr": "s:9CryptoKit27HPKEDiffieHellmanPrivateKeyP",
+            "mangledName": "$s9CryptoKit27HPKEDiffieHellmanPrivateKeyP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "DiffieHellmanKeyAgreement",
+            "printedName": "DiffieHellmanKeyAgreement",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "PublicKey",
+                "printedName": "PublicKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PublicKey",
+                    "printedName": "CryptoKit.P256.KeyAgreement.PublicKey",
+                    "usr": "s:9CryptoKit4P256O12KeyAgreementO06PublicD0V"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:9CryptoKit25DiffieHellmanKeyAgreementP",
+            "mangledName": "$s9CryptoKit25DiffieHellmanKeyAgreementP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PrivateKey",
+        "printedName": "PrivateKey",
+        "declKind": "Struct",
+        "usr": "s:9CryptoKit13SecureEnclaveO4P256O12KeyAgreementO07PrivateF0V",
+        "mangledName": "$s9CryptoKit13SecureEnclaveO4P256O12KeyAgreementO07PrivateF0V",
+        "moduleName": "CryptoKit",
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTOfflineKeyAgreementPrivateKey",
+            "printedName": "FTOfflineKeyAgreementPrivateKey",
+            "usr": "s:24FintechSDKAuthInterfaces028FTOfflineKeyAgreementPrivateE0P",
+            "mangledName": "$s24FintechSDKAuthInterfaces028FTOfflineKeyAgreementPrivateE0P"
+          },
+          {
+            "kind": "Conformance",
+            "name": "DiffieHellmanKeyAgreement",
+            "printedName": "DiffieHellmanKeyAgreement",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "PublicKey",
+                "printedName": "PublicKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PublicKey",
+                    "printedName": "CryptoKit.P256.KeyAgreement.PublicKey",
+                    "usr": "s:9CryptoKit4P256O12KeyAgreementO06PublicD0V"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:9CryptoKit25DiffieHellmanKeyAgreementP",
+            "mangledName": "$s9CryptoKit25DiffieHellmanKeyAgreementP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "HPKEDiffieHellmanPrivateKey",
+            "printedName": "HPKEDiffieHellmanPrivateKey",
+            "usr": "s:9CryptoKit27HPKEDiffieHellmanPrivateKeyP",
+            "mangledName": "$s9CryptoKit27HPKEDiffieHellmanPrivateKeyP"
           }
         ]
       }

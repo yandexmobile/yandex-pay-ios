@@ -45,7 +45,12 @@ import _SwiftConcurrencyShims
   @_spi(Internal) func updateDecorationView(_ decorationView: UIKit.UIView?)
 }
 @_spi(Internal) public struct FintechCardConfiguration {
-  @_spi(Internal) public init(dismissArea: CoreFoundation.CGFloat = 60, cornerRadius: CoreFoundation.CGFloat = 20, decorationView: UIKit.UIView? = nil)
+  @_spi(Internal) public struct HeightParams {
+    @_spi(Internal) public let relativeSize: CoreFoundation.CGFloat
+    @_spi(Internal) public let notLessThan: CoreFoundation.CGFloat
+    @_spi(Internal) public init(relativeSize: CoreFoundation.CGFloat, notLessThan: CoreFoundation.CGFloat)
+  }
+  @_spi(Internal) public init(dismissArea: CoreFoundation.CGFloat = 60, cornerRadius: CoreFoundation.CGFloat = 20, heightParams: FintechSDKCoreUI.FintechCardConfiguration.HeightParams? = nil, decorationView: UIKit.UIView? = nil)
 }
 @_spi(Internal) extension FintechSDKCommonEntity.FintechSDKTheme {
   @_spi(Internal) public func toUIUserInterfaceStyle() -> UIKit.UIUserInterfaceStyle

@@ -57,7 +57,7 @@ final public class DiehardNetworkClientFactoryImpl : FintechSDKNetworkInterfaces
   @_spi(Internal) final public var uidString: Swift.String {
     @_spi(Internal) get async
   }
-  @_spi(Internal) @_Concurrency.MainActor final public var partition: Swift.String {
+  @_spi(Internal) @_Concurrency.MainActor final public var partitionsHeader: Swift.String {
     @_spi(Internal) get
   }
   @_spi(Internal) public init(accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, uid: Foundation.NSNumber, errorReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)? = nil, eventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)? = nil, authSession: FintechSDKAuthInterfaces.FintechAuthSession? = nil)

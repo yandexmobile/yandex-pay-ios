@@ -26,6 +26,6 @@ final public class FintechAppMetricaReporterImpl : FintechSDKAnalyticsInterfaces
   public init(reporter: Swift.AnyObject)
   final public func report(eventName: Swift.String, params: [Swift.String : Any], onFailure: ((any Swift.Error) -> Swift.Void)?)
   final public func setPUID(_ puid: Swift.String?)
-  final public func setAppEnvironment(_ value: Swift.String, for key: Swift.String)
+  final public func setAppEnvironment(_ value: Swift.String?, for key: Swift.String)
   @objc deinit
 }

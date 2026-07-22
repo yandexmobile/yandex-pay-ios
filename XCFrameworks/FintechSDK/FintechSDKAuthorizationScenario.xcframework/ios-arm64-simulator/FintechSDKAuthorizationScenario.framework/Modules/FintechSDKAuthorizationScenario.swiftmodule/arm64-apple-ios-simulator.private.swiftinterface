@@ -324,7 +324,7 @@ public enum FTAuthSessionAcquisitionMode : Swift.Sendable {
   @_spi(Internal) final public var uidString: Swift.String {
     @_spi(Internal) get async
   }
-  @_spi(Internal) @_Concurrency.MainActor final public var partition: Swift.String {
+  @_spi(Internal) @_Concurrency.MainActor final public var partitionsHeader: Swift.String {
     @_spi(Internal) get
   }
   @_spi(Internal) public init(getSessionData: any FintechSDKAuthorizationScenario.FTAuthSessionGetUseCase, getPuid: any FintechSDKAuthInterfaces.FTGetPuidUseCase, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter)

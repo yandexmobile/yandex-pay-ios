@@ -52,5 +52,40 @@ final public class FintechDPoPServiceImpl : FintechSDKAuthInterfaces.FintechDPoP
   @_spi(Internal) @_Concurrency.MainActor final public func getPuid() -> Foundation.NSNumber?
   @_spi(Internal) @objc deinit
 }
+@_spi(Internal) public struct FTOfflinePayTicketSignerImpl : FintechSDKAuthInterfaces.FTOfflinePayTicketSigner {
+  @_spi(Internal) public init()
+  @_spi(Internal) public func sign(devicePrivateKey: any FintechSDKAuthInterfaces.FTOfflineKeyAgreementPrivateKey, minutesSinceGeneration: Swift.Int, rawTicket: Swift.String, serverOfflinePublicKey: Swift.String) throws(FintechSDKAuthInterfaces.FTOfflinePayTicketSignerError) -> Swift.String
+}
+@_spi(Internal) public enum FTOfflineTicketAlphabet {
+  @_spi(Internal) public static let characters: [Swift.Character]
+  @_spi(Internal) public static let size: Swift.Int
+}
+@_spi(Internal) public enum FTOfflineTicketTimemarkEncoderError : Swift.Error {
+  @_spi(Internal) case negativeMinutes
+  @_spi(Internal) case outOfRange
+  @_spi(Internal) public static func == (a: FintechSDKAuthCoreImplementation.FTOfflineTicketTimemarkEncoderError, b: FintechSDKAuthCoreImplementation.FTOfflineTicketTimemarkEncoderError) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public enum FTOfflineTicketTimemarkEncoder {
+  @_spi(Internal) public static func encode(minutesSinceGeneration: Swift.Int) throws -> Swift.String
+}
+@_spi(Internal) public enum FTOfflineTicketZ85EncoderError : Swift.Error {
+  @_spi(Internal) case lengthNotMultipleOfFour
+  @_spi(Internal) public static func == (a: FintechSDKAuthCoreImplementation.FTOfflineTicketZ85EncoderError, b: FintechSDKAuthCoreImplementation.FTOfflineTicketZ85EncoderError) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public enum FTOfflineTicketZ85Encoder {
+  @_spi(Internal) public static func encode(_ bytes: Foundation.Data) throws -> Swift.String
+}
 extension FintechSDKAuthCoreImplementation.FintechDPoPKeyFactory.Mode : Swift.Equatable {}
 extension FintechSDKAuthCoreImplementation.FintechDPoPKeyFactory.Mode : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKAuthCoreImplementation.FTOfflineTicketTimemarkEncoderError : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKAuthCoreImplementation.FTOfflineTicketTimemarkEncoderError : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKAuthCoreImplementation.FTOfflineTicketZ85EncoderError : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKAuthCoreImplementation.FTOfflineTicketZ85EncoderError : Swift.Hashable {}

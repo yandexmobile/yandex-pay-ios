@@ -21,10 +21,16 @@ public protocol FTSessionProviderServing : Swift.Sendable {
 }
 public protocol FintechNetworkAuthManager {
   var uidString: Swift.String { get async }
-  @_Concurrency.MainActor var partition: Swift.String { get }
+  @_Concurrency.MainActor var partitionsHeader: Swift.String { get }
   @_Concurrency.MainActor func obtainToken() async throws -> Swift.String
   @_Concurrency.MainActor func dropToken() async
   func obtainSessionToken() async -> Swift.String?
+}
+extension FintechSDKNetworkInterfaces.FintechNetworkAuthManager {
+  @available(*, deprecated, renamed: "partitionsHeader", message: "Use partitionsHeader instead")
+  @_Concurrency.MainActor public var partition: Swift.String {
+    get
+  }
 }
 public protocol FintechNetworkChallengeHandler {
   func handleChallenge(challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)

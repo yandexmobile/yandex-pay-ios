@@ -319,6 +319,16 @@ SWIFT_CLASS("_TtC31FintechSDKDivKitWidgetsFeatures23FTWidgetContainerUIView")
 - (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer SWIFT_WARN_UNUSED_RESULT;
 @end
 
+/// Applies SDK theme to a UIKit widget: pins appearance for <code>.light</code>/<code>.dark</code>,
+/// follows system for <code>.system</code>, reacts to live <code>themeSubject</code> updates.
+SWIFT_CLASS("_TtC31FintechSDKDivKitWidgetsFeatures23FTWidgetThemeHostUIView")
+@interface FTWidgetThemeHostUIView : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
+- (void)didMoveToWindow;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
 #endif
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

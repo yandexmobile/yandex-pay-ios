@@ -275,6 +275,7 @@ public enum FintechBDUIThemeKind {
 }
 extension FintechSDKCommonEntity.FintechSDKTheme {
   public func toBDUIThemeKind() -> FintechSDKBDUICore.FintechBDUIThemeKind
+  public func toBDUIThemeKind(systemStyle: UIKit.UIUserInterfaceStyle) -> FintechSDKBDUICore.FintechBDUIThemeKind
 }
 public protocol FintechBDUIViewCoordinatesProvider : AnyObject {
   func frame(forViewId id: Swift.String) -> CoreFoundation.CGRect?

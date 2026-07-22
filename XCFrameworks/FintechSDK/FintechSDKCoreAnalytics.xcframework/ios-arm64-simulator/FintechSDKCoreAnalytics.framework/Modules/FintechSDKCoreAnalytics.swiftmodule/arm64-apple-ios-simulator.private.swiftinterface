@@ -13,7 +13,7 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 @_spi(Internal) final public class FTAnalyticsReporterFactory : Swift.Sendable {
-  @_spi(Internal) public init(environment: FintechSDKCommonEntity.FintechSDKEnvironment, sessionProvider: any FintechSDKNetworkInterfaces.FTSessionProviderServing, metricaAPIKey: Swift.String, appMetricaAdapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter, rumFactory: any FintechSDKAnalyticsInterfaces.FintechRUMAdapterFactory, rtmFactory: any FintechSDKAnalyticsInterfaces.FintechRTMAdapterFactory, extraParamsProvider: (any FintechSDKCoreAnalytics.FintechExtraAnalyticsParamsProvider)? = nil)
+  @_spi(Internal) public init(environment: FintechSDKCommonEntity.FintechSDKEnvironment, sessionProvider: any FintechSDKNetworkInterfaces.FTSessionProviderServing, metricaAPIKey: Swift.String, appMetricaAdapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter, rumFactory: any FintechSDKAnalyticsInterfaces.FintechRUMAdapterFactory, rtmFactory: any FintechSDKAnalyticsInterfaces.FintechRTMAdapterFactory, appEnvironmentSourceSDK: Swift.String, appEnvironmentType: FintechSDKCoreAnalytics.FTAppEnvironmentType, extraParamsProvider: (any FintechSDKCoreAnalytics.FintechExtraAnalyticsParamsProvider)? = nil)
   @_spi(Internal) final public func makeEventReporter(puid: Foundation.NSNumber?) -> any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter
   @_spi(Internal) final public func makeErrorReporter(puid: Foundation.NSNumber?) -> any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter
   @_spi(Internal) @objc deinit
@@ -47,6 +47,10 @@ final public class FintechAnalyticsTelemetryReporter : FintechSDKAnalyticsInterf
   public init(adapter: any FintechSDKAnalyticsInterfaces.FintechTelemetryAdapter, paramsProvider: any FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider)
   final public func reportEvent(name: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
   @objc deinit
+}
+@_spi(Internal) extension FintechSDKAnalyticsInterfaces.FintechAppMetricaReportingAdapter {
+  @_spi(Internal) public func applyAppEnvironment(_ signals: [Swift.String : Swift.String?])
+  @_spi(Internal) public func applyAppEnvironment(sourceSDK: Swift.String, sdkVersion: Swift.String, environmentType: FintechSDKCoreAnalytics.FTAppEnvironmentType)
 }
 @_spi(Internal) final public class FTIdentifiersProvider : FintechSDKAnalyticsInterfaces.FintechIdentifiersProviding {
   @_spi(Internal) public init(appMetricaAdapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter)
@@ -96,6 +100,42 @@ final public class FintechNetworkReportingObserver : FintechSDKNetworkInterfaces
   @_spi(Internal) public init(providers: [any FintechSDKCoreAnalytics.FintechExtraAnalyticsParamsProvider])
   @_spi(Internal) public func params() async -> [Swift.String : Swift.String]
 }
+@_spi(Internal) public enum FTAppEnvironmentParams {
+  @_spi(Internal) public enum Key {
+    @_spi(Internal) public static let sourceSDK: Swift.String
+    @_spi(Internal) public static let service: Swift.String
+    @_spi(Internal) public static let bundleName: Swift.String
+    @_spi(Internal) public static let isInternal: Swift.String
+    @_spi(Internal) public static let version: Swift.String
+    @_spi(Internal) public static let sdkVersion: Swift.String
+    @_spi(Internal) public static let appVersion: Swift.String
+  }
+  @_spi(Internal) public enum SourceSDKValue {
+    @_spi(Internal) public static let paymentKit: Swift.String
+    @_spi(Internal) public static let nativePaymentKit: Swift.String
+    @_spi(Internal) public static let quickPayYandex: Swift.String
+    @_spi(Internal) public static let wallet: Swift.String
+    @_spi(Internal) public static let applink: Swift.String
+    @_spi(Internal) public static let quickPay: Swift.String
+    @_spi(Internal) public static let payAuth: Swift.String
+    @_spi(Internal) public static let payAssistant: Swift.String
+  }
+  @_spi(Internal) public static let platformValue: Swift.String
+  @_spi(Internal) public static let keys: Swift.Set<Swift.String>
+  @_spi(Internal) public static func entries(_ signals: [Swift.String : Swift.String?]) -> [Swift.String : Swift.String?]
+}
+@_spi(Internal) public enum FTAppEnvironmentSignals {
+  @_spi(Internal) public static func make(sourceSDK: Swift.String, sdkVersion: Swift.String, environmentType: FintechSDKCoreAnalytics.FTAppEnvironmentType) -> [Swift.String : Swift.String?]
+}
+@_spi(Internal) public enum FTAppEnvironmentType : Swift.Sendable {
+  @_spi(Internal) case external
+  @_spi(Internal) case `internal`
+  @_spi(Internal) public static func == (a: FintechSDKCoreAnalytics.FTAppEnvironmentType, b: FintechSDKCoreAnalytics.FTAppEnvironmentType) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+}
 public protocol FintechAnalyticsParamsProvider : Swift.Sendable {
   var isProduction: Swift.Bool { get }
   var userAgent: Swift.String { get }
@@ -135,3 +175,5 @@ extension FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider {
     get
   }
 }
+@_spi(Internal) extension FintechSDKCoreAnalytics.FTAppEnvironmentType : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKCoreAnalytics.FTAppEnvironmentType : Swift.Hashable {}

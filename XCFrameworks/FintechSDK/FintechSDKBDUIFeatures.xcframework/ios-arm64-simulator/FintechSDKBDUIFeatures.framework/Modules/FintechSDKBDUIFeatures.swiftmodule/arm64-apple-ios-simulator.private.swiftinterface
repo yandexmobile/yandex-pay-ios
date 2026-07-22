@@ -26,6 +26,11 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+@_spi(Internal) @_Concurrency.MainActor final public class FTScreenBrightnessController {
+  @_spi(Internal) nonisolated public init()
+  @_spi(Internal) @_Concurrency.MainActor final public func restoreIfBoosted()
+  @_spi(Internal) @objc deinit
+}
 public protocol DeviceChallengeSignatureProviderApi {
   func getSignature(request: FintechSDKBDUIFeatures.DeviceChallengeSignatureRequest, completion: @escaping (FintechSDKBDUIFeatures.DeviceChallengeSignatureResult) -> Swift.Void)
 }
@@ -341,6 +346,7 @@ final public class FintechYBSDK : FintechSDKBDUIFeatures.FintechYBSDKApi {
   final public func setCreditLimitPurchaseSettings(settings: FintechYBSDKInterfaces.FintechCreditLimitPurchaseSettings, completion: @escaping (FintechYBSDKInterfaces.FintechSetCreditLimitPurchaseSettingsResult) -> Swift.Void)
   @objc deinit
 }
+@_spi(Internal) extension FintechSDKBDUIFeatures.FTScreenBrightnessController : Swift.Sendable {}
 @_spi(Internal) extension FintechSDKBDUIFeatures.FTAuthorizeActionError : Swift.Equatable {}
 @_spi(Internal) extension FintechSDKBDUIFeatures.FTAuthorizeActionError : Swift.Hashable {}
 @_spi(Internal) extension FintechSDKBDUIFeatures.FTLogoutActionError : Swift.Equatable {}

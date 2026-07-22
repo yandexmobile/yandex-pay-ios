@@ -25,6 +25,9 @@ extension FintechSDKLoginAdapter.FintechAccountManagerAdapterImpl : FintechSDKAu
   @_Concurrency.MainActor final public var partition: Swift.String {
     get
   }
+  @_Concurrency.MainActor final public var partitions: Swift.Set<Swift.String> {
+    get
+  }
 }
 final public class FintechCookieExchangerAdapterImpl {
   public init()

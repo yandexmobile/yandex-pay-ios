@@ -189,6 +189,7 @@ extension FintechSDKCommonEntity.FintechSDKTheme {
   @_spi(Internal) @_Concurrency.MainActor final public let eventService: any YandexPayConfiguration.YPayEventService
   @_spi(Internal) @_Concurrency.MainActor final public var isAuthorizedInPartner: Swift.Bool?
   @_Concurrency.MainActor public static func initialize(environment: YandexPayConfiguration.YPSDKEnvironment, locale: YandexPayConfiguration.YPSDKLocale, theme: YandexPayConfiguration.YPSDKThemeColorScheme = .system, enableLogging: Swift.Bool = false, modules: [any YandexPayConfiguration.YPayModule])
+  @_spi(Internal) @_Concurrency.MainActor public static func initialize(environment: YandexPayConfiguration.YPSDKEnvironment, locale: YandexPayConfiguration.YPSDKLocale, theme: YandexPayConfiguration.YPSDKThemeColorScheme = .system, enableLogging: Swift.Bool = false, accountManagerAdapter: (any FintechSDKAuthInterfaces.FintechAccountManagerAdapter)?, loginService: (any FintechSDKAuthInterfaces.FintechLoginService)?, modules: [any YandexPayConfiguration.YPayModule])
   @objc deinit
 }
 extension YandexPayConfiguration.YPay {
