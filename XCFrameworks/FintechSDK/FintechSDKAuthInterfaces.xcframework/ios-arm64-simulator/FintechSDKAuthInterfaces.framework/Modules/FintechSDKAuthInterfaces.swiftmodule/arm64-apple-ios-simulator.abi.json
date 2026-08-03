@@ -4745,6 +4745,88 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "FTOfflineKeyProviding",
+        "printedName": "FTOfflineKeyProviding",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "offlineKey",
+            "printedName": "offlineKey(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKAuthInterfaces.FTOfflineKeyAgreementPrivateKey)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTOfflineKeyAgreementPrivateKey",
+                    "printedName": "any FintechSDKAuthInterfaces.FTOfflineKeyAgreementPrivateKey",
+                    "usr": "s:24FintechSDKAuthInterfaces028FTOfflineKeyAgreementPrivateE0P"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PublicKeyType",
+                "printedName": "FintechSDKAuthInterfaces.PublicKeyType",
+                "usr": "s:24FintechSDKAuthInterfaces13PublicKeyTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKAuthInterfaces21FTOfflineKeyProvidingP07offlineE0yAA0de16AgreementPrivateE0_pSgAA06PublicE4TypeOF",
+            "mangledName": "$s24FintechSDKAuthInterfaces21FTOfflineKeyProvidingP07offlineE0yAA0de16AgreementPrivateE0_pSgAA06PublicE4TypeOF",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthInterfaces.FTOfflineKeyProviding>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthInterfaces.FTOfflineKeyProviding>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:24FintechSDKAuthInterfaces21FTOfflineKeyProvidingP",
+        "mangledName": "$s24FintechSDKAuthInterfaces21FTOfflineKeyProvidingP",
+        "moduleName": "FintechSDKAuthInterfaces",
+        "genericSig": "<τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "CryptoKit",
         "printedName": "CryptoKit",

@@ -27,16 +27,17 @@ import _SwiftConcurrencyShims
   @_spi(Internal) @_Concurrency.MainActor func handle(model: Self.Model, requestId: Swift.String) async
   @_spi(Internal) func handle(data: Foundation.Data, requestId: Swift.String) async
   @_spi(Internal) func parseModel(data: Foundation.Data) throws -> Self.Model
-  @_spi(Internal) @_Concurrency.MainActor func didAttachToWebView(_ context: any FintechSDKWebViewFeatures.FTWebViewHandlerContext)
+  @_spi(Internal) @_Concurrency.MainActor func attach(to context: any FintechSDKWebViewFeatures.FTWebViewHandlerContext)
 }
 @_spi(Internal) extension FintechSDKWebViewFeatures.FTWebViewActionHandler {
   @_spi(Internal) public func parseModel(data: Foundation.Data) throws -> Self.Model
   @_spi(Internal) public func handle(data: Foundation.Data, requestId: Swift.String) async
-  @_spi(Internal) @_Concurrency.MainActor public func didAttachToWebView(_ context: any FintechSDKWebViewFeatures.FTWebViewHandlerContext)
+  @_spi(Internal) @_Concurrency.MainActor public func attach(to context: any FintechSDKWebViewFeatures.FTWebViewHandlerContext)
 }
 @_spi(Internal) public protocol FTWebViewHandlerContext : AnyObject {
   @_spi(Internal) @_Concurrency.MainActor func reload()
   @_spi(Internal) @_Concurrency.MainActor func updateCookie(name: Swift.String, value: Swift.String)
+  @_spi(Internal) @_Concurrency.MainActor func removeCookie(name: Swift.String) async
   @_spi(Internal) @_Concurrency.MainActor func evaluateJavaScript(script: Swift.String) async
   @_spi(Internal) @_Concurrency.MainActor func dismiss()
 }
@@ -46,11 +47,21 @@ import _SwiftConcurrencyShims
   @_spi(Internal) var cookie: Foundation.HTTPCookie? { get }
   @_spi(Internal) var pendingJavaScript: FintechSDKCoreUI.FTPendingJavaScript? { get }
   @_spi(Internal) var javaScriptExecutionTrigger: Swift.Int { get }
+  @_spi(Internal) @_Concurrency.MainActor var reloadTrigger: Swift.Int { get }
   @_spi(Internal) var userAgent: Swift.String { get }
   @_spi(Internal) var messageHandlers: [Swift.String : any WebKit.WKScriptMessageHandler] { get }
   @_spi(Internal) var observer: (any FintechSDKCoreUI.FintechWebViewEventObserver)? { get }
   @_spi(Internal) var shouldUsePersistentWebDataStore: Swift.Bool { get }
+  @_spi(Internal) @_Concurrency.MainActor var cookieManager: FintechSDKCoreUI.FTWebViewCookieManager? { get }
   @_spi(Internal) @_Concurrency.MainActor @Sendable func load() async
+}
+@_spi(Internal) extension FintechSDKWebViewFeatures.FTAnyWebViewModel {
+  @_spi(Internal) @_Concurrency.MainActor public var reloadTrigger: Swift.Int {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) @_Concurrency.MainActor public var cookieManager: FintechSDKCoreUI.FTWebViewCookieManager? {
+    @_spi(Internal) get
+  }
 }
 @_spi(Internal) public enum FTWebViewState {
   @_spi(Internal) case loading

@@ -176,6 +176,9 @@ public protocol FintechLoginService : AnyObject {
   func handle(_ url: Foundation.URL) -> Swift.Bool
   func handle(_ userActivity: Foundation.NSUserActivity) -> Swift.Bool
 }
+@_spi(Internal) public protocol FTOfflineKeyProviding : Swift.Sendable {
+  @_spi(Internal) func offlineKey(_ type: FintechSDKAuthInterfaces.PublicKeyType) -> (any FintechSDKAuthInterfaces.FTOfflineKeyAgreementPrivateKey)?
+}
 @_spi(Internal) public enum FTOfflinePayTicketSignerError : Foundation.LocalizedError {
   @_spi(Internal) case invalidTimemark
   @_spi(Internal) case invalidServerPublicKey(any Swift.Error)

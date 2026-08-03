@@ -23,7 +23,7 @@ public enum FintechDPoPKeyFactory {
   }
   public static func makeKey(mode: FintechSDKAuthCoreImplementation.FintechDPoPKeyFactory.Mode) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> any FintechSDKAuthInterfaces.FintechDPoPKey
 }
-final public class FintechDPoPServiceImpl : FintechSDKAuthInterfaces.FintechDPoPService {
+final public class FintechDPoPServiceImpl : FintechSDKAuthInterfaces.FintechDPoPService, @unchecked Swift.Sendable {
   final public func key(_ type: FintechSDKAuthInterfaces.PublicKeyType) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> any FintechSDKAuthInterfaces.FintechDPoPKey
   public init()
   final public func invalidateKey()

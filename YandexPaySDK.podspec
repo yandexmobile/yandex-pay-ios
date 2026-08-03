@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = 'YandexPaySDK'
-  s.version               = '2.4.1'
+  s.version               = '2.5.3'
   s.summary               = 'Yandex Pay Modular SDK for iOS'
   s.homepage              = 'https://pay.yandex.ru'
   s.license               = { :type => 'Proprietary', :text => 'License Agreement is available at https://yandex.ru/legal/ypay_sdk_agreement/?lang=ru.' }
@@ -439,6 +439,7 @@ Pod::Spec.new do |s|
     ss.dependency 'YandexPaySDK/FintechSDKAppMetricaAdapter'
     ss.dependency 'YandexPaySDK/FintechSDKFontsAdapter'
     ss.dependency 'YandexPaySDK/ExternalBduiAdapter'
+    ss.dependency 'YandexPaySDK/FintechBDUIWrapper'
     ss.dependency 'YandexPaySDK/FintechSDKRealTimeAnalyticsAdapter'
     ss.dependency 'YandexPaySDK/FintechSDKRealUserMonitoringAdapter'
     ss.dependency 'YandexPaySDK/FintechSDKLoginAdapter'
@@ -565,6 +566,9 @@ Pod::Spec.new do |s|
         if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/ExternalBduiAdapter/ExternalBduiAdapter.framework"' "${frameworks_script}"; then
           printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/ExternalBduiAdapter/ExternalBduiAdapter.framework"\n' >> "${frameworks_script}"
         fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechBDUIWrapper/FintechBDUIWrapper.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechBDUIWrapper/FintechBDUIWrapper.framework"\n' >> "${frameworks_script}"
+        fi
         if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRealTimeAnalyticsAdapter/FintechSDKRealTimeAnalyticsAdapter.framework"' "${frameworks_script}"; then
           printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRealTimeAnalyticsAdapter/FintechSDKRealTimeAnalyticsAdapter.framework"\n' >> "${frameworks_script}"
         fi
@@ -622,6 +626,7 @@ Pod::Spec.new do |s|
     ss.dependency 'YandexPaySDK/FintechSDKAppMetricaAdapter'
     ss.dependency 'YandexPaySDK/FintechSDKFontsAdapter'
     ss.dependency 'YandexPaySDK/ExternalBduiAdapter'
+    ss.dependency 'YandexPaySDK/FintechBDUIWrapper'
     ss.dependency 'YandexPaySDK/FintechSDKRealTimeAnalyticsAdapter'
     ss.dependency 'YandexPaySDK/FintechSDKRealUserMonitoringAdapter'
     ss.dependency 'YandexPaySDK/FintechSDKLoginAdapter'
@@ -748,6 +753,9 @@ Pod::Spec.new do |s|
         if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/ExternalBduiAdapter/ExternalBduiAdapter.framework"' "${frameworks_script}"; then
           printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/ExternalBduiAdapter/ExternalBduiAdapter.framework"\n' >> "${frameworks_script}"
         fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechBDUIWrapper/FintechBDUIWrapper.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechBDUIWrapper/FintechBDUIWrapper.framework"\n' >> "${frameworks_script}"
+        fi
         if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRealTimeAnalyticsAdapter/FintechSDKRealTimeAnalyticsAdapter.framework"' "${frameworks_script}"; then
           printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRealTimeAnalyticsAdapter/FintechSDKRealTimeAnalyticsAdapter.framework"\n' >> "${frameworks_script}"
         fi
@@ -794,6 +802,7 @@ Pod::Spec.new do |s|
     ss.dependency 'YandexPaySDK/FintechSDKPayBoxResources'
     ss.dependency 'YandexPaySDK/FintechSDKPayBoxEntity'
     ss.dependency 'YandexPaySDK/ExternalBduiAdapter'
+    ss.dependency 'YandexPaySDK/FintechBDUIWrapper'
     ss.dependency 'YandexPaySDK/FintechSDKAppMetricaAdapter'
     ss.dependency 'YandexPaySDK/FintechSDKFontsAdapter'
     ss.dependency 'YandexPaySDK/FintechSDKLoginAdapter'
@@ -889,6 +898,9 @@ Pod::Spec.new do |s|
         if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/ExternalBduiAdapter/ExternalBduiAdapter.framework"' "${frameworks_script}"; then
           printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/ExternalBduiAdapter/ExternalBduiAdapter.framework"\n' >> "${frameworks_script}"
         fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechBDUIWrapper/FintechBDUIWrapper.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechBDUIWrapper/FintechBDUIWrapper.framework"\n' >> "${frameworks_script}"
+        fi
         if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKAppMetricaAdapter/FintechSDKAppMetricaAdapter.framework"' "${frameworks_script}"; then
           printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKAppMetricaAdapter/FintechSDKAppMetricaAdapter.framework"\n' >> "${frameworks_script}"
         fi
@@ -952,6 +964,7 @@ Pod::Spec.new do |s|
     ss.dependency 'YandexPaySDK/FintechSDKAppMetricaAdapter'
     ss.dependency 'YandexPaySDK/FintechSDKFontsAdapter'
     ss.dependency 'YandexPaySDK/ExternalBduiAdapter'
+    ss.dependency 'YandexPaySDK/FintechBDUIWrapper'
     ss.dependency 'YandexPaySDK/FintechSDKRealTimeAnalyticsAdapter'
     ss.dependency 'YandexPaySDK/FintechSDKRealUserMonitoringAdapter'
     ss.dependency 'YandexPaySDK/FintechSDKLoginAdapter'
@@ -1077,6 +1090,9 @@ Pod::Spec.new do |s|
         fi
         if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/ExternalBduiAdapter/ExternalBduiAdapter.framework"' "${frameworks_script}"; then
           printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/ExternalBduiAdapter/ExternalBduiAdapter.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechBDUIWrapper/FintechBDUIWrapper.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechBDUIWrapper/FintechBDUIWrapper.framework"\n' >> "${frameworks_script}"
         fi
         if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRealTimeAnalyticsAdapter/FintechSDKRealTimeAnalyticsAdapter.framework"' "${frameworks_script}"; then
           printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRealTimeAnalyticsAdapter/FintechSDKRealTimeAnalyticsAdapter.framework"\n' >> "${frameworks_script}"

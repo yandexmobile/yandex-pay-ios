@@ -18,17 +18,25 @@ final public class FTResultManager {
   public init()
   final public func setResult(_ result: FintechSDKBDUICore.FTScreenResult)
   final public func getResult() -> FintechSDKBDUICore.FTScreenResult?
+  final public func saveParams(_ params: [Swift.String : Swift.String])
+  final public func getSavedParams() -> [Swift.String : Swift.String]?
   final public func cleanResult()
   @objc deinit
 }
 public enum FTScreenResult : Swift.Equatable, Swift.Hashable {
-  case success
-  case error(description: Swift.String, reasonCode: Swift.String)
+  case success(params: [Swift.String : Swift.String]?)
+  case cancel(params: [Swift.String : Swift.String]?)
+  case error(params: [Swift.String : Swift.String]?)
   public static func == (a: FintechSDKBDUICore.FTScreenResult, b: FintechSDKBDUICore.FTScreenResult) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
+}
+public enum FTScreenResultParamKey {
+  public static let description: Swift.String
+  public static let message: Swift.String
+  public static let reasonCode: Swift.String
 }
 public protocol FintechBDUIAction : Swift.Decodable, Swift.Hashable {
   static var actionType: Swift.String { get }
@@ -289,6 +297,10 @@ public protocol FintechDivKitExpressionResolver {
 }
 public protocol FintechDivUrlHandler {
   func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
+  func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?, expressionResolver: any FintechSDKBDUICore.FintechDivKitExpressionResolver)
+}
+extension FintechSDKBDUICore.FintechDivUrlHandler {
+  public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?, expressionResolver _: any FintechSDKBDUICore.FintechDivKitExpressionResolver)
 }
 public struct FintechDivViewSource {
   public let cardId: Swift.String

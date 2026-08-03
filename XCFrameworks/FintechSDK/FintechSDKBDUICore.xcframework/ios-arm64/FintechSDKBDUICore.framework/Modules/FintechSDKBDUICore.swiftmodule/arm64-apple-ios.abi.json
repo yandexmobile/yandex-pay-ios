@@ -795,6 +795,92 @@
           },
           {
             "kind": "Function",
+            "name": "saveParams",
+            "printedName": "saveParams(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18FintechSDKBDUICore15FTResultManagerC10saveParamsyySDyS2SGF",
+            "mangledName": "$s18FintechSDKBDUICore15FTResultManagerC10saveParamsyySDyS2SGF",
+            "moduleName": "FintechSDKBDUICore",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getSavedParams",
+            "printedName": "getSavedParams()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Swift.String]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18FintechSDKBDUICore15FTResultManagerC14getSavedParamsSDyS2SGSgyF",
+            "mangledName": "$s18FintechSDKBDUICore15FTResultManagerC14getSavedParamsSDyS2SGSgyF",
+            "moduleName": "FintechSDKBDUICore",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "cleanResult",
             "printedName": "cleanResult()",
             "children": [
@@ -860,49 +946,12 @@
               {
                 "kind": "TypeFunc",
                 "name": "Function",
-                "printedName": "(FintechSDKBDUICore.FTScreenResult.Type) -> FintechSDKBDUICore.FTScreenResult",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "FTScreenResult",
-                    "printedName": "FintechSDKBDUICore.FTScreenResult",
-                    "usr": "s:18FintechSDKBDUICore14FTScreenResultO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "FintechSDKBDUICore.FTScreenResult.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "FTScreenResult",
-                        "printedName": "FintechSDKBDUICore.FTScreenResult",
-                        "usr": "s:18FintechSDKBDUICore14FTScreenResultO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:18FintechSDKBDUICore14FTScreenResultO7successyA2CmF",
-            "mangledName": "$s18FintechSDKBDUICore14FTScreenResultO7successyA2CmF",
-            "moduleName": "FintechSDKBDUICore"
-          },
-          {
-            "kind": "Var",
-            "name": "error",
-            "printedName": "error",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(FintechSDKBDUICore.FTScreenResult.Type) -> (Swift.String, Swift.String) -> FintechSDKBDUICore.FTScreenResult",
+                "printedName": "(FintechSDKBDUICore.FTScreenResult.Type) -> ([Swift.String : Swift.String]?) -> FintechSDKBDUICore.FTScreenResult",
                 "children": [
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(Swift.String, Swift.String) -> FintechSDKBDUICore.FTScreenResult",
+                    "printedName": "([Swift.String : Swift.String]?) -> FintechSDKBDUICore.FTScreenResult",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -913,19 +962,35 @@
                       {
                         "kind": "TypeNominal",
                         "name": "Tuple",
-                        "printedName": "(description: Swift.String, reasonCode: Swift.String)",
+                        "printedName": "(params: [Swift.String : Swift.String]?)",
                         "children": [
                           {
                             "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
+                            "name": "Optional",
+                            "printedName": "[Swift.String : Swift.String]?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Dictionary",
+                                "printedName": "[Swift.String : Swift.String]",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "String",
+                                    "printedName": "Swift.String",
+                                    "usr": "s:SS"
+                                  },
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "String",
+                                    "printedName": "Swift.String",
+                                    "usr": "s:SS"
+                                  }
+                                ],
+                                "usr": "s:SD"
+                              }
+                            ],
+                            "usr": "s:Sq"
                           }
                         ]
                       }
@@ -948,8 +1013,166 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:18FintechSDKBDUICore14FTScreenResultO5erroryACSS_SStcACmF",
-            "mangledName": "$s18FintechSDKBDUICore14FTScreenResultO5erroryACSS_SStcACmF",
+            "usr": "s:18FintechSDKBDUICore14FTScreenResultO7successyACSDyS2SGSg_tcACmF",
+            "mangledName": "$s18FintechSDKBDUICore14FTScreenResultO7successyACSDyS2SGSg_tcACmF",
+            "moduleName": "FintechSDKBDUICore"
+          },
+          {
+            "kind": "Var",
+            "name": "cancel",
+            "printedName": "cancel",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FintechSDKBDUICore.FTScreenResult.Type) -> ([Swift.String : Swift.String]?) -> FintechSDKBDUICore.FTScreenResult",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "([Swift.String : Swift.String]?) -> FintechSDKBDUICore.FTScreenResult",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTScreenResult",
+                        "printedName": "FintechSDKBDUICore.FTScreenResult",
+                        "usr": "s:18FintechSDKBDUICore14FTScreenResultO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(params: [Swift.String : Swift.String]?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "[Swift.String : Swift.String]?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Dictionary",
+                                "printedName": "[Swift.String : Swift.String]",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "String",
+                                    "printedName": "Swift.String",
+                                    "usr": "s:SS"
+                                  },
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "String",
+                                    "printedName": "Swift.String",
+                                    "usr": "s:SS"
+                                  }
+                                ],
+                                "usr": "s:SD"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "FintechSDKBDUICore.FTScreenResult.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTScreenResult",
+                        "printedName": "FintechSDKBDUICore.FTScreenResult",
+                        "usr": "s:18FintechSDKBDUICore14FTScreenResultO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18FintechSDKBDUICore14FTScreenResultO6cancelyACSDyS2SGSg_tcACmF",
+            "mangledName": "$s18FintechSDKBDUICore14FTScreenResultO6cancelyACSDyS2SGSg_tcACmF",
+            "moduleName": "FintechSDKBDUICore"
+          },
+          {
+            "kind": "Var",
+            "name": "error",
+            "printedName": "error",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FintechSDKBDUICore.FTScreenResult.Type) -> ([Swift.String : Swift.String]?) -> FintechSDKBDUICore.FTScreenResult",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "([Swift.String : Swift.String]?) -> FintechSDKBDUICore.FTScreenResult",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTScreenResult",
+                        "printedName": "FintechSDKBDUICore.FTScreenResult",
+                        "usr": "s:18FintechSDKBDUICore14FTScreenResultO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(params: [Swift.String : Swift.String]?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "[Swift.String : Swift.String]?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Dictionary",
+                                "printedName": "[Swift.String : Swift.String]",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "String",
+                                    "printedName": "Swift.String",
+                                    "usr": "s:SS"
+                                  },
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "String",
+                                    "printedName": "Swift.String",
+                                    "usr": "s:SS"
+                                  }
+                                ],
+                                "usr": "s:SD"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "FintechSDKBDUICore.FTScreenResult.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTScreenResult",
+                        "printedName": "FintechSDKBDUICore.FTScreenResult",
+                        "usr": "s:18FintechSDKBDUICore14FTScreenResultO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18FintechSDKBDUICore14FTScreenResultO5erroryACSDyS2SGSg_tcACmF",
+            "mangledName": "$s18FintechSDKBDUICore14FTScreenResultO5erroryACSDyS2SGSg_tcACmF",
             "moduleName": "FintechSDKBDUICore"
           },
           {
@@ -1084,6 +1307,178 @@
             "printedName": "Hashable",
             "usr": "s:SH",
             "mangledName": "$sSH"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTScreenResultParamKey",
+        "printedName": "FTScreenResultParamKey",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "description",
+            "printedName": "description",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18FintechSDKBDUICore22FTScreenResultParamKeyO11descriptionSSvpZ",
+            "mangledName": "$s18FintechSDKBDUICore22FTScreenResultParamKeyO11descriptionSSvpZ",
+            "moduleName": "FintechSDKBDUICore",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18FintechSDKBDUICore22FTScreenResultParamKeyO11descriptionSSvgZ",
+                "mangledName": "$s18FintechSDKBDUICore22FTScreenResultParamKeyO11descriptionSSvgZ",
+                "moduleName": "FintechSDKBDUICore",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "message",
+            "printedName": "message",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18FintechSDKBDUICore22FTScreenResultParamKeyO7messageSSvpZ",
+            "mangledName": "$s18FintechSDKBDUICore22FTScreenResultParamKeyO7messageSSvpZ",
+            "moduleName": "FintechSDKBDUICore",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18FintechSDKBDUICore22FTScreenResultParamKeyO7messageSSvgZ",
+                "mangledName": "$s18FintechSDKBDUICore22FTScreenResultParamKeyO7messageSSvgZ",
+                "moduleName": "FintechSDKBDUICore",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "reasonCode",
+            "printedName": "reasonCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18FintechSDKBDUICore22FTScreenResultParamKeyO10reasonCodeSSvpZ",
+            "mangledName": "$s18FintechSDKBDUICore22FTScreenResultParamKeyO10reasonCodeSSvpZ",
+            "moduleName": "FintechSDKBDUICore",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18FintechSDKBDUICore22FTScreenResultParamKeyO10reasonCodeSSvgZ",
+                "mangledName": "$s18FintechSDKBDUICore22FTScreenResultParamKeyO10reasonCodeSSvgZ",
+                "moduleName": "FintechSDKBDUICore",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:18FintechSDKBDUICore22FTScreenResultParamKeyO",
+        "mangledName": "$s18FintechSDKBDUICore22FTScreenResultParamKeyO",
+        "moduleName": "FintechSDKBDUICore",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           }
         ]
       },
@@ -9119,6 +9514,180 @@
             "protocolReq": true,
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "handle",
+            "printedName": "handle(_:payload:path:sender:expressionResolver:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Any?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AnyObject?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "AnyObject"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechDivKitExpressionResolver",
+                "printedName": "any FintechSDKBDUICore.FintechDivKitExpressionResolver",
+                "usr": "s:18FintechSDKBDUICore0A24DivKitExpressionResolverP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18FintechSDKBDUICore0A13DivUrlHandlerP6handle_7payload4path6sender18expressionResolvery10Foundation3URLV_SDySSypGSgypSgyXlSgAA0ac13KitExpressionK0_ptF",
+            "mangledName": "$s18FintechSDKBDUICore0A13DivUrlHandlerP6handle_7payload4path6sender18expressionResolvery10Foundation3URLV_SDySSypGSgypSgyXlSgAA0ac13KitExpressionK0_ptF",
+            "moduleName": "FintechSDKBDUICore",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKBDUICore.FintechDivUrlHandler>",
+            "sugared_genericSig": "<Self where Self : FintechSDKBDUICore.FintechDivUrlHandler>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "handle",
+            "printedName": "handle(_:payload:path:sender:expressionResolver:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Any?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AnyObject?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "AnyObject"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechDivKitExpressionResolver",
+                "printedName": "any FintechSDKBDUICore.FintechDivKitExpressionResolver",
+                "usr": "s:18FintechSDKBDUICore0A24DivKitExpressionResolverP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18FintechSDKBDUICore0A13DivUrlHandlerPAAE6handle_7payload4path6sender18expressionResolvery10Foundation3URLV_SDySSypGSgypSgyXlSgAA0ac13KitExpressionK0_ptF",
+            "mangledName": "$s18FintechSDKBDUICore0A13DivUrlHandlerPAAE6handle_7payload4path6sender18expressionResolvery10Foundation3URLV_SDySSypGSgypSgyXlSgAA0ac13KitExpressionK0_ptF",
+            "moduleName": "FintechSDKBDUICore",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKBDUICore.FintechDivUrlHandler>",
+            "sugared_genericSig": "<Self where Self : FintechSDKBDUICore.FintechDivUrlHandler>",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Protocol",
@@ -9545,35 +10114,56 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FTBDUIAnchorRegistry.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4452976708\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-f5005917-50c1-4e02-93d5-635a774ea335\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FTBDUIAnchorRegistry.swift",
       "kind": "Dictionary",
       "offset": 606,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FintechBDUICutoutManager.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4452976708\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-f5005917-50c1-4e02-93d5-635a774ea335\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FTScreenResult.swift",
+      "kind": "StringLiteral",
+      "offset": 495,
+      "length": 13,
+      "value": "\"description\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4452976708\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-f5005917-50c1-4e02-93d5-635a774ea335\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FTScreenResult.swift",
+      "kind": "StringLiteral",
+      "offset": 539,
+      "length": 9,
+      "value": "\"message\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4452976708\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-f5005917-50c1-4e02-93d5-635a774ea335\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FTScreenResult.swift",
+      "kind": "StringLiteral",
+      "offset": 582,
+      "length": 13,
+      "value": "\"reason_code\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4452976708\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-f5005917-50c1-4e02-93d5-635a774ea335\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FintechBDUICutoutManager.swift",
       "kind": "StringLiteral",
       "offset": 92,
       "length": 19,
       "value": "\"scale_from_center\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FintechDivAction.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4452976708\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-f5005917-50c1-4e02-93d5-635a774ea335\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FintechDivAction.swift",
       "kind": "StringLiteral",
       "offset": 121,
       "length": 5,
       "value": "\"url\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FintechDivAction.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4452976708\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-f5005917-50c1-4e02-93d5-635a774ea335\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FintechDivAction.swift",
       "kind": "StringLiteral",
       "offset": 144,
       "length": 8,
       "value": "\"log_id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/5\/4407966959\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cf688a82-91fa-4841-b907-b47b592b7b43\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FintechDivFlagsInfo.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/0\/4452976708\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-f5005917-50c1-4e02-93d5-635a774ea335\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FintechDivFlagsInfo.swift",
       "kind": "BooleanLiteral",
       "offset": 522,
       "length": 5,

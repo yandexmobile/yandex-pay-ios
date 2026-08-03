@@ -75,9 +75,13 @@ public protocol FintechNetworkEndpointProvider {
   var body: [Swift.String : Any]? { get }
   var timeoutInSeconds: Foundation.TimeInterval { get }
   var decoder: Self.Decoder { get }
+  var isRetriableOnNetworkDrop: Swift.Bool { get }
 }
 extension FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider {
   public var headers: [Swift.String : Swift.String]? {
+    get
+  }
+  public var isRetriableOnNetworkDrop: Swift.Bool {
     get
   }
 }
@@ -154,11 +158,6 @@ extension FintechSDKNetworkInterfaces.NetworkClientError : Foundation.LocalizedE
     get
   }
   public var name: Swift.String {
-    get
-  }
-}
-extension FintechSDKNetworkInterfaces.URLSessionError {
-  public var isReasonablyRetriable: Swift.Bool {
     get
   }
 }

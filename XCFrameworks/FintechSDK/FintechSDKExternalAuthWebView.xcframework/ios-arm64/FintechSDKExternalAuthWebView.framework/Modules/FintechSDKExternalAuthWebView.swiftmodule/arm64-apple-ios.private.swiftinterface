@@ -25,7 +25,7 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 @_spi(Internal) final public class FTExternalAuthWebViewLoadingScreenFactory : FintechSDKAuthorizationScenario.FTLoadingScreenFactory {
-  @_spi(Internal) public init()
+  @_spi(Internal) public init(eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)
   @_spi(Internal) @_Concurrency.MainActor final public func makeLoadingScreen(onAction: @escaping @_Concurrency.MainActor @Sendable () -> Swift.Void, onDismiss: @escaping @_Concurrency.MainActor @Sendable () -> Swift.Void) -> any FintechSDKAuthorizationScenario.FTLoadingScreen
   @_spi(Internal) @objc deinit
 }
@@ -39,6 +39,7 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public let accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter
   @_spi(Internal) public let presentationContextProvider: any FintechSDKCoreUI.FTPresentationContextProviding
   @_spi(Internal) public let networkChallengeHandlerFactory: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory
+  @_spi(Internal) public let payEventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter
   @_spi(Internal) public let eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter
   @_spi(Internal) public let errorReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter
   @_spi(Internal) public let identifiersProvider: any FintechSDKAnalyticsInterfaces.FintechIdentifiersProviding
@@ -47,7 +48,8 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public var partnerAuthStateProvider: (() -> Swift.Bool?)?
   @_spi(Internal) public var forceDoubleAuth: Swift.Bool
   @_spi(Internal) public var initialBSTProvider: (@Sendable () async -> Swift.String?)?
-  @_spi(Internal) public init(merchantID: Swift.String, environment: FintechSDKCommonEntity.FintechSDKEnvironment, loginService: any FintechSDKAuthInterfaces.FintechLoginService, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, presentationContextProvider: any FintechSDKCoreUI.FTPresentationContextProviding, networkChallengeHandlerFactory: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory, eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, errorReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter, identifiersProvider: any FintechSDKAnalyticsInterfaces.FintechIdentifiersProviding, url: Foundation.URL? = nil, authStrategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy? = nil, partnerAuthStateProvider: (() -> Swift.Bool?)? = nil, forceDoubleAuth: Swift.Bool = false, initialBSTProvider: (@Sendable () async -> Swift.String?)? = nil)
+  @_spi(Internal) public var loginSource: Swift.String
+  @_spi(Internal) public init(merchantID: Swift.String, environment: FintechSDKCommonEntity.FintechSDKEnvironment, loginService: any FintechSDKAuthInterfaces.FintechLoginService, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, presentationContextProvider: any FintechSDKCoreUI.FTPresentationContextProviding, networkChallengeHandlerFactory: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory, eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, payEventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, errorReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter, identifiersProvider: any FintechSDKAnalyticsInterfaces.FintechIdentifiersProviding, loginSource: Swift.String, url: Foundation.URL? = nil, authStrategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy? = nil, partnerAuthStateProvider: (() -> Swift.Bool?)? = nil, forceDoubleAuth: Swift.Bool = false, initialBSTProvider: (@Sendable () async -> Swift.String?)? = nil)
 }
 @_spi(Internal) public struct FTExternalAuthWebViewOutput {
   @_spi(Internal) public var onCompleted: (@_Concurrency.MainActor @Sendable (Swift.Result<FintechSDKExternalAuthWebView.FTExternalAuthWebViewResult, any Swift.Error>) async -> Swift.Void)?

@@ -467,8 +467,14 @@ public enum FintechLocale : Swift.String {
   @_spi(Internal) public let completion: @_Concurrency.MainActor () -> Swift.Void
   @_spi(Internal) public init(script: Swift.String, completion: @escaping @_Concurrency.MainActor () -> Swift.Void)
 }
+@_spi(Internal) @_Concurrency.MainActor final public class FTWebViewCookieManager {
+  @_spi(Internal) @_Concurrency.MainActor public init()
+  @_spi(Internal) @_Concurrency.MainActor final public func bind(to cookieStore: WebKit.WKHTTPCookieStore)
+  @_spi(Internal) @_Concurrency.MainActor final public func deleteCookies(named name: Swift.String) async
+  @_spi(Internal) @objc deinit
+}
 @_spi(Internal) @_Concurrency.MainActor @preconcurrency public struct FTWebViewRepresented : SwiftUI.UIViewRepresentable {
-  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(request: Foundation.URLRequest?, cookies: Foundation.HTTPCookie?, userAgent: Swift.String, messageHandlers: [Swift.String : any WebKit.WKScriptMessageHandler] = [:], shouldUsePersistentWebDataStore: Swift.Bool = false, observer: (any FintechSDKCoreUI.FintechWebViewEventObserver)?, pendingJavaScript: FintechSDKCoreUI.FTPendingJavaScript?, javaScriptExecutionTrigger: Swift.Int)
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(request: Foundation.URLRequest?, cookies: Foundation.HTTPCookie?, userAgent: Swift.String, messageHandlers: [Swift.String : any WebKit.WKScriptMessageHandler] = [:], shouldUsePersistentWebDataStore: Swift.Bool = false, cookieManager: FintechSDKCoreUI.FTWebViewCookieManager? = nil, observer: (any FintechSDKCoreUI.FintechWebViewEventObserver)?, pendingJavaScript: FintechSDKCoreUI.FTPendingJavaScript?, javaScriptExecutionTrigger: Swift.Int, reloadTrigger: Swift.Int = 0)
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public func makeCoordinator() -> FintechSDKCoreUI.FTWebViewRepresented.FTWebViewDelegate
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public func makeUIView(context: FintechSDKCoreUI.FTWebViewRepresented.Context) -> WebKit.WKWebView
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public func updateUIView(_ uiView: WebKit.WKWebView, context: FintechSDKCoreUI.FTWebViewRepresented.Context)
@@ -517,5 +523,6 @@ extension FintechSDKCoreUI.FTBackswipePushAnimatedTransitioning : Swift.Sendable
 extension FintechSDKCoreUI.FTBackswipePushAnimatedTransitioning.Transition : Swift.Equatable {}
 extension FintechSDKCoreUI.FTBackswipePushAnimatedTransitioning.Transition : Swift.Hashable {}
 @_spi(Internal) extension FintechSDKCoreUI.FTBackswipeTransitionDelegate : Swift.Sendable {}
+@_spi(Internal) extension FintechSDKCoreUI.FTWebViewCookieManager : Swift.Sendable {}
 @_spi(Internal) extension FintechSDKCoreUI.FTWebViewRepresented : Swift.Sendable {}
 @_spi(Internal) extension FintechSDKCoreUI.FTWebViewRepresented.FTWebViewDelegate : Swift.Sendable {}

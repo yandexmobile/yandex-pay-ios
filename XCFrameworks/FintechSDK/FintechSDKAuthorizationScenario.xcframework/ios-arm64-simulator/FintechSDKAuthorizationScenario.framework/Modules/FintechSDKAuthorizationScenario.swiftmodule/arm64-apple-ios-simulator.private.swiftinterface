@@ -131,6 +131,15 @@ public enum FTAuthSessionAcquisitionMode : Swift.Sendable {
   @_spi(Internal) final public func resetSession()
   @_spi(Internal) @objc deinit
 }
+@_spi(Internal) public enum FTCancellationClassifier {
+  @_spi(Internal) public static func isCancellation(_ error: any Swift.Error) -> Swift.Bool
+  @_spi(Internal) public static func isCancellation(_ error: FintechSDKAuthorizationScenario.FTSessionError) -> Swift.Bool
+}
+@_spi(Internal) extension FintechSDKAuthorizationScenario.FTSessionError {
+  @_spi(Internal) public var isCancellation: Swift.Bool {
+    @_spi(Internal) get
+  }
+}
 @_spi(Internal) public protocol FTLoadingScreen : UIKit.UIViewController {
   @_spi(Internal) @_Concurrency.MainActor func setActionButtonVisible(isVisible: Swift.Bool)
 }

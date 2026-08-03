@@ -26,9 +26,19 @@ import _SwiftConcurrencyShims
   @_spi(Internal) @_Concurrency.MainActor final public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
   @_spi(Internal) @objc deinit
 }
-@_spi(Internal) final public class FTSendAnalyticsDivUrlHandler : @preconcurrency FintechSDKBDUICore.FintechDivUrlHandler {
+@_spi(Internal) public protocol FTResolutionFailureReporting {
+  @_spi(Internal) func reportEventNameResolveFailure(eventParams: [Swift.String : Swift.String], rawExpression: Swift.String)
+  @_spi(Internal) func reportParamResolveFailure(eventParams: [Swift.String : Swift.String], rawExpression: Swift.String, paramKey: Swift.String)
+}
+@_spi(Internal) public struct FTResolutionFailureReporter : FintechSDKDivKitWidgetsFeatures.FTResolutionFailureReporting {
   @_spi(Internal) public init(analyticsEventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)
+  @_spi(Internal) public func reportEventNameResolveFailure(eventParams: [Swift.String : Swift.String], rawExpression: Swift.String)
+  @_spi(Internal) public func reportParamResolveFailure(eventParams: [Swift.String : Swift.String], rawExpression: Swift.String, paramKey: Swift.String)
+}
+@_spi(Internal) final public class FTSendAnalyticsDivUrlHandler : @preconcurrency FintechSDKBDUICore.FintechDivUrlHandler {
+  @_spi(Internal) public init(analyticsEventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, resolutionFailureReporter: any FintechSDKDivKitWidgetsFeatures.FTResolutionFailureReporting)
   @_spi(Internal) @_Concurrency.MainActor final public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
+  @_spi(Internal) @_Concurrency.MainActor final public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?, expressionResolver: any FintechSDKBDUICore.FintechDivKitExpressionResolver)
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) final public class FTSendExternalEventDivUrlHandler : @preconcurrency FintechSDKBDUICore.FintechDivUrlHandler {
@@ -42,7 +52,7 @@ import _SwiftConcurrencyShims
   }
   @_spi(Internal) final public let name: Swift.String
   @_spi(Internal) public init(acquireBST: any FintechSDKDivKitWidgetsFeatures.FTWebViewBSTAcquiring, mode: FintechSDKDivKitWidgetsFeatures.FTWebViewBSTAcquisitionMode)
-  @_spi(Internal) @_Concurrency.MainActor final public func didAttachToWebView(_ context: any FintechSDKWebViewFeatures.FTWebViewHandlerContext)
+  @_spi(Internal) @_Concurrency.MainActor final public func attach(to context: any FintechSDKWebViewFeatures.FTWebViewHandlerContext)
   @_spi(Internal) @_Concurrency.MainActor final public func handle(model: FintechSDKDivKitWidgetsFeatures.FTWebViewBSTExpiredHandler.Model, requestId: Swift.String) async
   @_spi(Internal) @objc deinit
 }
@@ -52,6 +62,7 @@ import _SwiftConcurrencyShims
   }
   @_spi(Internal) final public let name: Swift.String
   @_spi(Internal) public init(logout: any FintechSDKDivKitWidgetsFeatures.FTWebViewLogoutUseCase, widgetReloaderGroup: FintechSDKDivKitWidgetsFeatures.FTWidgetReloaderGroup)
+  @_spi(Internal) @_Concurrency.MainActor final public func attach(to context: any FintechSDKWebViewFeatures.FTWebViewHandlerContext)
   @_spi(Internal) @_Concurrency.MainActor final public func handle(model: FintechSDKDivKitWidgetsFeatures.FTWebViewLogoutHandler.Model, requestId: Swift.String) async
   @_spi(Internal) @objc deinit
 }

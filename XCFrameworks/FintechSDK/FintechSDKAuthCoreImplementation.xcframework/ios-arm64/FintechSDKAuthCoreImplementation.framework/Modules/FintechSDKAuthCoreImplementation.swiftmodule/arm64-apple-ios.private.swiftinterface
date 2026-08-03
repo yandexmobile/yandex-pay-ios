@@ -11,8 +11,20 @@ import Swift
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-@_spi(Internal) final public class FTDPoPStateHolderImpl : FintechSDKAuthInterfaces.FTDPoPStateHolder, @unchecked Swift.Sendable {
+@_spi(Internal) public protocol FTDPoPOfflineKeyStoring : Swift.Sendable {
+  @_spi(Internal) func load(for keyType: FintechSDKAuthInterfaces.PublicKeyType) -> Swift.String?
+  @_spi(Internal) func save(_ publicKey: Swift.String, for keyType: FintechSDKAuthInterfaces.PublicKeyType)
+  @_spi(Internal) func removeAll()
+}
+@_spi(Internal) public struct FTDPoPKeychainOfflineKeyStore : FintechSDKAuthCoreImplementation.FTDPoPOfflineKeyStoring {
   @_spi(Internal) public init()
+  @_spi(Internal) public func load(for keyType: FintechSDKAuthInterfaces.PublicKeyType) -> Swift.String?
+  @_spi(Internal) public func save(_ publicKey: Swift.String, for keyType: FintechSDKAuthInterfaces.PublicKeyType)
+  @_spi(Internal) public func removeAll()
+}
+@_spi(Internal) final public class FTDPoPStateHolderImpl : FintechSDKAuthInterfaces.FTDPoPStateHolder, @unchecked Swift.Sendable {
+  @_spi(Internal) convenience public init()
+  @_spi(Internal) public init(store: any FintechSDKAuthCoreImplementation.FTDPoPOfflineKeyStoring)
   @_spi(Internal) final public func offlinePublicKey(for keyType: FintechSDKAuthInterfaces.PublicKeyType) -> Swift.String?
   @_spi(Internal) final public func setOfflinePublicKey(_ publicKey: Swift.String, for keyType: FintechSDKAuthInterfaces.PublicKeyType)
   @_spi(Internal) final public func clear()
@@ -30,7 +42,10 @@ public enum FintechDPoPKeyFactory {
   }
   public static func makeKey(mode: FintechSDKAuthCoreImplementation.FintechDPoPKeyFactory.Mode) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> any FintechSDKAuthInterfaces.FintechDPoPKey
 }
-final public class FintechDPoPServiceImpl : FintechSDKAuthInterfaces.FintechDPoPService {
+@_spi(Internal) extension FintechSDKAuthCoreImplementation.FintechDPoPServiceImpl : FintechSDKAuthInterfaces.FTOfflineKeyProviding {
+  @_spi(Internal) final public func offlineKey(_ type: FintechSDKAuthInterfaces.PublicKeyType) -> (any FintechSDKAuthInterfaces.FTOfflineKeyAgreementPrivateKey)?
+}
+final public class FintechDPoPServiceImpl : FintechSDKAuthInterfaces.FintechDPoPService, @unchecked Swift.Sendable {
   final public func key(_ type: FintechSDKAuthInterfaces.PublicKeyType) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> any FintechSDKAuthInterfaces.FintechDPoPKey
   public init()
   final public func invalidateKey()

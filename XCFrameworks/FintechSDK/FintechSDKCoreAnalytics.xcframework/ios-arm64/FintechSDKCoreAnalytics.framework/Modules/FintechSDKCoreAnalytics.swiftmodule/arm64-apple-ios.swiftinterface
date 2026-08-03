@@ -17,12 +17,12 @@ final public class FintechAnalyticsAppMetricaReporter : FintechSDKAnalyticsInter
   final public func reportEvent(name: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
   @objc deinit
 }
-final public class FintechAnalyticsGeneralErrorReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter {
+@_hasMissingDesignatedInitializers final public class FintechAnalyticsGeneralErrorReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter {
   public init(destinations: [any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter])
   final public func reportError(message: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
   @objc deinit
 }
-final public class FintechAnalyticsGeneralEventReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter {
+@_hasMissingDesignatedInitializers final public class FintechAnalyticsGeneralEventReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter {
   public init(destinations: [any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter])
   final public func reportEvent(name: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
   @objc deinit

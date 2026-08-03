@@ -46,6 +46,7 @@ extension YandexPayConfiguration.YPay {
   final public func deactivateQuickPay() async throws
   final public func isQuickPayActivated() async -> Swift.Bool
   final public func getPaymentSessionId() async throws -> Swift.String
+  final public func getCPQR(merchantPayload: Swift.String) async throws -> Swift.String
   @_Concurrency.MainActor final public func createPaymentMethodsWidget(allowSilentReload: Swift.Bool = true) -> UIKit.UIView
   @_Concurrency.MainActor final public func createPaymentMethodsWidget(allowSilentReload: Swift.Bool = true) -> any SwiftUICore.View
   @_Concurrency.MainActor final public func createActivePaymentMethodBadge(allowSilentReload: Swift.Bool = true) -> UIKit.UIView

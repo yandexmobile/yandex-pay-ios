@@ -135,7 +135,8 @@ extension FintechSDKQuickPaymentEntity.FTQuickPayResult : Swift.Equatable {
 @_spi(Internal) public struct FintechPayTicket : Swift.Sendable {
   @_spi(Internal) public let payTicket: Swift.String
   @_spi(Internal) public let expiresAt: Foundation.Date
-  @_spi(Internal) public init(payTicket: Swift.String, expiresAt: Foundation.Date)
+  @_spi(Internal) public let qrString: Swift.String?
+  @_spi(Internal) public init(payTicket: Swift.String, expiresAt: Foundation.Date, qrString: Swift.String? = nil)
 }
 @_spi(Internal) extension FintechSDKQuickPaymentEntity.FTOrderStatus : Swift.Equatable {}
 @_spi(Internal) extension FintechSDKQuickPaymentEntity.FTOrderStatus : Swift.Hashable {}

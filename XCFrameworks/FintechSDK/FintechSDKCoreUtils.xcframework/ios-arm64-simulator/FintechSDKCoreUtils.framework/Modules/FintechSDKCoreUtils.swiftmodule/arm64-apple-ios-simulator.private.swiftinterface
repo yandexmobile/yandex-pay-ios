@@ -433,14 +433,18 @@ public enum FintechApiBaseUrlType : Swift.String, Swift.CaseIterable {
   }
 }
 public enum FintechSDKInfo {
+  public static let externalVersion: Swift.String
+  public static let internalVersion: Swift.String
   public static let currentVersion: Swift.String
 }
 @_spi(Internal) public enum OAuthTokenCensor {
   @_spi(Internal) public static func censoredOAuthTokenForLogging(_ token: Swift.String) -> Swift.String
-  @_spi(Internal) public static func prepareURLForLogging(_ url: Foundation.URL, tokenParameterName: Swift.String) -> Foundation.URL
+  @_spi(Internal) public static func prepareURLForLogging(_ url: Foundation.URL) -> Foundation.URL
+  @_spi(Internal) public static func prepareValueForLogging(_ value: Swift.String) -> Swift.String
 }
 @_spi(Internal) public protocol FTConnectivityObserving : Swift.Sendable {
   @_spi(Internal) func observe() -> _Concurrency.AsyncStream<Swift.Bool>
+  @_spi(Internal) func isAvailable() async -> Swift.Bool
   @_spi(Internal) func cancel()
 }
 @_spi(Internal) public protocol FTPathMonitoring : AnyObject {
@@ -457,8 +461,9 @@ public enum FintechSDKInfo {
 }
 @_spi(Internal) final public class FTConnectivityObserver : FintechSDKCoreUtils.FTConnectivityObserving, @unchecked Swift.Sendable {
   @_spi(Internal) convenience public init()
-  @_spi(Internal) public init(monitor: any FintechSDKCoreUtils.FTPathMonitoring)
+  @_spi(Internal) public init(monitor: any FintechSDKCoreUtils.FTPathMonitoring, checkMonitorFactory: @escaping @Sendable () -> any FintechSDKCoreUtils.FTPathMonitoring = { FTNWPathMonitor() }, availabilityProbeTimeoutNanos: Swift.UInt64 = 300_000_000)
   @_spi(Internal) final public func observe() -> _Concurrency.AsyncStream<Swift.Bool>
+  @_spi(Internal) final public func isAvailable() async -> Swift.Bool
   @_spi(Internal) final public func cancel()
   @_spi(Internal) @objc deinit
 }

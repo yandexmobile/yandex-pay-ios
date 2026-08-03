@@ -95,6 +95,7 @@ public enum FintechQuickPaymentError : Swift.Error {
   case cannotCreateNewSession(underlying: any Swift.Error)
   case noPresentationContext
   case widgetNotActivated
+  case qrStringNotAvailable
 }
 extension FintechSDKQuickPayment.FTQuickPayAuthState.SecurityCheckFailReason : Swift.Hashable {}
 extension FintechSDKQuickPayment.FTQuickPayWidgetExpandState : Swift.Equatable {}

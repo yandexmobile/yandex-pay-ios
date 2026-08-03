@@ -104,6 +104,7 @@ public enum FintechQuickPaymentError : Swift.Error {
   case cannotCreateNewSession(underlying: any Swift.Error)
   case noPresentationContext
   case widgetNotActivated
+  case qrStringNotAvailable
 }
 @_spi(Internal) final public class FintechQuickPayHandler {
   @_spi(Internal) @_Concurrency.MainActor public init(config: FintechSDKQuickPayment.FTQuickPayConfig, stateListener: any FintechSDKQuickPayment.FTQuickPaymentStateListener, appMetricaAdapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter, fontsAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter, bduiAdapterFactory: any FintechSDKBDUIFeatures.FintechBDUIAdapterFactory, rtmFactory: any FintechSDKAnalyticsInterfaces.FintechRTMAdapterFactory, rumFactory: any FintechSDKAnalyticsInterfaces.FintechRUMAdapterFactory, accountManagerAdapter: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, loginService: any FintechSDKAuthInterfaces.FintechLoginService, presentationContextProvider: (any FintechSDKCoreUI.FTPresentationContextProviding)?)
@@ -117,6 +118,7 @@ public enum FintechQuickPaymentError : Swift.Error {
   @_spi(Internal) final public func enableQuickPayment(showOnboardingAfterAuth: Swift.Bool = true) async throws
   @_spi(Internal) final public func disableQuickPayment() async throws
   @_spi(Internal) final public func getPaymentSessionId() async throws -> Swift.String
+  @_spi(Internal) final public func getCPQR(merchantPayload: Swift.String) async throws -> Swift.String
   @_spi(Internal) final public func login() async throws
   @_spi(Internal) final public func logout() async throws
   @_spi(Internal) final public func activateQuickPay(showOnboardingAfterAuth: Swift.Bool = true) async throws

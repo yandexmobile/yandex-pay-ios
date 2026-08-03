@@ -15,7 +15,9 @@ import _SwiftConcurrencyShims
 @_spi(Internal) final public class FTAnalyticsReporterFactory : Swift.Sendable {
   @_spi(Internal) public init(environment: FintechSDKCommonEntity.FintechSDKEnvironment, sessionProvider: any FintechSDKNetworkInterfaces.FTSessionProviderServing, metricaAPIKey: Swift.String, appMetricaAdapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter, rumFactory: any FintechSDKAnalyticsInterfaces.FintechRUMAdapterFactory, rtmFactory: any FintechSDKAnalyticsInterfaces.FintechRTMAdapterFactory, appEnvironmentSourceSDK: Swift.String, appEnvironmentType: FintechSDKCoreAnalytics.FTAppEnvironmentType, extraParamsProvider: (any FintechSDKCoreAnalytics.FintechExtraAnalyticsParamsProvider)? = nil)
   @_spi(Internal) final public func makeEventReporter(puid: Foundation.NSNumber?) -> any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter
+  @_spi(Internal) final public func makeEventReporter(puid: Foundation.NSNumber?, shouldSanitizeSensitiveInfo: Swift.Bool) -> any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter
   @_spi(Internal) final public func makeErrorReporter(puid: Foundation.NSNumber?) -> any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter
+  @_spi(Internal) final public func makeErrorReporter(puid: Foundation.NSNumber?, shouldSanitizeSensitiveInfo: Swift.Bool) -> any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter
   @_spi(Internal) @objc deinit
 }
 final public class FintechAnalyticsAppMetricaReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter {
@@ -23,12 +25,12 @@ final public class FintechAnalyticsAppMetricaReporter : FintechSDKAnalyticsInter
   final public func reportEvent(name: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
   @objc deinit
 }
-final public class FintechAnalyticsGeneralErrorReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter {
+@_hasMissingDesignatedInitializers final public class FintechAnalyticsGeneralErrorReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter {
   public init(destinations: [any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter])
   final public func reportError(message: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
   @objc deinit
 }
-final public class FintechAnalyticsGeneralEventReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter {
+@_hasMissingDesignatedInitializers final public class FintechAnalyticsGeneralEventReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter {
   public init(destinations: [any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter])
   final public func reportEvent(name: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
   @objc deinit
