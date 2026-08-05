@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = 'YandexPaySDK'
-  s.version               = '2.5.3'
+  s.version               = '2.5.4'
   s.summary               = 'Yandex Pay Modular SDK for iOS'
   s.homepage              = 'https://pay.yandex.ru'
   s.license               = { :type => 'Proprietary', :text => 'License Agreement is available at https://yandex.ru/legal/ypay_sdk_agreement/?lang=ru.' }
