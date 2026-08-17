@@ -705,6 +705,192 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "FintechSDKBDUICore"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTPopReloadNavigable",
+        "printedName": "FTPopReloadNavigable",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shouldReloadPreviousDocumentOnPop",
+            "printedName": "shouldReloadPreviousDocumentOnPop",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18FintechSDKBDUICore20FTPopReloadNavigableP06shouldD21PreviousDocumentOnPopSbvp",
+            "mangledName": "$s18FintechSDKBDUICore20FTPopReloadNavigableP06shouldD21PreviousDocumentOnPopSbvp",
+            "moduleName": "FintechSDKBDUICore",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18FintechSDKBDUICore20FTPopReloadNavigableP06shouldD21PreviousDocumentOnPopSbvg",
+                "mangledName": "$s18FintechSDKBDUICore20FTPopReloadNavigableP06shouldD21PreviousDocumentOnPopSbvg",
+                "moduleName": "FintechSDKBDUICore",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKBDUICore.FTPopReloadNavigable>",
+                "sugared_genericSig": "<Self where Self : FintechSDKBDUICore.FTPopReloadNavigable>",
+                "protocolReq": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:18FintechSDKBDUICore20FTPopReloadNavigableP",
+        "mangledName": "$s18FintechSDKBDUICore20FTPopReloadNavigableP",
+        "moduleName": "FintechSDKBDUICore",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTBDUIPopReloadPolicy",
+        "printedName": "FTBDUIPopReloadPolicy",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "engineToReload",
+            "printedName": "engineToReload(previousStack:currentStack:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKBDUICore.FintechBDUIEngine)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechBDUIEngine",
+                    "printedName": "any FintechSDKBDUICore.FintechBDUIEngine",
+                    "usr": "s:18FintechSDKBDUICore0A10BDUIEngineP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[UIKit.UIViewController]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIViewController",
+                    "printedName": "UIKit.UIViewController",
+                    "usr": "c:objc(cs)UIViewController"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[UIKit.UIViewController]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIViewController",
+                    "printedName": "UIKit.UIViewController",
+                    "usr": "c:objc(cs)UIViewController"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18FintechSDKBDUICore21FTBDUIPopReloadPolicyO08engineToD013previousStack07currentI0AA0A10BDUIEngine_pSgSaySo16UIViewControllerCG_AKtFZ",
+            "mangledName": "$s18FintechSDKBDUICore21FTBDUIPopReloadPolicyO08engineToD013previousStack07currentI0AA0A10BDUIEngine_pSgSaySo16UIViewControllerCG_AKtFZ",
+            "moduleName": "FintechSDKBDUICore",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:18FintechSDKBDUICore21FTBDUIPopReloadPolicyO",
+        "mangledName": "$s18FintechSDKBDUICore21FTBDUIPopReloadPolicyO",
+        "moduleName": "FintechSDKBDUICore",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -4198,6 +4384,50 @@
                 "declKind": "Accessor",
                 "usr": "s:18FintechSDKBDUICore0A15BDUICustomPropsV18backGestureEnabledSbSgvg",
                 "mangledName": "$s18FintechSDKBDUICore0A15BDUICustomPropsV18backGestureEnabledSbSgvg",
+                "moduleName": "FintechSDKBDUICore",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "reloadPreviousScreenOnPop",
+            "printedName": "reloadPreviousScreenOnPop",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18FintechSDKBDUICore0A15BDUICustomPropsV25reloadPreviousScreenOnPopSbvp",
+            "mangledName": "$s18FintechSDKBDUICore0A15BDUICustomPropsV25reloadPreviousScreenOnPopSbvp",
+            "moduleName": "FintechSDKBDUICore",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18FintechSDKBDUICore0A15BDUICustomPropsV25reloadPreviousScreenOnPopSbvg",
+                "mangledName": "$s18FintechSDKBDUICore0A15BDUICustomPropsV25reloadPreviousScreenOnPopSbvg",
                 "moduleName": "FintechSDKBDUICore",
                 "implicit": true,
                 "accessorKind": "get"
@@ -10114,56 +10344,56 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FTBDUIAnchorRegistry.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FTBDUIAnchorRegistry.swift",
       "kind": "Dictionary",
       "offset": 606,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FTScreenResult.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FTScreenResult.swift",
       "kind": "StringLiteral",
       "offset": 495,
       "length": 13,
       "value": "\"description\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FTScreenResult.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FTScreenResult.swift",
       "kind": "StringLiteral",
       "offset": 539,
       "length": 9,
       "value": "\"message\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FTScreenResult.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FTScreenResult.swift",
       "kind": "StringLiteral",
       "offset": 582,
       "length": 13,
       "value": "\"reason_code\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FintechBDUICutoutManager.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FintechBDUICutoutManager.swift",
       "kind": "StringLiteral",
       "offset": 92,
       "length": 19,
       "value": "\"scale_from_center\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FintechDivAction.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FintechDivAction.swift",
       "kind": "StringLiteral",
       "offset": 121,
       "length": 5,
       "value": "\"url\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FintechDivAction.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FintechDivAction.swift",
       "kind": "StringLiteral",
       "offset": 144,
       "length": 8,
       "value": "\"log_id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FintechDivFlagsInfo.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/BDUI\/FintechDivFlagsInfo.swift",
       "kind": "BooleanLiteral",
       "offset": 522,
       "length": 5,

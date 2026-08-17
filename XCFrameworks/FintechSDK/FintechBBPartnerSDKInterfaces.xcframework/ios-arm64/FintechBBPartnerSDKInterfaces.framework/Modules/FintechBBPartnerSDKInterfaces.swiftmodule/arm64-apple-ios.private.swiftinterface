@@ -1,0 +1,108 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechBBPartnerSDKInterfaces -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import FintechSDKAnalyticsInterfaces
+import FintechSDKNetworkInterfaces
+import Foundation
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct FintechBBPartnerPinTexts : Swift.Decodable {
+  public let setupTitle: Swift.String
+  public let setupSubtitle: Swift.String?
+  public let confirmTitle: Swift.String
+  public let confirmSubtitle: Swift.String?
+  public let verifyTitle: Swift.String
+  public let verifySubtitle: Swift.String?
+  public let mismatchMessage: Swift.String
+  public let attemptsCounterFormat: Swift.String
+  public let backButtonTitle: Swift.String
+  public init(setupTitle: Swift.String, setupSubtitle: Swift.String? = nil, confirmTitle: Swift.String, confirmSubtitle: Swift.String?, verifyTitle: Swift.String, verifySubtitle: Swift.String?, mismatchMessage: Swift.String, attemptsCounterFormat: Swift.String, backButtonTitle: Swift.String)
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct FintechBBPartnerColorExpressions : Swift.Decodable {
+  public let backgroundColor: Swift.String
+  public let titleColor: Swift.String
+  public let subtitleColor: Swift.String
+  public let messageColor: Swift.String
+  public let attemptsCounterColor: Swift.String
+  public let fieldFilledColor: Swift.String
+  public let fieldEmptyColor: Swift.String
+  public let fieldBorderColor: Swift.String
+  public let fieldSuccessColor: Swift.String
+  public let fieldErrorColor: Swift.String
+  public let keypadDigitColor: Swift.String
+  public let keypadBackgroundColor: Swift.String
+  public let keypadDeleteColor: Swift.String
+  public let backButtonTintColor: Swift.String
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct FintechBBPartnerWebAlertTexts : Swift.Decodable {
+  public let confirmButtonTitle: Swift.String
+  public let cancelButtonTitle: Swift.String?
+  public init(confirmButtonTitle: Swift.String, cancelButtonTitle: Swift.String? = nil)
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct FintechBBPartnerColors {
+  public let pinColors: FintechBBPartnerSDKInterfaces.FintechBBPartnerPinColors
+  public init(pinColors: FintechBBPartnerSDKInterfaces.FintechBBPartnerPinColors)
+}
+public struct FintechBBPartnerPinColors {
+  public let backgroundColor: UIKit.UIColor
+  public let titleColor: UIKit.UIColor
+  public let subtitleColor: UIKit.UIColor
+  public let messageColor: UIKit.UIColor
+  public let attemptsCounterColor: UIKit.UIColor
+  public let fieldFilledColor: UIKit.UIColor
+  public let fieldEmptyColor: UIKit.UIColor
+  public let fieldBorderColor: UIKit.UIColor
+  public let fieldSuccessColor: UIKit.UIColor
+  public let fieldErrorColor: UIKit.UIColor
+  public let keypadDigitColor: UIKit.UIColor
+  public let keypadBackgroundColor: UIKit.UIColor
+  public let keypadDeleteColor: UIKit.UIColor
+  public let backButtonTintColor: UIKit.UIColor
+  public init(backgroundColor: UIKit.UIColor, titleColor: UIKit.UIColor, subtitleColor: UIKit.UIColor, messageColor: UIKit.UIColor, attemptsCounterColor: UIKit.UIColor, fieldFilledColor: UIKit.UIColor, fieldEmptyColor: UIKit.UIColor, fieldBorderColor: UIKit.UIColor, fieldSuccessColor: UIKit.UIColor, fieldErrorColor: UIKit.UIColor, keypadDigitColor: UIKit.UIColor, keypadBackgroundColor: UIKit.UIColor, keypadDeleteColor: UIKit.UIColor, backButtonTintColor: UIKit.UIColor)
+}
+public struct FintechBBPinParams : Swift.Decodable {
+  public let successFeedbackDuration: Foundation.TimeInterval
+  public let errorFeedbackDuration: Foundation.TimeInterval
+  public let fieldRadius: CoreFoundation.CGFloat
+  public let fieldSpacing: CoreFoundation.CGFloat
+  public init(from decoder: any Swift.Decoder) throws
+}
+public protocol FintechBBPartnerSDKAdapterFactory {
+  func make(networkChallengeHandlerFactory: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory) -> any FintechBBPartnerSDKInterfaces.FintechBBPartnerSDKAdapter
+}
+public protocol FintechBBPartnerSDKAdapter {
+  @_Concurrency.MainActor func makeFlowView(reporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)?, params: FintechBBPartnerSDKInterfaces.FintechBBPartnerSDKParams, colors: FintechBBPartnerSDKInterfaces.FintechBBPartnerColors, flowObserver: any FintechBBPartnerSDKInterfaces.FintechBBPartnerFlowObserver) throws -> any FintechBBPartnerSDKInterfaces.FintechBBFlowView
+}
+@_Concurrency.MainActor public protocol FintechBBFlowView : UIKit.UIView {
+  @_Concurrency.MainActor func update(colors: FintechBBPartnerSDKInterfaces.FintechBBPartnerColors)
+}
+public struct FintechBBPartnerSDKParams : Swift.Decodable {
+  public let path: Swift.String
+  public let config: Swift.String
+  public let partnerClientId: Swift.String
+  public let phone: Swift.String
+  public let baseFingerprintData: [Swift.String : Swift.String]
+  public let retryPolicy: FintechBBPartnerSDKInterfaces.FintechBBPartnerRetryPolicy
+  public let pinTexts: FintechBBPartnerSDKInterfaces.FintechBBPartnerPinTexts
+  public let pinParams: FintechBBPartnerSDKInterfaces.FintechBBPinParams
+  public let webAlertTexts: FintechBBPartnerSDKInterfaces.FintechBBPartnerWebAlertTexts
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct FintechBBPartnerRetryPolicy : Swift.Decodable {
+  public let maxRetriesCount: Swift.Int
+  public init(from decoder: any Swift.Decoder) throws
+}
+public protocol FintechBBPartnerFlowObserver {
+  func onAction(action: Swift.String)
+  func cancelationRequested()
+  func finished()
+  func flowViewIsReady()
+  func receivedNonRecovarableError(_ error: Swift.String)
+}

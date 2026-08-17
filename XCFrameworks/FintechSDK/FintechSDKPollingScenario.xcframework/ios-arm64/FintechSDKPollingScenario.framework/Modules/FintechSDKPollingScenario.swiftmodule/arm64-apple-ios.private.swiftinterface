@@ -17,11 +17,13 @@ import _SwiftConcurrencyShims
 @_spi(Internal) public protocol FTProvidePollingParams : Swift.Sendable {
   @_spi(Internal) func setTransaction(id: Swift.String?) async
   @_spi(Internal) func setCheckoutOrderId(_ id: Swift.String?) async
+  @_spi(Internal) func setQuickpayId(_ id: Swift.String?) async
   @_spi(Internal) func setPayment(url: Swift.String?) async
 }
 @_spi(Internal) public protocol FTGetPollingParams : Swift.Sendable {
   @_spi(Internal) func getTransactionId() async -> Swift.String?
   @_spi(Internal) func getCheckoutOrderId() async -> Swift.String?
+  @_spi(Internal) func getQuickpayId() async -> Swift.String?
   @_spi(Internal) func getPaymentUrl() async -> Swift.String?
 }
 @_spi(Internal) public protocol FTPollingScreenUseCases : Swift.Sendable {
@@ -40,11 +42,13 @@ import _SwiftConcurrencyShims
 @_spi(Internal) extension FintechSDKPollingScenario.FTPollingParamsInteractor : FintechSDKPollingScenario.FTProvidePollingParams {
   @_spi(Internal) public func setTransaction(id: Swift.String?)
   @_spi(Internal) public func setCheckoutOrderId(_ id: Swift.String?)
+  @_spi(Internal) public func setQuickpayId(_ id: Swift.String?)
   @_spi(Internal) public func setPayment(url: Swift.String?)
 }
 @_spi(Internal) extension FintechSDKPollingScenario.FTPollingParamsInteractor : FintechSDKPollingScenario.FTGetPollingParams {
   @_spi(Internal) public func getTransactionId() -> Swift.String?
   @_spi(Internal) public func getCheckoutOrderId() -> Swift.String?
+  @_spi(Internal) public func getQuickpayId() -> Swift.String?
   @_spi(Internal) public func getPaymentUrl() -> Swift.String?
 }
 @_spi(Internal) final public class FTPollingMiddleware : FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware {

@@ -89,11 +89,13 @@ public protocol FTQuickPaymentStateListener : AnyObject {
   func onPaymentEnabledStateChanged(isEnabled: Swift.Bool)
   func onSessionExpired()
   func onPaymentResult(quickpayResult: FintechSDKQuickPaymentEntity.FTQuickPayResult)
+  func onPaymentResultScreenClosed(quickpayResult: FintechSDKQuickPaymentEntity.FTQuickPayResult)
   func onAuthStateChanged(_ state: FintechSDKQuickPayment.FTQuickPayAuthState)
   func onPaymentMethodSelected()
   func onPaymentMethodSelectionError()
 }
 extension FintechSDKQuickPayment.FTQuickPaymentStateListener {
+  public func onPaymentResultScreenClosed(quickpayResult: FintechSDKQuickPaymentEntity.FTQuickPayResult)
   public func onAuthStateChanged(_ state: FintechSDKQuickPayment.FTQuickPayAuthState)
   public func onPaymentMethodSelected()
   public func onPaymentMethodSelectionError()
@@ -107,7 +109,7 @@ public enum FintechQuickPaymentError : Swift.Error {
   case qrStringNotAvailable
 }
 @_spi(Internal) final public class FintechQuickPayHandler {
-  @_spi(Internal) @_Concurrency.MainActor public init(config: FintechSDKQuickPayment.FTQuickPayConfig, stateListener: any FintechSDKQuickPayment.FTQuickPaymentStateListener, appMetricaAdapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter, fontsAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter, bduiAdapterFactory: any FintechSDKBDUIFeatures.FintechBDUIAdapterFactory, rtmFactory: any FintechSDKAnalyticsInterfaces.FintechRTMAdapterFactory, rumFactory: any FintechSDKAnalyticsInterfaces.FintechRUMAdapterFactory, accountManagerAdapter: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, loginService: any FintechSDKAuthInterfaces.FintechLoginService, presentationContextProvider: (any FintechSDKCoreUI.FTPresentationContextProviding)?)
+  @_spi(Internal) @_Concurrency.MainActor public init(config: FintechSDKQuickPayment.FTQuickPayConfig, stateListener: any FintechSDKQuickPayment.FTQuickPaymentStateListener, appMetricaAdapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter, fontsAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter, bduiAdapterFactory: any FintechSDKBDUIFeatures.FintechBDUIAdapterFactory, rtmFactory: any FintechSDKAnalyticsInterfaces.FintechRTMAdapterFactory, rumFactory: any FintechSDKAnalyticsInterfaces.FintechRUMAdapterFactory, accountManagerAdapter: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, loginService: any FintechSDKAuthInterfaces.FintechLoginService, presentationContextProvider: (any FintechSDKCoreUI.FTPresentationContextProviding)?, networkChallengeHandlerFactory: (any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory)? = nil)
   @_spi(Internal) @_Concurrency.MainActor final public func createPaymentMethodsWidget(allowSilentReload: Swift.Bool = true) -> any SwiftUICore.View
   @_spi(Internal) @_Concurrency.MainActor final public func createPaymentMethodsWidget(allowSilentReload: Swift.Bool = true) -> UIKit.UIView
   @_spi(Internal) @_Concurrency.MainActor final public func createActivePaymentMethodBadge(allowSilentReload: Swift.Bool = true) -> any SwiftUICore.View
@@ -128,12 +130,13 @@ public enum FintechQuickPaymentError : Swift.Error {
   @_spi(Internal) final public func isSecurityCheckRequired() async throws -> Swift.Bool
   @_spi(Internal) final public func hasAvailablePaymentMethods() async throws -> Swift.Bool
   @_spi(Internal) final public func stopPaymentPolling() async
-  @_spi(Internal) final public func showFaqScreen() async
-  @_spi(Internal) final public func showOnboardingStoriesScreen() async
-  @_spi(Internal) final public func showAddPaymentMethodScreen(_ type: FintechSDKQuickPayment.FTQuickPayPaymentMethodType) async throws
-  @_spi(Internal) final public func showSorryScreen(targetViewId: Swift.String) async
-  @_spi(Internal) @_Concurrency.MainActor final public func showSorryScreen(anchor: UIKit.UIView, shape: FintechSDKBDUICore.FTBDUIAnchorShape = .capsule) async
-  @_spi(Internal) @_Concurrency.MainActor final public func showSorryScreen(anchor: FintechSDKBDUICore.FTSorryAnchor) async
+  @_spi(Internal) final public func showFaqScreen(onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async
+  @_spi(Internal) final public func showOnboardingStoriesScreen(onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async
+  @_spi(Internal) final public func showAddPaymentMethodScreen(_ type: FintechSDKQuickPayment.FTQuickPayPaymentMethodType, onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async throws
+  @_spi(Internal) final public func showSorryScreen(targetViewId: Swift.String, onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async
+  @_spi(Internal) @_Concurrency.MainActor final public func showSorryScreen(anchor: UIKit.UIView, shape: FintechSDKBDUICore.FTBDUIAnchorShape = .capsule, onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async
+  @_spi(Internal) @_Concurrency.MainActor final public func showSorryScreen(anchor: FintechSDKBDUICore.FTSorryAnchor, onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async
+  @_spi(Internal) final public func showSorryScreenWithAddPaymentMethod(onButtonClick: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)?, onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async
   @_spi(Internal) final public func handleUserActivity(_ userActivity: Foundation.NSUserActivity) -> Swift.Bool
   @_spi(Internal) final public func handleOpenURL(_ url: Foundation.URL) -> Swift.Bool
   @_spi(Internal) @_Concurrency.MainActor final public func createExpandablePaymentMethodsWidget(expandState: FintechSDKQuickPayment.FTQuickPayWidgetExpandState, allowSilentReload: Swift.Bool = true) -> any SwiftUICore.View

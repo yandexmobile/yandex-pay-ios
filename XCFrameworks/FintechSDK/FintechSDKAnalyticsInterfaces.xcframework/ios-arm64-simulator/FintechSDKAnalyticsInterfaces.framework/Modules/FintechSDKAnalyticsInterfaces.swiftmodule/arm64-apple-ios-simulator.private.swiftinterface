@@ -10,10 +10,23 @@ import _SwiftConcurrencyShims
 public protocol FintechAppMetricaAdapter : Swift.Sendable {
   var uuid: Swift.String { get }
   var deviceID: Swift.String? { get }
+  var bootTimestamp: Foundation.TimeInterval { get }
   func isReporterCreated(for apiKey: Swift.String) -> Swift.Bool
   func reporter(for apiKey: Swift.String) throws(FintechSDKAnalyticsInterfaces.FintechAppMetricaError) -> any FintechSDKAnalyticsInterfaces.FintechAppMetricaReportingAdapter
   func extendedReporter(for apiKey: Swift.String) throws(FintechSDKAnalyticsInterfaces.FintechAppMetricaError) -> any FintechSDKAnalyticsInterfaces.FintechAppMetricaReportingAdapter
   func activateReporter(for apiKey: Swift.String) throws(FintechSDKAnalyticsInterfaces.FintechAppMetricaError)
+  func setErrorEnvironment(_ value: Swift.String?, for key: Swift.String)
+  func resumeSession()
+  func pauseSession()
+  func requestStartupIdentifiers(for keys: [Swift.String], completion: @escaping @Sendable (Swift.Result<[Swift.String : [Swift.String]], any Swift.Error>) -> Swift.Void)
+  func makeCountHistogram(name: Swift.String, minValue: Swift.Int, maxValue: Swift.Int, bucketsCount: Swift.Int) -> any FintechSDKAnalyticsInterfaces.FintechAppMetricaCountHistogram
+  func makeTimeHistogram(name: Swift.String, minTime: Foundation.TimeInterval, maxTime: Foundation.TimeInterval, bucketsCount: Swift.Int) -> any FintechSDKAnalyticsInterfaces.FintechAppMetricaTimeHistogram
+}
+public protocol FintechAppMetricaCountHistogram : Swift.Sendable {
+  func addSample(_ sample: Swift.Int)
+}
+public protocol FintechAppMetricaTimeHistogram : Swift.Sendable {
+  func addTime(_ duration: Foundation.TimeInterval)
 }
 public protocol FintechAppMetricaYandexAdapter {
   func createYandexReporter(for apiKey: Swift.String) throws(FintechSDKAnalyticsInterfaces.FintechAppMetricaError) -> any FintechSDKAnalyticsInterfaces.FintechAppMetricaYandexReportingAdapter

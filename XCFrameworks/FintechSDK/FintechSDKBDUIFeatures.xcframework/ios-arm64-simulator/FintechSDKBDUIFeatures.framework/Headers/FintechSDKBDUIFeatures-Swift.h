@@ -322,14 +322,14 @@ SWIFT_CLASS("_TtC22FintechSDKBDUIFeatures26FTBDUINavigationController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
-@interface FTBDUINavigationController (SWIFT_EXTENSION(FintechSDKBDUIFeatures)) <UINavigationControllerDelegate>
-- (void)navigationController:(UINavigationController * _Nonnull)navigationController didShowViewController:(UIViewController * _Nonnull)_ animated:(BOOL)animated;
-@end
-
 @class UIGestureRecognizer;
 @interface FTBDUINavigationController (SWIFT_EXTENSION(FintechSDKBDUIFeatures)) <UIGestureRecognizerDelegate>
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)gestureRecognizer SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@interface FTBDUINavigationController (SWIFT_EXTENSION(FintechSDKBDUIFeatures)) <UINavigationControllerDelegate>
+- (void)navigationController:(UINavigationController * _Nonnull)navigationController didShowViewController:(UIViewController * _Nonnull)_ animated:(BOOL)animated;
 @end
 
 #endif

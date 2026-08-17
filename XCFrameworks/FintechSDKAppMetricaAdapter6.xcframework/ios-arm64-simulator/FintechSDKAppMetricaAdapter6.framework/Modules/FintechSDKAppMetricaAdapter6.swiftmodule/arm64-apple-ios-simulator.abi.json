@@ -1,0 +1,915 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "FintechSDKAppMetricaAdapter6",
+    "printedName": "FintechSDKAppMetricaAdapter6",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAppMetricaAdapter6"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAppMetricaAdapter6"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FintechAppMetricaAdapterImpl",
+        "printedName": "FintechAppMetricaAdapterImpl",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "bootTimestamp",
+            "printedName": "bootTimestamp",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC13bootTimestampSdvp",
+            "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC13bootTimestampSdvp",
+            "moduleName": "FintechSDKAppMetricaAdapter6",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC13bootTimestampSdvg",
+                "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC13bootTimestampSdvg",
+                "moduleName": "FintechSDKAppMetricaAdapter6",
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(logsEnabled:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAppMetricaAdapterImpl",
+                "printedName": "FintechSDKAppMetricaAdapter6.FintechAppMetricaAdapterImpl",
+                "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC11logsEnabledACSb_tcfc",
+            "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC11logsEnabledACSb_tcfc",
+            "moduleName": "FintechSDKAppMetricaAdapter6",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "uuid",
+            "printedName": "uuid",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC4uuidSSvp",
+            "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC4uuidSSvp",
+            "moduleName": "FintechSDKAppMetricaAdapter6",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC4uuidSSvg",
+                "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC4uuidSSvg",
+                "moduleName": "FintechSDKAppMetricaAdapter6",
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "deviceID",
+            "printedName": "deviceID",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC8deviceIDSSSgvp",
+            "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC8deviceIDSSSgvp",
+            "moduleName": "FintechSDKAppMetricaAdapter6",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC8deviceIDSSSgvg",
+                "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC8deviceIDSSSgvg",
+                "moduleName": "FintechSDKAppMetricaAdapter6",
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "isReporterCreated",
+            "printedName": "isReporterCreated(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC17isReporterCreated3forSbSS_tF",
+            "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC17isReporterCreated3forSbSS_tF",
+            "moduleName": "FintechSDKAppMetricaAdapter6",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "reporter",
+            "printedName": "reporter(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAppMetricaReportingAdapter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAppMetricaReportingAdapter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A26AppMetricaReportingAdapterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC8reporter3for0A22SDKAnalyticsInterfaces0aec9ReportingF0_pSS_tAF0aeC5ErrorOYKF",
+            "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC8reporter3for0A22SDKAnalyticsInterfaces0aec9ReportingF0_pSS_tAF0aeC5ErrorOYKF",
+            "moduleName": "FintechSDKAppMetricaAdapter6",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "extendedReporter",
+            "printedName": "extendedReporter(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAppMetricaReportingAdapter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAppMetricaReportingAdapter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A26AppMetricaReportingAdapterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC16extendedReporter3for0A22SDKAnalyticsInterfaces0aec9ReportingF0_pSS_tAF0aeC5ErrorOYKF",
+            "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC16extendedReporter3for0A22SDKAnalyticsInterfaces0aec9ReportingF0_pSS_tAF0aeC5ErrorOYKF",
+            "moduleName": "FintechSDKAppMetricaAdapter6",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "activateReporter",
+            "printedName": "activateReporter(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC16activateReporter3forySS_t0A22SDKAnalyticsInterfaces0aeC5ErrorOYKF",
+            "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC16activateReporter3forySS_t0A22SDKAnalyticsInterfaces0aeC5ErrorOYKF",
+            "moduleName": "FintechSDKAppMetricaAdapter6",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setErrorEnvironment",
+            "printedName": "setErrorEnvironment(_:for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC19setErrorEnvironment_3forySSSg_SStF",
+            "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC19setErrorEnvironment_3forySSSg_SStF",
+            "moduleName": "FintechSDKAppMetricaAdapter6",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "resumeSession",
+            "printedName": "resumeSession()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC13resumeSessionyyF",
+            "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC13resumeSessionyyF",
+            "moduleName": "FintechSDKAppMetricaAdapter6",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "pauseSession",
+            "printedName": "pauseSession()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC12pauseSessionyyF",
+            "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC12pauseSessionyyF",
+            "moduleName": "FintechSDKAppMetricaAdapter6",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "requestStartupIdentifiers",
+            "printedName": "requestStartupIdentifiers(for:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<[Swift.String : [Swift.String]], any Swift.Error>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<[Swift.String : [Swift.String]], any Swift.Error>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : [Swift.String]]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Array",
+                            "printedName": "[Swift.String]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "usr": "s:Sa"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "any Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC25requestStartupIdentifiers3for10completionySaySSG_ys6ResultOySDySSAGGs5Error_pGYbctF",
+            "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC25requestStartupIdentifiers3for10completionySaySSG_ys6ResultOySDySSAGGs5Error_pGYbctF",
+            "moduleName": "FintechSDKAppMetricaAdapter6",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "makeCountHistogram",
+            "printedName": "makeCountHistogram(name:minValue:maxValue:bucketsCount:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAppMetricaCountHistogram",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAppMetricaCountHistogram",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A24AppMetricaCountHistogramP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC18makeCountHistogram4name8minValue03maxM007bucketsI00A22SDKAnalyticsInterfaces0aeciJ0_pSS_S3itF",
+            "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC18makeCountHistogram4name8minValue03maxM007bucketsI00A22SDKAnalyticsInterfaces0aeciJ0_pSS_S3itF",
+            "moduleName": "FintechSDKAppMetricaAdapter6",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "makeTimeHistogram",
+            "printedName": "makeTimeHistogram(name:minTime:maxTime:bucketsCount:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAppMetricaTimeHistogram",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAppMetricaTimeHistogram",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A23AppMetricaTimeHistogramP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC17makeTimeHistogram4name03minI003maxI012bucketsCount0A22SDKAnalyticsInterfaces0aeciJ0_pSS_S2dSitF",
+            "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC17makeTimeHistogram4name03minI003maxI012bucketsCount0A22SDKAnalyticsInterfaces0aeciJ0_pSS_S2dSitF",
+            "moduleName": "FintechSDKAppMetricaAdapter6",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC",
+        "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC11AdapterImplC",
+        "moduleName": "FintechSDKAppMetricaAdapter6",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechAppMetricaAdapter",
+            "printedName": "FintechAppMetricaAdapter",
+            "usr": "s:29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP",
+            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FintechAppMetricaReporterImpl",
+        "printedName": "FintechAppMetricaReporterImpl",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(reporter:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAppMetricaReporterImpl",
+                "printedName": "FintechSDKAppMetricaAdapter6.FintechAppMetricaReporterImpl",
+                "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC12ReporterImplC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "AnyObject"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC12ReporterImplC8reporterACyXl_tcfc",
+            "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC12ReporterImplC8reporterACyXl_tcfc",
+            "moduleName": "FintechSDKAppMetricaAdapter6",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "report",
+            "printedName": "report(eventName:params:onFailure:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((any Swift.Error) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(any Swift.Error) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "any Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC12ReporterImplC6report9eventName6params9onFailureySS_SDySSypGys5Error_pcSgtF",
+            "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC12ReporterImplC6report9eventName6params9onFailureySS_SDySSypGys5Error_pcSgtF",
+            "moduleName": "FintechSDKAppMetricaAdapter6",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setPUID",
+            "printedName": "setPUID(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC12ReporterImplC7setPUIDyySSSgF",
+            "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC12ReporterImplC7setPUIDyySSSgF",
+            "moduleName": "FintechSDKAppMetricaAdapter6",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setAppEnvironment",
+            "printedName": "setAppEnvironment(_:for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC12ReporterImplC03setE11Environment_3forySSSg_SStF",
+            "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC12ReporterImplC03setE11Environment_3forySSSg_SStF",
+            "moduleName": "FintechSDKAppMetricaAdapter6",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:28FintechSDKAppMetricaAdapter60a3AppC12ReporterImplC",
+        "mangledName": "$s28FintechSDKAppMetricaAdapter60a3AppC12ReporterImplC",
+        "moduleName": "FintechSDKAppMetricaAdapter6",
+        "declAttributes": [
+          "Final",
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechAppMetricaReportingAdapter",
+            "printedName": "FintechAppMetricaReportingAdapter",
+            "usr": "s:29FintechSDKAnalyticsInterfaces0A26AppMetricaReportingAdapterP",
+            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A26AppMetricaReportingAdapterP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAppMetricaAdapter6"
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/AdapterBinary\/AppMetrica\/Sources\/AppMetricaAdapterImpl.swift",
+      "kind": "BooleanLiteral",
+      "offset": 683,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/AdapterBinary\/AppMetrica\/Sources\/AppMetricaAdapterImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 6255,
+      "length": 11,
+      "value": "\"reportEvent\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/AdapterBinary\/AppMetrica\/Sources\/AppMetricaAdapterImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 6278,
+      "length": 10,
+      "value": "\"parameters\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/AdapterBinary\/AppMetrica\/Sources\/AppMetricaAdapterImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 6298,
+      "length": 9,
+      "value": "\"onFailure\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/AdapterBinary\/AppMetrica\/Sources\/AppMetricaAdapterImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 6827,
+      "length": 11,
+      "value": "\"reportEvent\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/AdapterBinary\/AppMetrica\/Sources\/AppMetricaAdapterImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 6850,
+      "length": 10,
+      "value": "\"parameters\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/AdapterBinary\/AppMetrica\/Sources\/AppMetricaAdapterImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 7053,
+      "length": 19,
+      "value": "\"reportEventWithName\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/AdapterBinary\/AppMetrica\/Sources\/AppMetricaAdapterImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 7084,
+      "length": 10,
+      "value": "\"parameters\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/AdapterBinary\/AppMetrica\/Sources\/AppMetricaAdapterImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 7104,
+      "length": 9,
+      "value": "\"onFailure\""
+    }
+  ]
+}

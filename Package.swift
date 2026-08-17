@@ -18,7 +18,7 @@ let package = Package(
   dependencies: [
     .package(
       url: "https://github.com/appmetrica/appmetrica-sdk-ios",
-      .upToNextMajor(from: "5.15.0")
+      .upToNextMajor(from: "6.5.0")
     ),
   ],
   targets: [
@@ -28,7 +28,7 @@ let package = Package(
         "YandexPayConfiguration",
         "FintechSDKLoginAdapter",
         "FintechSDKAuthInterfaces",
-        "FintechSDKAppMetricaAdapter",
+        "FintechSDKAppMetricaAdapter6",
         "FintechSDKAnalyticsInterfaces",
         "FintechSDKCommonEntity",
         "FintechSDKPayBoxEntity",
@@ -47,7 +47,7 @@ let package = Package(
         "YandexPayConfiguration",
         "FintechSDKLoginAdapter",
         "FintechSDKAuthInterfaces",
-        "FintechSDKAppMetricaAdapter",
+        "FintechSDKAppMetricaAdapter6",
         "FintechSDKAnalyticsInterfaces",
         "FintechSDKCoreUtils",
         "FintechSDKCommonEntity",
@@ -91,6 +91,7 @@ let package = Package(
         "FintechSDKFontsInterfaces",
         "FintechSDKBDUICore",
         "FintechSDKBDUIFeatures",
+        "FintechBBPartnerSDKInterfaces",
         "FintechSDKNetworkInterfaces",
         "FintechSDKNetworkImplementation",
         "FintechSDKCommonEntity",
@@ -107,7 +108,7 @@ let package = Package(
         "FintechPlusSDKInterfaces",
         "FintechYBSDKInterfaces",
         "FintechSDKLoaderScreen",
-        "FintechSDKAppMetricaAdapter",
+        "FintechSDKAppMetricaAdapter6",
         "FintechSDKFontsAdapter",
         "ExternalBduiAdapter",
         "FintechBDUIWrapper",
@@ -140,6 +141,7 @@ let package = Package(
         "FintechSDKFontsInterfaces",
         "FintechSDKBDUICore",
         "FintechSDKBDUIFeatures",
+        "FintechBBPartnerSDKInterfaces",
         "FintechSDKNetworkInterfaces",
         "FintechSDKNetworkImplementation",
         "FintechSDKCommonEntity",
@@ -156,7 +158,7 @@ let package = Package(
         "FintechPlusSDKInterfaces",
         "FintechYBSDKInterfaces",
         "FintechSDKLoaderScreen",
-        "FintechSDKAppMetricaAdapter",
+        "FintechSDKAppMetricaAdapter6",
         "FintechSDKFontsAdapter",
         "ExternalBduiAdapter",
         "FintechBDUIWrapper",
@@ -178,6 +180,7 @@ let package = Package(
         "FintechSDKAuthorizationScenario",
         "FintechSDKLoaderScreen",
         "FintechSDKBDUIFeatures",
+        "FintechBBPartnerSDKInterfaces",
         "FintechSDKBDUICore",
         "FintechSDKCommonEntity",
         "FintechSDKFontsInterfaces",
@@ -198,7 +201,7 @@ let package = Package(
         "FintechSDKPayBoxEntity",
         "ExternalBduiAdapter",
         "FintechBDUIWrapper",
-        "FintechSDKAppMetricaAdapter",
+        "FintechSDKAppMetricaAdapter6",
         "FintechSDKFontsAdapter",
         "FintechSDKLoginAdapter",
         "FintechSDKRealTimeAnalyticsAdapter",
@@ -229,6 +232,7 @@ let package = Package(
         "FintechSDKFontsInterfaces",
         "FintechSDKBDUICore",
         "FintechSDKBDUIFeatures",
+        "FintechBBPartnerSDKInterfaces",
         "FintechSDKNetworkInterfaces",
         "FintechSDKNetworkImplementation",
         "FintechSDKCommonEntity",
@@ -245,7 +249,7 @@ let package = Package(
         "FintechPlusSDKInterfaces",
         "FintechYBSDKInterfaces",
         "FintechSDKLoaderScreen",
-        "FintechSDKAppMetricaAdapter",
+        "FintechSDKAppMetricaAdapter6",
         "FintechSDKFontsAdapter",
         "ExternalBduiAdapter",
         "FintechBDUIWrapper",
@@ -267,6 +271,7 @@ let package = Package(
         "FintechSDKPollingScenario",
         "FintechSDKAuthInterfaces",
         "FintechSDKBDUIFeatures",
+        "FintechBBPartnerSDKInterfaces",
         "FintechSDKBDUICore",
         "FintechSDKCommonEntity",
         "FintechSDKFontsInterfaces",
@@ -292,7 +297,7 @@ let package = Package(
         "FintechSDKWebViewFeatures",
         "ExternalBduiAdapter",
         "FintechBDUIWrapper",
-        "FintechSDKAppMetricaAdapter",
+        "FintechSDKAppMetricaAdapter6",
         "FintechSDKFontsAdapter",
         "FintechSDKLoginAdapter",
         "FintechSDKRealTimeAnalyticsAdapter",
@@ -311,8 +316,8 @@ let package = Package(
       path: "XCFrameworks/FintechSDK/FintechSDKAuthInterfaces.xcframework"
     ),
     .binaryTarget(
-      name: "FintechSDKAppMetricaAdapter",
-      path: "XCFrameworks/FintechSDKAppMetricaAdapter.xcframework"
+      name: "FintechSDKAppMetricaAdapter6",
+      path: "XCFrameworks/FintechSDKAppMetricaAdapter6.xcframework"
     ),
     .binaryTarget(
       name: "FintechSDKAnalyticsInterfaces",
@@ -349,6 +354,10 @@ let package = Package(
     .binaryTarget(
       name: "FintechSDKBDUIFeatures",
       path: "XCFrameworks/FintechSDK/FintechSDKBDUIFeatures.xcframework"
+    ),
+    .binaryTarget(
+      name: "FintechBBPartnerSDKInterfaces",
+      path: "XCFrameworks/FintechSDK/FintechBBPartnerSDKInterfaces.xcframework"
     ),
     .binaryTarget(
       name: "FintechSDKNetworkInterfaces",

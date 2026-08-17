@@ -41,6 +41,9 @@ extension Swift.Dictionary {
 extension Swift.Dictionary where Key == Swift.String, Value == Any {
   public mutating func ftcStoreValueRecursive(path: [Swift.String], value: Any)
 }
+@_spi(Internal) extension Swift.Dictionary where Key == Swift.String, Value == Any {
+  @_spi(Internal) public func ftcDeepMerge(_ overlay: [Swift.String : Any]) -> [Swift.String : Any]
+}
 extension Swift.Sequence {
   @inlinable public func ftcMap<Value>(to path: Swift.KeyPath<Self.Element, Value>) -> [Value] {
     map { $0[keyPath: path] }

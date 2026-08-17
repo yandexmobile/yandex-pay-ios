@@ -1732,6 +1732,23 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKQuickPayment"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKBDUIFeatures",
+        "printedName": "FintechSDKBDUIFeatures",
+        "declKind": "Import",
+        "moduleName": "FintechSDKQuickPayment",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "FintechSDKQuickPaymentShared",
         "printedName": "FintechSDKQuickPaymentShared",
         "declKind": "Import",
@@ -3775,6 +3792,33 @@
           },
           {
             "kind": "Function",
+            "name": "onPaymentResultScreenClosed",
+            "printedName": "onPaymentResultScreenClosed(quickpayResult:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTQuickPayResult",
+                "printedName": "FintechSDKQuickPaymentEntity.FTQuickPayResult",
+                "usr": "s:28FintechSDKQuickPaymentEntity16FTQuickPayResultO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22FintechSDKQuickPayment07FTQuickC13StateListenerP02onC18ResultScreenClosed08quickpayH0y0abC6Entity0d3PayH0O_tF",
+            "mangledName": "$s22FintechSDKQuickPayment07FTQuickC13StateListenerP02onC18ResultScreenClosed08quickpayH0y0abC6Entity0d3PayH0O_tF",
+            "moduleName": "FintechSDKQuickPayment",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKQuickPayment.FTQuickPaymentStateListener>",
+            "sugared_genericSig": "<Self where Self : FintechSDKQuickPayment.FTQuickPaymentStateListener>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "onAuthStateChanged",
             "printedName": "onAuthStateChanged(_:)",
             "children": [
@@ -3840,6 +3884,32 @@
             "sugared_genericSig": "<Self where Self : FintechSDKQuickPayment.FTQuickPaymentStateListener>",
             "protocolReq": true,
             "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onPaymentResultScreenClosed",
+            "printedName": "onPaymentResultScreenClosed(quickpayResult:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTQuickPayResult",
+                "printedName": "FintechSDKQuickPaymentEntity.FTQuickPayResult",
+                "usr": "s:28FintechSDKQuickPaymentEntity16FTQuickPayResultO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22FintechSDKQuickPayment07FTQuickC13StateListenerPAAE02onC18ResultScreenClosed08quickpayH0y0abC6Entity0d3PayH0O_tF",
+            "mangledName": "$s22FintechSDKQuickPayment07FTQuickC13StateListenerPAAE02onC18ResultScreenClosed08quickpayH0y0abC6Entity0d3PayH0O_tF",
+            "moduleName": "FintechSDKQuickPayment",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKQuickPayment.FTQuickPaymentStateListener>",
+            "sugared_genericSig": "<Self where Self : FintechSDKQuickPayment.FTQuickPaymentStateListener>",
+            "isFromExtension": true,
             "funcSelfKind": "NonMutating"
           },
           {
@@ -3939,6 +4009,13 @@
         "kind": "Import",
         "name": "FintechSDKAnalyticsInterfaces",
         "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKQuickPayment"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
         "declKind": "Import",
         "moduleName": "FintechSDKQuickPayment"
       },
@@ -4328,7 +4405,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(config:stateListener:appMetricaAdapter:fontsAdapter:bduiAdapterFactory:rtmFactory:rumFactory:accountManagerAdapter:loginService:presentationContextProvider:)",
+            "printedName": "init(config:stateListener:appMetricaAdapter:fontsAdapter:bduiAdapterFactory:rtmFactory:rumFactory:accountManagerAdapter:loginService:presentationContextProvider:networkChallengeHandlerFactory:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -4403,11 +4480,26 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkChallengeHandlerFactory",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A30NetworkChallengeHandlerFactoryP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:22FintechSDKQuickPayment0A15QuickPayHandlerC6config13stateListener17appMetricaAdapter05fontsL004bduiL7Factory03rtmO003rumO0014accountManagerL012loginService27presentationContextProviderAcA07FTQuickE6ConfigV_AA0yc5StateI0_p0A22SDKAnalyticsInterfaces0a3AppkL0_p0A18SDKFontsInterfaces0a5FontsL0_p0A15SDKBDUIFeatures0a11BDUIAdapterO0_pAQ0a10RTMAdapterO0_pAQ0a10RUMAdapterO0_p0A17SDKAuthInterfaces0a7AccountsL0_pAY0a5LoginU0_p0A9SDKCoreUI014FTPresentationW9Providing_pSgtcfc",
-            "mangledName": "$s22FintechSDKQuickPayment0A15QuickPayHandlerC6config13stateListener17appMetricaAdapter05fontsL004bduiL7Factory03rtmO003rumO0014accountManagerL012loginService27presentationContextProviderAcA07FTQuickE6ConfigV_AA0yc5StateI0_p0A22SDKAnalyticsInterfaces0a3AppkL0_p0A18SDKFontsInterfaces0a5FontsL0_p0A15SDKBDUIFeatures0a11BDUIAdapterO0_pAQ0a10RTMAdapterO0_pAQ0a10RUMAdapterO0_p0A17SDKAuthInterfaces0a7AccountsL0_pAY0a5LoginU0_p0A9SDKCoreUI014FTPresentationW9Providing_pSgtcfc",
+            "usr": "s:22FintechSDKQuickPayment0A15QuickPayHandlerC6config13stateListener17appMetricaAdapter05fontsL004bduiL7Factory03rtmO003rumO0014accountManagerL012loginService27presentationContextProvider016networkChallengefO0AcA07FTQuickE6ConfigV_AA07FTQuickc5StateI0_p0A22SDKAnalyticsInterfaces0a3AppkL0_p0A18SDKFontsInterfaces0a5FontsL0_p0A15SDKBDUIFeatures0a11BDUIAdapterO0_pAR0a10RTMAdapterO0_pAR0a10RUMAdapterO0_p0A17SDKAuthInterfaces0a7AccountsL0_pAZ0a5LoginU0_p0A9SDKCoreUI014FTPresentationW9Providing_pSg0A20SDKNetworkInterfaces0a7NetworkzfO0_pSgtcfc",
+            "mangledName": "$s22FintechSDKQuickPayment0A15QuickPayHandlerC6config13stateListener17appMetricaAdapter05fontsL004bduiL7Factory03rtmO003rumO0014accountManagerL012loginService27presentationContextProvider016networkChallengefO0AcA07FTQuickE6ConfigV_AA07FTQuickc5StateI0_p0A22SDKAnalyticsInterfaces0a3AppkL0_p0A18SDKFontsInterfaces0a5FontsL0_p0A15SDKBDUIFeatures0a11BDUIAdapterO0_pAR0a10RTMAdapterO0_pAR0a10RUMAdapterO0_p0A17SDKAuthInterfaces0a7AccountsL0_pAZ0a5LoginU0_p0A9SDKCoreUI014FTPresentationW9Providing_pSg0A20SDKNetworkInterfaces0a7NetworkzfO0_pSgtcfc",
             "moduleName": "FintechSDKQuickPayment",
             "declAttributes": [
               "AccessControl",
@@ -4991,17 +5083,43 @@
           {
             "kind": "Function",
             "name": "showFaqScreen",
-            "printedName": "showFaqScreen()",
+            "printedName": "showFaqScreen(onClose:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() async -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() async -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:22FintechSDKQuickPayment0A15QuickPayHandlerC13showFaqScreenyyYaF",
-            "mangledName": "$s22FintechSDKQuickPayment0A15QuickPayHandlerC13showFaqScreenyyYaF",
+            "usr": "s:22FintechSDKQuickPayment0A15QuickPayHandlerC13showFaqScreen7onCloseyyyYaYbScMYccSg_tYaF",
+            "mangledName": "$s22FintechSDKQuickPayment0A15QuickPayHandlerC13showFaqScreen7onCloseyyyYaYbScMYccSg_tYaF",
             "moduleName": "FintechSDKQuickPayment",
             "declAttributes": [
               "Final",
@@ -5016,17 +5134,43 @@
           {
             "kind": "Function",
             "name": "showOnboardingStoriesScreen",
-            "printedName": "showOnboardingStoriesScreen()",
+            "printedName": "showOnboardingStoriesScreen(onClose:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() async -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() async -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:22FintechSDKQuickPayment0A15QuickPayHandlerC27showOnboardingStoriesScreenyyYaF",
-            "mangledName": "$s22FintechSDKQuickPayment0A15QuickPayHandlerC27showOnboardingStoriesScreenyyYaF",
+            "usr": "s:22FintechSDKQuickPayment0A15QuickPayHandlerC27showOnboardingStoriesScreen7onCloseyyyYaYbScMYccSg_tYaF",
+            "mangledName": "$s22FintechSDKQuickPayment0A15QuickPayHandlerC27showOnboardingStoriesScreen7onCloseyyyYaYbScMYccSg_tYaF",
             "moduleName": "FintechSDKQuickPayment",
             "declAttributes": [
               "Final",
@@ -5041,7 +5185,7 @@
           {
             "kind": "Function",
             "name": "showAddPaymentMethodScreen",
-            "printedName": "showAddPaymentMethodScreen(_:)",
+            "printedName": "showAddPaymentMethodScreen(_:onClose:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -5053,11 +5197,37 @@
                 "name": "FTQuickPayPaymentMethodType",
                 "printedName": "FintechSDKQuickPayment.FTQuickPayPaymentMethodType",
                 "usr": "s:22FintechSDKQuickPayment010FTQuickPayC10MethodTypeV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() async -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() async -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:22FintechSDKQuickPayment0A15QuickPayHandlerC07showAddC12MethodScreenyyAA07FTQuickecI4TypeVYaKF",
-            "mangledName": "$s22FintechSDKQuickPayment0A15QuickPayHandlerC07showAddC12MethodScreenyyAA07FTQuickecI4TypeVYaKF",
+            "usr": "s:22FintechSDKQuickPayment0A15QuickPayHandlerC07showAddC12MethodScreen_7onCloseyAA07FTQuickecI4TypeV_yyYaYbScMYccSgtYaKF",
+            "mangledName": "$s22FintechSDKQuickPayment0A15QuickPayHandlerC07showAddC12MethodScreen_7onCloseyAA07FTQuickecI4TypeV_yyYaYbScMYccSgtYaKF",
             "moduleName": "FintechSDKQuickPayment",
             "declAttributes": [
               "Final",
@@ -5073,7 +5243,7 @@
           {
             "kind": "Function",
             "name": "showSorryScreen",
-            "printedName": "showSorryScreen(targetViewId:)",
+            "printedName": "showSorryScreen(targetViewId:onClose:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -5085,11 +5255,37 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() async -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() async -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:22FintechSDKQuickPayment0A15QuickPayHandlerC15showSorryScreen12targetViewIdySS_tYaF",
-            "mangledName": "$s22FintechSDKQuickPayment0A15QuickPayHandlerC15showSorryScreen12targetViewIdySS_tYaF",
+            "usr": "s:22FintechSDKQuickPayment0A15QuickPayHandlerC15showSorryScreen12targetViewId7onCloseySS_yyYaYbScMYccSgtYaF",
+            "mangledName": "$s22FintechSDKQuickPayment0A15QuickPayHandlerC15showSorryScreen12targetViewId7onCloseySS_yyYaYbScMYccSgtYaF",
             "moduleName": "FintechSDKQuickPayment",
             "declAttributes": [
               "Final",
@@ -5103,7 +5299,7 @@
           {
             "kind": "Function",
             "name": "showSorryScreen",
-            "printedName": "showSorryScreen(anchor:shape:)",
+            "printedName": "showSorryScreen(anchor:shape:onClose:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -5122,11 +5318,37 @@
                 "printedName": "FintechSDKBDUICore.FTBDUIAnchorShape",
                 "hasDefaultArg": true,
                 "usr": "s:18FintechSDKBDUICore17FTBDUIAnchorShapeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() async -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() async -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:22FintechSDKQuickPayment0A15QuickPayHandlerC15showSorryScreen6anchor5shapeySo6UIViewC_0A11SDKBDUICore17FTBDUIAnchorShapeOtYaF",
-            "mangledName": "$s22FintechSDKQuickPayment0A15QuickPayHandlerC15showSorryScreen6anchor5shapeySo6UIViewC_0A11SDKBDUICore17FTBDUIAnchorShapeOtYaF",
+            "usr": "s:22FintechSDKQuickPayment0A15QuickPayHandlerC15showSorryScreen6anchor5shape7onCloseySo6UIViewC_0A11SDKBDUICore17FTBDUIAnchorShapeOyyYaYbScMYccSgtYaF",
+            "mangledName": "$s22FintechSDKQuickPayment0A15QuickPayHandlerC15showSorryScreen6anchor5shape7onCloseySo6UIViewC_0A11SDKBDUICore17FTBDUIAnchorShapeOyyYaYbScMYccSgtYaF",
             "moduleName": "FintechSDKQuickPayment",
             "declAttributes": [
               "Final",
@@ -5141,7 +5363,7 @@
           {
             "kind": "Function",
             "name": "showSorryScreen",
-            "printedName": "showSorryScreen(anchor:)",
+            "printedName": "showSorryScreen(anchor:onClose:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -5153,16 +5375,117 @@
                 "name": "FTSorryAnchor",
                 "printedName": "FintechSDKBDUICore.FTSorryAnchor",
                 "usr": "s:18FintechSDKBDUICore13FTSorryAnchorC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() async -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() async -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:22FintechSDKQuickPayment0A15QuickPayHandlerC15showSorryScreen6anchory0A11SDKBDUICore13FTSorryAnchorC_tYaF",
-            "mangledName": "$s22FintechSDKQuickPayment0A15QuickPayHandlerC15showSorryScreen6anchory0A11SDKBDUICore13FTSorryAnchorC_tYaF",
+            "usr": "s:22FintechSDKQuickPayment0A15QuickPayHandlerC15showSorryScreen6anchor7onClosey0A11SDKBDUICore13FTSorryAnchorC_yyYaYbScMYccSgtYaF",
+            "mangledName": "$s22FintechSDKQuickPayment0A15QuickPayHandlerC15showSorryScreen6anchor7onClosey0A11SDKBDUICore13FTSorryAnchorC_yyYaYbScMYccSgtYaF",
             "moduleName": "FintechSDKQuickPayment",
             "declAttributes": [
               "Final",
               "AccessControl",
               "Custom"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "showSorryScreenWithAddPaymentMethod",
+            "printedName": "showSorryScreenWithAddPaymentMethod(onButtonClick:onClose:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() async -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() async -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() async -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() async -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22FintechSDKQuickPayment0A15QuickPayHandlerC022showSorryScreenWithAddC6Method13onButtonClick0M5CloseyyyYaYbScMYccSg_AGtYaF",
+            "mangledName": "$s22FintechSDKQuickPayment0A15QuickPayHandlerC022showSorryScreenWithAddC6Method13onButtonClick0M5CloseyyyYaYbScMYccSg_AGtYaF",
+            "moduleName": "FintechSDKQuickPayment",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
             ],
             "spi_group_names": [
               "Internal"
@@ -5591,604 +5914,611 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/ApplicationLayer\/Interactors\/FTBadgeRefreshResponseHandler.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/ApplicationLayer\/Interactors\/FTBadgeRefreshResponseHandler.swift",
       "kind": "StringLiteral",
       "offset": 580,
       "length": 26,
       "value": "\"pay\/v1\/quickpay\/settings\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/ApplicationLayer\/Interactors\/FTQPBadgeInteractor.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/ApplicationLayer\/Interactors\/FTQPBadgeInteractor.swift",
       "kind": "BooleanLiteral",
       "offset": 210,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/ApplicationLayer\/Interactors\/FTQPBstPrefetchInteractor.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/ApplicationLayer\/Interactors\/FTQPBstPrefetchInteractor.swift",
       "kind": "IntegerLiteral",
       "offset": 589,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/ApplicationLayer\/Interactors\/FTQPOfflineTicketsRotationInteractor.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/ApplicationLayer\/Interactors\/FTQPOfflineTicketsRotationInteractor.swift",
       "kind": "IntegerLiteral",
       "offset": 1801,
       "length": 2,
       "value": "30"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/ApplicationLayer\/Interactors\/FTQPOfflineTicketsRotationInteractor.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/ApplicationLayer\/Interactors\/FTQPOfflineTicketsRotationInteractor.swift",
       "kind": "IntegerLiteral",
       "offset": 1806,
       "length": 2,
       "value": "60"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/ApplicationLayer\/Interactors\/FTQPSettingsResponseHandler.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/ApplicationLayer\/Interactors\/FTQPSettingsResponseHandler.swift",
       "kind": "StringLiteral",
       "offset": 1076,
       "length": 26,
       "value": "\"pay\/v1\/quickpay\/settings\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/ApplicationLayer\/Interactors\/FTQPWidgetExpandStateInteractor.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/ApplicationLayer\/Interactors\/FTQPWidgetExpandStateInteractor.swift",
       "kind": "StringLiteral",
       "offset": 282,
       "length": 45,
       "value": "\"global_foldable_quickpay_widget_is_expanded\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/ApplicationLayer\/Services\/FTQPOfflineTicketsSyncManager.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/ApplicationLayer\/Services\/FTQPOfflineTicketsSyncManager.swift",
       "kind": "IntegerLiteral",
       "offset": 2853,
       "length": 2,
       "value": "30"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/ApplicationLayer\/Services\/FTQPOfflineTicketsSyncManager.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/ApplicationLayer\/Services\/FTQPOfflineTicketsSyncManager.swift",
       "kind": "IntegerLiteral",
       "offset": 2858,
       "length": 2,
       "value": "60"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTActivePaymentMethodBadgeEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTActivePaymentMethodBadgeEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 320,
       "length": 55,
       "value": "\"\/pay\/v1\/public\/widgets\/quickpay\/active-payment-method\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTActivePaymentMethodBadgeEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTActivePaymentMethodBadgeEndpoint.swift",
       "kind": "FloatLiteral",
       "offset": 489,
       "length": 4,
       "value": "10.0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTCreateOrderEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTCreateOrderEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 372,
       "length": 10,
       "value": "\"order_id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTCreateOrderEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTCreateOrderEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 628,
       "length": 39,
       "value": "\"\/api\/merchant\/v1\/orders\/quickpay\/cpqr\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTCreateOrderEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTCreateOrderEndpoint.swift",
       "kind": "FloatLiteral",
       "offset": 775,
       "length": 4,
       "value": "30.0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTGenerateOfflineTicketsEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTGenerateOfflineTicketsEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 334,
       "length": 52,
       "value": "\"\/api\/v1\/authenticator\/pay_tickets\/offline\/generate\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTGenerateOfflineTicketsEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTGenerateOfflineTicketsEndpoint.swift",
       "kind": "IntegerLiteral",
       "offset": 645,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTGeneratePayTicketEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTGeneratePayTicketEndpoint.swift",
       "kind": "IntegerLiteral",
       "offset": 523,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTGeneratePayTicketEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTGeneratePayTicketEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 915,
       "length": 44,
       "value": "\"\/api\/v1\/authenticator\/pay_tickets\/generate\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTOrderStatusPollingEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTOrderStatusPollingEndpoint.swift",
       "kind": "FloatLiteral",
       "offset": 503,
       "length": 4,
       "value": "10.0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTOrdersPollingEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTOrdersPollingEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 383,
       "length": 25,
       "value": "\"\/pay\/v1\/quickpay\/orders\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTOrdersPollingEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTOrdersPollingEndpoint.swift",
       "kind": "FloatLiteral",
       "offset": 522,
       "length": 4,
       "value": "15.0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTQuickPayHasAvailableMethodsEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTQuickPayHasAvailableMethodsEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 281,
       "length": 23,
       "value": "\"has_available_methods\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTQuickPayHasAvailableMethodsEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTQuickPayHasAvailableMethodsEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 589,
       "length": 45,
       "value": "\"\/pay\/v1\/user\/quickpay\/has-available-methods\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTQuickPayHasAvailableMethodsEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTQuickPayHasAvailableMethodsEndpoint.swift",
       "kind": "FloatLiteral",
       "offset": 748,
       "length": 4,
       "value": "10.0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTQuickPaySettingsEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTQuickPaySettingsEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 278,
       "length": 19,
       "value": "\"merchant_settings\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTQuickPaySettingsEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTQuickPaySettingsEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 495,
       "length": 28,
       "value": "\"selected_payment_method_id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTQuickPaySettingsEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTQuickPaySettingsEndpoint.swift",
       "kind": "FloatLiteral",
       "offset": 898,
       "length": 4,
       "value": "10.0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTQuickPaySettingsEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTQuickPaySettingsEndpoint.swift",
       "kind": "FloatLiteral",
       "offset": 1371,
       "length": 4,
       "value": "10.0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTQuickPaySettingsEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTQuickPaySettingsEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 1447,
       "length": 22,
       "value": "\"quickpayment_enabled\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTQuickPaySettingsEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTQuickPaySettingsEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 1505,
       "length": 28,
       "value": "\"selected_payment_method_id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTQuickPaySettingsEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTQuickPaySettingsEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 2676,
       "length": 27,
       "value": "\"\/pay\/v1\/quickpay\/settings\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTRollbackOrderEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTRollbackOrderEndpoint.swift",
       "kind": "FloatLiteral",
       "offset": 523,
       "length": 4,
       "value": "30.0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTWidgetEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTWidgetEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 357,
       "length": 49,
       "value": "\"\/pay\/v1\/public\/widgets\/quickpay\/payment-methods\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTWidgetEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Endpoints\/FTWidgetEndpoint.swift",
       "kind": "FloatLiteral",
       "offset": 726,
       "length": 4,
       "value": "10.0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Network\/FTQPActivationStorage.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Network\/FTQPActivationStorage.swift",
       "kind": "StringLiteral",
       "offset": 932,
       "length": 31,
       "value": "\"com.yandex.quickpay.activated\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Network\/FTQPStateStorage.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Network\/FTQPStateStorage.swift",
       "kind": "StringLiteral",
       "offset": 1173,
       "length": 29,
       "value": "\"com.yandex.quickpay.enabled\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Network\/RequestMiddlewares\/FTQPActivationHeaderMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Network\/RequestMiddlewares\/FTQPActivationHeaderMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 619,
       "length": 23,
       "value": "\"X-Quick-Pay-Activated\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Network\/RequestMiddlewares\/FTQPCreateTestOrderMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Network\/RequestMiddlewares\/FTQPCreateTestOrderMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1074,
       "length": 15,
       "value": "\"Authorization\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Storage\/FTQPOfflineTicketsStorage.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Storage\/FTQPOfflineTicketsStorage.swift",
       "kind": "StringLiteral",
       "offset": 1896,
       "length": 41,
       "value": "\"com.yandex.quickpay.offline-pay-tickets\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Storage\/FTQPOfflineTicketsStorage.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/DataLayer\/Storage\/FTQPOfflineTicketsStorage.swift",
       "kind": "StringLiteral",
       "offset": 1969,
       "length": 46,
       "value": "\"com.yandex.quickpay.offline-pay-tickets.used\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQPParamsProvider.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQPParamsProvider.swift",
       "kind": "StringLiteral",
       "offset": 582,
       "length": 8,
       "value": "\"origin\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQPParamsProvider.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQPParamsProvider.swift",
       "kind": "StringLiteral",
       "offset": 616,
       "length": 12,
       "value": "\"source_sdk\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQPParamsProvider.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQPParamsProvider.swift",
       "kind": "StringLiteral",
       "offset": 649,
       "length": 6,
       "value": "\"puid\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 80,
       "length": 10,
       "value": "\"quickPay\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
       "kind": "StringLiteral",
       "offset": 5585,
       "length": 20,
       "value": "\"Main_Screen_Opened\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
       "kind": "StringLiteral",
       "offset": 5652,
       "length": 36,
       "value": "\"Main_Screen_Connect_Button_Clicked\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
       "kind": "StringLiteral",
       "offset": 5728,
       "length": 27,
       "value": "\"Payment_Process_Completed\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
       "kind": "StringLiteral",
       "offset": 5792,
       "length": 24,
       "value": "\"Payment_Process_Failed\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
       "kind": "StringLiteral",
       "offset": 5859,
       "length": 31,
       "value": "\"Payment_Process_Screen_Closed\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
       "kind": "StringLiteral",
       "offset": 5919,
       "length": 15,
       "value": "\"Token_Expired\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
       "kind": "StringLiteral",
       "offset": 5971,
       "length": 24,
       "value": "\"Polling_Unmapped_Error\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
       "kind": "StringLiteral",
       "offset": 6035,
       "length": 28,
       "value": "\"Merchant_Faq_Screen_Opened\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
       "kind": "StringLiteral",
       "offset": 6117,
       "length": 43,
       "value": "\"Merchant_Onboarding_Stories_Screen_Opened\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
       "kind": "StringLiteral",
       "offset": 6213,
       "length": 43,
       "value": "\"Merchant_Add_Payment_Method_Screen_Opened\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
       "kind": "StringLiteral",
       "offset": 6298,
       "length": 30,
       "value": "\"Merchant_Sorry_Screen_Opened\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
       "kind": "StringLiteral",
       "offset": 6360,
       "length": 18,
       "value": "\"Widget_Activated\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
       "kind": "StringLiteral",
       "offset": 6412,
       "length": 20,
       "value": "\"Widget_Deactivated\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
       "kind": "StringLiteral",
       "offset": 6470,
       "length": 25,
       "value": "\"Payment_Method_Selected\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
       "kind": "StringLiteral",
       "offset": 6539,
       "length": 32,
       "value": "\"Payment_Method_Selection_Error\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
       "kind": "StringLiteral",
       "offset": 6648,
       "length": 8,
       "value": "\"source\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
       "kind": "StringLiteral",
       "offset": 6679,
       "length": 8,
       "value": "\"reason\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
       "kind": "StringLiteral",
       "offset": 6723,
       "length": 23,
       "value": "\"quick_payment_enabled\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Analytics\/FTQuickPayAnalyticsEvent.swift",
       "kind": "StringLiteral",
       "offset": 6780,
       "length": 21,
       "value": "\"payment_method_type\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/FTQuickPayBadgeFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/FTQuickPayBadgeFactory.swift",
       "kind": "StringLiteral",
-      "offset": 3300,
+      "offset": 3358,
       "length": 29,
       "value": "\"active-payment-method-badge\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/FTQuickPayMainModule.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/FTQuickPayMainModule.swift",
       "kind": "BooleanLiteral",
       "offset": 875,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/FTQuickPayMainModule.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/FTQuickPayMainModule.swift",
       "kind": "BooleanLiteral",
       "offset": 978,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/FTQuickPayNativeRouter.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/FTQuickPayNativeRouter.swift",
       "kind": "StringLiteral",
       "offset": 1895,
       "length": 16,
       "value": "\"reload_widgets\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/FTQuickPayNativeRouter.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/FTQuickPayNativeRouter.swift",
       "kind": "StringLiteral",
       "offset": 1937,
       "length": 6,
       "value": "\"true\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/FTQuickPayWidgetFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/FTQuickPayWidgetFactory.swift",
       "kind": "StringLiteral",
-      "offset": 5352,
+      "offset": 5410,
       "length": 23,
       "value": "\"payment-method-widget\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Handlers\/FTQPExternalEventHandler.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Handlers\/FTQPExternalEventHandler.swift",
       "kind": "StringLiteral",
       "offset": 918,
       "length": 25,
       "value": "\"payment_method_selected\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Handlers\/FTQPExternalEventHandler.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Handlers\/FTQPExternalEventHandler.swift",
       "kind": "StringLiteral",
       "offset": 987,
       "length": 32,
       "value": "\"payment_method_selection_error\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/UI\/Navigation\/FTQPMerchantScreenRouter.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/SDK\/Handlers\/FTQPScreenExternalEventHandler.swift",
       "kind": "StringLiteral",
-      "offset": 1691,
+      "offset": 843,
+      "length": 41,
+      "value": "\"sorry_screen_add_payment_method_clicked\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/UI\/Navigation\/FTQPMerchantScreenRouter.swift",
+      "kind": "StringLiteral",
+      "offset": 2860,
       "length": 11,
       "value": "\"#E6050505\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/UI\/Navigation\/FTQPMerchantScreenRouter.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Private\/UI\/Navigation\/FTQPMerchantScreenRouter.swift",
       "kind": "BooleanLiteral",
-      "offset": 1957,
-      "length": 4,
-      "value": "true"
+      "offset": 4212,
+      "length": 5,
+      "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FTQuickPayConfig.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FTQuickPayConfig.swift",
       "kind": "BooleanLiteral",
       "offset": 582,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FTQuickPayPaymentMethodType.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FTQuickPayPaymentMethodType.swift",
       "kind": "StringLiteral",
       "offset": 230,
       "length": 5,
       "value": "\"sbp\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FTQuickPayPaymentMethodType.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FTQuickPayPaymentMethodType.swift",
       "kind": "StringLiteral",
       "offset": 292,
       "length": 6,
       "value": "\"card\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FTQuickPayPaymentMethodType.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FTQuickPayPaymentMethodType.swift",
       "kind": "StringLiteral",
       "offset": 357,
       "length": 8,
       "value": "\"yabank\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FintechQuickPayHandler.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FintechQuickPayHandler.swift",
       "kind": "BooleanLiteral",
-      "offset": 956,
+      "offset": 991,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FintechQuickPayHandler.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FintechQuickPayHandler.swift",
       "kind": "BooleanLiteral",
-      "offset": 2542,
+      "offset": 2735,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FintechQuickPayHandler.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FintechQuickPayHandler.swift",
       "kind": "BooleanLiteral",
-      "offset": 3260,
+      "offset": 3453,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FintechQuickPayHandler.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FintechQuickPayHandler.swift",
       "kind": "BooleanLiteral",
-      "offset": 3869,
+      "offset": 4062,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FintechQuickPayHandler.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FintechQuickPayHandler.swift",
       "kind": "BooleanLiteral",
-      "offset": 4477,
+      "offset": 4670,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FintechQuickPayHandler.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FintechQuickPayHandler.swift",
       "kind": "BooleanLiteral",
-      "offset": 5632,
+      "offset": 5825,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FintechQuickPayHandler.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FintechQuickPayHandler.swift",
       "kind": "BooleanLiteral",
-      "offset": 8327,
+      "offset": 8520,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FintechQuickPayHandler.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FintechQuickPayHandler.swift",
       "kind": "BooleanLiteral",
-      "offset": 12728,
+      "offset": 14139,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FintechQuickPayHandler.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/QuickPayment\/Public\/SDK\/FintechQuickPayHandler.swift",
       "kind": "BooleanLiteral",
-      "offset": 13633,
+      "offset": 15044,
       "length": 4,
       "value": "true"
     }

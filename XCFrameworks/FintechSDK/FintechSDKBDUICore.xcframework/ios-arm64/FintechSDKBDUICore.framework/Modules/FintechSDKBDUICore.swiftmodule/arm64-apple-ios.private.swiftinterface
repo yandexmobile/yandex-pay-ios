@@ -35,6 +35,12 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public static func effectiveInteractivePopEnabled(navigationController: UIKit.UINavigationController, backGestureEnabledDefault: Swift.Bool) -> Swift.Bool
   @_spi(Internal) public static func synchronizeInteractivePopGestureRecognizer(navigationController: UIKit.UINavigationController, backGestureEnabledDefault: Swift.Bool)
 }
+@_spi(Internal) public protocol FTPopReloadNavigable : AnyObject {
+  @_spi(Internal) var shouldReloadPreviousDocumentOnPop: Swift.Bool { get }
+}
+@_spi(Internal) public enum FTBDUIPopReloadPolicy {
+  @_spi(Internal) public static func engineToReload(previousStack: [UIKit.UIViewController], currentStack: [UIKit.UIViewController]) -> (any FintechSDKBDUICore.FintechBDUIEngine)?
+}
 final public class FTResultManager {
   public init()
   final public func setResult(_ result: FintechSDKBDUICore.FTScreenResult)
@@ -145,6 +151,7 @@ public struct FintechBDUICustomProps {
   public let endEditing: Swift.Bool
   public let pageName: Swift.String
   public let backGestureEnabled: Swift.Bool?
+  public let reloadPreviousScreenOnPop: Swift.Bool
   public init(rawValue: [Swift.String : Any])
 }
 public enum CutoutAnimationType : Swift.String, Swift.Decodable {

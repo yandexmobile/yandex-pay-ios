@@ -117,6 +117,48 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "bootTimestamp",
+            "printedName": "bootTimestamp",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP13bootTimestampSdvp",
+            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP13bootTimestampSdvp",
+            "moduleName": "FintechSDKAnalyticsInterfaces",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP13bootTimestampSdvg",
+                "mangledName": "$s29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP13bootTimestampSdvg",
+                "moduleName": "FintechSDKAnalyticsInterfaces",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter>",
+                "sugared_genericSig": "<Self where Self : FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "isReporterCreated",
             "printedName": "isReporterCreated(for:)",
@@ -229,11 +271,414 @@
             "throwing": true,
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setErrorEnvironment",
+            "printedName": "setErrorEnvironment(_:for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP19setErrorEnvironment_3forySSSg_SStF",
+            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP19setErrorEnvironment_3forySSSg_SStF",
+            "moduleName": "FintechSDKAnalyticsInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "resumeSession",
+            "printedName": "resumeSession()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP13resumeSessionyyF",
+            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP13resumeSessionyyF",
+            "moduleName": "FintechSDKAnalyticsInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "pauseSession",
+            "printedName": "pauseSession()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP12pauseSessionyyF",
+            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP12pauseSessionyyF",
+            "moduleName": "FintechSDKAnalyticsInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "requestStartupIdentifiers",
+            "printedName": "requestStartupIdentifiers(for:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<[Swift.String : [Swift.String]], any Swift.Error>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<[Swift.String : [Swift.String]], any Swift.Error>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : [Swift.String]]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Array",
+                            "printedName": "[Swift.String]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "usr": "s:Sa"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "any Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP25requestStartupIdentifiers3for10completionySaySSG_ys6ResultOySDySSAGGs5Error_pGYbctF",
+            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP25requestStartupIdentifiers3for10completionySaySSG_ys6ResultOySDySSAGGs5Error_pGYbctF",
+            "moduleName": "FintechSDKAnalyticsInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "makeCountHistogram",
+            "printedName": "makeCountHistogram(name:minValue:maxValue:bucketsCount:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAppMetricaCountHistogram",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAppMetricaCountHistogram",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A24AppMetricaCountHistogramP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP18makeCountHistogram4name8minValue03maxL007bucketsH0AA0adehI0_pSS_S3itF",
+            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP18makeCountHistogram4name8minValue03maxL007bucketsH0AA0adehI0_pSS_S3itF",
+            "moduleName": "FintechSDKAnalyticsInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "makeTimeHistogram",
+            "printedName": "makeTimeHistogram(name:minTime:maxTime:bucketsCount:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAppMetricaTimeHistogram",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechAppMetricaTimeHistogram",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A23AppMetricaTimeHistogramP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP17makeTimeHistogram4name03minH003maxH012bucketsCountAA0adehI0_pSS_S2dSitF",
+            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP17makeTimeHistogram4name03minH003maxH012bucketsCountAA0adehI0_pSS_S2dSitF",
+            "moduleName": "FintechSDKAnalyticsInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Protocol",
         "usr": "s:29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP",
         "mangledName": "$s29FintechSDKAnalyticsInterfaces0A17AppMetricaAdapterP",
+        "moduleName": "FintechSDKAnalyticsInterfaces",
+        "genericSig": "<τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAnalyticsInterfaces"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FintechAppMetricaCountHistogram",
+        "printedName": "FintechAppMetricaCountHistogram",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "addSample",
+            "printedName": "addSample(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29FintechSDKAnalyticsInterfaces0A24AppMetricaCountHistogramP9addSampleyySiF",
+            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A24AppMetricaCountHistogramP9addSampleyySiF",
+            "moduleName": "FintechSDKAnalyticsInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAnalyticsInterfaces.FintechAppMetricaCountHistogram>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAnalyticsInterfaces.FintechAppMetricaCountHistogram>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:29FintechSDKAnalyticsInterfaces0A24AppMetricaCountHistogramP",
+        "mangledName": "$s29FintechSDKAnalyticsInterfaces0A24AppMetricaCountHistogramP",
+        "moduleName": "FintechSDKAnalyticsInterfaces",
+        "genericSig": "<τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FintechAppMetricaTimeHistogram",
+        "printedName": "FintechAppMetricaTimeHistogram",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "addTime",
+            "printedName": "addTime(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29FintechSDKAnalyticsInterfaces0A23AppMetricaTimeHistogramP03addF0yySdF",
+            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A23AppMetricaTimeHistogramP03addF0yySdF",
+            "moduleName": "FintechSDKAnalyticsInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAnalyticsInterfaces.FintechAppMetricaTimeHistogram>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAnalyticsInterfaces.FintechAppMetricaTimeHistogram>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:29FintechSDKAnalyticsInterfaces0A23AppMetricaTimeHistogramP",
+        "mangledName": "$s29FintechSDKAnalyticsInterfaces0A23AppMetricaTimeHistogramP",
         "moduleName": "FintechSDKAnalyticsInterfaces",
         "genericSig": "<τ_0_0 : Swift.Sendable>",
         "sugared_genericSig": "<Self : Swift.Sendable>",
@@ -3078,14 +3523,14 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Interfaces\/Params\/FTCommonKeys.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Interfaces\/Params\/FTCommonKeys.swift",
       "kind": "StringLiteral",
       "offset": 61,
       "length": 13,
       "value": "\"description\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Interfaces\/Params\/FTEventType.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Interfaces\/Params\/FTEventType.swift",
       "kind": "StringLiteral",
       "offset": 55,
       "length": 8,

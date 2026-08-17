@@ -80,11 +80,13 @@ public protocol FTQuickPaymentStateListener : AnyObject {
   func onPaymentEnabledStateChanged(isEnabled: Swift.Bool)
   func onSessionExpired()
   func onPaymentResult(quickpayResult: FintechSDKQuickPaymentEntity.FTQuickPayResult)
+  func onPaymentResultScreenClosed(quickpayResult: FintechSDKQuickPaymentEntity.FTQuickPayResult)
   func onAuthStateChanged(_ state: FintechSDKQuickPayment.FTQuickPayAuthState)
   func onPaymentMethodSelected()
   func onPaymentMethodSelectionError()
 }
 extension FintechSDKQuickPayment.FTQuickPaymentStateListener {
+  public func onPaymentResultScreenClosed(quickpayResult: FintechSDKQuickPaymentEntity.FTQuickPayResult)
   public func onAuthStateChanged(_ state: FintechSDKQuickPayment.FTQuickPayAuthState)
   public func onPaymentMethodSelected()
   public func onPaymentMethodSelectionError()

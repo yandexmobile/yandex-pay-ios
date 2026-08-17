@@ -54,12 +54,13 @@ extension YandexPayConfiguration.YPay {
   @_Concurrency.MainActor final public func enableActivePaymentMethodBadge()
   @_Concurrency.MainActor final public func disableActivePaymentMethodBadge()
   final public func stopPaymentPolling() async
-  final public func showFaqScreen() async
-  final public func showOnboardingStoriesScreen() async
-  final public func showAddPaymentMethodScreen(_ type: YandexQuickPay.YQuickPayPaymentMethodType) async throws
-  final public func showSorryScreen(targetViewId: Swift.String) async
-  @_Concurrency.MainActor final public func showSorryScreen(anchor: UIKit.UIView, shape: YandexQuickPay.YQuickPaySorryAnchorShape = .capsule) async
-  @_Concurrency.MainActor final public func showSorryScreen(anchor: YandexQuickPay.YQuickPaySorryAnchor) async
+  final public func showFaqScreen(onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async
+  final public func showOnboardingStoriesScreen(onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async
+  final public func showAddPaymentMethodScreen(_ type: YandexQuickPay.YQuickPayPaymentMethodType, onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async throws
+  final public func showSorryScreen(targetViewId: Swift.String, onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async
+  @_Concurrency.MainActor final public func showSorryScreen(anchor: UIKit.UIView, shape: YandexQuickPay.YQuickPaySorryAnchorShape = .capsule, onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async
+  @_Concurrency.MainActor final public func showSorryScreen(anchor: YandexQuickPay.YQuickPaySorryAnchor, onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async
+  final public func showSorryScreenWithAddPaymentMethod(onButtonClick: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)?, onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async
   @_Concurrency.MainActor final public func createExpandablePaymentMethodsWidget(expandState: YandexQuickPay.YQuickPayWidgetExpandState, allowSilentReload: Swift.Bool = true) -> any SwiftUICore.View
   @_Concurrency.MainActor final public func createExpandablePaymentMethodsWidget(expandState: YandexQuickPay.YQuickPayWidgetExpandState, allowSilentReload: Swift.Bool = true) -> UIKit.UIView
   final public func addWidgetExpandChangeObserver(_ callback: @escaping (_ state: YandexQuickPay.YQuickPayWidgetExpandState) -> Swift.Void) async -> Foundation.UUID
@@ -152,10 +153,12 @@ public protocol YQuickPaymentStateListener : AnyObject {
   func onPaymentEnabledStateChanged(isEnabled: Swift.Bool)
   func onSessionExpired()
   func onPaymentResult(quickpayResult: YandexQuickPay.YQuickPayResult)
+  func onPaymentResultScreenClosed(quickpayResult: YandexQuickPay.YQuickPayResult)
   func onPaymentMethodSelected()
   func onPaymentMethodSelectionError()
 }
 extension YandexQuickPay.YQuickPaymentStateListener {
+  public func onPaymentResultScreenClosed(quickpayResult: YandexQuickPay.YQuickPayResult)
   public func onPaymentMethodSelected()
   public func onPaymentMethodSelectionError()
 }

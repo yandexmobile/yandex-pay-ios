@@ -147,7 +147,7 @@
               {
                 "kind": "TypeFunc",
                 "name": "Function",
-                "printedName": "(Swift.String, Swift.String, Swift.String?) -> FintechSDKQuickPaymentEntity.FTQPBDUIQuery",
+                "printedName": "(Swift.String, Swift.String, Swift.String?, Swift.String?) -> FintechSDKQuickPaymentEntity.FTQPBDUIQuery",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -158,7 +158,7 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Tuple",
-                    "printedName": "(Swift.String, Swift.String, Swift.String?)",
+                    "printedName": "(Swift.String, Swift.String, Swift.String?, Swift.String?)",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -185,6 +185,20 @@
                           }
                         ],
                         "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.String?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:Sq"
                       }
                     ]
                   }
@@ -192,8 +206,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:28FintechSDKQuickPaymentShared22FTQPSPollingInteractorC16ordersAPIService18notifyAboutPolling21pollingScreenUseCases16analyticsService0L18ParamsInteractions07refreshF007currentC016bduiQueryBuilderAcA013FTQPSGetOrderH0_p_AA011FTQPSNotifyjkN4Case_p0A18SDKPollingScenario09FTPollingmnO0_pAA0E18AnalyticsReporting_pAN05FTGetkR0_AN09FTProvidekR0pAA012FTQPSRefreshN4Case_pAA012FTQPSCurrentc9VariablesN4Case_p0abC6Entity13FTQPBDUIQueryOSS_S2SSgtctcfc",
-            "mangledName": "$s28FintechSDKQuickPaymentShared22FTQPSPollingInteractorC16ordersAPIService18notifyAboutPolling21pollingScreenUseCases16analyticsService0L18ParamsInteractions07refreshF007currentC016bduiQueryBuilderAcA013FTQPSGetOrderH0_p_AA011FTQPSNotifyjkN4Case_p0A18SDKPollingScenario09FTPollingmnO0_pAA0E18AnalyticsReporting_pAN05FTGetkR0_AN09FTProvidekR0pAA012FTQPSRefreshN4Case_pAA012FTQPSCurrentc9VariablesN4Case_p0abC6Entity13FTQPBDUIQueryOSS_S2SSgtctcfc",
+            "usr": "s:28FintechSDKQuickPaymentShared22FTQPSPollingInteractorC16ordersAPIService18notifyAboutPolling21pollingScreenUseCases16analyticsService0L18ParamsInteractions07refreshF007currentC016bduiQueryBuilderAcA013FTQPSGetOrderH0_p_AA011FTQPSNotifyjkN4Case_p0A18SDKPollingScenario09FTPollingmnO0_pAA0E18AnalyticsReporting_pAN05FTGetkR0_AN09FTProvidekR0pAA012FTQPSRefreshN4Case_pAA012FTQPSCurrentc9VariablesN4Case_p0abC6Entity13FTQPBDUIQueryOSS_S2SSgAXtctcfc",
+            "mangledName": "$s28FintechSDKQuickPaymentShared22FTQPSPollingInteractorC16ordersAPIService18notifyAboutPolling21pollingScreenUseCases16analyticsService0L18ParamsInteractions07refreshF007currentC016bduiQueryBuilderAcA013FTQPSGetOrderH0_p_AA011FTQPSNotifyjkN4Case_p0A18SDKPollingScenario09FTPollingmnO0_pAA0E18AnalyticsReporting_pAN05FTGetkR0_AN09FTProvidekR0pAA012FTQPSRefreshN4Case_pAA012FTQPSCurrentc9VariablesN4Case_p0abC6Entity13FTQPBDUIQueryOSS_S2SSgAXtctcfc",
             "moduleName": "FintechSDKQuickPaymentShared",
             "declAttributes": [
               "AccessControl"
@@ -641,6 +655,16 @@
         "moduleName": "FintechSDKQuickPaymentShared"
       },
       {
+        "kind": "Import",
+        "name": "FintechSDKQuickPaymentEntity",
+        "printedName": "FintechSDKQuickPaymentEntity",
+        "declKind": "Import",
+        "moduleName": "FintechSDKQuickPaymentShared",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "FTQPSCurrentPaymentVariablesUseCase",
         "printedName": "FTQPSCurrentPaymentVariablesUseCase",
@@ -648,7 +672,7 @@
           {
             "kind": "Function",
             "name": "setCurrentPayment",
-            "printedName": "setCurrentPayment(transactionId:checkoutOrderId:paymentUrl:)",
+            "printedName": "setCurrentPayment(transactionId:checkoutOrderId:quickpayId:paymentUrl:status:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -696,11 +720,39 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FintechSDKQuickPaymentEntity.FTOrderStatus?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTOrderStatus",
+                    "printedName": "FintechSDKQuickPaymentEntity.FTOrderStatus",
+                    "usr": "s:28FintechSDKQuickPaymentEntity13FTOrderStatusO"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:28FintechSDKQuickPaymentShared012FTQPSCurrentC16VariablesUseCaseP010setCurrentC013transactionId013checkoutOrderL010paymentUrlySSSg_A2HtYaF",
-            "mangledName": "$s28FintechSDKQuickPaymentShared012FTQPSCurrentC16VariablesUseCaseP010setCurrentC013transactionId013checkoutOrderL010paymentUrlySSSg_A2HtYaF",
+            "usr": "s:28FintechSDKQuickPaymentShared012FTQPSCurrentC16VariablesUseCaseP010setCurrentC013transactionId013checkoutOrderL008quickpayL010paymentUrl6statusySSSg_A3J0abC6Entity13FTOrderStatusOSgtYaF",
+            "mangledName": "$s28FintechSDKQuickPaymentShared012FTQPSCurrentC16VariablesUseCaseP010setCurrentC013transactionId013checkoutOrderL008quickpayL010paymentUrl6statusySSSg_A3J0abC6Entity13FTOrderStatusOSgtYaF",
             "moduleName": "FintechSDKQuickPaymentShared",
             "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKQuickPaymentShared.FTQPSCurrentPaymentVariablesUseCase>",
             "sugared_genericSig": "<Self where Self : FintechSDKQuickPaymentShared.FTQPSCurrentPaymentVariablesUseCase>",
@@ -832,6 +884,36 @@
             "declKind": "Func",
             "usr": "s:28FintechSDKQuickPaymentShared30FTQPSNotifyAboutPollingUseCaseP21pollingSheetDismissedyyF",
             "mangledName": "$s28FintechSDKQuickPaymentShared30FTQPSNotifyAboutPollingUseCaseP21pollingSheetDismissedyyF",
+            "moduleName": "FintechSDKQuickPaymentShared",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKQuickPaymentShared.FTQPSNotifyAboutPollingUseCase>",
+            "sugared_genericSig": "<Self where Self : FintechSDKQuickPaymentShared.FTQPSNotifyAboutPollingUseCase>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "paymentResultScreenClosed",
+            "printedName": "paymentResultScreenClosed(result:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTQuickPayResult",
+                "printedName": "FintechSDKQuickPaymentEntity.FTQuickPayResult",
+                "usr": "s:28FintechSDKQuickPaymentEntity16FTQuickPayResultO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:28FintechSDKQuickPaymentShared30FTQPSNotifyAboutPollingUseCaseP25paymentResultScreenClosed6resulty0abC6Entity010FTQuickPayK0O_tF",
+            "mangledName": "$s28FintechSDKQuickPaymentShared30FTQPSNotifyAboutPollingUseCaseP25paymentResultScreenClosed6resulty0abC6Entity010FTQuickPayK0O_tF",
             "moduleName": "FintechSDKQuickPaymentShared",
             "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKQuickPaymentShared.FTQPSNotifyAboutPollingUseCase>",
             "sugared_genericSig": "<Self where Self : FintechSDKQuickPaymentShared.FTQPSNotifyAboutPollingUseCase>",
@@ -1372,6 +1454,95 @@
             "printedName": "FintechNetworkChallengeHandler",
             "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkChallengeHandlerP",
             "mangledName": "$s27FintechSDKNetworkInterfaces0A23NetworkChallengeHandlerP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTQPSNetworkChallengeHandlerFactoryImpl",
+        "printedName": "FTQPSNetworkChallengeHandlerFactoryImpl",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTQPSNetworkChallengeHandlerFactoryImpl",
+                "printedName": "FintechSDKQuickPaymentShared.FTQPSNetworkChallengeHandlerFactoryImpl",
+                "usr": "s:28FintechSDKQuickPaymentShared39FTQPSNetworkChallengeHandlerFactoryImplV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:28FintechSDKQuickPaymentShared39FTQPSNetworkChallengeHandlerFactoryImplVACycfc",
+            "mangledName": "$s28FintechSDKQuickPaymentShared39FTQPSNetworkChallengeHandlerFactoryImplVACycfc",
+            "moduleName": "FintechSDKQuickPaymentShared",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "make",
+            "printedName": "make()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkChallengeHandler",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler",
+                "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkChallengeHandlerP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:28FintechSDKQuickPaymentShared39FTQPSNetworkChallengeHandlerFactoryImplV4make0A20SDKNetworkInterfaces0a7NetworkfG0_pyF",
+            "mangledName": "$s28FintechSDKQuickPaymentShared39FTQPSNetworkChallengeHandlerFactoryImplV4make0A20SDKNetworkInterfaces0a7NetworkfG0_pyF",
+            "moduleName": "FintechSDKQuickPaymentShared",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:28FintechSDKQuickPaymentShared39FTQPSNetworkChallengeHandlerFactoryImplV",
+        "mangledName": "$s28FintechSDKQuickPaymentShared39FTQPSNetworkChallengeHandlerFactoryImplV",
+        "moduleName": "FintechSDKQuickPaymentShared",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechNetworkChallengeHandlerFactory",
+            "printedName": "FintechNetworkChallengeHandlerFactory",
+            "usr": "s:27FintechSDKNetworkInterfaces0A30NetworkChallengeHandlerFactoryP",
+            "mangledName": "$s27FintechSDKNetworkInterfaces0A30NetworkChallengeHandlerFactoryP"
           }
         ]
       },
@@ -3159,42 +3330,42 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/QuickPaymentShared\/Application\/Interactors\/FTQPSPollingInteractor.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/QuickPaymentShared\/Application\/Interactors\/FTQPSPollingInteractor.swift",
       "kind": "IntegerLiteral",
-      "offset": 470,
+      "offset": 513,
       "length": 2,
       "value": "20"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/QuickPaymentShared\/Application\/Services\/FTOrdersPollingService.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/QuickPaymentShared\/Application\/Services\/FTOrdersPollingService.swift",
       "kind": "IntegerLiteral",
       "offset": 785,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/QuickPaymentShared\/Application\/Services\/FTOrdersPollingService.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/QuickPaymentShared\/Application\/Services\/FTOrdersPollingService.swift",
       "kind": "IntegerLiteral",
-      "offset": 4194,
+      "offset": 4242,
       "length": 3,
       "value": "401"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/QuickPaymentShared\/Application\/Services\/FTOrdersPollingService.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/QuickPaymentShared\/Application\/Services\/FTOrdersPollingService.swift",
       "kind": "IntegerLiteral",
-      "offset": 4229,
+      "offset": 4277,
       "length": 3,
       "value": "403"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/QuickPaymentShared\/UI\/WebView\/FTQPSBDUIWebViewConfiguration.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/QuickPaymentShared\/UI\/WebView\/FTQPSBDUIWebViewConfiguration.swift",
       "kind": "Array",
       "offset": 223,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/0\/2\/4462130520\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-b73b38df-7a97-4419-8d83-f062384d6e14\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/QuickPaymentShared\/UI\/WebView\/FTQPSBDUIWebViewConfiguration.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/QuickPaymentShared\/UI\/WebView\/FTQPSBDUIWebViewConfiguration.swift",
       "kind": "Dictionary",
       "offset": 381,
       "length": 3,

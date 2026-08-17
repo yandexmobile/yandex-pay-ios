@@ -21,7 +21,7 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 @_spi(Internal) public actor FTQPSPollingInteractor {
-  @_spi(Internal) public typealias BDUIQueryBuilder = (_ transactionId: Swift.String, _ paymentUrl: Swift.String, _ checkoutOrderId: Swift.String?) -> FintechSDKQuickPaymentEntity.FTQPBDUIQuery
+  @_spi(Internal) public typealias BDUIQueryBuilder = (_ transactionId: Swift.String, _ paymentUrl: Swift.String, _ checkoutOrderId: Swift.String?, _ quickpayId: Swift.String?) -> FintechSDKQuickPaymentEntity.FTQPBDUIQuery
   @_spi(Internal) public var isBSTTTLCheckActive: Swift.Bool {
     @_spi(Internal) get
   }
@@ -50,12 +50,13 @@ import _SwiftConcurrencyShims
   @_spi(Internal) func getOrderStatus(transactionId: Swift.String, paymentUrl: Swift.String) async throws(FintechSDKNetworkInterfaces.NetworkClientError) -> FintechSDKQuickPaymentEntity.FTOrderStatusPollingResponse
 }
 @_spi(Internal) public protocol FTQPSCurrentPaymentVariablesUseCase : Swift.Sendable {
-  @_spi(Internal) func setCurrentPayment(transactionId: Swift.String?, checkoutOrderId: Swift.String?, paymentUrl: Swift.String?) async
+  @_spi(Internal) func setCurrentPayment(transactionId: Swift.String?, checkoutOrderId: Swift.String?, quickpayId: Swift.String?, paymentUrl: Swift.String?, status: FintechSDKQuickPaymentEntity.FTOrderStatus?) async
 }
 @_spi(Internal) public protocol FTQPSNotifyAboutPollingUseCase : Swift.Sendable {
   @_spi(Internal) func fetchedNewResult(result: FintechSDKQuickPaymentEntity.FTQuickPayResult)
   @_spi(Internal) func sessionExpired()
   @_spi(Internal) func pollingSheetDismissed()
+  @_spi(Internal) func paymentResultScreenClosed(result: FintechSDKQuickPaymentEntity.FTQuickPayResult)
 }
 @_spi(Internal) public typealias FTQPSPollingUseCase = FintechSDKQuickPaymentShared.FTQPSHandleSessionExpiredUseCase & FintechSDKQuickPaymentShared.FTQPSSetOrderResultFail & FintechSDKQuickPaymentShared.FTQPSStartPolling & FintechSDKQuickPaymentShared.FTQPSStopPolling
 @_spi(Internal) public protocol FTQPSStartPolling : Swift.Sendable {
@@ -76,6 +77,10 @@ import _SwiftConcurrencyShims
 @_spi(Internal) public struct FTQPSNetworkChallengeHandlerImpl : FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler {
   @_spi(Internal) public init()
   @_spi(Internal) public func handleChallenge(challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+}
+@_spi(Internal) public struct FTQPSNetworkChallengeHandlerFactoryImpl : FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory {
+  @_spi(Internal) public init()
+  @_spi(Internal) public func make() -> any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler
 }
 @_spi(Internal) public protocol FTQPSPollingAnalyticsReporting {
   @_spi(Internal) func reportTokenExpired()

@@ -12,8 +12,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public let transactionId: Swift.String
   @_spi(Internal) public let paymentUrl: Swift.String
   @_spi(Internal) public let checkoutOrderId: Swift.String?
+  @_spi(Internal) public let quickpayId: Swift.String?
   @_spi(Internal) public let status: FintechSDKQuickPaymentEntity.FTOrderStatus
-  @_spi(Internal) public init(transactionId: Swift.String, paymentUrl: Swift.String, checkoutOrderId: Swift.String? = nil, status: FintechSDKQuickPaymentEntity.FTOrderStatus)
+  @_spi(Internal) public init(transactionId: Swift.String, paymentUrl: Swift.String, checkoutOrderId: Swift.String? = nil, quickpayId: Swift.String? = nil, status: FintechSDKQuickPaymentEntity.FTOrderStatus)
 }
 @_spi(Internal) public struct FTAnalyticsEventData {
   @_spi(Internal) public let name: Swift.String
@@ -74,8 +75,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public let url: Swift.String
   @_spi(Internal) public let transactionId: Swift.String
   @_spi(Internal) public let checkoutOrderId: Swift.String?
+  @_spi(Internal) public let quickpayId: Swift.String?
   @_spi(Internal) public let status: FintechSDKQuickPaymentEntity.FTOrderStatus
-  @_spi(Internal) public init(url: Swift.String, transactionId: Swift.String, checkoutOrderId: Swift.String? = nil, status: FintechSDKQuickPaymentEntity.FTOrderStatus)
+  @_spi(Internal) public init(url: Swift.String, transactionId: Swift.String, checkoutOrderId: Swift.String? = nil, quickpayId: Swift.String? = nil, status: FintechSDKQuickPaymentEntity.FTOrderStatus)
   @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
 }
 @_spi(Internal) public struct FTPollingPaymentResult : Swift.Sendable {
@@ -89,8 +91,8 @@ import _SwiftConcurrencyShims
   @_spi(Internal) case otherError(any Swift.Error)
 }
 @_spi(Internal) public enum FTQPBDUIQuery : Swift.Equatable {
-  @_spi(Internal) case status(transactionId: Swift.String, paymentUrl: Swift.String, checkoutOrderId: Swift.String?)
-  @_spi(Internal) case statusYandex(transactionId: Swift.String, paymentUrl: Swift.String, checkoutOrderId: Swift.String?)
+  @_spi(Internal) case status(transactionId: Swift.String, paymentUrl: Swift.String, checkoutOrderId: Swift.String?, quickpayId: Swift.String?)
+  @_spi(Internal) case statusYandex(transactionId: Swift.String, paymentUrl: Swift.String, checkoutOrderId: Swift.String?, quickpayId: Swift.String?)
   @_spi(Internal) case faq
   @_spi(Internal) case onboardingStories
   @_spi(Internal) case yandexQr
@@ -108,7 +110,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public static let isPaymentProcess: Swift.String
   @_spi(Internal) public static let currentTransactionId: Swift.String
   @_spi(Internal) public static let currentCheckoutOrderId: Swift.String
+  @_spi(Internal) public static let currentQuickpayId: Swift.String
   @_spi(Internal) public static let currentPaymentUrl: Swift.String
+  @_spi(Internal) public static let currentTransactionStatus: Swift.String
 }
 @_spi(Internal) public struct FTQPStoredOfflineTicketsBatch : Swift.Codable, Swift.Sendable, Swift.Equatable {
   @_spi(Internal) public let payTickets: [Swift.String]

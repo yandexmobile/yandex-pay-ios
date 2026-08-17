@@ -6,6 +6,7 @@ import Combine
 import CoreGraphics
 import CoreHaptics
 import CoreImage
+@_spi(Internal) import FintechBBPartnerSDKInterfaces
 import FintechPlusSDKInterfaces
 import FintechSDKAnalyticsInterfaces
 import FintechSDKAuthInterfaces
@@ -309,13 +310,15 @@ public enum HapticFeedbackType : Swift.String, Swift.Decodable {
 public struct FintechSDKTokenizationDependencies {
   public let fontAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter
   public let accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter
-  public let networkChallengeHandler: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler
+  public let networkChallengeHandlerFactory: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory
   public let eventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)?
   public let errorReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)?
   public let uid: Foundation.NSNumber?
   public let merchantDomainProvider: (any FintechSDKNetworkInterfaces.FintechStaticMerchantDomainProvider)?
   public let devicePubkeyProvider: (any FintechSDKBDUIFeatures.DevicePubkeyProviderApi)?
   public let deviceChallengeSignatureProvider: (any FintechSDKBDUIFeatures.DeviceChallengeSignatureProviderApi)?
+  public init(fontAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, networkChallengeHandlerFactory: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory, uid: Foundation.NSNumber?, eventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)? = nil, errorReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)? = nil, merchantDomainProvider: (any FintechSDKNetworkInterfaces.FintechStaticMerchantDomainProvider)? = nil, devicePubkeyProvider: (any FintechSDKBDUIFeatures.DevicePubkeyProviderApi)? = nil, deviceChallengeSignatureProvider: (any FintechSDKBDUIFeatures.DeviceChallengeSignatureProviderApi)? = nil)
+  @available(*, deprecated, message: "Use init(networkChallengeHandlerFactory:) instead")
   public init(fontAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, networkChallengeHandler: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler, uid: Foundation.NSNumber?, eventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)? = nil, errorReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)? = nil, merchantDomainProvider: (any FintechSDKNetworkInterfaces.FintechStaticMerchantDomainProvider)? = nil, devicePubkeyProvider: (any FintechSDKBDUIFeatures.DevicePubkeyProviderApi)? = nil, deviceChallengeSignatureProvider: (any FintechSDKBDUIFeatures.DeviceChallengeSignatureProviderApi)? = nil)
 }
 extension UIKit.UIImage {
