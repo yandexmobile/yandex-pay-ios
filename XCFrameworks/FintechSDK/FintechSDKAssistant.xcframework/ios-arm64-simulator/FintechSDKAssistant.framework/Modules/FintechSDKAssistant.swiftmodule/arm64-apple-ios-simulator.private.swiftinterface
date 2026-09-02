@@ -34,6 +34,9 @@ import _SwiftConcurrencyShims
 }
 @_spi(Internal) extension FintechSDKAuthorizationScenario.FTAuthFlowInteractor : FintechSDKDivKitWidgetsFeatures.FTWebViewLogoutUseCase {
 }
+@_spi(Internal) extension FintechSDKAuthorizationScenario.FTAuthFlowInteractor : FintechSDKDivKitWidgetsFeatures.FTWebViewLoginAcquiring {
+  @_spi(Internal) public func loginAndAcquireBSTToken(mode: FintechSDKDivKitWidgetsFeatures.FTWebViewBSTAcquisitionMode) async throws -> Swift.String
+}
 @_spi(Internal) @_Concurrency.MainActor public protocol FTYABenefitsSimpleSwiftUIWidgetProvider : AnyObject {
   @_spi(Internal) @_Concurrency.MainActor var currentState: FintechSDKAssistant.FTYABenefitsSimpleSwiftUIWidgetState { get }
   @_spi(Internal) @_Concurrency.MainActor var stateHandler: ((FintechSDKAssistant.FTYABenefitsSimpleSwiftUIWidgetState) -> Swift.Void)? { get set }

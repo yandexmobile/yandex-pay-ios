@@ -96,6 +96,7 @@ public enum PublicKeyType : Swift.String, Swift.Sendable, Swift.Codable {
 }
 public protocol FintechDPoPService : Swift.Sendable {
   func key(_ type: FintechSDKAuthInterfaces.PublicKeyType) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> any FintechSDKAuthInterfaces.FintechDPoPKey
+  func hasKey(_ type: FintechSDKAuthInterfaces.PublicKeyType) -> Swift.Bool
   func invalidateKey()
   func checkDeviceAuth() throws(FintechSDKAuthInterfaces.FintechCryptoKeyError)
 }
@@ -160,6 +161,9 @@ public enum FintechLoginServiceError : Foundation.LocalizedError {
   case userCancelled
   case sdkError(message: Swift.String, underlying: any Swift.Error)
   case concurrencyError(underlying: (any Swift.Error)?)
+}
+@_spi(Internal) public struct FTAuthorizationSupersededError : Swift.Error {
+  @_spi(Internal) public init()
 }
 public protocol FintechLoginServiceDelegate : AnyObject {
   @_Concurrency.MainActor func loginService(_ service: any FintechSDKAuthInterfaces.FintechLoginService, didAuthorize model: FintechSDKAuthInterfaces.FintechAuthModel, for type: FintechSDKAuthInterfaces.FintechAuthType)

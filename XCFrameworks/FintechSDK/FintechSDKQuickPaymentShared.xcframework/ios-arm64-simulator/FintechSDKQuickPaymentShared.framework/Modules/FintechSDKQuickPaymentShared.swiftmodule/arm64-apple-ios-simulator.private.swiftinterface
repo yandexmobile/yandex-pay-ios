@@ -36,6 +36,12 @@ import _SwiftConcurrencyShims
 }
 @_spi(Internal) extension FintechSDKQuickPaymentShared.FTQPSPollingInteractor : FintechSDKQuickPaymentShared.FTQPSStartPolling, FintechSDKQuickPaymentShared.FTQPSStopPolling {
 }
+@_spi(Internal) extension FintechSDKQuickPaymentShared.FTQPSPollingInteractor : FintechSDKQuickPaymentShared.FTQPSMerchantControlledPolling {
+  @_spi(Internal) public func prepareMerchantControlledPolling(deadline: Foundation.Date) async
+  @_spi(Internal) public func startMerchantControlledPolling() async throws
+  @_spi(Internal) public func stopMerchantControlledPolling() async throws
+  @_spi(Internal) public func invalidatePollingSession() async
+}
 @_spi(Internal) extension FintechSDKQuickPaymentShared.FTQPSPollingInteractor : FintechSDKQuickPaymentShared.FTQPSHandleSessionExpiredUseCase {
   @_spi(Internal) public func handleSessionExpired() async
 }
@@ -51,6 +57,7 @@ import _SwiftConcurrencyShims
 }
 @_spi(Internal) public protocol FTQPSCurrentPaymentVariablesUseCase : Swift.Sendable {
   @_spi(Internal) func setCurrentPayment(transactionId: Swift.String?, checkoutOrderId: Swift.String?, quickpayId: Swift.String?, paymentUrl: Swift.String?, status: FintechSDKQuickPaymentEntity.FTOrderStatus?) async
+  @_spi(Internal) func setCurrentTransactionStatus(_ status: FintechSDKQuickPaymentEntity.FTOrderStatus) async
 }
 @_spi(Internal) public protocol FTQPSNotifyAboutPollingUseCase : Swift.Sendable {
   @_spi(Internal) func fetchedNewResult(result: FintechSDKQuickPaymentEntity.FTQuickPayResult)
@@ -64,6 +71,21 @@ import _SwiftConcurrencyShims
 }
 @_spi(Internal) public protocol FTQPSStopPolling : Swift.Sendable {
   @_spi(Internal) func stopPolling() async
+}
+@_spi(Internal) public enum FTQPSMerchantPollingError : Swift.Error {
+  @_spi(Internal) case notControlledByMerchant
+  @_spi(Internal) case noActiveSession
+  @_spi(Internal) public static func == (a: FintechSDKQuickPaymentShared.FTQPSMerchantPollingError, b: FintechSDKQuickPaymentShared.FTQPSMerchantPollingError) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public protocol FTQPSMerchantControlledPolling : Swift.Sendable {
+  @_spi(Internal) func prepareMerchantControlledPolling(deadline: Foundation.Date) async
+  @_spi(Internal) func startMerchantControlledPolling() async throws
+  @_spi(Internal) func stopMerchantControlledPolling() async throws
+  @_spi(Internal) func invalidatePollingSession() async
 }
 @_spi(Internal) public protocol FTQPSHandleSessionExpiredUseCase : Swift.Sendable {
   @_spi(Internal) func handleSessionExpired() async
@@ -84,6 +106,7 @@ import _SwiftConcurrencyShims
 }
 @_spi(Internal) public protocol FTQPSPollingAnalyticsReporting {
   @_spi(Internal) func reportTokenExpired()
+  @_spi(Internal) func reportPaymentProcessWaitingForApprove()
   @_spi(Internal) func reportPaymentProcessFailed()
   @_spi(Internal) func reportPollingUnmappedError(error: any Swift.Error)
   @_spi(Internal) func reportPaymentProcessCompleted()
@@ -138,3 +161,5 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public init(userAgentProvider: any FintechSDKCoreUtils.FTUserAgentProvider)
   @_spi(Internal) @objc deinit
 }
+@_spi(Internal) extension FintechSDKQuickPaymentShared.FTQPSMerchantPollingError : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKQuickPaymentShared.FTQPSMerchantPollingError : Swift.Hashable {}

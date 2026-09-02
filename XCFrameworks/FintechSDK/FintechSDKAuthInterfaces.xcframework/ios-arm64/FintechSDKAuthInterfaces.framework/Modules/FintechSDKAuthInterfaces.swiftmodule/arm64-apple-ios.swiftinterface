@@ -91,6 +91,7 @@ public enum PublicKeyType : Swift.String, Swift.Sendable, Swift.Codable {
 }
 public protocol FintechDPoPService : Swift.Sendable {
   func key(_ type: FintechSDKAuthInterfaces.PublicKeyType) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> any FintechSDKAuthInterfaces.FintechDPoPKey
+  func hasKey(_ type: FintechSDKAuthInterfaces.PublicKeyType) -> Swift.Bool
   func invalidateKey()
   func checkDeviceAuth() throws(FintechSDKAuthInterfaces.FintechCryptoKeyError)
 }

@@ -833,8 +833,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:25FintechSDKWebViewFeatures05FTWebC14HandlerContextP6reloadyyF",
-            "mangledName": "$s25FintechSDKWebViewFeatures05FTWebC14HandlerContextP6reloadyyF",
+            "usr": "s:25FintechSDKWebViewFeatures05FTWebC14HandlerContextP6reloadyyYaF",
+            "mangledName": "$s25FintechSDKWebViewFeatures05FTWebC14HandlerContextP6reloadyyYaF",
             "moduleName": "FintechSDKWebViewFeatures",
             "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKWebViewFeatures.FTWebViewHandlerContext>",
             "sugared_genericSig": "<Self where Self : FintechSDKWebViewFeatures.FTWebViewHandlerContext>",
@@ -2157,6 +2157,13 @@
         "moduleName": "FintechSDKWebViewFeatures"
       },
       {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "FintechSDKWebViewFeatures"
+      },
+      {
         "kind": "TypeDecl",
         "name": "FTWebView",
         "printedName": "FTWebView",
@@ -2228,7 +2235,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(viewModel:shimmer:errorView:)",
+            "printedName": "init(viewModel:shimmer:errorView:contentInsetAdjustmentBehavior:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -2267,11 +2274,18 @@
                 "kind": "TypeNominal",
                 "name": "GenericTypeParam",
                 "printedName": "τ_0_2"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ContentInsetAdjustmentBehavior",
+                "printedName": "UIKit.UIScrollView.ContentInsetAdjustmentBehavior",
+                "hasDefaultArg": true,
+                "usr": "c:@E@UIScrollViewContentInsetAdjustmentBehavior"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:25FintechSDKWebViewFeatures05FTWebC0V9viewModel7shimmer05errorC0ACyxq_q0_Gx_q_q0_tcfc",
-            "mangledName": "$s25FintechSDKWebViewFeatures05FTWebC0V9viewModel7shimmer05errorC0ACyxq_q0_Gx_q_q0_tcfc",
+            "usr": "s:25FintechSDKWebViewFeatures05FTWebC0V9viewModel7shimmer05errorC030contentInsetAdjustmentBehaviorACyxq_q0_Gx_q_q0_So08UIScrollc7ContentklM0Vtcfc",
+            "mangledName": "$s25FintechSDKWebViewFeatures05FTWebC0V9viewModel7shimmer05errorC030contentInsetAdjustmentBehaviorACyxq_q0_Gx_q_q0_So08UIScrollc7ContentklM0Vtcfc",
             "moduleName": "FintechSDKWebViewFeatures",
             "genericSig": "<τ_0_0, τ_0_1, τ_0_2 where τ_0_0 : FintechSDKWebViewFeatures.FTAnyWebViewModel, τ_0_1 : SwiftUI.View, τ_0_2 : SwiftUI.View>",
             "sugared_genericSig": "<WebViewModel, Shimmer, ErrorView where WebViewModel : FintechSDKWebViewFeatures.FTAnyWebViewModel, Shimmer : SwiftUI.View, ErrorView : SwiftUI.View>",

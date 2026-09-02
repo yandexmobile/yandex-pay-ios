@@ -11,6 +11,10 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 public struct FintechBBPartnerPinTexts : Swift.Decodable {
+  public let setupHeaderTitle: Swift.String?
+  public let setupHeaderSubtitle: Swift.String?
+  public let verifyHeaderTitle: Swift.String?
+  public let verifyHeaderSubtitle: Swift.String?
   public let setupTitle: Swift.String
   public let setupSubtitle: Swift.String?
   public let confirmTitle: Swift.String
@@ -20,11 +24,17 @@ public struct FintechBBPartnerPinTexts : Swift.Decodable {
   public let mismatchMessage: Swift.String
   public let attemptsCounterFormat: Swift.String
   public let backButtonTitle: Swift.String
-  public init(setupTitle: Swift.String, setupSubtitle: Swift.String? = nil, confirmTitle: Swift.String, confirmSubtitle: Swift.String?, verifyTitle: Swift.String, verifySubtitle: Swift.String?, mismatchMessage: Swift.String, attemptsCounterFormat: Swift.String, backButtonTitle: Swift.String)
+  public let setupContinueButtonTitle: Swift.String
+  public let verifyContinueButtonTitle: Swift.String
+  public init(setupHeaderTitle: Swift.String?, setupHeaderSubtitle: Swift.String?, verifyHeaderTitle: Swift.String?, verifyHeaderSubtitle: Swift.String?, setupTitle: Swift.String, setupSubtitle: Swift.String? = nil, confirmTitle: Swift.String, confirmSubtitle: Swift.String?, verifyTitle: Swift.String, verifySubtitle: Swift.String?, mismatchMessage: Swift.String, attemptsCounterFormat: Swift.String, backButtonTitle: Swift.String, setupContinueButtonTitle: Swift.String, verifyContinueButtonTitle: Swift.String)
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct FintechBBPartnerColorExpressions : Swift.Decodable {
   public let backgroundColor: Swift.String
+  public let headerBackgroundColor: Swift.String
+  public let mainBackgroundColor: Swift.String
+  public let headerTitleColor: Swift.String
+  public let headerSubtitleColor: Swift.String
   public let titleColor: Swift.String
   public let subtitleColor: Swift.String
   public let messageColor: Swift.String
@@ -38,6 +48,8 @@ public struct FintechBBPartnerColorExpressions : Swift.Decodable {
   public let keypadBackgroundColor: Swift.String
   public let keypadDeleteColor: Swift.String
   public let backButtonTintColor: Swift.String
+  public let continueButtonBackgroundColor: Swift.String
+  public let continueButtonTitleColor: Swift.String
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct FintechBBPartnerWebAlertTexts : Swift.Decodable {
@@ -52,6 +64,10 @@ public struct FintechBBPartnerColors {
 }
 public struct FintechBBPartnerPinColors {
   public let backgroundColor: UIKit.UIColor
+  public let headerBackgroundColor: UIKit.UIColor
+  public let mainBackgroundColor: UIKit.UIColor
+  public let headerTitleColor: UIKit.UIColor
+  public let headerSubtitleColor: UIKit.UIColor
   public let titleColor: UIKit.UIColor
   public let subtitleColor: UIKit.UIColor
   public let messageColor: UIKit.UIColor
@@ -65,7 +81,9 @@ public struct FintechBBPartnerPinColors {
   public let keypadBackgroundColor: UIKit.UIColor
   public let keypadDeleteColor: UIKit.UIColor
   public let backButtonTintColor: UIKit.UIColor
-  public init(backgroundColor: UIKit.UIColor, titleColor: UIKit.UIColor, subtitleColor: UIKit.UIColor, messageColor: UIKit.UIColor, attemptsCounterColor: UIKit.UIColor, fieldFilledColor: UIKit.UIColor, fieldEmptyColor: UIKit.UIColor, fieldBorderColor: UIKit.UIColor, fieldSuccessColor: UIKit.UIColor, fieldErrorColor: UIKit.UIColor, keypadDigitColor: UIKit.UIColor, keypadBackgroundColor: UIKit.UIColor, keypadDeleteColor: UIKit.UIColor, backButtonTintColor: UIKit.UIColor)
+  public let continueButtonBackgroundColor: UIKit.UIColor
+  public let continueButtonTitleColor: UIKit.UIColor
+  public init(backgroundColor: UIKit.UIColor, headerBackgroundColor: UIKit.UIColor, mainBackgroundColor: UIKit.UIColor, headerTitleColor: UIKit.UIColor, headerSubtitleColor: UIKit.UIColor, titleColor: UIKit.UIColor, subtitleColor: UIKit.UIColor, messageColor: UIKit.UIColor, attemptsCounterColor: UIKit.UIColor, fieldFilledColor: UIKit.UIColor, fieldEmptyColor: UIKit.UIColor, fieldBorderColor: UIKit.UIColor, fieldSuccessColor: UIKit.UIColor, fieldErrorColor: UIKit.UIColor, keypadDigitColor: UIKit.UIColor, keypadBackgroundColor: UIKit.UIColor, keypadDeleteColor: UIKit.UIColor, backButtonTintColor: UIKit.UIColor, continueButtonBackgroundColor: UIKit.UIColor, continueButtonTitleColor: UIKit.UIColor)
 }
 public struct FintechBBPinParams : Swift.Decodable {
   public let successFeedbackDuration: Foundation.TimeInterval
@@ -78,21 +96,34 @@ public protocol FintechBBPartnerSDKAdapterFactory {
   func make(networkChallengeHandlerFactory: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory) -> any FintechBBPartnerSDKInterfaces.FintechBBPartnerSDKAdapter
 }
 public protocol FintechBBPartnerSDKAdapter {
-  @_Concurrency.MainActor func makeFlowView(reporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)?, params: FintechBBPartnerSDKInterfaces.FintechBBPartnerSDKParams, colors: FintechBBPartnerSDKInterfaces.FintechBBPartnerColors, flowObserver: any FintechBBPartnerSDKInterfaces.FintechBBPartnerFlowObserver) throws -> any FintechBBPartnerSDKInterfaces.FintechBBFlowView
+  @_Concurrency.MainActor func makeFlowView(reporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)?, params: FintechBBPartnerSDKInterfaces.FintechBBPartnerParams, colors: FintechBBPartnerSDKInterfaces.FintechBBPartnerColors, flowObserver: any FintechBBPartnerSDKInterfaces.FintechBBPartnerFlowObserver) throws -> any FintechBBPartnerSDKInterfaces.FintechBBFlowView
 }
 @_Concurrency.MainActor public protocol FintechBBFlowView : UIKit.UIView {
   @_Concurrency.MainActor func update(colors: FintechBBPartnerSDKInterfaces.FintechBBPartnerColors)
 }
-public struct FintechBBPartnerSDKParams : Swift.Decodable {
+public struct FintechBBPartnerParams : Swift.Decodable {
   public let path: Swift.String
-  public let config: Swift.String
+  public let config: FintechBBPartnerSDKInterfaces.FintechBBPartnerConfig
   public let partnerClientId: Swift.String
   public let phone: Swift.String
+  public let webFlowParams: [Swift.String : Swift.String]?
   public let baseFingerprintData: [Swift.String : Swift.String]
   public let retryPolicy: FintechBBPartnerSDKInterfaces.FintechBBPartnerRetryPolicy
   public let pinTexts: FintechBBPartnerSDKInterfaces.FintechBBPartnerPinTexts
   public let pinParams: FintechBBPartnerSDKInterfaces.FintechBBPinParams
   public let webAlertTexts: FintechBBPartnerSDKInterfaces.FintechBBPartnerWebAlertTexts
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct FintechBBPartnerConfig : Swift.Decodable {
+  public let environment: Swift.String
+  public let partnerId: Swift.String
+  public let webViewBaseUrl: Swift.String
+  public let clientAuthBaseUrl: Swift.String
+  public let clientRefreshTokenEndpoint: Swift.String
+  public let clientLogoutEndpoint: Swift.String
+  public let basic: Swift.String
+  public let box: Swift.String?
+  public init(environment: Swift.String, partnerId: Swift.String, webViewBaseUrl: Swift.String, clientAuthBaseUrl: Swift.String, clientRefreshTokenEndpoint: Swift.String, clientLogoutEndpoint: Swift.String, basic: Swift.String, box: Swift.String?)
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct FintechBBPartnerRetryPolicy : Swift.Decodable {
@@ -104,5 +135,6 @@ public protocol FintechBBPartnerFlowObserver {
   func cancelationRequested()
   func finished()
   func flowViewIsReady()
-  func receivedNonRecovarableError(_ error: Swift.String)
+  func onPinDismissed()
+  func receivedNonRecoverableError(_ error: Swift.String)
 }

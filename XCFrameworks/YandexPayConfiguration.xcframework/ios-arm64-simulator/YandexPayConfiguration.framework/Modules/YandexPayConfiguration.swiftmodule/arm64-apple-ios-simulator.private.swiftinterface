@@ -167,6 +167,7 @@ extension FintechSDKCommonEntity.FintechSDKTheme {
   @_Concurrency.MainActor public static var isInitialized: Swift.Bool {
     get
   }
+  @_Concurrency.MainActor public static func clear()
   @_Concurrency.MainActor final public var deeplinkHandler: YandexPayConfiguration.YPayDeeplinkHandler {
     get
     set
@@ -221,6 +222,9 @@ extension YandexPayConfiguration.YPayModule {
   @_spi(Internal) public func update(locale: YandexPayConfiguration.YPSDKLocale)
   @_spi(Internal) public func update(theme: YandexPayConfiguration.YPSDKThemeColorScheme)
   @_spi(Internal) @_Concurrency.MainActor public func logout()
+}
+@_spi(Internal) public protocol YPayModuleLifecycle : AnyObject {
+  @_spi(Internal) @_Concurrency.MainActor func clear()
 }
 public protocol YPayURLHandler {
   func canHandle(url: Foundation.URL, options: [UIKit.UIApplication.OpenURLOptionsKey : Any]) -> Swift.Bool

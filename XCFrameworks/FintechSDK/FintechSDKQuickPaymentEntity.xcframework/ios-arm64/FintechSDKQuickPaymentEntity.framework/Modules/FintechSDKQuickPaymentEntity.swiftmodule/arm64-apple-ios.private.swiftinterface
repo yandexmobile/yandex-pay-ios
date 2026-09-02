@@ -38,7 +38,8 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public let payTickets: [Swift.String]
   @_spi(Internal) public let expiresAt: Foundation.Date
   @_spi(Internal) public let signedTtl: Foundation.TimeInterval
-  @_spi(Internal) public init(payTickets: [Swift.String], expiresAt: Foundation.Date, signedTtl: Foundation.TimeInterval)
+  @_spi(Internal) public let qrTemplate: Swift.String?
+  @_spi(Internal) public init(payTickets: [Swift.String], expiresAt: Foundation.Date, signedTtl: Foundation.TimeInterval, qrTemplate: Swift.String? = nil)
   @_spi(Internal) public static func == (a: FintechSDKQuickPaymentEntity.FTOfflineTicketsBatch, b: FintechSDKQuickPaymentEntity.FTOfflineTicketsBatch) -> Swift.Bool
 }
 @_spi(Internal) public enum FTOrderStatus : Swift.String, Swift.Decodable, Swift.Sendable {
@@ -119,12 +120,14 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public let expiresAt: Foundation.Date
   @_spi(Internal) public let generatedAt: Foundation.Date
   @_spi(Internal) public let signedTtl: Foundation.TimeInterval
-  @_spi(Internal) public init(payTickets: [Swift.String], expiresAt: Foundation.Date, generatedAt: Foundation.Date, signedTtl: Foundation.TimeInterval)
+  @_spi(Internal) public let qrTemplate: Swift.String?
+  @_spi(Internal) public init(payTickets: [Swift.String], expiresAt: Foundation.Date, generatedAt: Foundation.Date, signedTtl: Foundation.TimeInterval, qrTemplate: Swift.String? = nil)
   @_spi(Internal) public static func == (a: FintechSDKQuickPaymentEntity.FTQPStoredOfflineTicketsBatch, b: FintechSDKQuickPaymentEntity.FTQPStoredOfflineTicketsBatch) -> Swift.Bool
   @_spi(Internal) public func encode(to encoder: any Swift.Encoder) throws
   @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
 }
 public enum FTQuickPayResult : Swift.Sendable {
+  case waitingForApprove
   case success
   case failure(FintechSDKQuickPaymentEntity.FTQuickPayResult.FailureDetails)
   public struct FailureDetails : @unchecked Swift.Sendable {

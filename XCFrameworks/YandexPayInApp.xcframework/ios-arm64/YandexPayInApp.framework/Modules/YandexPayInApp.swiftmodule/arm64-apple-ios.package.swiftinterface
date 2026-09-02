@@ -76,6 +76,9 @@ public enum YPayInApp {
     get
   }
   @_Concurrency.MainActor final public func configure(with configuration: YandexPayConfiguration.YPay)
+  @_spi(Internal) @_Concurrency.MainActor final public func clear()
   @objc deinit
+}
+@_spi(Internal) extension YandexPayInApp.YandexPayInAppModuleDescriptor : YandexPayConfiguration.YPayModuleLifecycle {
 }
 extension YandexPayInApp.YPInAppDisabledReason : Swift.Hashable {}

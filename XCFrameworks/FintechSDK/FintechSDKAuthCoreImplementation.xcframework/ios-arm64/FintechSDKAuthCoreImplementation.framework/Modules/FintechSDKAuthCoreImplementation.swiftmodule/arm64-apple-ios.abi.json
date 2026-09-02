@@ -820,6 +820,34 @@
             ],
             "throwing": true,
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "hasStoredKey",
+            "printedName": "hasStoredKey(type:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PublicKeyType",
+                "printedName": "FintechSDKAuthInterfaces.PublicKeyType",
+                "usr": "s:24FintechSDKAuthInterfaces13PublicKeyTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:32FintechSDKAuthCoreImplementation0A14DPoPKeyFactoryO12hasStoredKey4typeSb0aB10Interfaces06PublicJ4TypeO_tFZ",
+            "mangledName": "$s32FintechSDKAuthCoreImplementation0A14DPoPKeyFactoryO12hasStoredKey4typeSb0aB10Interfaces06PublicJ4TypeO_tFZ",
+            "moduleName": "FintechSDKAuthCoreImplementation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Enum",
@@ -964,6 +992,34 @@
               "AccessControl"
             ],
             "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "hasKey",
+            "printedName": "hasKey(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PublicKeyType",
+                "printedName": "FintechSDKAuthInterfaces.PublicKeyType",
+                "usr": "s:24FintechSDKAuthInterfaces13PublicKeyTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:32FintechSDKAuthCoreImplementation0A15DPoPServiceImplC6hasKeyySb0aB10Interfaces06PublicI4TypeOF",
+            "mangledName": "$s32FintechSDKAuthCoreImplementation0A15DPoPServiceImplC6hasKeyySb0aB10Interfaces06PublicI4TypeOF",
+            "moduleName": "FintechSDKAuthCoreImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
             "funcSelfKind": "NonMutating"
           },
           {
@@ -1130,6 +1186,207 @@
         "printedName": "FintechSDKAuthInterfaces",
         "declKind": "Import",
         "moduleName": "FintechSDKAuthCoreImplementation"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAuthCoreImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTExternalAuthTokenHolder",
+        "printedName": "FTExternalAuthTokenHolder",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "token",
+            "printedName": "token",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:32FintechSDKAuthCoreImplementation25FTExternalAuthTokenHolderC5tokenSSSgvp",
+            "mangledName": "$s32FintechSDKAuthCoreImplementation25FTExternalAuthTokenHolderC5tokenSSSgvp",
+            "moduleName": "FintechSDKAuthCoreImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:32FintechSDKAuthCoreImplementation25FTExternalAuthTokenHolderC5tokenSSSgvg",
+                "mangledName": "$s32FintechSDKAuthCoreImplementation25FTExternalAuthTokenHolderC5tokenSSSgvg",
+                "moduleName": "FintechSDKAuthCoreImplementation",
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:32FintechSDKAuthCoreImplementation25FTExternalAuthTokenHolderC5tokenSSSgvs",
+                "mangledName": "$s32FintechSDKAuthCoreImplementation25FTExternalAuthTokenHolderC5tokenSSSgvs",
+                "moduleName": "FintechSDKAuthCoreImplementation",
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:32FintechSDKAuthCoreImplementation25FTExternalAuthTokenHolderC5tokenSSSgvM",
+                "mangledName": "$s32FintechSDKAuthCoreImplementation25FTExternalAuthTokenHolderC5tokenSSSgvM",
+                "moduleName": "FintechSDKAuthCoreImplementation",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "SPIAccessControl"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTExternalAuthTokenHolder",
+                "printedName": "FintechSDKAuthCoreImplementation.FTExternalAuthTokenHolder",
+                "usr": "s:32FintechSDKAuthCoreImplementation25FTExternalAuthTokenHolderC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:32FintechSDKAuthCoreImplementation25FTExternalAuthTokenHolderCACycfc",
+            "mangledName": "$s32FintechSDKAuthCoreImplementation25FTExternalAuthTokenHolderCACycfc",
+            "moduleName": "FintechSDKAuthCoreImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:32FintechSDKAuthCoreImplementation25FTExternalAuthTokenHolderC",
+        "mangledName": "$s32FintechSDKAuthCoreImplementation25FTExternalAuthTokenHolderC",
+        "moduleName": "FintechSDKAuthCoreImplementation",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
       },
       {
         "kind": "Import",
@@ -2420,112 +2677,112 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FTDPoPOfflineKeyStore.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FTDPoPOfflineKeyStore.swift",
       "kind": "StringLiteral",
       "offset": 387,
       "length": 44,
       "value": "\"com.yandex.fintech.dpop.offline-public-key\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FTDPoPStateHolderImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FTDPoPStateHolderImpl.swift",
       "kind": "Dictionary",
       "offset": 288,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeyImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeyImpl.swift",
       "kind": "BooleanLiteral",
       "offset": 352,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeySimulatorImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeySimulatorImpl.swift",
       "kind": "BooleanLiteral",
       "offset": 479,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeySimulatorImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeySimulatorImpl.swift",
       "kind": "BooleanLiteral",
       "offset": 510,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeySimulatorImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeySimulatorImpl.swift",
       "kind": "StringLiteral",
-      "offset": 3025,
+      "offset": 3128,
       "length": 28,
       "value": "\"com.fintech.dpop.simulator\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeySimulatorImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeySimulatorImpl.swift",
       "kind": "StringLiteral",
-      "offset": 3094,
+      "offset": 3197,
       "length": 10,
       "value": "\"dpop_key\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeySimulatorImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechDPoPKeySimulatorImpl.swift",
       "kind": "StringLiteral",
-      "offset": 3143,
+      "offset": 3246,
       "length": 22,
       "value": "\"dpop_key.no_biometry\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechKeyStoreRef.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechKeyStoreRef.swift",
       "kind": "StringLiteral",
       "offset": 108,
       "length": 13,
       "value": "\"fintech.sdk\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechKeyStoreRef.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechKeyStoreRef.swift",
       "kind": "StringLiteral",
       "offset": 153,
       "length": 13,
       "value": "\"dpop.se.ref\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechKeyStoreRef.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/FintechKeyStoreRef.swift",
       "kind": "StringLiteral",
       "offset": 208,
       "length": 25,
       "value": "\"dpop.se.ref.no_biometry\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/OfflineTicket\/FTOfflinePayTicketSignerImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/OfflineTicket\/FTOfflinePayTicketSignerImpl.swift",
       "kind": "IntegerLiteral",
       "offset": 215,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/OfflineTicket\/FTOfflineTicketAlphabet.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/OfflineTicket\/FTOfflineTicketAlphabet.swift",
       "kind": "StringLiteral",
       "offset": 224,
       "length": 87,
       "value": "\"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-:+=^!\/*?&<>()[]{}@%$#\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/OfflineTicket\/FTOfflineTicketTimemarkEncoder.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/OfflineTicket\/FTOfflineTicketTimemarkEncoder.swift",
       "kind": "IntegerLiteral",
       "offset": 235,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/OfflineTicket\/FTOfflineTicketTimemarkEncoder.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/OfflineTicket\/FTOfflineTicketTimemarkEncoder.swift",
       "kind": "IntegerLiteral",
       "offset": 419,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/OfflineTicket\/FTOfflineTicketZ85Encoder.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/OfflineTicket\/FTOfflineTicketZ85Encoder.swift",
       "kind": "IntegerLiteral",
       "offset": 214,
       "length": 1,

@@ -1096,6 +1096,132 @@
       },
       {
         "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "YandexPayAssistant"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKRealUserMonitoringAdapter",
+        "printedName": "FintechSDKRealUserMonitoringAdapter",
+        "declKind": "Import",
+        "moduleName": "YandexPayAssistant"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTRUMArgoAdapterFactory",
+        "printedName": "FTRUMArgoAdapterFactory",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTRUMArgoAdapterFactory",
+                "printedName": "YandexPayAssistant.FTRUMArgoAdapterFactory",
+                "usr": "s:18YandexPayAssistant23FTRUMArgoAdapterFactoryC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:18YandexPayAssistant23FTRUMArgoAdapterFactoryCACycfc",
+            "mangledName": "$s18YandexPayAssistant23FTRUMArgoAdapterFactoryCACycfc",
+            "moduleName": "YandexPayAssistant",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "make",
+            "printedName": "make(uid:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechRUMAdapter",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FintechRUMAdapter",
+                "usr": "s:29FintechSDKAnalyticsInterfaces0A10RUMAdapterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18YandexPayAssistant23FTRUMArgoAdapterFactoryC4make3uid29FintechSDKAnalyticsInterfaces0I10RUMAdapter_pSSSg_tF",
+            "mangledName": "$s18YandexPayAssistant23FTRUMArgoAdapterFactoryC4make3uid29FintechSDKAnalyticsInterfaces0I10RUMAdapter_pSSSg_tF",
+            "moduleName": "YandexPayAssistant",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:18YandexPayAssistant23FTRUMArgoAdapterFactoryC",
+        "mangledName": "$s18YandexPayAssistant23FTRUMArgoAdapterFactoryC",
+        "moduleName": "YandexPayAssistant",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechRUMAdapterFactory",
+            "printedName": "FintechRUMAdapterFactory",
+            "usr": "s:29FintechSDKAnalyticsInterfaces0A17RUMAdapterFactoryP",
+            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A17RUMAdapterFactoryP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -1767,6 +1893,32 @@
           },
           {
             "kind": "Function",
+            "name": "clear",
+            "printedName": "clear()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18YandexPayAssistant27YPAssistantModuleDescriptorC5clearyyF",
+            "mangledName": "$s18YandexPayAssistant27YPAssistantModuleDescriptorC5clearyyF",
+            "moduleName": "YandexPayAssistant",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "Custom",
+              "SPIAccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "logout",
             "printedName": "logout()",
             "children": [
@@ -1854,6 +2006,13 @@
             "printedName": "YPayModule",
             "usr": "s:22YandexPayConfiguration10YPayModuleP",
             "mangledName": "$s22YandexPayConfiguration10YPayModuleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "YPayModuleLifecycle",
+            "printedName": "YPayModuleLifecycle",
+            "usr": "s:22YandexPayConfiguration19YPayModuleLifecycleP",
+            "mangledName": "$s22YandexPayConfiguration19YPayModuleLifecycleP"
           },
           {
             "kind": "Conformance",

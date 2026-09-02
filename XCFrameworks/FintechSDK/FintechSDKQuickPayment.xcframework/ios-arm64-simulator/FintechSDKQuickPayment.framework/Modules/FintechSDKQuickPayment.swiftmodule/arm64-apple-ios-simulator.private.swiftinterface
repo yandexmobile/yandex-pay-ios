@@ -107,6 +107,8 @@ public enum FintechQuickPaymentError : Swift.Error {
   case noPresentationContext
   case widgetNotActivated
   case qrStringNotAvailable
+  case orderPollingNotControlledByMerchant
+  case noActivePaymentSession
 }
 @_spi(Internal) final public class FintechQuickPayHandler {
   @_spi(Internal) @_Concurrency.MainActor public init(config: FintechSDKQuickPayment.FTQuickPayConfig, stateListener: any FintechSDKQuickPayment.FTQuickPaymentStateListener, appMetricaAdapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter, fontsAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter, bduiAdapterFactory: any FintechSDKBDUIFeatures.FintechBDUIAdapterFactory, rtmFactory: any FintechSDKAnalyticsInterfaces.FintechRTMAdapterFactory, rumFactory: any FintechSDKAnalyticsInterfaces.FintechRUMAdapterFactory, accountManagerAdapter: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, loginService: any FintechSDKAuthInterfaces.FintechLoginService, presentationContextProvider: (any FintechSDKCoreUI.FTPresentationContextProviding)?, networkChallengeHandlerFactory: (any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory)? = nil)
@@ -130,6 +132,9 @@ public enum FintechQuickPaymentError : Swift.Error {
   @_spi(Internal) final public func isSecurityCheckRequired() async throws -> Swift.Bool
   @_spi(Internal) final public func hasAvailablePaymentMethods() async throws -> Swift.Bool
   @_spi(Internal) final public func stopPaymentPolling() async
+  @_spi(Internal) @_Concurrency.MainActor final public func clearHandler()
+  @_spi(Internal) final public func startOrderPolling() async throws
+  @_spi(Internal) final public func stopOrderPolling() async throws
   @_spi(Internal) final public func showFaqScreen(onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async
   @_spi(Internal) final public func showOnboardingStoriesScreen(onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async
   @_spi(Internal) final public func showAddPaymentMethodScreen(_ type: FintechSDKQuickPayment.FTQuickPayPaymentMethodType, onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async throws

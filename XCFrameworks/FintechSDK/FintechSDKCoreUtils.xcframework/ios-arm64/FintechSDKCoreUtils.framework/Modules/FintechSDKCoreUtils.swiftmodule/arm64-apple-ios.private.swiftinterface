@@ -101,6 +101,9 @@ extension Swift.Sequence {
 @_spi(Internal) extension Foundation.URLComponents {
   @_spi(Internal) public func extractParam(for key: Swift.String) -> Swift.Bool?
 }
+@_spi(Internal) extension Foundation.URLRequest {
+  @_spi(Internal) public func addingHeaders(_ headers: [Swift.String : Swift.String]) -> Foundation.URLRequest
+}
 @frozen public struct FTAnyCodable : Swift.Codable, FintechSDKCoreUtils.FTAnyValueBox {
   public let value: Any
   public init<T>(_ value: T?)
@@ -256,6 +259,11 @@ public protocol FTAnyValueBox {
 }
 @_spi(Internal) public enum FTPKDynamicLinkParser {
   @_spi(Internal) public static func parse(_ dynamicLinkString: Swift.String) -> FintechSDKCoreUtils.FTPKDynamicLinkParser.ParsedDynamicLink?
+}
+@_spi(Internal) public enum FTPlatformWrapperStorage {
+  @_spi(Internal) public static func value(userDefaults: Foundation.UserDefaults = .standard) -> Swift.String
+  @_spi(Internal) public static let key: Swift.String
+  @_spi(Internal) public static let nativeValue: Swift.String
 }
 @propertyWrapper public struct FTSafeOptional<Wrapped> : Swift.Codable where Wrapped : Swift.Decodable, Wrapped : Swift.Encodable {
   public var wrappedValue: Wrapped?

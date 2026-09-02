@@ -565,6 +565,128 @@
             ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "reportBindRetryTriggered",
+            "printedName": "reportBindRetryTriggered()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario28FTAuthFlowAnalyticsReportingP24reportBindRetryTriggeredyyF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario28FTAuthFlowAnalyticsReportingP24reportBindRetryTriggeredyyF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthorizationScenario.FTAuthFlowAnalyticsReporting>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthorizationScenario.FTAuthFlowAnalyticsReporting>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "reportBindRetryBiometricBstAcquired",
+            "printedName": "reportBindRetryBiometricBstAcquired()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario28FTAuthFlowAnalyticsReportingP35reportBindRetryBiometricBstAcquiredyyF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario28FTAuthFlowAnalyticsReportingP35reportBindRetryBiometricBstAcquiredyyF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthorizationScenario.FTAuthFlowAnalyticsReporting>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthorizationScenario.FTAuthFlowAnalyticsReporting>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "reportBindRetrySkipped",
+            "printedName": "reportBindRetrySkipped(reason:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario28FTAuthFlowAnalyticsReportingP22reportBindRetrySkipped6reasonySS_tF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario28FTAuthFlowAnalyticsReportingP22reportBindRetrySkipped6reasonySS_tF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthorizationScenario.FTAuthFlowAnalyticsReporting>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthorizationScenario.FTAuthFlowAnalyticsReporting>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "reportBindRetryFailed",
+            "printedName": "reportBindRetryFailed(reason:exception:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario28FTAuthFlowAnalyticsReportingP21reportBindRetryFailed6reason9exceptionySS_SSSgtF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario28FTAuthFlowAnalyticsReportingP21reportBindRetryFailed6reason9exceptionySS_SSSgtF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthorizationScenario.FTAuthFlowAnalyticsReporting>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthorizationScenario.FTAuthFlowAnalyticsReporting>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Protocol",
@@ -601,6 +723,339 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTBindRetrySkipReason",
+        "printedName": "FTBindRetrySkipReason",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "tokenConflict",
+            "printedName": "tokenConflict",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKAuthorizationScenario21FTBindRetrySkipReasonO13tokenConflictSSvpZ",
+            "mangledName": "$s31FintechSDKAuthorizationScenario21FTBindRetrySkipReasonO13tokenConflictSSvpZ",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKAuthorizationScenario21FTBindRetrySkipReasonO13tokenConflictSSvgZ",
+                "mangledName": "$s31FintechSDKAuthorizationScenario21FTBindRetrySkipReasonO13tokenConflictSSvgZ",
+                "moduleName": "FintechSDKAuthorizationScenario",
+                "static": true,
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "nonRetryable",
+            "printedName": "nonRetryable",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKAuthorizationScenario21FTBindRetrySkipReasonO12nonRetryableSSvpZ",
+            "mangledName": "$s31FintechSDKAuthorizationScenario21FTBindRetrySkipReasonO12nonRetryableSSvpZ",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKAuthorizationScenario21FTBindRetrySkipReasonO12nonRetryableSSvgZ",
+                "mangledName": "$s31FintechSDKAuthorizationScenario21FTBindRetrySkipReasonO12nonRetryableSSvgZ",
+                "moduleName": "FintechSDKAuthorizationScenario",
+                "static": true,
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "noBiometricKey",
+            "printedName": "noBiometricKey",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKAuthorizationScenario21FTBindRetrySkipReasonO14noBiometricKeySSvpZ",
+            "mangledName": "$s31FintechSDKAuthorizationScenario21FTBindRetrySkipReasonO14noBiometricKeySSvpZ",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKAuthorizationScenario21FTBindRetrySkipReasonO14noBiometricKeySSvgZ",
+                "mangledName": "$s31FintechSDKAuthorizationScenario21FTBindRetrySkipReasonO14noBiometricKeySSvgZ",
+                "moduleName": "FintechSDKAuthorizationScenario",
+                "static": true,
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "notMigrationCandidate",
+            "printedName": "notMigrationCandidate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKAuthorizationScenario21FTBindRetrySkipReasonO21notMigrationCandidateSSvpZ",
+            "mangledName": "$s31FintechSDKAuthorizationScenario21FTBindRetrySkipReasonO21notMigrationCandidateSSvpZ",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKAuthorizationScenario21FTBindRetrySkipReasonO21notMigrationCandidateSSvgZ",
+                "mangledName": "$s31FintechSDKAuthorizationScenario21FTBindRetrySkipReasonO21notMigrationCandidateSSvgZ",
+                "moduleName": "FintechSDKAuthorizationScenario",
+                "static": true,
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:31FintechSDKAuthorizationScenario21FTBindRetrySkipReasonO",
+        "mangledName": "$s31FintechSDKAuthorizationScenario21FTBindRetrySkipReasonO",
+        "moduleName": "FintechSDKAuthorizationScenario",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTBindRetryFailureReason",
+        "printedName": "FTBindRetryFailureReason",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "biometricBstGenerationFailed",
+            "printedName": "biometricBstGenerationFailed",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKAuthorizationScenario24FTBindRetryFailureReasonO28biometricBstGenerationFailedSSvpZ",
+            "mangledName": "$s31FintechSDKAuthorizationScenario24FTBindRetryFailureReasonO28biometricBstGenerationFailedSSvpZ",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKAuthorizationScenario24FTBindRetryFailureReasonO28biometricBstGenerationFailedSSvgZ",
+                "mangledName": "$s31FintechSDKAuthorizationScenario24FTBindRetryFailureReasonO28biometricBstGenerationFailedSSvgZ",
+                "moduleName": "FintechSDKAuthorizationScenario",
+                "static": true,
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:31FintechSDKAuthorizationScenario24FTBindRetryFailureReasonO",
+        "mangledName": "$s31FintechSDKAuthorizationScenario24FTBindRetryFailureReasonO",
+        "moduleName": "FintechSDKAuthorizationScenario",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           }
         ]
       },
@@ -1168,6 +1623,173 @@
             "printedName": "Encodable",
             "usr": "s:SE",
             "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTAuthLogoutPolicy",
+        "printedName": "FTAuthLogoutPolicy",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTAuthLogoutPolicy",
+                "printedName": "FintechSDKAuthorizationScenario.FTAuthLogoutPolicy",
+                "usr": "s:31FintechSDKAuthorizationScenario18FTAuthLogoutPolicyV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FintechSDKAuthorizationScenario.FTSessionError) -> Swift.Bool",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTSessionError",
+                    "printedName": "FintechSDKAuthorizationScenario.FTSessionError",
+                    "usr": "s:31FintechSDKAuthorizationScenario14FTSessionErrorO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKAuthorizationScenario18FTAuthLogoutPolicyVyACSbAA14FTSessionErrorOYbccfc",
+            "mangledName": "$s31FintechSDKAuthorizationScenario18FTAuthLogoutPolicyVyACSbAA14FTSessionErrorOYbccfc",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "needToLogout",
+            "printedName": "needToLogout(on:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTSessionError",
+                "printedName": "FintechSDKAuthorizationScenario.FTSessionError",
+                "usr": "s:31FintechSDKAuthorizationScenario14FTSessionErrorO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario18FTAuthLogoutPolicyV06needToE02onSbAA14FTSessionErrorO_tF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario18FTAuthLogoutPolicyV06needToE02onSbAA14FTSessionErrorO_tF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "default",
+            "printedName": "default",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTAuthLogoutPolicy",
+                "printedName": "FintechSDKAuthorizationScenario.FTAuthLogoutPolicy",
+                "usr": "s:31FintechSDKAuthorizationScenario18FTAuthLogoutPolicyV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKAuthorizationScenario18FTAuthLogoutPolicyV7defaultACvpZ",
+            "mangledName": "$s31FintechSDKAuthorizationScenario18FTAuthLogoutPolicyV7defaultACvpZ",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTAuthLogoutPolicy",
+                    "printedName": "FintechSDKAuthorizationScenario.FTAuthLogoutPolicy",
+                    "usr": "s:31FintechSDKAuthorizationScenario18FTAuthLogoutPolicyV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKAuthorizationScenario18FTAuthLogoutPolicyV7defaultACvgZ",
+                "mangledName": "$s31FintechSDKAuthorizationScenario18FTAuthLogoutPolicyV7defaultACvgZ",
+                "moduleName": "FintechSDKAuthorizationScenario",
+                "static": true,
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:31FintechSDKAuthorizationScenario18FTAuthLogoutPolicyV",
+        "mangledName": "$s31FintechSDKAuthorizationScenario18FTAuthLogoutPolicyV",
+        "moduleName": "FintechSDKAuthorizationScenario",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -1760,6 +2382,31 @@
             "declKind": "Func",
             "usr": "s:31FintechSDKAuthorizationScenario06FTAuthC0P10runBstOnly4mode0A17SDKAuthInterfaces0A11AuthSessionVAA0dL15AcquisitionModeO_tYa14FTSessionErrorQzYKF",
             "mangledName": "$s31FintechSDKAuthorizationScenario06FTAuthC0P10runBstOnly4mode0A17SDKAuthInterfaces0A11AuthSessionVAA0dL15AcquisitionModeO_tYa14FTSessionErrorQzYKF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthorizationScenario.FTAuthScenario>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthorizationScenario.FTAuthScenario>",
+            "protocolReq": true,
+            "declAttributes": [
+              "Custom"
+            ],
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "bindBiometricKey",
+            "printedName": "bindBiometricKey()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario06FTAuthC0P16bindBiometricKeyyyYa14FTSessionErrorQzYKF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario06FTAuthC0P16bindBiometricKeyyyYa14FTSessionErrorQzYKF",
             "moduleName": "FintechSDKAuthorizationScenario",
             "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthorizationScenario.FTAuthScenario>",
             "sugared_genericSig": "<Self where Self : FintechSDKAuthorizationScenario.FTAuthScenario>",
@@ -2575,7 +3222,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(merchantID:loginService:dpopService:paybackendNetworkClient:frontbackendNetworkClient:eventReporter:errorReporter:analyticsService:bstStateStore:inFlightStore:sessionIDProvider:partnerAuthStateProvider:loadingScreenFactory:dpopStateHolder:userAuthUseCase:)",
+            "printedName": "init(merchantID:loginService:dpopService:paybackendNetworkClient:frontbackendNetworkClient:eventReporter:errorReporter:analyticsService:bstStateStore:inFlightStore:sessionIDProvider:partnerAuthStateProvider:loadingScreenFactory:dpopStateHolder:userAuthUseCase:logoutPolicy:biometricSessionProvider:bindMigrationCandidateProvider:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -2758,11 +3405,60 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTAuthLogoutPolicy",
+                "printedName": "FintechSDKAuthorizationScenario.FTAuthLogoutPolicy",
+                "hasDefaultArg": true,
+                "usr": "s:31FintechSDKAuthorizationScenario18FTAuthLogoutPolicyV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKAuthorizationScenario.FTAuthSessionGetUseCase)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTAuthSessionGetUseCase",
+                    "printedName": "any FintechSDKAuthorizationScenario.FTAuthSessionGetUseCase",
+                    "usr": "s:31FintechSDKAuthorizationScenario23FTAuthSessionGetUseCaseP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() async -> Swift.Bool)?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() async -> Swift.Bool",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:31FintechSDKAuthorizationScenario06FTAuthC4ImplC10merchantID12loginService04dpopI023paybackendNetworkClient012frontbackendlM013eventReporter05errorP009analyticsI013bstStateStore08inFlightU017sessionIDProvider011partnerAuthT8Provider20loadingScreenFactory0jT6Holder15userAuthUseCaseACSS_0A17SDKAuthInterfaces0a5LoginI0_pAS0A11DPoPService_p0A20SDKNetworkInterfaces0alM0_pAvW_p0A22SDKAnalyticsInterfaces0a14AnalyticsEventP0_pAX0a14AnalyticsErrorP0_pAA0D22FlowAnalyticsReporting_pAA05FTBsttU0_pAA09FTOAuthInwU0_pSSSgyYbcSgSbSgycSgAA22FTLoadingScreenFactory_pSgAS17FTDPoPStateHolder_pSgAA22FTUserAuthTokenUseCase_pSgtcfc",
-            "mangledName": "$s31FintechSDKAuthorizationScenario06FTAuthC4ImplC10merchantID12loginService04dpopI023paybackendNetworkClient012frontbackendlM013eventReporter05errorP009analyticsI013bstStateStore08inFlightU017sessionIDProvider011partnerAuthT8Provider20loadingScreenFactory0jT6Holder15userAuthUseCaseACSS_0A17SDKAuthInterfaces0a5LoginI0_pAS0A11DPoPService_p0A20SDKNetworkInterfaces0alM0_pAvW_p0A22SDKAnalyticsInterfaces0a14AnalyticsEventP0_pAX0a14AnalyticsErrorP0_pAA0D22FlowAnalyticsReporting_pAA05FTBsttU0_pAA09FTOAuthInwU0_pSSSgyYbcSgSbSgycSgAA22FTLoadingScreenFactory_pSgAS17FTDPoPStateHolder_pSgAA22FTUserAuthTokenUseCase_pSgtcfc",
+            "usr": "s:31FintechSDKAuthorizationScenario06FTAuthC4ImplC10merchantID12loginService04dpopI023paybackendNetworkClient012frontbackendlM013eventReporter05errorP009analyticsI013bstStateStore08inFlightU017sessionIDProvider011partnerAuthT8Provider20loadingScreenFactory0jT6Holder15userAuthUseCase12logoutPolicy24biometricSessionProvider30bindMigrationCandidateProviderACSS_0A17SDKAuthInterfaces0a5LoginI0_pAV0A11DPoPService_p0A20SDKNetworkInterfaces0alM0_pAyZ_p0A22SDKAnalyticsInterfaces0a14AnalyticsEventP0_pA_0a14AnalyticsErrorP0_pAA0D22FlowAnalyticsReporting_pAA05FTBsttU0_pAA09FTOAuthInwU0_pSSSgyYbcSgSbSgycSgAA22FTLoadingScreenFactory_pSgAV17FTDPoPStateHolder_pSgAA22FTUserAuthTokenUseCase_pSgAA0D12LogoutPolicyVAA0D17SessionGetUseCase_pSgSbyYaYbcSgtcfc",
+            "mangledName": "$s31FintechSDKAuthorizationScenario06FTAuthC4ImplC10merchantID12loginService04dpopI023paybackendNetworkClient012frontbackendlM013eventReporter05errorP009analyticsI013bstStateStore08inFlightU017sessionIDProvider011partnerAuthT8Provider20loadingScreenFactory0jT6Holder15userAuthUseCase12logoutPolicy24biometricSessionProvider30bindMigrationCandidateProviderACSS_0A17SDKAuthInterfaces0a5LoginI0_pAV0A11DPoPService_p0A20SDKNetworkInterfaces0alM0_pAyZ_p0A22SDKAnalyticsInterfaces0a14AnalyticsEventP0_pA_0a14AnalyticsErrorP0_pAA0D22FlowAnalyticsReporting_pAA05FTBsttU0_pAA09FTOAuthInwU0_pSSSgyYbcSgSbSgycSgAA22FTLoadingScreenFactory_pSgAV17FTDPoPStateHolder_pSgAA22FTUserAuthTokenUseCase_pSgAA0D12LogoutPolicyVAA0D17SessionGetUseCase_pSgSbyYaYbcSgtcfc",
             "moduleName": "FintechSDKAuthorizationScenario",
             "declAttributes": [
               "AccessControl"
@@ -3043,6 +3739,32 @@
             "declKind": "Func",
             "usr": "s:31FintechSDKAuthorizationScenario06FTAuthC4ImplC10runBstOnly4mode0A17SDKAuthInterfaces0A11AuthSessionVAA0dM15AcquisitionModeO_tYaAA14FTSessionErrorOYKF",
             "mangledName": "$s31FintechSDKAuthorizationScenario06FTAuthC4ImplC10runBstOnly4mode0A17SDKAuthInterfaces0A11AuthSessionVAA0dM15AcquisitionModeO_tYaAA14FTSessionErrorOYKF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "Custom"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "bindBiometricKey",
+            "printedName": "bindBiometricKey()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario06FTAuthC4ImplC16bindBiometricKeyyyYaAA14FTSessionErrorOYKF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario06FTAuthC4ImplC16bindBiometricKeyyyYaAA14FTSessionErrorOYKF",
             "moduleName": "FintechSDKAuthorizationScenario",
             "declAttributes": [
               "Final",
@@ -3385,18 +4107,42 @@
           },
           {
             "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
             "name": "Sendable",
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
           }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAuthorizationScenario"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAuthorizationScenario"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAuthInterfaces",
+        "printedName": "FintechSDKAuthInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAuthorizationScenario",
+        "declAttributes": [
+          "SPIAccessControl"
         ]
       },
       {
@@ -3987,6 +4733,13 @@
             "mangledName": "$ss9EscapableP"
           }
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAuthorizationScenario"
       },
       {
         "kind": "Import",
@@ -6271,6 +7024,54 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "isRecoverableWithoutLogout",
+            "printedName": "isRecoverableWithoutLogout",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKAuthorizationScenario14FTSessionErrorO26isRecoverableWithoutLogoutSbvp",
+            "mangledName": "$s31FintechSDKAuthorizationScenario14FTSessionErrorO26isRecoverableWithoutLogoutSbvp",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKAuthorizationScenario14FTSessionErrorO26isRecoverableWithoutLogoutSbvg",
+                "mangledName": "$s31FintechSDKAuthorizationScenario14FTSessionErrorO26isRecoverableWithoutLogoutSbvg",
+                "moduleName": "FintechSDKAuthorizationScenario",
+                "isFromExtension": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(with:step:)",
@@ -6489,6 +7290,59 @@
                 "declKind": "Accessor",
                 "usr": "s:31FintechSDKAuthorizationScenario13FailureReasonO14scopeCancelledSSvgZ",
                 "mangledName": "$s31FintechSDKAuthorizationScenario13FailureReasonO14scopeCancelledSSvgZ",
+                "moduleName": "FintechSDKAuthorizationScenario",
+                "static": true,
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "scopeSuperseded",
+            "printedName": "scopeSuperseded",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKAuthorizationScenario13FailureReasonO15scopeSupersededSSvpZ",
+            "mangledName": "$s31FintechSDKAuthorizationScenario13FailureReasonO15scopeSupersededSSvpZ",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKAuthorizationScenario13FailureReasonO15scopeSupersededSSvgZ",
+                "mangledName": "$s31FintechSDKAuthorizationScenario13FailureReasonO15scopeSupersededSSvgZ",
                 "moduleName": "FintechSDKAuthorizationScenario",
                 "static": true,
                 "implicit": true,
@@ -9756,6 +10610,124 @@
               "Internal"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "reportBindRetryTriggered",
+            "printedName": "reportBindRetryTriggered()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario23FTAuthFlowAnalyticsNoOpV24reportBindRetryTriggeredyyF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario23FTAuthFlowAnalyticsNoOpV24reportBindRetryTriggeredyyF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "reportBindRetryBiometricBstAcquired",
+            "printedName": "reportBindRetryBiometricBstAcquired()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario23FTAuthFlowAnalyticsNoOpV35reportBindRetryBiometricBstAcquiredyyF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario23FTAuthFlowAnalyticsNoOpV35reportBindRetryBiometricBstAcquiredyyF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "reportBindRetrySkipped",
+            "printedName": "reportBindRetrySkipped(reason:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario23FTAuthFlowAnalyticsNoOpV22reportBindRetrySkipped6reasonySS_tF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario23FTAuthFlowAnalyticsNoOpV22reportBindRetrySkipped6reasonySS_tF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "reportBindRetryFailed",
+            "printedName": "reportBindRetryFailed(reason:exception:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario23FTAuthFlowAnalyticsNoOpV21reportBindRetryFailed6reason9exceptionySS_SSSgtF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario23FTAuthFlowAnalyticsNoOpV21reportBindRetryFailed6reason9exceptionySS_SSSgtF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Struct",
@@ -10066,6 +11038,74 @@
         "declKind": "Protocol",
         "usr": "s:31FintechSDKAuthorizationScenario19FTRefreshBstUseCaseP",
         "mangledName": "$s31FintechSDKAuthorizationScenario19FTRefreshBstUseCaseP",
+        "moduleName": "FintechSDKAuthorizationScenario",
+        "genericSig": "<τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTBindBiometricKeyUseCase",
+        "printedName": "FTBindBiometricKeyUseCase",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "bindBiometricKey",
+            "printedName": "bindBiometricKey()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario25FTBindBiometricKeyUseCaseP04bindeF0yyYaKF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario25FTBindBiometricKeyUseCaseP04bindeF0yyYaKF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthorizationScenario.FTBindBiometricKeyUseCase>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthorizationScenario.FTBindBiometricKeyUseCase>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:31FintechSDKAuthorizationScenario25FTBindBiometricKeyUseCaseP",
+        "mangledName": "$s31FintechSDKAuthorizationScenario25FTBindBiometricKeyUseCaseP",
         "moduleName": "FintechSDKAuthorizationScenario",
         "genericSig": "<τ_0_0 : Swift.Sendable>",
         "sugared_genericSig": "<Self : Swift.Sendable>",
@@ -11331,7 +12371,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(presenterViewController:clearAuthData:sessionDataInteractions:handleRetriableAuthUseCase:authScenario:analyticsService:bstStateStore:authStateNotifiable:)",
+            "printedName": "init(presenterViewController:clearAuthData:sessionDataInteractions:biometricSessionDataInteractions:handleRetriableAuthUseCase:authScenario:analyticsService:bstStateStore:authStateNotifiable:logoutPolicy:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -11366,6 +12406,20 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKAuthorizationScenario.FTAuthSessionGetUseCase & FintechSDKAuthorizationScenario.FTAuthSessionSetUseCase)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "any FintechSDKAuthorizationScenario.FTAuthSessionGetUseCase & FintechSDKAuthorizationScenario.FTAuthSessionSetUseCase"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "FTRetriableAuthErrorProcessingUseCase",
                 "printedName": "any FintechSDKAuthorizationScenario.FTRetriableAuthErrorProcessingUseCase",
                 "usr": "s:31FintechSDKAuthorizationScenario37FTRetriableAuthErrorProcessingUseCaseP"
@@ -11403,11 +12457,18 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTAuthLogoutPolicy",
+                "printedName": "FintechSDKAuthorizationScenario.FTAuthLogoutPolicy",
+                "hasDefaultArg": true,
+                "usr": "s:31FintechSDKAuthorizationScenario18FTAuthLogoutPolicyV"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:31FintechSDKAuthorizationScenario20FTAuthFlowInteractorC23presenterViewController13clearAuthData07sessionL12Interactions015handleRetriableK7UseCase04authC016analyticsService13bstStateStore0sW10NotifiableACSo06UIViewI0CSg_AA022FTInvalidateOAuthCacheqR0_pAA0d10SessionGetqR0_AA0d10SessionSetqR0pAA011FTRetriablek15ErrorProcessingqR0_pAA0dC0_pAA14FTSessionErrorOAtaSPRts_XPAA0dE18AnalyticsReporting_pAA05FTBstwX0_pAA0dcW9Observing_pSgtcfc",
-            "mangledName": "$s31FintechSDKAuthorizationScenario20FTAuthFlowInteractorC23presenterViewController13clearAuthData07sessionL12Interactions015handleRetriableK7UseCase04authC016analyticsService13bstStateStore0sW10NotifiableACSo06UIViewI0CSg_AA022FTInvalidateOAuthCacheqR0_pAA0d10SessionGetqR0_AA0d10SessionSetqR0pAA011FTRetriablek15ErrorProcessingqR0_pAA0dC0_pAA14FTSessionErrorOAtaSPRts_XPAA0dE18AnalyticsReporting_pAA05FTBstwX0_pAA0dcW9Observing_pSgtcfc",
+            "usr": "s:31FintechSDKAuthorizationScenario20FTAuthFlowInteractorC23presenterViewController13clearAuthData07sessionL12Interactions016biometricSessionlN0015handleRetriableK7UseCase04authC016analyticsService13bstStateStore0uY10Notifiable12logoutPolicyACSo06UIViewI0CSg_AA022FTInvalidateOAuthCachesT0_pAA0dp3GetsT0_AA0dp3SetsT0pAaR_AaSpSgAA011FTRetriablek15ErrorProcessingsT0_pAA0dC0_pAA14FTSessionErrorOAwaVPRts_XPAA0dE18AnalyticsReporting_pAA05FTBstyZ0_pAA0dcY9Observing_pSgAA0D12LogoutPolicyVtcfc",
+            "mangledName": "$s31FintechSDKAuthorizationScenario20FTAuthFlowInteractorC23presenterViewController13clearAuthData07sessionL12Interactions016biometricSessionlN0015handleRetriableK7UseCase04authC016analyticsService13bstStateStore0uY10Notifiable12logoutPolicyACSo06UIViewI0CSg_AA022FTInvalidateOAuthCachesT0_pAA0dp3GetsT0_AA0dp3SetsT0pAaR_AaSpSgAA011FTRetriablek15ErrorProcessingsT0_pAA0dC0_pAA14FTSessionErrorOAwaVPRts_XPAA0dE18AnalyticsReporting_pAA05FTBstyZ0_pAA0dcY9Observing_pSgAA0D12LogoutPolicyVtcfc",
             "moduleName": "FintechSDKAuthorizationScenario",
             "declAttributes": [
               "AccessControl"
@@ -11420,7 +12481,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(presentationContextProvider:clearAuthData:sessionDataInteractions:handleRetriableAuthUseCase:authScenario:analyticsService:bstStateStore:authStateNotifiable:)",
+            "printedName": "init(presentationContextProvider:clearAuthData:sessionDataInteractions:biometricSessionDataInteractions:handleRetriableAuthUseCase:authScenario:analyticsService:bstStateStore:authStateNotifiable:logoutPolicy:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -11455,6 +12516,20 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKAuthorizationScenario.FTAuthSessionGetUseCase & FintechSDKAuthorizationScenario.FTAuthSessionSetUseCase)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "any FintechSDKAuthorizationScenario.FTAuthSessionGetUseCase & FintechSDKAuthorizationScenario.FTAuthSessionSetUseCase"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "FTRetriableAuthErrorProcessingUseCase",
                 "printedName": "any FintechSDKAuthorizationScenario.FTRetriableAuthErrorProcessingUseCase",
                 "usr": "s:31FintechSDKAuthorizationScenario37FTRetriableAuthErrorProcessingUseCaseP"
@@ -11492,11 +12567,18 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTAuthLogoutPolicy",
+                "printedName": "FintechSDKAuthorizationScenario.FTAuthLogoutPolicy",
+                "hasDefaultArg": true,
+                "usr": "s:31FintechSDKAuthorizationScenario18FTAuthLogoutPolicyV"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:31FintechSDKAuthorizationScenario20FTAuthFlowInteractorC27presentationContextProvider13clearAuthData07sessionL12Interactions015handleRetriableK7UseCase04authC016analyticsService13bstStateStore0sW10NotifiableAC0A9SDKCoreUI014FTPresentationH9Providing_pSg_AA022FTInvalidateOAuthCacheqR0_pAA0d10SessionGetqR0_AA0d10SessionSetqR0pAA011FTRetriablek15ErrorProcessingqR0_pAA0dC0_pAA14FTSessionErrorOAtaSPRts_XPAA0dE18AnalyticsReporting_pAA05FTBstwX0_pAA0dcW9Observing_pSgtcfc",
-            "mangledName": "$s31FintechSDKAuthorizationScenario20FTAuthFlowInteractorC27presentationContextProvider13clearAuthData07sessionL12Interactions015handleRetriableK7UseCase04authC016analyticsService13bstStateStore0sW10NotifiableAC0A9SDKCoreUI014FTPresentationH9Providing_pSg_AA022FTInvalidateOAuthCacheqR0_pAA0d10SessionGetqR0_AA0d10SessionSetqR0pAA011FTRetriablek15ErrorProcessingqR0_pAA0dC0_pAA14FTSessionErrorOAtaSPRts_XPAA0dE18AnalyticsReporting_pAA05FTBstwX0_pAA0dcW9Observing_pSgtcfc",
+            "usr": "s:31FintechSDKAuthorizationScenario20FTAuthFlowInteractorC27presentationContextProvider13clearAuthData07sessionL12Interactions016biometricSessionlN0015handleRetriableK7UseCase04authC016analyticsService13bstStateStore0uY10Notifiable12logoutPolicyAC0A9SDKCoreUI014FTPresentationH9Providing_pSg_AA022FTInvalidateOAuthCachesT0_pAA0dp3GetsT0_AA0dp3SetsT0pAaR_AaSpSgAA011FTRetriablek15ErrorProcessingsT0_pAA0dC0_pAA14FTSessionErrorOAwaVPRts_XPAA0dE18AnalyticsReporting_pAA05FTBstyZ0_pAA0dcY9Observing_pSgAA0D12LogoutPolicyVtcfc",
+            "mangledName": "$s31FintechSDKAuthorizationScenario20FTAuthFlowInteractorC27presentationContextProvider13clearAuthData07sessionL12Interactions016biometricSessionlN0015handleRetriableK7UseCase04authC016analyticsService13bstStateStore0uY10Notifiable12logoutPolicyAC0A9SDKCoreUI014FTPresentationH9Providing_pSg_AA022FTInvalidateOAuthCachesT0_pAA0dp3GetsT0_AA0dp3SetsT0pAaR_AaSpSgAA011FTRetriablek15ErrorProcessingsT0_pAA0dC0_pAA14FTSessionErrorOAwaVPRts_XPAA0dE18AnalyticsReporting_pAA05FTBstyZ0_pAA0dcY9Observing_pSgAA0D12LogoutPolicyVtcfc",
             "moduleName": "FintechSDKAuthorizationScenario",
             "declAttributes": [
               "AccessControl",
@@ -12086,6 +13168,31 @@
           },
           {
             "kind": "Function",
+            "name": "bindBiometricKey",
+            "printedName": "bindBiometricKey()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario20FTAuthFlowInteractorC16bindBiometricKeyyyYaKF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario20FTAuthFlowInteractorC16bindBiometricKeyyyYaKF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "obtainOAuth",
             "printedName": "obtainOAuth(cancelPending:performDeviceBind:)",
             "children": [
@@ -12233,6 +13340,13 @@
             "printedName": "FTRefreshBstUseCase",
             "usr": "s:31FintechSDKAuthorizationScenario19FTRefreshBstUseCaseP",
             "mangledName": "$s31FintechSDKAuthorizationScenario19FTRefreshBstUseCaseP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTBindBiometricKeyUseCase",
+            "printedName": "FTBindBiometricKeyUseCase",
+            "usr": "s:31FintechSDKAuthorizationScenario25FTBindBiometricKeyUseCaseP",
+            "mangledName": "$s31FintechSDKAuthorizationScenario25FTBindBiometricKeyUseCaseP"
           },
           {
             "kind": "Conformance",
@@ -13183,17 +14297,31 @@
           {
             "kind": "Function",
             "name": "bind",
-            "printedName": "bind()",
+            "printedName": "bind(bstOverride:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:31FintechSDKAuthorizationScenario16FTAuthAPIServiceP4bindyyYaAA0D12ServiceErrorOYKF",
-            "mangledName": "$s31FintechSDKAuthorizationScenario16FTAuthAPIServiceP4bindyyYaAA0D12ServiceErrorOYKF",
+            "usr": "s:31FintechSDKAuthorizationScenario16FTAuthAPIServiceP4bind11bstOverrideySSSg_tYaAA0D12ServiceErrorOYKF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario16FTAuthAPIServiceP4bind11bstOverrideySSSg_tYaAA0D12ServiceErrorOYKF",
             "moduleName": "FintechSDKAuthorizationScenario",
             "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthorizationScenario.FTAuthAPIService>",
             "sugared_genericSig": "<Self where Self : FintechSDKAuthorizationScenario.FTAuthAPIService>",
@@ -13229,6 +14357,33 @@
             ],
             "throwing": true,
             "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "bind",
+            "printedName": "bind()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario16FTAuthAPIServicePAAE4bindyyYaAA0D12ServiceErrorOYKF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario16FTAuthAPIServicePAAE4bindyyYaAA0D12ServiceErrorOYKF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthorizationScenario.FTAuthAPIService>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthorizationScenario.FTAuthAPIService>",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
             "funcSelfKind": "NonMutating"
           }
         ],
@@ -14057,6 +15212,128 @@
               "Internal"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "reportBindRetryTriggered",
+            "printedName": "reportBindRetryTriggered()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario23FTAuthFlowAnalyticsImplC24reportBindRetryTriggeredyyF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario23FTAuthFlowAnalyticsImplC24reportBindRetryTriggeredyyF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "reportBindRetryBiometricBstAcquired",
+            "printedName": "reportBindRetryBiometricBstAcquired()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario23FTAuthFlowAnalyticsImplC35reportBindRetryBiometricBstAcquiredyyF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario23FTAuthFlowAnalyticsImplC35reportBindRetryBiometricBstAcquiredyyF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "reportBindRetrySkipped",
+            "printedName": "reportBindRetrySkipped(reason:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario23FTAuthFlowAnalyticsImplC22reportBindRetrySkipped6reasonySS_tF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario23FTAuthFlowAnalyticsImplC22reportBindRetrySkipped6reasonySS_tF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "reportBindRetryFailed",
+            "printedName": "reportBindRetryFailed(reason:exception:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario23FTAuthFlowAnalyticsImplC21reportBindRetryFailed6reason9exceptionySS_SSSgtF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario23FTAuthFlowAnalyticsImplC21reportBindRetryFailed6reason9exceptionySS_SSSgtF",
+            "moduleName": "FintechSDKAuthorizationScenario",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -14722,632 +15999,758 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Analytics\/FTBstKind.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Analytics\/FTAuthFlowAnalyticsReporting.swift",
+      "kind": "StringLiteral",
+      "offset": 1369,
+      "length": 16,
+      "value": "\"token_conflict\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Analytics\/FTAuthFlowAnalyticsReporting.swift",
+      "kind": "StringLiteral",
+      "offset": 1421,
+      "length": 15,
+      "value": "\"non_retryable\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Analytics\/FTAuthFlowAnalyticsReporting.swift",
+      "kind": "StringLiteral",
+      "offset": 1474,
+      "length": 18,
+      "value": "\"no_biometric_key\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Analytics\/FTAuthFlowAnalyticsReporting.swift",
+      "kind": "StringLiteral",
+      "offset": 1537,
+      "length": 25,
+      "value": "\"not_migration_candidate\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Analytics\/FTAuthFlowAnalyticsReporting.swift",
+      "kind": "StringLiteral",
+      "offset": 1672,
+      "length": 33,
+      "value": "\"biometric_bst_generation_failed\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Analytics\/FTBstKind.swift",
       "kind": "StringLiteral",
       "offset": 98,
       "length": 15,
       "value": "\"first_per_app\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Analytics\/FTBstKind.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Analytics\/FTBstKind.swift",
       "kind": "StringLiteral",
       "offset": 139,
       "length": 19,
       "value": "\"first_per_session\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTAuthScenarioImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTAuthScenarioImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 21435,
+      "offset": 21935,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTAuthScenarioImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTAuthScenarioImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 21650,
+      "offset": 22150,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTAuthScenarioImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTAuthScenarioImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 21861,
+      "offset": 22361,
       "length": 13,
       "value": "5000000000"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTBstStateStore.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTBindMigrationRetry.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2981,
+      "length": 3,
+      "value": "401"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTBindMigrationRetry.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3016,
+      "length": 3,
+      "value": "403"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTBindMigrationRetry.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3053,
+      "length": 3,
+      "value": "409"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTBstStateStore.swift",
       "kind": "BooleanLiteral",
       "offset": 454,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTBstStateStore.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTBstStateStore.swift",
       "kind": "StringLiteral",
       "offset": 1106,
       "length": 39,
       "value": "\"com.yandex.fintech.bst_ever_generated\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTOAuthInFlightStore.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTOAuthInFlightStore.swift",
       "kind": "StringLiteral",
       "offset": 2833,
       "length": 36,
       "value": "\"com.yandex.fintech.oauth_in_flight\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTOAuthInFlightStore.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/BST\/FTOAuthInFlightStore.swift",
       "kind": "StringLiteral",
       "offset": 2901,
       "length": 43,
       "value": "\"com.yandex.fintech.double_oauth_in_flight\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
       "offset": 208,
       "length": 11,
       "value": "\"cancelled\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
       "offset": 257,
       "length": 17,
       "value": "\"scope_cancelled\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 305,
+      "offset": 313,
+      "length": 18,
+      "value": "\"scope_superseded\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "kind": "StringLiteral",
+      "offset": 362,
       "length": 9,
       "value": "\"unknown\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 349,
+      "offset": 406,
       "length": 13,
       "value": "\"concurrency\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 399,
+      "offset": 456,
       "length": 16,
       "value": "\"auth_forbidden\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 457,
+      "offset": 514,
       "length": 21,
       "value": "\"process_interrupted\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 509,
+      "offset": 566,
       "length": 10,
       "value": "\"no_oauth\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 558,
+      "offset": 615,
       "length": 19,
       "value": "\"client_id_not_set\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 631,
+      "offset": 688,
       "length": 35,
       "value": "\"presentation_context_not_provided\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 716,
+      "offset": 773,
       "length": 30,
       "value": "\"presentation_context_invalid\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 787,
+      "offset": 844,
       "length": 19,
       "value": "\"bind_unauthorized\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 843,
+      "offset": 900,
       "length": 16,
       "value": "\"bind_forbidden\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 898,
+      "offset": 955,
       "length": 19,
       "value": "\"bind_conflict_409\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 951,
+      "offset": 1008,
       "length": 13,
       "value": "\"bind_failed\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 1009,
+      "offset": 1066,
       "length": 23,
       "value": "\"generate_unauthorized\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 1073,
+      "offset": 1130,
       "length": 20,
       "value": "\"generate_forbidden\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 1131,
+      "offset": 1188,
       "length": 17,
       "value": "\"generate_failed\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 1199,
+      "offset": 1256,
       "length": 31,
       "value": "\"crypto_biometry_not_available\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 1271,
+      "offset": 1328,
       "length": 21,
       "value": "\"crypto_key_creation\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 1332,
+      "offset": 1389,
       "length": 20,
       "value": "\"crypto_key_loading\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 1395,
+      "offset": 1452,
       "length": 22,
       "value": "\"crypto_serialization\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 1456,
+      "offset": 1513,
       "length": 18,
       "value": "\"crypto_signature\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 1518,
+      "offset": 1575,
       "length": 24,
       "value": "\"crypto_key_invalidated\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 1587,
+      "offset": 1644,
       "length": 25,
       "value": "\"crypto_system_cancelled\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 1656,
+      "offset": 1713,
       "length": 24,
       "value": "\"crypto_not_interactive\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 1729,
+      "offset": 1786,
       "length": 29,
       "value": "\"network_invalid_request_url\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 1807,
+      "offset": 1864,
       "length": 30,
       "value": "\"network_invalid_request_body\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 1883,
+      "offset": 1940,
       "length": 26,
       "value": "\"network_invalid_response\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 1946,
+      "offset": 2003,
       "length": 16,
       "value": "\"network_decode\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 2007,
+      "offset": 2064,
       "length": 25,
       "value": "\"network_process_request\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 2078,
+      "offset": 2135,
       "length": 26,
       "value": "\"network_process_response\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 2141,
+      "offset": 2198,
       "length": 16,
       "value": "\"network_silent\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 2195,
+      "offset": 2252,
       "length": 17,
       "value": "\"network_timeout\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 2250,
+      "offset": 2307,
       "length": 17,
       "value": "\"network_offline\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 2308,
+      "offset": 2365,
       "length": 21,
       "value": "\"network_dns_failure\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 2374,
+      "offset": 2431,
       "length": 25,
       "value": "\"network_connection_lost\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 2433,
+      "offset": 2490,
       "length": 13,
       "value": "\"network_tls\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 2488,
+      "offset": 2545,
       "length": 22,
       "value": "\"network_bad_response\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 2544,
+      "offset": 2601,
       "length": 13,
       "value": "\"network_url\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 2593,
+      "offset": 2650,
       "length": 15,
       "value": "\"network_other\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 2646,
+      "offset": 2703,
       "length": 17,
       "value": "\"network_unknown\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 2711,
+      "offset": 2768,
       "length": 30,
       "value": "\"network_no_token_for_account\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 2826,
+      "offset": 2883,
       "length": 20,
       "value": "\"token_conflict_409\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 2882,
+      "offset": 2939,
       "length": 14,
       "value": "\"unauthorized\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 2938,
+      "offset": 2995,
       "length": 22,
       "value": "\"unauthorized_on_bind\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 3006,
+      "offset": 3063,
       "length": 26,
       "value": "\"unauthorized_on_generate\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 3085,
+      "offset": 3142,
       "length": 34,
       "value": "\"unauthorized_on_business_request\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/FTAuthFailureReasons.swift",
       "kind": "StringLiteral",
-      "offset": 3157,
+      "offset": 3214,
       "length": 17,
       "value": "\"explicit_logout\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Interactors\/FTUserAuthTokenInteractor.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Interactors\/FTAuthFlowInteractor.swift",
+      "kind": "Dictionary",
+      "offset": 990,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Interactors\/FTAuthFlowInteractor.swift",
+      "kind": "Dictionary",
+      "offset": 1098,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Interactors\/FTAuthFlowInteractor.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1276,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Interactors\/FTAuthFlowInteractor.swift",
+      "kind": "IntegerLiteral",
+      "offset": 15537,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Interactors\/FTUserAuthTokenInteractor.swift",
       "kind": "StringLiteral",
       "offset": 164,
       "length": 17,
       "value": "\"fintechsdk.auth\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTAuthAPIServiceImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTAuthAPIServiceImpl.swift",
       "kind": "Array",
-      "offset": 823,
+      "offset": 988,
       "length": 149,
       "value": "[401, 403]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTAuthAPIServiceImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTAuthAPIServiceImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 1009,
+      "offset": 1174,
       "length": 3,
       "value": "409"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTBindEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTBindEndpoint.swift",
       "kind": "IntegerLiteral",
       "offset": 484,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTBindEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTBindEndpoint.swift",
       "kind": "StringLiteral",
-      "offset": 1043,
+      "offset": 1134,
       "length": 28,
       "value": "\"\/api\/v1\/authenticator\/bind\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTGenerateSessionEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTBindEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 1196,
+      "length": 7,
+      "value": "\"X-BST\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTGenerateSessionEndpoint.swift",
       "kind": "IntegerLiteral",
       "offset": 608,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTGenerateSessionEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTGenerateSessionEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 973,
       "length": 41,
       "value": "\"\/api\/v1\/authenticator\/sessions\/generate\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTMerchAuthConfigEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTMerchAuthConfigEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 354,
       "length": 41,
       "value": "\"\/pay\/v1\/public\/configuration\/merch-auth\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTMerchAuthConfigEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTMerchAuthConfigEndpoint.swift",
       "kind": "IntegerLiteral",
       "offset": 475,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTMerchAuthConfigEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTMerchAuthConfigEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 728,
       "length": 10,
       "value": "\"web_only\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTRevokeTokenEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTRevokeTokenEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 300,
       "length": 37,
       "value": "\"\/api\/v1\/authenticator\/tokens\/revoke\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTRevokeTokenEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Network\/FTRevokeTokenEndpoint.swift",
       "kind": "FloatLiteral",
       "offset": 471,
       "length": 4,
       "value": "30.0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "Dictionary",
-      "offset": 4232,
+      "offset": 4878,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 4253,
+      "offset": 4899,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "StringLiteral",
-      "offset": 4983,
+      "offset": 5629,
       "length": 15,
       "value": "\"OAuth_Started\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "StringLiteral",
-      "offset": 5029,
+      "offset": 5675,
       "length": 17,
       "value": "\"OAuth_Completed\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "StringLiteral",
-      "offset": 5074,
+      "offset": 5720,
       "length": 14,
       "value": "\"OAuth_Failed\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "StringLiteral",
-      "offset": 5123,
+      "offset": 5769,
       "length": 21,
       "value": "\"DoubleOAuth_Started\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "StringLiteral",
-      "offset": 5181,
+      "offset": 5827,
       "length": 23,
       "value": "\"DoubleOAuth_Completed\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "StringLiteral",
-      "offset": 5238,
+      "offset": 5884,
       "length": 20,
       "value": "\"DoubleOAuth_Failed\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "StringLiteral",
-      "offset": 5285,
+      "offset": 5931,
       "length": 13,
       "value": "\"Bst_Started\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "StringLiteral",
-      "offset": 5327,
+      "offset": 5973,
       "length": 15,
       "value": "\"Bst_Completed\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "StringLiteral",
-      "offset": 5368,
+      "offset": 6014,
       "length": 12,
       "value": "\"Bst_Failed\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "StringLiteral",
-      "offset": 5407,
+      "offset": 6053,
       "length": 13,
       "value": "\"OAuth_Flush\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "StringLiteral",
-      "offset": 5445,
+      "offset": 6091,
       "length": 11,
       "value": "\"Bst_Flush\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "StringLiteral",
-      "offset": 5506,
+      "offset": 6137,
+      "length": 22,
+      "value": "\"Bind_Retry_Triggered\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 6205,
+      "length": 35,
+      "value": "\"Bind_Retry_Biometric_Bst_Acquired\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 6273,
+      "length": 20,
+      "value": "\"Bind_Retry_Skipped\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 6325,
+      "length": 19,
+      "value": "\"Bind_Retry_Failed\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 6394,
       "length": 8,
       "value": "\"source\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "StringLiteral",
-      "offset": 5537,
+      "offset": 6425,
       "length": 8,
       "value": "\"reason\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "StringLiteral",
-      "offset": 5569,
+      "offset": 6457,
       "length": 10,
       "value": "\"bst_kind\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "StringLiteral",
-      "offset": 5606,
+      "offset": 6494,
       "length": 13,
       "value": "\"duration_ms\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "StringLiteral",
-      "offset": 5645,
+      "offset": 6533,
       "length": 11,
       "value": "\"exception\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "StringLiteral",
-      "offset": 5691,
+      "offset": 6579,
       "length": 21,
       "value": "\"process_interrupted\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "StringLiteral",
-      "offset": 5743,
+      "offset": 6631,
       "length": 18,
       "value": "\"saved_session_id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Authorization\/Reporters\/FTAuthFlowAnalyticsImpl.swift",
       "kind": "StringLiteral",
-      "offset": 5788,
+      "offset": 6676,
       "length": 13,
       "value": "\"oauth_state\""
     }

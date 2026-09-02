@@ -308,6 +308,80 @@
       },
       {
         "kind": "Import",
+        "name": "FintechSDKAuthInterfaces",
+        "printedName": "FintechSDKAuthInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAssistant"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAuthorizationScenario",
+        "printedName": "FintechSDKAuthorizationScenario",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAssistant",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAssistant",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKDivKitWidgetsFeatures",
+        "printedName": "FintechSDKDivKitWidgetsFeatures",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAssistant",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKExternalAuthWebView",
+        "printedName": "FintechSDKExternalAuthWebView",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAssistant",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKWebViewFeatures",
+        "printedName": "FintechSDKWebViewFeatures",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAssistant",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkImplementation",
+        "printedName": "FintechSDKNetworkImplementation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAssistant",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAssistant"
+      },
+      {
+        "kind": "Import",
         "name": "FintechSDKAuthorizationScenario",
         "printedName": "FintechSDKAuthorizationScenario",
         "declKind": "Import",
@@ -2719,6 +2793,38 @@
             ],
             "throwing": true,
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "loginAndAcquireBSTToken",
+            "printedName": "loginAndAcquireBSTToken(mode:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTWebViewBSTAcquisitionMode",
+                "printedName": "FintechSDKDivKitWidgetsFeatures.FTWebViewBSTAcquisitionMode",
+                "usr": "s:31FintechSDKDivKitWidgetsFeatures27FTWebViewBSTAcquisitionModeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKAuthorizationScenario20FTAuthFlowInteractorC0A12SDKAssistantE23loginAndAcquireBSTToken4modeSS0A24SDKDivKitWidgetsFeatures27FTWebViewBSTAcquisitionModeO_tYaKF",
+            "mangledName": "$s31FintechSDKAuthorizationScenario20FTAuthFlowInteractorC0A12SDKAssistantE23loginAndAcquireBSTToken4modeSS0A24SDKDivKitWidgetsFeatures27FTWebViewBSTAcquisitionModeO_tYaKF",
+            "moduleName": "FintechSDKAssistant",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -2774,6 +2880,13 @@
             "printedName": "FTWebViewLogoutUseCase",
             "usr": "s:31FintechSDKDivKitWidgetsFeatures22FTWebViewLogoutUseCaseP",
             "mangledName": "$s31FintechSDKDivKitWidgetsFeatures22FTWebViewLogoutUseCaseP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTWebViewLoginAcquiring",
+            "printedName": "FTWebViewLoginAcquiring",
+            "usr": "s:31FintechSDKDivKitWidgetsFeatures23FTWebViewLoginAcquiringP",
+            "mangledName": "$s31FintechSDKDivKitWidgetsFeatures23FTWebViewLoginAcquiringP"
           },
           {
             "kind": "Conformance",
@@ -2848,6 +2961,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "FTBindBiometricKeyUseCase",
+            "printedName": "FTBindBiometricKeyUseCase",
+            "usr": "s:31FintechSDKAuthorizationScenario25FTBindBiometricKeyUseCaseP",
+            "mangledName": "$s31FintechSDKAuthorizationScenario25FTBindBiometricKeyUseCaseP"
+          },
+          {
+            "kind": "Conformance",
             "name": "FTObtainOAuthUseCase",
             "printedName": "FTObtainOAuthUseCase",
             "usr": "s:31FintechSDKAuthorizationScenario20FTObtainOAuthUseCaseP",
@@ -2860,364 +2980,427 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/DataLayer\/Endpoints\/FTBenefitsSimpleWidgetEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/DataLayer\/Endpoints\/FTBenefitsSimpleWidgetEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 314,
       "length": 45,
       "value": "\"\/pay\/v1\/public\/widgets\/argo\/benefits-simple\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/DataLayer\/Endpoints\/FTBenefitsSimpleWidgetEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/DataLayer\/Endpoints\/FTBenefitsSimpleWidgetEndpoint.swift",
       "kind": "FloatLiteral",
       "offset": 439,
       "length": 4,
       "value": "10.0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/DataLayer\/Endpoints\/FTBenefitsWidgetEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/DataLayer\/Endpoints\/FTBenefitsWidgetEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 308,
       "length": 38,
       "value": "\"\/pay\/v1\/public\/widgets\/argo\/benefits\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/DataLayer\/Endpoints\/FTBenefitsWidgetEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/DataLayer\/Endpoints\/FTBenefitsWidgetEndpoint.swift",
       "kind": "FloatLiteral",
       "offset": 426,
       "length": 4,
       "value": "10.0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/DataLayer\/Endpoints\/FTBenefitsWidgetEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/DataLayer\/Endpoints\/FTBenefitsWidgetEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 1416,
       "length": 12,
       "value": "\"X-Pay-IDFA\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 334,
       "length": 14,
       "value": "\"widget_state\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 383,
       "length": 22,
       "value": "\"merchant_auth_status\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 429,
       "length": 9,
       "value": "\"surface\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 466,
       "length": 14,
       "value": "\"snippet_list\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 511,
       "length": 17,
       "value": "\"snippet_clicked\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 556,
       "length": 14,
       "value": "\"snippet_type\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 592,
       "length": 7,
       "value": "\"error\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 674,
       "length": 12,
       "value": "\"authorized\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 715,
       "length": 14,
       "value": "\"unauthorized\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 788,
       "length": 11,
       "value": "\"assistant\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 841,
       "length": 30,
       "value": "\"benefits_widget_load_started\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 919,
       "length": 37,
       "value": "\"benefits_simple_widget_load_started\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 998,
       "length": 30,
       "value": "\"benefits_widget_load_success\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 1076,
       "length": 37,
       "value": "\"benefits_simple_widget_load_success\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 1154,
       "length": 29,
       "value": "\"benefits_widget_load_failed\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 1230,
       "length": 36,
       "value": "\"benefits_simple_widget_load_failed\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 1302,
       "length": 23,
       "value": "\"benefits_widget_shown\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 1367,
       "length": 30,
       "value": "\"benefits_simple_widget_shown\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 1440,
       "length": 31,
       "value": "\"benefits_widget_snippet_shown\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 1509,
       "length": 25,
       "value": "\"benefits_widget_clicked\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 1578,
       "length": 32,
       "value": "\"benefits_simple_widget_clicked\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "Dictionary",
       "offset": 5869,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 8279,
       "length": 14,
       "value": "\"widget_shown\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 8322,
       "length": 15,
       "value": "\"snippet_shown\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 8368,
       "length": 17,
       "value": "\"snippet_clicked\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 8448,
       "length": 14,
       "value": "\"snippet_list\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 8490,
       "length": 14,
       "value": "\"snippet_type\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAParamsProvider.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/Analytics\/FTYAParamsProvider.swift",
       "kind": "StringLiteral",
       "offset": 558,
       "length": 6,
       "value": "\"puid\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABDUIErrorContentFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABDUIErrorContentFactory.swift",
       "kind": "StringLiteral",
       "offset": 281,
       "length": 7,
       "value": "\"error\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABenefitWidgetShimmerView.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABenefitWidgetShimmerView.swift",
       "kind": "Array",
       "offset": 1102,
       "length": 18,
       "value": "[148, 84, 84, 160]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABenefitWidgetShimmerView.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABenefitWidgetShimmerView.swift",
       "kind": "IntegerLiteral",
       "offset": 1134,
       "length": 2,
       "value": "40"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABenefitWidgetShimmerView.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABenefitWidgetShimmerView.swift",
       "kind": "IntegerLiteral",
       "offset": 1151,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABenefitWidgetShimmerView.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABenefitWidgetShimmerView.swift",
       "kind": "IntegerLiteral",
       "offset": 1177,
       "length": 2,
       "value": "12"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABenefitWidgetShimmerView.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABenefitWidgetShimmerView.swift",
       "kind": "IntegerLiteral",
       "offset": 1202,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABenefitWidgetShimmerView.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABenefitWidgetShimmerView.swift",
       "kind": "Array",
       "offset": 1255,
       "length": 20,
       "value": "[185, 110, 111, 160]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABenefitWidgetShimmerView.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABenefitWidgetShimmerView.swift",
       "kind": "IntegerLiteral",
       "offset": 1289,
       "length": 2,
       "value": "56"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABenefitWidgetShimmerView.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABenefitWidgetShimmerView.swift",
       "kind": "IntegerLiteral",
       "offset": 1306,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABenefitWidgetShimmerView.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABenefitWidgetShimmerView.swift",
       "kind": "IntegerLiteral",
       "offset": 1333,
       "length": 2,
       "value": "12"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABenefitWidgetShimmerView.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYABenefitWidgetShimmerView.swift",
       "kind": "IntegerLiteral",
       "offset": 1358,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYAOpenWebViewQueryParametersProvider.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYAOpenWebViewQueryParametersProvider.swift",
       "kind": "StringLiteral",
-      "offset": 897,
+      "offset": 1195,
+      "length": 17,
+      "value": "\"benefits_simple\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYAOpenWebViewQueryParametersProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 1416,
       "length": 13,
       "value": "\"merchant_id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYAOpenWebViewQueryParametersProvider.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYAOpenWebViewQueryParametersProvider.swift",
       "kind": "StringLiteral",
-      "offset": 939,
+      "offset": 1458,
       "length": 15,
       "value": "\"auth_merchant\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYAOpenWebViewQueryParametersProvider.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYAOpenWebViewQueryParametersProvider.swift",
       "kind": "StringLiteral",
-      "offset": 983,
+      "offset": 1502,
       "length": 15,
       "value": "\"merchant_page\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYandexPayAssistantMainModule.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYAOpenWebViewQueryParametersProvider.swift",
       "kind": "StringLiteral",
-      "offset": 23300,
+      "offset": 1545,
+      "length": 14,
+      "value": "\"login_source\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYAOpenWebViewQueryParametersProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 1589,
+      "length": 16,
+      "value": "\"source_snippet\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYAOpenWebViewQueryParametersProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 1629,
+      "length": 9,
+      "value": "\"surface\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYAOpenWebViewQueryParametersProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 1664,
+      "length": 12,
+      "value": "\"target_url\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYAOpenWebViewQueryParametersProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 1703,
+      "length": 13,
+      "value": "\"widget_type\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYAProcessCompletedAuthUseCase.swift",
+      "kind": "StringLiteral",
+      "offset": 3037,
+      "length": 9,
+      "value": "\"success\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYAProcessCompletedAuthUseCase.swift",
+      "kind": "StringLiteral",
+      "offset": 3068,
+      "length": 7,
+      "value": "\"error\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYAProcessCompletedAuthUseCase.swift",
+      "kind": "StringLiteral",
+      "offset": 3111,
+      "length": 22,
+      "value": "\"authorization_failed\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYandexPayAssistantMainModule.swift",
+      "kind": "StringLiteral",
+      "offset": 23671,
       "length": 17,
       "value": "\"benefits-widget\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYandexPayAssistantMainModule.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYandexPayAssistantMainModule.swift",
       "kind": "StringLiteral",
-      "offset": 23359,
+      "offset": 23730,
       "length": 17,
       "value": "\"benefits_widget\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYandexPayAssistantMainModule.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYandexPayAssistantMainModule.swift",
       "kind": "StringLiteral",
-      "offset": 23416,
+      "offset": 23787,
       "length": 15,
       "value": "\"simple_widget\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYandexPayAssistantMainModule.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Private\/SDK\/FTYandexPayAssistantMainModule.swift",
       "kind": "StringLiteral",
-      "offset": 23787,
+      "offset": 24158,
       "length": 19,
       "value": "\"http:\/\/localhost\/\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Public\/SDK\/YandexPayAssistantHandler.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/YandexPayAssistant\/Public\/SDK\/YandexPayAssistantHandler.swift",
       "kind": "StringLiteral",
       "offset": 569,
       "length": 17,

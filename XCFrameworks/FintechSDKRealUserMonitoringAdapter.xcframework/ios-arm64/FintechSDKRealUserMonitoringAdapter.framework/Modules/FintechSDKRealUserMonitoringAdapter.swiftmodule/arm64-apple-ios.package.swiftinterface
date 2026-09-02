@@ -13,11 +13,6 @@ final public class FintechRUMAdapterFactoryImpl : FintechSDKAnalyticsInterfaces.
   final public func make(uid: Swift.String?) -> any FintechSDKAnalyticsInterfaces.FintechRUMAdapter
   @objc deinit
 }
-final public class FintechRUMArgoAdapterFactory : FintechSDKAnalyticsInterfaces.FintechRUMAdapterFactory {
-  public init()
-  final public func make(uid: Swift.String?) -> any FintechSDKAnalyticsInterfaces.FintechRUMAdapter
-  @objc deinit
-}
 public struct FintechRUMConfig : Swift.Sendable {
   public let path: Swift.String
   public let project: Swift.String

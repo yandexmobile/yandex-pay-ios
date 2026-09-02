@@ -42,21 +42,38 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public let payEventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter
   @_spi(Internal) public let eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter
   @_spi(Internal) public let errorReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter
-  @_spi(Internal) public let identifiersProvider: any FintechSDKAnalyticsInterfaces.FintechIdentifiersProviding
+  @_spi(Internal) public let identifiersProvider: any FintechSDKAnalyticsInterfaces.FTIdentifiersProviding
   @_spi(Internal) public var url: Foundation.URL?
   @_spi(Internal) public var authStrategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy?
   @_spi(Internal) public var partnerAuthStateProvider: (() -> Swift.Bool?)?
   @_spi(Internal) public var forceDoubleAuth: Swift.Bool
   @_spi(Internal) public var initialBSTProvider: (@Sendable () async -> Swift.String?)?
-  @_spi(Internal) public var loginSource: Swift.String
-  @_spi(Internal) public init(merchantID: Swift.String, environment: FintechSDKCommonEntity.FintechSDKEnvironment, loginService: any FintechSDKAuthInterfaces.FintechLoginService, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, presentationContextProvider: any FintechSDKCoreUI.FTPresentationContextProviding, networkChallengeHandlerFactory: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory, eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, payEventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, errorReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter, identifiersProvider: any FintechSDKAnalyticsInterfaces.FintechIdentifiersProviding, loginSource: Swift.String, url: Foundation.URL? = nil, authStrategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy? = nil, partnerAuthStateProvider: (() -> Swift.Bool?)? = nil, forceDoubleAuth: Swift.Bool = false, initialBSTProvider: (@Sendable () async -> Swift.String?)? = nil)
+  @_spi(Internal) public var loginwallAnalyticsParams: FintechSDKExternalAuthWebView.FTLoginwallAnalyticsParams
+  @_spi(Internal) public init(merchantID: Swift.String, environment: FintechSDKCommonEntity.FintechSDKEnvironment, loginService: any FintechSDKAuthInterfaces.FintechLoginService, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, presentationContextProvider: any FintechSDKCoreUI.FTPresentationContextProviding, networkChallengeHandlerFactory: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory, eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, payEventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, errorReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter, identifiersProvider: any FintechSDKAnalyticsInterfaces.FTIdentifiersProviding, loginSource: Swift.String, url: Foundation.URL? = nil, authStrategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy? = nil, partnerAuthStateProvider: (() -> Swift.Bool?)? = nil, forceDoubleAuth: Swift.Bool = false, initialBSTProvider: (@Sendable () async -> Swift.String?)? = nil)
 }
 @_spi(Internal) public struct FTExternalAuthWebViewOutput {
-  @_spi(Internal) public var onCompleted: (@_Concurrency.MainActor @Sendable (Swift.Result<FintechSDKExternalAuthWebView.FTExternalAuthWebViewResult, any Swift.Error>) async -> Swift.Void)?
-  @_spi(Internal) public init(onCompleted: (@_Concurrency.MainActor @Sendable (Swift.Result<FintechSDKExternalAuthWebView.FTExternalAuthWebViewResult, any Swift.Error>) async -> Swift.Void)? = nil)
+  @_spi(Internal) public var processCompletedAuthUseCase: (any FintechSDKExternalAuthWebView.FTProcessCompletedAuthUseCase)?
+  @_spi(Internal) public init(processCompletedAuthUseCase: (any FintechSDKExternalAuthWebView.FTProcessCompletedAuthUseCase)? = nil)
 }
 @_spi(Internal) public struct FTExternalAuthWebViewResult : Swift.Sendable {
   @_spi(Internal) public let merchAuth: FintechSDKAuthInterfaces.FintechAuthModel?
   @_spi(Internal) public let payAuth: FintechSDKAuthInterfaces.FintechAuthModel
   @_spi(Internal) public init(merchAuth: FintechSDKAuthInterfaces.FintechAuthModel?, payAuth: FintechSDKAuthInterfaces.FintechAuthModel)
+}
+@_spi(Internal) public struct FTLoginwallAnalyticsParams : Swift.Equatable, Swift.Sendable {
+  @_spi(Internal) public let loginSource: Swift.String
+  @_spi(Internal) public let sourceSnippet: Swift.String?
+  @_spi(Internal) public let surface: Swift.String?
+  @_spi(Internal) public let targetURL: Swift.String?
+  @_spi(Internal) public init(loginSource: Swift.String, sourceSnippet: Swift.String? = nil, surface: Swift.String? = nil, targetURL: Swift.String? = nil)
+  @_spi(Internal) public init?(parameters: [Swift.String : Swift.String])
+  @_spi(Internal) public static func == (a: FintechSDKExternalAuthWebView.FTLoginwallAnalyticsParams, b: FintechSDKExternalAuthWebView.FTLoginwallAnalyticsParams) -> Swift.Bool
+}
+@_spi(Internal) public protocol FTProcessCompletedAuthUseCase {
+  @_spi(Internal) @_Concurrency.MainActor func process(result: Swift.Result<FintechSDKExternalAuthWebView.FTExternalAuthWebViewResult, any Swift.Error>) async
+  @_spi(Internal) @_Concurrency.MainActor func process(result: Swift.Result<FintechSDKExternalAuthWebView.FTExternalAuthWebViewResult, any Swift.Error>, context: any FintechSDKWebViewFeatures.FTWebViewHandlerContext, requestID: Swift.String) async
+}
+@_spi(Internal) extension FintechSDKExternalAuthWebView.FTProcessCompletedAuthUseCase {
+  @_spi(Internal) @_Concurrency.MainActor public func process(result: Swift.Result<FintechSDKExternalAuthWebView.FTExternalAuthWebViewResult, any Swift.Error>) async
+  @_spi(Internal) @_Concurrency.MainActor public func process(result: Swift.Result<FintechSDKExternalAuthWebView.FTExternalAuthWebViewResult, any Swift.Error>, context: any FintechSDKWebViewFeatures.FTWebViewHandlerContext, requestID: Swift.String) async
 }

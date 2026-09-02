@@ -96,15 +96,18 @@ import _SwiftConcurrencyShims
       @_spi(Internal) get
     }
   }
-  @_spi(Internal) public init(input: FintechSDKExternalAuthWebView.FTExternalAuthWebViewInput, webViewActionHandlersProvider: @escaping @_Concurrency.MainActor (FintechSDKDivKitWidgetsFeatures.FTOpenWebViewDivUrlHandler.AuthLevel) -> [any FintechSDKWebViewFeatures.FTWebViewActionHandler], queryParametersProvider: (any FintechSDKDivKitWidgetsFeatures.FTOpenWebViewQueryParametersProviding)? = nil, output: FintechSDKExternalAuthWebView.FTExternalAuthWebViewOutput = .init(), cookieExchanger: (any FintechSDKAuthInterfaces.FintechCookieExchanger)? = nil)
+  @_spi(Internal) public init(input: FintechSDKExternalAuthWebView.FTExternalAuthWebViewInput, webViewActionHandlersProvider: @escaping @_Concurrency.MainActor (FintechSDKDivKitWidgetsFeatures.FTOpenWebViewDivUrlHandler.AuthLevel) -> [any FintechSDKWebViewFeatures.FTWebViewActionHandler], processCompletedAuthUseCase: any FintechSDKDivKitWidgetsFeatures.FTOpenWebViewProcessCompletedAuthUseCase, queryParametersProvider: (any FintechSDKDivKitWidgetsFeatures.FTOpenWebViewQueryParametersProviding)? = nil, output: FintechSDKExternalAuthWebView.FTExternalAuthWebViewOutput = .init(), cookieExchanger: (any FintechSDKAuthInterfaces.FintechCookieExchanger)? = nil)
   @_spi(Internal) @_Concurrency.MainActor final public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
   @_spi(Internal) @objc deinit
 }
+@_spi(Internal) public protocol FTOpenWebViewProcessCompletedAuthUseCase {
+  @_spi(Internal) @_Concurrency.MainActor func processCompleted(with authLevel: FintechSDKDivKitWidgetsFeatures.FTOpenWebViewDivUrlHandler.AuthLevel) -> any FintechSDKExternalAuthWebView.FTProcessCompletedAuthUseCase
+}
 @_spi(Internal) public protocol FTOpenWebViewQueryParametersProviding {
-  @_spi(Internal) @_Concurrency.MainActor func queryParameters() -> [Swift.String : Swift.String]
+  @_spi(Internal) @_Concurrency.MainActor func queryParameters(payload: [Swift.String : Swift.String]) -> [Swift.String : Swift.String]
 }
 @_spi(Internal) public struct FTWebViewAnalyticsHeadersBuilder : Swift.Sendable {
-  @_spi(Internal) public init(identifiersProvider: any FintechSDKAnalyticsInterfaces.FintechIdentifiersProviding)
+  @_spi(Internal) public init(identifiersProvider: any FintechSDKAnalyticsInterfaces.FTIdentifiersProviding)
   @_spi(Internal) public func build() -> [Swift.String : Swift.String]
 }
 public struct FTRemoteActionResponse {
@@ -227,6 +230,9 @@ public enum FintechWidgetState {
 }
 @_spi(Internal) public protocol FTWebViewBSTAcquiring : Swift.Sendable {
   @_spi(Internal) func acquireBSTToken(mode: FintechSDKDivKitWidgetsFeatures.FTWebViewBSTAcquisitionMode) async throws -> Swift.String
+}
+@_spi(Internal) public protocol FTWebViewLoginAcquiring : Swift.Sendable {
+  @_spi(Internal) func loginAndAcquireBSTToken(mode: FintechSDKDivKitWidgetsFeatures.FTWebViewBSTAcquisitionMode) async throws -> Swift.String
 }
 @_spi(Internal) public protocol FTWebViewLogoutUseCase : Swift.Sendable {
   @_spi(Internal) func logout() async throws

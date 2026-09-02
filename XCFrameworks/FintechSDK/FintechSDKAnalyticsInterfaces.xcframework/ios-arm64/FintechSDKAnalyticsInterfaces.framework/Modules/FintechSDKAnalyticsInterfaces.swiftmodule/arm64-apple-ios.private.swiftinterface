@@ -43,7 +43,7 @@ public protocol FintechAppMetricaReportingAdapter : Swift.Sendable {
 public protocol FintechAppMetricaYandexReportingAdapter {
   func setPUID(_ puid: Swift.String?)
 }
-@_spi(Internal) public protocol FintechIdentifiersProviding : Swift.Sendable {
+@_spi(Internal) public protocol FTIdentifiersProviding : Swift.Sendable {
   @_spi(Internal) var installationID: Swift.String { get }
   @_spi(Internal) var sdkSessionID: Swift.String { get }
   @_spi(Internal) var appMetricaUUID: Swift.String? { get }

@@ -3,6 +3,7 @@
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name YandexPayAssistant -package-name yandexpayassistant
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import ExternalBduiAdapter
+import FintechSDKAnalyticsInterfaces
 import FintechSDKFontsAdapter
 import FintechSDKRealTimeAnalyticsAdapter
 import FintechSDKRealUserMonitoringAdapter
@@ -54,6 +55,11 @@ extension YandexPayAssistant.YPBenefitsSimpleUIKitWidgetState {
     get
   }
 }
+@_spi(Internal) final public class FTRUMArgoAdapterFactory : FintechSDKAnalyticsInterfaces.FintechRUMAdapterFactory {
+  @_spi(Internal) public init()
+  @_spi(Internal) final public func make(uid: Swift.String?) -> any FintechSDKAnalyticsInterfaces.FintechRUMAdapter
+  @_spi(Internal) @objc deinit
+}
 public enum YPAssistantModule {
   public static func module(merchant: YandexPayConfiguration.YPSDKMerchant) -> YandexPayAssistant.YPAssistantModuleDescriptor
 }
@@ -73,8 +79,11 @@ final public class YPAssistantModuleDescriptor : YandexPayConfiguration.YPayModu
   final public var userActivityHandlers: [any YandexPayConfiguration.YPayUserActivityHandler] {
     get
   }
+  @_spi(Internal) @_Concurrency.MainActor final public func clear()
   @_spi(Internal) @_Concurrency.MainActor final public func logout()
   @objc deinit
+}
+@_spi(Internal) extension YandexPayAssistant.YPAssistantModuleDescriptor : YandexPayConfiguration.YPayModuleLifecycle {
 }
 @_spi(Internal) extension YandexPayAssistant.YPAssistantModuleDescriptor : YandexPayConfiguration.YPayEventSubscriber {
   @_spi(Internal) @_Concurrency.MainActor final public func handleEvent(_ event: YandexPayConfiguration.YPayEvent) async -> YandexPayConfiguration.YPayEventResult

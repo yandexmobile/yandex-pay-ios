@@ -2528,6 +2528,34 @@
           },
           {
             "kind": "Function",
+            "name": "hasKey",
+            "printedName": "hasKey(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PublicKeyType",
+                "printedName": "FintechSDKAuthInterfaces.PublicKeyType",
+                "usr": "s:24FintechSDKAuthInterfaces13PublicKeyTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKAuthInterfaces0A11DPoPServiceP6hasKeyySbAA06PublicG4TypeOF",
+            "mangledName": "$s24FintechSDKAuthInterfaces0A11DPoPServiceP6hasKeyySbAA06PublicG4TypeOF",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthInterfaces.FintechDPoPService>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthInterfaces.FintechDPoPService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "invalidateKey",
             "printedName": "invalidateKey()",
             "children": [
@@ -4205,6 +4233,79 @@
             "printedName": "LocalizedError",
             "usr": "s:10Foundation14LocalizedErrorP",
             "mangledName": "$s10Foundation14LocalizedErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTAuthorizationSupersededError",
+        "printedName": "FTAuthorizationSupersededError",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTAuthorizationSupersededError",
+                "printedName": "FintechSDKAuthInterfaces.FTAuthorizationSupersededError",
+                "usr": "s:24FintechSDKAuthInterfaces30FTAuthorizationSupersededErrorV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:24FintechSDKAuthInterfaces30FTAuthorizationSupersededErrorVACycfc",
+            "mangledName": "$s24FintechSDKAuthInterfaces30FTAuthorizationSupersededErrorVACycfc",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:24FintechSDKAuthInterfaces30FTAuthorizationSupersededErrorV",
+        "mangledName": "$s24FintechSDKAuthInterfaces30FTAuthorizationSupersededErrorV",
+        "moduleName": "FintechSDKAuthInterfaces",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl",
+          "RawDocComment"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",

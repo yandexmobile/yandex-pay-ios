@@ -507,6 +507,17 @@
       },
       {
         "kind": "Import",
+        "name": "FintechSDKQuickPayment",
+        "printedName": "FintechSDKQuickPayment",
+        "declKind": "Import",
+        "moduleName": "YandexQuickPay",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -956,7 +967,8 @@
             "moduleName": "YandexQuickPay",
             "declAttributes": [
               "Final",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -1688,6 +1700,52 @@
           },
           {
             "kind": "Function",
+            "name": "startOrderPolling",
+            "printedName": "startOrderPolling()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14YandexQuickPay06YQuickC0C17startOrderPollingyyYaKF",
+            "mangledName": "$s14YandexQuickPay06YQuickC0C17startOrderPollingyyYaKF",
+            "moduleName": "YandexQuickPay",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "stopOrderPolling",
+            "printedName": "stopOrderPolling()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14YandexQuickPay06YQuickC0C16stopOrderPollingyyYaKF",
+            "mangledName": "$s14YandexQuickPay06YQuickC0C16stopOrderPollingyyYaKF",
+            "moduleName": "YandexQuickPay",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "module",
             "printedName": "module(stateListener:merchant:presentationContextProvider:isActivatedByDefault:pollingModalSize:)",
             "children": [
@@ -1774,6 +1832,13 @@
             "printedName": "Escapable",
             "usr": "s:s9EscapableP",
             "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "YQuickPayMerchantExclusiveApi",
+            "printedName": "YQuickPayMerchantExclusiveApi",
+            "usr": "s:14YandexQuickPay06YQuickC20MerchantExclusiveApiP",
+            "mangledName": "$s14YandexQuickPay06YQuickC20MerchantExclusiveApiP"
           }
         ]
       },
@@ -2549,6 +2614,87 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "YQuickPayMerchantExclusiveApi",
+        "printedName": "YQuickPayMerchantExclusiveApi",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "startOrderPolling",
+            "printedName": "startOrderPolling()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14YandexQuickPay06YQuickC20MerchantExclusiveApiP17startOrderPollingyyYaKF",
+            "mangledName": "$s14YandexQuickPay06YQuickC20MerchantExclusiveApiP17startOrderPollingyyYaKF",
+            "moduleName": "YandexQuickPay",
+            "genericSig": "<τ_0_0 where τ_0_0 : YandexQuickPay.YQuickPayMerchantExclusiveApi>",
+            "sugared_genericSig": "<Self where Self : YandexQuickPay.YQuickPayMerchantExclusiveApi>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "stopOrderPolling",
+            "printedName": "stopOrderPolling()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14YandexQuickPay06YQuickC20MerchantExclusiveApiP16stopOrderPollingyyYaKF",
+            "mangledName": "$s14YandexQuickPay06YQuickC20MerchantExclusiveApiP16stopOrderPollingyyYaKF",
+            "moduleName": "YandexQuickPay",
+            "genericSig": "<τ_0_0 where τ_0_0 : YandexQuickPay.YQuickPayMerchantExclusiveApi>",
+            "sugared_genericSig": "<Self where Self : YandexQuickPay.YQuickPayMerchantExclusiveApi>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:14YandexQuickPay06YQuickC20MerchantExclusiveApiP",
+        "mangledName": "$s14YandexQuickPay06YQuickC20MerchantExclusiveApiP",
+        "moduleName": "YandexQuickPay",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
@@ -2838,6 +2984,32 @@
           },
           {
             "kind": "Function",
+            "name": "clear",
+            "printedName": "clear()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14YandexQuickPay06YQuickC16ModuleDescriptorC5clearyyF",
+            "mangledName": "$s14YandexQuickPay06YQuickC16ModuleDescriptorC5clearyyF",
+            "moduleName": "YandexQuickPay",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "Custom",
+              "SPIAccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "update",
             "printedName": "update(locale:)",
             "children": [
@@ -2947,6 +3119,13 @@
             "printedName": "YPayModule",
             "usr": "s:22YandexPayConfiguration10YPayModuleP",
             "mangledName": "$s22YandexPayConfiguration10YPayModuleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "YPayModuleLifecycle",
+            "printedName": "YPayModuleLifecycle",
+            "usr": "s:22YandexPayConfiguration19YPayModuleLifecycleP",
+            "mangledName": "$s22YandexPayConfiguration19YPayModuleLifecycleP"
           }
         ]
       },
@@ -3417,6 +3596,43 @@
         "name": "YQuickPayResult",
         "printedName": "YQuickPayResult",
         "children": [
+          {
+            "kind": "Var",
+            "name": "waitingForApprove",
+            "printedName": "waitingForApprove",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(YandexQuickPay.YQuickPayResult.Type) -> YandexQuickPay.YQuickPayResult",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "YQuickPayResult",
+                    "printedName": "YandexQuickPay.YQuickPayResult",
+                    "usr": "s:14YandexQuickPay06YQuickC6ResultO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "YandexQuickPay.YQuickPayResult.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YQuickPayResult",
+                        "printedName": "YandexQuickPay.YQuickPayResult",
+                        "usr": "s:14YandexQuickPay06YQuickC6ResultO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:14YandexQuickPay06YQuickC6ResultO17waitingForApproveyA2CmF",
+            "mangledName": "$s14YandexQuickPay06YQuickC6ResultO17waitingForApproveyA2CmF",
+            "moduleName": "YandexQuickPay"
+          },
           {
             "kind": "Var",
             "name": "success",
@@ -4316,91 +4532,91 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPay.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPay.swift",
       "kind": "BooleanLiteral",
       "offset": 1080,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPay.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPay.swift",
       "kind": "BooleanLiteral",
       "offset": 1903,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPay.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPay.swift",
       "kind": "BooleanLiteral",
-      "offset": 4242,
+      "offset": 4290,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPay.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPay.swift",
       "kind": "BooleanLiteral",
-      "offset": 4765,
+      "offset": 4813,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPay.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPay.swift",
       "kind": "BooleanLiteral",
-      "offset": 5254,
+      "offset": 5302,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPay.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPay.swift",
       "kind": "BooleanLiteral",
-      "offset": 5745,
+      "offset": 5793,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPay.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPay.swift",
       "kind": "BooleanLiteral",
-      "offset": 10630,
+      "offset": 11056,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPay.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPay.swift",
       "kind": "BooleanLiteral",
-      "offset": 11289,
+      "offset": 11715,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPayModule.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPayModule.swift",
       "kind": "BooleanLiteral",
       "offset": 967,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPayModule.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPayModule.swift",
       "kind": "BooleanLiteral",
-      "offset": 3369,
+      "offset": 3746,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPayPaymentMethodType.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPayPaymentMethodType.swift",
       "kind": "StringLiteral",
       "offset": 212,
       "length": 5,
       "value": "\"sbp\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPayPaymentMethodType.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPayPaymentMethodType.swift",
       "kind": "StringLiteral",
       "offset": 273,
       "length": 6,
       "value": "\"card\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4510352399\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50baf276-5809-4a0b-94ad-0140947240b6\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPayPaymentMethodType.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/4\/4590195141\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-15aa60c2-f020-4f01-9a7f-66e505425cb3\/mobile\/fintech-sdk\/ios\/Facades\/YQuickPay\/Sources\/YQuickPayPaymentMethodType.swift",
       "kind": "StringLiteral",
       "offset": 337,
       "length": 8,

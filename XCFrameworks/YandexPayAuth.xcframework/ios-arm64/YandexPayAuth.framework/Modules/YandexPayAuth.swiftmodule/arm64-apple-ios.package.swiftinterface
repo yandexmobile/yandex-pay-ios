@@ -60,12 +60,15 @@ final public class YPayAuthModule : YandexPayConfiguration.YPayModule {
   final public var userActivityHandlers: [any YandexPayConfiguration.YPayUserActivityHandler] {
     get
   }
+  @_spi(Internal) @_Concurrency.MainActor final public func clear()
   @objc deinit
 }
 extension YandexPayAuth.YPayAuthModule {
   final public func update(locale: YandexPayConfiguration.YPSDKLocale)
   final public func update(theme: YandexPayConfiguration.YPSDKThemeColorScheme)
   @_Concurrency.MainActor final public func logout()
+}
+@_spi(Internal) extension YandexPayAuth.YPayAuthModule : YandexPayConfiguration.YPayModuleLifecycle {
 }
 extension YandexPayAuth.YPayAuth {
   @_Concurrency.MainActor public static func module(merchant: YandexPayConfiguration.YPSDKMerchant) -> YandexPayAuth.YPayAuthModule

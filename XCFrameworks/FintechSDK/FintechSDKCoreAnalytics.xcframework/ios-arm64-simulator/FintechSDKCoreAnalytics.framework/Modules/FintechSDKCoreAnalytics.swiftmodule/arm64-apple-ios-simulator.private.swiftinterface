@@ -54,7 +54,7 @@ final public class FintechAnalyticsTelemetryReporter : FintechSDKAnalyticsInterf
   @_spi(Internal) public func applyAppEnvironment(_ signals: [Swift.String : Swift.String?])
   @_spi(Internal) public func applyAppEnvironment(sourceSDK: Swift.String, sdkVersion: Swift.String, environmentType: FintechSDKCoreAnalytics.FTAppEnvironmentType)
 }
-@_spi(Internal) final public class FTIdentifiersProvider : FintechSDKAnalyticsInterfaces.FintechIdentifiersProviding {
+@_spi(Internal) final public class FTIdentifiersProvider : FintechSDKAnalyticsInterfaces.FTIdentifiersProviding {
   @_spi(Internal) public init(appMetricaAdapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter)
   @_spi(Internal) final public var installationID: Swift.String {
     @_spi(Internal) get
@@ -137,6 +137,10 @@ final public class FintechNetworkReportingObserver : FintechSDKNetworkInterfaces
   @_spi(Internal) public var hashValue: Swift.Int {
     @_spi(Internal) get
   }
+}
+@_spi(Internal) public struct FTExternalAnalyticsParamsProvider : FintechSDKCoreAnalytics.FintechExtraAnalyticsParamsProvider {
+  @_spi(Internal) public init()
+  @_spi(Internal) public func params() -> [Swift.String : Swift.String]
 }
 public protocol FintechAnalyticsParamsProvider : Swift.Sendable {
   var isProduction: Swift.Bool { get }

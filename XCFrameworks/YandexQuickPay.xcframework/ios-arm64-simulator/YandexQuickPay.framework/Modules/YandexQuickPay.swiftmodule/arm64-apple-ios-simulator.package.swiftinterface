@@ -38,6 +38,10 @@ extension YandexPayConfiguration.YPay {
     get
   }
 }
+extension YandexQuickPay.YQuickPay : YandexQuickPay.YQuickPayMerchantExclusiveApi {
+  final public func startOrderPolling() async throws
+  final public func stopOrderPolling() async throws
+}
 @_hasMissingDesignatedInitializers final public class YQuickPay {
   final public func isQuickPaymentEnabled() async throws -> Swift.Bool
   final public func enableQuickPayment(showOnboardingAfterAuth: Swift.Bool = true) async throws
@@ -99,6 +103,10 @@ public enum YQuickPayAuthState : Swift.Equatable {
 @_Concurrency.MainActor public protocol YQuickPayAuthStateObserver : AnyObject {
   @_Concurrency.MainActor func onAuthStateChanged(_ state: YandexQuickPay.YQuickPayAuthState)
 }
+public protocol YQuickPayMerchantExclusiveApi {
+  func startOrderPolling() async throws
+  func stopOrderPolling() async throws
+}
 final public class YQuickPayModuleDescriptor : YandexPayConfiguration.YPayModule {
   public init(stateListener: any YandexQuickPay.YQuickPaymentStateListener, merchant: YandexPayConfiguration.YPSDKMerchant, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, isActivatedByDefault: Swift.Bool = true, pollingModalSize: YandexQuickPay.YQuickPayPollingModalSize? = nil)
   @_Concurrency.MainActor final public func configure(with configuration: YandexPayConfiguration.YPay)
@@ -108,7 +116,10 @@ final public class YQuickPayModuleDescriptor : YandexPayConfiguration.YPayModule
   final public var userActivityHandlers: [any YandexPayConfiguration.YPayUserActivityHandler] {
     get
   }
+  @_spi(Internal) @_Concurrency.MainActor final public func clear()
   @objc deinit
+}
+@_spi(Internal) extension YandexQuickPay.YQuickPayModuleDescriptor : YandexPayConfiguration.YPayModuleLifecycle {
 }
 extension YandexQuickPay.YQuickPayModuleDescriptor {
   @_Concurrency.MainActor final public func update(locale: YandexPayConfiguration.YPSDKLocale)
@@ -133,6 +144,7 @@ public enum YQuickPayPollingModalSize : Swift.Sendable {
   case topInset(CoreFoundation.CGFloat)
 }
 public enum YQuickPayResult {
+  case waitingForApprove
   case success
   case failure(YandexQuickPay.YQuickPayResult.FailureDetails)
   public struct FailureDetails {

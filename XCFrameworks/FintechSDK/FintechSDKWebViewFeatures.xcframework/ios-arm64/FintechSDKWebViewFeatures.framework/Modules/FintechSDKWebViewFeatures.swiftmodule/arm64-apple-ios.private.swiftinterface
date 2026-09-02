@@ -7,6 +7,7 @@ import Combine
 import Foundation
 import Swift
 import SwiftUI
+import UIKit
 import WebKit
 import _Concurrency
 import _StringProcessing
@@ -35,7 +36,7 @@ import _SwiftConcurrencyShims
   @_spi(Internal) @_Concurrency.MainActor public func attach(to context: any FintechSDKWebViewFeatures.FTWebViewHandlerContext)
 }
 @_spi(Internal) public protocol FTWebViewHandlerContext : AnyObject {
-  @_spi(Internal) @_Concurrency.MainActor func reload()
+  @_spi(Internal) @_Concurrency.MainActor func reload() async
   @_spi(Internal) @_Concurrency.MainActor func updateCookie(name: Swift.String, value: Swift.String)
   @_spi(Internal) @_Concurrency.MainActor func removeCookie(name: Swift.String) async
   @_spi(Internal) @_Concurrency.MainActor func evaluateJavaScript(script: Swift.String) async
@@ -77,7 +78,7 @@ import _SwiftConcurrencyShims
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     @_spi(Internal) get
   }
-  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(viewModel: WebViewModel, shimmer: Shimmer, errorView: ErrorView)
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(viewModel: WebViewModel, shimmer: Shimmer, errorView: ErrorView, contentInsetAdjustmentBehavior: UIKit.UIScrollView.ContentInsetAdjustmentBehavior = .automatic)
   @_spi(Internal) public typealias Body = @_opaqueReturnTypeOf("$s25FintechSDKWebViewFeatures05FTWebC0V4bodyQrvp", 0) __<WebViewModel, Shimmer, ErrorView>
 }
 @_spi(Internal) extension FintechSDKWebViewFeatures.FTScriptMessageHandler : Swift.Sendable {}

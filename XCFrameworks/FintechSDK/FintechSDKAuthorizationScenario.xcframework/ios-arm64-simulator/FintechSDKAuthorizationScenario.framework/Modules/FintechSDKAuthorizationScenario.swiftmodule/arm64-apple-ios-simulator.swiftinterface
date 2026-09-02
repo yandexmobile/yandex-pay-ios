@@ -33,6 +33,7 @@ public protocol FTAuthScenario<FTSessionError> : AnyObject {
   @discardableResult
   @_Concurrency.MainActor func runPassportAuth(with presenter: UIKit.UIViewController, strategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy?, performDeviceBind: Swift.Bool) async throws(Self.FTSessionError) -> FintechSDKAuthorizationScenario.FTPassportAuthResult
   @_Concurrency.MainActor func runBstOnly(mode: FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode) async throws(Self.FTSessionError) -> FintechSDKAuthInterfaces.FintechAuthSession
+  @_Concurrency.MainActor func bindBiometricKey() async throws(Self.FTSessionError)
   func logout()
   func handleURL(_ url: Foundation.URL) -> Swift.Bool
   func handleUserActivity(_ userActivity: Foundation.NSUserActivity) -> Swift.Bool
@@ -50,7 +51,7 @@ public protocol FTAuthScenarioDelegate<FTSessionError> : AnyObject {
   associatedtype FTSessionError : Swift.Error
   func authScenarioDidChangeState(_ newState: FintechSDKAuthorizationScenario.FTAuthScenarioState<Self.FTSessionError>)
 }
-public enum FTAuthSessionAcquisitionMode : Swift.Sendable {
+public enum FTAuthSessionAcquisitionMode : Swift.Sendable, Swift.Hashable {
   case silent
   case interactive
   public static func == (a: FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode, b: FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode) -> Swift.Bool
@@ -59,5 +60,3 @@ public enum FTAuthSessionAcquisitionMode : Swift.Sendable {
     get
   }
 }
-extension FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode : Swift.Equatable {}
-extension FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode : Swift.Hashable {}

@@ -180,6 +180,7 @@ extension YandexPayConfiguration.YPay {
 }
 @_hasMissingDesignatedInitializers final public class YandexPayWithRedirectModuleDescriptor : YandexPayConfiguration.YPayModule {
   @_Concurrency.MainActor final public func configure(with configuration: YandexPayConfiguration.YPay)
+  @_spi(Internal) @_Concurrency.MainActor final public func clear()
   final public var urlHandlers: [any YandexPayConfiguration.YPayURLHandler] {
     get
   }
@@ -191,6 +192,8 @@ extension YandexPayConfiguration.YPay {
 extension YandexPayWithRedirect.YandexPayWithRedirectModuleDescriptor {
   @_Concurrency.MainActor final public func update(locale: YandexPayConfiguration.YPSDKLocale)
   @_Concurrency.MainActor final public func update(theme: YandexPayConfiguration.YPSDKThemeColorScheme)
+}
+@_spi(Internal) extension YandexPayWithRedirect.YandexPayWithRedirectModuleDescriptor : YandexPayConfiguration.YPayModuleLifecycle {
 }
 @_hasMissingDesignatedInitializers final public class YandexPayWithRedirectModuleAPI {
   final public func createYandexPayForm(paymentURL: Foundation.URL, delegate: any YandexPayWithRedirect.YPFormDelegate) -> any YandexPayWithRedirect.YPForm

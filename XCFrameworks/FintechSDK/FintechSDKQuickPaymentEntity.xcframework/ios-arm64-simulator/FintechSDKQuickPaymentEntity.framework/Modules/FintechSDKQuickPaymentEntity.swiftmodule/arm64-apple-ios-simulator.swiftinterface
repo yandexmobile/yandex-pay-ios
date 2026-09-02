@@ -9,6 +9,7 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 public enum FTQuickPayResult : Swift.Sendable {
+  case waitingForApprove
   case success
   case failure(FintechSDKQuickPaymentEntity.FTQuickPayResult.FailureDetails)
   public struct FailureDetails : @unchecked Swift.Sendable {
