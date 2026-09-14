@@ -206,9 +206,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "UIView",
-                "printedName": "UIKit.UIView",
-                "usr": "c:objc(cs)UIView"
+                "name": "YPPayWidgetUIView",
+                "printedName": "YandexPayInApp.YPPayWidgetUIView",
+                "usr": "c:@M@YandexPayInApp@objc(cs)YPPayWidgetUIView"
               },
               {
                 "kind": "TypeNominal",
@@ -225,8 +225,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:14YandexPayInApp0bcD9ModuleAPIC06createB12WidgetUIView5model27presentationContextProviderSo0I0CAA05YPPayH5ModelV_0aB13Configuration014YPPresentationL9Providing_ptF",
-            "mangledName": "$s14YandexPayInApp0bcD9ModuleAPIC06createB12WidgetUIView5model27presentationContextProviderSo0I0CAA05YPPayH5ModelV_0aB13Configuration014YPPresentationL9Providing_ptF",
+            "usr": "s:14YandexPayInApp0bcD9ModuleAPIC06createB12WidgetUIView5model27presentationContextProviderAA05YPPayhI0CAA0nH5ModelV_0aB13Configuration014YPPresentationL9Providing_ptF",
+            "mangledName": "$s14YandexPayInApp0bcD9ModuleAPIC06createB12WidgetUIView5model27presentationContextProviderAA05YPPayhI0CAA0nH5ModelV_0aB13Configuration014YPPresentationL9Providing_ptF",
             "moduleName": "YandexPayInApp",
             "declAttributes": [
               "Final",
@@ -943,6 +943,102 @@
               "AccessControl"
             ],
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14YandexPayInApp22YPPayWidgetOrderAmountV9hashValueSivp",
+            "mangledName": "$s14YandexPayInApp22YPPayWidgetOrderAmountV9hashValueSivp",
+            "moduleName": "YandexPayInApp",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14YandexPayInApp22YPPayWidgetOrderAmountV9hashValueSivg",
+                "mangledName": "$s14YandexPayInApp22YPPayWidgetOrderAmountV9hashValueSivg",
+                "moduleName": "YandexPayInApp",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14YandexPayInApp22YPPayWidgetOrderAmountV4hash4intoys6HasherVz_tF",
+            "mangledName": "$s14YandexPayInApp22YPPayWidgetOrderAmountV4hash4intoys6HasherVz_tF",
+            "moduleName": "YandexPayInApp",
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "YPPayWidgetOrderAmount",
+                "printedName": "YandexPayInApp.YPPayWidgetOrderAmount",
+                "usr": "s:14YandexPayInApp22YPPayWidgetOrderAmountV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "YPPayWidgetOrderAmount",
+                "printedName": "YandexPayInApp.YPPayWidgetOrderAmount",
+                "usr": "s:14YandexPayInApp22YPPayWidgetOrderAmountV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14YandexPayInApp22YPPayWidgetOrderAmountV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s14YandexPayInApp22YPPayWidgetOrderAmountV2eeoiySbAC_ACtFZ",
+            "moduleName": "YandexPayInApp",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Struct",
@@ -973,6 +1069,20 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
           }
         ]
       },
@@ -1042,9 +1152,69 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "cart",
+            "printedName": "cart",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "YandexPayConfiguration.YPPayCart?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "YPPayCart",
+                    "printedName": "YandexPayConfiguration.YPPayCart",
+                    "usr": "s:22YandexPayConfiguration9YPPayCartV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14YandexPayInApp16YPPayWidgetModelV4cart0aB13Configuration0E4CartVSgvp",
+            "mangledName": "$s14YandexPayInApp16YPPayWidgetModelV4cart0aB13Configuration0E4CartVSgvp",
+            "moduleName": "YandexPayInApp",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "YandexPayConfiguration.YPPayCart?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YPPayCart",
+                        "printedName": "YandexPayConfiguration.YPPayCart",
+                        "usr": "s:22YandexPayConfiguration9YPPayCartV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14YandexPayInApp16YPPayWidgetModelV4cart0aB13Configuration0E4CartVSgvg",
+                "mangledName": "$s14YandexPayInApp16YPPayWidgetModelV4cart0aB13Configuration0E4CartVSgvg",
+                "moduleName": "YandexPayInApp",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(orderAmount:)",
+            "printedName": "init(orderAmount:cart:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1066,11 +1236,26 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "YandexPayConfiguration.YPPayCart?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "YPPayCart",
+                    "printedName": "YandexPayConfiguration.YPPayCart",
+                    "usr": "s:22YandexPayConfiguration9YPPayCartV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:14YandexPayInApp16YPPayWidgetModelV11orderAmountAcA0ef5OrderI0VSg_tcfc",
-            "mangledName": "$s14YandexPayInApp16YPPayWidgetModelV11orderAmountAcA0ef5OrderI0VSg_tcfc",
+            "usr": "s:14YandexPayInApp16YPPayWidgetModelV11orderAmount4cartAcA0ef5OrderI0VSg_0aB13Configuration0E4CartVSgtcfc",
+            "mangledName": "$s14YandexPayInApp16YPPayWidgetModelV11orderAmount4cartAcA0ef5OrderI0VSg_0aB13Configuration0E4CartVSgtcfc",
             "moduleName": "YandexPayInApp",
             "declAttributes": [
               "AccessControl"
@@ -1080,7 +1265,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(amount:currency:)",
+            "printedName": "init(amount:currency:cart:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1099,16 +1284,127 @@
                 "name": "YPCurrencyCode",
                 "printedName": "YandexPayConfiguration.YPCurrencyCode",
                 "usr": "s:22YandexPayConfiguration14YPCurrencyCodeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "YandexPayConfiguration.YPPayCart?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "YPPayCart",
+                    "printedName": "YandexPayConfiguration.YPPayCart",
+                    "usr": "s:22YandexPayConfiguration9YPPayCartV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:14YandexPayInApp16YPPayWidgetModelV6amount8currencyACSo9NSDecimala_0aB13Configuration14YPCurrencyCodeOtcfc",
-            "mangledName": "$s14YandexPayInApp16YPPayWidgetModelV6amount8currencyACSo9NSDecimala_0aB13Configuration14YPCurrencyCodeOtcfc",
+            "usr": "s:14YandexPayInApp16YPPayWidgetModelV6amount8currency4cartACSo9NSDecimala_0aB13Configuration14YPCurrencyCodeOAI0E4CartVSgtcfc",
+            "mangledName": "$s14YandexPayInApp16YPPayWidgetModelV6amount8currency4cartACSo9NSDecimala_0aB13Configuration14YPCurrencyCodeOAI0E4CartVSgtcfc",
             "moduleName": "YandexPayInApp",
             "declAttributes": [
               "AccessControl"
             ],
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14YandexPayInApp16YPPayWidgetModelV9hashValueSivp",
+            "mangledName": "$s14YandexPayInApp16YPPayWidgetModelV9hashValueSivp",
+            "moduleName": "YandexPayInApp",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14YandexPayInApp16YPPayWidgetModelV9hashValueSivg",
+                "mangledName": "$s14YandexPayInApp16YPPayWidgetModelV9hashValueSivg",
+                "moduleName": "YandexPayInApp",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14YandexPayInApp16YPPayWidgetModelV4hash4intoys6HasherVz_tF",
+            "mangledName": "$s14YandexPayInApp16YPPayWidgetModelV4hash4intoys6HasherVz_tF",
+            "moduleName": "YandexPayInApp",
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "YPPayWidgetModel",
+                "printedName": "YandexPayInApp.YPPayWidgetModel",
+                "usr": "s:14YandexPayInApp16YPPayWidgetModelV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "YPPayWidgetModel",
+                "printedName": "YandexPayInApp.YPPayWidgetModel",
+                "usr": "s:14YandexPayInApp16YPPayWidgetModelV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14YandexPayInApp16YPPayWidgetModelV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s14YandexPayInApp16YPPayWidgetModelV2eeoiySbAC_ACtFZ",
+            "moduleName": "YandexPayInApp",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Struct",
@@ -1139,6 +1435,243 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "YandexPayInApp"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "YPPayWidgetUIView",
+        "printedName": "YPPayWidgetUIView",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "update",
+            "printedName": "update(model:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "YPPayWidgetModel",
+                "printedName": "YandexPayInApp.YPPayWidgetModel",
+                "usr": "s:14YandexPayInApp16YPPayWidgetModelV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14YandexPayInApp17YPPayWidgetUIViewC6update5modelyAA0eF5ModelV_tF",
+            "mangledName": "$s14YandexPayInApp17YPPayWidgetUIViewC6update5modelyAA0eF5ModelV_tF",
+            "moduleName": "YandexPayInApp",
+            "declAttributes": [
+              "Custom",
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "intrinsicContentSize",
+            "printedName": "intrinsicContentSize",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGSize",
+                "printedName": "CoreFoundation.CGSize",
+                "usr": "c:@S@CGSize"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@YandexPayInApp@objc(cs)YPPayWidgetUIView(py)intrinsicContentSize",
+            "mangledName": "$s14YandexPayInApp17YPPayWidgetUIViewC20intrinsicContentSizeSo6CGSizeVvp",
+            "moduleName": "YandexPayInApp",
+            "overriding": true,
+            "objc_name": "intrinsicContentSize",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Custom",
+              "Override",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGSize",
+                    "printedName": "CoreFoundation.CGSize",
+                    "usr": "c:@S@CGSize"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@YandexPayInApp@objc(cs)YPPayWidgetUIView(im)intrinsicContentSize",
+                "mangledName": "$s14YandexPayInApp17YPPayWidgetUIViewC20intrinsicContentSizeSo6CGSizeVvg",
+                "moduleName": "YandexPayInApp",
+                "overriding": true,
+                "objc_name": "intrinsicContentSize",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(frame:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "YPPayWidgetUIView",
+                "printedName": "YandexPayInApp.YPPayWidgetUIView",
+                "usr": "c:@M@YandexPayInApp@objc(cs)YPPayWidgetUIView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGRect",
+                "printedName": "CoreFoundation.CGRect",
+                "usr": "c:@S@CGRect"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@YandexPayInApp@objc(cs)YPPayWidgetUIView(im)initWithFrame:",
+            "mangledName": "$s14YandexPayInApp17YPPayWidgetUIViewC5frameACSo6CGRectV_tcfc",
+            "moduleName": "YandexPayInApp",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithFrame:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@YandexPayInApp@objc(cs)YPPayWidgetUIView",
+        "mangledName": "$s14YandexPayInApp17YPPayWidgetUIViewC",
+        "moduleName": "YandexPayInApp",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "Custom",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)UIView",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "UIKit.UIView",
+          "UIKit.UIResponder",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "__DefaultCustomPlaygroundQuickLookable",
+            "printedName": "__DefaultCustomPlaygroundQuickLookable",
+            "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
+            "mangledName": "$ss38__DefaultCustomPlaygroundQuickLookableP"
           }
         ]
       },
@@ -1323,6 +1856,17 @@
         "declKind": "Import",
         "moduleName": "YandexPayInApp",
         "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
+        "declKind": "Import",
+        "moduleName": "YandexPayInApp",
+        "declAttributes": [
+          "AccessControl",
           "SPIAccessControl"
         ]
       },
@@ -1812,9 +2356,9 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/Facades\/YandexPayInApp\/Sources\/YandexPayInAppModuleDescriptor.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/Facades\/YandexPayInApp\/Sources\/YandexPayInAppModuleDescriptor.swift",
       "kind": "BooleanLiteral",
-      "offset": 1084,
+      "offset": 1136,
       "length": 5,
       "value": "false"
     }

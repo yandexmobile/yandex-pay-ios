@@ -4,13 +4,19 @@
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import FintechSDKAnalyticsInterfaces
 import FintechSDKAppMetricaAdapter6
+@_spi(Internal) import FintechSDKAppTransportSecurityScenario
 import FintechSDKAuthInterfaces
 import FintechSDKCommonEntity
+@_spi(Internal) import FintechSDKCoreAnalytics
 @_spi(Internal) import FintechSDKCoreUI
 @_spi(Internal) import FintechSDKCoreUtils
 import FintechSDKLoginAdapter
+import FintechSDKNetworkChallengeAdapter
+@_spi(Internal) import FintechSDKNetworkImplementation
 import FintechSDKNetworkInterfaces
 @_spi(Internal) import FintechSDKPayBoxEntity
+import FintechSDKRealTimeAnalyticsAdapter
+import FintechSDKRealUserMonitoringAdapter
 import Foundation
 import Swift
 import UIKit
@@ -22,6 +28,25 @@ import _SwiftConcurrencyShims
   @_spi(Internal) @_Concurrency.MainActor func removeSubscriber(_ subscriber: any YandexPayConfiguration.YPayEventSubscriber)
   @_spi(Internal) @_Concurrency.MainActor func clearAllSubscribers()
   @_spi(Internal) @_Concurrency.MainActor func sendEvent(_ event: YandexPayConfiguration.YPayEvent) async -> YandexPayConfiguration.YPayEventResult
+}
+public struct YPPayCart : Swift.Sendable, Swift.Hashable {
+  public let items: [YandexPayConfiguration.YPPayCartItem]
+  public init(items: [YandexPayConfiguration.YPPayCartItem])
+  public static func == (a: YandexPayConfiguration.YPPayCart, b: YandexPayConfiguration.YPPayCart) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct YPPayCartItem : Swift.Sendable, Swift.Hashable {
+  public let productID: Swift.String
+  public let total: Foundation.Decimal
+  public init(productID: Swift.String, total: Foundation.Decimal)
+  public static func == (a: YandexPayConfiguration.YPPayCartItem, b: YandexPayConfiguration.YPPayCartItem) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 @_spi(Internal) public struct YPSDKConfiguration {
   @_spi(Internal) public init(environment: YandexPayConfiguration.YPSDKEnvironment, merchant: YandexPayConfiguration.YPSDKMerchant, locale: YandexPayConfiguration.YPSDKLocale, enableLogging: Swift.Bool)
@@ -60,7 +85,7 @@ import _SwiftConcurrencyShims
 @_spi(Internal) public protocol YPayEventSubscriber : AnyObject {
   @_spi(Internal) func handleEvent(_ event: YandexPayConfiguration.YPayEvent) async -> YandexPayConfiguration.YPayEventResult
 }
-public enum YPCurrencyCode : Swift.String {
+public enum YPCurrencyCode : Swift.String, Swift.Sendable, Swift.Hashable {
   case rub
   case byn
   case usd
@@ -241,8 +266,6 @@ extension YandexPayConfiguration.YPSDKEnvironment : Swift.Hashable {}
 extension YandexPayConfiguration.YPSDKEnvironment : Swift.RawRepresentable {}
 extension YandexPayConfiguration.YPSDKLocale : Swift.Equatable {}
 extension YandexPayConfiguration.YPSDKLocale : Swift.Hashable {}
-extension YandexPayConfiguration.YPCurrencyCode : Swift.Equatable {}
-extension YandexPayConfiguration.YPCurrencyCode : Swift.Hashable {}
 extension YandexPayConfiguration.YPCurrencyCode : Swift.RawRepresentable {}
 extension YandexPayConfiguration.YPSDKThemeColorScheme : Swift.Equatable {}
 extension YandexPayConfiguration.YPSDKThemeColorScheme : Swift.Hashable {}

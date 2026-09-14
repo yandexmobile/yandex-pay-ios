@@ -60,14 +60,52 @@ extension YandexPayAssistant.YPBenefitsSimpleUIKitWidgetState {
   @_spi(Internal) final public func make(uid: Swift.String?) -> any FintechSDKAnalyticsInterfaces.FintechRUMAdapter
   @_spi(Internal) @objc deinit
 }
+public struct FintechBenefitsCart : Swift.Sendable, Swift.Hashable {
+  public let items: [YandexPayAssistant.FintechBenefitsCartItem]
+  public init(items: [YandexPayAssistant.FintechBenefitsCartItem])
+  public static func == (a: YandexPayAssistant.FintechBenefitsCart, b: YandexPayAssistant.FintechBenefitsCart) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct FintechBenefitsCartItem : Swift.Sendable, Swift.Hashable {
+  public let productId: Swift.String
+  public let total: Foundation.Decimal
+  public init(productId: Swift.String, total: Foundation.Decimal)
+  public static func == (a: YandexPayAssistant.FintechBenefitsCartItem, b: YandexPayAssistant.FintechBenefitsCartItem) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct FintechBenefitsWidgetModel : Swift.Sendable, Swift.Hashable {
+  public let screen: YandexPayAssistant.YPBenefitsWidgetScreen?
+  public let clickability: YandexPayAssistant.YPBenefitsWidgetClickability
+  public let metaInfo: [Swift.String : Swift.String]?
+  public let cart: YandexPayAssistant.FintechBenefitsCart?
+  public init(screen: YandexPayAssistant.YPBenefitsWidgetScreen?, clickability: YandexPayAssistant.YPBenefitsWidgetClickability = .always, metaInfo: [Swift.String : Swift.String]? = nil, cart: YandexPayAssistant.FintechBenefitsCart? = nil)
+  public static func == (lhs: YandexPayAssistant.FintechBenefitsWidgetModel, rhs: YandexPayAssistant.FintechBenefitsWidgetModel) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class FintechBenefitsWidgetUIView : UIKit.UIView {
+  @_Concurrency.MainActor final public func update(model: YandexPayAssistant.FintechBenefitsWidgetModel)
+  @_Concurrency.MainActor @objc override final public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @objc deinit
+}
 public enum YPAssistantModule {
   public static func module(merchant: YandexPayConfiguration.YPSDKMerchant) -> YandexPayAssistant.YPAssistantModuleDescriptor
 }
 @_hasMissingDesignatedInitializers final public class YPAssistantModuleAPI {
-  @_Concurrency.MainActor final public func createBenefitsWidget(screen: YandexPayAssistant.YPBenefitsWidgetScreen?, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, clickability: YandexPayAssistant.YPBenefitsWidgetClickability = .always, metaInfo: [Swift.String : Swift.String]? = nil) -> any SwiftUICore.View
-  @_Concurrency.MainActor final public func createBenefitsWidget(screen: YandexPayAssistant.YPBenefitsWidgetScreen?, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, clickability: YandexPayAssistant.YPBenefitsWidgetClickability = .always, metaInfo: [Swift.String : Swift.String]? = nil) -> UIKit.UIView
-  @_Concurrency.MainActor final public func createBenefitsSimpleUIKitWidgetProvider(presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, metaInfo: [Swift.String : Swift.String]? = nil) -> any YandexPayAssistant.YPBenefitsSimpleUIKitWidgetProvider
-  @_Concurrency.MainActor final public func createBenefitsSimpleSwiftUIWidgetProvider(presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, metaInfo: [Swift.String : Swift.String]? = nil) -> any YandexPayAssistant.YPBenefitsSimpleSwiftUIWidgetProvider
+  @_Concurrency.MainActor final public func createBenefitsWidget(screen: YandexPayAssistant.YPBenefitsWidgetScreen?, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, clickability: YandexPayAssistant.YPBenefitsWidgetClickability = .always, metaInfo: [Swift.String : Swift.String]? = nil, cart: YandexPayAssistant.FintechBenefitsCart? = nil) -> any SwiftUICore.View
+  @_Concurrency.MainActor final public func createBenefitsWidget(screen: YandexPayAssistant.YPBenefitsWidgetScreen?, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, clickability: YandexPayAssistant.YPBenefitsWidgetClickability = .always, metaInfo: [Swift.String : Swift.String]? = nil, cart: YandexPayAssistant.FintechBenefitsCart? = nil) -> YandexPayAssistant.FintechBenefitsWidgetUIView
+  @_Concurrency.MainActor final public func createBenefitsSimpleUIKitWidgetProvider(presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, metaInfo: [Swift.String : Swift.String]? = nil, cart: YandexPayAssistant.FintechBenefitsCart? = nil) -> any YandexPayAssistant.YPBenefitsSimpleUIKitWidgetProvider
+  @_Concurrency.MainActor final public func createBenefitsSimpleSwiftUIWidgetProvider(presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, metaInfo: [Swift.String : Swift.String]? = nil, cart: YandexPayAssistant.FintechBenefitsCart? = nil) -> any YandexPayAssistant.YPBenefitsSimpleSwiftUIWidgetProvider
   @objc deinit
 }
 final public class YPAssistantModuleDescriptor : YandexPayConfiguration.YPayModule {
@@ -88,7 +126,7 @@ final public class YPAssistantModuleDescriptor : YandexPayConfiguration.YPayModu
 @_spi(Internal) extension YandexPayAssistant.YPAssistantModuleDescriptor : YandexPayConfiguration.YPayEventSubscriber {
   @_spi(Internal) @_Concurrency.MainActor final public func handleEvent(_ event: YandexPayConfiguration.YPayEvent) async -> YandexPayConfiguration.YPayEventResult
 }
-public enum YPBenefitsWidgetClickability : Swift.String, Swift.CaseIterable {
+public enum YPBenefitsWidgetClickability : Swift.String, Swift.CaseIterable, Swift.Sendable, Swift.Hashable {
   case always
   case onlyAuthorized
   public init?(rawValue: Swift.String)
@@ -101,7 +139,7 @@ public enum YPBenefitsWidgetClickability : Swift.String, Swift.CaseIterable {
     get
   }
 }
-public enum YPBenefitsWidgetScreen : Swift.String, Swift.CaseIterable {
+public enum YPBenefitsWidgetScreen : Swift.String, Swift.CaseIterable, Swift.Sendable, Swift.Hashable {
   case main
   case catalog
   case search
@@ -125,9 +163,5 @@ extension YandexPayConfiguration.YPay {
 }
 extension YandexPayAssistant.YPBenefitsSimpleSwiftUIWidgetState : Swift.Sendable {}
 extension YandexPayAssistant.YPBenefitsSimpleUIKitWidgetState : Swift.Sendable {}
-extension YandexPayAssistant.YPBenefitsWidgetScreen : Swift.Equatable {}
-extension YandexPayAssistant.YPBenefitsWidgetScreen : Swift.Hashable {}
 extension YandexPayAssistant.YPBenefitsWidgetScreen : Swift.RawRepresentable {}
-extension YandexPayAssistant.YPBenefitsWidgetClickability : Swift.Equatable {}
-extension YandexPayAssistant.YPBenefitsWidgetClickability : Swift.Hashable {}
 extension YandexPayAssistant.YPBenefitsWidgetClickability : Swift.RawRepresentable {}

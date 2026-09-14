@@ -24,14 +24,26 @@ import _SwiftConcurrencyShims
   @_spi(Internal) final public func loadBadge(for model: FintechSDKPayBadge.FTPayBadgeModel) async throws -> FintechSDKCoreUI.FTSVG
   @_spi(Internal) @objc deinit
 }
+@_spi(Internal) public struct FTPayBadgeCart : Swift.Equatable, Swift.Sendable {
+  @_spi(Internal) public let items: [FintechSDKPayBadge.FTPayBadgeCartItem]
+  @_spi(Internal) public init(items: [FintechSDKPayBadge.FTPayBadgeCartItem])
+  @_spi(Internal) public static func == (a: FintechSDKPayBadge.FTPayBadgeCart, b: FintechSDKPayBadge.FTPayBadgeCart) -> Swift.Bool
+}
+@_spi(Internal) public struct FTPayBadgeCartItem : Swift.Equatable, Swift.Sendable {
+  @_spi(Internal) public let productID: Swift.String
+  @_spi(Internal) public let total: Foundation.Decimal
+  @_spi(Internal) public init(productID: Swift.String, total: Foundation.Decimal)
+  @_spi(Internal) public static func == (a: FintechSDKPayBadge.FTPayBadgeCartItem, b: FintechSDKPayBadge.FTPayBadgeCartItem) -> Swift.Bool
+}
 @_spi(Internal) public struct FTPayBadgeModel : Swift.Equatable, Swift.Sendable {
   @_spi(Internal) public let amount: Foundation.Decimal
   @_spi(Internal) public let currency: FintechSDKPayBoxEntity.FTCurrencyCode
   @_spi(Internal) public let theme: FintechSDKCommonEntity.FintechSDKTheme
   @_spi(Internal) public let align: FintechSDKPayBadge.FTPayBadgeModel.Align
   @_spi(Internal) public let type: FintechSDKPayBadge.FTPayBadgeModel.BadgeType
+  @_spi(Internal) public let productContext: FintechSDKPayBadge.FTPayBadgeProductContext?
   @_spi(Internal) public let hidingPolicy: FintechSDKPayBadge.FTPayBadgeModel.HidingPolicy
-  @_spi(Internal) public init(amount: Foundation.Decimal, currency: FintechSDKPayBoxEntity.FTCurrencyCode, theme: FintechSDKCommonEntity.FintechSDKTheme, align: FintechSDKPayBadge.FTPayBadgeModel.Align, type: FintechSDKPayBadge.FTPayBadgeModel.BadgeType, hidingPolicy: FintechSDKPayBadge.FTPayBadgeModel.HidingPolicy = .gone)
+  @_spi(Internal) public init(amount: Foundation.Decimal, currency: FintechSDKPayBoxEntity.FTCurrencyCode, theme: FintechSDKCommonEntity.FintechSDKTheme, align: FintechSDKPayBadge.FTPayBadgeModel.Align, type: FintechSDKPayBadge.FTPayBadgeModel.BadgeType, productContext: FintechSDKPayBadge.FTPayBadgeProductContext? = nil, hidingPolicy: FintechSDKPayBadge.FTPayBadgeModel.HidingPolicy = .gone)
   @_spi(Internal) public static func == (a: FintechSDKPayBadge.FTPayBadgeModel, b: FintechSDKPayBadge.FTPayBadgeModel) -> Swift.Bool
 }
 @_spi(Internal) extension FintechSDKPayBadge.FTPayBadgeModel {
@@ -128,6 +140,11 @@ import _SwiftConcurrencyShims
     }
   }
 }
+@_spi(Internal) public enum FTPayBadgeProductContext : Swift.Equatable, Swift.Sendable {
+  @_spi(Internal) case product(id: Swift.String)
+  @_spi(Internal) case cart(FintechSDKPayBadge.FTPayBadgeCart)
+  @_spi(Internal) public static func == (a: FintechSDKPayBadge.FTPayBadgeProductContext, b: FintechSDKPayBadge.FTPayBadgeProductContext) -> Swift.Bool
+}
 @_spi(Internal) public struct FTPayBadgeMetricContext : Swift.Sendable {
   @_spi(Internal) public let metricaID: Swift.String
   @_spi(Internal) public let deviceID: Swift.String?
@@ -138,6 +155,14 @@ import _SwiftConcurrencyShims
 @_spi(Internal) public enum FTPayBadgeFactory {
   @_spi(Internal) @_Concurrency.MainActor public static func createBadgeView(model: FintechSDKPayBadge.FTPayBadgeModel, apiService: any FintechSDKPayBadge.FTPayBadgeAPIService, logger: any FintechSDKCoreUtils.FTLogger) -> some SwiftUICore.View
   
+  @_spi(Internal) @_Concurrency.MainActor public static func createBadgeUIView(model: FintechSDKPayBadge.FTPayBadgeModel, apiService: any FintechSDKPayBadge.FTPayBadgeAPIService, logger: any FintechSDKCoreUtils.FTLogger) -> FintechSDKPayBadge.FTPayBadgeUIView
+}
+@_spi(Internal) @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class FTPayBadgeUIView : UIKit.UIView {
+  @_spi(Internal) @_Concurrency.MainActor @objc override final public var intrinsicContentSize: CoreFoundation.CGSize {
+    @_spi(Internal) @objc get
+  }
+  @_spi(Internal) @_Concurrency.MainActor final public func update(model newModel: FintechSDKPayBadge.FTPayBadgeModel)
+  @_spi(Internal) @objc deinit
 }
 @_spi(Internal) extension FintechSDKPayBadge.FTPayBadgeModel.SplitVariant : Swift.Equatable {}
 @_spi(Internal) extension FintechSDKPayBadge.FTPayBadgeModel.SplitVariant : Swift.Hashable {}

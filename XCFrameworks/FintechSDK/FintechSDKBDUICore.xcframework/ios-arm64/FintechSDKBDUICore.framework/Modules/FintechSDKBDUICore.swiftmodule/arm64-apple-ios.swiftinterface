@@ -285,7 +285,8 @@ public protocol FintechDivActionHandler {
 }
 public struct FintechDivFlagsInfo : Swift.Equatable {
   public let useUrlHandlerForVisibilityActions: Swift.Bool
-  public init(useUrlHandlerForVisibilityActions: Swift.Bool = false)
+  public let resizesWithContent: Swift.Bool
+  public init(useUrlHandlerForVisibilityActions: Swift.Bool = false, resizesWithContent: Swift.Bool = false)
   public static func == (a: FintechSDKBDUICore.FintechDivFlagsInfo, b: FintechSDKBDUICore.FintechDivFlagsInfo) -> Swift.Bool
 }
 public protocol FintechDivKitExpressionResolver {
@@ -306,7 +307,8 @@ extension FintechSDKBDUICore.FintechDivUrlHandler {
 public struct FintechDivViewSource {
   public let cardId: Swift.String
   public let data: Foundation.Data
-  public init(cardId: Swift.String, data: Foundation.Data)
+  public let resetsCardState: Swift.Bool
+  public init(cardId: Swift.String, data: Foundation.Data, resetsCardState: Swift.Bool = false)
 }
 extension FintechSDKBDUICore.FintechBDUIAnyActionDecoder.DecodingError : Swift.Equatable {}
 extension FintechSDKBDUICore.FintechBDUIAnyActionDecoder.DecodingError : Swift.Hashable {}

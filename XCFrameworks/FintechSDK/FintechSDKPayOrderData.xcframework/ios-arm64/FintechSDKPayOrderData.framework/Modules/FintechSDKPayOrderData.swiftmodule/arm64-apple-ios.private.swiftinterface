@@ -15,6 +15,23 @@ public struct FTCheckoutSheet : Swift.Encodable {
   public init(merchantId: Swift.String, orderTotal: Swift.String, currencyCode: Swift.String)
   public func encode(to encoder: any Swift.Encoder) throws
 }
+@_spi(Internal) public struct FTOrderMeta : Swift.Decodable, Swift.Sendable {
+  @_spi(Internal) public let orderToken: Swift.String?
+  @_spi(Internal) public let simplifiedCurrentStatus: FintechSDKPayOrderData.FTOrderMeta.OrderStatus?
+  @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
+}
+@_spi(Internal) extension FintechSDKPayOrderData.FTOrderMeta {
+  @_spi(Internal) public enum OrderStatus : Swift.String, Swift.Decodable, Swift.Sendable {
+    @_spi(Internal) case pending
+    @_spi(Internal) case success
+    @_spi(Internal) case failed
+    @_spi(Internal) public init?(rawValue: Swift.String)
+    @_spi(Internal) public typealias RawValue = Swift.String
+    @_spi(Internal) public var rawValue: Swift.String {
+      @_spi(Internal) get
+    }
+  }
+}
 @_spi(Internal) public protocol FTOrderApiService : Swift.Sendable {
   @_spi(Internal) func cashback(cardId: Swift.String?, checkoutSheet: FintechSDKPayOrderData.FTCheckoutSheet) async throws -> FintechSDKPayBoxEntity.FTCashback
   @_spi(Internal) func loadSplitPlans(merchantID: Swift.String, orderAmount: Foundation.Decimal, currencyCode: Swift.String, inventory: Swift.Bool) async throws -> FintechSDKPayBoxEntity.FTSplitData
@@ -25,3 +42,14 @@ public struct FTCheckoutSheet : Swift.Encodable {
   @_spi(Internal) final public func loadSplitPlans(merchantID: Swift.String, orderAmount: Foundation.Decimal, currencyCode: Swift.String, inventory: Swift.Bool) async throws -> FintechSDKPayBoxEntity.FTSplitData
   @_spi(Internal) @objc deinit
 }
+@_spi(Internal) public protocol FTOrderMetaService : Swift.Sendable {
+  @_spi(Internal) func orderMeta(for paymentURL: Foundation.URL) async throws(FintechSDKNetworkInterfaces.NetworkClientError) -> FintechSDKPayOrderData.FTOrderMeta
+}
+@_spi(Internal) final public class FTOrderMetaServiceImpl : FintechSDKPayOrderData.FTOrderMetaService {
+  @_spi(Internal) public init(networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient)
+  @_spi(Internal) final public func orderMeta(for paymentURL: Foundation.URL) async throws(FintechSDKNetworkInterfaces.NetworkClientError) -> FintechSDKPayOrderData.FTOrderMeta
+  @_spi(Internal) @objc deinit
+}
+@_spi(Internal) extension FintechSDKPayOrderData.FTOrderMeta.OrderStatus : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKPayOrderData.FTOrderMeta.OrderStatus : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKPayOrderData.FTOrderMeta.OrderStatus : Swift.RawRepresentable {}

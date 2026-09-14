@@ -10,6 +10,12 @@ import _SwiftConcurrencyShims
 public protocol FintechFontsAdapter {
   func font(family: FintechSDKFontsInterfaces.FintechFontFamily, weight: FintechSDKFontsInterfaces.FintechFontWeight, size: CoreFoundation.CGFloat) -> UIKit.UIFont
   func fontWithProportionalNumbers(family: FintechSDKFontsInterfaces.FintechFontFamily, weight: FintechSDKFontsInterfaces.FintechFontWeight, size: CoreFoundation.CGFloat) -> UIKit.UIFont
+  func font(_ face: FintechSDKFontsInterfaces.FintechFontFace, size: CoreFoundation.CGFloat) -> UIKit.UIFont
+  func fontWithProportionalNumbers(_ face: FintechSDKFontsInterfaces.FintechFontFace, size: CoreFoundation.CGFloat) -> UIKit.UIFont
+}
+extension FintechSDKFontsInterfaces.FintechFontsAdapter {
+  public func font(_ face: FintechSDKFontsInterfaces.FintechFontFace, size: CoreFoundation.CGFloat) -> UIKit.UIFont
+  public func fontWithProportionalNumbers(_ face: FintechSDKFontsInterfaces.FintechFontFace, size: CoreFoundation.CGFloat) -> UIKit.UIFont
 }
 public enum FintechFontWeight {
   case light
@@ -32,6 +38,54 @@ public enum FintechFontFamily : Swift.String {
   public var rawValue: Swift.String {
     get
   }
+}
+public struct FintechFontFace : Swift.Hashable, Swift.Sendable {
+  public struct Family : Swift.Hashable, Swift.Sendable, Swift.RawRepresentable {
+    public let rawValue: Swift.String
+    public init(rawValue: Swift.String)
+    public init?(wireValue: Swift.String)
+    public static let text: FintechSDKFontsInterfaces.FintechFontFace.Family
+    public static let textItalic: FintechSDKFontsInterfaces.FintechFontFace.Family
+    public static let display: FintechSDKFontsInterfaces.FintechFontFace.Family
+    public static let condensed: FintechSDKFontsInterfaces.FintechFontFace.Family
+    public static let condensedItalic: FintechSDKFontsInterfaces.FintechFontFace.Family
+    public static let system: FintechSDKFontsInterfaces.FintechFontFace.Family
+    public static let known: Swift.Set<FintechSDKFontsInterfaces.FintechFontFace.Family>
+    public typealias RawValue = Swift.String
+  }
+  public struct Weight : Swift.Hashable, Swift.Sendable, Swift.RawRepresentable, Swift.Comparable {
+    public let rawValue: Swift.Int
+    public init(rawValue: Swift.Int)
+    public static let thin: FintechSDKFontsInterfaces.FintechFontFace.Weight
+    public static let light: FintechSDKFontsInterfaces.FintechFontFace.Weight
+    public static let regular: FintechSDKFontsInterfaces.FintechFontFace.Weight
+    public static let medium: FintechSDKFontsInterfaces.FintechFontFace.Weight
+    public static let bold: FintechSDKFontsInterfaces.FintechFontFace.Weight
+    public static let heavy: FintechSDKFontsInterfaces.FintechFontFace.Weight
+    public static let black: FintechSDKFontsInterfaces.FintechFontFace.Weight
+    public static func < (lhs: FintechSDKFontsInterfaces.FintechFontFace.Weight, rhs: FintechSDKFontsInterfaces.FintechFontFace.Weight) -> Swift.Bool
+    public typealias RawValue = Swift.Int
+  }
+  public var family: FintechSDKFontsInterfaces.FintechFontFace.Family
+  public var weight: FintechSDKFontsInterfaces.FintechFontFace.Weight
+  public init(family: FintechSDKFontsInterfaces.FintechFontFace.Family, weight: FintechSDKFontsInterfaces.FintechFontFace.Weight)
+  public static func == (a: FintechSDKFontsInterfaces.FintechFontFace, b: FintechSDKFontsInterfaces.FintechFontFace) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension FintechSDKFontsInterfaces.FintechFontFace.Family {
+  public init(_ family: FintechSDKFontsInterfaces.FintechFontFamily)
+}
+extension FintechSDKFontsInterfaces.FintechFontFace.Weight {
+  public init(_ weight: FintechSDKFontsInterfaces.FintechFontWeight)
+}
+extension FintechSDKFontsInterfaces.FintechFontFamily {
+  public init(_ family: FintechSDKFontsInterfaces.FintechFontFace.Family)
+}
+extension FintechSDKFontsInterfaces.FintechFontWeight {
+  public init(_ weight: FintechSDKFontsInterfaces.FintechFontFace.Weight)
 }
 extension FintechSDKFontsInterfaces.FintechFontWeight : Swift.Equatable {}
 extension FintechSDKFontsInterfaces.FintechFontWeight : Swift.Hashable {}

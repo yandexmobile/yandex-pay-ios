@@ -55,7 +55,7 @@ final public class FintechAnalyticsTelemetryReporter : FintechSDKAnalyticsInterf
   @_spi(Internal) public func applyAppEnvironment(sourceSDK: Swift.String, sdkVersion: Swift.String, environmentType: FintechSDKCoreAnalytics.FTAppEnvironmentType)
 }
 @_spi(Internal) final public class FTIdentifiersProvider : FintechSDKAnalyticsInterfaces.FTIdentifiersProviding {
-  @_spi(Internal) public init(appMetricaAdapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter)
+  @_spi(Internal) public init(appMetricaAdapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter, deviceInfoProvider: any FintechSDKCoreUtils.FTDeviceInfoProvider)
   @_spi(Internal) final public var installationID: Swift.String {
     @_spi(Internal) get
   }
@@ -111,16 +111,6 @@ final public class FintechNetworkReportingObserver : FintechSDKNetworkInterfaces
     @_spi(Internal) public static let version: Swift.String
     @_spi(Internal) public static let sdkVersion: Swift.String
     @_spi(Internal) public static let appVersion: Swift.String
-  }
-  @_spi(Internal) public enum SourceSDKValue {
-    @_spi(Internal) public static let paymentKit: Swift.String
-    @_spi(Internal) public static let nativePaymentKit: Swift.String
-    @_spi(Internal) public static let quickPayYandex: Swift.String
-    @_spi(Internal) public static let wallet: Swift.String
-    @_spi(Internal) public static let applink: Swift.String
-    @_spi(Internal) public static let quickPay: Swift.String
-    @_spi(Internal) public static let payAuth: Swift.String
-    @_spi(Internal) public static let payAssistant: Swift.String
   }
   @_spi(Internal) public static let platformValue: Swift.String
   @_spi(Internal) public static let keys: Swift.Set<Swift.String>

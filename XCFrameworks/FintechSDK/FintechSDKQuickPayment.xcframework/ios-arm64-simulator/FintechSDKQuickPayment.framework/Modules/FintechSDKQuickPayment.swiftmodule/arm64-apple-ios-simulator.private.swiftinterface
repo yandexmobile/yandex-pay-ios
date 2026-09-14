@@ -3,6 +3,7 @@
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKQuickPayment -package-name FintechSDK
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import CoreGraphics
+import CoreText
 @_spi(Internal) import FintechSDKAnalyticsInterfaces
 @_spi(Internal) import FintechSDKAuthCoreImplementation
 @_spi(Internal) import FintechSDKAuthInterfaces
@@ -76,6 +77,13 @@ public enum FTQuickPayPollingModalSize : Swift.Sendable {
   case fixed(CoreFoundation.CGFloat)
   case topInset(CoreFoundation.CGFloat)
 }
+@_spi(Internal) public struct FTQuickPayPromoBannerSize : Swift.Equatable, Swift.Sendable {
+  @_spi(Internal) public let rawValue: Swift.String
+  @_spi(Internal) public static let hero: FintechSDKQuickPayment.FTQuickPayPromoBannerSize
+  @_spi(Internal) public static let large: FintechSDKQuickPayment.FTQuickPayPromoBannerSize
+  @_spi(Internal) public static let slim: FintechSDKQuickPayment.FTQuickPayPromoBannerSize
+  @_spi(Internal) public static func == (a: FintechSDKQuickPayment.FTQuickPayPromoBannerSize, b: FintechSDKQuickPayment.FTQuickPayPromoBannerSize) -> Swift.Bool
+}
 public enum FTQuickPayWidgetExpandState : Swift.String {
   case collapsed
   case expanded
@@ -116,6 +124,8 @@ public enum FintechQuickPaymentError : Swift.Error {
   @_spi(Internal) @_Concurrency.MainActor final public func createPaymentMethodsWidget(allowSilentReload: Swift.Bool = true) -> UIKit.UIView
   @_spi(Internal) @_Concurrency.MainActor final public func createActivePaymentMethodBadge(allowSilentReload: Swift.Bool = true) -> any SwiftUICore.View
   @_spi(Internal) @_Concurrency.MainActor final public func createActivePaymentMethodBadge(allowSilentReload: Swift.Bool = true) -> UIKit.UIView
+  @_spi(Internal) @_Concurrency.MainActor final public func createPromoBanner(size: FintechSDKQuickPayment.FTQuickPayPromoBannerSize, showLoyaltyAction: @escaping () -> Swift.Void) -> any SwiftUICore.View
+  @_spi(Internal) @_Concurrency.MainActor final public func createPromoBanner(size: FintechSDKQuickPayment.FTQuickPayPromoBannerSize, showLoyaltyAction: @escaping () -> Swift.Void) -> UIKit.UIView
   @_spi(Internal) @_Concurrency.MainActor final public func enableActivePaymentMethodBadge()
   @_spi(Internal) @_Concurrency.MainActor final public func disableActivePaymentMethodBadge()
   @_spi(Internal) final public func isQuickPaymentEnabled() async throws -> Swift.Bool

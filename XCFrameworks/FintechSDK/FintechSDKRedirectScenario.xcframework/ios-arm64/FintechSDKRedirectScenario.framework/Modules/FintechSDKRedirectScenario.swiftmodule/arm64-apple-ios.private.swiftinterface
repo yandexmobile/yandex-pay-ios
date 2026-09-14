@@ -8,6 +8,7 @@ import FintechSDKAnalyticsInterfaces
 @_spi(Internal) import FintechSDKLoaderScreen
 import FintechSDKNetworkInterfaces
 @_spi(Internal) import FintechSDKPayBoxResources
+@_spi(Internal) import FintechSDKPayOrderData
 import Foundation
 import Swift
 import SwiftUI
@@ -53,7 +54,7 @@ import _SwiftConcurrencyShims
   @_spi(Internal) func exchangePersonalizationUserToken(shortLivedToken: Swift.String) async throws -> Swift.String
 }
 @_spi(Internal) public protocol FTRedirectOrderTokenObserving : AnyObject, Swift.Sendable {
-  @_spi(Internal) func orderTokenDidUpdate(_ token: Swift.String?) async
+  @_spi(Internal) func didUpdate(orderToken: Swift.String?) async
 }
 public protocol FTRedirectScenario {
   @discardableResult

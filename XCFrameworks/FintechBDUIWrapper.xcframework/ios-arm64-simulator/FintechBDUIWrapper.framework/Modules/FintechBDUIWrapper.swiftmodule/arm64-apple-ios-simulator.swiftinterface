@@ -17,8 +17,11 @@ import _SwiftConcurrencyShims
   @_Concurrency.MainActor @objc final public func create(entryPoint: Any, preview: Any) -> Any?
   @_Concurrency.MainActor @objc final public func create(document: Any) -> Any?
   @_Concurrency.MainActor @objc final public func createDivKitView(source: Any, action: Any?) -> UIKit.UIView?
+  @_Concurrency.MainActor @objc final public func createDivKitView(source: Any, action: Any?, divFlags: Any?) -> UIKit.UIView?
+  @_Concurrency.MainActor @nonobjc final public func createUpdatableDivKitView(source: Any, action: Any?, divFlags: Any?) async -> UIKit.UIView?
   @_Concurrency.MainActor @objc final public func handleDivAction(cardId: Swift.String, url: Swift.String, logId: Swift.String, payload: Any?) -> Swift.Bool
   @_Concurrency.MainActor @objc final public func handleDivAction(action: Any, path: Any?, sender: Any?)
+  @objc final public func releaseDivKitComponents(cardId: Swift.String)
   @objc final public var payloadExtender: Any? {
     @objc get
   }

@@ -41,6 +41,12 @@ import _SwiftConcurrencyShims
 @_spi(Internal) public enum FTBDUIPopReloadPolicy {
   @_spi(Internal) public static func engineToReload(previousStack: [UIKit.UIViewController], currentStack: [UIKit.UIViewController]) -> (any FintechSDKBDUICore.FintechBDUIEngine)?
 }
+@_spi(Internal) @_Concurrency.MainActor public protocol FTBDUIUpdatableView : UIKit.UIView {
+  @_spi(Internal) @_Concurrency.MainActor func update(source: FintechSDKBDUICore.FintechDivViewSource) async
+}
+@_spi(Internal) public protocol FTDivKitComponentsReleasing : AnyObject {
+  @_spi(Internal) func releaseDivKitComponents(cardId: Swift.String)
+}
 final public class FTResultManager {
   public init()
   final public func setResult(_ result: FintechSDKBDUICore.FTScreenResult)
@@ -109,7 +115,11 @@ public protocol FintechBDUIAdapter : FintechSDKBDUICore.FintechBDUIDivActionHand
   @_Concurrency.MainActor func createDivKitView(action: (any FintechSDKBDUICore.FintechDivUrlHandler)?, source: FintechSDKBDUICore.FintechDivViewSource, divFlags: FintechSDKBDUICore.FintechDivFlagsInfo?) -> any SwiftUICore.View
   @_Concurrency.MainActor func createDivKitUIView(action: (any FintechSDKBDUICore.FintechDivUrlHandler)?, source: FintechSDKBDUICore.FintechDivViewSource, divFlags: FintechSDKBDUICore.FintechDivFlagsInfo?) -> UIKit.UIView
   @_Concurrency.MainActor func createDivKitUIView(action: (any FintechSDKBDUICore.FintechDivUrlHandler)?, source: FintechSDKBDUICore.FintechDivViewSource, divFlags: FintechSDKBDUICore.FintechDivFlagsInfo?) async -> UIKit.UIView
+  @_spi(Internal) @_Concurrency.MainActor func createUpdatableDivKitUIView(action: (any FintechSDKBDUICore.FintechDivUrlHandler)?, source: FintechSDKBDUICore.FintechDivViewSource, divFlags: FintechSDKBDUICore.FintechDivFlagsInfo?) async -> (any FintechSDKBDUICore.FTBDUIUpdatableView)?
   @_Concurrency.MainActor func handleDivAction(action: [Swift.String : Any], path: Any?, sender: Swift.AnyObject?, cardId: Swift.String?)
+}
+@_spi(Internal) extension FintechSDKBDUICore.FintechBDUIAdapter {
+  @_spi(Internal) @_Concurrency.MainActor public func createUpdatableDivKitUIView(action _: (any FintechSDKBDUICore.FintechDivUrlHandler)?, source _: FintechSDKBDUICore.FintechDivViewSource, divFlags _: FintechSDKBDUICore.FintechDivFlagsInfo?) async -> (any FintechSDKBDUICore.FTBDUIUpdatableView)?
 }
 public struct FintechBDUIAnyAction : Swift.Hashable, Swift.Decodable {
   public var wrappedAnyAction: Swift.AnyHashable
@@ -325,7 +335,8 @@ public protocol FintechDivActionHandler {
 }
 public struct FintechDivFlagsInfo : Swift.Equatable {
   public let useUrlHandlerForVisibilityActions: Swift.Bool
-  public init(useUrlHandlerForVisibilityActions: Swift.Bool = false)
+  public let resizesWithContent: Swift.Bool
+  public init(useUrlHandlerForVisibilityActions: Swift.Bool = false, resizesWithContent: Swift.Bool = false)
   public static func == (a: FintechSDKBDUICore.FintechDivFlagsInfo, b: FintechSDKBDUICore.FintechDivFlagsInfo) -> Swift.Bool
 }
 public protocol FintechDivKitExpressionResolver {
@@ -346,7 +357,8 @@ extension FintechSDKBDUICore.FintechDivUrlHandler {
 public struct FintechDivViewSource {
   public let cardId: Swift.String
   public let data: Foundation.Data
-  public init(cardId: Swift.String, data: Foundation.Data)
+  public let resetsCardState: Swift.Bool
+  public init(cardId: Swift.String, data: Foundation.Data, resetsCardState: Swift.Bool = false)
 }
 extension FintechSDKBDUICore.FintechBDUIAnyActionDecoder.DecodingError : Swift.Equatable {}
 extension FintechSDKBDUICore.FintechBDUIAnyActionDecoder.DecodingError : Swift.Hashable {}

@@ -55,6 +55,8 @@ extension YandexQuickPay.YQuickPay : YandexQuickPay.YQuickPayMerchantExclusiveAp
   @_Concurrency.MainActor final public func createPaymentMethodsWidget(allowSilentReload: Swift.Bool = true) -> any SwiftUICore.View
   @_Concurrency.MainActor final public func createActivePaymentMethodBadge(allowSilentReload: Swift.Bool = true) -> UIKit.UIView
   @_Concurrency.MainActor final public func createActivePaymentMethodBadge(allowSilentReload: Swift.Bool = true) -> any SwiftUICore.View
+  @_Concurrency.MainActor final public func createPromoBanner(size: YandexQuickPay.YQuickPayPromoBannerSize, showLoyaltyAction: @escaping () -> Swift.Void) -> UIKit.UIView
+  @_Concurrency.MainActor final public func createPromoBanner(size: YandexQuickPay.YQuickPayPromoBannerSize, showLoyaltyAction: @escaping () -> Swift.Void) -> any SwiftUICore.View
   @_Concurrency.MainActor final public func enableActivePaymentMethodBadge()
   @_Concurrency.MainActor final public func disableActivePaymentMethodBadge()
   final public func stopPaymentPolling() async
@@ -142,6 +144,13 @@ public enum YQuickPayPollingModalSize : Swift.Sendable {
   case fraction(Swift.Double)
   case fixed(CoreFoundation.CGFloat)
   case topInset(CoreFoundation.CGFloat)
+}
+public struct YQuickPayPromoBannerSize : Swift.Equatable, Swift.Sendable {
+  public let rawValue: Swift.String
+  public static let hero: YandexQuickPay.YQuickPayPromoBannerSize
+  public static let large: YandexQuickPay.YQuickPayPromoBannerSize
+  public static let slim: YandexQuickPay.YQuickPayPromoBannerSize
+  public static func == (a: YandexQuickPay.YQuickPayPromoBannerSize, b: YandexQuickPay.YQuickPayPromoBannerSize) -> Swift.Bool
 }
 public enum YQuickPayResult {
   case waitingForApprove

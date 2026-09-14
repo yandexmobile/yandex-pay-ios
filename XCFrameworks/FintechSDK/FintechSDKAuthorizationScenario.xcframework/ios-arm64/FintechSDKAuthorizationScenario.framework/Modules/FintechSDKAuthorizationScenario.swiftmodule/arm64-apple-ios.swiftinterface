@@ -31,9 +31,9 @@ public protocol FTAuthScenario<FTSessionError> : AnyObject {
   @_Concurrency.MainActor var currentAuth: FintechSDKAuthInterfaces.FintechAuthModel? { get }
   @_Concurrency.MainActor func runAuthAndBst(with presenter: UIKit.UIViewController, mode: FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode) async throws(Self.FTSessionError) -> FintechSDKAuthorizationScenario.FTAuthResult
   @discardableResult
-  @_Concurrency.MainActor func runPassportAuth(with presenter: UIKit.UIViewController, strategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy?, performDeviceBind: Swift.Bool) async throws(Self.FTSessionError) -> FintechSDKAuthorizationScenario.FTPassportAuthResult
+  @_Concurrency.MainActor func runPassportAuth(with presenter: UIKit.UIViewController, strategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy?, shouldCancelPendingAuthorization: Swift.Bool, performDeviceBind: Swift.Bool) async throws(Self.FTSessionError) -> FintechSDKAuthorizationScenario.FTPassportAuthResult
   @_Concurrency.MainActor func runBstOnly(mode: FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode) async throws(Self.FTSessionError) -> FintechSDKAuthInterfaces.FintechAuthSession
-  @_Concurrency.MainActor func bindBiometricKey() async throws(Self.FTSessionError)
+  @_Concurrency.MainActor func bindBiometricKey(mode: FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode) async throws(Self.FTSessionError)
   func logout()
   func handleURL(_ url: Foundation.URL) -> Swift.Bool
   func handleUserActivity(_ userActivity: Foundation.NSUserActivity) -> Swift.Bool
@@ -54,6 +54,8 @@ public protocol FTAuthScenarioDelegate<FTSessionError> : AnyObject {
 public enum FTAuthSessionAcquisitionMode : Swift.Sendable, Swift.Hashable {
   case silent
   case interactive
+  case silentBiometric
+  case escalatedBiometric
   public static func == (a: FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode, b: FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {

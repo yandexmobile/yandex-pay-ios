@@ -281,7 +281,10 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import Foundation;
+@import ObjectiveC;
 @import UIKit;
+@import WebKit;
 #endif
 
 #endif
@@ -322,14 +325,24 @@ SWIFT_CLASS("_TtC22FintechSDKBDUIFeatures26FTBDUINavigationController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
+@interface FTBDUINavigationController (SWIFT_EXTENSION(FintechSDKBDUIFeatures)) <UINavigationControllerDelegate>
+- (void)navigationController:(UINavigationController * _Nonnull)navigationController didShowViewController:(UIViewController * _Nonnull)_ animated:(BOOL)animated;
+@end
+
 @class UIGestureRecognizer;
 @interface FTBDUINavigationController (SWIFT_EXTENSION(FintechSDKBDUIFeatures)) <UIGestureRecognizerDelegate>
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)gestureRecognizer SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer SWIFT_WARN_UNUSED_RESULT;
 @end
 
-@interface FTBDUINavigationController (SWIFT_EXTENSION(FintechSDKBDUIFeatures)) <UINavigationControllerDelegate>
-- (void)navigationController:(UINavigationController * _Nonnull)navigationController didShowViewController:(UIViewController * _Nonnull)_ animated:(BOOL)animated;
+@class WKWebView;
+@class NSURLAuthenticationChallenge;
+@class NSURLCredential;
+SWIFT_CLASS("_TtC22FintechSDKBDUIFeatures31FTBDUIWebViewNavigationDelegate")
+@interface FTBDUIWebViewNavigationDelegate : NSObject <WKNavigationDelegate>
+- (void)webView:(WKWebView * _Nonnull)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge * _Nonnull)challenge completionHandler:(void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 #endif

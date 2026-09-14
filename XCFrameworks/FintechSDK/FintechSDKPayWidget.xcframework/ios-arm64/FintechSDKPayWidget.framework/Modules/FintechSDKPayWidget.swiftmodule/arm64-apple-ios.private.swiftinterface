@@ -50,6 +50,15 @@ import _SwiftConcurrencyShims
   
   @_spi(Internal) @_Concurrency.MainActor public static func createPayWidgetUIView(presenterViewController: UIKit.UIViewController, model: FintechSDKPayWidget.FTPayWidgetModel, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, flexClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, widgetReloader: FintechSDKDivKitWidgetsFeatures.FTWidgetReloader, paymentInProgressProvider: @escaping () -> Swift.Bool, onAppearTask: @escaping () async throws -> Swift.Void, authorizeHandler: any FintechSDKBDUIFeatures.FTAuthorizeActionHandling, logger: any FintechSDKCoreUtils.FTLogger, onFlexScreenDismiss: (@Sendable () -> Swift.Void)? = nil, analyticsTracking: FintechSDKPayWidget.FTPayWidgetAnalyticsTracking? = nil, additionalActionHandlers: [any FintechSDKBDUICore.FintechDivUrlHandler] = []) -> UIKit.UIView
 }
+@_spi(Internal) public struct FTPayWidgetCart : Swift.Sendable {
+  @_spi(Internal) public let items: [FintechSDKPayWidget.FTPayWidgetCartItem]
+  @_spi(Internal) public init(items: [FintechSDKPayWidget.FTPayWidgetCartItem])
+}
+@_spi(Internal) public struct FTPayWidgetCartItem : Swift.Sendable {
+  @_spi(Internal) public let productId: Swift.String
+  @_spi(Internal) public let total: Foundation.Decimal
+  @_spi(Internal) public init(productId: Swift.String, total: Foundation.Decimal)
+}
 @_spi(Internal) public struct FTPayWidgetOrderAmount : Swift.Sendable {
   @_spi(Internal) public let amount: Foundation.Decimal
   @_spi(Internal) public let currency: FintechSDKPayBoxEntity.FTCurrencyCode
@@ -59,7 +68,8 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public var theme: FintechSDKCommonEntity.FintechSDKTheme
   @_spi(Internal) public var paymentInProgress: Swift.Bool
   @_spi(Internal) public var orderAmount: FintechSDKPayWidget.FTPayWidgetOrderAmount?
-  @_spi(Internal) public init(theme: FintechSDKCommonEntity.FintechSDKTheme = .system, paymentInProgress: Swift.Bool = false, orderAmount: FintechSDKPayWidget.FTPayWidgetOrderAmount? = nil)
+  @_spi(Internal) public var cart: FintechSDKPayWidget.FTPayWidgetCart?
+  @_spi(Internal) public init(theme: FintechSDKCommonEntity.FintechSDKTheme = .system, paymentInProgress: Swift.Bool = false, orderAmount: FintechSDKPayWidget.FTPayWidgetOrderAmount? = nil, cart: FintechSDKPayWidget.FTPayWidgetCart? = nil)
 }
 @_spi(Internal) @_Concurrency.MainActor @preconcurrency public struct FTPayWidgetShimmerView : SwiftUICore.View {
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init()

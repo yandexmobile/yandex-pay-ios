@@ -32,7 +32,7 @@ extension Swift.Encodable {
     @_spi(Internal) get
   }
 }
-@_spi(Internal) extension FintechSDKCoreUtils.FTAsyncState : Swift.Equatable where T == Foundation.Data {
+@_spi(Internal) extension FintechSDKCoreUtils.FTAsyncState : Swift.Equatable where T : Swift.Equatable {
   @_spi(Internal) public static func == (lhs: FintechSDKCoreUtils.FTAsyncState<T, E>, rhs: FintechSDKCoreUtils.FTAsyncState<T, E>) -> Swift.Bool
 }
 extension Swift.Dictionary {
@@ -286,6 +286,20 @@ extension Swift.KeyedDecodingContainer {
 extension Swift.KeyedEncodingContainer {
   public mutating func encode<T>(_ value: FintechSDKCoreUtils.FTSafeOptional<T>, forKey key: Swift.KeyedEncodingContainer<K>.Key) throws where T : Swift.Decodable, T : Swift.Encodable
 }
+@_spi(Internal) public enum FTSourceSDKValue {
+  @_spi(Internal) public static let paymentKit: Swift.String
+  @_spi(Internal) public static let nativePaymentKit: Swift.String
+  @_spi(Internal) public static let quickPayYandex: Swift.String
+  @_spi(Internal) public static let wallet: Swift.String
+  @_spi(Internal) public static let applink: Swift.String
+  @_spi(Internal) public static let quickPay: Swift.String
+  @_spi(Internal) public static let payAuth: Swift.String
+  @_spi(Internal) public static let payAssistant: Swift.String
+  @_spi(Internal) public static let inventory: Swift.String
+  @_spi(Internal) public static let inapp: Swift.String
+  @_spi(Internal) public static let redirect: Swift.String
+  @_spi(Internal) public static let yandexPaySDKBase: Swift.String
+}
 @_spi(Internal) public struct FTTagged<Tag, RawValue> : Swift.RawRepresentable {
   @_spi(Internal) public var rawValue: RawValue
   @_spi(Internal) public init(rawValue: RawValue)
@@ -478,7 +492,7 @@ public enum FintechSDKInfo {
   @_spi(Internal) final public func cancel()
   @_spi(Internal) @objc deinit
 }
-@_spi(Internal) public protocol FTDeviceInfoProvider {
+@_spi(Internal) public protocol FTDeviceInfoProvider : Swift.Sendable {
   @_spi(Internal) var deviceID: Swift.String? { get }
   @_spi(Internal) var idfa: Swift.String? { get }
 }
@@ -552,7 +566,8 @@ final public class DefaultTimeProvider : FintechSDKCoreUtils.TimeProvider {
   @_spi(Internal) final public func load() -> Item?
   @_spi(Internal) @discardableResult
   final public func save(_ item: Item) -> Swift.Bool
-  @_spi(Internal) final public func drop()
+  @_spi(Internal) @discardableResult
+  final public func drop() -> Swift.Bool
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) public struct FTUserToken : Swift.Codable, Swift.Sendable {
@@ -566,7 +581,8 @@ final public class DefaultTimeProvider : FintechSDKCoreUtils.TimeProvider {
   @_spi(Internal) final public func load() -> Item?
   @_spi(Internal) @discardableResult
   final public func save(_ item: Item) -> Swift.Bool
-  @_spi(Internal) final public func drop()
+  @_spi(Internal) @discardableResult
+  final public func drop() -> Swift.Bool
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) public protocol FTStorage<Item> : Swift.Sendable {
@@ -574,7 +590,8 @@ final public class DefaultTimeProvider : FintechSDKCoreUtils.TimeProvider {
   @_spi(Internal) func load() -> Self.Item?
   @_spi(Internal) @discardableResult
   func save(_ item: Self.Item) -> Swift.Bool
-  @_spi(Internal) func drop()
+  @_spi(Internal) @discardableResult
+  func drop() -> Swift.Bool
 }
 extension FintechSDKCoreUtils.FintechApiBaseUrlType : Swift.Equatable {}
 extension FintechSDKCoreUtils.FintechApiBaseUrlType : Swift.Hashable {}

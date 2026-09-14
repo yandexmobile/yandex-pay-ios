@@ -198,6 +198,16 @@
       },
       {
         "kind": "Import",
+        "name": "FintechSDKPayOrderData",
+        "printedName": "FintechSDKPayOrderData",
+        "declKind": "Import",
+        "moduleName": "FintechSDKMerchantRedirect",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -951,6 +961,56 @@
                 "declKind": "Accessor",
                 "usr": "s:26FintechSDKMerchantRedirect10FTPWConfigV16paymentTokenTypeAA011FTPWPaymentfG0Ovg",
                 "mangledName": "$s26FintechSDKMerchantRedirect10FTPWConfigV16paymentTokenTypeAA011FTPWPaymentfG0Ovg",
+                "moduleName": "FintechSDKMerchantRedirect",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "anonymousPaymentEnabled",
+            "printedName": "anonymousPaymentEnabled",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:26FintechSDKMerchantRedirect10FTPWConfigV23anonymousPaymentEnabledSbvp",
+            "mangledName": "$s26FintechSDKMerchantRedirect10FTPWConfigV23anonymousPaymentEnabledSbvp",
+            "moduleName": "FintechSDKMerchantRedirect",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:26FintechSDKMerchantRedirect10FTPWConfigV23anonymousPaymentEnabledSbvg",
+                "mangledName": "$s26FintechSDKMerchantRedirect10FTPWConfigV23anonymousPaymentEnabledSbvg",
                 "moduleName": "FintechSDKMerchantRedirect",
                 "implicit": true,
                 "spi_group_names": [
@@ -3749,7 +3809,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(config:appMetricaAdapter:fontsAdapter:bduiAdapterFactory:accountManagerAdapter:loginService:rtmFactory:rumFactory:cookieExchangerAdapter:partnerAuthStateProvider:networkChallengeHandlerFactory:)",
+            "printedName": "init(config:sourceSDK:appMetricaAdapter:fontsAdapter:bduiAdapterFactory:accountManagerAdapter:loginService:rtmFactory:rumFactory:cookieExchangerAdapter:partnerAuthStateProvider:networkChallengeHandlerFactory:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -3762,6 +3822,12 @@
                 "name": "FTSDKConfiguration",
                 "printedName": "FintechSDKPayBoxEntity.FTSDKConfiguration",
                 "usr": "s:22FintechSDKPayBoxEntity18FTSDKConfigurationV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               },
               {
                 "kind": "TypeNominal",
@@ -3863,8 +3929,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:26FintechSDKMerchantRedirect0a8MerchantC7HandlerC6config17appMetricaAdapter05fontsI004bduiI7Factory014accountManagerI012loginService03rtmL003rumL0015cookieExchangerI024partnerAuthStateProvider016networkChallengeeL0AC0A15SDKPayBoxEntity18FTSDKConfigurationV_0A22SDKAnalyticsInterfaces0a3ApphI0_p0A18SDKFontsInterfaces0a5FontsI0_p0A15SDKBDUIFeatures0a11BDUIAdapterL0_p0A17SDKAuthInterfaces0a7AccountnI0_pAX0a5LoginP0_pAR0a10RTMAdapterL0_pAR0a10RUMAdapterL0_pAX0a6CookietI0_pSbSgycSg0A20SDKNetworkInterfaces0a7NetworkzeL0_pSgtcfc",
-            "mangledName": "$s26FintechSDKMerchantRedirect0a8MerchantC7HandlerC6config17appMetricaAdapter05fontsI004bduiI7Factory014accountManagerI012loginService03rtmL003rumL0015cookieExchangerI024partnerAuthStateProvider016networkChallengeeL0AC0A15SDKPayBoxEntity18FTSDKConfigurationV_0A22SDKAnalyticsInterfaces0a3ApphI0_p0A18SDKFontsInterfaces0a5FontsI0_p0A15SDKBDUIFeatures0a11BDUIAdapterL0_p0A17SDKAuthInterfaces0a7AccountnI0_pAX0a5LoginP0_pAR0a10RTMAdapterL0_pAR0a10RUMAdapterL0_pAX0a6CookietI0_pSbSgycSg0A20SDKNetworkInterfaces0a7NetworkzeL0_pSgtcfc",
+            "usr": "s:26FintechSDKMerchantRedirect0a8MerchantC7HandlerC6config9sourceSDK17appMetricaAdapter05fontsK004bduiK7Factory014accountManagerK012loginService03rtmN003rumN0015cookieExchangerK024partnerAuthStateProvider016networkChallengeeN0AC0A15SDKPayBoxEntity18FTSDKConfigurationV_SS0A22SDKAnalyticsInterfaces0a3AppjK0_p0A18SDKFontsInterfaces0a5FontsK0_p0A15SDKBDUIFeatures0a11BDUIAdapterN0_p0A17SDKAuthInterfaces0a7AccountpK0_pAY0a5LoginR0_pAS0a10RTMAdapterN0_pAS0a10RUMAdapterN0_pAY0a6CookievK0_pSbSgycSg0A20SDKNetworkInterfaces0a16NetworkChallengeeN0_pSgtcfc",
+            "mangledName": "$s26FintechSDKMerchantRedirect0a8MerchantC7HandlerC6config9sourceSDK17appMetricaAdapter05fontsK004bduiK7Factory014accountManagerK012loginService03rtmN003rumN0015cookieExchangerK024partnerAuthStateProvider016networkChallengeeN0AC0A15SDKPayBoxEntity18FTSDKConfigurationV_SS0A22SDKAnalyticsInterfaces0a3AppjK0_p0A18SDKFontsInterfaces0a5FontsK0_p0A15SDKBDUIFeatures0a11BDUIAdapterN0_p0A17SDKAuthInterfaces0a7AccountpK0_pAY0a5LoginR0_pAS0a10RTMAdapterN0_pAS0a10RUMAdapterN0_pAY0a6CookievK0_pSbSgycSg0A20SDKNetworkInterfaces0a16NetworkChallengeeN0_pSgtcfc",
             "moduleName": "FintechSDKMerchantRedirect",
             "declAttributes": [
               "AccessControl"
@@ -4065,6 +4131,38 @@
             "declKind": "Func",
             "usr": "s:26FintechSDKMerchantRedirect0a8MerchantC7HandlerC15createBadgeView5modelQr0a6SDKPayG005FTPayG5ModelV_tF",
             "mangledName": "$s26FintechSDKMerchantRedirect0a8MerchantC7HandlerC15createBadgeView5modelQr0a6SDKPayG005FTPayG5ModelV_tF",
+            "moduleName": "FintechSDKMerchantRedirect",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "Custom"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "createBadgeUIView",
+            "printedName": "createBadgeUIView(model:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTPayBadgeUIView",
+                "printedName": "FintechSDKPayBadge.FTPayBadgeUIView",
+                "usr": "c:@M@FintechSDKPayBadge@objc(cs)FTPayBadgeUIView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTPayBadgeModel",
+                "printedName": "FintechSDKPayBadge.FTPayBadgeModel",
+                "usr": "s:18FintechSDKPayBadge05FTPayC5ModelV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:26FintechSDKMerchantRedirect0a8MerchantC7HandlerC17createBadgeUIView5model0a6SDKPayG005FTPaygH0CAF0kG5ModelV_tF",
+            "mangledName": "$s26FintechSDKMerchantRedirect0a8MerchantC7HandlerC17createBadgeUIView5model0a6SDKPayG005FTPaygH0CAF0kG5ModelV_tF",
             "moduleName": "FintechSDKMerchantRedirect",
             "declAttributes": [
               "Final",
@@ -4746,392 +4844,385 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/ApplicationLayer\/Interactors\/FTMRPayWidgetConfigInteractor.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/ApplicationLayer\/Interactors\/FTMRPayWidgetConfigInteractor.swift",
       "kind": "BooleanLiteral",
-      "offset": 895,
+      "offset": 1120,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/ApplicationLayer\/Interactors\/FTMRPayWidgetConfigInteractor.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/ApplicationLayer\/Interactors\/FTMRPayWidgetConfigInteractor.swift",
       "kind": "BooleanLiteral",
-      "offset": 948,
+      "offset": 1173,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/ApplicationLayer\/Interactors\/FTPWPaymentInteractor.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/ApplicationLayer\/Interactors\/FTPWPaymentInteractor.swift",
       "kind": "BooleanLiteral",
       "offset": 209,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/ApplicationLayer\/Interactors\/FTPWPollingInteractor.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/ApplicationLayer\/Interactors\/FTPWPollingInteractor.swift",
       "kind": "BooleanLiteral",
       "offset": 1048,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/ApplicationLayer\/Interactors\/FTPWPollingInteractor.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/ApplicationLayer\/Interactors\/FTPWPollingInteractor.swift",
       "kind": "BooleanLiteral",
       "offset": 1096,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/ApplicationLayer\/Interactors\/FTPWPollingInteractor.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/ApplicationLayer\/Interactors\/FTPWPollingInteractor.swift",
       "kind": "IntegerLiteral",
       "offset": 1427,
       "length": 13,
       "value": "1000000000"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTCreateTransactionEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTCreateTransactionEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 323,
       "length": 16,
       "value": "\"transaction_id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTCreateTransactionEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTCreateTransactionEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 365,
       "length": 16,
       "value": "\"payment_status\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTCreateTransactionEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTCreateTransactionEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 642,
       "length": 28,
       "value": "\"\/pay\/v1\/pay-widget\/payment\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTCreateTransactionEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTCreateTransactionEndpoint.swift",
       "kind": "FloatLiteral",
       "offset": 744,
       "length": 4,
       "value": "30.0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTExchangePersonalizationTokenEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTExchangePersonalizationTokenEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 561,
       "length": 29,
       "value": "\"\/api\/v1\/exchange-user-token\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTExchangePersonalizationTokenEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTExchangePersonalizationTokenEndpoint.swift",
       "kind": "IntegerLiteral",
       "offset": 670,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTPayWidgetConfigurationEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTPayWidgetConfigurationEndpoint.swift",
       "kind": "StringLiteral",
-      "offset": 536,
+      "offset": 572,
       "length": 23,
       "value": "\"stop_polling_statuses\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTPayWidgetConfigurationEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTPayWidgetConfigurationEndpoint.swift",
       "kind": "StringLiteral",
-      "offset": 588,
+      "offset": 624,
       "length": 20,
       "value": "\"payment_token_type\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTPayWidgetConfigurationEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTPayWidgetConfigurationEndpoint.swift",
       "kind": "StringLiteral",
-      "offset": 1440,
+      "offset": 680,
+      "length": 27,
+      "value": "\"anonymous_payment_enabled\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTPayWidgetConfigurationEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 1647,
       "length": 41,
       "value": "\"\/pay\/v1\/public\/configuration\/pay-widget\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTPayWidgetConfigurationEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTPayWidgetConfigurationEndpoint.swift",
       "kind": "FloatLiteral",
-      "offset": 1595,
+      "offset": 1802,
       "length": 4,
       "value": "30.0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTPaymentStatusEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTPaymentStatusEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 291,
       "length": 16,
       "value": "\"payment_status\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTPaymentStatusEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTPaymentStatusEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 564,
       "length": 35,
       "value": "\"\/pay\/v1\/pay-widget\/payment\/status\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTPaymentStatusEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Endpoints\/FTPaymentStatusEndpoint.swift",
       "kind": "FloatLiteral",
       "offset": 673,
       "length": 4,
       "value": "30.0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Network\/RequestMiddlewares\/FTPayWidgetStatePayloadStore.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/DataLayer\/Network\/RequestMiddlewares\/FTPayWidgetStatePayloadStore.swift",
       "kind": "Dictionary",
       "offset": 194,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/Domain\/FTPWTransaction.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/Domain\/FTPWTransaction.swift",
       "kind": "StringLiteral",
       "offset": 140,
       "length": 18,
       "value": "\"user_interaction\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/Domain\/FTPWTransaction.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/Domain\/FTPWTransaction.swift",
       "kind": "StringLiteral",
       "offset": 179,
       "length": 13,
       "value": "\"in_progress\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/Domain\/FTPWTransaction.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/Domain\/FTPWTransaction.swift",
       "kind": "StringLiteral",
       "offset": 301,
       "length": 20,
       "value": "\"open_status_screen\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/Domain\/FTPWTransaction.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/Domain\/FTPWTransaction.swift",
       "kind": "StringLiteral",
       "offset": 353,
       "length": 26,
       "value": "\"force_open_status_screen\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/Domain\/FTPWTransaction.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/Domain\/FTPWTransaction.swift",
       "kind": "StringLiteral",
       "offset": 401,
       "length": 14,
       "value": "\"stop_polling\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRAnalyticsSourceSDK.swift",
-      "kind": "StringLiteral",
-      "offset": 51,
-      "length": 7,
-      "value": "\"inapp\""
-    },
-    {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRAnalyticsSourceSDK.swift",
-      "kind": "StringLiteral",
-      "offset": 83,
-      "length": 19,
-      "value": "\"pay_with_redirect\""
-    },
-    {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRParamsProvider.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRParamsProvider.swift",
       "kind": "StringLiteral",
       "offset": 1292,
       "length": 8,
       "value": "\"origin\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRParamsProvider.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRParamsProvider.swift",
       "kind": "StringLiteral",
       "offset": 1326,
       "length": 12,
       "value": "\"source_sdk\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRParamsProvider.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRParamsProvider.swift",
       "kind": "StringLiteral",
       "offset": 1359,
       "length": 6,
       "value": "\"puid\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRParamsProvider.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRParamsProvider.swift",
       "kind": "StringLiteral",
       "offset": 1390,
       "length": 11,
       "value": "\"client_id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRParamsProvider.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRParamsProvider.swift",
       "kind": "StringLiteral",
       "offset": 1429,
       "length": 14,
       "value": "\"merchant_url\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRParamsProvider.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRParamsProvider.swift",
       "kind": "StringLiteral",
       "offset": 1472,
       "length": 15,
       "value": "\"merchant_name\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRParamsProvider.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRParamsProvider.swift",
       "kind": "StringLiteral",
       "offset": 1514,
       "length": 13,
       "value": "\"order_token\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRParamsProvider.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRParamsProvider.swift",
       "kind": "StringLiteral",
       "offset": 1555,
       "length": 15,
       "value": "\"pay_intent_id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRParamsProvider.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRParamsProvider.swift",
       "kind": "StringLiteral",
       "offset": 1597,
       "length": 11,
       "value": "\"undefined\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRSessionAnalytics.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTMRSessionAnalytics.swift",
       "kind": "StringLiteral",
       "offset": 862,
       "length": 10,
       "value": "\"redirect\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTPWAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTPWAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 72,
       "length": 11,
       "value": "\"payWidget\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTPWAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTPWAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 106,
       "length": 8,
       "value": "\"widget\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTPWAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTPWAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 138,
       "length": 10,
       "value": "\"checkout\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTPWAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTPWAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 193,
       "length": 8,
       "value": "\"widget\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTPWAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTPWAnalyticsConstants.swift",
       "kind": "StringLiteral",
       "offset": 227,
       "length": 9,
       "value": "\"payment\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTPWPaymentFlowAnalytics.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTPWPaymentFlowAnalytics.swift",
       "kind": "StringLiteral",
       "offset": 3935,
       "length": 12,
       "value": "\"authorized\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTPWPaymentFlowAnalytics.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTPWPaymentFlowAnalytics.swift",
       "kind": "StringLiteral",
       "offset": 3976,
       "length": 14,
       "value": "\"unauthorized\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTPWWidgetAnalytics.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTPWWidgetAnalytics.swift",
       "kind": "StringLiteral",
       "offset": 1825,
       "length": 12,
       "value": "\"authorized\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTPWWidgetAnalytics.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/Analytics\/FTPWWidgetAnalytics.swift",
       "kind": "StringLiteral",
       "offset": 1866,
       "length": 14,
       "value": "\"unauthorized\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/FTMRDependencyContainer.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/FTMRDependencyContainer.swift",
       "kind": "StringLiteral",
-      "offset": 20596,
+      "offset": 21562,
       "length": 18,
       "value": "\"MerchantRedirect\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/FTMRDependencyContainer.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/FTMRDependencyContainer.swift",
       "kind": "StringLiteral",
-      "offset": 20665,
+      "offset": 21631,
       "length": 33,
       "value": "\"PersonalizationUserTokenStorage\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/FTMRPollingScenarioDelegate.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/FTMRPollingScenarioDelegate.swift",
       "kind": "StringLiteral",
       "offset": 2205,
       "length": 27,
       "value": "\"polling_oauth_bind_failed\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/FTMRPollingScenarioDelegate.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/FTMRPollingScenarioDelegate.swift",
       "kind": "StringLiteral",
       "offset": 2267,
       "length": 30,
       "value": "\"polling_oauth_bind_succeeded\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/FTMRPollingScenarioDelegate.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/FTMRPollingScenarioDelegate.swift",
       "kind": "StringLiteral",
       "offset": 2329,
       "length": 27,
       "value": "\"polling_oauth_save_failed\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/FTMRPollingScenarioDelegate.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/FTMRPollingScenarioDelegate.swift",
       "kind": "StringLiteral",
       "offset": 2388,
       "length": 19,
       "value": "\"saved_oauth_token\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/FTMRPollingScenarioDelegate.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/FTMRPollingScenarioDelegate.swift",
       "kind": "StringLiteral",
       "offset": 2449,
       "length": 15,
       "value": "\"polling_order\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/FTMRPollingScenarioDelegate.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/SDK\/FTMRPollingScenarioDelegate.swift",
       "kind": "StringLiteral",
       "offset": 2500,
       "length": 8,
       "value": "\"reason\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/UI\/FTMRBDUIQuery.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/UI\/FTMRBDUIQuery.swift",
       "kind": "StringLiteral",
       "offset": 627,
       "length": 16,
       "value": "\"transaction_id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4599608957\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-26f42084-79f1-4f52-9759-573bc2078a53\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/UI\/FTMRBDUIQuery.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/5\/4647459457\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-50e4b740-2d1d-4456-bd10-a637d0f8649b\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/MerchantRedirect\/Private\/UI\/FTMRBDUIQuery.swift",
       "kind": "StringLiteral",
       "offset": 670,
       "length": 13,

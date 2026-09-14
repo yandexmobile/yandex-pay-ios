@@ -13,6 +13,12 @@ public protocol DiehardNetworkClientFactory {
 public protocol FTAuthorizationProviding : Swift.Sendable {
   var authorization: Swift.String? { get }
 }
+@_spi(Internal) public protocol FTNetworkErrorResponseMapping : Swift.Sendable {
+  @_spi(Internal) func mapError(data: Foundation.Data, response: Foundation.HTTPURLResponse) -> FintechSDKNetworkInterfaces.NetworkClientError?
+}
+@_spi(Internal) public protocol FTNetworkErrorResponseMappingEndpoint {
+  @_spi(Internal) var errorResponseMapper: (any FintechSDKNetworkInterfaces.FTNetworkErrorResponseMapping)? { get }
+}
 public protocol FTSessionProviderServing : Swift.Sendable {
   var merchantID: Swift.String { get }
   var clientID: Swift.String? { get }

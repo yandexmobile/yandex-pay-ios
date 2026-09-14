@@ -64,7 +64,11 @@ public protocol FintechDPoPKey {
   var requiresBiometry: Swift.Bool { get }
   var keyType: FintechSDKAuthInterfaces.PublicKeyType { get }
   func makeDPoP(method: Swift.String, path: Swift.String, tokenForAuth: Swift.String) async throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> Swift.String
+  func makeDPoPSilently(method: Swift.String, path: Swift.String, tokenForAuth: Swift.String) async throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> Swift.String
   func invalidate()
+}
+extension FintechSDKAuthInterfaces.FintechDPoPKey {
+  public func makeDPoPSilently(method _: Swift.String, path _: Swift.String, tokenForAuth _: Swift.String) async throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> Swift.String
 }
 public enum FintechCryptoKeyError : Foundation.LocalizedError {
   case biometryNotAvailable(Foundation.NSError)
@@ -91,9 +95,13 @@ public enum PublicKeyType : Swift.String, Swift.Sendable, Swift.Codable {
 }
 public protocol FintechDPoPService : Swift.Sendable {
   func key(_ type: FintechSDKAuthInterfaces.PublicKeyType) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> any FintechSDKAuthInterfaces.FintechDPoPKey
+  func existingKey(_ type: FintechSDKAuthInterfaces.PublicKeyType) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> (any FintechSDKAuthInterfaces.FintechDPoPKey)?
   func hasKey(_ type: FintechSDKAuthInterfaces.PublicKeyType) -> Swift.Bool
   func invalidateKey()
   func checkDeviceAuth() throws(FintechSDKAuthInterfaces.FintechCryptoKeyError)
+}
+extension FintechSDKAuthInterfaces.FintechDPoPService {
+  public func existingKey(_ type: FintechSDKAuthInterfaces.PublicKeyType) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> (any FintechSDKAuthInterfaces.FintechDPoPKey)?
 }
 public struct FintechJWK {
   public init(kty: Swift.String, crv: Swift.String, x: Swift.String, y: Swift.String)
@@ -166,7 +174,7 @@ public protocol FintechLoginService : AnyObject {
   typealias Model = FintechSDKAuthInterfaces.FintechAuthModel
   var delegate: (any FintechSDKAuthInterfaces.FintechLoginServiceDelegate)? { get set }
   @_Concurrency.MainActor func getCurrentAuth(for type: FintechSDKAuthInterfaces.FintechAuthType) -> Self.Model?
-  @_Concurrency.MainActor func authorize(for type: FintechSDKAuthInterfaces.FintechAuthType, strategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy, with presenter: UIKit.UIViewController, onStateGenerated: (@_Concurrency.MainActor @Sendable (Swift.String) -> Swift.Void)?) async throws(FintechSDKAuthInterfaces.FintechLoginServiceError) -> Self.Model
+  @_Concurrency.MainActor func authorize(for type: FintechSDKAuthInterfaces.FintechAuthType, strategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy, with presenter: UIKit.UIViewController, shouldCancelPendingAuthorization: Swift.Bool, onStateGenerated: (@_Concurrency.MainActor @Sendable (Swift.String) -> Swift.Void)?) async throws(FintechSDKAuthInterfaces.FintechLoginServiceError) -> Self.Model
   @_Concurrency.MainActor func logout(for type: FintechSDKAuthInterfaces.FintechAuthType)
   func isURLRelatedToSDK(url: Foundation.URL) -> Swift.Bool
   func handle(_ url: Foundation.URL) -> Swift.Bool

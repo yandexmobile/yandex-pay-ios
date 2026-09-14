@@ -28,7 +28,8 @@
         "declKind": "Import",
         "moduleName": "FintechBDUIWrapper",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "SPIAccessControl"
         ]
       },
       {
@@ -424,6 +425,135 @@
           },
           {
             "kind": "Function",
+            "name": "createDivKitView",
+            "printedName": "createDivKitView(source:action:divFlags:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIView?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIView",
+                    "printedName": "UIKit.UIView",
+                    "usr": "c:objc(cs)UIView"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "Any"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Any?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Any?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@FintechBDUIWrapper@objc(cs)FBWAdapter(im)createDivKitViewWithSource:action:divFlags:",
+            "mangledName": "$s18FintechBDUIWrapper10FBWAdapterC16createDivKitView6source6action8divFlagsSo6UIViewCSgyp_ypSgAKtF",
+            "moduleName": "FintechBDUIWrapper",
+            "objc_name": "createDivKitViewWithSource:action:divFlags:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "Custom",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "createUpdatableDivKitView",
+            "printedName": "createUpdatableDivKitView(source:action:divFlags:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIView?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIView",
+                    "printedName": "UIKit.UIView",
+                    "usr": "c:objc(cs)UIView"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "Any"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Any?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Any?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18FintechBDUIWrapper10FBWAdapterC25createUpdatableDivKitView6source6action8divFlagsSo6UIViewCSgyp_ypSgAKtYaF",
+            "mangledName": "$s18FintechBDUIWrapper10FBWAdapterC25createUpdatableDivKitView6source6action8divFlagsSo6UIViewCSgyp_ypSgAKtYaF",
+            "moduleName": "FintechBDUIWrapper",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "NonObjC",
+              "Custom",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "handleDivAction",
             "printedName": "handleDivAction(cardId:url:logId:payload:)",
             "children": [
@@ -531,6 +661,36 @@
               "AccessControl",
               "ObjC",
               "Custom",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "releaseDivKitComponents",
+            "printedName": "releaseDivKitComponents(cardId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@FintechBDUIWrapper@objc(cs)FBWAdapter(im)releaseDivKitComponentsWithCardId:",
+            "mangledName": "$s18FintechBDUIWrapper10FBWAdapterC23releaseDivKitComponents6cardIdySS_tF",
+            "moduleName": "FintechBDUIWrapper",
+            "objc_name": "releaseDivKitComponentsWithCardId:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
               "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"

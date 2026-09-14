@@ -4,20 +4,45 @@
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import FintechSDKAnalyticsInterfaces
 import FintechSDKAppMetricaAdapter6
+import FintechSDKAppTransportSecurityScenario
 import FintechSDKAuthInterfaces
 import FintechSDKCommonEntity
+import FintechSDKCoreAnalytics
 import FintechSDKCoreUI
 import FintechSDKCoreUtils
 import FintechSDKLoginAdapter
+import FintechSDKNetworkChallengeAdapter
+import FintechSDKNetworkImplementation
 import FintechSDKNetworkInterfaces
 import FintechSDKPayBoxEntity
+import FintechSDKRealTimeAnalyticsAdapter
+import FintechSDKRealUserMonitoringAdapter
 import Foundation
 import Swift
 import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-public enum YPCurrencyCode : Swift.String {
+public struct YPPayCart : Swift.Sendable, Swift.Hashable {
+  public let items: [YandexPayConfiguration.YPPayCartItem]
+  public init(items: [YandexPayConfiguration.YPPayCartItem])
+  public static func == (a: YandexPayConfiguration.YPPayCart, b: YandexPayConfiguration.YPPayCart) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct YPPayCartItem : Swift.Sendable, Swift.Hashable {
+  public let productID: Swift.String
+  public let total: Foundation.Decimal
+  public init(productID: Swift.String, total: Foundation.Decimal)
+  public static func == (a: YandexPayConfiguration.YPPayCartItem, b: YandexPayConfiguration.YPPayCartItem) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum YPCurrencyCode : Swift.String, Swift.Sendable, Swift.Hashable {
   case rub
   case byn
   case usd
@@ -148,8 +173,6 @@ extension YandexPayConfiguration.YPSDKEnvironment : Swift.Hashable {}
 extension YandexPayConfiguration.YPSDKEnvironment : Swift.RawRepresentable {}
 extension YandexPayConfiguration.YPSDKLocale : Swift.Equatable {}
 extension YandexPayConfiguration.YPSDKLocale : Swift.Hashable {}
-extension YandexPayConfiguration.YPCurrencyCode : Swift.Equatable {}
-extension YandexPayConfiguration.YPCurrencyCode : Swift.Hashable {}
 extension YandexPayConfiguration.YPCurrencyCode : Swift.RawRepresentable {}
 extension YandexPayConfiguration.YPSDKThemeColorScheme : Swift.Equatable {}
 extension YandexPayConfiguration.YPSDKThemeColorScheme : Swift.Hashable {}

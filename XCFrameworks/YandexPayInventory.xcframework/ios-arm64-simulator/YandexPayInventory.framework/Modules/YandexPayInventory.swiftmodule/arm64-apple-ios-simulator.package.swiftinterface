@@ -15,13 +15,26 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+public enum FintechPayBadgeProductContext : Swift.Equatable, Swift.Sendable {
+  case product(id: Swift.String)
+  case cart(YandexPayConfiguration.YPPayCart)
+  public static func == (a: YandexPayInventory.FintechPayBadgeProductContext, b: YandexPayInventory.FintechPayBadgeProductContext) -> Swift.Bool
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class FintechPayBadgeUIView : UIKit.UIView {
+  @_Concurrency.MainActor @objc override final public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor final public func update(model: YandexPayInventory.YPBadgeModel)
+  @objc deinit
+}
 @_Concurrency.MainActor public struct YPBadgeModel : Swift.Equatable {
   @_Concurrency.MainActor public let amount: Foundation.Decimal
   @_Concurrency.MainActor public let currency: YandexPayConfiguration.YPCurrencyCode
   @_Concurrency.MainActor public let align: YandexPayInventory.YPBadgeModel.Align
   @_Concurrency.MainActor public let type: YandexPayInventory.YPBadgeModel.BadgeType
+  @_Concurrency.MainActor public let productContext: YandexPayInventory.FintechPayBadgeProductContext?
   @_Concurrency.MainActor public let hidingPolicy: YandexPayInventory.YPBadgeModel.HidingPolicy
-  @_Concurrency.MainActor public init(amount: Foundation.Decimal, currency: YandexPayConfiguration.YPCurrencyCode, align: YandexPayInventory.YPBadgeModel.Align, type: YandexPayInventory.YPBadgeModel.BadgeType, hidingPolicy: YandexPayInventory.YPBadgeModel.HidingPolicy = .gone)
+  @_Concurrency.MainActor public init(amount: Foundation.Decimal, currency: YandexPayConfiguration.YPCurrencyCode, align: YandexPayInventory.YPBadgeModel.Align, type: YandexPayInventory.YPBadgeModel.BadgeType, productContext: YandexPayInventory.FintechPayBadgeProductContext? = nil, hidingPolicy: YandexPayInventory.YPBadgeModel.HidingPolicy = .gone)
   nonisolated public static func == (a: YandexPayInventory.YPBadgeModel, b: YandexPayInventory.YPBadgeModel) -> Swift.Bool
 }
 extension YandexPayInventory.YPBadgeModel {
@@ -66,6 +79,8 @@ extension YandexPayInventory.YPBadgeModel {
   public struct UltimatePayload : Swift.Equatable, Swift.Sendable {
     public let source: Swift.String?
     public let skuID: Swift.String?
+    public init(source: Swift.String?)
+    @available(*, deprecated, message: "Use productContext in YPBadgeModel instead. skuID is supported for backward compatibility only.")
     public init(source: Swift.String?, skuID: Swift.String?)
     public static func == (a: YandexPayInventory.YPBadgeModel.UltimatePayload, b: YandexPayInventory.YPBadgeModel.UltimatePayload) -> Swift.Bool
   }
@@ -128,7 +143,9 @@ public enum YPayInventory {
 }
 @_hasMissingDesignatedInitializers final public class YPayInventoryModuleAPI {
   @_Concurrency.MainActor final public func createBadgeView(model: YandexPayInventory.YPBadgeModel) -> any SwiftUICore.View
+  @available(*, deprecated, message: "Use createBadgeUIView(model:) instead.")
   @_Concurrency.MainActor final public func createBadgeView(model: YandexPayInventory.YPBadgeModel) -> UIKit.UIView
+  @_Concurrency.MainActor final public func createBadgeUIView(model: YandexPayInventory.YPBadgeModel) -> YandexPayInventory.FintechPayBadgeUIView
   @objc deinit
 }
 @_hasMissingDesignatedInitializers final public class YPayInventoryModuleDescriptor : YandexPayConfiguration.YPayModule {

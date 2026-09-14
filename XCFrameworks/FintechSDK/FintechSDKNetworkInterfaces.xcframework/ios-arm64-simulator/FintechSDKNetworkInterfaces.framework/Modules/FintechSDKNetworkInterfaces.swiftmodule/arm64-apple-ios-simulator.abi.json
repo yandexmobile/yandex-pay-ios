@@ -167,6 +167,199 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkInterfaces"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTNetworkErrorResponseMapping",
+        "printedName": "FTNetworkErrorResponseMapping",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "mapError",
+            "printedName": "mapError(data:response:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FintechSDKNetworkInterfaces.NetworkClientError?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NetworkClientError",
+                    "printedName": "FintechSDKNetworkInterfaces.NetworkClientError",
+                    "usr": "s:27FintechSDKNetworkInterfaces18NetworkClientErrorO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPURLResponse",
+                "printedName": "Foundation.HTTPURLResponse",
+                "usr": "c:objc(cs)NSHTTPURLResponse"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:27FintechSDKNetworkInterfaces29FTNetworkErrorResponseMappingP03mapE04data8responseAA013NetworkClientE0OSg10Foundation4DataV_So17NSHTTPURLResponseCtF",
+            "mangledName": "$s27FintechSDKNetworkInterfaces29FTNetworkErrorResponseMappingP03mapE04data8responseAA013NetworkClientE0OSg10Foundation4DataV_So17NSHTTPURLResponseCtF",
+            "moduleName": "FintechSDKNetworkInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKNetworkInterfaces.FTNetworkErrorResponseMapping>",
+            "sugared_genericSig": "<Self where Self : FintechSDKNetworkInterfaces.FTNetworkErrorResponseMapping>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:27FintechSDKNetworkInterfaces29FTNetworkErrorResponseMappingP",
+        "mangledName": "$s27FintechSDKNetworkInterfaces29FTNetworkErrorResponseMappingP",
+        "moduleName": "FintechSDKNetworkInterfaces",
+        "genericSig": "<τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTNetworkErrorResponseMappingEndpoint",
+        "printedName": "FTNetworkErrorResponseMappingEndpoint",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "errorResponseMapper",
+            "printedName": "errorResponseMapper",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKNetworkInterfaces.FTNetworkErrorResponseMapping)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTNetworkErrorResponseMapping",
+                    "printedName": "any FintechSDKNetworkInterfaces.FTNetworkErrorResponseMapping",
+                    "usr": "s:27FintechSDKNetworkInterfaces29FTNetworkErrorResponseMappingP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:27FintechSDKNetworkInterfaces37FTNetworkErrorResponseMappingEndpointP05errorF6MapperAA0defG0_pSgvp",
+            "mangledName": "$s27FintechSDKNetworkInterfaces37FTNetworkErrorResponseMappingEndpointP05errorF6MapperAA0defG0_pSgvp",
+            "moduleName": "FintechSDKNetworkInterfaces",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(any FintechSDKNetworkInterfaces.FTNetworkErrorResponseMapping)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTNetworkErrorResponseMapping",
+                        "printedName": "any FintechSDKNetworkInterfaces.FTNetworkErrorResponseMapping",
+                        "usr": "s:27FintechSDKNetworkInterfaces29FTNetworkErrorResponseMappingP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:27FintechSDKNetworkInterfaces37FTNetworkErrorResponseMappingEndpointP05errorF6MapperAA0defG0_pSgvg",
+                "mangledName": "$s27FintechSDKNetworkInterfaces37FTNetworkErrorResponseMappingEndpointP05errorF6MapperAA0defG0_pSgvg",
+                "moduleName": "FintechSDKNetworkInterfaces",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKNetworkInterfaces.FTNetworkErrorResponseMappingEndpoint>",
+                "sugared_genericSig": "<Self where Self : FintechSDKNetworkInterfaces.FTNetworkErrorResponseMappingEndpoint>",
+                "protocolReq": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:27FintechSDKNetworkInterfaces37FTNetworkErrorResponseMappingEndpointP",
+        "mangledName": "$s27FintechSDKNetworkInterfaces37FTNetworkErrorResponseMappingEndpointP",
+        "moduleName": "FintechSDKNetworkInterfaces",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "FTSessionProviderServing",
         "printedName": "FTSessionProviderServing",

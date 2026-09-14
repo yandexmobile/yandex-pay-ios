@@ -307,6 +307,24 @@ public enum HapticFeedbackType : Swift.String, Swift.Decodable {
     get
   }
 }
+@_spi(Internal) public enum HapticFeedbackStyle {
+  @_spi(Internal) case patterns
+  @_spi(Internal) case system
+  @_spi(Internal) public static func == (a: FintechSDKBDUIFeatures.HapticFeedbackStyle, b: FintechSDKBDUIFeatures.HapticFeedbackStyle) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) final public actor HapticFeedbackService {
+  @_spi(Internal) public init?(style: FintechSDKBDUIFeatures.HapticFeedbackStyle = .patterns, errorReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)? = nil)
+  @_spi(Internal) final public func playHaptic(forEvent event: FintechSDKBDUIFeatures.HapticFeedbackType) async
+  @_spi(Internal) @objc deinit
+  @_spi(Internal) @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  @_semantics("defaultActor") nonisolated final public var unownedExecutor: _Concurrency.UnownedSerialExecutor {
+    @_spi(Internal) get
+  }
+}
 public struct FintechSDKTokenizationDependencies {
   public let fontAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter
   public let accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter
@@ -334,7 +352,13 @@ extension UIKit.UIImage {
   @_spi(Internal) final public var onPageLoadStarted: (() -> Swift.Void)?
   @_spi(Internal) final public var onPageLoadFinished: ((Swift.String) -> Swift.Void)?
   @_spi(Internal) final public var onPageLoadError: ((any Swift.Error) -> Swift.Void)?
-  @_spi(Internal) public init(userAgentProvider: any FintechSDKCoreUtils.FTUserAgentProvider)
+  @_spi(Internal) convenience public init(userAgentProvider: any FintechSDKCoreUtils.FTUserAgentProvider)
+  @_spi(Internal) public init(userAgentProvider: any FintechSDKCoreUtils.FTUserAgentProvider, networkChallengeHandler: (any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler)?)
+  @_spi(Internal) @objc deinit
+}
+@_spi(Internal) @objc @_Concurrency.MainActor @preconcurrency final public class FTBDUIWebViewNavigationDelegate : ObjectiveC.NSObject, WebKit.WKNavigationDelegate {
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(networkChallengeHandler: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler)
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
   @_spi(Internal) @objc deinit
 }
 public protocol FintechRootViewControllerProvider {
@@ -357,3 +381,6 @@ final public class FintechYBSDK : FintechSDKBDUIFeatures.FintechYBSDKApi {
 extension FintechSDKBDUIFeatures.HapticFeedbackType : Swift.Equatable {}
 extension FintechSDKBDUIFeatures.HapticFeedbackType : Swift.Hashable {}
 extension FintechSDKBDUIFeatures.HapticFeedbackType : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKBDUIFeatures.HapticFeedbackStyle : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKBDUIFeatures.HapticFeedbackStyle : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKBDUIFeatures.FTBDUIWebViewNavigationDelegate : Swift.Sendable {}

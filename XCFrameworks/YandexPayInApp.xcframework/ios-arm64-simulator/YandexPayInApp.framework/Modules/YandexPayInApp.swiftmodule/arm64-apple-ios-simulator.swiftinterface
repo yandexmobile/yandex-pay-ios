@@ -24,7 +24,7 @@ import _SwiftConcurrencyShims
   @_Concurrency.MainActor final public func createPayWidgetView(model: YandexPayInApp.YPPayWidgetModel = YPPayWidgetModel(), presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding) -> any SwiftUICore.View
   @_Concurrency.MainActor final public func enable()
   @_Concurrency.MainActor final public func disable()
-  @_Concurrency.MainActor final public func createPayWidgetUIView(model: YandexPayInApp.YPPayWidgetModel = YPPayWidgetModel(), presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding) -> UIKit.UIView
+  @_Concurrency.MainActor final public func createPayWidgetUIView(model: YandexPayInApp.YPPayWidgetModel = YPPayWidgetModel(), presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding) -> YandexPayInApp.YPPayWidgetUIView
   @objc deinit
 }
 @_Concurrency.MainActor public protocol YPInAppDelegate : AnyObject {
@@ -46,15 +46,33 @@ public enum YPInAppState : Swift.Sendable, Swift.Equatable {
   case disabled(YandexPayInApp.YPInAppDisabledReason)
   public static func == (a: YandexPayInApp.YPInAppState, b: YandexPayInApp.YPInAppState) -> Swift.Bool
 }
-public struct YPPayWidgetOrderAmount : Swift.Sendable {
+public struct YPPayWidgetOrderAmount : Swift.Sendable, Swift.Hashable {
   public let amount: Foundation.Decimal
   public let currency: YandexPayConfiguration.YPCurrencyCode
   public init(amount: Foundation.Decimal, currency: YandexPayConfiguration.YPCurrencyCode)
+  public static func == (a: YandexPayInApp.YPPayWidgetOrderAmount, b: YandexPayInApp.YPPayWidgetOrderAmount) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
 }
-public struct YPPayWidgetModel : Swift.Sendable {
+public struct YPPayWidgetModel : Swift.Sendable, Swift.Hashable {
   public let orderAmount: YandexPayInApp.YPPayWidgetOrderAmount?
-  public init(orderAmount: YandexPayInApp.YPPayWidgetOrderAmount? = nil)
-  public init(amount: Foundation.Decimal, currency: YandexPayConfiguration.YPCurrencyCode)
+  public let cart: YandexPayConfiguration.YPPayCart?
+  public init(orderAmount: YandexPayInApp.YPPayWidgetOrderAmount? = nil, cart: YandexPayConfiguration.YPPayCart? = nil)
+  public init(amount: Foundation.Decimal, currency: YandexPayConfiguration.YPCurrencyCode, cart: YandexPayConfiguration.YPPayCart? = nil)
+  public static func == (a: YandexPayInApp.YPPayWidgetModel, b: YandexPayInApp.YPPayWidgetModel) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class YPPayWidgetUIView : UIKit.UIView {
+  @_Concurrency.MainActor final public func update(model: YandexPayInApp.YPPayWidgetModel)
+  @_Concurrency.MainActor @objc override final public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @objc deinit
 }
 extension YandexPayConfiguration.YPay {
   @_Concurrency.MainActor final public var payInApp: YandexPayInApp.PayInAppModuleAPI {

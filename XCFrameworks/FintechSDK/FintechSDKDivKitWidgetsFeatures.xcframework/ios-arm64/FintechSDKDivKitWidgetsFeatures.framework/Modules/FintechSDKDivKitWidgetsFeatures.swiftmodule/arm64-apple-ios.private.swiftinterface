@@ -5,7 +5,7 @@
 import Combine
 @_spi(Internal) import FintechSDKAnalyticsInterfaces
 import FintechSDKAuthInterfaces
-import FintechSDKBDUICore
+@_spi(Internal) import FintechSDKBDUICore
 @_spi(Internal) import FintechSDKBDUIFeatures
 import FintechSDKCommonEntity
 @_spi(Internal) import FintechSDKCoreUI
@@ -189,6 +189,13 @@ final public class FTRemoteDivUrlHandler : @preconcurrency FintechSDKBDUICore.Fi
   @_spi(Internal) case loaded
   @_spi(Internal) case failed(any Swift.Error)
 }
+@_spi(Internal) public enum FTWidgetLoadFailureReason {
+  @_spi(Internal) public static let timeout: Swift.String
+  @_spi(Internal) public static let network: Swift.String
+  @_spi(Internal) public static let parse: Swift.String
+  @_spi(Internal) public static func reason(for error: any Swift.Error) -> Swift.String
+  @_spi(Internal) public static func isCancellation(_ error: any Swift.Error) -> Swift.Bool
+}
 @_spi(Internal) public enum FTWidgetLoadingStrategy {
   @_spi(Internal) case onAppear
   @_spi(Internal) case onAppearForce
@@ -214,7 +221,7 @@ public enum FintechWidgetState {
   case failed
 }
 @_spi(Internal) public protocol FTDivKitDataProvider {
-  @_spi(Internal) func getDivKitData() -> Foundation.Data
+  @_spi(Internal) func getDivKitData() throws -> Foundation.Data
 }
 @_spi(Internal) extension Foundation.Data : FintechSDKDivKitWidgetsFeatures.FTDivKitDataProvider {
   @_spi(Internal) public func getDivKitData() -> Foundation.Data
@@ -237,6 +244,8 @@ public enum FintechWidgetState {
 @_spi(Internal) public protocol FTWebViewLogoutUseCase : Swift.Sendable {
   @_spi(Internal) func logout() async throws
 }
+@_spi(Internal) public protocol FTWidgetContentUnavailableError : Swift.Error {
+}
 @_spi(Internal) public struct FTDivKitComponents {
   @_spi(Internal) public let widgetName: Swift.String
   @_spi(Internal) public let actionHandlers: [any FintechSDKBDUICore.FintechDivUrlHandler]
@@ -252,7 +261,7 @@ public enum FintechWidgetState {
 @_spi(Internal) @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class FTWidgetContainerUIView : UIKit.UIView, FintechSDKDivKitWidgetsFeatures.FTWidgetRefreshObserver {
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(reloader: any FintechSDKDivKitWidgetsFeatures.FTWidgetRefreshing, widget: UIKit.UIView, onUserInterfaceChange: (@_Concurrency.MainActor (UIKit.UIUserInterfaceStyle) -> Swift.Void)? = nil, onTap: (() -> Swift.Void)? = nil)
   @_spi(Internal) @objc deinit
-  @_spi(Internal) @_Concurrency.MainActor @preconcurrency final public func widgetShouldRefresh()
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency final public func widgetShouldRefresh(resetsCardState: Swift.Bool)
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override final public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
 }
 @_spi(Internal) extension FintechSDKDivKitWidgetsFeatures.FTWidgetContainerUIView : UIKit.UIGestureRecognizerDelegate {
@@ -266,7 +275,7 @@ public enum FintechWidgetState {
   @_spi(Internal) public typealias Body = @_opaqueReturnTypeOf("$s31FintechSDKDivKitWidgetsFeatures21FTWidgetContainerViewV4bodyQrvp", 0) __<Content>
 }
 @_spi(Internal) public protocol FTWidgetRefreshObserver : AnyObject {
-  @_spi(Internal) func widgetShouldRefresh()
+  @_spi(Internal) func widgetShouldRefresh(resetsCardState: Swift.Bool)
 }
 @_spi(Internal) @_hasMissingDesignatedInitializers final public class FTWidgetRefreshManager {
   @_spi(Internal) public static let shared: FintechSDKDivKitWidgetsFeatures.FTWidgetRefreshManager
@@ -274,16 +283,17 @@ public enum FintechWidgetState {
   @_spi(Internal) nonisolated final public func addObserver(_ observer: any FintechSDKDivKitWidgetsFeatures.FTWidgetRefreshObserver)
   @_spi(Internal) nonisolated final public func removeObserver(_ observer: any FintechSDKDivKitWidgetsFeatures.FTWidgetRefreshObserver)
   @_spi(Internal) final public func refreshWidget()
+  @_spi(Internal) final public func refreshWidget(resetsCardState: Swift.Bool)
 }
 @_spi(Internal) @_Concurrency.MainActor public protocol FTWidgetRefreshing : AnyObject {
-  @_spi(Internal) @_Concurrency.MainActor func reload(silent: Swift.Bool) async
+  @_spi(Internal) @_Concurrency.MainActor func reload(silent: Swift.Bool, resetsCardState: Swift.Bool) async
 }
 @_spi(Internal) extension FintechSDKDivKitWidgetsFeatures.FTWidgetReloader : FintechSDKDivKitWidgetsFeatures.FTWidgetRefreshing {
 }
 @_spi(Internal) final public class FTWidgetReloader : Foundation.ObservableObject {
   @_spi(Internal) public init()
-  @_spi(Internal) final public func configure(reloadAction: @escaping (_ silent: Swift.Bool) async -> Swift.Void)
-  @_spi(Internal) @_Concurrency.MainActor final public func reload(silent: Swift.Bool) async
+  @_spi(Internal) final public func configure(reloadAction: @escaping (_ silent: Swift.Bool, _ resetsCardState: Swift.Bool) async -> Swift.Void)
+  @_spi(Internal) @_Concurrency.MainActor final public func reload(silent: Swift.Bool, resetsCardState: Swift.Bool = false) async
   @_spi(Internal) public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
   @_spi(Internal) @objc deinit
 }

@@ -30,12 +30,18 @@ let package = Package(
         "FintechSDKAuthInterfaces",
         "FintechSDKAppMetricaAdapter6",
         "FintechSDKAnalyticsInterfaces",
+        "FintechSDKAppTransportSecurityScenario",
         "FintechSDKCommonEntity",
+        "FintechSDKCoreAnalytics",
         "FintechSDKPayBoxEntity",
         "FintechSDKCoreUI",
         "FintechSDKFontsInterfaces",
         "FintechSDKCoreUtils",
         "FintechSDKNetworkInterfaces",
+        "FintechSDKNetworkImplementation",
+        "FintechSDKNetworkChallengeAdapter",
+        "FintechSDKRealTimeAnalyticsAdapter",
+        "FintechSDKRealUserMonitoringAdapter",
         .product(name: "AppMetricaCore", package: "appmetrica-sdk-ios"),
       ],
       path: "Sources/YandexPayConfigurationWrapper"
@@ -45,11 +51,14 @@ let package = Package(
       dependencies: [
         "YandexPayAuth",
         "YandexPayConfiguration",
+        "FintechSDKNetworkChallengeAdapter",
         "FintechSDKLoginAdapter",
         "FintechSDKAuthInterfaces",
         "FintechSDKAppMetricaAdapter6",
         "FintechSDKAnalyticsInterfaces",
+        "FintechSDKAppTransportSecurityScenario",
         "FintechSDKCoreUtils",
+        "FintechSDKCoreAnalytics",
         "FintechSDKCommonEntity",
         "FintechSDKPayBoxEntity",
         "FintechSDKFontsInterfaces",
@@ -97,6 +106,7 @@ let package = Package(
         "FintechSDKCommonEntity",
         "FintechSDKCoreUtils",
         "FintechSDKCoreAnalytics",
+        "FintechSDKAppTransportSecurityScenario",
         "FintechSDKAuthInterfaces",
         "FintechSDKAuthCoreImplementation",
         "FintechSDKAuthorizationScenario",
@@ -115,6 +125,7 @@ let package = Package(
         "FintechSDKRealTimeAnalyticsAdapter",
         "FintechSDKRealUserMonitoringAdapter",
         "FintechSDKLoginAdapter",
+        "FintechSDKNetworkChallengeAdapter",
         "YandexPayConfiguration",
         .product(name: "AppMetricaCore", package: "appmetrica-sdk-ios"),
       ],
@@ -147,6 +158,7 @@ let package = Package(
         "FintechSDKCommonEntity",
         "FintechSDKCoreUtils",
         "FintechSDKCoreAnalytics",
+        "FintechSDKAppTransportSecurityScenario",
         "FintechSDKAuthInterfaces",
         "FintechSDKAuthCoreImplementation",
         "FintechSDKAuthorizationScenario",
@@ -165,6 +177,7 @@ let package = Package(
         "FintechSDKRealTimeAnalyticsAdapter",
         "FintechSDKRealUserMonitoringAdapter",
         "FintechSDKLoginAdapter",
+        "FintechSDKNetworkChallengeAdapter",
         "YandexPayConfiguration",
         .product(name: "AppMetricaCore", package: "appmetrica-sdk-ios"),
       ],
@@ -187,6 +200,7 @@ let package = Package(
         "FintechSDKCoreUI",
         "FintechSDKCoreUtils",
         "FintechSDKCoreAnalytics",
+        "FintechSDKAppTransportSecurityScenario",
         "FintechSDKAnalyticsInterfaces",
         "FintechPlusSDKInterfaces",
         "FintechYBSDKInterfaces",
@@ -206,6 +220,7 @@ let package = Package(
         "FintechSDKLoginAdapter",
         "FintechSDKRealTimeAnalyticsAdapter",
         "FintechSDKRealUserMonitoringAdapter",
+        "FintechSDKNetworkChallengeAdapter",
         "YandexPayConfiguration",
         .product(name: "AppMetricaCore", package: "appmetrica-sdk-ios"),
       ],
@@ -238,6 +253,7 @@ let package = Package(
         "FintechSDKCommonEntity",
         "FintechSDKCoreUtils",
         "FintechSDKCoreAnalytics",
+        "FintechSDKAppTransportSecurityScenario",
         "FintechSDKAuthInterfaces",
         "FintechSDKAuthCoreImplementation",
         "FintechSDKAuthorizationScenario",
@@ -256,6 +272,7 @@ let package = Package(
         "FintechSDKRealTimeAnalyticsAdapter",
         "FintechSDKRealUserMonitoringAdapter",
         "FintechSDKLoginAdapter",
+        "FintechSDKNetworkChallengeAdapter",
         "YandexPayConfiguration",
         .product(name: "AppMetricaCore", package: "appmetrica-sdk-ios"),
       ],
@@ -278,6 +295,7 @@ let package = Package(
         "FintechSDKCoreUI",
         "FintechSDKCoreUtils",
         "FintechSDKCoreAnalytics",
+        "FintechSDKAppTransportSecurityScenario",
         "FintechSDKAnalyticsInterfaces",
         "FintechPlusSDKInterfaces",
         "FintechYBSDKInterfaces",
@@ -302,6 +320,7 @@ let package = Package(
         "FintechSDKLoginAdapter",
         "FintechSDKRealTimeAnalyticsAdapter",
         "FintechSDKRealUserMonitoringAdapter",
+        "FintechSDKNetworkChallengeAdapter",
         "YandexPayConfiguration",
         .product(name: "AppMetricaCore", package: "appmetrica-sdk-ios"),
       ],
@@ -340,6 +359,14 @@ let package = Package(
       path: "XCFrameworks/FintechSDKRealUserMonitoringAdapter.xcframework"
     ),
     .binaryTarget(
+      name: "FintechSDKNetworkChallengeAdapter",
+      path: "XCFrameworks/FintechSDKNetworkChallengeAdapter.xcframework"
+    ),
+    .binaryTarget(
+      name: "FintechSDKNetworkInterfaces",
+      path: "XCFrameworks/FintechSDK/FintechSDKNetworkInterfaces.xcframework"
+    ),
+    .binaryTarget(
       name: "ExternalBduiAdapter",
       path: "XCFrameworks/ExternalBduiAdapter.xcframework"
     ),
@@ -358,10 +385,6 @@ let package = Package(
     .binaryTarget(
       name: "FintechBBPartnerSDKInterfaces",
       path: "XCFrameworks/FintechSDK/FintechBBPartnerSDKInterfaces.xcframework"
-    ),
-    .binaryTarget(
-      name: "FintechSDKNetworkInterfaces",
-      path: "XCFrameworks/FintechSDK/FintechSDKNetworkInterfaces.xcframework"
     ),
     .binaryTarget(
       name: "FintechSDKCoreUtils",
@@ -398,6 +421,10 @@ let package = Package(
     .binaryTarget(
       name: "YandexPayConfiguration",
       path: "XCFrameworks/YandexPayConfiguration.xcframework"
+    ),
+    .binaryTarget(
+      name: "FintechSDKAppTransportSecurityScenario",
+      path: "XCFrameworks/FintechSDK/FintechSDKAppTransportSecurityScenario.xcframework"
     ),
     .binaryTarget(
       name: "FintechSDKPayBoxEntity",
