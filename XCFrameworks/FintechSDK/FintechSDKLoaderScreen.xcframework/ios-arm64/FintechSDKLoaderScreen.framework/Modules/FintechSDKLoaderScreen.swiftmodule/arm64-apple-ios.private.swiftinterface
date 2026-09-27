@@ -51,4 +51,13 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
   @_spi(Internal) @objc deinit
 }
+@_spi(Internal) @_Concurrency.MainActor @preconcurrency public struct FTLoaderView : SwiftUICore.View {
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(arcFraction: CoreFoundation.CGFloat = FTLoaderView.defaultArcFraction)
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public static let defaultArcFraction: CoreFoundation.CGFloat
+  @_spi(Internal) public typealias Body = @_opaqueReturnTypeOf("$s22FintechSDKLoaderScreen12FTLoaderViewV4bodyQrvp", 0) __
+}
 @_spi(Internal) extension FintechSDKLoaderScreen.FTNativeLoaderScreen : Swift.Sendable {}
+@_spi(Internal) extension FintechSDKLoaderScreen.FTLoaderView : Swift.Sendable {}

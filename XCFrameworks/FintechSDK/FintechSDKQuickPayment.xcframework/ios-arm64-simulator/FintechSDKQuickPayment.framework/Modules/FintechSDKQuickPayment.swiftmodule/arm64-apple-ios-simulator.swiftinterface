@@ -24,6 +24,7 @@ import FintechSDKQuickPaymentEntity
 import FintechSDKQuickPaymentShared
 import FintechSDKRemoteResourcesData
 import Foundation
+import QuartzCore
 import Swift
 import SwiftUI
 import UIKit
@@ -101,6 +102,7 @@ public enum FintechQuickPaymentError : Swift.Error {
   case qrStringNotAvailable
   case orderPollingNotControlledByMerchant
   case noActivePaymentSession
+  case noPaymentMethods
 }
 extension FintechSDKQuickPayment.FTQuickPayAuthState.SecurityCheckFailReason : Swift.Hashable {}
 extension FintechSDKQuickPayment.FTQuickPayWidgetExpandState : Swift.Equatable {}

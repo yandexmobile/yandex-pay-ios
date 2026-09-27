@@ -18,6 +18,7 @@ import FintechSDKFontsInterfaces
 @_spi(Internal) import FintechSDKNetworkImplementation
 import FintechSDKNetworkInterfaces
 @_spi(Internal) import FintechSDKRemoteResourcesData
+@_spi(Internal) import FintechSDKSafariFeature
 import FintechYBSDKInterfaces
 import Foundation
 import Swift
@@ -84,6 +85,17 @@ public protocol DevicePubkeyProviderApi {
   @_spi(Internal) final public func handleRemoteAction(query: FintechSDKBDUIFeatures.FTActionQuery) async throws -> Swift.Int
   @_spi(Internal) @objc deinit
 }
+@_spi(Internal) public enum FTRetryPaymentActionError : Swift.Error {
+  @_spi(Internal) case handlerNotConfigured
+  @_spi(Internal) public static func == (a: FintechSDKBDUIFeatures.FTRetryPaymentActionError, b: FintechSDKBDUIFeatures.FTRetryPaymentActionError) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) @_Concurrency.MainActor public protocol FTRetryPaymentHandling {
+  @_spi(Internal) @_Concurrency.MainActor func retryPayment() async throws
+}
 public struct FTFinishFlowParams {
   public let urlParams: [Swift.String : Swift.String]?
   public let params: [Swift.String : Swift.String]?
@@ -116,7 +128,7 @@ public struct FintechSDKAuthorizationDependencies {
   @_spi(Internal) func handleSessionExpired() async
 }
 @_spi(Internal) public protocol FTStartOrderStatusPollingHandling : Swift.Sendable {
-  @_spi(Internal) func startOrderStatusPolling(transactionId: Swift.String, paymentUrl: Swift.String) async
+  @_spi(Internal) func startOrderStatusPolling(transactionId: Swift.String?, paymentUrl: Swift.String?, quickpayId: Swift.String?) async
 }
 @_spi(Internal) public protocol FTTransportBannerBDUIApi {
   @_spi(Internal) func reload()
@@ -137,6 +149,25 @@ public protocol FintechBDUIAdapterFactory {
   func make(networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, router: any FintechSDKBDUICore.FintechBDUIRouter, requestTimeoutSec: Swift.Int, fontAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter, errorLogger: any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter, themeKind: FintechSDKBDUICore.FintechBDUIThemeKind, contentFactories: [any FintechSDKBDUICore.FintechBDUIContentFactory], errorContentFactory: any FintechSDKBDUICore.FintechBDUIContentFactory, actionHandlers: [any FintechSDKBDUICore.FintechBDUIActionHandler], divCustomFactories: [any FintechSDKBDUICore.FintechBDUIDivCustomFactory], localImageProvider: (any FintechSDKBDUICore.FintechBDUILocalImageProviding)?, renderingEventsListener: (any FintechSDKAnalyticsInterfaces.FTRenderingEventsListener)?, firstInteractionListener: (any FintechSDKAnalyticsInterfaces.FTFirstInteractionEventsListener)?) -> any FintechSDKBDUICore.FintechBDUIAdapter
   var flexVersion: Swift.String { get }
   var divKitVersion: Swift.String { get }
+}
+@_spi(Internal) @_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class FTBDUIInitialPreview {
+  @_spi(Internal) public enum Update : Swift.Sendable {
+    @_spi(Internal) case enabled(document: Foundation.Data, documentHash: Swift.String? = nil)
+    @_spi(Internal) case unchanged(documentHash: Swift.String)
+    @_spi(Internal) case disabled
+  }
+  @_spi(Internal) @_Concurrency.MainActor public init(cacheDirectory: Foundation.URL?, policyKey: Swift.String, userDefaults: Foundation.UserDefaults = .standard)
+  @_spi(Internal) @_Concurrency.MainActor final public func create<NativePreview>(adapter: any FintechSDKBDUICore.FintechBDUIAdapter, eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, errorReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter, key: Swift.String, entryPoint: FintechSDKBDUICore.FintechBDUIEntryPoint? = nil, nativePreview: NativePreview) async throws -> FintechSDKBDUIFeatures.FTBDUIInitialPreview.Session where NativePreview : FintechSDKBDUICore.FintechBDUIContent
+  @_spi(Internal) @_Concurrency.MainActor final public func create(adapter: any FintechSDKBDUICore.FintechBDUIAdapter, eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, errorReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter, key: Swift.String, entryPoint: FintechSDKBDUICore.FintechBDUIEntryPoint? = nil, jsonFileURL: Foundation.URL, nativePreview: (any FintechSDKBDUICore.FintechBDUIContent)? = nil) async throws -> FintechSDKBDUIFeatures.FTBDUIInitialPreview.Session
+  @_spi(Internal) @objc deinit
+}
+@_spi(Internal) extension FintechSDKBDUIFeatures.FTBDUIInitialPreview {
+  @_spi(Internal) @_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class Session {
+    @_spi(Internal) @_Concurrency.MainActor final public let engine: any FintechSDKBDUICore.FintechBDUIEngine
+    @_spi(Internal) @objc deinit
+    @_spi(Internal) @_Concurrency.MainActor final public func refresh(using load: @escaping @_Concurrency.MainActor (Swift.String?) async throws -> FintechSDKBDUIFeatures.FTBDUIInitialPreview.Update)
+    @_spi(Internal) @_Concurrency.MainActor final public func cancel()
+  }
 }
 @available(*, deprecated, renamed: "FintechAnalyticsEventReporter", message: "Use FintechAnalyticsEventReporter instead")
 public protocol AnalyticsEventHandlerApi {
@@ -376,8 +407,12 @@ final public class FintechYBSDK : FintechSDKBDUIFeatures.FintechYBSDKApi {
 @_spi(Internal) extension FintechSDKBDUIFeatures.FTScreenBrightnessController : Swift.Sendable {}
 @_spi(Internal) extension FintechSDKBDUIFeatures.FTAuthorizeActionError : Swift.Equatable {}
 @_spi(Internal) extension FintechSDKBDUIFeatures.FTAuthorizeActionError : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKBDUIFeatures.FTRetryPaymentActionError : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKBDUIFeatures.FTRetryPaymentActionError : Swift.Hashable {}
 @_spi(Internal) extension FintechSDKBDUIFeatures.FTLogoutActionError : Swift.Equatable {}
 @_spi(Internal) extension FintechSDKBDUIFeatures.FTLogoutActionError : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKBDUIFeatures.FTBDUIInitialPreview : Swift.Sendable {}
+@_spi(Internal) extension FintechSDKBDUIFeatures.FTBDUIInitialPreview.Session : Swift.Sendable {}
 extension FintechSDKBDUIFeatures.HapticFeedbackType : Swift.Equatable {}
 extension FintechSDKBDUIFeatures.HapticFeedbackType : Swift.Hashable {}
 extension FintechSDKBDUIFeatures.HapticFeedbackType : Swift.RawRepresentable {}

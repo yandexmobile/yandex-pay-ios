@@ -100,6 +100,7 @@ let package = Package(
         "FintechSDKFontsInterfaces",
         "FintechSDKBDUICore",
         "FintechSDKBDUIFeatures",
+        "FintechSDKSafariFeature",
         "FintechBBPartnerSDKInterfaces",
         "FintechSDKNetworkInterfaces",
         "FintechSDKNetworkImplementation",
@@ -152,6 +153,7 @@ let package = Package(
         "FintechSDKFontsInterfaces",
         "FintechSDKBDUICore",
         "FintechSDKBDUIFeatures",
+        "FintechSDKSafariFeature",
         "FintechBBPartnerSDKInterfaces",
         "FintechSDKNetworkInterfaces",
         "FintechSDKNetworkImplementation",
@@ -193,6 +195,7 @@ let package = Package(
         "FintechSDKAuthorizationScenario",
         "FintechSDKLoaderScreen",
         "FintechSDKBDUIFeatures",
+        "FintechSDKSafariFeature",
         "FintechBBPartnerSDKInterfaces",
         "FintechSDKBDUICore",
         "FintechSDKCommonEntity",
@@ -247,6 +250,7 @@ let package = Package(
         "FintechSDKFontsInterfaces",
         "FintechSDKBDUICore",
         "FintechSDKBDUIFeatures",
+        "FintechSDKSafariFeature",
         "FintechBBPartnerSDKInterfaces",
         "FintechSDKNetworkInterfaces",
         "FintechSDKNetworkImplementation",
@@ -288,6 +292,7 @@ let package = Package(
         "FintechSDKPollingScenario",
         "FintechSDKAuthInterfaces",
         "FintechSDKBDUIFeatures",
+        "FintechSDKSafariFeature",
         "FintechBBPartnerSDKInterfaces",
         "FintechSDKBDUICore",
         "FintechSDKCommonEntity",
@@ -381,6 +386,10 @@ let package = Package(
     .binaryTarget(
       name: "FintechSDKBDUIFeatures",
       path: "XCFrameworks/FintechSDK/FintechSDKBDUIFeatures.xcframework"
+    ),
+    .binaryTarget(
+      name: "FintechSDKSafariFeature",
+      path: "XCFrameworks/FintechSDK/FintechSDKSafariFeature.xcframework"
     ),
     .binaryTarget(
       name: "FintechBBPartnerSDKInterfaces",

@@ -39,7 +39,8 @@
         "declKind": "Import",
         "moduleName": "FintechBDUIWrapper",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "SPIAccessControl"
         ]
       },
       {
@@ -76,6 +77,16 @@
         "kind": "Import",
         "name": "FintechSDKFontsInterfaces",
         "printedName": "FintechSDKFontsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechBDUIWrapper",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
         "declKind": "Import",
         "moduleName": "FintechBDUIWrapper",
         "declAttributes": [
@@ -692,6 +703,40 @@
               "AccessControl",
               "ObjC",
               "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "observeExtensionDescriptors",
+            "printedName": "observeExtensionDescriptors(extensionId:observer:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "Any"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "Any"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@FintechBDUIWrapper@objc(cs)FBWAdapter(im)observeExtensionDescriptorsWithExtensionId:observer:",
+            "mangledName": "$s18FintechBDUIWrapper10FBWAdapterC27observeExtensionDescriptors11extensionId8observerypSS_yptF",
+            "moduleName": "FintechBDUIWrapper",
+            "objc_name": "observeExtensionDescriptorsWithExtensionId:observer:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
             ],
             "funcSelfKind": "NonMutating"
           },

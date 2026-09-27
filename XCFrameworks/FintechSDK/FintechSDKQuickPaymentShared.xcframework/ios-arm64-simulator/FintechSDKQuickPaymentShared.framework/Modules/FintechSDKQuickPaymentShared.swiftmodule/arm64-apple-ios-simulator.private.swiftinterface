@@ -9,7 +9,7 @@ import FintechSDKBDUICore
 @_spi(Internal) import FintechSDKDivKitWidgetsFeatures
 import FintechSDKFontsInterfaces
 @_spi(Internal) import FintechSDKNativeErrorFeature
-import FintechSDKNetworkInterfaces
+@_spi(Internal) import FintechSDKNetworkInterfaces
 @_spi(Internal) import FintechSDKPollingScenario
 @_spi(Internal) import FintechSDKQuickPaymentEntity
 import Foundation
@@ -21,7 +21,7 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 @_spi(Internal) public actor FTQPSPollingInteractor {
-  @_spi(Internal) public typealias BDUIQueryBuilder = (_ transactionId: Swift.String, _ paymentUrl: Swift.String, _ checkoutOrderId: Swift.String?, _ quickpayId: Swift.String?) -> FintechSDKQuickPaymentEntity.FTQPBDUIQuery
+  @_spi(Internal) public typealias BDUIQueryBuilder = (_ transactionId: Swift.String?, _ paymentUrl: Swift.String?, _ checkoutOrderId: Swift.String?, _ quickpayId: Swift.String?) -> FintechSDKQuickPaymentEntity.FTQPBDUIQuery
   @_spi(Internal) public var isBSTTTLCheckActive: Swift.Bool {
     @_spi(Internal) get
   }
@@ -37,6 +37,9 @@ import _SwiftConcurrencyShims
     @_spi(Internal) get
   }
 }
+@_spi(Internal) extension FintechSDKQuickPaymentShared.FTQPSPollingInteractor : FintechSDKBDUIFeatures.FTStartOrderStatusPollingHandling {
+  @_spi(Internal) public func startOrderStatusPolling(transactionId: Swift.String?, paymentUrl: Swift.String?, quickpayId: Swift.String?) async
+}
 @_spi(Internal) extension FintechSDKQuickPaymentShared.FTQPSPollingInteractor : FintechSDKQuickPaymentShared.FTQPSStartPolling, FintechSDKQuickPaymentShared.FTQPSStopPolling {
 }
 @_spi(Internal) extension FintechSDKQuickPaymentShared.FTQPSPollingInteractor : FintechSDKQuickPaymentShared.FTQPSMerchantControlledPolling {
@@ -51,12 +54,9 @@ import _SwiftConcurrencyShims
 @_spi(Internal) extension FintechSDKQuickPaymentShared.FTQPSPollingInteractor : FintechSDKQuickPaymentShared.FTQPSSetOrderResultFail {
   @_spi(Internal) public func handleSetOrderResultFail() async
 }
-@_spi(Internal) extension FintechSDKQuickPaymentShared.FTQPSPollingInteractor : FintechSDKBDUIFeatures.FTStartOrderStatusPollingHandling {
-  @_spi(Internal) public func startOrderStatusPolling(transactionId: Swift.String, paymentUrl: Swift.String) async
-}
 @_spi(Internal) public protocol FTQPSGetOrderAPIService : Swift.Sendable {
   @_spi(Internal) func getActiveOrders() async throws(FintechSDKNetworkInterfaces.NetworkClientError) -> FintechSDKQuickPaymentEntity.FTOrdersPollingResponse
-  @_spi(Internal) func getOrderStatus(transactionId: Swift.String, paymentUrl: Swift.String) async throws(FintechSDKNetworkInterfaces.NetworkClientError) -> FintechSDKQuickPaymentEntity.FTOrderStatusPollingResponse
+  @_spi(Internal) func getOrderStatus(identifiers: FintechSDKQuickPaymentEntity.FTOrderIdentifiers) async throws(FintechSDKNetworkInterfaces.NetworkClientError) -> FintechSDKQuickPaymentEntity.FTOrderStatusPollingResponse
 }
 @_spi(Internal) public protocol FTQPSOrderScannedFeedbackPlaying : Swift.Sendable {
   @_spi(Internal) func playOrderScannedFeedback() async
@@ -113,12 +113,41 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public init()
   @_spi(Internal) public func make() -> any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler
 }
+@_spi(Internal) public struct FTQPNoPaymentMethodsError : Swift.Error, Swift.Sendable {
+  @_spi(Internal) public init()
+  @_spi(Internal) public static func matches(_ error: any Swift.Error) -> Swift.Bool
+  @_spi(Internal) public static func decode(data: Foundation.Data, response: Foundation.HTTPURLResponse) -> FintechSDKNetworkInterfaces.NetworkClientError?
+}
+@_spi(Internal) public struct FTQPNoPaymentMethodsErrorResponseMapper : FintechSDKNetworkInterfaces.FTNetworkErrorResponseMapping {
+  @_spi(Internal) public init()
+  @_spi(Internal) public func mapError(data: Foundation.Data, response: Foundation.HTTPURLResponse) -> FintechSDKNetworkInterfaces.NetworkClientError?
+}
+@_spi(Internal) public enum FTQPPaymentMethodsEvent : Swift.Sendable {
+  @_spi(Internal) case stateChanged(FintechSDKQuickPaymentEntity.FTQPPaymentMethodsState)
+  @_spi(Internal) case bindingSucceeded
+  @_spi(Internal) public init?(name: Swift.String, params: [Swift.String : Swift.String]?)
+}
 @_spi(Internal) public protocol FTQPSPollingAnalyticsReporting {
   @_spi(Internal) func reportTokenExpired()
   @_spi(Internal) func reportPaymentProcessWaitingForApprove(checkoutOrderId: Swift.String?)
   @_spi(Internal) func reportPaymentProcessFailed(checkoutOrderId: Swift.String?)
+  @_spi(Internal) func reportPaymentProcessFailed(transactionId: Swift.String, checkoutOrderId: Swift.String?)
+  @_spi(Internal) func reportPaymentProcessAttemptStarted(transactionId: Swift.String)
+  @_spi(Internal) func reportRetryablePaymentProcessFailed(transactionId: Swift.String, checkoutOrderId: Swift.String?)
   @_spi(Internal) func reportPollingUnmappedError(error: any Swift.Error)
   @_spi(Internal) func reportPaymentProcessCompleted(checkoutOrderId: Swift.String?)
+  @_spi(Internal) func reportPaymentProcessCompleted(transactionId: Swift.String, checkoutOrderId: Swift.String?)
+}
+@_spi(Internal) extension FintechSDKQuickPaymentShared.FTQPSPollingAnalyticsReporting {
+  @_spi(Internal) public func reportPaymentProcessFailed()
+  @_spi(Internal) public func reportPaymentProcessFailed(transactionId: Swift.String)
+  @_spi(Internal) public func reportPaymentProcessFailed(transactionId: Swift.String, checkoutOrderId: Swift.String?)
+  @_spi(Internal) public func reportPaymentProcessAttemptStarted(transactionId: Swift.String)
+  @_spi(Internal) public func reportRetryablePaymentProcessFailed(transactionId: Swift.String, checkoutOrderId: Swift.String?)
+  @_spi(Internal) public func reportPaymentProcessCompleted()
+  @_spi(Internal) public func reportRetryablePaymentProcessFailed(transactionId: Swift.String)
+  @_spi(Internal) public func reportPaymentProcessCompleted(transactionId: Swift.String)
+  @_spi(Internal) public func reportPaymentProcessCompleted(transactionId: Swift.String, checkoutOrderId: Swift.String?)
 }
 @_spi(Internal) final public class FTQPSSessionExpiredActionHandler : @unchecked Swift.Sendable {
   @_spi(Internal) public init()

@@ -28,6 +28,18 @@ import _SwiftConcurrencyShims
   @_spi(Internal) final public func resolve(id: Swift.String) -> (view: UIKit.UIView, shape: FintechSDKBDUICore.FTBDUIAnchorShape)?
   @_spi(Internal) @objc deinit
 }
+@_spi(Internal) public struct FTBDUIEmptyContent : FintechSDKBDUICore.FintechBDUIContent {
+  @_spi(Internal) public static var contentType: Swift.String {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public init()
+  @_spi(Internal) public static func == (a: FintechSDKBDUICore.FTBDUIEmptyContent, b: FintechSDKBDUICore.FTBDUIEmptyContent) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
+}
 @_spi(Internal) public protocol FTBackGestureNavigable : AnyObject {
   @_spi(Internal) var isBackGestureEnabled: Swift.Bool? { get }
 }
@@ -116,10 +128,12 @@ public protocol FintechBDUIAdapter : FintechSDKBDUICore.FintechBDUIDivActionHand
   @_Concurrency.MainActor func createDivKitUIView(action: (any FintechSDKBDUICore.FintechDivUrlHandler)?, source: FintechSDKBDUICore.FintechDivViewSource, divFlags: FintechSDKBDUICore.FintechDivFlagsInfo?) -> UIKit.UIView
   @_Concurrency.MainActor func createDivKitUIView(action: (any FintechSDKBDUICore.FintechDivUrlHandler)?, source: FintechSDKBDUICore.FintechDivViewSource, divFlags: FintechSDKBDUICore.FintechDivFlagsInfo?) async -> UIKit.UIView
   @_spi(Internal) @_Concurrency.MainActor func createUpdatableDivKitUIView(action: (any FintechSDKBDUICore.FintechDivUrlHandler)?, source: FintechSDKBDUICore.FintechDivViewSource, divFlags: FintechSDKBDUICore.FintechDivFlagsInfo?) async -> (any FintechSDKBDUICore.FTBDUIUpdatableView)?
+  @_spi(Internal) func observeExtensionDescriptors(extensionId: Swift.String, observer: any FintechSDKBDUICore.FintechDivExtensionDescriptorObserving) -> any FintechSDKCoreUtils.FTCancellableTask
   @_Concurrency.MainActor func handleDivAction(action: [Swift.String : Any], path: Any?, sender: Swift.AnyObject?, cardId: Swift.String?)
 }
 @_spi(Internal) extension FintechSDKBDUICore.FintechBDUIAdapter {
   @_spi(Internal) @_Concurrency.MainActor public func createUpdatableDivKitUIView(action _: (any FintechSDKBDUICore.FintechDivUrlHandler)?, source _: FintechSDKBDUICore.FintechDivViewSource, divFlags _: FintechSDKBDUICore.FintechDivFlagsInfo?) async -> (any FintechSDKBDUICore.FTBDUIUpdatableView)?
+  @_spi(Internal) public func observeExtensionDescriptors(extensionId _: Swift.String, observer _: any FintechSDKBDUICore.FintechDivExtensionDescriptorObserving) -> any FintechSDKCoreUtils.FTCancellableTask
 }
 public struct FintechBDUIAnyAction : Swift.Hashable, Swift.Decodable {
   public var wrappedAnyAction: Swift.AnyHashable
@@ -246,6 +260,36 @@ public protocol FintechBDUIFontProvider {
     get
   }
 }
+@_spi(Internal) public protocol FintechBDUIInitialPreviewSelecting : AnyObject {
+  @_spi(Internal) @_Concurrency.MainActor func createInitialPreview<NativePreview>(entryPoint: FintechSDKBDUICore.FintechBDUIEntryPoint?, candidatePreview: FintechSDKBDUICore.FintechBDUIRawDataContent?, lastKnownGoodPreview: FintechSDKBDUICore.FintechBDUIRawDataContent?, nativePreview: NativePreview, onPreviewEvent: @escaping @_Concurrency.MainActor @Sendable (Swift.String, [Swift.String : Swift.String]) -> Swift.Void, onCachedPreviewRenderingOutcome: @escaping @_Concurrency.MainActor @Sendable (FintechSDKBDUICore.FintechBDUIInitialPreviewSelection.RenderingOutcome) -> Swift.Void) -> FintechSDKBDUICore.FintechBDUIInitialPreviewSelection where NativePreview : FintechSDKBDUICore.FintechBDUIContent
+  @_spi(Internal) @_Concurrency.MainActor func createInitialPreview(entryPoint: FintechSDKBDUICore.FintechBDUIEntryPoint?, candidatePreview: FintechSDKBDUICore.FintechBDUIRawDataContent?, lastKnownGoodPreview: FintechSDKBDUICore.FintechBDUIRawDataContent?, jsonFileURL: Foundation.URL, nativePreview: (any FintechSDKBDUICore.FintechBDUIContent)?, onPreviewEvent: @escaping @_Concurrency.MainActor @Sendable (Swift.String, [Swift.String : Swift.String]) -> Swift.Void, onCachedPreviewRenderingOutcome: @escaping @_Concurrency.MainActor @Sendable (FintechSDKBDUICore.FintechBDUIInitialPreviewSelection.RenderingOutcome) -> Swift.Void) -> FintechSDKBDUICore.FintechBDUIInitialPreviewSelection
+}
+@_spi(Internal) public struct FintechBDUIInitialPreviewSelection {
+  @_spi(Internal) public enum RenderingOutcome : Swift.Equatable, Swift.Sendable {
+    @_spi(Internal) case candidateRendered
+    @_spi(Internal) case candidateFailed
+    @_spi(Internal) case lastKnownGoodRendered
+    @_spi(Internal) case lastKnownGoodFailed
+    @_spi(Internal) public static func == (a: FintechSDKBDUICore.FintechBDUIInitialPreviewSelection.RenderingOutcome, b: FintechSDKBDUICore.FintechBDUIInitialPreviewSelection.RenderingOutcome) -> Swift.Bool
+    @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+    @_spi(Internal) public var hashValue: Swift.Int {
+      @_spi(Internal) get
+    }
+  }
+  @_spi(Internal) public enum Source : Swift.Equatable, Swift.Sendable {
+    @_spi(Internal) case candidate
+    @_spi(Internal) case lastKnownGood
+    @_spi(Internal) case native
+    @_spi(Internal) public static func == (a: FintechSDKBDUICore.FintechBDUIInitialPreviewSelection.Source, b: FintechSDKBDUICore.FintechBDUIInitialPreviewSelection.Source) -> Swift.Bool
+    @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+    @_spi(Internal) public var hashValue: Swift.Int {
+      @_spi(Internal) get
+    }
+  }
+  @_spi(Internal) public let engine: any FintechSDKBDUICore.FintechBDUIEngine
+  @_spi(Internal) public let source: FintechSDKBDUICore.FintechBDUIInitialPreviewSelection.Source
+  @_spi(Internal) public init(engine: any FintechSDKBDUICore.FintechBDUIEngine, source: FintechSDKBDUICore.FintechBDUIInitialPreviewSelection.Source)
+}
 public protocol FintechBDUILocalImageProviding {
   func localImage(for url: Foundation.URL) -> UIKit.UIImage?
 }
@@ -333,6 +377,15 @@ public class FintechDivAction : Swift.Codable {
 public protocol FintechDivActionHandler {
   func handle(action: FintechSDKBDUICore.FintechDivAction)
 }
+@_spi(Internal) public struct FintechDivExtensionDescriptor {
+  @_spi(Internal) public let extensionId: Swift.String
+  @_spi(Internal) public let cardId: Swift.String
+  @_spi(Internal) public let params: [Swift.String : Any]
+  @_spi(Internal) public init(extensionId: Swift.String, cardId: Swift.String, params: [Swift.String : Any])
+}
+@_spi(Internal) public protocol FintechDivExtensionDescriptorObserving : AnyObject {
+  @_spi(Internal) func didReceiveExtensionDescriptor(_ descriptor: FintechSDKBDUICore.FintechDivExtensionDescriptor)
+}
 public struct FintechDivFlagsInfo : Swift.Equatable {
   public let useUrlHandlerForVisibilityActions: Swift.Bool
   public let resizesWithContent: Swift.Bool
@@ -373,6 +426,8 @@ extension FintechSDKBDUICore.FintechBDUIFontWeight : Swift.Hashable {}
 extension FintechSDKBDUICore.FintechBDUIFontWeight : Swift.Sendable {}
 @available(*, deprecated, message: "FINSDK-51 Use method with fontAdapter instead")
 extension FintechSDKBDUICore.FintechBDUIFontWeight : Swift.BitwiseCopyable {}
+@_spi(Internal) extension FintechSDKBDUICore.FintechBDUIInitialPreviewSelection.RenderingOutcome : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKBDUICore.FintechBDUIInitialPreviewSelection.Source : Swift.Hashable {}
 extension FintechSDKBDUICore.FintechBDUIThemeKind : Swift.Equatable {}
 extension FintechSDKBDUICore.FintechBDUIThemeKind : Swift.Hashable {}
 extension FintechSDKBDUICore.FintechDivAction.CodingKeys : Swift.Equatable {}

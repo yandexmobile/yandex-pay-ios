@@ -6,6 +6,7 @@ import FintechSDKAnalyticsInterfaces
 import FintechSDKBDUICore
 import FintechSDKCommonEntity
 import FintechSDKCoreUI
+import FintechSDKCoreUtils
 import FintechSDKDivKitWidgetsFeatures
 import FintechSDKNetworkImplementation
 import FintechSDKNetworkInterfaces
@@ -27,10 +28,8 @@ public struct FTUltimateWidgetData {
 }
 public protocol FTUltimateWidgetDelegate : AnyObject {
   func onYandexPayUltimateCheckoutButtonClick(data: FintechSDKUltimateWidget.FTUltimateWidgetData)
-  func onYandexPayHeaderClick()
 }
 extension FintechSDKUltimateWidget.FTUltimateWidgetDelegate {
-  public func onYandexPayHeaderClick()
   public func onYandexPayUltimateCheckoutButtonClick(data: FintechSDKUltimateWidget.FTUltimateWidgetData)
 }
 public struct FTUltimateWidgetModel {

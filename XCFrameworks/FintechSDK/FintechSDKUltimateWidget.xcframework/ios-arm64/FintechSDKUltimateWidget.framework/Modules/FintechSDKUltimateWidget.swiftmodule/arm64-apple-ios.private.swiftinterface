@@ -6,6 +6,7 @@ import FintechSDKAnalyticsInterfaces
 import FintechSDKBDUICore
 import FintechSDKCommonEntity
 @_spi(Internal) import FintechSDKCoreUI
+@_spi(Internal) import FintechSDKCoreUtils
 @_spi(Internal) import FintechSDKDivKitWidgetsFeatures
 import FintechSDKNetworkImplementation
 import FintechSDKNetworkInterfaces
@@ -31,10 +32,13 @@ import _SwiftConcurrencyShims
     @_spi(Internal) get
   }
   @_spi(Internal) public init(model: FintechSDKUltimateWidget.FTUltimateWidgetModel)
+  @_spi(Internal) public init(model: FintechSDKUltimateWidget.FTUltimateWidgetModel, availableWidth: CoreFoundation.CGFloat)
 }
 public struct FTUltimateWidgetFactory {
   @_Concurrency.MainActor public static func createUltimateWidget(presenterViewController: UIKit.UIViewController, model: FintechSDKUltimateWidget.FTUltimateWidgetModel, delegate: (any FintechSDKUltimateWidget.FTUltimateWidgetDelegate)?, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, flexClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, analyticsEventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)? = nil) -> some SwiftUICore.View
   
+  @_spi(Internal) @_Concurrency.MainActor public static func createUltimateWidgetUIView(presentationContextProvider: (any FintechSDKCoreUI.FTPresentationContextProviding)?, model: FintechSDKUltimateWidget.FTUltimateWidgetModel, delegate: (any FintechSDKUltimateWidget.FTUltimateWidgetDelegate)?, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, flexClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, analyticsEventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)? = nil, logger: (any FintechSDKCoreUtils.FTLogger)? = nil, onStateChanged: ((FintechSDKDivKitWidgetsFeatures.FintechWidgetState) -> Swift.Void)? = nil) -> FintechSDKUltimateWidget.FTUltimateWidgetUIView
+  @_spi(Internal) @_Concurrency.MainActor public static func createUltimateWidgetUIView(presentationContextProvider: (any FintechSDKCoreUI.FTPresentationContextProviding)?, model: FintechSDKUltimateWidget.FTUltimateWidgetModel, delegate: (any FintechSDKUltimateWidget.FTUltimateWidgetDelegate)?, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, flexClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, analyticsEventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)? = nil, logger: (any FintechSDKCoreUtils.FTLogger)? = nil, surface: Swift.String, onStateChanged: ((FintechSDKDivKitWidgetsFeatures.FintechWidgetState) -> Swift.Void)? = nil) -> FintechSDKUltimateWidget.FTUltimateWidgetUIView
 }
 public struct FTUltimateWidgetData {
   public let splitMonthCount: Swift.Int
@@ -42,10 +46,8 @@ public struct FTUltimateWidgetData {
 }
 public protocol FTUltimateWidgetDelegate : AnyObject {
   func onYandexPayUltimateCheckoutButtonClick(data: FintechSDKUltimateWidget.FTUltimateWidgetData)
-  func onYandexPayHeaderClick()
 }
 extension FintechSDKUltimateWidget.FTUltimateWidgetDelegate {
-  public func onYandexPayHeaderClick()
   public func onYandexPayUltimateCheckoutButtonClick(data: FintechSDKUltimateWidget.FTUltimateWidgetData)
 }
 public struct FTUltimateWidgetModel {
@@ -153,6 +155,36 @@ extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance : Swift.Equa
 }
 extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance.Background : Swift.Equatable, Swift.Hashable {
 }
+@_spi(Internal) @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class FTUltimateWidgetUIView : UIKit.UIView {
+  @_spi(Internal) @_Concurrency.MainActor final public var model: FintechSDKUltimateWidget.FTUltimateWidgetModel {
+    get
+  }
+  @_spi(Internal) @_Concurrency.MainActor final public var measuredContentHeight: CoreFoundation.CGFloat {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) @_Concurrency.MainActor final public var onStateChanged: ((FintechSDKDivKitWidgetsFeatures.FintechWidgetState) -> Swift.Void)?
+  @_spi(Internal) @objc deinit
+  @_spi(Internal) @_Concurrency.MainActor final public func update(model: FintechSDKUltimateWidget.FTUltimateWidgetModel)
+  @_spi(Internal) @_Concurrency.MainActor final public func update(theme: FintechSDKCommonEntity.FintechSDKTheme)
+  @_spi(Internal) @_Concurrency.MainActor final public func refresh()
+  @_spi(Internal) @_Concurrency.MainActor @objc override final public func layoutSubviews()
+  @_spi(Internal) @_Concurrency.MainActor @objc override final public func didMoveToWindow()
+  @_spi(Internal) @_Concurrency.MainActor @objc override final public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_spi(Internal) @_Concurrency.MainActor @objc override final public var intrinsicContentSize: CoreFoundation.CGSize {
+    @_spi(Internal) @objc get
+  }
+}
+@_spi(Internal) @_Concurrency.MainActor public struct FTUltimateWidgetView : SwiftUI.UIViewRepresentable {
+  @_spi(Internal) @_Concurrency.MainActor public let model: FintechSDKUltimateWidget.FTUltimateWidgetModel
+  @_spi(Internal) @_Concurrency.MainActor public init(model: FintechSDKUltimateWidget.FTUltimateWidgetModel, makeView: @escaping @_Concurrency.MainActor @Sendable () -> FintechSDKUltimateWidget.FTUltimateWidgetUIView)
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public func makeUIView(context: FintechSDKUltimateWidget.FTUltimateWidgetView.Context) -> FintechSDKUltimateWidget.FTUltimateWidgetUIView
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public func updateUIView(_ uiView: FintechSDKUltimateWidget.FTUltimateWidgetUIView, context: FintechSDKUltimateWidget.FTUltimateWidgetView.Context)
+  @_spi(Internal) @available(iOS 16.0, *)
+  @_Concurrency.MainActor @preconcurrency public func sizeThatFits(_ proposal: SwiftUICore.ProposedViewSize, uiView: FintechSDKUltimateWidget.FTUltimateWidgetUIView, context: FintechSDKUltimateWidget.FTUltimateWidgetView.Context) -> CoreFoundation.CGSize?
+  @_spi(Internal) public typealias Body = Swift.Never
+  @_spi(Internal) public typealias Coordinator = Swift.Void
+  @_spi(Internal) public typealias UIViewType = FintechSDKUltimateWidget.FTUltimateWidgetUIView
+}
 extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Style : Swift.Equatable {}
 extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Style : Swift.Hashable {}
 extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Style : Swift.RawRepresentable {}
@@ -166,3 +198,4 @@ extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance.WidgetSize :
 extension FintechSDKUltimateWidget.UltimateWidgetContent : Swift.Equatable {}
 extension FintechSDKUltimateWidget.UltimateWidgetContent : Swift.Hashable {}
 extension FintechSDKUltimateWidget.UltimateWidgetContent : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKUltimateWidget.FTUltimateWidgetView : Swift.Sendable {}

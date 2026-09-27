@@ -9,12 +9,16 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 @_spi(Internal) public struct FTActiveOrderData : Swift.Sendable {
-  @_spi(Internal) public let transactionId: Swift.String
-  @_spi(Internal) public let paymentUrl: Swift.String
+  @_spi(Internal) public let transactionId: Swift.String?
+  @_spi(Internal) public let paymentUrl: Swift.String?
   @_spi(Internal) public let checkoutOrderId: Swift.String?
   @_spi(Internal) public let quickpayId: Swift.String?
   @_spi(Internal) public let status: FintechSDKQuickPaymentEntity.FTOrderStatus
-  @_spi(Internal) public init(transactionId: Swift.String, paymentUrl: Swift.String, checkoutOrderId: Swift.String? = nil, quickpayId: Swift.String? = nil, status: FintechSDKQuickPaymentEntity.FTOrderStatus)
+  @_spi(Internal) public init(transactionId: Swift.String? = nil, paymentUrl: Swift.String? = nil, checkoutOrderId: Swift.String? = nil, quickpayId: Swift.String? = nil, status: FintechSDKQuickPaymentEntity.FTOrderStatus)
+  @_spi(Internal) public init(identifiers: FintechSDKQuickPaymentEntity.FTOrderIdentifiers, status: FintechSDKQuickPaymentEntity.FTOrderStatus)
+  @_spi(Internal) public var identifiers: FintechSDKQuickPaymentEntity.FTOrderIdentifiers {
+    @_spi(Internal) get
+  }
 }
 @_spi(Internal) public struct FTAnalyticsEventData {
   @_spi(Internal) public let name: Swift.String
@@ -42,6 +46,47 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public init(payTickets: [Swift.String], expiresAt: Foundation.Date, signedTtl: Foundation.TimeInterval, qrTemplate: Swift.String? = nil)
   @_spi(Internal) public static func == (a: FintechSDKQuickPaymentEntity.FTOfflineTicketsBatch, b: FintechSDKQuickPaymentEntity.FTOfflineTicketsBatch) -> Swift.Bool
 }
+@_spi(Internal) public struct FTOrderIdentifiers : Swift.Hashable, Swift.Sendable {
+  @_spi(Internal) public let checkoutOrderId: Swift.String?
+  @_spi(Internal) public let paymentUrl: Swift.String?
+  @_spi(Internal) public let quickpayId: Swift.String?
+  @_spi(Internal) public let transactionId: Swift.String?
+  @_spi(Internal) public init(checkoutOrderId: Swift.String? = nil, paymentUrl: Swift.String? = nil, quickpayId: Swift.String? = nil, transactionId: Swift.String? = nil)
+  @_spi(Internal) public var hasIdentifier: Swift.Bool {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public var sessionKey: Swift.String? {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public func isSameOrder(_ other: FintechSDKQuickPaymentEntity.FTOrderIdentifiers) -> Swift.Bool
+  @_spi(Internal) public func belongsToSameSession(_ other: FintechSDKQuickPaymentEntity.FTOrderIdentifiers) -> Swift.Bool
+  @_spi(Internal) public var statusRequestPathSegment: Swift.String? {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public var statusRequestQueryItems: [Foundation.URLQueryItem] {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public var isScanOnly: Swift.Bool {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public func contradicts(_ other: FintechSDKQuickPaymentEntity.FTOrderIdentifiers) -> Swift.Bool
+  @_spi(Internal) public func enriched(with other: FintechSDKQuickPaymentEntity.FTOrderIdentifiers) -> FintechSDKQuickPaymentEntity.FTOrderIdentifiers
+  @_spi(Internal) public static func == (a: FintechSDKQuickPaymentEntity.FTOrderIdentifiers, b: FintechSDKQuickPaymentEntity.FTOrderIdentifiers) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public struct FTOrderIdentityRegistry : Swift.Sendable {
+  @_spi(Internal) public init()
+  @_spi(Internal) public var count: Swift.Int {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public func contains(_ identifiers: FintechSDKQuickPaymentEntity.FTOrderIdentifiers) -> Swift.Bool
+  @_spi(Internal) public mutating func insert(_ identifiers: FintechSDKQuickPaymentEntity.FTOrderIdentifiers)
+  @_spi(Internal) public mutating func enrich(_ order: FintechSDKQuickPaymentEntity.FTOrderIdentifiers, with identifiers: FintechSDKQuickPaymentEntity.FTOrderIdentifiers)
+  @_spi(Internal) public mutating func removeAll()
+}
 @_spi(Internal) public enum FTOrderStatus : Swift.String, Swift.Decodable, Swift.Sendable {
   @_spi(Internal) case new
   @_spi(Internal) case inProcess
@@ -61,10 +106,16 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
 }
 @_spi(Internal) public struct FTOrderStatusInfo : Swift.Decodable, Swift.Sendable {
-  @_spi(Internal) public let transactionId: Swift.String
+  @_spi(Internal) public let transactionId: Swift.String?
+  @_spi(Internal) public let url: Swift.String?
+  @_spi(Internal) public let quickpayId: Swift.String?
+  @_spi(Internal) public let checkoutOrderId: Swift.String?
   @_spi(Internal) public let status: FintechSDKQuickPaymentEntity.FTOrderStatus
   @_spi(Internal) public let isRetryable: Swift.Bool?
-  @_spi(Internal) public init(transactionId: Swift.String, status: FintechSDKQuickPaymentEntity.FTOrderStatus, isRetryable: Swift.Bool?)
+  @_spi(Internal) public init(transactionId: Swift.String? = nil, url: Swift.String? = nil, quickpayId: Swift.String? = nil, checkoutOrderId: Swift.String? = nil, status: FintechSDKQuickPaymentEntity.FTOrderStatus, isRetryable: Swift.Bool?)
+  @_spi(Internal) public var identifiers: FintechSDKQuickPaymentEntity.FTOrderIdentifiers {
+    @_spi(Internal) get
+  }
   @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
 }
 @_spi(Internal) public struct FTOrdersPollingResponse : Swift.Decodable, Swift.Sendable {
@@ -73,12 +124,15 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
 }
 @_spi(Internal) public struct FTOrderInfo : Swift.Decodable, Swift.Sendable {
-  @_spi(Internal) public let url: Swift.String
-  @_spi(Internal) public let transactionId: Swift.String
+  @_spi(Internal) public let url: Swift.String?
+  @_spi(Internal) public let transactionId: Swift.String?
   @_spi(Internal) public let checkoutOrderId: Swift.String?
   @_spi(Internal) public let quickpayId: Swift.String?
   @_spi(Internal) public let status: FintechSDKQuickPaymentEntity.FTOrderStatus
-  @_spi(Internal) public init(url: Swift.String, transactionId: Swift.String, checkoutOrderId: Swift.String? = nil, quickpayId: Swift.String? = nil, status: FintechSDKQuickPaymentEntity.FTOrderStatus)
+  @_spi(Internal) public init(url: Swift.String? = nil, transactionId: Swift.String? = nil, checkoutOrderId: Swift.String? = nil, quickpayId: Swift.String? = nil, status: FintechSDKQuickPaymentEntity.FTOrderStatus)
+  @_spi(Internal) public var identifiers: FintechSDKQuickPaymentEntity.FTOrderIdentifiers {
+    @_spi(Internal) get
+  }
   @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
 }
 @_spi(Internal) public struct FTPollingPaymentResult : Swift.Sendable {
@@ -92,8 +146,8 @@ import _SwiftConcurrencyShims
   @_spi(Internal) case otherError(any Swift.Error)
 }
 @_spi(Internal) public enum FTQPBDUIQuery : Swift.Equatable {
-  @_spi(Internal) case status(transactionId: Swift.String, paymentUrl: Swift.String, checkoutOrderId: Swift.String?, quickpayId: Swift.String?)
-  @_spi(Internal) case statusYandex(transactionId: Swift.String, paymentUrl: Swift.String, checkoutOrderId: Swift.String?, quickpayId: Swift.String?)
+  @_spi(Internal) case status(transactionId: Swift.String?, paymentUrl: Swift.String?, checkoutOrderId: Swift.String?, quickpayId: Swift.String?)
+  @_spi(Internal) case statusYandex(transactionId: Swift.String?, paymentUrl: Swift.String?, checkoutOrderId: Swift.String?, quickpayId: Swift.String?)
   @_spi(Internal) case faq
   @_spi(Internal) case onboardingStories
   @_spi(Internal) case yandexQr
@@ -114,6 +168,16 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public static let currentQuickpayId: Swift.String
   @_spi(Internal) public static let currentPaymentUrl: Swift.String
   @_spi(Internal) public static let currentTransactionStatus: Swift.String
+}
+@_spi(Internal) public enum FTQPPaymentMethodsState : Swift.String, Swift.Decodable, Swift.Sendable {
+  @_spi(Internal) case available
+  @_spi(Internal) case noPaymentMethods
+  @_spi(Internal) case fetchFailed
+  @_spi(Internal) public init?(rawValue: Swift.String)
+  @_spi(Internal) public typealias RawValue = Swift.String
+  @_spi(Internal) public var rawValue: Swift.String {
+    @_spi(Internal) get
+  }
 }
 @_spi(Internal) public struct FTQPStoredOfflineTicketsBatch : Swift.Codable, Swift.Sendable, Swift.Equatable {
   @_spi(Internal) public let payTickets: [Swift.String]
@@ -148,3 +212,6 @@ extension FintechSDKQuickPaymentEntity.FTQuickPayResult : Swift.Equatable {
 @_spi(Internal) extension FintechSDKQuickPaymentEntity.FTOrderStatus : Swift.Equatable {}
 @_spi(Internal) extension FintechSDKQuickPaymentEntity.FTOrderStatus : Swift.Hashable {}
 @_spi(Internal) extension FintechSDKQuickPaymentEntity.FTOrderStatus : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKQuickPaymentEntity.FTQPPaymentMethodsState : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKQuickPaymentEntity.FTQPPaymentMethodsState : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKQuickPaymentEntity.FTQPPaymentMethodsState : Swift.RawRepresentable {}

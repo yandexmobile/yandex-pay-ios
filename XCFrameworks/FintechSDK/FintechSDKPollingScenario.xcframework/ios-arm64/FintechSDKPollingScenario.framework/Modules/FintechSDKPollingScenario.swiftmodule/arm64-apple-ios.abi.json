@@ -389,12 +389,40 @@
           {
             "kind": "Function",
             "name": "presentPollingScreen",
-            "printedName": "presentPollingScreen(entryPoint:preview:)",
+            "printedName": "presentPollingScreen(transactionId:sessionKey:entryPoint:preview:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -410,8 +438,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:25FintechSDKPollingScenario23FTPollingScreenUseCasesP014presentPollingE010entryPoint7previewy0A11SDKBDUICore0a9BDUIEntryK0V_AG0A11BDUIContent_ptYaF",
-            "mangledName": "$s25FintechSDKPollingScenario23FTPollingScreenUseCasesP014presentPollingE010entryPoint7previewy0A11SDKBDUICore0a9BDUIEntryK0V_AG0A11BDUIContent_ptYaF",
+            "usr": "s:25FintechSDKPollingScenario23FTPollingScreenUseCasesP014presentPollingE013transactionId10sessionKey10entryPoint7previewySSSg_AI0A11SDKBDUICore0a9BDUIEntryO0VAJ0A11BDUIContent_ptYaF",
+            "mangledName": "$s25FintechSDKPollingScenario23FTPollingScreenUseCasesP014presentPollingE013transactionId10sessionKey10entryPoint7previewySSSg_AI0A11SDKBDUICore0a9BDUIEntryO0VAJ0A11BDUIContent_ptYaF",
             "moduleName": "FintechSDKPollingScenario",
             "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKPollingScenario.FTPollingScreenUseCases>",
             "sugared_genericSig": "<Self where Self : FintechSDKPollingScenario.FTPollingScreenUseCases>",
@@ -1320,7 +1348,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(modalPresenting:bduiAdapter:onScreenDeinit:configureModal:)",
+            "printedName": "init(modalPresenting:bduiAdapter:onScreenDeinit:onScreenPresented:configureModal:dismissalPredicate:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1369,6 +1397,41 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
+                "printedName": "((Swift.String?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.String?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
                 "printedName": "((UIKit.UINavigationController) -> ())?",
                 "children": [
                   {
@@ -1392,11 +1455,31 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(UIKit.UINavigationController) -> Swift.Bool",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UINavigationController",
+                    "printedName": "UIKit.UINavigationController",
+                    "usr": "c:objc(cs)UINavigationController"
+                  }
+                ],
+                "hasDefaultArg": true
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:25FintechSDKPollingScenario21FTPollingScreenRouterC15modalPresenting11bduiAdapter02onE6Deinit14configureModalAC0A9SDKCoreUI07FTModalH0_p_0A11SDKBDUICore0A11BDUIAdapter_pyyYbcSgySo22UINavigationControllerCScMYccSgtcfc",
-            "mangledName": "$s25FintechSDKPollingScenario21FTPollingScreenRouterC15modalPresenting11bduiAdapter02onE6Deinit14configureModalAC0A9SDKCoreUI07FTModalH0_p_0A11SDKBDUICore0A11BDUIAdapter_pyyYbcSgySo22UINavigationControllerCScMYccSgtcfc",
+            "usr": "s:25FintechSDKPollingScenario21FTPollingScreenRouterC15modalPresenting11bduiAdapter02onE6Deinit0kE9Presented14configureModal18dismissalPredicateAC0A9SDKCoreUI07FTModalH0_p_0A11SDKBDUICore0A11BDUIAdapter_pyyYbcSgySSSgYbcSgySo22UINavigationControllerCScMYccSgSbARScMYcctcfc",
+            "mangledName": "$s25FintechSDKPollingScenario21FTPollingScreenRouterC15modalPresenting11bduiAdapter02onE6Deinit0kE9Presented14configureModal18dismissalPredicateAC0A9SDKCoreUI07FTModalH0_p_0A11SDKBDUICore0A11BDUIAdapter_pyyYbcSgySSSgYbcSgySo22UINavigationControllerCScMYccSgSbARScMYcctcfc",
             "moduleName": "FintechSDKPollingScenario",
             "declAttributes": [
               "Custom",
@@ -1410,12 +1493,40 @@
           {
             "kind": "Function",
             "name": "presentPollingScreen",
-            "printedName": "presentPollingScreen(entryPoint:preview:)",
+            "printedName": "presentPollingScreen(transactionId:sessionKey:entryPoint:preview:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -1431,8 +1542,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:25FintechSDKPollingScenario21FTPollingScreenRouterC014presentPollingE010entryPoint7previewy0A11SDKBDUICore0a9BDUIEntryJ0V_AG0A11BDUIContent_ptYaF",
-            "mangledName": "$s25FintechSDKPollingScenario21FTPollingScreenRouterC014presentPollingE010entryPoint7previewy0A11SDKBDUICore0a9BDUIEntryJ0V_AG0A11BDUIContent_ptYaF",
+            "usr": "s:25FintechSDKPollingScenario21FTPollingScreenRouterC014presentPollingE013transactionId10sessionKey10entryPoint7previewySSSg_AI0A11SDKBDUICore0a9BDUIEntryN0VAJ0A11BDUIContent_ptYaF",
+            "mangledName": "$s25FintechSDKPollingScenario21FTPollingScreenRouterC014presentPollingE013transactionId10sessionKey10entryPoint7previewySSSg_AI0A11SDKBDUICore0a9BDUIEntryN0VAJ0A11BDUIContent_ptYaF",
             "moduleName": "FintechSDKPollingScenario",
             "declAttributes": [
               "Custom",
@@ -1640,32 +1751,39 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/6\/4688764867\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-094d3ef6-9692-4a79-886a-be284e9b2745\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Polling\/DataLayer\/Network\/RequestMiddlewares\/FTPollingMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Polling\/DataLayer\/Network\/RequestMiddlewares\/FTPollingMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1167,
       "length": 16,
       "value": "\"transaction_id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/6\/4688764867\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-094d3ef6-9692-4a79-886a-be284e9b2745\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Polling\/DataLayer\/Network\/RequestMiddlewares\/FTPollingMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Polling\/DataLayer\/Network\/RequestMiddlewares\/FTPollingMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1210,
       "length": 13,
       "value": "\"payment_url\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/6\/4688764867\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-094d3ef6-9692-4a79-886a-be284e9b2745\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Polling\/DataLayer\/Network\/RequestMiddlewares\/FTPollingMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Polling\/DataLayer\/Network\/RequestMiddlewares\/FTPollingMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1255,
       "length": 19,
       "value": "\"checkout_order_id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/6\/4688764867\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-094d3ef6-9692-4a79-886a-be284e9b2745\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Polling\/DataLayer\/Network\/RequestMiddlewares\/FTPollingMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Polling\/DataLayer\/Network\/RequestMiddlewares\/FTPollingMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1301,
       "length": 13,
       "value": "\"quickpay_id\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Scenarios\/Polling\/UI\/Navigation\/FTPollingScreenRouter.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1056,
+      "length": 5,
+      "value": "false"
     }
   ]
 }

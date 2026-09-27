@@ -13,6 +13,30 @@
       },
       {
         "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKUltimateWidget"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
+        "declKind": "Import",
+        "moduleName": "FintechSDKUltimateWidget",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKUltimateWidget"
+      },
+      {
+        "kind": "Import",
         "name": "FintechSDKBDUICore",
         "printedName": "FintechSDKBDUICore",
         "declKind": "Import",
@@ -443,6 +467,42 @@
               "Internal"
             ],
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(model:availableWidth:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTUltimateWidgetEndpoint",
+                "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetEndpoint",
+                "usr": "s:24FintechSDKUltimateWidget010FTUltimateC8EndpointV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTUltimateWidgetModel",
+                "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetModel",
+                "usr": "s:24FintechSDKUltimateWidget010FTUltimateC5ModelV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGFloat",
+                "printedName": "CoreGraphics.CGFloat",
+                "usr": "s:14CoreFoundation7CGFloatV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:24FintechSDKUltimateWidget010FTUltimateC8EndpointV5model14availableWidthAcA0dC5ModelV_14CoreFoundation7CGFloatVtcfc",
+            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC8EndpointV5model14availableWidthAcA0dC5ModelV_12CoreGraphics7CGFloatVtcfc",
+            "moduleName": "FintechSDKUltimateWidget",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
           }
         ],
         "declKind": "Struct",
@@ -545,6 +605,26 @@
       },
       {
         "kind": "Import",
+        "name": "FintechSDKCoreUI",
+        "printedName": "FintechSDKCoreUI",
+        "declKind": "Import",
+        "moduleName": "FintechSDKUltimateWidget",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
+        "declKind": "Import",
+        "moduleName": "FintechSDKUltimateWidget",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "FintechSDKDivKitWidgetsFeatures",
         "printedName": "FintechSDKDivKitWidgetsFeatures",
         "declKind": "Import",
@@ -638,6 +718,272 @@
             "declAttributes": [
               "AccessControl",
               "Custom"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "createUltimateWidgetUIView",
+            "printedName": "createUltimateWidgetUIView(presentationContextProvider:model:delegate:bduiAdapter:flexClient:analyticsEventReporter:logger:onStateChanged:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTUltimateWidgetUIView",
+                "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetUIView",
+                "usr": "c:@M@FintechSDKUltimateWidget@objc(cs)FTUltimateWidgetUIView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKCoreUI.FTPresentationContextProviding)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTPresentationContextProviding",
+                    "printedName": "any FintechSDKCoreUI.FTPresentationContextProviding",
+                    "usr": "s:16FintechSDKCoreUI30FTPresentationContextProvidingP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTUltimateWidgetModel",
+                "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetModel",
+                "usr": "s:24FintechSDKUltimateWidget010FTUltimateC5ModelV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKUltimateWidget.FTUltimateWidgetDelegate)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTUltimateWidgetDelegate",
+                    "printedName": "any FintechSDKUltimateWidget.FTUltimateWidgetDelegate",
+                    "usr": "s:24FintechSDKUltimateWidget010FTUltimateC8DelegateP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechBDUIAdapter",
+                "printedName": "any FintechSDKBDUICore.FintechBDUIAdapter",
+                "usr": "s:18FintechSDKBDUICore0A11BDUIAdapterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkClient",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkClient",
+                "usr": "s:27FintechSDKNetworkInterfaces0A13NetworkClientP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechAnalyticsEventReporter",
+                    "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter",
+                    "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKCoreUtils.FTLogger)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTLogger",
+                    "printedName": "any FintechSDKCoreUtils.FTLogger",
+                    "usr": "s:19FintechSDKCoreUtils8FTLoggerP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((FintechSDKDivKitWidgetsFeatures.FintechWidgetState) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(FintechSDKDivKitWidgetsFeatures.FintechWidgetState) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FintechWidgetState",
+                        "printedName": "FintechSDKDivKitWidgetsFeatures.FintechWidgetState",
+                        "usr": "s:31FintechSDKDivKitWidgetsFeatures0A11WidgetStateO"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKUltimateWidget010FTUltimateC7FactoryV014createUltimateC6UIView27presentationContextProvider5model8delegate11bduiAdapter10flexClient22analyticsEventReporter6logger14onStateChangedAA0dcH0C0A9SDKCoreUI014FTPresentationJ9Providing_pSg_AA0dC5ModelVAA0dC8Delegate_pSg0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkQ0_p0A22SDKAnalyticsInterfaces0a9AnalyticssT0_pSg0aY5Utils8FTLogger_pSgy0A24SDKDivKitWidgetsFeatures0acW0OcSgtFZ",
+            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC7FactoryV014createUltimateC6UIView27presentationContextProvider5model8delegate11bduiAdapter10flexClient22analyticsEventReporter6logger14onStateChangedAA0dcH0C0A9SDKCoreUI014FTPresentationJ9Providing_pSg_AA0dC5ModelVAA0dC8Delegate_pSg0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkQ0_p0A22SDKAnalyticsInterfaces0a9AnalyticssT0_pSg0aY5Utils8FTLogger_pSgy0A24SDKDivKitWidgetsFeatures0acW0OcSgtFZ",
+            "moduleName": "FintechSDKUltimateWidget",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "Custom",
+              "SPIAccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "createUltimateWidgetUIView",
+            "printedName": "createUltimateWidgetUIView(presentationContextProvider:model:delegate:bduiAdapter:flexClient:analyticsEventReporter:logger:surface:onStateChanged:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTUltimateWidgetUIView",
+                "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetUIView",
+                "usr": "c:@M@FintechSDKUltimateWidget@objc(cs)FTUltimateWidgetUIView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKCoreUI.FTPresentationContextProviding)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTPresentationContextProviding",
+                    "printedName": "any FintechSDKCoreUI.FTPresentationContextProviding",
+                    "usr": "s:16FintechSDKCoreUI30FTPresentationContextProvidingP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTUltimateWidgetModel",
+                "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetModel",
+                "usr": "s:24FintechSDKUltimateWidget010FTUltimateC5ModelV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKUltimateWidget.FTUltimateWidgetDelegate)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTUltimateWidgetDelegate",
+                    "printedName": "any FintechSDKUltimateWidget.FTUltimateWidgetDelegate",
+                    "usr": "s:24FintechSDKUltimateWidget010FTUltimateC8DelegateP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechBDUIAdapter",
+                "printedName": "any FintechSDKBDUICore.FintechBDUIAdapter",
+                "usr": "s:18FintechSDKBDUICore0A11BDUIAdapterP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkClient",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkClient",
+                "usr": "s:27FintechSDKNetworkInterfaces0A13NetworkClientP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechAnalyticsEventReporter",
+                    "printedName": "any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter",
+                    "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKCoreUtils.FTLogger)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTLogger",
+                    "printedName": "any FintechSDKCoreUtils.FTLogger",
+                    "usr": "s:19FintechSDKCoreUtils8FTLoggerP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((FintechSDKDivKitWidgetsFeatures.FintechWidgetState) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(FintechSDKDivKitWidgetsFeatures.FintechWidgetState) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FintechWidgetState",
+                        "printedName": "FintechSDKDivKitWidgetsFeatures.FintechWidgetState",
+                        "usr": "s:31FintechSDKDivKitWidgetsFeatures0A11WidgetStateO"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKUltimateWidget010FTUltimateC7FactoryV014createUltimateC6UIView27presentationContextProvider5model8delegate11bduiAdapter10flexClient22analyticsEventReporter6logger7surface14onStateChangedAA0dcH0C0A9SDKCoreUI014FTPresentationJ9Providing_pSg_AA0dC5ModelVAA0dC8Delegate_pSg0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkQ0_p0A22SDKAnalyticsInterfaces0a9AnalyticssT0_pSg0aZ5Utils8FTLogger_pSgSSy0A24SDKDivKitWidgetsFeatures0acX0OcSgtFZ",
+            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC7FactoryV014createUltimateC6UIView27presentationContextProvider5model8delegate11bduiAdapter10flexClient22analyticsEventReporter6logger7surface14onStateChangedAA0dcH0C0A9SDKCoreUI014FTPresentationJ9Providing_pSg_AA0dC5ModelVAA0dC8Delegate_pSg0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkQ0_p0A22SDKAnalyticsInterfaces0a9AnalyticssT0_pSg0aZ5Utils8FTLogger_pSgSSy0A24SDKDivKitWidgetsFeatures0acX0OcSgtFZ",
+            "moduleName": "FintechSDKUltimateWidget",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "Custom",
+              "SPIAccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
             ],
             "funcSelfKind": "NonMutating"
           }
@@ -804,47 +1150,6 @@
             "sugared_genericSig": "<Self where Self : FintechSDKUltimateWidget.FTUltimateWidgetDelegate>",
             "protocolReq": true,
             "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "onYandexPayHeaderClick",
-            "printedName": "onYandexPayHeaderClick()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:24FintechSDKUltimateWidget010FTUltimateC8DelegateP22onYandexPayHeaderClickyyF",
-            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC8DelegateP22onYandexPayHeaderClickyyF",
-            "moduleName": "FintechSDKUltimateWidget",
-            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKUltimateWidget.FTUltimateWidgetDelegate>",
-            "sugared_genericSig": "<Self where Self : FintechSDKUltimateWidget.FTUltimateWidgetDelegate>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "onYandexPayHeaderClick",
-            "printedName": "onYandexPayHeaderClick()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:24FintechSDKUltimateWidget010FTUltimateC8DelegatePAAE22onYandexPayHeaderClickyyF",
-            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC8DelegatePAAE22onYandexPayHeaderClickyyF",
-            "moduleName": "FintechSDKUltimateWidget",
-            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKUltimateWidget.FTUltimateWidgetDelegate>",
-            "sugared_genericSig": "<Self where Self : FintechSDKUltimateWidget.FTUltimateWidgetDelegate>",
-            "isFromExtension": true,
             "funcSelfKind": "NonMutating"
           },
           {
@@ -3620,52 +3925,1399 @@
         "declAttributes": [
           "SPIAccessControl"
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKUltimateWidget"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKBDUICore",
+        "printedName": "FintechSDKBDUICore",
+        "declKind": "Import",
+        "moduleName": "FintechSDKUltimateWidget"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCommonEntity",
+        "printedName": "FintechSDKCommonEntity",
+        "declKind": "Import",
+        "moduleName": "FintechSDKUltimateWidget"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKUltimateWidget"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "FintechSDKUltimateWidget"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "FintechSDKUltimateWidget"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
+        "declKind": "Import",
+        "moduleName": "FintechSDKUltimateWidget",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUI",
+        "printedName": "FintechSDKCoreUI",
+        "declKind": "Import",
+        "moduleName": "FintechSDKUltimateWidget",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKDivKitWidgetsFeatures",
+        "printedName": "FintechSDKDivKitWidgetsFeatures",
+        "declKind": "Import",
+        "moduleName": "FintechSDKUltimateWidget",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTUltimateWidgetUIView",
+        "printedName": "FTUltimateWidgetUIView",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "model",
+            "printedName": "model",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTUltimateWidgetModel",
+                "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetModel",
+                "usr": "s:24FintechSDKUltimateWidget010FTUltimateC5ModelV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:24FintechSDKUltimateWidget010FTUltimateC6UIViewC5modelAA0dC5ModelVvp",
+            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC6UIViewC5modelAA0dC5ModelVvp",
+            "moduleName": "FintechSDKUltimateWidget",
+            "declAttributes": [
+              "Final",
+              "Custom",
+              "HasStorage",
+              "SetterAccess",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTUltimateWidgetModel",
+                    "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetModel",
+                    "usr": "s:24FintechSDKUltimateWidget010FTUltimateC5ModelV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:24FintechSDKUltimateWidget010FTUltimateC6UIViewC5modelAA0dC5ModelVvg",
+                "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC6UIViewC5modelAA0dC5ModelVvg",
+                "moduleName": "FintechSDKUltimateWidget",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "measuredContentHeight",
+            "printedName": "measuredContentHeight",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGFloat",
+                "printedName": "CoreGraphics.CGFloat",
+                "usr": "s:14CoreFoundation7CGFloatV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:24FintechSDKUltimateWidget010FTUltimateC6UIViewC21measuredContentHeight14CoreFoundation7CGFloatVvp",
+            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC6UIViewC21measuredContentHeight12CoreGraphics7CGFloatVvp",
+            "moduleName": "FintechSDKUltimateWidget",
+            "declAttributes": [
+              "Final",
+              "Custom",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:24FintechSDKUltimateWidget010FTUltimateC6UIViewC21measuredContentHeight14CoreFoundation7CGFloatVvg",
+                "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC6UIViewC21measuredContentHeight12CoreGraphics7CGFloatVvg",
+                "moduleName": "FintechSDKUltimateWidget",
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "onStateChanged",
+            "printedName": "onStateChanged",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((FintechSDKDivKitWidgetsFeatures.FintechWidgetState) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(FintechSDKDivKitWidgetsFeatures.FintechWidgetState) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FintechWidgetState",
+                        "printedName": "FintechSDKDivKitWidgetsFeatures.FintechWidgetState",
+                        "usr": "s:31FintechSDKDivKitWidgetsFeatures0A11WidgetStateO"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:24FintechSDKUltimateWidget010FTUltimateC6UIViewC14onStateChangedy0A24SDKDivKitWidgetsFeatures0acG0OcSgvp",
+            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC6UIViewC14onStateChangedy0A24SDKDivKitWidgetsFeatures0acG0OcSgvp",
+            "moduleName": "FintechSDKUltimateWidget",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "Custom",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((FintechSDKDivKitWidgetsFeatures.FintechWidgetState) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(FintechSDKDivKitWidgetsFeatures.FintechWidgetState) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "FintechWidgetState",
+                            "printedName": "FintechSDKDivKitWidgetsFeatures.FintechWidgetState",
+                            "usr": "s:31FintechSDKDivKitWidgetsFeatures0A11WidgetStateO"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:24FintechSDKUltimateWidget010FTUltimateC6UIViewC14onStateChangedy0A24SDKDivKitWidgetsFeatures0acG0OcSgvg",
+                "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC6UIViewC14onStateChangedy0A24SDKDivKitWidgetsFeatures0acG0OcSgvg",
+                "moduleName": "FintechSDKUltimateWidget",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((FintechSDKDivKitWidgetsFeatures.FintechWidgetState) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(FintechSDKDivKitWidgetsFeatures.FintechWidgetState) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "FintechWidgetState",
+                            "printedName": "FintechSDKDivKitWidgetsFeatures.FintechWidgetState",
+                            "usr": "s:31FintechSDKDivKitWidgetsFeatures0A11WidgetStateO"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:24FintechSDKUltimateWidget010FTUltimateC6UIViewC14onStateChangedy0A24SDKDivKitWidgetsFeatures0acG0OcSgvs",
+                "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC6UIViewC14onStateChangedy0A24SDKDivKitWidgetsFeatures0acG0OcSgvs",
+                "moduleName": "FintechSDKUltimateWidget",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:24FintechSDKUltimateWidget010FTUltimateC6UIViewC14onStateChangedy0A24SDKDivKitWidgetsFeatures0acG0OcSgvM",
+                "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC6UIViewC14onStateChangedy0A24SDKDivKitWidgetsFeatures0acG0OcSgvM",
+                "moduleName": "FintechSDKUltimateWidget",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "update",
+            "printedName": "update(model:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTUltimateWidgetModel",
+                "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetModel",
+                "usr": "s:24FintechSDKUltimateWidget010FTUltimateC5ModelV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKUltimateWidget010FTUltimateC6UIViewC6update5modelyAA0dC5ModelV_tF",
+            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC6UIViewC6update5modelyAA0dC5ModelV_tF",
+            "moduleName": "FintechSDKUltimateWidget",
+            "declAttributes": [
+              "Custom",
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "update",
+            "printedName": "update(theme:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechSDKTheme",
+                "printedName": "FintechSDKCommonEntity.FintechSDKTheme",
+                "usr": "s:22FintechSDKCommonEntity0A8SDKThemeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKUltimateWidget010FTUltimateC6UIViewC6update5themey0A15SDKCommonEntity0A8SDKThemeO_tF",
+            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC6UIViewC6update5themey0A15SDKCommonEntity0A8SDKThemeO_tF",
+            "moduleName": "FintechSDKUltimateWidget",
+            "declAttributes": [
+              "Custom",
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "refresh",
+            "printedName": "refresh()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKUltimateWidget010FTUltimateC6UIViewC7refreshyyF",
+            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC6UIViewC7refreshyyF",
+            "moduleName": "FintechSDKUltimateWidget",
+            "declAttributes": [
+              "Custom",
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "layoutSubviews",
+            "printedName": "layoutSubviews()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@FintechSDKUltimateWidget@objc(cs)FTUltimateWidgetUIView(im)layoutSubviews",
+            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC6UIViewC14layoutSubviewsyyF",
+            "moduleName": "FintechSDKUltimateWidget",
+            "overriding": true,
+            "objc_name": "layoutSubviews",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didMoveToWindow",
+            "printedName": "didMoveToWindow()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@FintechSDKUltimateWidget@objc(cs)FTUltimateWidgetUIView(im)didMoveToWindow",
+            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC6UIViewC15didMoveToWindowyyF",
+            "moduleName": "FintechSDKUltimateWidget",
+            "overriding": true,
+            "objc_name": "didMoveToWindow",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "traitCollectionDidChange",
+            "printedName": "traitCollectionDidChange(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UITraitCollection?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UITraitCollection",
+                    "printedName": "UIKit.UITraitCollection",
+                    "usr": "c:objc(cs)UITraitCollection"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@FintechSDKUltimateWidget@objc(cs)FTUltimateWidgetUIView(im)traitCollectionDidChange:",
+            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC6UIViewC24traitCollectionDidChangeyySo07UITraitG0CSgF",
+            "moduleName": "FintechSDKUltimateWidget",
+            "overriding": true,
+            "objc_name": "traitCollectionDidChange:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "intrinsicContentSize",
+            "printedName": "intrinsicContentSize",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGSize",
+                "printedName": "CoreFoundation.CGSize",
+                "usr": "c:@S@CGSize"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@FintechSDKUltimateWidget@objc(cs)FTUltimateWidgetUIView(py)intrinsicContentSize",
+            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC6UIViewC20intrinsicContentSizeSo6CGSizeVvp",
+            "moduleName": "FintechSDKUltimateWidget",
+            "overriding": true,
+            "objc_name": "intrinsicContentSize",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGSize",
+                    "printedName": "CoreFoundation.CGSize",
+                    "usr": "c:@S@CGSize"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@FintechSDKUltimateWidget@objc(cs)FTUltimateWidgetUIView(im)intrinsicContentSize",
+                "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC6UIViewC20intrinsicContentSizeSo6CGSizeVvg",
+                "moduleName": "FintechSDKUltimateWidget",
+                "overriding": true,
+                "objc_name": "intrinsicContentSize",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(frame:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTUltimateWidgetUIView",
+                "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetUIView",
+                "usr": "c:@M@FintechSDKUltimateWidget@objc(cs)FTUltimateWidgetUIView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGRect",
+                "printedName": "CoreFoundation.CGRect",
+                "usr": "c:@S@CGRect"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@FintechSDKUltimateWidget@objc(cs)FTUltimateWidgetUIView(im)initWithFrame:",
+            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC6UIViewC5frameACSo6CGRectV_tcfc",
+            "moduleName": "FintechSDKUltimateWidget",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithFrame:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@FintechSDKUltimateWidget@objc(cs)FTUltimateWidgetUIView",
+        "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC6UIViewC",
+        "moduleName": "FintechSDKUltimateWidget",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "Custom",
+          "SPIAccessControl",
+          "ObjC"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "superclassUsr": "c:objc(cs)UIView",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "UIKit.UIView",
+          "UIKit.UIResponder",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "__DefaultCustomPlaygroundQuickLookable",
+            "printedName": "__DefaultCustomPlaygroundQuickLookable",
+            "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
+            "mangledName": "$ss38__DefaultCustomPlaygroundQuickLookableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "FintechSDKUltimateWidget"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTUltimateWidgetView",
+        "printedName": "FTUltimateWidgetView",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "model",
+            "printedName": "model",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTUltimateWidgetModel",
+                "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetModel",
+                "usr": "s:24FintechSDKUltimateWidget010FTUltimateC5ModelV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:24FintechSDKUltimateWidget010FTUltimateC4ViewV5modelAA0dC5ModelVvp",
+            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC4ViewV5modelAA0dC5ModelVvp",
+            "moduleName": "FintechSDKUltimateWidget",
+            "declAttributes": [
+              "Custom",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTUltimateWidgetModel",
+                    "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetModel",
+                    "usr": "s:24FintechSDKUltimateWidget010FTUltimateC5ModelV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:24FintechSDKUltimateWidget010FTUltimateC4ViewV5modelAA0dC5ModelVvg",
+                "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC4ViewV5modelAA0dC5ModelVvg",
+                "moduleName": "FintechSDKUltimateWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(model:makeView:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTUltimateWidgetView",
+                "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetView",
+                "usr": "s:24FintechSDKUltimateWidget010FTUltimateC4ViewV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTUltimateWidgetModel",
+                "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetModel",
+                "usr": "s:24FintechSDKUltimateWidget010FTUltimateC5ModelV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> FintechSDKUltimateWidget.FTUltimateWidgetUIView",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTUltimateWidgetUIView",
+                    "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetUIView",
+                    "usr": "c:@M@FintechSDKUltimateWidget@objc(cs)FTUltimateWidgetUIView"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:24FintechSDKUltimateWidget010FTUltimateC4ViewV5model04makeE0AcA0dC5ModelV_AA0dC6UIViewCyYbScMYcctcfc",
+            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC4ViewV5model04makeE0AcA0dC5ModelV_AA0dC6UIViewCyYbScMYcctcfc",
+            "moduleName": "FintechSDKUltimateWidget",
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "makeUIView",
+            "printedName": "makeUIView(context:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTUltimateWidgetUIView",
+                "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetUIView",
+                "usr": "c:@M@FintechSDKUltimateWidget@objc(cs)FTUltimateWidgetUIView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewRepresentableContext",
+                "printedName": "SwiftUI.UIViewRepresentableContext<FintechSDKUltimateWidget.FTUltimateWidgetView>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTUltimateWidgetView",
+                    "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetView",
+                    "usr": "s:24FintechSDKUltimateWidget010FTUltimateC4ViewV"
+                  }
+                ],
+                "usr": "s:7SwiftUI26UIViewRepresentableContextV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKUltimateWidget010FTUltimateC4ViewV10makeUIView7contextAA0dcG0C7SwiftUI0G20RepresentableContextVyACG_tF",
+            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC4ViewV10makeUIView7contextAA0dcG0C7SwiftUI0G20RepresentableContextVyACG_tF",
+            "moduleName": "FintechSDKUltimateWidget",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "updateUIView",
+            "printedName": "updateUIView(_:context:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTUltimateWidgetUIView",
+                "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetUIView",
+                "usr": "c:@M@FintechSDKUltimateWidget@objc(cs)FTUltimateWidgetUIView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewRepresentableContext",
+                "printedName": "SwiftUI.UIViewRepresentableContext<FintechSDKUltimateWidget.FTUltimateWidgetView>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTUltimateWidgetView",
+                    "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetView",
+                    "usr": "s:24FintechSDKUltimateWidget010FTUltimateC4ViewV"
+                  }
+                ],
+                "usr": "s:7SwiftUI26UIViewRepresentableContextV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKUltimateWidget010FTUltimateC4ViewV12updateUIView_7contextyAA0dcG0C_7SwiftUI0G20RepresentableContextVyACGtF",
+            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC4ViewV12updateUIView_7contextyAA0dcG0C_7SwiftUI0G20RepresentableContextVyACGtF",
+            "moduleName": "FintechSDKUltimateWidget",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sizeThatFits",
+            "printedName": "sizeThatFits(_:uiView:context:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreFoundation.CGSize?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGSize",
+                    "printedName": "CoreFoundation.CGSize",
+                    "usr": "c:@S@CGSize"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProposedViewSize",
+                "printedName": "SwiftUI.ProposedViewSize",
+                "usr": "s:7SwiftUI16ProposedViewSizeV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTUltimateWidgetUIView",
+                "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetUIView",
+                "usr": "c:@M@FintechSDKUltimateWidget@objc(cs)FTUltimateWidgetUIView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewRepresentableContext",
+                "printedName": "SwiftUI.UIViewRepresentableContext<FintechSDKUltimateWidget.FTUltimateWidgetView>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTUltimateWidgetView",
+                    "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetView",
+                    "usr": "s:24FintechSDKUltimateWidget010FTUltimateC4ViewV"
+                  }
+                ],
+                "usr": "s:7SwiftUI26UIViewRepresentableContextV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKUltimateWidget010FTUltimateC4ViewV12sizeThatFits_02uiE07contextSo6CGSizeVSg7SwiftUI08ProposedE4SizeV_AA0dC6UIViewCAJ0P20RepresentableContextVyACGtF",
+            "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC4ViewV12sizeThatFits_02uiE07contextSo6CGSizeVSg7SwiftUI08ProposedE4SizeV_AA0dC6UIViewCAJ0P20RepresentableContextVyACGtF",
+            "moduleName": "FintechSDKUltimateWidget",
+            "intro_iOS": "16.0",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "Available"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:24FintechSDKUltimateWidget010FTUltimateC4ViewV",
+        "mangledName": "$s24FintechSDKUltimateWidget010FTUltimateC4ViewV",
+        "moduleName": "FintechSDKUltimateWidget",
+        "declAttributes": [
+          "AccessControl",
+          "Custom",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UIViewRepresentable",
+            "printedName": "UIViewRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "UIViewType",
+                "printedName": "UIViewType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTUltimateWidgetUIView",
+                    "printedName": "FintechSDKUltimateWidget.FTUltimateWidgetUIView",
+                    "usr": "c:@M@FintechSDKUltimateWidget@objc(cs)FTUltimateWidgetUIView"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Coordinator",
+                "printedName": "Coordinator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:7SwiftUI19UIViewRepresentableP",
+            "mangledName": "$s7SwiftUI19UIViewRepresentableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "View",
+            "printedName": "View",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Body",
+                "printedName": "Body",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Never",
+                    "printedName": "Swift.Never",
+                    "usr": "s:s5NeverO"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:7SwiftUI4ViewP",
+            "mangledName": "$s7SwiftUI4ViewP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
       }
     ],
     "json_format_version": 8
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/6\/4688764867\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-094d3ef6-9692-4a79-886a-be284e9b2745\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/DivUrlHandlers\/FTOpenCheckoutDivUrlHandler.swift",
-      "kind": "StringLiteral",
-      "offset": 802,
-      "length": 12,
-      "value": "\"div-action\""
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Analytics\/FTUltimateWidgetEventReporter.swift",
+      "kind": "Dictionary",
+      "offset": 1731,
+      "length": 3,
+      "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/6\/4688764867\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-094d3ef6-9692-4a79-886a-be284e9b2745\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/DivUrlHandlers\/FTOpenCheckoutDivUrlHandler.swift",
-      "kind": "StringLiteral",
-      "offset": 835,
-      "length": 15,
-      "value": "\"open_checkout\""
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Analytics\/FTUltimateWidgetEventReporter.swift",
+      "kind": "Dictionary",
+      "offset": 1935,
+      "length": 3,
+      "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/6\/4688764867\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-094d3ef6-9692-4a79-886a-be284e9b2745\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/DivUrlHandlers\/FTOpenCheckoutDivUrlHandler.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Analytics\/FTUltimateWidgetEventReporter.swift",
       "kind": "StringLiteral",
-      "offset": 882,
+      "offset": 3317,
+      "length": 34,
+      "value": "\"ultimate_widget_checkout_clicked\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Analytics\/FTUltimateWidgetEventReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 3392,
+      "length": 42,
+      "value": "\"ultimate_widget_checkout_dispatch_failed\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Analytics\/FTUltimateWidgetEventReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 3472,
+      "length": 20,
+      "value": "\"widget_instance_id\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Analytics\/FTUltimateWidgetEventReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 3516,
+      "length": 9,
+      "value": "\"content\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Analytics\/FTUltimateWidgetEventReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 3549,
+      "length": 9,
+      "value": "\"surface\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Analytics\/FTUltimateWidgetEventReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 3590,
       "length": 19,
       "value": "\"split_month_count\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/6\/4688764867\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-094d3ef6-9692-4a79-886a-be284e9b2745\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Endpoints\/FTUltimateWidgetEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Analytics\/FTUltimateWidgetEventReporter.swift",
       "kind": "StringLiteral",
-      "offset": 343,
-      "length": 33,
-      "value": "\"\/pay\/v1\/public\/widgets\/ultimate\""
+      "offset": 3654,
+      "length": 27,
+      "value": "\"invalid_split_month_count\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/6\/4688764867\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-094d3ef6-9692-4a79-886a-be284e9b2745\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Endpoints\/FTUltimateWidgetEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Analytics\/FTUltimateWidgetEventReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 3707,
+      "length": 17,
+      "value": "\"ultimate_widget\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Analytics\/FTUltimateWidgetEventReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 3747,
+      "length": 8,
+      "value": "\"reason\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Analytics\/FTUltimateWidgetEventReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 3783,
+      "length": 14,
+      "value": "\"error_domain\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Analytics\/FTUltimateWidgetEventReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 3823,
+      "length": 12,
+      "value": "\"error_code\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Analytics\/FTUltimateWidgetEventReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 3868,
+      "length": 19,
+      "value": "\"underlying_domain\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Analytics\/FTUltimateWidgetEventReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 3918,
+      "length": 17,
+      "value": "\"underlying_code\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Analytics\/FTUltimateWidgetEventReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 3961,
+      "length": 19,
+      "value": "\"Ultimate widget: \""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Analytics\/FTUltimateWidgetEventReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 4012,
+      "length": 18,
+      "value": "\"ultimate_widget_\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/DivUrlHandlers\/FTOpenCheckoutDivUrlHandler.swift",
+      "kind": "StringLiteral",
+      "offset": 1178,
+      "length": 12,
+      "value": "\"div-action\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/DivUrlHandlers\/FTOpenCheckoutDivUrlHandler.swift",
+      "kind": "StringLiteral",
+      "offset": 1211,
+      "length": 15,
+      "value": "\"open_checkout\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/DivUrlHandlers\/FTOpenCheckoutDivUrlHandler.swift",
+      "kind": "StringLiteral",
+      "offset": 1258,
+      "length": 19,
+      "value": "\"split_month_count\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Endpoints\/FTUltimateWidgetEndpoint.swift",
       "kind": "FloatLiteral",
-      "offset": 471,
+      "offset": 452,
       "length": 4,
       "value": "30.0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/6\/4688764867\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-094d3ef6-9692-4a79-886a-be284e9b2745\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/FTUltimateWidgetFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Endpoints\/FTUltimateWidgetEndpoint.swift",
       "kind": "StringLiteral",
-      "offset": 2400,
-      "length": 25,
-      "value": "\"YandexPayUltimateWidget\""
+      "offset": 1974,
+      "length": 33,
+      "value": "\"\/pay\/v1\/public\/widgets\/ultimate\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Endpoints\/FTUltimateWidgetEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 2030,
+      "length": 8,
+      "value": "\"amount\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Endpoints\/FTUltimateWidgetEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 2063,
+      "length": 10,
+      "value": "\"currency\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Endpoints\/FTUltimateWidgetEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 2097,
+      "length": 9,
+      "value": "\"content\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Endpoints\/FTUltimateWidgetEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 2133,
+      "length": 12,
+      "value": "\"appearance\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Endpoints\/FTUltimateWidgetEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 2167,
+      "length": 8,
+      "value": "\"sku_id\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Endpoints\/FTUltimateWidgetEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 2198,
+      "length": 8,
+      "value": "\"radius\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Endpoints\/FTUltimateWidgetEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 2233,
+      "length": 13,
+      "value": "\"has_outline\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Endpoints\/FTUltimateWidgetEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 2273,
+      "length": 13,
+      "value": "\"has_padding\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Endpoints\/FTUltimateWidgetEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 2320,
+      "length": 21,
+      "value": "\"has_checkout_button\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Endpoints\/FTUltimateWidgetEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 2368,
+      "length": 12,
+      "value": "\"background\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Endpoints\/FTUltimateWidgetEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 2407,
+      "length": 13,
+      "value": "\"widget_size\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Endpoints\/FTUltimateWidgetEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 2448,
+      "length": 14,
+      "value": "\"header_style\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/Endpoints\/FTUltimateWidgetEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 2493,
+      "length": 17,
+      "value": "\"available_width\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/FTUltimateWidgetFactory.swift",
+      "kind": "StringLiteral",
+      "offset": 2959,
+      "length": 9,
+      "value": "\"swiftui\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/FTUltimateWidgetFactory.swift",
+      "kind": "StringLiteral",
+      "offset": 2997,
+      "length": 7,
+      "value": "\"uikit\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/UI\/FTUltimateWidgetUIView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 908,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/UI\/FTUltimateWidgetUIView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 950,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/UI\/FTUltimateWidgetUIView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1093,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/UI\/FTUltimateWidgetUIView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1125,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/UI\/FTUltimateWidgetUIView.swift",
+      "kind": "StringLiteral",
+      "offset": 9333,
+      "length": 26,
+      "value": "\"YandexPayUltimateWidget_\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/UltimateWidget\/UI\/FTUltimateWidgetUIView.swift",
+      "kind": "StringLiteral",
+      "offset": 9399,
+      "length": 17,
+      "value": "\"ultimate_widget\""
     }
   ]
 }

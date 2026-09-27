@@ -133,6 +133,87 @@ extension YandexPayInventory.YPBadgeModel {
     }
   }
 }
+public struct YPInventoryUltimateWidgetData {
+  public let splitMonthCount: Swift.Int
+  public init(splitMonthCount: Swift.Int)
+}
+@_Concurrency.MainActor public protocol YPInventoryUltimateWidgetDelegate : AnyObject {
+  @_Concurrency.MainActor func onUltimateWidgetCheckout(data: YandexPayInventory.YPInventoryUltimateWidgetData)
+}
+@_Concurrency.MainActor public struct YPInventoryUltimateWidgetModel {
+  public enum Style : Swift.String {
+    case split
+    case cashback
+    case fullSize
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum HeaderStyle : Swift.String {
+    case minified
+    case standard
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  @_Concurrency.MainActor public let amount: Foundation.Decimal
+  @_Concurrency.MainActor public let currency: YandexPayConfiguration.YPCurrencyCode
+  @_Concurrency.MainActor public let style: YandexPayInventory.YPInventoryUltimateWidgetModel.Style
+  @_Concurrency.MainActor public let appearance: YandexPayInventory.YPInventoryUltimateWidgetModel.Appearance
+  @_Concurrency.MainActor public let skuId: Swift.String?
+  @_Concurrency.MainActor public var header: YandexPayInventory.YPInventoryUltimateWidgetModel.HeaderStyle
+  @_Concurrency.MainActor public init(amount: Foundation.Decimal, currency: YandexPayConfiguration.YPCurrencyCode = .rub, style: YandexPayInventory.YPInventoryUltimateWidgetModel.Style, appearance: YandexPayInventory.YPInventoryUltimateWidgetModel.Appearance = .init(), header: YandexPayInventory.YPInventoryUltimateWidgetModel.HeaderStyle = .standard, skuId: Swift.String? = nil)
+}
+extension YandexPayInventory.YPInventoryUltimateWidgetModel {
+  public struct Appearance {
+    public enum Background : Swift.String {
+      case transparent
+      case `default`
+      case light
+      public init?(rawValue: Swift.String)
+      public typealias RawValue = Swift.String
+      public var rawValue: Swift.String {
+        get
+      }
+    }
+    public enum WidgetSize : Swift.String {
+      case medium
+      case small
+      public init?(rawValue: Swift.String)
+      public typealias RawValue = Swift.String
+      public var rawValue: Swift.String {
+        get
+      }
+    }
+    public var radius: CoreFoundation.CGFloat
+    public var hasOutline: Swift.Bool
+    public var hasPadding: Swift.Bool
+    public var background: YandexPayInventory.YPInventoryUltimateWidgetModel.Appearance.Background
+    public var hasCheckoutButton: Swift.Bool
+    public var size: YandexPayInventory.YPInventoryUltimateWidgetModel.Appearance.WidgetSize
+    public init(radius: CoreFoundation.CGFloat = 20, hasOutline: Swift.Bool = false, hasPadding: Swift.Bool = true, hasCheckoutButton: Swift.Bool = false, background: YandexPayInventory.YPInventoryUltimateWidgetModel.Appearance.Background = .default, size: YandexPayInventory.YPInventoryUltimateWidgetModel.Appearance.WidgetSize = .medium)
+  }
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class YPInventoryUltimateWidgetUIView : UIKit.UIView {
+  @_Concurrency.MainActor @objc override final public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor final public func update(model: YandexPayInventory.YPInventoryUltimateWidgetModel)
+  @objc deinit
+}
+@_Concurrency.MainActor public struct YPInventoryUltimateWidgetView : SwiftUI.UIViewRepresentable {
+  @_Concurrency.MainActor @preconcurrency public func makeUIView(context: YandexPayInventory.YPInventoryUltimateWidgetView.Context) -> YandexPayInventory.YPInventoryUltimateWidgetUIView
+  @_Concurrency.MainActor @preconcurrency public func updateUIView(_ uiView: YandexPayInventory.YPInventoryUltimateWidgetUIView, context: YandexPayInventory.YPInventoryUltimateWidgetView.Context)
+  @available(iOS 16.0, *)
+  @_Concurrency.MainActor @preconcurrency public func sizeThatFits(_ proposal: SwiftUICore.ProposedViewSize, uiView: YandexPayInventory.YPInventoryUltimateWidgetUIView, context: YandexPayInventory.YPInventoryUltimateWidgetView.Context) -> CoreFoundation.CGSize?
+  public typealias Body = Swift.Never
+  public typealias Coordinator = Swift.Void
+  public typealias UIViewType = YandexPayInventory.YPInventoryUltimateWidgetUIView
+}
 extension YandexPayConfiguration.YPay {
   @_Concurrency.MainActor final public var inventory: YandexPayInventory.YPayInventoryModuleAPI {
     get
@@ -147,6 +228,10 @@ public enum YPayInventory {
   @_Concurrency.MainActor final public func createBadgeView(model: YandexPayInventory.YPBadgeModel) -> UIKit.UIView
   @_Concurrency.MainActor final public func createBadgeUIView(model: YandexPayInventory.YPBadgeModel) -> YandexPayInventory.FintechPayBadgeUIView
   @objc deinit
+}
+extension YandexPayInventory.YPayInventoryModuleAPI {
+  @_Concurrency.MainActor final public func createUltimateWidgetUIView(model: YandexPayInventory.YPInventoryUltimateWidgetModel, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, delegate: (any YandexPayInventory.YPInventoryUltimateWidgetDelegate)? = nil) -> YandexPayInventory.YPInventoryUltimateWidgetUIView
+  @_Concurrency.MainActor final public func createUltimateWidgetView(model: YandexPayInventory.YPInventoryUltimateWidgetModel, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, delegate: (any YandexPayInventory.YPInventoryUltimateWidgetDelegate)? = nil) -> YandexPayInventory.YPInventoryUltimateWidgetView
 }
 @_hasMissingDesignatedInitializers final public class YPayInventoryModuleDescriptor : YandexPayConfiguration.YPayModule {
   @_Concurrency.MainActor final public func configure(with configuration: YandexPayConfiguration.YPay)
@@ -190,3 +275,17 @@ extension YandexPayInventory.YPBadgeModel.Align : Swift.RawRepresentable {}
 extension YandexPayInventory.YPBadgeModel.HidingPolicy : Swift.Equatable {}
 extension YandexPayInventory.YPBadgeModel.HidingPolicy : Swift.Hashable {}
 extension YandexPayInventory.YPBadgeModel.HidingPolicy : Swift.RawRepresentable {}
+extension YandexPayInventory.YPInventoryUltimateWidgetModel : Swift.Sendable {}
+extension YandexPayInventory.YPInventoryUltimateWidgetModel.Style : Swift.Equatable {}
+extension YandexPayInventory.YPInventoryUltimateWidgetModel.Style : Swift.Hashable {}
+extension YandexPayInventory.YPInventoryUltimateWidgetModel.Style : Swift.RawRepresentable {}
+extension YandexPayInventory.YPInventoryUltimateWidgetModel.HeaderStyle : Swift.Equatable {}
+extension YandexPayInventory.YPInventoryUltimateWidgetModel.HeaderStyle : Swift.Hashable {}
+extension YandexPayInventory.YPInventoryUltimateWidgetModel.HeaderStyle : Swift.RawRepresentable {}
+extension YandexPayInventory.YPInventoryUltimateWidgetModel.Appearance.Background : Swift.Equatable {}
+extension YandexPayInventory.YPInventoryUltimateWidgetModel.Appearance.Background : Swift.Hashable {}
+extension YandexPayInventory.YPInventoryUltimateWidgetModel.Appearance.Background : Swift.RawRepresentable {}
+extension YandexPayInventory.YPInventoryUltimateWidgetModel.Appearance.WidgetSize : Swift.Equatable {}
+extension YandexPayInventory.YPInventoryUltimateWidgetModel.Appearance.WidgetSize : Swift.Hashable {}
+extension YandexPayInventory.YPInventoryUltimateWidgetModel.Appearance.WidgetSize : Swift.RawRepresentable {}
+extension YandexPayInventory.YPInventoryUltimateWidgetView : Swift.Sendable {}

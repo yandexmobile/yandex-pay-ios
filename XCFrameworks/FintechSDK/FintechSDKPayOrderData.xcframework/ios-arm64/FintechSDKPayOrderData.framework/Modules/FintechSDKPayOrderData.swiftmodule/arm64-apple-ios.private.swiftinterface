@@ -17,7 +17,13 @@ public struct FTCheckoutSheet : Swift.Encodable {
 }
 @_spi(Internal) public struct FTOrderMeta : Swift.Decodable, Swift.Sendable {
   @_spi(Internal) public let orderToken: Swift.String?
+  @_spi(Internal) public let canBeAnonymous: Swift.Bool?
+  @_spi(Internal) public let paymentMethodRules: FintechSDKPayOrderData.FTOrderMeta.FTPaymentMethodRules?
   @_spi(Internal) public let simplifiedCurrentStatus: FintechSDKPayOrderData.FTOrderMeta.OrderStatus?
+  @_spi(Internal) public struct FTPaymentMethodRules : Swift.Decodable, Swift.Sendable {
+    @_spi(Internal) public let anonymous: [Swift.String]?
+    @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
+  }
   @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
 }
 @_spi(Internal) extension FintechSDKPayOrderData.FTOrderMeta {

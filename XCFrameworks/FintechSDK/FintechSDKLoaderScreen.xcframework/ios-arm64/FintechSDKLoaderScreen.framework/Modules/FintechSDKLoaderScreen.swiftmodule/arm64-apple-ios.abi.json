@@ -1308,13 +1308,6 @@
       },
       {
         "kind": "Import",
-        "name": "SwiftUI",
-        "printedName": "SwiftUI",
-        "declKind": "Import",
-        "moduleName": "FintechSDKLoaderScreen"
-      },
-      {
-        "kind": "Import",
         "name": "FintechSDKCoreUI",
         "printedName": "FintechSDKCoreUI",
         "declKind": "Import",
@@ -1329,29 +1322,279 @@
         "printedName": "FintechSDKFontsInterfaces",
         "declKind": "Import",
         "moduleName": "FintechSDKLoaderScreen"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "FintechSDKLoaderScreen"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTLoaderView",
+        "printedName": "FTLoaderView",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "body",
+            "printedName": "body",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OpaqueTypeArchetype",
+                "printedName": "some SwiftUI.View",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "View",
+                    "printedName": "SwiftUI.View",
+                    "usr": "s:7SwiftUI4ViewP"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22FintechSDKLoaderScreen12FTLoaderViewV4bodyQrvp",
+            "mangledName": "$s22FintechSDKLoaderScreen12FTLoaderViewV4bodyQrvp",
+            "moduleName": "FintechSDKLoaderScreen",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OpaqueTypeArchetype",
+                    "printedName": "some SwiftUI.View",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "View",
+                        "printedName": "SwiftUI.View",
+                        "usr": "s:7SwiftUI4ViewP"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22FintechSDKLoaderScreen12FTLoaderViewV4bodyQrvg",
+                "mangledName": "$s22FintechSDKLoaderScreen12FTLoaderViewV4bodyQrvg",
+                "moduleName": "FintechSDKLoaderScreen",
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(arcFraction:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTLoaderView",
+                "printedName": "FintechSDKLoaderScreen.FTLoaderView",
+                "usr": "s:22FintechSDKLoaderScreen12FTLoaderViewV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGFloat",
+                "printedName": "CoreGraphics.CGFloat",
+                "hasDefaultArg": true,
+                "usr": "s:14CoreFoundation7CGFloatV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:22FintechSDKLoaderScreen12FTLoaderViewV11arcFractionAC14CoreFoundation7CGFloatV_tcfc",
+            "mangledName": "$s22FintechSDKLoaderScreen12FTLoaderViewV11arcFractionAC12CoreGraphics7CGFloatV_tcfc",
+            "moduleName": "FintechSDKLoaderScreen",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "defaultArcFraction",
+            "printedName": "defaultArcFraction",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGFloat",
+                "printedName": "CoreGraphics.CGFloat",
+                "usr": "s:14CoreFoundation7CGFloatV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22FintechSDKLoaderScreen12FTLoaderViewV18defaultArcFraction14CoreFoundation7CGFloatVvpZ",
+            "mangledName": "$s22FintechSDKLoaderScreen12FTLoaderViewV18defaultArcFraction12CoreGraphics7CGFloatVvpZ",
+            "moduleName": "FintechSDKLoaderScreen",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Preconcurrency",
+              "Custom",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22FintechSDKLoaderScreen12FTLoaderViewV18defaultArcFraction14CoreFoundation7CGFloatVvgZ",
+                "mangledName": "$s22FintechSDKLoaderScreen12FTLoaderViewV18defaultArcFraction12CoreGraphics7CGFloatVvgZ",
+                "moduleName": "FintechSDKLoaderScreen",
+                "static": true,
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:22FintechSDKLoaderScreen12FTLoaderViewV",
+        "mangledName": "$s22FintechSDKLoaderScreen12FTLoaderViewV",
+        "moduleName": "FintechSDKLoaderScreen",
+        "declAttributes": [
+          "Preconcurrency",
+          "Custom",
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "View",
+            "printedName": "View",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Body",
+                "printedName": "Body",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OpaqueTypeArchetype",
+                    "printedName": "some SwiftUI.View",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "View",
+                        "printedName": "SwiftUI.View",
+                        "usr": "s:7SwiftUI4ViewP"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "usr": "s:7SwiftUI4ViewP",
+            "mangledName": "$s7SwiftUI4ViewP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
       }
     ],
     "json_format_version": 8
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/6\/4688764867\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-094d3ef6-9692-4a79-886a-be284e9b2745\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/Loader\/Loader\/FTLoaderView.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/Loader\/Loader\/FTLoaderView.swift",
       "kind": "BooleanLiteral",
-      "offset": 152,
+      "offset": 212,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/6\/4688764867\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-094d3ef6-9692-4a79-886a-be284e9b2745\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/Loader\/Loader\/FTLoaderView.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/Loader\/Loader\/FTLoaderView.swift",
       "kind": "FloatLiteral",
-      "offset": 891,
+      "offset": 798,
+      "length": 3,
+      "value": "0.5"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/Loader\/Loader\/FTLoaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1324,
+      "length": 3,
+      "value": "360"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/Loader\/Loader\/FTLoaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1372,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/Loader\/Loader\/FTLoaderView.swift",
+      "kind": "FloatLiteral",
+      "offset": 1410,
       "length": 3,
       "value": "3.5"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/7\/6\/4688764867\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-094d3ef6-9692-4a79-886a-be284e9b2745\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/Loader\/Loader\/FTLoaderView.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/1\/4708231319\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-c6badace-aa6a-4745-9c1c-5359925bf4dd\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/Loader\/Loader\/FTLoaderView.swift",
       "kind": "FloatLiteral",
-      "offset": 967,
+      "offset": 1485,
       "length": 3,
       "value": "0.5"
     }

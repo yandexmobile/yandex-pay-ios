@@ -24,6 +24,7 @@ import FintechSDKFontsInterfaces
 @_spi(Internal) import FintechSDKQuickPaymentShared
 @_spi(Internal) import FintechSDKRemoteResourcesData
 import Foundation
+import QuartzCore
 import Swift
 import SwiftUI
 import UIKit
@@ -82,6 +83,7 @@ public enum FTQuickPayPollingModalSize : Swift.Sendable {
   @_spi(Internal) public static let hero: FintechSDKQuickPayment.FTQuickPayPromoBannerSize
   @_spi(Internal) public static let large: FintechSDKQuickPayment.FTQuickPayPromoBannerSize
   @_spi(Internal) public static let slim: FintechSDKQuickPayment.FTQuickPayPromoBannerSize
+  @_spi(Internal) public static let card: FintechSDKQuickPayment.FTQuickPayPromoBannerSize
   @_spi(Internal) public static func == (a: FintechSDKQuickPayment.FTQuickPayPromoBannerSize, b: FintechSDKQuickPayment.FTQuickPayPromoBannerSize) -> Swift.Bool
 }
 public enum FTQuickPayWidgetExpandState : Swift.String {
@@ -108,15 +110,19 @@ extension FintechSDKQuickPayment.FTQuickPaymentStateListener {
   public func onPaymentMethodSelected()
   public func onPaymentMethodSelectionError()
 }
-public enum FintechQuickPaymentError : Swift.Error {
-  case noAuth
-  case cannotAuth
-  case cannotCreateNewSession(underlying: any Swift.Error)
-  case noPresentationContext
-  case widgetNotActivated
-  case qrStringNotAvailable
-  case orderPollingNotControlledByMerchant
-  case noActivePaymentSession
+@_spi(Internal) extension FintechSDKQuickPayment.FintechQuickPayHandler {
+  @_spi(Internal) @_Concurrency.MainActor final public func createPromoBanner(size: FintechSDKQuickPayment.FTQuickPayPromoBannerSize, placement: Swift.String?, showLoyaltyAction: @escaping () -> Swift.Void) -> any SwiftUICore.View
+  @_spi(Internal) @_Concurrency.MainActor final public func createPromoBanner(size: FintechSDKQuickPayment.FTQuickPayPromoBannerSize, placement: Swift.String?, showLoyaltyAction: @escaping () -> Swift.Void) -> UIKit.UIView
+  @_spi(Internal) @_Concurrency.MainActor final public func createPromoBanner(size: FintechSDKQuickPayment.FTQuickPayPromoBannerSize, showLoyaltyAction: @escaping () -> Swift.Void) -> any SwiftUICore.View
+  @_spi(Internal) @_Concurrency.MainActor final public func createPromoBanner(size: FintechSDKQuickPayment.FTQuickPayPromoBannerSize, showLoyaltyAction: @escaping () -> Swift.Void) -> UIKit.UIView
+}
+@_spi(Internal) @_Concurrency.MainActor public protocol FTQuickPayPromoSideTabControlling : AnyObject {
+  @_spi(Internal) @_Concurrency.MainActor var anchorCenterY: CoreFoundation.CGFloat { get set }
+  @_spi(Internal) @_Concurrency.MainActor var isActive: Swift.Bool { get set }
+}
+@_spi(Internal) extension FintechSDKQuickPayment.FintechQuickPayHandler {
+  @_spi(Internal) @_Concurrency.MainActor final public func createPromoSideTab(placement: Swift.String? = nil, anchorCenterY: CoreFoundation.CGFloat, isActive: Swift.Bool = true, showLoyaltyAction: @escaping () -> Swift.Void) -> any SwiftUICore.View
+  @_spi(Internal) @_Concurrency.MainActor final public func createPromoSideTab(placement: Swift.String? = nil, anchorCenterY: CoreFoundation.CGFloat, isActive: Swift.Bool = true, showLoyaltyAction: @escaping () -> Swift.Void) -> any UIKit.UIView & FintechSDKQuickPayment.FTQuickPayPromoSideTabControlling
 }
 @_spi(Internal) final public class FintechQuickPayHandler {
   @_spi(Internal) @_Concurrency.MainActor public init(config: FintechSDKQuickPayment.FTQuickPayConfig, stateListener: any FintechSDKQuickPayment.FTQuickPaymentStateListener, appMetricaAdapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter, fontsAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter, bduiAdapterFactory: any FintechSDKBDUIFeatures.FintechBDUIAdapterFactory, rtmFactory: any FintechSDKAnalyticsInterfaces.FintechRTMAdapterFactory, rumFactory: any FintechSDKAnalyticsInterfaces.FintechRUMAdapterFactory, accountManagerAdapter: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, loginService: any FintechSDKAuthInterfaces.FintechLoginService, presentationContextProvider: (any FintechSDKCoreUI.FTPresentationContextProviding)?, networkChallengeHandlerFactory: (any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory)? = nil)
@@ -124,8 +130,14 @@ public enum FintechQuickPaymentError : Swift.Error {
   @_spi(Internal) @_Concurrency.MainActor final public func createPaymentMethodsWidget(allowSilentReload: Swift.Bool = true) -> UIKit.UIView
   @_spi(Internal) @_Concurrency.MainActor final public func createActivePaymentMethodBadge(allowSilentReload: Swift.Bool = true) -> any SwiftUICore.View
   @_spi(Internal) @_Concurrency.MainActor final public func createActivePaymentMethodBadge(allowSilentReload: Swift.Bool = true) -> UIKit.UIView
-  @_spi(Internal) @_Concurrency.MainActor final public func createPromoBanner(size: FintechSDKQuickPayment.FTQuickPayPromoBannerSize, showLoyaltyAction: @escaping () -> Swift.Void) -> any SwiftUICore.View
-  @_spi(Internal) @_Concurrency.MainActor final public func createPromoBanner(size: FintechSDKQuickPayment.FTQuickPayPromoBannerSize, showLoyaltyAction: @escaping () -> Swift.Void) -> UIKit.UIView
+  @_spi(Internal) @_Concurrency.MainActor final public func createPaymentToggle(placement: Swift.String? = nil, showLoyaltyAction: @escaping () -> Swift.Void) -> any SwiftUICore.View
+  @_spi(Internal) @_Concurrency.MainActor final public func createPaymentToggle(placement: Swift.String? = nil, showLoyaltyAction: @escaping () -> Swift.Void) -> UIKit.UIView
+  @_spi(Internal) @_Concurrency.MainActor final public func createCashbackBadge(placement: Swift.String? = nil) -> any SwiftUICore.View
+  @_spi(Internal) @_Concurrency.MainActor final public func createCashbackBadge(placement: Swift.String? = nil) -> UIKit.UIView
+  @_spi(Internal) @_Concurrency.MainActor final public func createPromoFab(placement: Swift.String? = nil, showLoadingSkeleton: Swift.Bool = false, showLoyaltyAction: @escaping () -> Swift.Void) -> any SwiftUICore.View
+  @_spi(Internal) @_Concurrency.MainActor final public func createPromoFab(placement: Swift.String? = nil, showLoadingSkeleton: Swift.Bool = false, showLoyaltyAction: @escaping () -> Swift.Void) -> UIKit.UIView
+  @_spi(Internal) @_Concurrency.MainActor final public func createPromoBadge(placement: Swift.String? = nil, showLoyaltyAction: @escaping () -> Swift.Void) -> any SwiftUICore.View
+  @_spi(Internal) @_Concurrency.MainActor final public func createPromoBadge(placement: Swift.String? = nil, showLoyaltyAction: @escaping () -> Swift.Void) -> UIKit.UIView
   @_spi(Internal) @_Concurrency.MainActor final public func enableActivePaymentMethodBadge()
   @_spi(Internal) @_Concurrency.MainActor final public func disableActivePaymentMethodBadge()
   @_spi(Internal) final public func isQuickPaymentEnabled() async throws -> Swift.Bool
@@ -165,6 +177,17 @@ public enum FintechQuickPaymentError : Swift.Error {
 @_spi(Internal) extension FintechSDKQuickPayment.FintechQuickPayHandler {
   @_spi(Internal) @_Concurrency.MainActor final public func update(locale: FintechSDKCoreUI.FintechLocale)
   @_spi(Internal) @_Concurrency.MainActor final public func update(theme: FintechSDKCommonEntity.FintechSDKTheme)
+}
+public enum FintechQuickPaymentError : Swift.Error {
+  case noAuth
+  case cannotAuth
+  case cannotCreateNewSession(underlying: any Swift.Error)
+  case noPresentationContext
+  case widgetNotActivated
+  case qrStringNotAvailable
+  case orderPollingNotControlledByMerchant
+  case noActivePaymentSession
+  case noPaymentMethods
 }
 extension FintechSDKQuickPayment.FTQuickPayAuthState.SecurityCheckFailReason : Swift.Hashable {}
 extension FintechSDKQuickPayment.FTQuickPayWidgetExpandState : Swift.Equatable {}
