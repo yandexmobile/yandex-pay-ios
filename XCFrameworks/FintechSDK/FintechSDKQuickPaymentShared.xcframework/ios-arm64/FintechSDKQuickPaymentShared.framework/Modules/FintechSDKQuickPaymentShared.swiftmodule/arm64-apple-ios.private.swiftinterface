@@ -47,6 +47,7 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public func startMerchantControlledPolling() async throws
   @_spi(Internal) public func stopMerchantControlledPolling() async throws
   @_spi(Internal) public func invalidatePollingSession() async
+  @_spi(Internal) public func resetMerchantPollingRequest() async
 }
 @_spi(Internal) extension FintechSDKQuickPaymentShared.FTQPSPollingInteractor : FintechSDKQuickPaymentShared.FTQPSHandleSessionExpiredUseCase {
   @_spi(Internal) public func handleSessionExpired() async
@@ -95,6 +96,7 @@ import _SwiftConcurrencyShims
   @_spi(Internal) func startMerchantControlledPolling() async throws
   @_spi(Internal) func stopMerchantControlledPolling() async throws
   @_spi(Internal) func invalidatePollingSession() async
+  @_spi(Internal) func resetMerchantPollingRequest() async
 }
 @_spi(Internal) public protocol FTQPSHandleSessionExpiredUseCase : Swift.Sendable {
   @_spi(Internal) func handleSessionExpired() async
