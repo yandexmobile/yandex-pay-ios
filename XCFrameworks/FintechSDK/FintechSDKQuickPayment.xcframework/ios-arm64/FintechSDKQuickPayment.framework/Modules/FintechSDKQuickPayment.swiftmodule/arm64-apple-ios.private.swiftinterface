@@ -56,6 +56,10 @@ public enum FTQuickPayAuthState : Swift.Equatable {
   case securityCheckCompleted
   public static func == (a: FintechSDKQuickPayment.FTQuickPayAuthState, b: FintechSDKQuickPayment.FTQuickPayAuthState) -> Swift.Bool
 }
+@_spi(Internal) public struct FTQuickPayBiometryRequiredError : Swift.Error, Swift.Sendable, Swift.Equatable {
+  @_spi(Internal) public init()
+  @_spi(Internal) public static func == (a: FintechSDKQuickPayment.FTQuickPayBiometryRequiredError, b: FintechSDKQuickPayment.FTQuickPayBiometryRequiredError) -> Swift.Bool
+}
 public struct FTQuickPayConfig {
   public let merchantId: Swift.String
   public let locale: FintechSDKCoreUI.FintechLocale
@@ -144,7 +148,9 @@ extension FintechSDKQuickPayment.FTQuickPaymentStateListener {
   @_spi(Internal) final public func enableQuickPayment(showOnboardingAfterAuth: Swift.Bool = true) async throws
   @_spi(Internal) final public func disableQuickPayment() async throws
   @_spi(Internal) final public func getPaymentSessionId() async throws -> Swift.String
+  @_spi(Internal) final public func getPaymentSessionId(isSilentBiometryEnabled: Swift.Bool = false) async throws -> Swift.String
   @_spi(Internal) final public func getCPQR(merchantPayload: Swift.String) async throws -> Swift.String
+  @_spi(Internal) final public func getCPQR(merchantPayload: Swift.String, isSilentBiometryEnabled: Swift.Bool = false) async throws -> Swift.String
   @_spi(Internal) final public func login() async throws
   @_spi(Internal) final public func logout() async throws
   @_spi(Internal) final public func activateQuickPay(showOnboardingAfterAuth: Swift.Bool = true) async throws

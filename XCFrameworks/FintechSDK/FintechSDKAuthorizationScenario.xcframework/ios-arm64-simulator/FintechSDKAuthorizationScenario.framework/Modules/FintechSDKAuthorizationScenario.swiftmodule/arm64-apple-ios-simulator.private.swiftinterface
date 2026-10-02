@@ -101,6 +101,10 @@ public enum FTAuthScenarioState<FTSessionError> where FTSessionError : Swift.Err
 public protocol FTAuthScenarioDelegate<FTSessionError> : AnyObject {
   associatedtype FTSessionError : Swift.Error
   func authScenarioDidChangeState(_ newState: FintechSDKAuthorizationScenario.FTAuthScenarioState<Self.FTSessionError>)
+  func authScenarioDidChangeStateSilently(_ newState: FintechSDKAuthorizationScenario.FTAuthScenarioState<Self.FTSessionError>)
+}
+extension FintechSDKAuthorizationScenario.FTAuthScenarioDelegate {
+  public func authScenarioDidChangeStateSilently(_ newState: FintechSDKAuthorizationScenario.FTAuthScenarioState<Self.FTSessionError>)
 }
 @_spi(Internal) final public class FTAuthScenarioImpl : FintechSDKAuthorizationScenario.FTAuthScenario, @unchecked Swift.Sendable {
   @_spi(Internal) weak final public var delegate: (any FintechSDKAuthorizationScenario.FTAuthScenarioDelegate<FintechSDKAuthorizationScenario.FTSessionError>)?
@@ -129,6 +133,7 @@ public enum FTAuthSessionAcquisitionMode : Swift.Sendable, Swift.Hashable {
   case interactive
   case silentBiometric
   case escalatedBiometric
+  case silentNoBiometricPrompt
   public static func == (a: FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode, b: FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -352,6 +357,10 @@ public enum FTAuthSessionAcquisitionMode : Swift.Sendable, Swift.Hashable {
 }
 @_spi(Internal) public protocol FTAuthScenarioStateObserving : Swift.Sendable {
   @_spi(Internal) func authStateDidChange(to newState: FintechSDKAuthorizationScenario.FTAuthScenarioState<FintechSDKAuthorizationScenario.FTSessionError>)
+  @_spi(Internal) func authStateDidChangeSilently(to newState: FintechSDKAuthorizationScenario.FTAuthScenarioState<FintechSDKAuthorizationScenario.FTSessionError>)
+}
+@_spi(Internal) extension FintechSDKAuthorizationScenario.FTAuthScenarioStateObserving {
+  @_spi(Internal) public func authStateDidChangeSilently(to newState: FintechSDKAuthorizationScenario.FTAuthScenarioState<FintechSDKAuthorizationScenario.FTSessionError>)
 }
 @_spi(Internal) public enum FTPassportAuthFlowError : Swift.Error {
   @_spi(Internal) case noPresentationContext
@@ -402,6 +411,7 @@ public enum FTAuthSessionAcquisitionMode : Swift.Sendable, Swift.Hashable {
 }
 @_spi(Internal) extension FintechSDKAuthorizationScenario.FTAuthFlowInteractor : FintechSDKAuthorizationScenario.FTAuthScenarioDelegate {
   @_spi(Internal) nonisolated public func authScenarioDidChangeState(_ newState: FintechSDKAuthorizationScenario.FTAuthScenarioState<FintechSDKAuthorizationScenario.FTSessionError>)
+  @_spi(Internal) nonisolated public func authScenarioDidChangeStateSilently(_ newState: FintechSDKAuthorizationScenario.FTAuthScenarioState<FintechSDKAuthorizationScenario.FTSessionError>)
   @_spi(Internal) public typealias FTSessionError = FintechSDKAuthorizationScenario.FTSessionError
 }
 @_spi(Internal) extension FintechSDKAuthorizationScenario.FTAuthFlowInteractor : FintechSDKAuthorizationScenario.FTAuthSignedInStateProviding {

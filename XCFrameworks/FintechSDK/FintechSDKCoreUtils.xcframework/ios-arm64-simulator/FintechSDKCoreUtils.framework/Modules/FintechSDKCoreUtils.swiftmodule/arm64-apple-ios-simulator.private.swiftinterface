@@ -467,30 +467,100 @@ public enum FintechSDKInfo {
   @_spi(Internal) public static func prepareURLForLogging(_ url: Foundation.URL) -> Foundation.URL
   @_spi(Internal) public static func prepareValueForLogging(_ value: Swift.String) -> Swift.String
 }
+@_spi(Internal) public protocol FTConnectivityClock : Swift.Sendable {
+  @_spi(Internal) func now() -> Swift.UInt64
+  @_spi(Internal) func sleep(until deadline: Swift.UInt64) async throws
+}
+@_spi(Internal) public struct FTSystemConnectivityClock : FintechSDKCoreUtils.FTConnectivityClock {
+  @_spi(Internal) public init()
+  @_spi(Internal) public func now() -> Swift.UInt64
+  @_spi(Internal) public func sleep(until deadline: Swift.UInt64) async throws
+}
 @_spi(Internal) public protocol FTConnectivityObserving : Swift.Sendable {
   @_spi(Internal) func observe() -> _Concurrency.AsyncStream<Swift.Bool>
   @_spi(Internal) func isAvailable() async -> Swift.Bool
+  @_spi(Internal) func availabilitySnapshot() async -> FintechSDKCoreUtils.FTConnectivitySnapshot
   @_spi(Internal) func cancel()
 }
+@_spi(Internal) extension FintechSDKCoreUtils.FTConnectivityObserving {
+  @_spi(Internal) public func availabilitySnapshot() async -> FintechSDKCoreUtils.FTConnectivitySnapshot
+}
 @_spi(Internal) public protocol FTPathMonitoring : AnyObject {
-  @_spi(Internal) var onPathUpdate: ((Swift.Bool) -> Swift.Void)? { get set }
+  @_spi(Internal) var onPathUpdate: ((FintechSDKCoreUtils.FTPathStatus) -> Swift.Void)? { get set }
   @_spi(Internal) func start()
   @_spi(Internal) func cancel()
 }
 @_spi(Internal) final public class FTNWPathMonitor : FintechSDKCoreUtils.FTPathMonitoring, @unchecked Swift.Sendable {
-  @_spi(Internal) final public var onPathUpdate: ((Swift.Bool) -> Swift.Void)?
+  @_spi(Internal) final public var onPathUpdate: ((FintechSDKCoreUtils.FTPathStatus) -> Swift.Void)?
   @_spi(Internal) public init()
   @_spi(Internal) final public func start()
   @_spi(Internal) final public func cancel()
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) final public class FTConnectivityObserver : FintechSDKCoreUtils.FTConnectivityObserving, @unchecked Swift.Sendable {
+  @_spi(Internal) public init(monitor: any FintechSDKCoreUtils.FTPathMonitoring, clock: any FintechSDKCoreUtils.FTConnectivityClock = FTSystemConnectivityClock(), availabilityTimeoutNanos: Swift.UInt64 = 300_000_000)
   @_spi(Internal) convenience public init()
-  @_spi(Internal) public init(monitor: any FintechSDKCoreUtils.FTPathMonitoring, checkMonitorFactory: @escaping @Sendable () -> any FintechSDKCoreUtils.FTPathMonitoring = { FTNWPathMonitor() }, availabilityProbeTimeoutNanos: Swift.UInt64 = 300_000_000)
+  @_spi(Internal) @objc deinit
   @_spi(Internal) final public func observe() -> _Concurrency.AsyncStream<Swift.Bool>
   @_spi(Internal) final public func isAvailable() async -> Swift.Bool
+  @_spi(Internal) final public func availabilitySnapshot() async -> FintechSDKCoreUtils.FTConnectivitySnapshot
   @_spi(Internal) final public func cancel()
-  @_spi(Internal) @objc deinit
+}
+@_spi(Internal) public struct FTConnectivitySnapshot : Swift.Sendable, Swift.Equatable {
+  @_spi(Internal) public enum State : Swift.String, Swift.Sendable, Swift.Equatable {
+    @_spi(Internal) case online
+    @_spi(Internal) case offline
+    @_spi(Internal) case unknown
+    @_spi(Internal) public init?(rawValue: Swift.String)
+    @_spi(Internal) public typealias RawValue = Swift.String
+    @_spi(Internal) public var rawValue: Swift.String {
+      @_spi(Internal) get
+    }
+  }
+  @_spi(Internal) public enum Source : Swift.String, Swift.Sendable, Swift.Equatable {
+    @_spi(Internal) case monitor
+    @_spi(Internal) case unknownTimeout
+    @_spi(Internal) case cancelled
+    @_spi(Internal) case finished
+    @_spi(Internal) public init?(rawValue: Swift.String)
+    @_spi(Internal) public typealias RawValue = Swift.String
+    @_spi(Internal) public var rawValue: Swift.String {
+      @_spi(Internal) get
+    }
+  }
+  @_spi(Internal) public let isAvailable: Swift.Bool
+  @_spi(Internal) public let state: FintechSDKCoreUtils.FTConnectivitySnapshot.State
+  @_spi(Internal) public let source: FintechSDKCoreUtils.FTConnectivitySnapshot.Source
+  @_spi(Internal) public let revision: Swift.UInt64
+  @_spi(Internal) public let generation: Swift.UInt64
+  @_spi(Internal) public let observedAt: Swift.UInt64?
+  @_spi(Internal) public let nwStatus: FintechSDKCoreUtils.FTPathStatus.Status?
+  @_spi(Internal) public let unsatisfiedReason: Swift.String?
+  @_spi(Internal) public init(isAvailable: Swift.Bool, state: FintechSDKCoreUtils.FTConnectivitySnapshot.State, source: FintechSDKCoreUtils.FTConnectivitySnapshot.Source, revision: Swift.UInt64 = 0, generation: Swift.UInt64 = 0, observedAt: Swift.UInt64? = nil, nwStatus: FintechSDKCoreUtils.FTPathStatus.Status? = nil, unsatisfiedReason: Swift.String? = nil)
+  @_spi(Internal) public func ageMs(now: Swift.UInt64) -> Swift.UInt64?
+  @_spi(Internal) public func ageMs(on clock: any FintechSDKCoreUtils.FTConnectivityClock) -> Swift.UInt64?
+  @_spi(Internal) public static func == (a: FintechSDKCoreUtils.FTConnectivitySnapshot, b: FintechSDKCoreUtils.FTConnectivitySnapshot) -> Swift.Bool
+}
+@_spi(Internal) public struct FTPathStatus : Swift.Sendable, Swift.Equatable {
+  @_spi(Internal) public enum Status : Swift.String, Swift.Sendable, Swift.Equatable {
+    @_spi(Internal) case satisfied
+    @_spi(Internal) case unsatisfied
+    @_spi(Internal) case requiresConnection
+    @_spi(Internal) public init?(rawValue: Swift.String)
+    @_spi(Internal) public typealias RawValue = Swift.String
+    @_spi(Internal) public var rawValue: Swift.String {
+      @_spi(Internal) get
+    }
+  }
+  @_spi(Internal) public static let satisfied: FintechSDKCoreUtils.FTPathStatus
+  @_spi(Internal) public static let unsatisfied: FintechSDKCoreUtils.FTPathStatus
+  @_spi(Internal) public let status: FintechSDKCoreUtils.FTPathStatus.Status
+  @_spi(Internal) public let unsatisfiedReason: Swift.String?
+  @_spi(Internal) public var isSatisfied: Swift.Bool {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public init(status: FintechSDKCoreUtils.FTPathStatus.Status, unsatisfiedReason: Swift.String? = nil)
+  @_spi(Internal) public static func == (a: FintechSDKCoreUtils.FTPathStatus, b: FintechSDKCoreUtils.FTPathStatus) -> Swift.Bool
 }
 @_spi(Internal) public protocol FTDeviceInfoProvider : Swift.Sendable {
   @_spi(Internal) var deviceID: Swift.String? { get }
@@ -596,5 +666,11 @@ final public class DefaultTimeProvider : FintechSDKCoreUtils.TimeProvider {
 extension FintechSDKCoreUtils.FintechApiBaseUrlType : Swift.Equatable {}
 extension FintechSDKCoreUtils.FintechApiBaseUrlType : Swift.Hashable {}
 extension FintechSDKCoreUtils.FintechApiBaseUrlType : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKCoreUtils.FTConnectivitySnapshot.State : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKCoreUtils.FTConnectivitySnapshot.State : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKCoreUtils.FTConnectivitySnapshot.Source : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKCoreUtils.FTConnectivitySnapshot.Source : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKCoreUtils.FTPathStatus.Status : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKCoreUtils.FTPathStatus.Status : Swift.RawRepresentable {}
 @_spi(Internal) extension FintechSDKCoreUtils.FTLogKind : Swift.Equatable {}
 @_spi(Internal) extension FintechSDKCoreUtils.FTLogKind : Swift.Hashable {}

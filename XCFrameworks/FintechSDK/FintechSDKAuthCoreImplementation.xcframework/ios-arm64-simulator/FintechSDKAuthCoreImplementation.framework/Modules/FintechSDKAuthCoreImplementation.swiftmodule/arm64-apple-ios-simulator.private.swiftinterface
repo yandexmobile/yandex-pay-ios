@@ -7,6 +7,7 @@ import CryptoTokenKit
 @_spi(Internal) import FintechSDKAuthInterfaces
 import Foundation
 import LocalAuthentication
+import Security
 import Swift
 import _Concurrency
 import _StringProcessing
@@ -26,6 +27,7 @@ public enum FintechDPoPKeyFactory {
 }
 @_spi(Internal) extension FintechSDKAuthCoreImplementation.FintechDPoPServiceImpl : FintechSDKAuthInterfaces.FTOfflineKeyProviding {
   @_spi(Internal) final public func offlineKey(_ type: FintechSDKAuthInterfaces.PublicKeyType) -> (any FintechSDKAuthInterfaces.FTOfflineKeyAgreementPrivateKey)?
+  @_spi(Internal) final public func silentOfflineKey(_ type: FintechSDKAuthInterfaces.PublicKeyType) -> (any FintechSDKAuthInterfaces.FTOfflineKeyAgreementPrivateKey)?
 }
 final public class FintechDPoPServiceImpl : FintechSDKAuthInterfaces.FintechDPoPService, @unchecked Swift.Sendable {
   final public func key(_ type: FintechSDKAuthInterfaces.PublicKeyType) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> any FintechSDKAuthInterfaces.FintechDPoPKey

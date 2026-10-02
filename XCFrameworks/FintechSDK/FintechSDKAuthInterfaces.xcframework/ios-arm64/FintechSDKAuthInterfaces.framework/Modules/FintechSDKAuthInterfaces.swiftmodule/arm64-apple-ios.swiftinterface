@@ -65,10 +65,21 @@ public protocol FintechDPoPKey {
   var keyType: FintechSDKAuthInterfaces.PublicKeyType { get }
   func makeDPoP(method: Swift.String, path: Swift.String, tokenForAuth: Swift.String) async throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> Swift.String
   func makeDPoPSilently(method: Swift.String, path: Swift.String, tokenForAuth: Swift.String) async throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> Swift.String
+  func makeDPoPSilently(method: Swift.String, path: Swift.String, tokenForAuth: Swift.String, failurePolicy: FintechSDKAuthInterfaces.FintechSilentSigningFailurePolicy) async throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> Swift.String
   func invalidate()
+}
+public enum FintechSilentSigningFailurePolicy : Swift.Sendable, Swift.Equatable {
+  case anyFailureIsNotInteractive
+  case onlyInteractionRefusalIsNotInteractive
+  public static func == (a: FintechSDKAuthInterfaces.FintechSilentSigningFailurePolicy, b: FintechSDKAuthInterfaces.FintechSilentSigningFailurePolicy) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 extension FintechSDKAuthInterfaces.FintechDPoPKey {
   public func makeDPoPSilently(method _: Swift.String, path _: Swift.String, tokenForAuth _: Swift.String) async throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> Swift.String
+  public func makeDPoPSilently(method: Swift.String, path: Swift.String, tokenForAuth: Swift.String, failurePolicy _: FintechSDKAuthInterfaces.FintechSilentSigningFailurePolicy) async throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> Swift.String
 }
 public enum FintechCryptoKeyError : Foundation.LocalizedError {
   case biometryNotAvailable(Foundation.NSError)
@@ -188,6 +199,7 @@ public protocol FTGetPuidUseCase : Swift.Sendable {
 }
 extension FintechSDKAuthInterfaces.FintechServiceEnvironment : Swift.Equatable {}
 extension FintechSDKAuthInterfaces.FintechServiceEnvironment : Swift.Hashable {}
+extension FintechSDKAuthInterfaces.FintechSilentSigningFailurePolicy : Swift.Hashable {}
 extension FintechSDKAuthInterfaces.PublicKeyType : Swift.Equatable {}
 extension FintechSDKAuthInterfaces.PublicKeyType : Swift.Hashable {}
 extension FintechSDKAuthInterfaces.PublicKeyType : Swift.RawRepresentable {}

@@ -50,12 +50,17 @@ public enum FTAuthScenarioState<FTSessionError> where FTSessionError : Swift.Err
 public protocol FTAuthScenarioDelegate<FTSessionError> : AnyObject {
   associatedtype FTSessionError : Swift.Error
   func authScenarioDidChangeState(_ newState: FintechSDKAuthorizationScenario.FTAuthScenarioState<Self.FTSessionError>)
+  func authScenarioDidChangeStateSilently(_ newState: FintechSDKAuthorizationScenario.FTAuthScenarioState<Self.FTSessionError>)
+}
+extension FintechSDKAuthorizationScenario.FTAuthScenarioDelegate {
+  public func authScenarioDidChangeStateSilently(_ newState: FintechSDKAuthorizationScenario.FTAuthScenarioState<Self.FTSessionError>)
 }
 public enum FTAuthSessionAcquisitionMode : Swift.Sendable, Swift.Hashable {
   case silent
   case interactive
   case silentBiometric
   case escalatedBiometric
+  case silentNoBiometricPrompt
   public static func == (a: FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode, b: FintechSDKAuthorizationScenario.FTAuthSessionAcquisitionMode) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
