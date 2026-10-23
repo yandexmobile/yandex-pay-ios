@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKNavigationImplementation -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 @_spi(Internal) import FintechSDKNavigationInterfaces
 import Swift
 import UIKit
@@ -18,22 +18,36 @@ import _SwiftConcurrencyShims
     get
   }
   @_spi(Internal) public init()
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public func start(navigationController: UIKit.UINavigationController?, rootViewController: UIKit.UIViewController?)
+  #endif
   @_spi(Internal) @_Concurrency.MainActor final public func push(fintechViewController vc: FintechSDKNavigationInterfaces.FintechSDKViewController, animated: Swift.Bool, options: FintechSDKNavigationInterfaces.FintechRouterPushOptions)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor final public func present(fintechViewController vc: FintechSDKNavigationInterfaces.FintechSDKViewController, animated: Swift.Bool, completion: (() -> Swift.Void)?)
+  #endif
   @_spi(Internal) @_Concurrency.MainActor final public func set(fintechViewControllers: [FintechSDKNavigationInterfaces.FintechSDKViewController], animated: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor final public func pull(animated: Swift.Bool, completion: ((_ top: UIKit.UIViewController?) -> Swift.Void)?)
+  #endif
   @_spi(Internal) @_Concurrency.MainActor final public func popToRoot(animated: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor final public func dismissPresentedViewControllers(_ currentViewController: UIKit.UIViewController, animated: Swift.Bool, completion: ((UIKit.UIViewController?) -> Swift.Void)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor final public func dismissRootViewController(animated: Swift.Bool, completion: ((UIKit.UIViewController?) -> Swift.Void)?)
+  #endif
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) extension FintechSDKNavigationImplementation.FintechRouterImpl {
   @_spi(Internal) final public func push(viewController: UIKit.UIViewController, animated: Swift.Bool)
   @_spi(Internal) final public func replace(with viewController: UIKit.UIViewController, animated: Swift.Bool)
   @_spi(Internal) final public func set(viewControllers: [UIKit.UIViewController], animated: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public func present(viewController: UIKit.UIViewController, animated: Swift.Bool, completion: (() -> Swift.Void)?)
+  #endif
   @_spi(Internal) final public func pop(animated: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public func dismiss(animated: Swift.Bool, completion: ((UIKit.UIViewController?) -> Swift.Void)?)
+  #endif
 }
 @_spi(Internal) extension FintechSDKNavigationImplementation.FTViewControllerWrapper : Swift.Sendable {}

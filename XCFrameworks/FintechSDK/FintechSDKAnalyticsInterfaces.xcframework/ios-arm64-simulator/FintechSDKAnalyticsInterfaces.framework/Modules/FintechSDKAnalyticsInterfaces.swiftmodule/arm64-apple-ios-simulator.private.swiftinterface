@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKAnalyticsInterfaces -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import Foundation
 import Swift
 import _Concurrency
@@ -9,16 +9,22 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 public protocol FintechAppMetricaAdapter : Swift.Sendable {
   var uuid: Swift.String { get }
+  #if compiler(>=5.3) && $NonescapableTypes
   var deviceID: Swift.String? { get }
+  #endif
   var bootTimestamp: Foundation.TimeInterval { get }
   func isReporterCreated(for apiKey: Swift.String) -> Swift.Bool
   func reporter(for apiKey: Swift.String) throws(FintechSDKAnalyticsInterfaces.FintechAppMetricaError) -> any FintechSDKAnalyticsInterfaces.FintechAppMetricaReportingAdapter
   func extendedReporter(for apiKey: Swift.String) throws(FintechSDKAnalyticsInterfaces.FintechAppMetricaError) -> any FintechSDKAnalyticsInterfaces.FintechAppMetricaReportingAdapter
   func activateReporter(for apiKey: Swift.String) throws(FintechSDKAnalyticsInterfaces.FintechAppMetricaError)
+  #if compiler(>=5.3) && $NonescapableTypes
   func setErrorEnvironment(_ value: Swift.String?, for key: Swift.String)
+  #endif
   func resumeSession()
   func pauseSession()
+  #if compiler(>=5.3) && $NonescapableTypes
   func requestStartupIdentifiers(for keys: [Swift.String], completion: @escaping @Sendable (Swift.Result<[Swift.String : [Swift.String]], any Swift.Error>) -> Swift.Void)
+  #endif
   func makeCountHistogram(name: Swift.String, minValue: Swift.Int, maxValue: Swift.Int, bucketsCount: Swift.Int) -> any FintechSDKAnalyticsInterfaces.FintechAppMetricaCountHistogram
   func makeTimeHistogram(name: Swift.String, minTime: Foundation.TimeInterval, maxTime: Foundation.TimeInterval, bucketsCount: Swift.Int) -> any FintechSDKAnalyticsInterfaces.FintechAppMetricaTimeHistogram
 }
@@ -36,21 +42,38 @@ public enum FintechAppMetricaError : Swift.Error {
   case reporterCreationError(apiKey: Swift.String)
 }
 public protocol FintechAppMetricaReportingAdapter : Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
   func report(eventName: Swift.String, params: [Swift.String : Any], onFailure: ((any Swift.Error) -> Swift.Void)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func setPUID(_ puid: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func setAppEnvironment(_ value: Swift.String?, for key: Swift.String)
+  #endif
 }
 public protocol FintechAppMetricaYandexReportingAdapter {
+  #if compiler(>=5.3) && $NonescapableTypes
   func setPUID(_ puid: Swift.String?)
+  #endif
 }
 @_spi(Internal) public protocol FTIdentifiersProviding : Swift.Sendable {
   @_spi(Internal) var installationID: Swift.String { get }
   @_spi(Internal) var sdkSessionID: Swift.String { get }
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) var appMetricaUUID: Swift.String? { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) var appMetricaDeviceID: Swift.String? { get }
+  #endif
 }
 public enum FTCommonKeys {
   public static let description: Swift.String
+  @_spi(Internal) public static let eventGroup: Swift.String
+}
+@_spi(Internal) public enum FTEventGroup {
+  @_spi(Internal) public static let debug: Swift.String
+  @_spi(Internal) public static let performance: Swift.String
 }
 public enum FTEventType {
   public static let native: Swift.String
@@ -67,7 +90,9 @@ public protocol FTNetworkEventsListener : AnyObject, Swift.Sendable {
 public protocol FTRenderingEventsListener : AnyObject, Swift.Sendable {
   func onScreenDecodingCompleted(durationMs: Swift.Int64, screenPath: Swift.String, sizeBytes: Swift.Int64) async
   func onScreenRenderingCompleted(durationMs: Swift.Int64, screenPath: Swift.String) async
+  #if compiler(>=5.3) && $NonescapableTypes
   func getCurrentPath() async -> Swift.String?
+  #endif
 }
 public enum FintechAnalyticsEnvironment : Swift.Sendable {
   case development
@@ -86,18 +111,22 @@ public protocol FintechRTMAdapter : Swift.Sendable {
 public protocol FintechRTMAdapterFactory : Swift.Sendable {
   func make(userAgent: Swift.String, projectName: Swift.String, appVersion: Swift.String, userID: Swift.UInt64, environment: FintechSDKAnalyticsInterfaces.FintechAnalyticsEnvironment, reqID: Swift.String) throws -> any FintechSDKAnalyticsInterfaces.FintechRTMAdapter
 }
-public protocol FintechRUMAdapter : Swift.Sendable {
-  func reportEvent(_ name: Swift.String, params: [Swift.String : Swift.String]) async throws(FintechSDKAnalyticsInterfaces.FintechRUMError)
-  func reportEvent(_ name: Swift.String, params: [Swift.String : Swift.String], table: Swift.String) async throws(FintechSDKAnalyticsInterfaces.FintechRUMError)
+@_spi(Internal) public protocol FTRUMReporterFactory : Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) func make(uid: Swift.String?) -> any FintechSDKAnalyticsInterfaces.FTRUMReporting
+  #endif
 }
-public protocol FintechRUMAdapterFactory : Swift.Sendable {
-  func make(uid: Swift.String?) -> any FintechSDKAnalyticsInterfaces.FintechRUMAdapter
+@_spi(Internal) public protocol FTRUMReporting : Swift.Sendable {
+  @_spi(Internal) func reportEvent(_ name: Swift.String, params: [Swift.String : Swift.String]) async throws(FintechSDKAnalyticsInterfaces.FintechRUMError)
+  @_spi(Internal) func reportEvent(_ name: Swift.String, params: [Swift.String : Swift.String], table: Swift.String) async throws(FintechSDKAnalyticsInterfaces.FintechRUMError)
 }
 public enum FintechRUMError : Foundation.LocalizedError {
   case networkError(underlyingError: any Swift.Error)
+  #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
     get
   }
+  #endif
 }
 public protocol FintechAnalyticsErrorReporter {
   func reportError(message: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
@@ -111,14 +140,20 @@ extension FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter {
 public protocol FintechTelemetryAdapter : Swift.Sendable {
   func startTrace()
   func reportSpan(name: Swift.String, attributes: [Swift.String : Swift.String])
+  #if compiler(>=5.3) && $NonescapableTypes
   func startRequestSpan(url: Swift.String, method: Swift.String) -> (any FintechSDKAnalyticsInterfaces.FintechRequestSpan)?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func endRequestSpan(_ span: any FintechSDKAnalyticsInterfaces.FintechRequestSpan, statusCode: Swift.Int?, error: (any Swift.Error)?)
+  #endif
 }
 public protocol FintechRequestSpan {
   var traceparent: Swift.String { get }
 }
 public protocol FintechTelemetryAdapterFactory {
+  #if compiler(>=5.3) && $NonescapableTypes
   func make(backendURL: Swift.String, rootSpanName: Swift.String, traceId: Swift.String?, spanId: Swift.String?) -> (any FintechSDKAnalyticsInterfaces.FintechTelemetryAdapter)?
+  #endif
 }
 extension FintechSDKAnalyticsInterfaces.FintechAnalyticsEnvironment : Swift.Equatable {}
 extension FintechSDKAnalyticsInterfaces.FintechAnalyticsEnvironment : Swift.Hashable {}

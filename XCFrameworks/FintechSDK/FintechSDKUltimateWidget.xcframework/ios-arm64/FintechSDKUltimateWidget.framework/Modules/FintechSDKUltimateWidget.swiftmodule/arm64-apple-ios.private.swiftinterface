@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKUltimateWidget -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import FintechSDKAnalyticsInterfaces
 import FintechSDKBDUICore
 import FintechSDKCommonEntity
@@ -25,9 +25,11 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public let path: Swift.String
   @_spi(Internal) public let queryItems: [Foundation.URLQueryItem]?
   @_spi(Internal) public let timeoutInSeconds: Swift.Double
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public var body: [Swift.String : Any]? {
     @_spi(Internal) get
   }
+  #endif
   @_spi(Internal) public var decoder: FintechSDKNetworkImplementation.FTRawDataResponseDecoder {
     @_spi(Internal) get
   }
@@ -35,10 +37,16 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public init(model: FintechSDKUltimateWidget.FTUltimateWidgetModel, availableWidth: CoreFoundation.CGFloat)
 }
 public struct FTUltimateWidgetFactory {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor public static func createUltimateWidget(presenterViewController: UIKit.UIViewController, model: FintechSDKUltimateWidget.FTUltimateWidgetModel, delegate: (any FintechSDKUltimateWidget.FTUltimateWidgetDelegate)?, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, flexClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, analyticsEventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)? = nil) -> some SwiftUICore.View
   
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor public static func createUltimateWidgetUIView(presentationContextProvider: (any FintechSDKCoreUI.FTPresentationContextProviding)?, model: FintechSDKUltimateWidget.FTUltimateWidgetModel, delegate: (any FintechSDKUltimateWidget.FTUltimateWidgetDelegate)?, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, flexClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, analyticsEventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)? = nil, logger: (any FintechSDKCoreUtils.FTLogger)? = nil, onStateChanged: ((FintechSDKDivKitWidgetsFeatures.FintechWidgetState) -> Swift.Void)? = nil) -> FintechSDKUltimateWidget.FTUltimateWidgetUIView
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor public static func createUltimateWidgetUIView(presentationContextProvider: (any FintechSDKCoreUI.FTPresentationContextProviding)?, model: FintechSDKUltimateWidget.FTUltimateWidgetModel, delegate: (any FintechSDKUltimateWidget.FTUltimateWidgetDelegate)?, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, flexClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, analyticsEventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)? = nil, logger: (any FintechSDKCoreUtils.FTLogger)? = nil, surface: Swift.String, onStateChanged: ((FintechSDKDivKitWidgetsFeatures.FintechWidgetState) -> Swift.Void)? = nil) -> FintechSDKUltimateWidget.FTUltimateWidgetUIView
+  #endif
 }
 public struct FTUltimateWidgetData {
   public let splitMonthCount: Swift.Int
@@ -55,7 +63,9 @@ public struct FTUltimateWidgetModel {
     case split
     case cashback
     case fullSize
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -76,7 +86,9 @@ public struct FTUltimateWidgetModel {
     case standard
     @available(*, deprecated, message: "Поддержка Custom Action будет прекращена")
     case standardWithCustomAction
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -88,7 +100,9 @@ public struct FTUltimateWidgetModel {
   public let appearance: FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance
   public let skuId: Swift.String?
   public var header: FintechSDKUltimateWidget.FTUltimateWidgetModel.HeaderStyle
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(amount: Foundation.Decimal, currency: FintechSDKPayBoxEntity.FTCurrencyCode, style: FintechSDKUltimateWidget.FTUltimateWidgetModel.Style, appearance: FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance, header: FintechSDKUltimateWidget.FTUltimateWidgetModel.HeaderStyle, skuId: Swift.String?)
+  #endif
 }
 extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance {
   public var padding: CoreFoundation.CGFloat {
@@ -112,7 +126,9 @@ extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance {
     case transparent
     case `default`
     case light
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -121,7 +137,9 @@ extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance {
   public enum WidgetSize : Swift.String {
     case medium
     case small
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -141,7 +159,9 @@ extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Style {
 public enum UltimateWidgetContent : Swift.String {
   case cashback
   case split
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -169,7 +189,9 @@ extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance.Background :
   @_spi(Internal) @_Concurrency.MainActor final public func refresh()
   @_spi(Internal) @_Concurrency.MainActor @objc override final public func layoutSubviews()
   @_spi(Internal) @_Concurrency.MainActor @objc override final public func didMoveToWindow()
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor @objc override final public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  #endif
   @_spi(Internal) @_Concurrency.MainActor @objc override final public var intrinsicContentSize: CoreFoundation.CGSize {
     @_spi(Internal) @objc get
   }
@@ -179,8 +201,10 @@ extension FintechSDKUltimateWidget.FTUltimateWidgetModel.Appearance.Background :
   @_spi(Internal) @_Concurrency.MainActor public init(model: FintechSDKUltimateWidget.FTUltimateWidgetModel, makeView: @escaping @_Concurrency.MainActor @Sendable () -> FintechSDKUltimateWidget.FTUltimateWidgetUIView)
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public func makeUIView(context: FintechSDKUltimateWidget.FTUltimateWidgetView.Context) -> FintechSDKUltimateWidget.FTUltimateWidgetUIView
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public func updateUIView(_ uiView: FintechSDKUltimateWidget.FTUltimateWidgetUIView, context: FintechSDKUltimateWidget.FTUltimateWidgetView.Context)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @available(iOS 16.0, *)
   @_Concurrency.MainActor @preconcurrency public func sizeThatFits(_ proposal: SwiftUICore.ProposedViewSize, uiView: FintechSDKUltimateWidget.FTUltimateWidgetUIView, context: FintechSDKUltimateWidget.FTUltimateWidgetView.Context) -> CoreFoundation.CGSize?
+  #endif
   @_spi(Internal) public typealias Body = Swift.Never
   @_spi(Internal) public typealias Coordinator = Swift.Void
   @_spi(Internal) public typealias UIViewType = FintechSDKUltimateWidget.FTUltimateWidgetUIView

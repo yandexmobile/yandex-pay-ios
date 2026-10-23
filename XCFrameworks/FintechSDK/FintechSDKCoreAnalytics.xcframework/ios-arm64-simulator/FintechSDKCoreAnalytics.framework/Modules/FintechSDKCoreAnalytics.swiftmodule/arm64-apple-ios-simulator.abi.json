@@ -9,7 +9,232 @@
         "name": "FintechSDKAnalyticsInterfaces",
         "printedName": "FintechSDKAnalyticsInterfaces",
         "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
         "moduleName": "FintechSDKCoreAnalytics"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTAnalyticsRUMReporter",
+        "printedName": "FTAnalyticsRUMReporter",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(reporter:paramsProvider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTAnalyticsRUMReporter",
+                "printedName": "FintechSDKCoreAnalytics.FTAnalyticsRUMReporter",
+                "usr": "s:23FintechSDKCoreAnalytics22FTAnalyticsRUMReporterC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTRUMReporting",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FTRUMReporting",
+                "usr": "s:29FintechSDKAnalyticsInterfaces14FTRUMReportingP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAnalyticsParamsProvider",
+                "printedName": "any FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider",
+                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:23FintechSDKCoreAnalytics22FTAnalyticsRUMReporterC8reporter14paramsProviderAC0A22SDKAnalyticsInterfaces14FTRUMReporting_p_AA0ac6ParamsH0_ptcfc",
+            "mangledName": "$s23FintechSDKCoreAnalytics22FTAnalyticsRUMReporterC8reporter14paramsProviderAC0A22SDKAnalyticsInterfaces14FTRUMReporting_p_AA0ac6ParamsH0_ptcfc",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "reportEvent",
+            "printedName": "reportEvent(name:params:type:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics22FTAnalyticsRUMReporterC11reportEvent4name6params4typeySS_SDyS2SGSStF",
+            "mangledName": "$s23FintechSDKCoreAnalytics22FTAnalyticsRUMReporterC11reportEvent4name6params4typeySS_SDyS2SGSStF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "reportEvent",
+            "printedName": "reportEvent(name:additional:type:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : any Swift.Sendable]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Sendable",
+                    "printedName": "any Swift.Sendable",
+                    "usr": "s:s8SendableP"
+                  }
+                ],
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKCoreAnalytics22FTAnalyticsRUMReporterC11reportEvent4name10additional4typeySS_SDySSs8Sendable_pGSStYaKF",
+            "mangledName": "$s23FintechSDKCoreAnalytics22FTAnalyticsRUMReporterC11reportEvent4name10additional4typeySS_SDySSs8Sendable_pGSStYaKF",
+            "moduleName": "FintechSDKCoreAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:23FintechSDKCoreAnalytics22FTAnalyticsRUMReporterC",
+        "mangledName": "$s23FintechSDKCoreAnalytics22FTAnalyticsRUMReporterC",
+        "moduleName": "FintechSDKCoreAnalytics",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FintechAnalyticsEventReporter",
+            "printedName": "FintechAnalyticsEventReporter",
+            "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP",
+            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAnalyticsInterfaces",
+        "printedName": "FintechSDKAnalyticsInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreAnalytics",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
       },
       {
         "kind": "Import",
@@ -81,9 +306,9 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "FintechRUMAdapterFactory",
-                "printedName": "any FintechSDKAnalyticsInterfaces.FintechRUMAdapterFactory",
-                "usr": "s:29FintechSDKAnalyticsInterfaces0A17RUMAdapterFactoryP"
+                "name": "FTRUMReporterFactory",
+                "printedName": "any FintechSDKAnalyticsInterfaces.FTRUMReporterFactory",
+                "usr": "s:29FintechSDKAnalyticsInterfaces20FTRUMReporterFactoryP"
               },
               {
                 "kind": "TypeNominal",
@@ -120,8 +345,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:23FintechSDKCoreAnalytics26FTAnalyticsReporterFactoryC11environment15sessionProvider13metricaAPIKey17appMetricaAdapter03rumF003rtmF00L20EnvironmentSourceSDK0lQ4Type011extraParamsI0AC0A15SDKCommonEntity0A14SDKEnvironmentO_0A20SDKNetworkInterfaces09FTSessionI7Serving_pSS0A22SDKAnalyticsInterfaces0a3AppmN0_pAR0a10RUMAdapterF0_pAR0a10RTMAdapterF0_pSSAA05FTAppqT0OAA0a5ExtracvI0_pSgtcfc",
-            "mangledName": "$s23FintechSDKCoreAnalytics26FTAnalyticsReporterFactoryC11environment15sessionProvider13metricaAPIKey17appMetricaAdapter03rumF003rtmF00L20EnvironmentSourceSDK0lQ4Type011extraParamsI0AC0A15SDKCommonEntity0A14SDKEnvironmentO_0A20SDKNetworkInterfaces09FTSessionI7Serving_pSS0A22SDKAnalyticsInterfaces0a3AppmN0_pAR0a10RUMAdapterF0_pAR0a10RTMAdapterF0_pSSAA05FTAppqT0OAA0a5ExtracvI0_pSgtcfc",
+            "usr": "s:23FintechSDKCoreAnalytics26FTAnalyticsReporterFactoryC11environment15sessionProvider13metricaAPIKey17appMetricaAdapter03rumF003rtmF00L20EnvironmentSourceSDK0lQ4Type011extraParamsI0AC0A15SDKCommonEntity0A14SDKEnvironmentO_0A20SDKNetworkInterfaces09FTSessionI7Serving_pSS0A22SDKAnalyticsInterfaces0a3AppmN0_pAR013FTRUMReporterF0_pAR0a10RTMAdapterF0_pSSAA05FTAppqT0OAA0a5ExtracvI0_pSgtcfc",
+            "mangledName": "$s23FintechSDKCoreAnalytics26FTAnalyticsReporterFactoryC11environment15sessionProvider13metricaAPIKey17appMetricaAdapter03rumF003rtmF00L20EnvironmentSourceSDK0lQ4Type011extraParamsI0AC0A15SDKCommonEntity0A14SDKEnvironmentO_0A20SDKNetworkInterfaces09FTSessionI7Serving_pSS0A22SDKAnalyticsInterfaces0a3AppmN0_pAR013FTRUMReporterF0_pAR0a10RTMAdapterF0_pSSAA05FTAppqT0OAA0a5ExtracvI0_pSgtcfc",
             "moduleName": "FintechSDKCoreAnalytics",
             "declAttributes": [
               "AccessControl"
@@ -333,6 +558,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -471,6 +703,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -746,6 +985,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -877,151 +1123,6 @@
             "printedName": "FintechAnalyticsErrorReporter",
             "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsErrorReporterP",
             "mangledName": "$s29FintechSDKAnalyticsInterfaces0A22AnalyticsErrorReporterP"
-          }
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "FintechSDKAnalyticsInterfaces",
-        "printedName": "FintechSDKAnalyticsInterfaces",
-        "declKind": "Import",
-        "moduleName": "FintechSDKCoreAnalytics"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "FintechSDKCoreAnalytics"
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "FintechAnalyticsRUMReporter",
-        "printedName": "FintechAnalyticsRUMReporter",
-        "children": [
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(adapter:paramsProvider:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "FintechAnalyticsRUMReporter",
-                "printedName": "FintechSDKCoreAnalytics.FintechAnalyticsRUMReporter",
-                "usr": "s:23FintechSDKCoreAnalytics0aC11RUMReporterC"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "FintechRUMAdapter",
-                "printedName": "any FintechSDKAnalyticsInterfaces.FintechRUMAdapter",
-                "usr": "s:29FintechSDKAnalyticsInterfaces0A10RUMAdapterP"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "FintechAnalyticsParamsProvider",
-                "printedName": "any FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider",
-                "usr": "s:23FintechSDKCoreAnalytics0aC14ParamsProviderP"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:23FintechSDKCoreAnalytics0aC11RUMReporterC7adapter14paramsProviderAC0A22SDKAnalyticsInterfaces0A10RUMAdapter_p_AA0ac6ParamsG0_ptcfc",
-            "mangledName": "$s23FintechSDKCoreAnalytics0aC11RUMReporterC7adapter14paramsProviderAC0A22SDKAnalyticsInterfaces0A10RUMAdapter_p_AA0ac6ParamsG0_ptcfc",
-            "moduleName": "FintechSDKCoreAnalytics",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Function",
-            "name": "reportEvent",
-            "printedName": "reportEvent(name:params:type:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Dictionary",
-                "printedName": "[Swift.String : Swift.String]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:SD"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:23FintechSDKCoreAnalytics0aC11RUMReporterC11reportEvent4name6params4typeySS_SDyS2SGSStF",
-            "mangledName": "$s23FintechSDKCoreAnalytics0aC11RUMReporterC11reportEvent4name6params4typeySS_SDyS2SGSStF",
-            "moduleName": "FintechSDKCoreAnalytics",
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Class",
-        "usr": "s:23FintechSDKCoreAnalytics0aC11RUMReporterC",
-        "mangledName": "$s23FintechSDKCoreAnalytics0aC11RUMReporterC",
-        "moduleName": "FintechSDKCoreAnalytics",
-        "declAttributes": [
-          "Final",
-          "AccessControl"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "FintechAnalyticsEventReporter",
-            "printedName": "FintechAnalyticsEventReporter",
-            "usr": "s:29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP",
-            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A22AnalyticsEventReporterP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Sendable",
-            "printedName": "Sendable",
-            "usr": "s:s8SendableP",
-            "mangledName": "$ss8SendableP"
           }
         ]
       },
@@ -1167,6 +1268,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -1525,6 +1633,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -1554,7 +1669,10 @@
         "name": "FintechSDKAnalyticsInterfaces",
         "printedName": "FintechSDKAnalyticsInterfaces",
         "declKind": "Import",
-        "moduleName": "FintechSDKCoreAnalytics"
+        "moduleName": "FintechSDKCoreAnalytics",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
       },
       {
         "kind": "Import",
@@ -2494,6 +2612,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -2618,6 +2743,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -3626,6 +3758,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -3746,6 +3885,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -4584,6 +4730,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -4659,6 +4812,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -4788,6 +4948,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       }
@@ -4796,280 +4963,287 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FintechAnalyticsAppMetricaReporter.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FTAnalyticsRUMReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 1592,
+      "length": 20,
+      "value": "\"fintech_sdk_events\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FTAnalyticsRUMReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 1643,
+      "length": 5,
+      "value": "\"env\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FTAnalyticsRUMReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 1672,
+      "length": 9,
+      "value": "\"service\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FTAnalyticsRUMReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 1710,
+      "length": 4,
+      "value": "\"ts\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FTAnalyticsRUMReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 1744,
+      "length": 9,
+      "value": "\"version\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FTAnalyticsRUMReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 1774,
+      "length": 6,
+      "value": "\"type\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FTAnalyticsRUMReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 1807,
+      "length": 12,
+      "value": "\"additional\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FintechAnalyticsAppMetricaReporter.swift",
       "kind": "StringLiteral",
       "offset": 880,
       "length": 6,
       "value": "\"type\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FintechAnalyticsRUMReporter.swift",
-      "kind": "StringLiteral",
-      "offset": 1663,
-      "length": 5,
-      "value": "\"env\""
-    },
-    {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FintechAnalyticsRUMReporter.swift",
-      "kind": "StringLiteral",
-      "offset": 1692,
-      "length": 9,
-      "value": "\"service\""
-    },
-    {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FintechAnalyticsRUMReporter.swift",
-      "kind": "StringLiteral",
-      "offset": 1730,
-      "length": 4,
-      "value": "\"ts\""
-    },
-    {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FintechAnalyticsRUMReporter.swift",
-      "kind": "StringLiteral",
-      "offset": 1764,
-      "length": 9,
-      "value": "\"version\""
-    },
-    {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FintechAnalyticsRUMReporter.swift",
-      "kind": "StringLiteral",
-      "offset": 1794,
-      "length": 6,
-      "value": "\"type\""
-    },
-    {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FintechAnalyticsRUMReporter.swift",
-      "kind": "StringLiteral",
-      "offset": 1827,
-      "length": 12,
-      "value": "\"additional\""
-    },
-    {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FintechAnalyticsTelemetryReporter.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/FintechAnalyticsTelemetryReporter.swift",
       "kind": "StringLiteral",
       "offset": 891,
       "length": 6,
       "value": "\"type\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
       "kind": "BooleanLiteral",
-      "offset": 648,
+      "offset": 664,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
       "kind": "StringLiteral",
-      "offset": 4899,
+      "offset": 4966,
       "length": 9,
       "value": "\"service\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
       "kind": "StringLiteral",
-      "offset": 4937,
+      "offset": 5004,
       "length": 15,
       "value": "\"endpoint_path\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
       "kind": "StringLiteral",
-      "offset": 4983,
+      "offset": 5050,
       "length": 17,
       "value": "\"endpoint_method\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
       "kind": "StringLiteral",
-      "offset": 5032,
+      "offset": 5099,
       "length": 26,
       "value": "\"endpoint_timeout_seconds\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
       "kind": "StringLiteral",
-      "offset": 5085,
+      "offset": 5152,
       "length": 13,
       "value": "\"duration_ms\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
       "kind": "StringLiteral",
-      "offset": 5124,
+      "offset": 5191,
       "length": 12,
       "value": "\"size_bytes\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechNetworkReportingObserver.swift",
       "kind": "StringLiteral",
-      "offset": 5172,
+      "offset": 5239,
       "length": 24,
       "value": "\"first_byte_duration_ms\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechOpenTelemetryNetworkObserver.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Observers\/FintechOpenTelemetryNetworkObserver.swift",
       "kind": "Dictionary",
       "offset": 2144,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
       "kind": "StringLiteral",
       "offset": 2589,
       "length": 5,
       "value": "\"env\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
       "kind": "StringLiteral",
       "offset": 2621,
       "length": 13,
       "value": "\"app_version\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
       "kind": "StringLiteral",
       "offset": 2661,
       "length": 9,
       "value": "\"version\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
       "kind": "StringLiteral",
       "offset": 2697,
       "length": 13,
       "value": "\"ios_version\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
       "kind": "StringLiteral",
       "offset": 2737,
       "length": 13,
       "value": "\"bundle_name\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
       "kind": "StringLiteral",
       "offset": 2775,
       "length": 11,
       "value": "\"device_id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
       "kind": "StringLiteral",
       "offset": 2817,
       "length": 6,
       "value": "\"uuid\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
       "kind": "StringLiteral",
       "offset": 2852,
       "length": 16,
       "value": "\"sdk_session_id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
       "kind": "StringLiteral",
       "offset": 2892,
       "length": 9,
       "value": "\"service\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
       "kind": "StringLiteral",
       "offset": 2927,
       "length": 4,
       "value": "\"ts\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
       "kind": "StringLiteral",
       "offset": 2957,
       "length": 12,
       "value": "\"session_id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
       "kind": "StringLiteral",
       "offset": 2996,
       "length": 13,
       "value": "\"merchant_id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAnalyticsParams.swift",
       "kind": "StringLiteral",
       "offset": 3040,
       "length": 17,
       "value": "\"installation_id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAppEnvironmentParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAppEnvironmentParams.swift",
       "kind": "StringLiteral",
       "offset": 170,
       "length": 12,
       "value": "\"source_sdk\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAppEnvironmentParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAppEnvironmentParams.swift",
       "kind": "StringLiteral",
       "offset": 215,
       "length": 9,
       "value": "\"service\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAppEnvironmentParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAppEnvironmentParams.swift",
       "kind": "StringLiteral",
       "offset": 260,
       "length": 13,
       "value": "\"bundle_name\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAppEnvironmentParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAppEnvironmentParams.swift",
       "kind": "StringLiteral",
       "offset": 309,
       "length": 13,
       "value": "\"is_internal\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAppEnvironmentParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAppEnvironmentParams.swift",
       "kind": "StringLiteral",
       "offset": 355,
       "length": 9,
       "value": "\"version\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAppEnvironmentParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAppEnvironmentParams.swift",
       "kind": "StringLiteral",
       "offset": 400,
       "length": 13,
       "value": "\"sdk_version\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAppEnvironmentParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAppEnvironmentParams.swift",
       "kind": "StringLiteral",
       "offset": 449,
       "length": 13,
       "value": "\"app_version\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAppEnvironmentParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAppEnvironmentParams.swift",
       "kind": "StringLiteral",
       "offset": 504,
       "length": 5,
       "value": "\"ios\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAppEnvironmentParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTAppEnvironmentParams.swift",
       "kind": "IntegerLiteral",
       "offset": 541,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTExternalAnalyticsParamsProvider.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Analytics\/Implementation\/Params\/FTExternalAnalyticsParamsProvider.swift",
       "kind": "StringLiteral",
       "offset": 356,
       "length": 18,

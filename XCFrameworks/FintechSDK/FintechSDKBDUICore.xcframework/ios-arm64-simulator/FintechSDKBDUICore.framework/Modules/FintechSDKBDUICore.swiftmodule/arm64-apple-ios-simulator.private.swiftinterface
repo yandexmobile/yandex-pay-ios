@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKBDUICore -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import Combine
 import CoreGraphics
 import FintechSDKAnalyticsInterfaces
@@ -25,7 +25,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public static let shared: FintechSDKBDUICore.FTBDUIAnchorRegistry
   @_spi(Internal) final public func register(view: UIKit.UIView, forId id: Swift.String, shape: FintechSDKBDUICore.FTBDUIAnchorShape)
   @_spi(Internal) final public func unregister(id: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public func resolve(id: Swift.String) -> (view: UIKit.UIView, shape: FintechSDKBDUICore.FTBDUIAnchorShape)?
+  #endif
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) public struct FTBDUIEmptyContent : FintechSDKBDUICore.FintechBDUIContent {
@@ -40,8 +42,20 @@ import _SwiftConcurrencyShims
   }
   @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
 }
+@_spi(Internal) public protocol FTBDUIExternalDivURLHandling : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) var externalDivUrlHandler: (any FintechSDKBDUICore.FintechDivUrlHandler)? { get set }
+  #endif
+}
+@_spi(Internal) public protocol FTBDUINavigationSourceValidating {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) @_Concurrency.MainActor func canOpenScreen(from source: UIKit.UIViewController?, mode: FintechSDKBDUICore.FTBDUIPresentationMode) -> Swift.Bool
+  #endif
+}
 @_spi(Internal) public protocol FTBackGestureNavigable : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) var isBackGestureEnabled: Swift.Bool? { get }
+  #endif
 }
 @_spi(Internal) public enum FTBDUIPopGestureNavigationPolicy {
   @_spi(Internal) public static func effectiveInteractivePopEnabled(navigationController: UIKit.UINavigationController, backGestureEnabledDefault: Swift.Bool) -> Swift.Bool
@@ -51,7 +65,24 @@ import _SwiftConcurrencyShims
   @_spi(Internal) var shouldReloadPreviousDocumentOnPop: Swift.Bool { get }
 }
 @_spi(Internal) public enum FTBDUIPopReloadPolicy {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public static func engineToReload(previousStack: [UIKit.UIViewController], currentStack: [UIKit.UIViewController]) -> (any FintechSDKBDUICore.FintechBDUIEngine)?
+  #endif
+}
+@_spi(Internal) public enum FTBDUIPresentationMode : Swift.String, Swift.CaseIterable {
+  @_spi(Internal) case plain
+  @_spi(Internal) case bottomSheet
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init?(rawValue: Swift.String)
+  #endif
+  @_spi(Internal) public typealias AllCases = [FintechSDKBDUICore.FTBDUIPresentationMode]
+  @_spi(Internal) public typealias RawValue = Swift.String
+  @_spi(Internal) nonisolated public static var allCases: [FintechSDKBDUICore.FTBDUIPresentationMode] {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public var rawValue: Swift.String {
+    @_spi(Internal) get
+  }
 }
 @_spi(Internal) @_Concurrency.MainActor public protocol FTBDUIUpdatableView : UIKit.UIView {
   @_spi(Internal) @_Concurrency.MainActor func update(source: FintechSDKBDUICore.FintechDivViewSource) async
@@ -62,9 +93,13 @@ import _SwiftConcurrencyShims
 final public class FTResultManager {
   public init()
   final public func setResult(_ result: FintechSDKBDUICore.FTScreenResult)
+  #if compiler(>=5.3) && $NonescapableTypes
   final public func getResult() -> FintechSDKBDUICore.FTScreenResult?
+  #endif
   final public func saveParams(_ params: [Swift.String : Swift.String])
+  #if compiler(>=5.3) && $NonescapableTypes
   final public func getSavedParams() -> [Swift.String : Swift.String]?
+  #endif
   final public func cleanResult()
   @objc deinit
 }
@@ -124,15 +159,27 @@ public protocol FintechBDUIAdapter : FintechSDKBDUICore.FintechBDUIDivActionHand
   @_Concurrency.MainActor func addFirstInteractionOverlay(to engine: any FintechSDKBDUICore.FintechBDUIEngine, screenPath: Swift.String)
   @_Concurrency.MainActor func create<Preview>(entryPoint: FintechSDKBDUICore.FintechBDUIEntryPoint, preview: Preview) -> any FintechSDKBDUICore.FintechBDUIEngine where Preview : FintechSDKBDUICore.FintechBDUIContent
   @_Concurrency.MainActor func create<Content>(document: Content) -> any FintechSDKBDUICore.FintechBDUIEngine where Content : FintechSDKBDUICore.FintechBDUIContent
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor func createDivKitView(action: (any FintechSDKBDUICore.FintechDivUrlHandler)?, source: FintechSDKBDUICore.FintechDivViewSource, divFlags: FintechSDKBDUICore.FintechDivFlagsInfo?) -> any SwiftUICore.View
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor func createDivKitUIView(action: (any FintechSDKBDUICore.FintechDivUrlHandler)?, source: FintechSDKBDUICore.FintechDivViewSource, divFlags: FintechSDKBDUICore.FintechDivFlagsInfo?) -> UIKit.UIView
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor func createDivKitUIView(action: (any FintechSDKBDUICore.FintechDivUrlHandler)?, source: FintechSDKBDUICore.FintechDivViewSource, divFlags: FintechSDKBDUICore.FintechDivFlagsInfo?) async -> UIKit.UIView
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor func createUpdatableDivKitUIView(action: (any FintechSDKBDUICore.FintechDivUrlHandler)?, source: FintechSDKBDUICore.FintechDivViewSource, divFlags: FintechSDKBDUICore.FintechDivFlagsInfo?) async -> (any FintechSDKBDUICore.FTBDUIUpdatableView)?
+  #endif
   @_spi(Internal) func observeExtensionDescriptors(extensionId: Swift.String, observer: any FintechSDKBDUICore.FintechDivExtensionDescriptorObserving) -> any FintechSDKCoreUtils.FTCancellableTask
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor func handleDivAction(action: [Swift.String : Any], path: Any?, sender: Swift.AnyObject?, cardId: Swift.String?)
+  #endif
 }
 @_spi(Internal) extension FintechSDKBDUICore.FintechBDUIAdapter {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor public func createUpdatableDivKitUIView(action _: (any FintechSDKBDUICore.FintechDivUrlHandler)?, source _: FintechSDKBDUICore.FintechDivViewSource, divFlags _: FintechSDKBDUICore.FintechDivFlagsInfo?) async -> (any FintechSDKBDUICore.FTBDUIUpdatableView)?
+  #endif
   @_spi(Internal) public func observeExtensionDescriptors(extensionId _: Swift.String, observer _: any FintechSDKBDUICore.FintechDivExtensionDescriptorObserving) -> any FintechSDKCoreUtils.FTCancellableTask
 }
 public struct FintechBDUIAnyAction : Swift.Hashable, Swift.Decodable {
@@ -182,7 +229,9 @@ public enum CutoutAnimationType : Swift.String, Swift.Decodable {
   case scaleFromCenter
   case fade
   case none
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -198,11 +247,15 @@ public struct CutoutShadowConfig {
   public init(color: UIKit.UIColor, offsetX: CoreFoundation.CGFloat, offsetY: CoreFoundation.CGFloat, opacity: Swift.Float, radius: CoreFoundation.CGFloat, spread: CoreFoundation.CGFloat)
 }
 public protocol FintechBDUICutoutManager : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   func showCutout(viewId: Swift.String, animationDuration: Foundation.TimeInterval, animationType: FintechSDKBDUICore.CutoutAnimationType, shadow: FintechSDKBDUICore.CutoutShadowConfig?)
+  #endif
   func hideCutout(viewId: Swift.String, animationDuration: Foundation.TimeInterval, animationType: FintechSDKBDUICore.CutoutAnimationType)
 }
 public protocol FintechBDUIDivActionHandler : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor func handleDivAction(cardId: Swift.String, url: Swift.String, logId: Swift.String, payload: [Swift.String : Any]?) -> Swift.Bool
+  #endif
 }
 public protocol FintechBDUIDivCustom : Swift.Decodable {
   static var customType: Swift.String { get }
@@ -215,7 +268,9 @@ public protocol FintechBDUIDivCustomView : UIKit.UIView {
 public protocol FintechBDUIDivVariableStorage {
   var values: [Swift.String : Any] { get }
   func put(name: Swift.String, value: Any)
+  #if compiler(>=5.3) && $NonescapableTypes
   func getValue<T>(name: Swift.String) -> T?
+  #endif
 }
 public protocol FintechBDUIDivCustomFactory {
   associatedtype Content where Self.Content == Self.View.Content
@@ -229,7 +284,9 @@ extension FintechSDKBDUICore.FintechBDUIDivCustomFactory {
 }
 public protocol FintechBDUIEngine : UIKit.UIViewController {
   func reloadDocument()
+  #if compiler(>=5.3) && $NonescapableTypes
   func dispatchRemoteAction(path: Swift.String, query: [Swift.String : [Swift.String]]?, body: [Swift.String : Any]?)
+  #endif
   func showDocument(entryPoint: FintechSDKBDUICore.FintechBDUIEntryPoint)
   func showScreen<Content>(document: Content) where Content : FintechSDKBDUICore.FintechBDUIContent
 }
@@ -237,7 +294,9 @@ public struct FintechBDUIEntryPoint {
   public let path: Swift.String
   public let query: [Swift.String : [Swift.String]]?
   public let body: [Swift.String : Any]?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(path: Swift.String, query: [Swift.String : [Swift.String]]? = nil, body: [Swift.String : Any]? = nil)
+  #endif
 }
 @available(*, deprecated, renamed: "FintechAnalyticsErrorReporter", message: "Use FintechAnalyticsErrorReporter instead")
 public protocol FintechBDUIErrorLogger : FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter {
@@ -261,8 +320,12 @@ public protocol FintechBDUIFontProvider {
   }
 }
 @_spi(Internal) public protocol FintechBDUIInitialPreviewSelecting : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor func createInitialPreview<NativePreview>(entryPoint: FintechSDKBDUICore.FintechBDUIEntryPoint?, candidatePreview: FintechSDKBDUICore.FintechBDUIRawDataContent?, lastKnownGoodPreview: FintechSDKBDUICore.FintechBDUIRawDataContent?, nativePreview: NativePreview, onPreviewEvent: @escaping @_Concurrency.MainActor @Sendable (Swift.String, [Swift.String : Swift.String]) -> Swift.Void, onCachedPreviewRenderingOutcome: @escaping @_Concurrency.MainActor @Sendable (FintechSDKBDUICore.FintechBDUIInitialPreviewSelection.RenderingOutcome) -> Swift.Void) -> FintechSDKBDUICore.FintechBDUIInitialPreviewSelection where NativePreview : FintechSDKBDUICore.FintechBDUIContent
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor func createInitialPreview(entryPoint: FintechSDKBDUICore.FintechBDUIEntryPoint?, candidatePreview: FintechSDKBDUICore.FintechBDUIRawDataContent?, lastKnownGoodPreview: FintechSDKBDUICore.FintechBDUIRawDataContent?, jsonFileURL: Foundation.URL, nativePreview: (any FintechSDKBDUICore.FintechBDUIContent)?, onPreviewEvent: @escaping @_Concurrency.MainActor @Sendable (Swift.String, [Swift.String : Swift.String]) -> Swift.Void, onCachedPreviewRenderingOutcome: @escaping @_Concurrency.MainActor @Sendable (FintechSDKBDUICore.FintechBDUIInitialPreviewSelection.RenderingOutcome) -> Swift.Void) -> FintechSDKBDUICore.FintechBDUIInitialPreviewSelection
+  #endif
 }
 @_spi(Internal) public struct FintechBDUIInitialPreviewSelection {
   @_spi(Internal) public enum RenderingOutcome : Swift.Equatable, Swift.Sendable {
@@ -291,7 +354,9 @@ public protocol FintechBDUIFontProvider {
   @_spi(Internal) public init(engine: any FintechSDKBDUICore.FintechBDUIEngine, source: FintechSDKBDUICore.FintechBDUIInitialPreviewSelection.Source)
 }
 public protocol FintechBDUILocalImageProviding {
+  #if compiler(>=5.3) && $NonescapableTypes
   func localImage(for url: Foundation.URL) -> UIKit.UIImage?
+  #endif
 }
 public protocol FintechBDUIOverlayManager {
   func present(_ viewController: UIKit.UIViewController, tag: Swift.String)
@@ -309,7 +374,9 @@ public struct FintechBDUIPopupSettings {
   public let supportsInteractiveDismiss: Swift.Bool
   public let shouldDimBackground: Swift.Bool
   public let height: CoreFoundation.CGFloat?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(supportsInteractiveDismiss: Swift.Bool, shouldDimBackground: Swift.Bool, height: CoreFoundation.CGFloat?)
+  #endif
 }
 public struct FintechBDUIRawDataContent : FintechSDKBDUICore.FintechBDUIContent {
   public static var contentType: Swift.String {
@@ -330,8 +397,12 @@ public protocol FintechBDUIRouter {
   func replace(with viewController: UIKit.UIViewController, animated: Swift.Bool)
   func popToRoot(animated: Swift.Bool)
   func set(viewControllers: [UIKit.UIViewController], animated: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
   func present(viewController: UIKit.UIViewController, animated: Swift.Bool, completion: (() -> Swift.Void)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func dismiss(animated: Swift.Bool, completion: ((_ top: UIKit.UIViewController?) -> Swift.Void)?)
+  #endif
 }
 public enum FintechBDUIThemeKind {
   case dark
@@ -347,19 +418,29 @@ extension FintechSDKCommonEntity.FintechSDKTheme {
   public func toBDUIThemeKind(systemStyle: UIKit.UIUserInterfaceStyle) -> FintechSDKBDUICore.FintechBDUIThemeKind
 }
 public protocol FintechBDUIViewCoordinatesProvider : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   func frame(forViewId id: Swift.String) -> CoreFoundation.CGRect?
+  #endif
 }
 public class FintechDivAction : Swift.Codable {
   public enum CodingKeys : Swift.String, Swift.CodingKey {
     case url
     case logId
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(stringValue: Swift.String)
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(intValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.String
+    #if compiler(>=5.3) && $NonescapableTypes
     public var intValue: Swift.Int? {
       get
     }
+    #endif
     public var rawValue: Swift.String {
       get
     }
@@ -393,19 +474,37 @@ public struct FintechDivFlagsInfo : Swift.Equatable {
   public static func == (a: FintechSDKBDUICore.FintechDivFlagsInfo, b: FintechSDKBDUICore.FintechDivFlagsInfo) -> Swift.Bool
 }
 public protocol FintechDivKitExpressionResolver {
+  #if compiler(>=5.3) && $NonescapableTypes
   func resolve(_ expression: Swift.String) -> Any?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func resolveString(_ expression: Swift.String) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func resolveColor(_ expression: Swift.String) -> UIKit.UIColor?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func resolveUrl(_ expression: Swift.String) -> Foundation.URL?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func resolveEnum<T>(_ expression: Swift.String) -> T? where T : Swift.RawRepresentable, T.RawValue == Swift.String
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func resolveNumeric<T>(_ expression: Swift.String) -> T?
+  #endif
 }
 public protocol FintechDivUrlHandler {
+  #if compiler(>=5.3) && $NonescapableTypes
   func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?, expressionResolver: any FintechSDKBDUICore.FintechDivKitExpressionResolver)
+  #endif
 }
 extension FintechSDKBDUICore.FintechDivUrlHandler {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?, expressionResolver _: any FintechSDKBDUICore.FintechDivKitExpressionResolver)
+  #endif
 }
 public struct FintechDivViewSource {
   public let cardId: Swift.String
@@ -413,6 +512,9 @@ public struct FintechDivViewSource {
   public let resetsCardState: Swift.Bool
   public init(cardId: Swift.String, data: Foundation.Data, resetsCardState: Swift.Bool = false)
 }
+@_spi(Internal) extension FintechSDKBDUICore.FTBDUIPresentationMode : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKBDUICore.FTBDUIPresentationMode : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKBDUICore.FTBDUIPresentationMode : Swift.RawRepresentable {}
 extension FintechSDKBDUICore.FintechBDUIAnyActionDecoder.DecodingError : Swift.Equatable {}
 extension FintechSDKBDUICore.FintechBDUIAnyActionDecoder.DecodingError : Swift.Hashable {}
 extension FintechSDKBDUICore.CutoutAnimationType : Swift.Equatable {}

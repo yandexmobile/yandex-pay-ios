@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKCoreUI -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import Combine
 import Darwin
 import FintechSDKCommonEntity
@@ -15,14 +15,19 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+import _WebKit_SwiftUI
 @_spi(Internal) public protocol FTModalPresenting : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor func present(_ viewController: UIKit.UIViewController, animated: Swift.Bool, completion: (() -> Swift.Void)?)
+  #endif
 }
 @_spi(Internal) public protocol FTSystemAlertPresenting : AnyObject {
   @_spi(Internal) @_Concurrency.MainActor func showAlert(title: Swift.String, message: Swift.String)
 }
 @_spi(Internal) final public class FTSystemAlertPresenter : FintechSDKCoreUI.FTSystemAlertPresenting {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(modalPresenter: (any FintechSDKCoreUI.FTModalPresenting)?)
+  #endif
   @_spi(Internal) @_Concurrency.MainActor final public func showAlert(title: Swift.String, message: Swift.String)
   @_spi(Internal) @objc deinit
 }
@@ -40,9 +45,13 @@ import _SwiftConcurrencyShims
 }
 @_spi(Internal) public protocol FintechBottomSheetHandle : AnyObject {
   @_spi(Internal) var viewController: UIKit.UIViewController { get }
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func setDelegate(_ delegate: (any FintechSDKCoreUI.FintechBottomSheetDelegate)?)
+  #endif
   @_spi(Internal) func updateDismissArea(_ dismissArea: CoreFoundation.CGFloat)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func updateDecorationView(_ decorationView: UIKit.UIView?)
+  #endif
 }
 @_spi(Internal) public struct FintechCardConfiguration {
   @_spi(Internal) public struct HeightParams {
@@ -50,13 +59,17 @@ import _SwiftConcurrencyShims
     @_spi(Internal) public let notLessThan: CoreFoundation.CGFloat
     @_spi(Internal) public init(relativeSize: CoreFoundation.CGFloat, notLessThan: CoreFoundation.CGFloat)
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(dismissArea: CoreFoundation.CGFloat = 60, cornerRadius: CoreFoundation.CGFloat = 20, heightParams: FintechSDKCoreUI.FintechCardConfiguration.HeightParams? = nil, decorationView: UIKit.UIView? = nil)
+  #endif
 }
 @_spi(Internal) extension FintechSDKCommonEntity.FintechSDKTheme {
   @_spi(Internal) public func toUIUserInterfaceStyle() -> UIKit.UIUserInterfaceStyle
 }
 @_spi(Internal) extension UIKit.UIColor {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) convenience public init?(hex hexString: Swift.String)
+  #endif
   @_spi(Internal) public func toHex(withAlpha: Swift.Bool = true, withPrefix: Swift.Bool = true) -> Swift.String
 }
 @_spi(Internal) extension UIKit.UIView {
@@ -65,10 +78,14 @@ import _SwiftConcurrencyShims
 @_spi(Internal) extension UIKit.UIViewController : FintechSDKCoreUI.FTModalPresenting {
 }
 @_spi(Internal) extension SwiftUICore.View {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public func readWidth(in width: SwiftUICore.Binding<CoreFoundation.CGFloat>, epsilon: CoreFoundation.CGFloat? = nil) -> some SwiftUICore.View
   
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public func readHeight(in height: SwiftUICore.Binding<CoreFoundation.CGFloat>, epsilon: CoreFoundation.CGFloat? = nil) -> some SwiftUICore.View
   
+  #endif
 }
 @_spi(Internal) extension SwiftUICore.View {
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public func cornerRadius(_ radius: CoreFoundation.CGFloat, corners: UIKit.UIRectCorner) -> some SwiftUICore.View
@@ -78,8 +95,17 @@ import _SwiftConcurrencyShims
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public func isHidden(_ hidden: Swift.Bool) -> some SwiftUICore.View
   
 }
+@_spi(Internal) @_Concurrency.MainActor public protocol FTNavigationDismissalObserving : AnyObject {
+  @_spi(Internal) @_Concurrency.MainActor func navigationDidDismiss()
+}
+@_spi(Internal) @_Concurrency.MainActor public protocol FTNavigationLifecycleObserving : AnyObject {
+  @_spi(Internal) @_Concurrency.MainActor func navigationStackDidChange(_ controllers: [UIKit.UIViewController])
+  @_spi(Internal) @_Concurrency.MainActor func presentationDidEnd()
+}
 @_spi(Internal) @_Concurrency.MainActor @preconcurrency public struct FTPlaceholderView : SwiftUI.UIViewRepresentable {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(backgroundColor: UIKit.UIColor? = nil)
+  #endif
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public func makeUIView(context: FintechSDKCoreUI.FTPlaceholderView.Context) -> FintechSDKCoreUI.FTPlaceholderUIKitView
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public func updateUIView(_ uiView: FintechSDKCoreUI.FTPlaceholderUIKitView, context: FintechSDKCoreUI.FTPlaceholderView.Context)
   @_spi(Internal) public typealias Body = Swift.Never
@@ -88,14 +114,18 @@ import _SwiftConcurrencyShims
 }
 @_spi(Internal) @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency final public class FTPlaceholderUIKitView : UIKit.UIView {
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override final public var overrideUserInterfaceStyle: UIKit.UIUserInterfaceStyle {
     @_spi(Internal) @objc get
     @_spi(Internal) @objc set
   }
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override final public func layoutSubviews()
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override final public func didMoveToSuperview()
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override final public func willMove(toSuperview newSuperview: UIKit.UIView?)
+  #endif
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) @_Concurrency.MainActor @preconcurrency public struct FTBoundPlaceholderView : SwiftUI.UIViewRepresentable {
@@ -140,9 +170,11 @@ import _SwiftConcurrencyShims
   }
 }
 @_spi(Internal) extension UIKit.UIViewController {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public static var topViewController: UIKit.UIViewController? {
     @_spi(Internal) get
   }
+  #endif
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public var topViewController: UIKit.UIViewController {
     @_spi(Internal) get
   }
@@ -164,7 +196,9 @@ import _SwiftConcurrencyShims
 }
 @_spi(Internal) final public class FTPrimaryButtonData : Combine.ObservableObject {
   @_spi(Internal) final public var action: (() -> Swift.Void)?
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(title: Swift.String? = nil, titleFont: SwiftUICore.Font? = nil, state: FintechSDKCoreUI.FTPrimaryButtonData.State, action: (() -> Swift.Void)? = nil)
+  #endif
   @_spi(Internal) public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
   @_spi(Internal) @objc deinit
 }
@@ -190,7 +224,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public static let errorImage: any FintechSDKCoreUI.FTAssetImage
   @_spi(Internal) public static let closeIcon: any FintechSDKCoreUI.FTAssetImage
   @_spi(Internal) public static let defaultError: any FintechSDKCoreUI.FTAssetImage
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public static func image(_ name: Swift.String) -> UIKit.UIImage?
+  #endif
 }
 @_spi(Internal) public enum FTColors {
   @_spi(Internal) public static let backgroundPrimary: UIKit.UIColor
@@ -237,7 +273,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public typealias Body = @_opaqueReturnTypeOf("$s16FintechSDKCoreUI7FTImageV4bodyQrvp", 0) __<Placeholder>
 }
 @_spi(Internal) @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class FTImageProvider : Combine.ObservableObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency convenience public init(_ resource: FintechSDKCoreUI.FTRemoteResource, resourceProvider: any FintechSDKCoreUI.FTResourceProvider, placeholder: UIKit.UIImage? = nil)
+  #endif
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency convenience public init(_ asset: any FintechSDKCoreUI.FTAssetImage)
   @_spi(Internal) public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
   @_spi(Internal) @objc deinit
@@ -246,7 +284,9 @@ import _SwiftConcurrencyShims
 }
 @_spi(Internal) public enum FTRemoteResource : Swift.String, Swift.CaseIterable {
   @_spi(Internal) case cassaNew
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init?(rawValue: Swift.String)
+  #endif
   @_spi(Internal) public typealias AllCases = [FintechSDKCoreUI.FTRemoteResource]
   @_spi(Internal) public typealias RawValue = Swift.String
   @_spi(Internal) nonisolated public static var allCases: [FintechSDKCoreUI.FTRemoteResource] {
@@ -257,12 +297,16 @@ import _SwiftConcurrencyShims
   }
 }
 @_spi(Internal) extension FintechSDKCoreUI.FTRemoteResource {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public var fallbackLocalImage: UIKit.UIImage? {
     @_spi(Internal) get
   }
+  #endif
 }
 @_spi(Internal) public protocol FTResourceProvider : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) subscript(key: FintechSDKCoreUI.FTRemoteResource) -> Foundation.URL? { get async }
+  #endif
 }
 @_spi(Internal) public struct FTRemoteResourcesModel {
   @_spi(Internal) public let cassaNew: Swift.String
@@ -273,9 +317,11 @@ import _SwiftConcurrencyShims
 }
 @_spi(Internal) final public class FTRemoteResourceManager : FintechSDKCoreUI.FTResourceProvider {
   @_spi(Internal) public init(provideResources: any FintechSDKCoreUI.FTRemoteResourceProvideUseCase)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public subscript(key: FintechSDKCoreUI.FTRemoteResource) -> Foundation.URL? {
     @_spi(Internal) get async
   }
+  #endif
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) extension FintechSDKCoreUI.FTRemoteResourceManager {
@@ -339,7 +385,9 @@ import _SwiftConcurrencyShims
 public enum FintechLocale : Swift.String {
   case ru
   case en
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -348,8 +396,12 @@ public enum FintechLocale : Swift.String {
 @_spi(Internal) final public class FTSVG {
   @_spi(Internal) final public let data: Foundation.Data
   @_spi(Internal) @objc deinit
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) convenience public init?(_ value: Swift.String)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init?(_ data: Foundation.Data)
+  #endif
   @_spi(Internal) final public var size: CoreFoundation.CGSize {
     @_spi(Internal) get
   }
@@ -359,8 +411,10 @@ public enum FintechLocale : Swift.String {
 }
 @_spi(Internal) @objc @_Concurrency.MainActor @preconcurrency final public class FTSVGUIView : UIKit.UIView {
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency required public init(svg: FintechSDKCoreUI.FTSVG)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @available(*, unavailable)
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override final public func draw(_ rect: CoreFoundation.CGRect)
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override final public func layoutSubviews()
   @_spi(Internal) @objc deinit
@@ -382,17 +436,17 @@ public enum FintechLocale : Swift.String {
     @_spi(Internal) get
   }
 }
-@_spi(Internal) public protocol FTThemeManager : AnyObject {
-  @_spi(Internal) @_Concurrency.MainActor var currentTheme: FintechSDKCoreUI.FTTheme { get }
-  @_spi(Internal) @_Concurrency.MainActor func setRootViewController(_ viewController: FintechSDKCoreUI.FintechFullscreenContainerController)
-  @_spi(Internal) @_Concurrency.MainActor func onThemeChange(_ handler: @escaping (FintechSDKCoreUI.FTTheme) -> Swift.Void)
-}
-@_spi(Internal) final public class FTThemeManagerImpl : FintechSDKCoreUI.FTThemeManager {
+@_spi(Internal) final public class FTFullscreenThemeObserver : FintechSDKCoreUI.FTFullscreenThemeObserving {
   @_spi(Internal) @_Concurrency.MainActor final public var currentTheme: FintechSDKCoreUI.FTTheme
   @_spi(Internal) public init()
   @_spi(Internal) @_Concurrency.MainActor final public func setRootViewController(_ viewController: FintechSDKCoreUI.FintechFullscreenContainerController)
   @_spi(Internal) @_Concurrency.MainActor final public func onThemeChange(_ handler: @escaping (FintechSDKCoreUI.FTTheme) -> Swift.Void)
   @_spi(Internal) @objc deinit
+}
+@_spi(Internal) public protocol FTFullscreenThemeObserving : AnyObject {
+  @_spi(Internal) @_Concurrency.MainActor var currentTheme: FintechSDKCoreUI.FTTheme { get }
+  @_spi(Internal) @_Concurrency.MainActor func setRootViewController(_ viewController: FintechSDKCoreUI.FintechFullscreenContainerController)
+  @_spi(Internal) @_Concurrency.MainActor func onThemeChange(_ handler: @escaping (FintechSDKCoreUI.FTTheme) -> Swift.Void)
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class FintechFullscreenContainerController : UIKit.UIViewController {
   @_Concurrency.MainActor @preconcurrency final public let contentViewController: UIKit.UIViewController
@@ -404,9 +458,55 @@ public enum FintechLocale : Swift.String {
     @objc get
   }
   @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency final public func onTraitCollectionChange(_ block: ((UIKit.UITraitCollection) -> Swift.Void)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override final public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  #endif
   @objc deinit
+}
+@_spi(Internal) @_Concurrency.MainActor final public class FTSheetThemeManager {
+  @_spi(Internal) @_Concurrency.MainActor convenience public init(container: UIKit.UIViewController, presenter: UIKit.UIViewController, theme: FintechSDKCommonEntity.FintechSDKTheme, backgroundColor: UIKit.UIColor = .systemBackground)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) @_Concurrency.MainActor public init(container: UIKit.UIViewController, presenterObserver: any FintechSDKCoreUI.FTUserInterfaceStyleObserving, systemObserver: (any FintechSDKCoreUI.FTUserInterfaceStyleObserving)? = nil, theme: FintechSDKCommonEntity.FintechSDKTheme, backgroundColor: UIKit.UIColor = .systemBackground)
+  #endif
+  @_spi(Internal) @_Concurrency.MainActor final public func updateContentThemeIsolation(for controllers: [UIKit.UIViewController])
+  @_spi(Internal) @_Concurrency.MainActor final public func refresh()
+  @_spi(Internal) @_Concurrency.MainActor final public func stopObserving()
+  @_spi(Internal) @objc deinit
+}
+@_spi(Internal) extension FintechSDKCoreUI.FTSheetThemeManager : FintechSDKCoreUI.FTNavigationLifecycleObserving {
+  @_spi(Internal) @_Concurrency.MainActor final public func navigationStackDidChange(_ controllers: [UIKit.UIViewController])
+  @_spi(Internal) @_Concurrency.MainActor final public func presentationDidEnd()
+}
+@_spi(Internal) @_Concurrency.MainActor final public class FTSystemStyleObserver : FintechSDKCoreUI.FTUserInterfaceStyleObserving {
+  @_spi(Internal) @_Concurrency.MainActor final public var onChange: ((UIKit.UIUserInterfaceStyle) -> Swift.Void)?
+  @_spi(Internal) @_Concurrency.MainActor final public var currentStyle: UIKit.UIUserInterfaceStyle {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) @_Concurrency.MainActor public init(source: UIKit.UIViewController)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) @_Concurrency.MainActor public static func currentStyle(for source: UIKit.UIViewController?) -> UIKit.UIUserInterfaceStyle
+  #endif
+  @_spi(Internal) @_Concurrency.MainActor final public func stopObserving()
+  @_spi(Internal) @objc deinit
+}
+@_spi(Internal) @_Concurrency.MainActor public protocol FTUserInterfaceStyleObserving : AnyObject {
+  @_spi(Internal) @_Concurrency.MainActor var currentStyle: UIKit.UIUserInterfaceStyle { get }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) @_Concurrency.MainActor var onChange: ((UIKit.UIUserInterfaceStyle) -> Swift.Void)? { get set }
+  #endif
+  @_spi(Internal) @_Concurrency.MainActor func stopObserving()
+}
+@_spi(Internal) @_Concurrency.MainActor final public class FTViewControllerStyleObserver : FintechSDKCoreUI.FTUserInterfaceStyleObserving {
+  @_spi(Internal) @_Concurrency.MainActor final public var currentStyle: UIKit.UIUserInterfaceStyle {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) @_Concurrency.MainActor final public var onChange: ((UIKit.UIUserInterfaceStyle) -> Swift.Void)?
+  @_spi(Internal) @_Concurrency.MainActor public init(viewController: UIKit.UIViewController)
+  @_spi(Internal) @_Concurrency.MainActor final public func stopObserving()
+  @_spi(Internal) @objc deinit
 }
 @_spi(Internal) final public class BackSwipeAnimator {
   @_spi(Internal) public init(currentView: UIKit.UIView, previousView: UIKit.UIView, containerView: UIKit.UIView, shadowView: UIKit.UIView)
@@ -441,21 +541,37 @@ public enum FintechLocale : Swift.String {
     }
   }
   @_Concurrency.MainActor @preconcurrency public init(transition: FintechSDKCoreUI.FTBackswipePushAnimatedTransitioning.Transition)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc final public func transitionDuration(using _: (any UIKit.UIViewControllerContextTransitioning)?) -> Foundation.TimeInterval
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc final public func animateTransition(using transitionContext: any UIKit.UIViewControllerContextTransitioning)
   @objc deinit
 }
 @_spi(Internal) @objc @_Concurrency.MainActor @preconcurrency final public class FTBackswipeTransitionDelegate : ObjectiveC.NSObject, UIKit.UIViewControllerTransitioningDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(backswipeController: FintechSDKCoreUI.FTBackSwipeController, onDismiss: (() -> Swift.Void)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc final public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc final public func interactionControllerForDismissal(using animator: any UIKit.UIViewControllerAnimatedTransitioning) -> (any UIKit.UIViewControllerInteractiveTransitioning)?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc final public func interactionControllerForPresentation(using animator: any UIKit.UIViewControllerAnimatedTransitioning) -> (any UIKit.UIViewControllerInteractiveTransitioning)?
+  #endif
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) @objc @_Concurrency.MainActor @preconcurrency final public class FTBackSwipePresentationController : UIKit.UIPresentationController {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(onDismiss: (() -> Swift.Void)?, presentedViewController: UIKit.UIViewController, presenting presentingViewController: UIKit.UIViewController?)
+  #endif
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override final public var shouldRemovePresentersView: Swift.Bool {
     @_spi(Internal) @objc get
   }
@@ -474,7 +590,9 @@ public enum FintechLocale : Swift.String {
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) @_Concurrency.MainActor @preconcurrency public struct FTWebViewRepresented : SwiftUI.UIViewRepresentable {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(request: Foundation.URLRequest?, cookies: Foundation.HTTPCookie?, userAgent: Swift.String, messageHandlers: [Swift.String : any WebKit.WKScriptMessageHandler] = [:], shouldUsePersistentWebDataStore: Swift.Bool = false, cookieManager: FintechSDKCoreUI.FTWebViewCookieManager? = nil, contentInsetAdjustmentBehavior: UIKit.UIScrollView.ContentInsetAdjustmentBehavior = .automatic, observer: (any FintechSDKCoreUI.FintechWebViewEventObserver)?, pendingJavaScript: FintechSDKCoreUI.FTPendingJavaScript?, javaScriptExecutionTrigger: Swift.Int, reloadTrigger: Swift.Int = 0)
+  #endif
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public func makeCoordinator() -> FintechSDKCoreUI.FTWebViewRepresented.FTWebViewDelegate
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public func makeUIView(context: FintechSDKCoreUI.FTWebViewRepresented.Context) -> WebKit.WKWebView
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public func updateUIView(_ uiView: WebKit.WKWebView, context: FintechSDKCoreUI.FTWebViewRepresented.Context)
@@ -484,19 +602,37 @@ public enum FintechLocale : Swift.String {
 }
 @_spi(Internal) extension FintechSDKCoreUI.FTWebViewRepresented {
   @_spi(Internal) @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class FTWebViewDelegate : ObjectiveC.NSObject, WebKit.WKNavigationDelegate {
+    #if compiler(>=5.3) && $NonescapableTypes
     @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, didFailProvisionalNavigation navigation: WebKit.WKNavigation?, withError error: any Swift.Error)
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, didCommit navigation: WebKit.WKNavigation?)
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, didFail navigation: WebKit.WKNavigation?, withError error: any Swift.Error)
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation?)
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc final public func webView(_ webView: WebKit.WKWebView, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+    #endif
     @_spi(Internal) @objc deinit
   }
 }
 @_Concurrency.MainActor public protocol FintechWebViewEventObserver : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor func didStartLoading(url: Foundation.URL?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor func didFinishLoading(url: Foundation.URL?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor func didFail(url: Foundation.URL?, error: any Swift.Error)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor func didReceive(challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+  #endif
 }
 @_spi(Internal) extension FintechSDKCoreUI.FTPlaceholderView : Swift.Sendable {}
 @_spi(Internal) extension FintechSDKCoreUI.FTBoundPlaceholderView : Swift.Sendable {}
@@ -519,6 +655,9 @@ extension FintechSDKCoreUI.FintechLocale : Swift.RawRepresentable {}
 @_spi(Internal) extension FintechSDKCoreUI.FTSVGView : Swift.Sendable {}
 @_spi(Internal) extension FintechSDKCoreUI.FTTheme : Swift.Equatable {}
 @_spi(Internal) extension FintechSDKCoreUI.FTTheme : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKCoreUI.FTSheetThemeManager : Swift.Sendable {}
+@_spi(Internal) extension FintechSDKCoreUI.FTSystemStyleObserver : Swift.Sendable {}
+@_spi(Internal) extension FintechSDKCoreUI.FTViewControllerStyleObserver : Swift.Sendable {}
 extension FintechSDKCoreUI.FTBackswipePushAnimatedTransitioning : Swift.Sendable {}
 extension FintechSDKCoreUI.FTBackswipePushAnimatedTransitioning.Transition : Swift.Equatable {}
 extension FintechSDKCoreUI.FTBackswipePushAnimatedTransitioning.Transition : Swift.Hashable {}

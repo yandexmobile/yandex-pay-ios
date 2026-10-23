@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKQuickPaymentShared -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import FintechSDKBDUICore
 @_spi(Internal) import FintechSDKBDUIFeatures
 @_spi(Internal) import FintechSDKCoreUI
@@ -28,8 +28,13 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public var shownCheckoutOrderId: Swift.String? {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(ordersAPIService: any FintechSDKQuickPaymentShared.FTQPSGetOrderAPIService, notifyAboutPolling: any FintechSDKQuickPaymentShared.FTQPSNotifyAboutPollingUseCase, pollingScreenUseCases: any FintechSDKPollingScenario.FTPollingScreenUseCases, analyticsService: any FintechSDKQuickPaymentShared.FTQPSPollingAnalyticsReporting, pollingParamsInteractions: any FintechSDKPollingScenario.FTGetPollingParams & FintechSDKPollingScenario.FTProvidePollingParams, refreshInteractor: any FintechSDKQuickPaymentShared.FTQPSRefreshUseCase, currentPayment: any FintechSDKQuickPaymentShared.FTQPSCurrentPaymentVariablesUseCase, statusDocument: (any FintechSDKQuickPaymentShared.FTQPSStatusDocumentReconciling)? = nil, orderScannedFeedback: (any FintechSDKQuickPaymentShared.FTQPSOrderScannedFeedbackPlaying)? = nil, pollingIntervalsProvider: any FintechSDKQuickPaymentShared.FTQPSPollingIntervalsProviding = FTQPSDefaultPollingIntervalsProvider(), bduiQueryBuilder: @escaping FintechSDKQuickPaymentShared.FTQPSPollingInteractor.BDUIQueryBuilder)
+  #endif
   @_spi(Internal) public func startPolling(deadline: Foundation.Date) async
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public func handlePollingScreenDismissed(sessionKey: Swift.String?) async
+  #endif
   @_spi(Internal) public func stopPolling()
   @_spi(Internal) @objc deinit
   @_spi(Internal) @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
@@ -38,7 +43,9 @@ import _SwiftConcurrencyShims
   }
 }
 @_spi(Internal) extension FintechSDKQuickPaymentShared.FTQPSPollingInteractor : FintechSDKBDUIFeatures.FTStartOrderStatusPollingHandling {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public func startOrderStatusPolling(transactionId: Swift.String?, paymentUrl: Swift.String?, quickpayId: Swift.String?) async
+  #endif
 }
 @_spi(Internal) extension FintechSDKQuickPaymentShared.FTQPSPollingInteractor : FintechSDKQuickPaymentShared.FTQPSStartPolling, FintechSDKQuickPaymentShared.FTQPSStopPolling {
 }
@@ -70,7 +77,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public static let `default`: FintechSDKQuickPaymentShared.FTQPSPollingIntervals
   @_spi(Internal) public let ordersInterval: Foundation.TimeInterval
   @_spi(Internal) public let orderStatusInterval: Foundation.TimeInterval
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(ordersIntervalMs: Swift.Double?, orderStatusIntervalMs: Swift.Double?)
+  #endif
   @_spi(Internal) public static func == (a: FintechSDKQuickPaymentShared.FTQPSPollingIntervals, b: FintechSDKQuickPaymentShared.FTQPSPollingIntervals) -> Swift.Bool
 }
 @_spi(Internal) public protocol FTQPSPollingIntervalsProviding : Swift.Sendable {
@@ -81,7 +90,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public func pollingIntervals() async -> FintechSDKQuickPaymentShared.FTQPSPollingIntervals
 }
 @_spi(Internal) public protocol FTQPSCurrentPaymentVariablesUseCase : Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func setCurrentPayment(transactionId: Swift.String?, checkoutOrderId: Swift.String?, quickpayId: Swift.String?, paymentUrl: Swift.String?, status: FintechSDKQuickPaymentEntity.FTOrderStatus?) async
+  #endif
   @_spi(Internal) func setCurrentTransactionStatus(_ status: FintechSDKQuickPaymentEntity.FTOrderStatus) async
 }
 @_spi(Internal) public protocol FTQPSNotifyAboutPollingUseCase : Swift.Sendable {
@@ -113,10 +124,10 @@ import _SwiftConcurrencyShims
   @_spi(Internal) func invalidatePollingSession() async
   @_spi(Internal) func resetMerchantPollingRequest() async
 }
-@_spi(Internal) public protocol FTQPSHandleSessionExpiredUseCase : Swift.Sendable {
+@_spi(Internal) public protocol FTQPSHandleSessionExpiredUseCase : AnyObject, Swift.Sendable {
   @_spi(Internal) func handleSessionExpired() async
 }
-@_spi(Internal) public protocol FTQPSSetOrderResultFail : Swift.Sendable {
+@_spi(Internal) public protocol FTQPSSetOrderResultFail : AnyObject, Swift.Sendable {
   @_spi(Internal) func handleSetOrderResultFail() async
 }
 @_spi(Internal) public protocol FTQPSRefreshUseCase : AnyObject, Swift.Sendable {
@@ -124,7 +135,9 @@ import _SwiftConcurrencyShims
 }
 @_spi(Internal) public struct FTQPSNetworkChallengeHandlerImpl : FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler {
   @_spi(Internal) public init()
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public func handleChallenge(challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+  #endif
 }
 @_spi(Internal) public struct FTQPSNetworkChallengeHandlerFactoryImpl : FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory {
   @_spi(Internal) public init()
@@ -133,38 +146,75 @@ import _SwiftConcurrencyShims
 @_spi(Internal) public struct FTQPNoPaymentMethodsError : Swift.Error, Swift.Sendable {
   @_spi(Internal) public init()
   @_spi(Internal) public static func matches(_ error: any Swift.Error) -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public static func decode(data: Foundation.Data, response: Foundation.HTTPURLResponse) -> FintechSDKNetworkInterfaces.NetworkClientError?
+  #endif
 }
 @_spi(Internal) public struct FTQPNoPaymentMethodsErrorResponseMapper : FintechSDKNetworkInterfaces.FTNetworkErrorResponseMapping {
   @_spi(Internal) public init()
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public func mapError(data: Foundation.Data, response: Foundation.HTTPURLResponse) -> FintechSDKNetworkInterfaces.NetworkClientError?
+  #endif
 }
 @_spi(Internal) public enum FTQPPaymentMethodsEvent : Swift.Sendable {
   @_spi(Internal) case stateChanged(FintechSDKQuickPaymentEntity.FTQPPaymentMethodsState)
   @_spi(Internal) case bindingSucceeded
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init?(name: Swift.String, params: [Swift.String : Swift.String]?)
+  #endif
+}
+@_spi(Internal) public enum FTQPSPollingAnalyticsConstants {
+  @_spi(Internal) public static let quickpayIdPollingErrorKey: Swift.String
 }
 @_spi(Internal) public protocol FTQPSPollingAnalyticsReporting {
   @_spi(Internal) func reportTokenExpired()
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func reportPaymentProcessWaitingForApprove(checkoutOrderId: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func reportPaymentProcessFailed(checkoutOrderId: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func reportPaymentProcessFailed(transactionId: Swift.String, checkoutOrderId: Swift.String?)
+  #endif
   @_spi(Internal) func reportPaymentProcessAttemptStarted(transactionId: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func reportRetryablePaymentProcessFailed(transactionId: Swift.String, checkoutOrderId: Swift.String?)
+  #endif
   @_spi(Internal) func reportPollingUnmappedError(error: any Swift.Error)
+  @_spi(Internal) func reportQuickpayIdPollingError(error: any Swift.Error)
+  @_spi(Internal) func reportQuickpayIdPollingInvalidAuth(error: any Swift.Error)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func reportPaymentProcessCompleted(checkoutOrderId: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func reportPaymentProcessCompleted(transactionId: Swift.String, checkoutOrderId: Swift.String?)
+  #endif
 }
 @_spi(Internal) extension FintechSDKQuickPaymentShared.FTQPSPollingAnalyticsReporting {
   @_spi(Internal) public func reportPaymentProcessFailed()
   @_spi(Internal) public func reportPaymentProcessFailed(transactionId: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public func reportPaymentProcessFailed(transactionId: Swift.String, checkoutOrderId: Swift.String?)
+  #endif
   @_spi(Internal) public func reportPaymentProcessAttemptStarted(transactionId: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public func reportRetryablePaymentProcessFailed(transactionId: Swift.String, checkoutOrderId: Swift.String?)
+  #endif
+  @_spi(Internal) public func reportQuickpayIdPollingError(error: any Swift.Error)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public func reportPollingUnmappedError(error: any Swift.Error, order: FintechSDKQuickPaymentEntity.FTOrderIdentifiers?)
+  #endif
+  @_spi(Internal) public func reportQuickpayIdPollingInvalidAuth(error: any Swift.Error)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public func reportPollingInvalidAuth(error: any Swift.Error, order: FintechSDKQuickPaymentEntity.FTOrderIdentifiers?)
+  #endif
   @_spi(Internal) public func reportPaymentProcessCompleted()
   @_spi(Internal) public func reportRetryablePaymentProcessFailed(transactionId: Swift.String)
   @_spi(Internal) public func reportPaymentProcessCompleted(transactionId: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public func reportPaymentProcessCompleted(transactionId: Swift.String, checkoutOrderId: Swift.String?)
+  #endif
 }
 @_spi(Internal) final public class FTQPSSessionExpiredActionHandler : @unchecked Swift.Sendable {
   @_spi(Internal) public init()
@@ -186,7 +236,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public var contentType: FintechSDKBDUICore.FintechBDUIContentType {
     @_spi(Internal) get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(sessionProvider: (any FintechSDKNetworkInterfaces.FTSessionProviderServing)?, resourceProvider: any FintechSDKCoreUI.FTResourceProvider, contextProvider: (any FintechSDKCoreUI.FTPresentationContextProviding)?, errorStateReloader: (any FintechSDKQuickPaymentShared.FTQPSErrorStateRegistering)? = nil)
+  #endif
   @_spi(Internal) public func create(actions: FintechSDKBDUICore.FintechBDUIContentActions) -> UIKit.UIViewController
 }
 @_spi(Internal) @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class FTQPSErrorHostingController<Content> : SwiftUI.UIHostingController<Content> where Content : SwiftUICore.View {
@@ -222,13 +274,17 @@ import _SwiftConcurrencyShims
   @_spi(Internal) final public var image: FintechSDKCoreUI.FTImageProvider {
     @_spi(Internal) get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public var code: Swift.String? {
     @_spi(Internal) get
   }
+  #endif
   @_spi(Internal) final public var buttonPayload: FintechSDKCoreUI.FTPrimaryButtonData {
     @_spi(Internal) get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(sessionProvider: (any FintechSDKNetworkInterfaces.FTSessionProviderServing)?, resourceProvider: any FintechSDKCoreUI.FTResourceProvider, onButtonTap: (() -> Swift.Void)?)
+  #endif
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) final public class FTQPSBDUIWebViewConfiguration : FintechSDKBDUIFeatures.FintechWebViewConfiguration {
@@ -237,7 +293,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) final public var delegate: (any WebKit.WKNavigationDelegate)?
   @_spi(Internal) final public var messageHandlers: [Swift.String : any WebKit.WKScriptMessageHandler]
   @_spi(Internal) convenience public init(userAgentProvider: any FintechSDKCoreUtils.FTUserAgentProvider)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(userAgentProvider: any FintechSDKCoreUtils.FTUserAgentProvider, networkChallengeHandler: (any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler)?)
+  #endif
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) extension FintechSDKQuickPaymentShared.FTQPSMerchantPollingError : Swift.Equatable {}

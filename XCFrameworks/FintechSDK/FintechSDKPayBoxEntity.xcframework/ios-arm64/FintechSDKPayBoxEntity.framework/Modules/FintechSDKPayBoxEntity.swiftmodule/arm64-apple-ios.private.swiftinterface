@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKPayBoxEntity -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import FintechSDKCommonEntity
 import Foundation
 import Swift
@@ -22,7 +22,9 @@ import _SwiftConcurrencyShims
     @_spi(Internal) public let sbpAmount: Swift.Double
     @_spi(Internal) public let amount: Swift.Double
     @_spi(Internal) public let limits: FintechSDKPayBoxEntity.FTCashback.CashbackData.CashbackLimits?
+    #if compiler(>=5.3) && $NonescapableTypes
     @_spi(Internal) public init(totalCashbackAmount: Swift.Double, totalCashbackCategory: Swift.Double, ybAmount: Swift.Double, sbpAmount: Swift.Double, amount: Swift.Double, limits: FintechSDKPayBoxEntity.FTCashback.CashbackData.CashbackLimits?)
+    #endif
   }
 }
 @_spi(Internal) extension FintechSDKPayBoxEntity.FTCashback.CashbackData {
@@ -32,7 +34,9 @@ import _SwiftConcurrencyShims
 }
 @_spi(Internal) extension FintechSDKPayBoxEntity.FTCashback {
   @_spi(Internal) public struct PlusTrialOffers : Swift.Sendable {
+    #if compiler(>=5.3) && $NonescapableTypes
     @_spi(Internal) public init(editable: Swift.Bool, acceptable: Swift.Bool?)
+    #endif
   }
 }
 @_spi(Internal) public struct FTSplitData : Swift.Sendable {
@@ -43,7 +47,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public let upgradedSplitDocuments: FintechSDKPayBoxEntity.FTDocument?
   @_spi(Internal) public var defaultPaymentMethod: FintechSDKPayBoxEntity.YPSplitPaymentMethod?
   @_spi(Internal) public let splitRmsContextId: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(defaultPlan: Swift.String, plans: [FintechSDKPayBoxEntity.FTFullSplitPlan], upgradeStatus: FintechSDKPayBoxEntity.YPSplitUpgradeStatus, splitCardID: Swift.String? = nil, upgradedSplitDocuments: FintechSDKPayBoxEntity.FTDocument? = nil, defaultPaymentMethod: FintechSDKPayBoxEntity.YPSplitPaymentMethod?, splitRmsContextId: Swift.String?)
+  #endif
 }
 @_spi(Internal) extension FintechSDKPayBoxEntity.FTSplitData {
   @_spi(Internal) public static let empty: FintechSDKPayBoxEntity.FTSplitData
@@ -59,7 +65,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public let needUpgrade: Swift.Bool
   @_spi(Internal) public let creditLengthInMonths: Swift.Int?
   @_spi(Internal) public let promoId: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(id: Swift.String, productType: Swift.String, constructor: Swift.String, sum: Foundation.Decimal, visualProperties: FintechSDKPayBoxEntity.FTSplitVisualProperties, payments: [FintechSDKPayBoxEntity.FTSplitPayment], annotation: FintechSDKPayBoxEntity.FTSplitPlanAnnotation, needUpgrade: Swift.Bool, creditLengthInMonths: Swift.Int? = nil, promoId: Swift.String? = nil)
+  #endif
 }
 @_spi(Internal) public enum YPSplitUpgradeStatus : Swift.Sendable {
   @_spi(Internal) case upgraded
@@ -92,7 +100,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public let status: Swift.String?
   @_spi(Internal) public let amount: Foundation.Decimal
   @_spi(Internal) public let dateTime: Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(status: Swift.String?, amount: Foundation.Decimal, dateTime: Swift.String)
+  #endif
 }
 @_spi(Internal) public struct FTSplitPlanAnnotation : Swift.Sendable {
   @_spi(Internal) public let payment: Foundation.Decimal
@@ -103,7 +113,9 @@ import _SwiftConcurrencyShims
 @_spi(Internal) public enum YPSplitPaymentMethod : Swift.Sendable {
   @_spi(Internal) case ybCard
   @_spi(Internal) case card(id: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(trustCardID: Swift.String?)
+  #endif
 }
 public struct FTSDKConfiguration {
   public let environment: FintechSDKCommonEntity.FintechSDKEnvironment
@@ -131,12 +143,16 @@ public struct FTSDKMerchant : Swift.Sendable {
   public let id: Swift.String
   public let name: Swift.String
   public let url: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(id: Swift.String, name: Swift.String, url: Swift.String?)
+  #endif
 }
 public enum FTAvailablePaymentMethod : Swift.String {
   case card
   case split
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -165,7 +181,9 @@ public enum FTCurrencyCode : Swift.String, Swift.Sendable {
   public var uppercased: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -173,7 +191,9 @@ public enum FTCurrencyCode : Swift.String, Swift.Sendable {
 }
 public struct FTPaymentData {
   public let orderId: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(orderId: Swift.String?)
+  #endif
 }
 public enum FTPaymentError : Swift.String, Swift.Error {
   case authenticationProblem
@@ -184,7 +204,9 @@ public enum FTPaymentError : Swift.String, Swift.Error {
   case invalidArgs
   case orderNotFound
   case unknownError
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -199,7 +221,9 @@ public enum FTPaymentMethod : Swift.String, Swift.Decodable, Swift.Sendable {
   case split
   case sbp
   case splitSbp
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get

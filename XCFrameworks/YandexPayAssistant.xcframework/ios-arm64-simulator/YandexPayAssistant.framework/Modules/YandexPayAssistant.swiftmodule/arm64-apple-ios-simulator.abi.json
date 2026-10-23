@@ -1096,128 +1096,23 @@
       },
       {
         "kind": "Import",
-        "name": "FintechSDKAnalyticsInterfaces",
-        "printedName": "FintechSDKAnalyticsInterfaces",
+        "name": "FintechSDKAssistant",
+        "printedName": "FintechSDKAssistant",
         "declKind": "Import",
-        "moduleName": "YandexPayAssistant"
+        "moduleName": "YandexPayAssistant",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ]
       },
       {
         "kind": "Import",
-        "name": "FintechSDKRealUserMonitoringAdapter",
-        "printedName": "FintechSDKRealUserMonitoringAdapter",
+        "name": "YandexPayConfiguration",
+        "printedName": "YandexPayConfiguration",
         "declKind": "Import",
-        "moduleName": "YandexPayAssistant"
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "FTRUMArgoAdapterFactory",
-        "printedName": "FTRUMArgoAdapterFactory",
-        "children": [
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "FTRUMArgoAdapterFactory",
-                "printedName": "YandexPayAssistant.FTRUMArgoAdapterFactory",
-                "usr": "s:18YandexPayAssistant23FTRUMArgoAdapterFactoryC"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:18YandexPayAssistant23FTRUMArgoAdapterFactoryCACycfc",
-            "mangledName": "$s18YandexPayAssistant23FTRUMArgoAdapterFactoryCACycfc",
-            "moduleName": "YandexPayAssistant",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "spi_group_names": [
-              "Internal"
-            ],
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Function",
-            "name": "make",
-            "printedName": "make(uid:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "FintechRUMAdapter",
-                "printedName": "any FintechSDKAnalyticsInterfaces.FintechRUMAdapter",
-                "usr": "s:29FintechSDKAnalyticsInterfaces0A10RUMAdapterP"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:18YandexPayAssistant23FTRUMArgoAdapterFactoryC4make3uid29FintechSDKAnalyticsInterfaces0I10RUMAdapter_pSSSg_tF",
-            "mangledName": "$s18YandexPayAssistant23FTRUMArgoAdapterFactoryC4make3uid29FintechSDKAnalyticsInterfaces0I10RUMAdapter_pSSSg_tF",
-            "moduleName": "YandexPayAssistant",
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "spi_group_names": [
-              "Internal"
-            ],
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Class",
-        "usr": "s:18YandexPayAssistant23FTRUMArgoAdapterFactoryC",
-        "mangledName": "$s18YandexPayAssistant23FTRUMArgoAdapterFactoryC",
         "moduleName": "YandexPayAssistant",
         "declAttributes": [
-          "Final",
-          "AccessControl",
           "SPIAccessControl"
-        ],
-        "spi_group_names": [
-          "Internal"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "FintechRUMAdapterFactory",
-            "printedName": "FintechRUMAdapterFactory",
-            "usr": "s:29FintechSDKAnalyticsInterfaces0A17RUMAdapterFactoryP",
-            "mangledName": "$s29FintechSDKAnalyticsInterfaces0A17RUMAdapterFactoryP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Sendable",
-            "printedName": "Sendable",
-            "usr": "s:s8SendableP",
-            "mangledName": "$ss8SendableP"
-          }
         ]
       },
       {
@@ -1452,6 +1347,13 @@
             "printedName": "Hashable",
             "usr": "s:SH",
             "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -1727,6 +1629,13 @@
             "printedName": "Hashable",
             "usr": "s:SH",
             "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -2216,6 +2125,13 @@
             "printedName": "Hashable",
             "usr": "s:SH",
             "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -2981,13 +2897,6 @@
       },
       {
         "kind": "Import",
-        "name": "FintechSDKRealUserMonitoringAdapter",
-        "printedName": "FintechSDKRealUserMonitoringAdapter",
-        "declKind": "Import",
-        "moduleName": "YandexPayAssistant"
-      },
-      {
-        "kind": "Import",
         "name": "FintechSDKFontsAdapter",
         "printedName": "FintechSDKFontsAdapter",
         "declKind": "Import",
@@ -3626,6 +3535,13 @@
             "printedName": "Hashable",
             "usr": "s:SH",
             "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -4091,6 +4007,13 @@
             "printedName": "Hashable",
             "usr": "s:SH",
             "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -4211,6 +4134,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       }

@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKCoreUtils -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import AdSupport
 import AppTrackingTransparency
 import FintechSDKAnalyticsInterfaces
@@ -16,7 +16,9 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 import os
 extension Swift.Encodable {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func ftcToDictionary() -> [Swift.String : Any]?
+  #endif
 }
 extension Swift.Dictionary {
   public func ftcAsyncMapValues<NewValue>(_ transform: @escaping (Value) async throws -> NewValue) async rethrows -> [Key : NewValue]
@@ -58,12 +60,16 @@ extension Swift.Sequence {
 }
 @frozen public struct FTAnyCodable : Swift.Codable, FintechSDKCoreUtils.FTAnyValueBox {
   public let value: Any
+  #if compiler(>=5.3) && $NonescapableTypes
   public init<T>(_ value: T?)
+  #endif
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
 extension FintechSDKCoreUtils.FTAnyCodable {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func `as`<T>(_ type: T.Type) -> T? where T : Swift.Decodable
+  #endif
 }
 extension FintechSDKCoreUtils.FTAnyCodable : Swift.Equatable {
   public static func == (lhs: FintechSDKCoreUtils.FTAnyCodable, rhs: FintechSDKCoreUtils.FTAnyCodable) -> Swift.Bool
@@ -113,11 +119,15 @@ extension FintechSDKCoreUtils.FTAnyCodable : Swift.CustomStringConvertible, Swif
   }
 }
 public enum FTAnyCodableHelper {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func convert<T>(_ any: any FintechSDKCoreUtils.FTAnyValueBox, to type: T.Type) -> T? where T : Swift.Decodable
+  #endif
 }
 public struct FTAnyDecodable : Swift.Decodable, Swift.Equatable, Swift.Hashable, FintechSDKCoreUtils.FTAnyValueBox {
   public let value: Any
+  #if compiler(>=5.3) && $NonescapableTypes
   public init<T>(_ value: T?)
+  #endif
   public init(from decoder: any Swift.Decoder) throws
   public func hash(into hasher: inout Swift.Hasher)
   public static func == (lhs: FintechSDKCoreUtils.FTAnyDecodable, rhs: FintechSDKCoreUtils.FTAnyDecodable) -> Swift.Bool
@@ -126,25 +136,33 @@ public struct FTAnyDecodable : Swift.Decodable, Swift.Equatable, Swift.Hashable,
   }
 }
 extension FintechSDKCoreUtils.FTAnyDecodable {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func `as`<T>(_ type: T.Type) -> T? where T : Swift.Decodable
+  #endif
 }
 extension Swift.Dictionary where Key == Swift.String, Value == Any {
   public init(from decoder: any Swift.Decoder) throws
 }
 @frozen public struct FTAnyEncodable : Swift.Encodable, FintechSDKCoreUtils.FTAnyValueBox {
   public let value: Any
+  #if compiler(>=5.3) && $NonescapableTypes
   public init<T>(_ value: T?)
+  #endif
   public func encode(to encoder: any Swift.Encoder) throws
 }
 public enum FTAnyHelper {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func stringRepresentation(anyValue: Any?) -> Swift.String?
+  #endif
 }
 public protocol FTAnyValueBox {
   var value: Any { get }
 }
 @propertyWrapper public struct FTSafeOptional<Wrapped> : Swift.Codable where Wrapped : Swift.Decodable, Wrapped : Swift.Encodable {
   public var wrappedValue: Wrapped?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(wrappedValue: Wrapped?)
+  #endif
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
@@ -179,17 +197,25 @@ final public class FTTaskDelayedActionScheduler : FintechSDKCoreUtils.FTDelayedA
   @objc deinit
 }
 public enum FTURLUtils {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func sanitize(_ original: Foundation.URL?) -> Swift.String
+  #endif
 }
 public enum FintechApiBaseUrlType : Swift.String, Swift.CaseIterable {
   case payBackend
   case frontback
   case tovarisch
+  #if compiler(>=5.3) && $NonescapableTypes
   public var getUrl: Swift.String? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func setUrl(value: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias AllCases = [FintechSDKCoreUtils.FintechApiBaseUrlType]
   public typealias RawValue = Swift.String
   nonisolated public static var allCases: [FintechSDKCoreUtils.FintechApiBaseUrlType] {

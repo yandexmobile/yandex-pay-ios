@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKPayOrderData -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 @_spi(Internal) import FintechSDKCoreUtils
 @_spi(Internal) import FintechSDKNetworkImplementation
 import FintechSDKNetworkInterfaces
@@ -11,6 +11,22 @@ import Swift
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+@_spi(Internal) public struct FTCashbackDTO : Swift.Decodable {
+  @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
+}
+@_spi(Internal) extension FintechSDKPayOrderData.FTCashbackDTO {
+  @_spi(Internal) public var toPayBoxCashback: FintechSDKPayBoxEntity.FTCashback {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public struct FTSplitDTO : Swift.Decodable {
+  @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
+}
+@_spi(Internal) extension FintechSDKPayOrderData.FTSplitDTO {
+  @_spi(Internal) public var toPayBoxSplit: FintechSDKPayBoxEntity.FTSplitData {
+    @_spi(Internal) get
+  }
+}
 public struct FTCheckoutSheet : Swift.Encodable {
   public init(merchantId: Swift.String, orderTotal: Swift.String, currencyCode: Swift.String)
   public func encode(to encoder: any Swift.Encoder) throws
@@ -31,7 +47,9 @@ public struct FTCheckoutSheet : Swift.Encodable {
     @_spi(Internal) case pending
     @_spi(Internal) case success
     @_spi(Internal) case failed
+    #if compiler(>=5.3) && $NonescapableTypes
     @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
     @_spi(Internal) public typealias RawValue = Swift.String
     @_spi(Internal) public var rawValue: Swift.String {
       @_spi(Internal) get
@@ -39,12 +57,16 @@ public struct FTCheckoutSheet : Swift.Encodable {
   }
 }
 @_spi(Internal) public protocol FTOrderApiService : Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func cashback(cardId: Swift.String?, checkoutSheet: FintechSDKPayOrderData.FTCheckoutSheet) async throws -> FintechSDKPayBoxEntity.FTCashback
+  #endif
   @_spi(Internal) func loadSplitPlans(merchantID: Swift.String, orderAmount: Foundation.Decimal, currencyCode: Swift.String, inventory: Swift.Bool) async throws -> FintechSDKPayBoxEntity.FTSplitData
 }
 @_spi(Internal) final public class FTOrderApiServiceImpl : FintechSDKPayOrderData.FTOrderApiService {
   @_spi(Internal) public init(networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public func cashback(cardId: Swift.String?, checkoutSheet: FintechSDKPayOrderData.FTCheckoutSheet) async throws -> FintechSDKPayBoxEntity.FTCashback
+  #endif
   @_spi(Internal) final public func loadSplitPlans(merchantID: Swift.String, orderAmount: Foundation.Decimal, currencyCode: Swift.String, inventory: Swift.Bool) async throws -> FintechSDKPayBoxEntity.FTSplitData
   @_spi(Internal) @objc deinit
 }

@@ -5,6 +5,892 @@
     "printedName": "YandexPayAuth",
     "children": [
       {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "YandexPayAuth"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAuthInterfaces",
+        "printedName": "FintechSDKAuthInterfaces",
+        "declKind": "Import",
+        "moduleName": "YandexPayAuth"
+      },
+      {
+        "kind": "Import",
+        "name": "YandexPayConfiguration",
+        "printedName": "YandexPayConfiguration",
+        "declKind": "Import",
+        "moduleName": "YandexPayAuth"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAuthorizationScenario",
+        "printedName": "FintechSDKAuthorizationScenario",
+        "declKind": "Import",
+        "moduleName": "YandexPayAuth",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKYandexPayAuth",
+        "printedName": "FintechSDKYandexPayAuth",
+        "declKind": "Import",
+        "moduleName": "YandexPayAuth",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "YandexPayAuth"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "YPPartnerToken",
+        "printedName": "YPPartnerToken",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "token",
+            "printedName": "token",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13YandexPayAuth14YPPartnerTokenV5tokenSSvp",
+            "mangledName": "$s13YandexPayAuth14YPPartnerTokenV5tokenSSvp",
+            "moduleName": "YandexPayAuth",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13YandexPayAuth14YPPartnerTokenV5tokenSSvg",
+                "mangledName": "$s13YandexPayAuth14YPPartnerTokenV5tokenSSvg",
+                "moduleName": "YandexPayAuth",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "expiresAt",
+            "printedName": "expiresAt",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13YandexPayAuth14YPPartnerTokenV9expiresAt10Foundation4DateVvp",
+            "mangledName": "$s13YandexPayAuth14YPPartnerTokenV9expiresAt10Foundation4DateVvp",
+            "moduleName": "YandexPayAuth",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13YandexPayAuth14YPPartnerTokenV9expiresAt10Foundation4DateVvg",
+                "mangledName": "$s13YandexPayAuth14YPPartnerTokenV9expiresAt10Foundation4DateVvg",
+                "moduleName": "YandexPayAuth",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(token:expiresAt:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "YPPartnerToken",
+                "printedName": "YandexPayAuth.YPPartnerToken",
+                "usr": "s:13YandexPayAuth14YPPartnerTokenV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:13YandexPayAuth14YPPartnerTokenV5token9expiresAtACSS_10Foundation4DateVtcfc",
+            "mangledName": "$s13YandexPayAuth14YPPartnerTokenV5token9expiresAtACSS_10Foundation4DateVtcfc",
+            "moduleName": "YandexPayAuth",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "description",
+            "printedName": "description",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13YandexPayAuth14YPPartnerTokenV11descriptionSSvp",
+            "mangledName": "$s13YandexPayAuth14YPPartnerTokenV11descriptionSSvp",
+            "moduleName": "YandexPayAuth",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13YandexPayAuth14YPPartnerTokenV11descriptionSSvg",
+                "mangledName": "$s13YandexPayAuth14YPPartnerTokenV11descriptionSSvg",
+                "moduleName": "YandexPayAuth",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "debugDescription",
+            "printedName": "debugDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13YandexPayAuth14YPPartnerTokenV16debugDescriptionSSvp",
+            "mangledName": "$s13YandexPayAuth14YPPartnerTokenV16debugDescriptionSSvp",
+            "moduleName": "YandexPayAuth",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13YandexPayAuth14YPPartnerTokenV16debugDescriptionSSvg",
+                "mangledName": "$s13YandexPayAuth14YPPartnerTokenV16debugDescriptionSSvg",
+                "moduleName": "YandexPayAuth",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "YPPartnerToken",
+                "printedName": "YandexPayAuth.YPPartnerToken",
+                "usr": "s:13YandexPayAuth14YPPartnerTokenV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "YPPartnerToken",
+                "printedName": "YandexPayAuth.YPPartnerToken",
+                "usr": "s:13YandexPayAuth14YPPartnerTokenV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13YandexPayAuth14YPPartnerTokenV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s13YandexPayAuth14YPPartnerTokenV2eeoiySbAC_ACtFZ",
+            "moduleName": "YandexPayAuth",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:13YandexPayAuth14YPPartnerTokenV",
+        "mangledName": "$s13YandexPayAuth14YPPartnerTokenV",
+        "moduleName": "YandexPayAuth",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "YPSignInResult",
+        "printedName": "YPSignInResult",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "success",
+            "printedName": "success",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(YandexPayAuth.YPSignInResult.Type) -> (YandexPayAuth.YPPartnerToken?, YandexPayAuth.YPAuthError?) -> YandexPayAuth.YPSignInResult",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(YandexPayAuth.YPPartnerToken?, YandexPayAuth.YPAuthError?) -> YandexPayAuth.YPSignInResult",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YPSignInResult",
+                        "printedName": "YandexPayAuth.YPSignInResult",
+                        "usr": "s:13YandexPayAuth14YPSignInResultO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(partnerToken: YandexPayAuth.YPPartnerToken?, partnerTokenError: YandexPayAuth.YPAuthError?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "YandexPayAuth.YPPartnerToken?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "YPPartnerToken",
+                                "printedName": "YandexPayAuth.YPPartnerToken",
+                                "usr": "s:13YandexPayAuth14YPPartnerTokenV"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "YandexPayAuth.YPAuthError?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "YPAuthError",
+                                "printedName": "YandexPayAuth.YPAuthError",
+                                "usr": "s:13YandexPayAuth11YPAuthErrorO"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "YandexPayAuth.YPSignInResult.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YPSignInResult",
+                        "printedName": "YandexPayAuth.YPSignInResult",
+                        "usr": "s:13YandexPayAuth14YPSignInResultO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13YandexPayAuth14YPSignInResultO7successyAcA14YPPartnerTokenVSg_AA11YPAuthErrorOSgtcACmF",
+            "mangledName": "$s13YandexPayAuth14YPSignInResultO7successyAcA14YPPartnerTokenVSg_AA11YPAuthErrorOSgtcACmF",
+            "moduleName": "YandexPayAuth"
+          },
+          {
+            "kind": "Var",
+            "name": "cancelled",
+            "printedName": "cancelled",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(YandexPayAuth.YPSignInResult.Type) -> YandexPayAuth.YPSignInResult",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "YPSignInResult",
+                    "printedName": "YandexPayAuth.YPSignInResult",
+                    "usr": "s:13YandexPayAuth14YPSignInResultO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "YandexPayAuth.YPSignInResult.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YPSignInResult",
+                        "printedName": "YandexPayAuth.YPSignInResult",
+                        "usr": "s:13YandexPayAuth14YPSignInResultO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13YandexPayAuth14YPSignInResultO9cancelledyA2CmF",
+            "mangledName": "$s13YandexPayAuth14YPSignInResultO9cancelledyA2CmF",
+            "moduleName": "YandexPayAuth"
+          },
+          {
+            "kind": "Var",
+            "name": "failed",
+            "printedName": "failed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(YandexPayAuth.YPSignInResult.Type) -> (any Swift.Error) -> YandexPayAuth.YPSignInResult",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(any Swift.Error) -> YandexPayAuth.YPSignInResult",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YPSignInResult",
+                        "printedName": "YandexPayAuth.YPSignInResult",
+                        "usr": "s:13YandexPayAuth14YPSignInResultO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "any Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "YandexPayAuth.YPSignInResult.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YPSignInResult",
+                        "printedName": "YandexPayAuth.YPSignInResult",
+                        "usr": "s:13YandexPayAuth14YPSignInResultO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13YandexPayAuth14YPSignInResultO6failedyACs5Error_pcACmF",
+            "mangledName": "$s13YandexPayAuth14YPSignInResultO6failedyACs5Error_pcACmF",
+            "moduleName": "YandexPayAuth"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:13YandexPayAuth14YPSignInResultO",
+        "mangledName": "$s13YandexPayAuth14YPSignInResultO",
+        "moduleName": "YandexPayAuth",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "YPAuthError",
+        "printedName": "YPAuthError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "notAuthorized",
+            "printedName": "notAuthorized",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(YandexPayAuth.YPAuthError.Type) -> YandexPayAuth.YPAuthError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "YPAuthError",
+                    "printedName": "YandexPayAuth.YPAuthError",
+                    "usr": "s:13YandexPayAuth11YPAuthErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "YandexPayAuth.YPAuthError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YPAuthError",
+                        "printedName": "YandexPayAuth.YPAuthError",
+                        "usr": "s:13YandexPayAuth11YPAuthErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13YandexPayAuth11YPAuthErrorO13notAuthorizedyA2CmF",
+            "mangledName": "$s13YandexPayAuth11YPAuthErrorO13notAuthorizedyA2CmF",
+            "moduleName": "YandexPayAuth"
+          },
+          {
+            "kind": "Var",
+            "name": "authorizationExpired",
+            "printedName": "authorizationExpired",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(YandexPayAuth.YPAuthError.Type) -> YandexPayAuth.YPAuthError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "YPAuthError",
+                    "printedName": "YandexPayAuth.YPAuthError",
+                    "usr": "s:13YandexPayAuth11YPAuthErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "YandexPayAuth.YPAuthError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YPAuthError",
+                        "printedName": "YandexPayAuth.YPAuthError",
+                        "usr": "s:13YandexPayAuth11YPAuthErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13YandexPayAuth11YPAuthErrorO20authorizationExpiredyA2CmF",
+            "mangledName": "$s13YandexPayAuth11YPAuthErrorO20authorizationExpiredyA2CmF",
+            "moduleName": "YandexPayAuth"
+          },
+          {
+            "kind": "Var",
+            "name": "reauthRequired",
+            "printedName": "reauthRequired",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(YandexPayAuth.YPAuthError.Type) -> YandexPayAuth.YPAuthError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "YPAuthError",
+                    "printedName": "YandexPayAuth.YPAuthError",
+                    "usr": "s:13YandexPayAuth11YPAuthErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "YandexPayAuth.YPAuthError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YPAuthError",
+                        "printedName": "YandexPayAuth.YPAuthError",
+                        "usr": "s:13YandexPayAuth11YPAuthErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13YandexPayAuth11YPAuthErrorO14reauthRequiredyA2CmF",
+            "mangledName": "$s13YandexPayAuth11YPAuthErrorO14reauthRequiredyA2CmF",
+            "moduleName": "YandexPayAuth"
+          },
+          {
+            "kind": "Var",
+            "name": "directionNotAllowed",
+            "printedName": "directionNotAllowed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(YandexPayAuth.YPAuthError.Type) -> YandexPayAuth.YPAuthError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "YPAuthError",
+                    "printedName": "YandexPayAuth.YPAuthError",
+                    "usr": "s:13YandexPayAuth11YPAuthErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "YandexPayAuth.YPAuthError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YPAuthError",
+                        "printedName": "YandexPayAuth.YPAuthError",
+                        "usr": "s:13YandexPayAuth11YPAuthErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13YandexPayAuth11YPAuthErrorO19directionNotAllowedyA2CmF",
+            "mangledName": "$s13YandexPayAuth11YPAuthErrorO19directionNotAllowedyA2CmF",
+            "moduleName": "YandexPayAuth"
+          },
+          {
+            "kind": "Var",
+            "name": "exchangeDisabled",
+            "printedName": "exchangeDisabled",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(YandexPayAuth.YPAuthError.Type) -> YandexPayAuth.YPAuthError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "YPAuthError",
+                    "printedName": "YandexPayAuth.YPAuthError",
+                    "usr": "s:13YandexPayAuth11YPAuthErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "YandexPayAuth.YPAuthError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YPAuthError",
+                        "printedName": "YandexPayAuth.YPAuthError",
+                        "usr": "s:13YandexPayAuth11YPAuthErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13YandexPayAuth11YPAuthErrorO16exchangeDisabledyA2CmF",
+            "mangledName": "$s13YandexPayAuth11YPAuthErrorO16exchangeDisabledyA2CmF",
+            "moduleName": "YandexPayAuth"
+          },
+          {
+            "kind": "Var",
+            "name": "tokenUnavailable",
+            "printedName": "tokenUnavailable",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(YandexPayAuth.YPAuthError.Type) -> YandexPayAuth.YPAuthError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "YPAuthError",
+                    "printedName": "YandexPayAuth.YPAuthError",
+                    "usr": "s:13YandexPayAuth11YPAuthErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "YandexPayAuth.YPAuthError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YPAuthError",
+                        "printedName": "YandexPayAuth.YPAuthError",
+                        "usr": "s:13YandexPayAuth11YPAuthErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13YandexPayAuth11YPAuthErrorO16tokenUnavailableyA2CmF",
+            "mangledName": "$s13YandexPayAuth11YPAuthErrorO16tokenUnavailableyA2CmF",
+            "moduleName": "YandexPayAuth"
+          },
+          {
+            "kind": "Var",
+            "name": "networkError",
+            "printedName": "networkError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(YandexPayAuth.YPAuthError.Type) -> (any Swift.Error) -> YandexPayAuth.YPAuthError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(any Swift.Error) -> YandexPayAuth.YPAuthError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YPAuthError",
+                        "printedName": "YandexPayAuth.YPAuthError",
+                        "usr": "s:13YandexPayAuth11YPAuthErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(underlying: any Swift.Error)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "any Swift.Error",
+                            "usr": "s:s5ErrorP"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "YandexPayAuth.YPAuthError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YPAuthError",
+                        "printedName": "YandexPayAuth.YPAuthError",
+                        "usr": "s:13YandexPayAuth11YPAuthErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13YandexPayAuth11YPAuthErrorO07networkE0yACs0E0_p_tcACmF",
+            "mangledName": "$s13YandexPayAuth11YPAuthErrorO07networkE0yACs0E0_p_tcACmF",
+            "moduleName": "YandexPayAuth"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:13YandexPayAuth11YPAuthErrorO",
+        "mangledName": "$s13YandexPayAuth11YPAuthErrorO",
+        "moduleName": "YandexPayAuth",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "YPPayAuthState",
         "printedName": "YPPayAuthState",
@@ -222,6 +1108,13 @@
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -254,6 +1147,9 @@
             "genericSig": "<τ_0_0 where τ_0_0 : YandexPayAuth.YPPayAuthStateListener>",
             "sugared_genericSig": "<Self where Self : YandexPayAuth.YPPayAuthStateListener>",
             "protocolReq": true,
+            "declAttributes": [
+              "Custom"
+            ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
           }
@@ -794,6 +1690,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -840,6 +1743,9 @@
             "genericSig": "<τ_0_0 where τ_0_0 : YandexPayAuth.YPLoginObserver>",
             "sugared_genericSig": "<Self where Self : YandexPayAuth.YPLoginObserver>",
             "protocolReq": true,
+            "declAttributes": [
+              "Custom"
+            ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
           }
@@ -899,13 +1805,6 @@
         "kind": "Import",
         "name": "FintechSDKRealTimeAnalyticsAdapter",
         "printedName": "FintechSDKRealTimeAnalyticsAdapter",
-        "declKind": "Import",
-        "moduleName": "YandexPayAuth"
-      },
-      {
-        "kind": "Import",
-        "name": "FintechSDKRealUserMonitoringAdapter",
-        "printedName": "FintechSDKRealUserMonitoringAdapter",
         "declKind": "Import",
         "moduleName": "YandexPayAuth"
       },
@@ -1253,17 +2152,20 @@
       },
       {
         "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
+        "name": "FintechSDKAuthInterfaces",
+        "printedName": "FintechSDKAuthInterfaces",
         "declKind": "Import",
         "moduleName": "YandexPayAuth"
       },
       {
         "kind": "Import",
-        "name": "FintechSDKAuthInterfaces",
-        "printedName": "FintechSDKAuthInterfaces",
+        "name": "FintechSDKAuthorizationScenario",
+        "printedName": "FintechSDKAuthorizationScenario",
         "declKind": "Import",
-        "moduleName": "YandexPayAuth"
+        "moduleName": "YandexPayAuth",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
       },
       {
         "kind": "Import",
@@ -1294,6 +2196,13 @@
         "declAttributes": [
           "SPIAccessControl"
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "YandexPayAuth"
       },
       {
         "kind": "TypeDecl",
@@ -1379,6 +2288,81 @@
               "Custom",
               "AccessControl",
               "DiscardableResult"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "signIn",
+            "printedName": "signIn(strategy:with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "YPSignInResult",
+                "printedName": "YandexPayAuth.YPSignInResult",
+                "usr": "s:13YandexPayAuth14YPSignInResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "YPAuthorizationStrategy",
+                "printedName": "YandexPayAuth.YPAuthorizationStrategy",
+                "hasDefaultArg": true,
+                "usr": "s:13YandexPayAuth23YPAuthorizationStrategyO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13YandexPayAuth04YPayC0C6signIn8strategy4withAA06YPSignF6ResultOAA23YPAuthorizationStrategyO_So16UIViewControllerCtYaF",
+            "mangledName": "$s13YandexPayAuth04YPayC0C6signIn8strategy4withAA06YPSignF6ResultOAA23YPAuthorizationStrategyO_So16UIViewControllerCtYaF",
+            "moduleName": "YandexPayAuth",
+            "declAttributes": [
+              "Final",
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getPartnerToken",
+            "printedName": "getPartnerToken(targetClientId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "YPPartnerToken",
+                "printedName": "YandexPayAuth.YPPartnerToken",
+                "usr": "s:13YandexPayAuth14YPPartnerTokenV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13YandexPayAuth04YPayC0C15getPartnerToken14targetClientIdAA09YPPartnerG0VSSSg_tYaKF",
+            "mangledName": "$s13YandexPayAuth04YPayC0C15getPartnerToken14targetClientIdAA09YPPartnerG0VSSSg_tYaKF",
+            "moduleName": "YandexPayAuth",
+            "declAttributes": [
+              "Final",
+              "Custom",
+              "AccessControl"
             ],
             "throwing": true,
             "funcSelfKind": "NonMutating"
@@ -1822,11 +2806,40 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       }
     ],
     "json_format_version": 8
   },
-  "ConstValues": []
+  "ConstValues": [
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/Facades\/YandexPayAuth\/Sources\/YPAuthUserActivityHandler.swift",
+      "kind": "StringLiteral",
+      "offset": 816,
+      "length": 7,
+      "value": "\"https\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/Facades\/YandexPayAuth\/Sources\/YPAuthUserActivityHandler.swift",
+      "kind": "StringLiteral",
+      "offset": 857,
+      "length": 11,
+      "value": "\".oauth.ru\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/Facades\/YandexPayAuth\/Sources\/YPAuthUserActivityHandler.swift",
+      "kind": "StringLiteral",
+      "offset": 906,
+      "length": 16,
+      "value": "\".oauth-test.ru\""
+    }
+  ]
 }

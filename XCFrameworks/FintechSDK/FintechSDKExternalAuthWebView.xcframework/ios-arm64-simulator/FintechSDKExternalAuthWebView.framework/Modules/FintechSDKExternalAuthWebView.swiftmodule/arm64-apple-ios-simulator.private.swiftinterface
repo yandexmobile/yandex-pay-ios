@@ -1,12 +1,13 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKExternalAuthWebView -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import Combine
 @_spi(Internal) import FintechSDKAnalyticsInterfaces
 @_spi(Internal) import FintechSDKAuthCoreImplementation
 @_spi(Internal) import FintechSDKAuthInterfaces
 @_spi(Internal) import FintechSDKAuthorizationScenario
+@_spi(Internal) import FintechSDKBDUICore
 import FintechSDKCommonEntity
 @_spi(Internal) import FintechSDKCoreUI
 @_spi(Internal) import FintechSDKCoreUtils
@@ -48,33 +49,52 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public var authStrategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy?
   @_spi(Internal) public var partnerAuthStateProvider: (() -> Swift.Bool?)?
   @_spi(Internal) public var forceDoubleAuth: Swift.Bool
+  @_spi(Internal) public var isBackGestureEnabled: Swift.Bool?
   @_spi(Internal) public var initialBSTProvider: (@Sendable () async -> Swift.String?)?
   @_spi(Internal) public var loginwallAnalyticsParams: FintechSDKExternalAuthWebView.FTLoginwallAnalyticsParams
-  @_spi(Internal) public init(merchantID: Swift.String, environment: FintechSDKCommonEntity.FintechSDKEnvironment, loginService: any FintechSDKAuthInterfaces.FintechLoginService, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, presentationContextProvider: any FintechSDKCoreUI.FTPresentationContextProviding, networkChallengeHandlerFactory: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory, eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, payEventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, errorReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter, identifiersProvider: any FintechSDKAnalyticsInterfaces.FTIdentifiersProviding, sourceSDK: Swift.String, loginSource: Swift.String, url: Foundation.URL? = nil, authStrategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy? = nil, partnerAuthStateProvider: (() -> Swift.Bool?)? = nil, forceDoubleAuth: Swift.Bool = false, initialBSTProvider: (@Sendable () async -> Swift.String?)? = nil)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init(merchantID: Swift.String, environment: FintechSDKCommonEntity.FintechSDKEnvironment, loginService: any FintechSDKAuthInterfaces.FintechLoginService, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, presentationContextProvider: any FintechSDKCoreUI.FTPresentationContextProviding, networkChallengeHandlerFactory: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory, eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, payEventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, errorReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter, identifiersProvider: any FintechSDKAnalyticsInterfaces.FTIdentifiersProviding, sourceSDK: Swift.String, loginSource: Swift.String, url: Foundation.URL? = nil, authStrategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy? = nil, partnerAuthStateProvider: (() -> Swift.Bool?)? = nil, forceDoubleAuth: Swift.Bool = false, initialBSTProvider: (@Sendable () async -> Swift.String?)? = nil, isBackGestureEnabled: Swift.Bool? = nil)
+  #endif
 }
 @_spi(Internal) public struct FTExternalAuthWebViewOutput {
   @_spi(Internal) public var processCompletedAuthUseCase: (any FintechSDKExternalAuthWebView.FTProcessCompletedAuthUseCase)?
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(processCompletedAuthUseCase: (any FintechSDKExternalAuthWebView.FTProcessCompletedAuthUseCase)? = nil)
+  #endif
 }
 @_spi(Internal) public struct FTExternalAuthWebViewResult : Swift.Sendable {
   @_spi(Internal) public let merchAuth: FintechSDKAuthInterfaces.FintechAuthModel?
   @_spi(Internal) public let payAuth: FintechSDKAuthInterfaces.FintechAuthModel
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(merchAuth: FintechSDKAuthInterfaces.FintechAuthModel?, payAuth: FintechSDKAuthInterfaces.FintechAuthModel)
+  #endif
 }
 @_spi(Internal) public struct FTLoginwallAnalyticsParams : Swift.Equatable, Swift.Sendable {
   @_spi(Internal) public let loginSource: Swift.String
   @_spi(Internal) public let sourceSnippet: Swift.String?
   @_spi(Internal) public let surface: Swift.String?
   @_spi(Internal) public let targetURL: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(loginSource: Swift.String, sourceSnippet: Swift.String? = nil, surface: Swift.String? = nil, targetURL: Swift.String? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init?(parameters: [Swift.String : Swift.String])
+  #endif
   @_spi(Internal) public static func == (a: FintechSDKExternalAuthWebView.FTLoginwallAnalyticsParams, b: FintechSDKExternalAuthWebView.FTLoginwallAnalyticsParams) -> Swift.Bool
 }
 @_spi(Internal) public protocol FTProcessCompletedAuthUseCase {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor func process(result: Swift.Result<FintechSDKExternalAuthWebView.FTExternalAuthWebViewResult, any Swift.Error>) async
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor func process(result: Swift.Result<FintechSDKExternalAuthWebView.FTExternalAuthWebViewResult, any Swift.Error>, context: any FintechSDKWebViewFeatures.FTWebViewHandlerContext, requestID: Swift.String) async
+  #endif
 }
 @_spi(Internal) extension FintechSDKExternalAuthWebView.FTProcessCompletedAuthUseCase {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor public func process(result: Swift.Result<FintechSDKExternalAuthWebView.FTExternalAuthWebViewResult, any Swift.Error>) async
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor public func process(result: Swift.Result<FintechSDKExternalAuthWebView.FTExternalAuthWebViewResult, any Swift.Error>, context: any FintechSDKWebViewFeatures.FTWebViewHandlerContext, requestID: Swift.String) async
+  #endif
 }

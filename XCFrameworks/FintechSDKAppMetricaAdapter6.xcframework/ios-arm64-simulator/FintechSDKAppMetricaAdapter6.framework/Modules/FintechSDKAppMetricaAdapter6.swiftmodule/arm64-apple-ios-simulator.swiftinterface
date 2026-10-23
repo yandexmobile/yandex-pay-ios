@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKAppMetricaAdapter6 -package-name appmetrica
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import FintechSDKAnalyticsInterfaces
 import Foundation
 import Swift
@@ -16,25 +16,37 @@ final public class FintechAppMetricaAdapterImpl : FintechSDKAnalyticsInterfaces.
   final public var uuid: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   final public var deviceID: Swift.String? {
     get
   }
+  #endif
   final public func isReporterCreated(for apiKey: Swift.String) -> Swift.Bool
   final public func reporter(for apiKey: Swift.String) throws(FintechSDKAnalyticsInterfaces.FintechAppMetricaError) -> any FintechSDKAnalyticsInterfaces.FintechAppMetricaReportingAdapter
   final public func extendedReporter(for apiKey: Swift.String) throws(FintechSDKAnalyticsInterfaces.FintechAppMetricaError) -> any FintechSDKAnalyticsInterfaces.FintechAppMetricaReportingAdapter
   final public func activateReporter(for apiKey: Swift.String) throws(FintechSDKAnalyticsInterfaces.FintechAppMetricaError)
+  #if compiler(>=5.3) && $NonescapableTypes
   final public func setErrorEnvironment(_ value: Swift.String?, for key: Swift.String)
+  #endif
   final public func resumeSession()
   final public func pauseSession()
+  #if compiler(>=5.3) && $NonescapableTypes
   final public func requestStartupIdentifiers(for keys: [Swift.String], completion: @escaping @Sendable (Swift.Result<[Swift.String : [Swift.String]], any Swift.Error>) -> Swift.Void)
+  #endif
   final public func makeCountHistogram(name: Swift.String, minValue: Swift.Int, maxValue: Swift.Int, bucketsCount: Swift.Int) -> any FintechSDKAnalyticsInterfaces.FintechAppMetricaCountHistogram
   final public func makeTimeHistogram(name: Swift.String, minTime: Foundation.TimeInterval, maxTime: Foundation.TimeInterval, bucketsCount: Swift.Int) -> any FintechSDKAnalyticsInterfaces.FintechAppMetricaTimeHistogram
   @objc deinit
 }
 final public class FintechAppMetricaReporterImpl : FintechSDKAnalyticsInterfaces.FintechAppMetricaReportingAdapter {
   public init(reporter: Swift.AnyObject)
+  #if compiler(>=5.3) && $NonescapableTypes
   final public func report(eventName: Swift.String, params: [Swift.String : Any], onFailure: ((any Swift.Error) -> Swift.Void)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   final public func setPUID(_ puid: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   final public func setAppEnvironment(_ value: Swift.String?, for key: Swift.String)
+  #endif
   @objc deinit
 }

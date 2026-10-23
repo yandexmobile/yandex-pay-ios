@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKPayBadge -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import Combine
 import FintechSDKCommonEntity
 @_spi(Internal) import FintechSDKCoreUI
@@ -43,14 +43,18 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public let type: FintechSDKPayBadge.FTPayBadgeModel.BadgeType
   @_spi(Internal) public let productContext: FintechSDKPayBadge.FTPayBadgeProductContext?
   @_spi(Internal) public let hidingPolicy: FintechSDKPayBadge.FTPayBadgeModel.HidingPolicy
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(amount: Foundation.Decimal, currency: FintechSDKPayBoxEntity.FTCurrencyCode, theme: FintechSDKCommonEntity.FintechSDKTheme, align: FintechSDKPayBadge.FTPayBadgeModel.Align, type: FintechSDKPayBadge.FTPayBadgeModel.BadgeType, productContext: FintechSDKPayBadge.FTPayBadgeProductContext? = nil, hidingPolicy: FintechSDKPayBadge.FTPayBadgeModel.HidingPolicy = .gone)
+  #endif
   @_spi(Internal) public static func == (a: FintechSDKPayBadge.FTPayBadgeModel, b: FintechSDKPayBadge.FTPayBadgeModel) -> Swift.Bool
 }
 @_spi(Internal) extension FintechSDKPayBadge.FTPayBadgeModel {
   @_spi(Internal) public enum SplitVariant : Swift.String, Swift.Sendable {
     @_spi(Internal) case simple
     @_spi(Internal) case detailed
+    #if compiler(>=5.3) && $NonescapableTypes
     @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
     @_spi(Internal) public typealias RawValue = Swift.String
     @_spi(Internal) public var rawValue: Swift.String {
       @_spi(Internal) get
@@ -61,7 +65,9 @@ import _SwiftConcurrencyShims
     @_spi(Internal) case green
     @_spi(Internal) case grey
     @_spi(Internal) case transparent
+    #if compiler(>=5.3) && $NonescapableTypes
     @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
     @_spi(Internal) public typealias RawValue = Swift.String
     @_spi(Internal) public var rawValue: Swift.String {
       @_spi(Internal) get
@@ -70,7 +76,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public enum CashbackVariant : Swift.String, Swift.Sendable {
     @_spi(Internal) case `default`
     @_spi(Internal) case compact
+    #if compiler(>=5.3) && $NonescapableTypes
     @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
     @_spi(Internal) public typealias RawValue = Swift.String
     @_spi(Internal) public var rawValue: Swift.String {
       @_spi(Internal) get
@@ -79,7 +87,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public enum UltimateVariant : Swift.String, Swift.Sendable {
     @_spi(Internal) case `default`
     @_spi(Internal) case compact
+    #if compiler(>=5.3) && $NonescapableTypes
     @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
     @_spi(Internal) public typealias RawValue = Swift.String
     @_spi(Internal) public var rawValue: Swift.String {
       @_spi(Internal) get
@@ -91,7 +101,9 @@ import _SwiftConcurrencyShims
     @_spi(Internal) case cashbackOnly
     @_spi(Internal) case all
     @_spi(Internal) case auto
+    #if compiler(>=5.3) && $NonescapableTypes
     @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
     @_spi(Internal) public typealias RawValue = Swift.String
     @_spi(Internal) public var rawValue: Swift.String {
       @_spi(Internal) get
@@ -100,14 +112,18 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public struct UltimatePayload : Swift.Equatable, Swift.Sendable {
     @_spi(Internal) public let source: Swift.String?
     @_spi(Internal) public let skuID: Swift.String?
+    #if compiler(>=5.3) && $NonescapableTypes
     @_spi(Internal) public init(source: Swift.String?, skuID: Swift.String?)
+    #endif
     @_spi(Internal) public static func == (a: FintechSDKPayBadge.FTPayBadgeModel.UltimatePayload, b: FintechSDKPayBadge.FTPayBadgeModel.UltimatePayload) -> Swift.Bool
   }
   @_spi(Internal) public enum CashbackColor : Swift.String, Swift.Sendable {
     @_spi(Internal) case primary
     @_spi(Internal) case grey
     @_spi(Internal) case transparent
+    #if compiler(>=5.3) && $NonescapableTypes
     @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
     @_spi(Internal) public typealias RawValue = Swift.String
     @_spi(Internal) public var rawValue: Swift.String {
       @_spi(Internal) get
@@ -117,7 +133,9 @@ import _SwiftConcurrencyShims
     @_spi(Internal) case left
     @_spi(Internal) case center
     @_spi(Internal) case right
+    #if compiler(>=5.3) && $NonescapableTypes
     @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
     @_spi(Internal) public typealias RawValue = Swift.String
     @_spi(Internal) public var rawValue: Swift.String {
       @_spi(Internal) get
@@ -133,7 +151,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public enum HidingPolicy : Swift.String, Swift.Sendable {
     @_spi(Internal) case invisible
     @_spi(Internal) case gone
+    #if compiler(>=5.3) && $NonescapableTypes
     @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
     @_spi(Internal) public typealias RawValue = Swift.String
     @_spi(Internal) public var rawValue: Swift.String {
       @_spi(Internal) get
@@ -150,7 +170,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public let deviceID: Swift.String?
   @_spi(Internal) public let idfa: Swift.String?
   @_spi(Internal) public let userToken: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(metricaID: Swift.String, deviceID: Swift.String?, idfa: Swift.String?, userToken: Swift.String?)
+  #endif
 }
 @_spi(Internal) public enum FTPayBadgeFactory {
   @_spi(Internal) @_Concurrency.MainActor public static func createBadgeView(model: FintechSDKPayBadge.FTPayBadgeModel, apiService: any FintechSDKPayBadge.FTPayBadgeAPIService, logger: any FintechSDKCoreUtils.FTLogger) -> some SwiftUICore.View

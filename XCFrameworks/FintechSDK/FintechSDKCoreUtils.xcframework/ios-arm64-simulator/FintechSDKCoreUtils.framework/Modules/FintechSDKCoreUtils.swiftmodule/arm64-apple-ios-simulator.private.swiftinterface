@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKCoreUtils -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import AdSupport
 import AppTrackingTransparency
 import FintechSDKAnalyticsInterfaces
@@ -25,12 +25,16 @@ import os
   @_spi(Internal) public init(from string: Swift.String)
 }
 extension Swift.Encodable {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func ftcToDictionary() -> [Swift.String : Any]?
+  #endif
 }
 @_spi(Internal) extension Swift.Array where Element == Foundation.URLQueryItem {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public subscript(key: Swift.String) -> Swift.String? {
     @_spi(Internal) get
   }
+  #endif
 }
 @_spi(Internal) extension FintechSDKCoreUtils.FTAsyncState : Swift.Equatable where T : Swift.Equatable {
   @_spi(Internal) public static func == (lhs: FintechSDKCoreUtils.FTAsyncState<T, E>, rhs: FintechSDKCoreUtils.FTAsyncState<T, E>) -> Swift.Bool
@@ -88,7 +92,9 @@ extension Swift.Sequence {
   @_spi(Internal) public static let thinSpaceSymbol: Swift.Character
   @_spi(Internal) public static let thinSpace: Swift.String
   @_spi(Internal) public func withThinSpaces() -> Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public func trimmedTruncated(maxLength: Swift.Int) -> Swift.String?
+  #endif
 }
 @_spi(Internal) extension Swift.Double {
   @_spi(Internal) public var ftcMS: Swift.Int {
@@ -97,21 +103,28 @@ extension Swift.Sequence {
 }
 @_spi(Internal) extension Foundation.URL {
   @_spi(Internal) public func addingQueryParameters(_ parameters: [Swift.String : Swift.String]) -> Foundation.URL
+  @_spi(Internal) public func addingQueryParameters(_ parameters: [Swift.String : Swift.String], preservingPercentEncoding: Swift.Bool) -> Foundation.URL
 }
 @_spi(Internal) extension Foundation.URLComponents {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public func extractParam(for key: Swift.String) -> Swift.Bool?
+  #endif
 }
 @_spi(Internal) extension Foundation.URLRequest {
   @_spi(Internal) public func addingHeaders(_ headers: [Swift.String : Swift.String]) -> Foundation.URLRequest
 }
 @frozen public struct FTAnyCodable : Swift.Codable, FintechSDKCoreUtils.FTAnyValueBox {
   public let value: Any
+  #if compiler(>=5.3) && $NonescapableTypes
   public init<T>(_ value: T?)
+  #endif
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
 extension FintechSDKCoreUtils.FTAnyCodable {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func `as`<T>(_ type: T.Type) -> T? where T : Swift.Decodable
+  #endif
 }
 extension FintechSDKCoreUtils.FTAnyCodable : Swift.Equatable {
   public static func == (lhs: FintechSDKCoreUtils.FTAnyCodable, rhs: FintechSDKCoreUtils.FTAnyCodable) -> Swift.Bool
@@ -161,11 +174,15 @@ extension FintechSDKCoreUtils.FTAnyCodable : Swift.CustomStringConvertible, Swif
   }
 }
 public enum FTAnyCodableHelper {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func convert<T>(_ any: any FintechSDKCoreUtils.FTAnyValueBox, to type: T.Type) -> T? where T : Swift.Decodable
+  #endif
 }
 public struct FTAnyDecodable : Swift.Decodable, Swift.Equatable, Swift.Hashable, FintechSDKCoreUtils.FTAnyValueBox {
   public let value: Any
+  #if compiler(>=5.3) && $NonescapableTypes
   public init<T>(_ value: T?)
+  #endif
   public init(from decoder: any Swift.Decoder) throws
   public func hash(into hasher: inout Swift.Hasher)
   public static func == (lhs: FintechSDKCoreUtils.FTAnyDecodable, rhs: FintechSDKCoreUtils.FTAnyDecodable) -> Swift.Bool
@@ -174,18 +191,24 @@ public struct FTAnyDecodable : Swift.Decodable, Swift.Equatable, Swift.Hashable,
   }
 }
 extension FintechSDKCoreUtils.FTAnyDecodable {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func `as`<T>(_ type: T.Type) -> T? where T : Swift.Decodable
+  #endif
 }
 extension Swift.Dictionary where Key == Swift.String, Value == Any {
   public init(from decoder: any Swift.Decoder) throws
 }
 @frozen public struct FTAnyEncodable : Swift.Encodable, FintechSDKCoreUtils.FTAnyValueBox {
   public let value: Any
+  #if compiler(>=5.3) && $NonescapableTypes
   public init<T>(_ value: T?)
+  #endif
   public func encode(to encoder: any Swift.Encoder) throws
 }
 public enum FTAnyHelper {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func stringRepresentation(anyValue: Any?) -> Swift.String?
+  #endif
 }
 public protocol FTAnyValueBox {
   var value: Any { get }
@@ -213,12 +236,16 @@ public protocol FTAnyValueBox {
   @_spi(Internal) public var isIdle: Swift.Bool {
     @_spi(Internal) get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public var value: T? {
     @_spi(Internal) get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public var error: E? {
     @_spi(Internal) get
   }
+  #endif
 }
 @_spi(Internal) public protocol FTDateProvider : Swift.Sendable {
   @_spi(Internal) var now: Foundation.Date { get }
@@ -242,6 +269,14 @@ public protocol FTAnyValueBox {
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidDisappear(_ animated: Swift.Bool)
   @_spi(Internal) @objc deinit
 }
+@_spi(Internal) public struct FTDomainPolicy {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init(allowedDomains: [Swift.String]?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public func allows(url: Foundation.URL?) -> Swift.Bool
+  #endif
+}
 @_spi(Internal) public struct FTObserverList<Observer> {
   @_spi(Internal) public init()
   @_spi(Internal) public mutating func add(_ observer: Observer)
@@ -258,16 +293,23 @@ public protocol FTAnyValueBox {
   }
 }
 @_spi(Internal) public enum FTPKDynamicLinkParser {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public static func parse(_ dynamicLinkString: Swift.String) -> FintechSDKCoreUtils.FTPKDynamicLinkParser.ParsedDynamicLink?
+  #endif
 }
 @_spi(Internal) public enum FTPlatformWrapperStorage {
   @_spi(Internal) public static func value(userDefaults: Foundation.UserDefaults = .standard) -> Swift.String
   @_spi(Internal) public static let key: Swift.String
   @_spi(Internal) public static let nativeValue: Swift.String
 }
+@_spi(Internal) public enum FTQueryParametersEncoder {
+  @_spi(Internal) public static func encode(_ parameters: [Swift.String : [Swift.String]]) -> [Swift.String : [Swift.String]]
+}
 @propertyWrapper public struct FTSafeOptional<Wrapped> : Swift.Codable where Wrapped : Swift.Decodable, Wrapped : Swift.Encodable {
   public var wrappedValue: Wrapped?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(wrappedValue: Wrapped?)
+  #endif
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
@@ -402,12 +444,14 @@ public protocol NumericTag : Swift.Sendable {
 }
 @_spi(Internal) extension FintechSDKCoreUtils.FTTagged : Swift.Numeric where Tag : FintechSDKCoreUtils.NumericTag, RawValue : Swift.Numeric {
   @_spi(Internal) public typealias Magnitude = RawValue.Magnitude
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @inlinable public init?(exactly source: some BinaryInteger) {
     guard let value = RawValue(exactly: source) else {
       return nil
     }
     self.init(rawValue: value)
   }
+  #endif
   @_spi(Internal) public var magnitude: FintechSDKCoreUtils.FTTagged<Tag, RawValue>.Magnitude {
     @_spi(Internal) get
   }
@@ -432,7 +476,9 @@ final public class FTTaskDelayedActionScheduler : FintechSDKCoreUtils.FTDelayedA
   @objc deinit
 }
 public enum FTURLUtils {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func sanitize(_ original: Foundation.URL?) -> Swift.String
+  #endif
 }
 @_spi(Internal) final public class FTWeakRef<T> where T : AnyObject {
   @_spi(Internal) weak final public var value: T?
@@ -443,11 +489,17 @@ public enum FintechApiBaseUrlType : Swift.String, Swift.CaseIterable {
   case payBackend
   case frontback
   case tovarisch
+  #if compiler(>=5.3) && $NonescapableTypes
   public var getUrl: Swift.String? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func setUrl(value: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias AllCases = [FintechSDKCoreUtils.FintechApiBaseUrlType]
   public typealias RawValue = Swift.String
   nonisolated public static var allCases: [FintechSDKCoreUtils.FintechApiBaseUrlType] {
@@ -486,7 +538,9 @@ public enum FintechSDKInfo {
   @_spi(Internal) public func availabilitySnapshot() async -> FintechSDKCoreUtils.FTConnectivitySnapshot
 }
 @_spi(Internal) public protocol FTPathMonitoring : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) var onPathUpdate: ((FintechSDKCoreUtils.FTPathStatus) -> Swift.Void)? { get set }
+  #endif
   @_spi(Internal) func start()
   @_spi(Internal) func cancel()
 }
@@ -511,7 +565,9 @@ public enum FintechSDKInfo {
     @_spi(Internal) case online
     @_spi(Internal) case offline
     @_spi(Internal) case unknown
+    #if compiler(>=5.3) && $NonescapableTypes
     @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
     @_spi(Internal) public typealias RawValue = Swift.String
     @_spi(Internal) public var rawValue: Swift.String {
       @_spi(Internal) get
@@ -522,7 +578,9 @@ public enum FintechSDKInfo {
     @_spi(Internal) case unknownTimeout
     @_spi(Internal) case cancelled
     @_spi(Internal) case finished
+    #if compiler(>=5.3) && $NonescapableTypes
     @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
     @_spi(Internal) public typealias RawValue = Swift.String
     @_spi(Internal) public var rawValue: Swift.String {
       @_spi(Internal) get
@@ -536,9 +594,15 @@ public enum FintechSDKInfo {
   @_spi(Internal) public let observedAt: Swift.UInt64?
   @_spi(Internal) public let nwStatus: FintechSDKCoreUtils.FTPathStatus.Status?
   @_spi(Internal) public let unsatisfiedReason: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(isAvailable: Swift.Bool, state: FintechSDKCoreUtils.FTConnectivitySnapshot.State, source: FintechSDKCoreUtils.FTConnectivitySnapshot.Source, revision: Swift.UInt64 = 0, generation: Swift.UInt64 = 0, observedAt: Swift.UInt64? = nil, nwStatus: FintechSDKCoreUtils.FTPathStatus.Status? = nil, unsatisfiedReason: Swift.String? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public func ageMs(now: Swift.UInt64) -> Swift.UInt64?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public func ageMs(on clock: any FintechSDKCoreUtils.FTConnectivityClock) -> Swift.UInt64?
+  #endif
   @_spi(Internal) public static func == (a: FintechSDKCoreUtils.FTConnectivitySnapshot, b: FintechSDKCoreUtils.FTConnectivitySnapshot) -> Swift.Bool
 }
 @_spi(Internal) public struct FTPathStatus : Swift.Sendable, Swift.Equatable {
@@ -546,7 +610,9 @@ public enum FintechSDKInfo {
     @_spi(Internal) case satisfied
     @_spi(Internal) case unsatisfied
     @_spi(Internal) case requiresConnection
+    #if compiler(>=5.3) && $NonescapableTypes
     @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
     @_spi(Internal) public typealias RawValue = Swift.String
     @_spi(Internal) public var rawValue: Swift.String {
       @_spi(Internal) get
@@ -559,20 +625,30 @@ public enum FintechSDKInfo {
   @_spi(Internal) public var isSatisfied: Swift.Bool {
     @_spi(Internal) get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(status: FintechSDKCoreUtils.FTPathStatus.Status, unsatisfiedReason: Swift.String? = nil)
+  #endif
   @_spi(Internal) public static func == (a: FintechSDKCoreUtils.FTPathStatus, b: FintechSDKCoreUtils.FTPathStatus) -> Swift.Bool
 }
 @_spi(Internal) public protocol FTDeviceInfoProvider : Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) var deviceID: Swift.String? { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) var idfa: Swift.String? { get }
+  #endif
 }
 @_spi(Internal) final public class FTDeviceInfoProviderImpl : FintechSDKCoreUtils.FTDeviceInfoProvider {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public var idfa: Swift.String? {
     @_spi(Internal) get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public var deviceID: Swift.String? {
     @_spi(Internal) get
   }
+  #endif
   @_spi(Internal) public init(appMetricaAdapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter)
   @_spi(Internal) @objc deinit
 }
@@ -594,12 +670,16 @@ final public class DefaultTimeProvider : FintechSDKCoreUtils.TimeProvider {
 @_spi(Internal) public protocol FTLogger : Swift.Sendable {
   @_spi(Internal) func info(_ message: Swift.String, data: any Swift.Sendable)
   @_spi(Internal) func debug(_ message: Swift.String, data: any Swift.Sendable)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func error(_ message: Swift.String, error: (any Swift.Error)?, data: any Swift.Sendable)
+  #endif
 }
 @_spi(Internal) extension FintechSDKCoreUtils.FTLogger {
   @_spi(Internal) public func info(_ message: Swift.String)
   @_spi(Internal) public func debug(_ message: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public func error(_ message: Swift.String, error: (any Swift.Error)?)
+  #endif
 }
 @_spi(Internal) public enum FTLogKind : Swift.Sendable {
   @_spi(Internal) case info
@@ -619,7 +699,9 @@ final public class DefaultTimeProvider : FintechSDKCoreUtils.TimeProvider {
   @_spi(Internal) public init(module: Swift.String, subsystem: Swift.String = FTLogConstants.externalSDK, isEnabled: Swift.Bool)
   @_spi(Internal) final public func info(_ message: Swift.String, data: any Swift.Sendable)
   @_spi(Internal) final public func debug(_ message: Swift.String, data: any Swift.Sendable)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public func error(_ message: Swift.String, error: (any Swift.Error)? = nil, data: any Swift.Sendable)
+  #endif
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) public protocol FTUserAgentProvider {
@@ -633,7 +715,9 @@ final public class DefaultTimeProvider : FintechSDKCoreUtils.TimeProvider {
 }
 @_spi(Internal) final public class FTAnyStorage<Item> : FintechSDKCoreUtils.FTStorage, @unchecked Swift.Sendable {
   @_spi(Internal) public init<SomeStorage>(storage: SomeStorage) where Item == SomeStorage.Item, SomeStorage : FintechSDKCoreUtils.FTStorage
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public func load() -> Item?
+  #endif
   @_spi(Internal) @discardableResult
   final public func save(_ item: Item) -> Swift.Bool
   @_spi(Internal) @discardableResult
@@ -642,13 +726,17 @@ final public class DefaultTimeProvider : FintechSDKCoreUtils.TimeProvider {
 }
 @_spi(Internal) public struct FTUserToken : Swift.Codable, Swift.Sendable {
   @_spi(Internal) public let token: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(token: Swift.String?)
+  #endif
   @_spi(Internal) public func encode(to encoder: any Swift.Encoder) throws
   @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
 }
 @_spi(Internal) final public class FTSecurityStorage<Item> : FintechSDKCoreUtils.FTStorage, @unchecked Swift.Sendable where Item : Swift.Decodable, Item : Swift.Encodable {
   @_spi(Internal) public init(key: Swift.String, accessibility: CoreFoundation.CFString = kSecAttrAccessibleWhenUnlocked)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public func load() -> Item?
+  #endif
   @_spi(Internal) @discardableResult
   final public func save(_ item: Item) -> Swift.Bool
   @_spi(Internal) @discardableResult
@@ -657,7 +745,9 @@ final public class DefaultTimeProvider : FintechSDKCoreUtils.TimeProvider {
 }
 @_spi(Internal) public protocol FTStorage<Item> : Swift.Sendable {
   associatedtype Item
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func load() -> Self.Item?
+  #endif
   @_spi(Internal) @discardableResult
   func save(_ item: Self.Item) -> Swift.Bool
   @_spi(Internal) @discardableResult

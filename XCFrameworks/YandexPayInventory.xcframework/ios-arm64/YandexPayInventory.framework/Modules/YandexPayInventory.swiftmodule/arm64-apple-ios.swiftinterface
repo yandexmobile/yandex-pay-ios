@@ -1,12 +1,11 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name YandexPayInventory -package-name yandexpayinventory
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import ExternalBduiAdapter
 import FintechSDKAuthInterfaces
 import FintechSDKFontsAdapter
 import FintechSDKRealTimeAnalyticsAdapter
-import FintechSDKRealUserMonitoringAdapter
 import Foundation
 import Swift
 import SwiftUI
@@ -34,14 +33,18 @@ public enum FintechPayBadgeProductContext : Swift.Equatable, Swift.Sendable {
   @_Concurrency.MainActor public let type: YandexPayInventory.YPBadgeModel.BadgeType
   @_Concurrency.MainActor public let productContext: YandexPayInventory.FintechPayBadgeProductContext?
   @_Concurrency.MainActor public let hidingPolicy: YandexPayInventory.YPBadgeModel.HidingPolicy
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor public init(amount: Foundation.Decimal, currency: YandexPayConfiguration.YPCurrencyCode, align: YandexPayInventory.YPBadgeModel.Align, type: YandexPayInventory.YPBadgeModel.BadgeType, productContext: YandexPayInventory.FintechPayBadgeProductContext? = nil, hidingPolicy: YandexPayInventory.YPBadgeModel.HidingPolicy = .gone)
+  #endif
   nonisolated public static func == (a: YandexPayInventory.YPBadgeModel, b: YandexPayInventory.YPBadgeModel) -> Swift.Bool
 }
 extension YandexPayInventory.YPBadgeModel {
   public enum SplitVariant : Swift.String, Swift.Sendable {
     case simple
     case detailed
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -52,7 +55,9 @@ extension YandexPayInventory.YPBadgeModel {
     case green
     case grey
     case transparent
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -61,7 +66,9 @@ extension YandexPayInventory.YPBadgeModel {
   public enum CashbackVariant : Swift.String, Swift.Sendable {
     case `default`
     case compact
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -70,7 +77,9 @@ extension YandexPayInventory.YPBadgeModel {
   public enum UltimateVariant : Swift.String, Swift.Sendable {
     case `default`
     case compact
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -79,9 +88,13 @@ extension YandexPayInventory.YPBadgeModel {
   public struct UltimatePayload : Swift.Equatable, Swift.Sendable {
     public let source: Swift.String?
     public let skuID: Swift.String?
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(source: Swift.String?)
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     @available(*, deprecated, message: "Use productContext in YPBadgeModel instead. skuID is supported for backward compatibility only.")
     public init(source: Swift.String?, skuID: Swift.String?)
+    #endif
     public static func == (a: YandexPayInventory.YPBadgeModel.UltimatePayload, b: YandexPayInventory.YPBadgeModel.UltimatePayload) -> Swift.Bool
   }
   public enum UltimateSplitMode : Swift.String, Swift.Sendable {
@@ -90,7 +103,9 @@ extension YandexPayInventory.YPBadgeModel {
     case cashbackOnly
     case all
     case auto
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -100,7 +115,9 @@ extension YandexPayInventory.YPBadgeModel {
     case primary
     case grey
     case transparent
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -110,7 +127,9 @@ extension YandexPayInventory.YPBadgeModel {
     case left
     case center
     case right
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -126,7 +145,9 @@ extension YandexPayInventory.YPBadgeModel {
   public enum HidingPolicy : Swift.String, Swift.Sendable {
     case invisible
     case gone
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -145,7 +166,9 @@ public struct YPInventoryUltimateWidgetData {
     case split
     case cashback
     case fullSize
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -154,7 +177,9 @@ public struct YPInventoryUltimateWidgetData {
   public enum HeaderStyle : Swift.String {
     case minified
     case standard
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -166,7 +191,9 @@ public struct YPInventoryUltimateWidgetData {
   @_Concurrency.MainActor public let appearance: YandexPayInventory.YPInventoryUltimateWidgetModel.Appearance
   @_Concurrency.MainActor public let skuId: Swift.String?
   @_Concurrency.MainActor public var header: YandexPayInventory.YPInventoryUltimateWidgetModel.HeaderStyle
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor public init(amount: Foundation.Decimal, currency: YandexPayConfiguration.YPCurrencyCode = .rub, style: YandexPayInventory.YPInventoryUltimateWidgetModel.Style, appearance: YandexPayInventory.YPInventoryUltimateWidgetModel.Appearance = .init(), header: YandexPayInventory.YPInventoryUltimateWidgetModel.HeaderStyle = .standard, skuId: Swift.String? = nil)
+  #endif
 }
 extension YandexPayInventory.YPInventoryUltimateWidgetModel {
   public struct Appearance {
@@ -174,7 +201,9 @@ extension YandexPayInventory.YPInventoryUltimateWidgetModel {
       case transparent
       case `default`
       case light
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.String)
+      #endif
       public typealias RawValue = Swift.String
       public var rawValue: Swift.String {
         get
@@ -183,7 +212,9 @@ extension YandexPayInventory.YPInventoryUltimateWidgetModel {
     public enum WidgetSize : Swift.String {
       case medium
       case small
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.String)
+      #endif
       public typealias RawValue = Swift.String
       public var rawValue: Swift.String {
         get
@@ -208,8 +239,10 @@ extension YandexPayInventory.YPInventoryUltimateWidgetModel {
 @_Concurrency.MainActor public struct YPInventoryUltimateWidgetView : SwiftUI.UIViewRepresentable {
   @_Concurrency.MainActor @preconcurrency public func makeUIView(context: YandexPayInventory.YPInventoryUltimateWidgetView.Context) -> YandexPayInventory.YPInventoryUltimateWidgetUIView
   @_Concurrency.MainActor @preconcurrency public func updateUIView(_ uiView: YandexPayInventory.YPInventoryUltimateWidgetUIView, context: YandexPayInventory.YPInventoryUltimateWidgetView.Context)
+  #if compiler(>=5.3) && $NonescapableTypes
   @available(iOS 16.0, *)
   @_Concurrency.MainActor @preconcurrency public func sizeThatFits(_ proposal: SwiftUICore.ProposedViewSize, uiView: YandexPayInventory.YPInventoryUltimateWidgetUIView, context: YandexPayInventory.YPInventoryUltimateWidgetView.Context) -> CoreFoundation.CGSize?
+  #endif
   public typealias Body = Swift.Never
   public typealias Coordinator = Swift.Void
   public typealias UIViewType = YandexPayInventory.YPInventoryUltimateWidgetUIView
@@ -230,8 +263,12 @@ public enum YPayInventory {
   @objc deinit
 }
 extension YandexPayInventory.YPayInventoryModuleAPI {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor final public func createUltimateWidgetUIView(model: YandexPayInventory.YPInventoryUltimateWidgetModel, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, delegate: (any YandexPayInventory.YPInventoryUltimateWidgetDelegate)? = nil) -> YandexPayInventory.YPInventoryUltimateWidgetUIView
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor final public func createUltimateWidgetView(model: YandexPayInventory.YPInventoryUltimateWidgetModel, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, delegate: (any YandexPayInventory.YPInventoryUltimateWidgetDelegate)? = nil) -> YandexPayInventory.YPInventoryUltimateWidgetView
+  #endif
 }
 @_hasMissingDesignatedInitializers final public class YPayInventoryModuleDescriptor : YandexPayConfiguration.YPayModule {
   @_Concurrency.MainActor final public func configure(with configuration: YandexPayConfiguration.YPay)

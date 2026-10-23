@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKQuickPaymentEntity -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import FintechSDKBDUICore
 import Foundation
 import Swift
@@ -14,7 +14,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public let checkoutOrderId: Swift.String?
   @_spi(Internal) public let quickpayId: Swift.String?
   @_spi(Internal) public let status: FintechSDKQuickPaymentEntity.FTOrderStatus
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(transactionId: Swift.String? = nil, paymentUrl: Swift.String? = nil, checkoutOrderId: Swift.String? = nil, quickpayId: Swift.String? = nil, status: FintechSDKQuickPaymentEntity.FTOrderStatus)
+  #endif
   @_spi(Internal) public init(identifiers: FintechSDKQuickPaymentEntity.FTOrderIdentifiers, status: FintechSDKQuickPaymentEntity.FTOrderStatus)
   @_spi(Internal) public var identifiers: FintechSDKQuickPaymentEntity.FTOrderIdentifiers {
     @_spi(Internal) get
@@ -24,7 +26,10 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public let name: Swift.String
   @_spi(Internal) public let params: [Swift.String : Swift.String]
   @_spi(Internal) public let shouldReportAsError: Swift.Bool
-  @_spi(Internal) public init(name: Swift.String, params: [Swift.String : Swift.String] = [:], shouldReportAsError: Swift.Bool = false)
+  @_spi(Internal) public let errorKey: Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init(name: Swift.String, params: [Swift.String : Swift.String] = [:], shouldReportAsError: Swift.Bool = false, errorKey: Swift.String? = nil)
+  #endif
 }
 @_spi(Internal) public struct FTBDUIPaymentSkeletonContent : FintechSDKBDUICore.FintechBDUIContent {
   @_spi(Internal) public static var contentType: Swift.String {
@@ -43,7 +48,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public let expiresAt: Foundation.Date
   @_spi(Internal) public let signedTtl: Foundation.TimeInterval
   @_spi(Internal) public let qrTemplate: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(payTickets: [Swift.String], expiresAt: Foundation.Date, signedTtl: Foundation.TimeInterval, qrTemplate: Swift.String? = nil)
+  #endif
   @_spi(Internal) public static func == (a: FintechSDKQuickPaymentEntity.FTOfflineTicketsBatch, b: FintechSDKQuickPaymentEntity.FTOfflineTicketsBatch) -> Swift.Bool
 }
 @_spi(Internal) public struct FTOrderIdentifiers : Swift.Hashable, Swift.Sendable {
@@ -51,18 +58,24 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public let paymentUrl: Swift.String?
   @_spi(Internal) public let quickpayId: Swift.String?
   @_spi(Internal) public let transactionId: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(checkoutOrderId: Swift.String? = nil, paymentUrl: Swift.String? = nil, quickpayId: Swift.String? = nil, transactionId: Swift.String? = nil)
+  #endif
   @_spi(Internal) public var hasIdentifier: Swift.Bool {
     @_spi(Internal) get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public var sessionKey: Swift.String? {
     @_spi(Internal) get
   }
+  #endif
   @_spi(Internal) public func isSameOrder(_ other: FintechSDKQuickPaymentEntity.FTOrderIdentifiers) -> Swift.Bool
   @_spi(Internal) public func belongsToSameSession(_ other: FintechSDKQuickPaymentEntity.FTOrderIdentifiers) -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public var statusRequestPathSegment: Swift.String? {
     @_spi(Internal) get
   }
+  #endif
   @_spi(Internal) public var statusRequestQueryItems: [Foundation.URLQueryItem] {
     @_spi(Internal) get
   }
@@ -94,7 +107,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) case waitingForApprove
   @_spi(Internal) case success
   @_spi(Internal) case fail
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init?(rawValue: Swift.String)
+  #endif
   @_spi(Internal) public typealias RawValue = Swift.String
   @_spi(Internal) public var rawValue: Swift.String {
     @_spi(Internal) get
@@ -112,7 +127,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public let checkoutOrderId: Swift.String?
   @_spi(Internal) public let status: FintechSDKQuickPaymentEntity.FTOrderStatus
   @_spi(Internal) public let isRetryable: Swift.Bool?
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(transactionId: Swift.String? = nil, url: Swift.String? = nil, quickpayId: Swift.String? = nil, checkoutOrderId: Swift.String? = nil, status: FintechSDKQuickPaymentEntity.FTOrderStatus, isRetryable: Swift.Bool?)
+  #endif
   @_spi(Internal) public var identifiers: FintechSDKQuickPaymentEntity.FTOrderIdentifiers {
     @_spi(Internal) get
   }
@@ -129,7 +146,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public let checkoutOrderId: Swift.String?
   @_spi(Internal) public let quickpayId: Swift.String?
   @_spi(Internal) public let status: FintechSDKQuickPaymentEntity.FTOrderStatus
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(url: Swift.String? = nil, transactionId: Swift.String? = nil, checkoutOrderId: Swift.String? = nil, quickpayId: Swift.String? = nil, status: FintechSDKQuickPaymentEntity.FTOrderStatus)
+  #endif
   @_spi(Internal) public var identifiers: FintechSDKQuickPaymentEntity.FTOrderIdentifiers {
     @_spi(Internal) get
   }
@@ -173,7 +192,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) case available
   @_spi(Internal) case noPaymentMethods
   @_spi(Internal) case fetchFailed
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init?(rawValue: Swift.String)
+  #endif
   @_spi(Internal) public typealias RawValue = Swift.String
   @_spi(Internal) public var rawValue: Swift.String {
     @_spi(Internal) get
@@ -185,7 +206,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public let generatedAt: Foundation.Date
   @_spi(Internal) public let signedTtl: Foundation.TimeInterval
   @_spi(Internal) public let qrTemplate: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(payTickets: [Swift.String], expiresAt: Foundation.Date, generatedAt: Foundation.Date, signedTtl: Foundation.TimeInterval, qrTemplate: Swift.String? = nil)
+  #endif
   @_spi(Internal) public static func == (a: FintechSDKQuickPaymentEntity.FTQPStoredOfflineTicketsBatch, b: FintechSDKQuickPaymentEntity.FTQPStoredOfflineTicketsBatch) -> Swift.Bool
   @_spi(Internal) public func encode(to encoder: any Swift.Encoder) throws
   @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
@@ -197,7 +220,9 @@ public enum FTQuickPayResult : Swift.Sendable {
   public struct FailureDetails : @unchecked Swift.Sendable {
     public let retryable: Swift.Bool
     public let error: (any Swift.Error)?
+    #if compiler(>=5.3) && $NonescapableTypes
     public init(retryable: Swift.Bool, error: (any Swift.Error)? = nil)
+    #endif
   }
 }
 extension FintechSDKQuickPaymentEntity.FTQuickPayResult : Swift.Equatable {
@@ -207,7 +232,9 @@ extension FintechSDKQuickPaymentEntity.FTQuickPayResult : Swift.Equatable {
   @_spi(Internal) public let payTicket: Swift.String
   @_spi(Internal) public let expiresAt: Foundation.Date
   @_spi(Internal) public let qrString: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(payTicket: Swift.String, expiresAt: Foundation.Date, qrString: Swift.String? = nil)
+  #endif
 }
 @_spi(Internal) extension FintechSDKQuickPaymentEntity.FTOrderStatus : Swift.Equatable {}
 @_spi(Internal) extension FintechSDKQuickPaymentEntity.FTOrderStatus : Swift.Hashable {}

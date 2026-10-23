@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKNetworkInterfaces -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import Foundation
 import Swift
 import _Concurrency
@@ -11,17 +11,30 @@ public protocol DiehardNetworkClientFactory {
   func makeClient(baseURL: Swift.String) -> any FintechSDKNetworkInterfaces.FintechNetworkClient
 }
 public protocol FTAuthorizationProviding : Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
   var authorization: Swift.String? { get }
+  #endif
+}
+@_spi(Internal) public protocol FTHTTPHeaderSanitizer : Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) func sanitize(_ value: Swift.String, forHeader name: Swift.String) -> Swift.String?
+  #endif
 }
 @_spi(Internal) public protocol FTNetworkErrorResponseMapping : Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func mapError(data: Foundation.Data, response: Foundation.HTTPURLResponse) -> FintechSDKNetworkInterfaces.NetworkClientError?
+  #endif
 }
 @_spi(Internal) public protocol FTNetworkErrorResponseMappingEndpoint {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) var errorResponseMapper: (any FintechSDKNetworkInterfaces.FTNetworkErrorResponseMapping)? { get }
+  #endif
 }
 public protocol FTSessionProviderServing : Swift.Sendable {
   var merchantID: Swift.String { get }
+  #if compiler(>=5.3) && $NonescapableTypes
   var clientID: Swift.String? { get }
+  #endif
   var sessionID: Swift.String { get }
   func dropSession()
 }
@@ -30,7 +43,9 @@ public protocol FintechNetworkAuthManager {
   @_Concurrency.MainActor var partitionsHeader: Swift.String { get }
   @_Concurrency.MainActor func obtainToken() async throws -> Swift.String
   @_Concurrency.MainActor func dropToken() async
+  #if compiler(>=5.3) && $NonescapableTypes
   func obtainSessionToken() async -> Swift.String?
+  #endif
 }
 extension FintechSDKNetworkInterfaces.FintechNetworkAuthManager {
   @available(*, deprecated, renamed: "partitionsHeader", message: "Use partitionsHeader instead")
@@ -39,7 +54,9 @@ extension FintechSDKNetworkInterfaces.FintechNetworkAuthManager {
   }
 }
 public protocol FintechNetworkChallengeHandler {
+  #if compiler(>=5.3) && $NonescapableTypes
   func handleChallenge(challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+  #endif
 }
 public protocol FintechNetworkChallengeHandlerFactory {
   func make() -> any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandler
@@ -52,12 +69,16 @@ extension FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory {
 }
 public protocol FintechNetworkClient : Swift.Sendable {
   func execute<Endpoint>(endpoint: Endpoint) async throws -> Endpoint.ResultModel where Endpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider
+  #if compiler(>=5.3) && $NonescapableTypes
   var resourceLoader: (any FintechSDKNetworkInterfaces.FintechNetworkResourceLoading)? { get }
+  #endif
 }
 extension FintechSDKNetworkInterfaces.FintechNetworkClient {
+  #if compiler(>=5.3) && $NonescapableTypes
   public var resourceLoader: (any FintechSDKNetworkInterfaces.FintechNetworkResourceLoading)? {
     get
   }
+  #endif
 }
 public protocol FintechNetworkBaseURLUpdatable : Swift.Sendable {
   func updateBaseUrl(_ baseUrl: Swift.String)
@@ -73,7 +94,9 @@ public enum HTTPMethod : Swift.String, Swift.Decodable {
   case PUT
   case PATCH
   case DELETE
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -87,18 +110,26 @@ public protocol FintechNetworkEndpointProvider {
   associatedtype ResultModel where Self.ResultModel == Self.Decoder.Output
   associatedtype Decoder : FintechSDKNetworkInterfaces.FintechResponseDecoder
   var method: FintechSDKNetworkInterfaces.HTTPMethod { get }
+  #if compiler(>=5.3) && $NonescapableTypes
   var headers: [Swift.String : Swift.String]? { get }
+  #endif
   var path: Swift.String { get }
+  #if compiler(>=5.3) && $NonescapableTypes
   var queryItems: [Foundation.URLQueryItem]? { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   var body: [Swift.String : Any]? { get }
+  #endif
   var timeoutInSeconds: Foundation.TimeInterval { get }
   var decoder: Self.Decoder { get }
   var isRetriableOnNetworkDrop: Swift.Bool { get }
 }
 extension FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider {
+  #if compiler(>=5.3) && $NonescapableTypes
   public var headers: [Swift.String : Swift.String]? {
     get
   }
+  #endif
   public var isRetriableOnNetworkDrop: Swift.Bool {
     get
   }
@@ -107,7 +138,9 @@ public protocol FintechNetworkEventObserver {
   func didStart(endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider)
   func didFinishCollectingMetrics(endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider, metrics: Foundation.URLSessionTaskMetrics)
   func didSucceed(endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider, response: Foundation.HTTPURLResponse, data: Foundation.Data)
+  #if compiler(>=5.3) && $NonescapableTypes
   func didFail(endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider, error: FintechSDKNetworkInterfaces.NetworkClientError, response: Foundation.HTTPURLResponse?, data: Foundation.Data?)
+  #endif
 }
 public protocol FintechNetworkRequestMiddleware {
   func process(request: Foundation.URLRequest) async throws -> Foundation.URLRequest
@@ -119,11 +152,17 @@ public protocol FintechNetworkResponseMiddleware {
   func process(response: Foundation.HTTPURLResponse) throws -> Foundation.HTTPURLResponse
 }
 public protocol FintechStaticMerchantDomainProvider : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   func getMerchantDomain() -> Swift.String?
+  #endif
 }
 final public class FintechStaticMerchantDomainProviderImpl : FintechSDKNetworkInterfaces.FintechStaticMerchantDomainProvider {
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(merchantDomain: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   final public func getMerchantDomain() -> Swift.String?
+  #endif
   @objc deinit
 }
 public enum NetworkClientError : Swift.Error {
@@ -175,9 +214,11 @@ public enum URLSessionError : Swift.Error, Swift.Equatable {
   public static func == (a: FintechSDKNetworkInterfaces.URLSessionError, b: FintechSDKNetworkInterfaces.URLSessionError) -> Swift.Bool
 }
 extension FintechSDKNetworkInterfaces.NetworkClientError : Foundation.LocalizedError {
+  #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
     get
   }
+  #endif
   public var name: Swift.String {
     get
   }

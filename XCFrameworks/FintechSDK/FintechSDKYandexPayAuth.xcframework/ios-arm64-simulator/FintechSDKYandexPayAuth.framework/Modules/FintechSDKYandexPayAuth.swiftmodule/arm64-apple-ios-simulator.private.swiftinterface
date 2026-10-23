@@ -1,23 +1,37 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKYandexPayAuth -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 @_spi(Internal) import FintechSDKAnalyticsInterfaces
 import FintechSDKAuthInterfaces
+@_spi(Internal) import FintechSDKAuthorizationScenario
 import FintechSDKCommonEntity
 import FintechSDKNetworkInterfaces
+@_spi(Internal) import FintechSDKRUMImplementation
+import Foundation
 import Swift
 import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+@_spi(Internal) public enum FTPartnerSignInResult : Swift.Sendable {
+  @_spi(Internal) case success(uid: Swift.Int?, partnerToken: FintechSDKAuthorizationScenario.FTPartnerToken?, partnerTokenError: FintechSDKAuthorizationScenario.FTPartnerTokenError?)
+  @_spi(Internal) case cancelled
+  @_spi(Internal) case failed(any Swift.Error)
+}
 @_spi(Internal) @_Concurrency.MainActor final public class FTPayAuthHandler {
-  @_spi(Internal) @_Concurrency.MainActor public init(merchantID: Swift.String, environment: FintechSDKCommonEntity.FintechSDKEnvironment, loginService: any FintechSDKAuthInterfaces.FintechLoginService, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, networkChallengeHandlerFactory: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory, appMetricaAdapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter, rumFactory: any FintechSDKAnalyticsInterfaces.FintechRUMAdapterFactory, rtmFactory: any FintechSDKAnalyticsInterfaces.FintechRTMAdapterFactory, partnerAuthStateProvider: (() -> Swift.Bool?)? = nil)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) @_Concurrency.MainActor public init(merchantID: Swift.String, environment: FintechSDKCommonEntity.FintechSDKEnvironment, loginService: any FintechSDKAuthInterfaces.FintechLoginService, accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, networkChallengeHandlerFactory: any FintechSDKNetworkInterfaces.FintechNetworkChallengeHandlerFactory, appMetricaAdapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaAdapter, rtmFactory: any FintechSDKAnalyticsInterfaces.FintechRTMAdapterFactory, partnerAuthStateProvider: (() -> Swift.Bool?)? = nil)
+  #endif
   @_spi(Internal) @_Concurrency.MainActor final public var isInternallyAuthorized: Swift.Bool {
     @_spi(Internal) get
   }
   @_spi(Internal) @_Concurrency.MainActor final public func authorize(authStrategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy, presenter: UIKit.UIViewController) async throws -> FintechSDKAuthInterfaces.FintechAuthModel
   @_spi(Internal) @_Concurrency.MainActor final public func logout()
+  @_spi(Internal) @_Concurrency.MainActor final public func signIn(authStrategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy, presenter: UIKit.UIViewController) async -> FintechSDKYandexPayAuth.FTPartnerSignInResult
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) @_Concurrency.MainActor final public func getPartnerToken(targetClientId: Swift.String?) async throws(FintechSDKAuthorizationScenario.FTPartnerTokenError) -> FintechSDKAuthorizationScenario.FTPartnerToken
+  #endif
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) extension FintechSDKYandexPayAuth.FTPayAuthHandler : Swift.Sendable {}

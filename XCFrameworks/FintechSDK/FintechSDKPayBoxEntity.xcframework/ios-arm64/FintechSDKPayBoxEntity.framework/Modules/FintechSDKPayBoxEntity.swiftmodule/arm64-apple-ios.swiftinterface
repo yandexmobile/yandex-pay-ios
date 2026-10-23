@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKPayBoxEntity -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import FintechSDKCommonEntity
 import Foundation
 import Swift
@@ -34,12 +34,16 @@ public struct FTSDKMerchant : Swift.Sendable {
   public let id: Swift.String
   public let name: Swift.String
   public let url: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(id: Swift.String, name: Swift.String, url: Swift.String?)
+  #endif
 }
 public enum FTAvailablePaymentMethod : Swift.String {
   case card
   case split
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -68,7 +72,9 @@ public enum FTCurrencyCode : Swift.String, Swift.Sendable {
   public var uppercased: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -76,7 +82,9 @@ public enum FTCurrencyCode : Swift.String, Swift.Sendable {
 }
 public struct FTPaymentData {
   public let orderId: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(orderId: Swift.String?)
+  #endif
 }
 public enum FTPaymentError : Swift.String, Swift.Error {
   case authenticationProblem
@@ -87,7 +95,9 @@ public enum FTPaymentError : Swift.String, Swift.Error {
   case invalidArgs
   case orderNotFound
   case unknownError
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -102,7 +112,9 @@ public enum FTPaymentMethod : Swift.String, Swift.Decodable, Swift.Sendable {
   case split
   case sbp
   case splitSbp
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get

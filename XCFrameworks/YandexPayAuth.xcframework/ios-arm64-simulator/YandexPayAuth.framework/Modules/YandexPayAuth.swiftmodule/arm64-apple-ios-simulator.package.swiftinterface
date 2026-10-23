@@ -1,12 +1,12 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name YandexPayAuth -package-name yandexpayauth
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import FintechSDKAuthInterfaces
+@_spi(Internal) import FintechSDKAuthorizationScenario
 import FintechSDKCommonEntity
 @_spi(Internal) import FintechSDKCoreUtils
 import FintechSDKRealTimeAnalyticsAdapter
-import FintechSDKRealUserMonitoringAdapter
 @_spi(Internal) import FintechSDKYandexPayAuth
 import Foundation
 import Swift
@@ -15,6 +15,32 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+public struct YPPartnerToken : Swift.Sendable, Swift.Equatable, Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+  public let token: Swift.String
+  public let expiresAt: Foundation.Date
+  public init(token: Swift.String, expiresAt: Foundation.Date)
+  public var description: Swift.String {
+    get
+  }
+  public var debugDescription: Swift.String {
+    get
+  }
+  public static func == (a: YandexPayAuth.YPPartnerToken, b: YandexPayAuth.YPPartnerToken) -> Swift.Bool
+}
+public enum YPSignInResult : Swift.Sendable {
+  case success(partnerToken: YandexPayAuth.YPPartnerToken?, partnerTokenError: YandexPayAuth.YPAuthError?)
+  case cancelled
+  case failed(any Swift.Error)
+}
+public enum YPAuthError : Swift.Error {
+  case notAuthorized
+  case authorizationExpired
+  case reauthRequired
+  case directionNotAllowed
+  case exchangeDisabled
+  case tokenUnavailable
+  case networkError(underlying: any Swift.Error)
+}
 public enum YPPayAuthState : Swift.Sendable, Swift.Equatable {
   case authorized
   case unauthorized
@@ -41,10 +67,14 @@ public struct YPAuthModel : Swift.Sendable {
   public let token: Swift.String
   public let uid: Swift.Int
   public let jwt: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(token: Swift.String, uid: Swift.Int, jwt: Swift.String? = nil)
+  #endif
 }
 @_Concurrency.MainActor public protocol YPLoginObserver : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor func didFinishLogin(with result: Swift.Result<YandexPayAuth.YPAuthModel, any Swift.Error>)
+  #endif
 }
 extension YandexPayConfiguration.YPay {
   @_Concurrency.MainActor final public var auth: YandexPayAuth.YPayAuth {
@@ -79,6 +109,10 @@ extension YandexPayAuth.YPayAuth {
   }
   @discardableResult
   @_Concurrency.MainActor final public func authorize(strategy: YandexPayAuth.YPAuthorizationStrategy = .default, with presenter: UIKit.UIViewController) async throws -> YandexPayAuth.YPAuthModel
+  @_Concurrency.MainActor final public func signIn(strategy: YandexPayAuth.YPAuthorizationStrategy = .default, with presenter: UIKit.UIViewController) async -> YandexPayAuth.YPSignInResult
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor final public func getPartnerToken(targetClientId: Swift.String? = nil) async throws -> YandexPayAuth.YPPartnerToken
+  #endif
   @_Concurrency.MainActor final public func logout()
   @_Concurrency.MainActor final public func addObserver(_ observer: any YandexPayAuth.YPLoginObserver)
   @_Concurrency.MainActor final public func removeObserver(_ observer: any YandexPayAuth.YPLoginObserver)

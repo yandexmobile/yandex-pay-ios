@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKCoreAnalytics -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import FintechSDKAnalyticsInterfaces
 import FintechSDKCommonEntity
 import FintechSDKCoreUtils
@@ -32,22 +32,21 @@ final public class FintechAnalyticsRTMReporter : FintechSDKAnalyticsInterfaces.F
   final public func reportError(message: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
   @objc deinit
 }
-final public class FintechAnalyticsRUMReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter {
-  public init(adapter: any FintechSDKAnalyticsInterfaces.FintechRUMAdapter, paramsProvider: any FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider)
-  final public func reportEvent(name: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
-  @objc deinit
-}
 final public class FintechAnalyticsTelemetryReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter {
   public init(adapter: any FintechSDKAnalyticsInterfaces.FintechTelemetryAdapter, paramsProvider: any FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider)
   final public func reportEvent(name: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
   @objc deinit
 }
 final public class FintechNetworkReportingObserver : FintechSDKNetworkInterfaces.FintechNetworkEventObserver {
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(serviceName: Swift.String, errorReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter, eventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)?, reportOnlyFailures: Swift.Bool = false, networkEventsListener: (any FintechSDKAnalyticsInterfaces.FTNetworkEventsListener)? = nil)
+  #endif
   final public func didStart(endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider)
   final public func didFinishCollectingMetrics(endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider, metrics: Foundation.URLSessionTaskMetrics)
   final public func didSucceed(endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider, response: Foundation.HTTPURLResponse, data: Foundation.Data)
+  #if compiler(>=5.3) && $NonescapableTypes
   final public func didFail(endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider, error: FintechSDKNetworkInterfaces.NetworkClientError, response: Foundation.HTTPURLResponse?, data: Foundation.Data?)
+  #endif
   @objc deinit
 }
 public protocol FintechAnalyticsParamsProvider : Swift.Sendable {
@@ -59,7 +58,9 @@ public protocol FintechAnalyticsParamsProvider : Swift.Sendable {
   var sdkVersion: Swift.String { get }
   var platform: Swift.String { get }
   var bundleID: Swift.String { get }
+  #if compiler(>=5.3) && $NonescapableTypes
   var deviceID: Swift.String? { get async }
+  #endif
   var currentTimestampMS: Swift.String { get }
   func params() async -> [Swift.String : Swift.String]
 }
@@ -73,9 +74,11 @@ extension FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider {
   public var currentTimestampMS: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public var deviceID: Swift.String? {
     get async
   }
+  #endif
   public var iosVersion: Swift.String {
     get
   }

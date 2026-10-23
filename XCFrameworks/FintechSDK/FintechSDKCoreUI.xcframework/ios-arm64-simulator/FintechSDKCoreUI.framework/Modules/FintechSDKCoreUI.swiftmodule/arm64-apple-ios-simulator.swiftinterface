@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKCoreUI -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import Combine
 import Darwin
 import FintechSDKCommonEntity
@@ -15,13 +15,16 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+import _WebKit_SwiftUI
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class FTCardDecorationView : UIKit.UIView {
   @objc deinit
 }
 public enum FintechLocale : Swift.String {
   case ru
   case en
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -37,8 +40,12 @@ public enum FintechLocale : Swift.String {
     @objc get
   }
   @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency final public func onTraitCollectionChange(_ block: ((UIKit.UITraitCollection) -> Swift.Void)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override final public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  #endif
   @objc deinit
 }
 @objc @_Concurrency.MainActor @preconcurrency final public class FTBackswipePushAnimatedTransitioning : ObjectiveC.NSObject, UIKit.UIViewControllerAnimatedTransitioning {
@@ -52,15 +59,25 @@ public enum FintechLocale : Swift.String {
     }
   }
   @_Concurrency.MainActor @preconcurrency public init(transition: FintechSDKCoreUI.FTBackswipePushAnimatedTransitioning.Transition)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc final public func transitionDuration(using _: (any UIKit.UIViewControllerContextTransitioning)?) -> Foundation.TimeInterval
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc final public func animateTransition(using transitionContext: any UIKit.UIViewControllerContextTransitioning)
   @objc deinit
 }
 @_Concurrency.MainActor public protocol FintechWebViewEventObserver : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor func didStartLoading(url: Foundation.URL?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor func didFinishLoading(url: Foundation.URL?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor func didFail(url: Foundation.URL?, error: any Swift.Error)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor func didReceive(challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+  #endif
 }
 extension FintechSDKCoreUI.FintechLocale : Swift.Equatable {}
 extension FintechSDKCoreUI.FintechLocale : Swift.Hashable {}

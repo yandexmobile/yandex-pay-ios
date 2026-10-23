@@ -6,6 +6,479 @@
     "children": [
       {
         "kind": "Import",
+        "name": "FintechSDKCoreUI",
+        "printedName": "FintechSDKCoreUI",
+        "declKind": "Import",
+        "moduleName": "FintechSDKSafariFeature",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKSafariFeature"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTInAppBrowserInteractor",
+        "printedName": "FTInAppBrowserInteractor",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(presentationContextProvider:configuration:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTInAppBrowserInteractor",
+                "printedName": "FintechSDKSafariFeature.FTInAppBrowserInteractor",
+                "usr": "s:23FintechSDKSafariFeature24FTInAppBrowserInteractorC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTPresentationContextProviding",
+                "printedName": "any FintechSDKCoreUI.FTPresentationContextProviding",
+                "usr": "s:16FintechSDKCoreUI30FTPresentationContextProvidingP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTSafariConfiguration",
+                "printedName": "FintechSDKSafariFeature.FTSafariConfiguration",
+                "hasDefaultArg": true,
+                "usr": "s:23FintechSDKSafariFeature21FTSafariConfigurationV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:23FintechSDKSafariFeature24FTInAppBrowserInteractorC27presentationContextProvider13configurationAC0A9SDKCoreUI014FTPresentationI9Providing_p_AA21FTSafariConfigurationVtcfc",
+            "mangledName": "$s23FintechSDKSafariFeature24FTInAppBrowserInteractorC27presentationContextProvider13configurationAC0A9SDKCoreUI014FTPresentationI9Providing_p_AA21FTSafariConfigurationVtcfc",
+            "moduleName": "FintechSDKSafariFeature",
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "updatePresentationContext",
+            "printedName": "updatePresentationContext(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTPresentationContextProviding",
+                "printedName": "any FintechSDKCoreUI.FTPresentationContextProviding",
+                "usr": "s:16FintechSDKCoreUI30FTPresentationContextProvidingP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKSafariFeature24FTInAppBrowserInteractorC25updatePresentationContextyy0A9SDKCoreUI014FTPresentationJ9Providing_pF",
+            "mangledName": "$s23FintechSDKSafariFeature24FTInAppBrowserInteractorC25updatePresentationContextyy0A9SDKCoreUI014FTPresentationJ9Providing_pF",
+            "moduleName": "FintechSDKSafariFeature",
+            "declAttributes": [
+              "Custom",
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "open",
+            "printedName": "open(url:onEvent:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FintechSDKSafariFeature.FTSafariEvent) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTSafariEvent",
+                    "printedName": "FintechSDKSafariFeature.FTSafariEvent",
+                    "usr": "s:23FintechSDKSafariFeature13FTSafariEventO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKSafariFeature24FTInAppBrowserInteractorC4open3url7onEventy10Foundation3URLV_yAA08FTSafariK0OYbScMYcctYaKF",
+            "mangledName": "$s23FintechSDKSafariFeature24FTInAppBrowserInteractorC4open3url7onEventy10Foundation3URLV_yAA08FTSafariK0OYbScMYcctYaKF",
+            "moduleName": "FintechSDKSafariFeature",
+            "declAttributes": [
+              "Custom",
+              "Final",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isPresenting",
+            "printedName": "isPresenting()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKSafariFeature24FTInAppBrowserInteractorC12isPresentingSbyF",
+            "mangledName": "$s23FintechSDKSafariFeature24FTInAppBrowserInteractorC12isPresentingSbyF",
+            "moduleName": "FintechSDKSafariFeature",
+            "declAttributes": [
+              "Custom",
+              "Final",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "close",
+            "printedName": "close()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKSafariFeature24FTInAppBrowserInteractorC5closeyyYaF",
+            "mangledName": "$s23FintechSDKSafariFeature24FTInAppBrowserInteractorC5closeyyYaF",
+            "moduleName": "FintechSDKSafariFeature",
+            "declAttributes": [
+              "Custom",
+              "Final",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:23FintechSDKSafariFeature24FTInAppBrowserInteractorC",
+        "mangledName": "$s23FintechSDKSafariFeature24FTInAppBrowserInteractorC",
+        "moduleName": "FintechSDKSafariFeature",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "Custom",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTOpenInAppBrowserUseCase",
+            "printedName": "FTOpenInAppBrowserUseCase",
+            "usr": "s:23FintechSDKSafariFeature25FTOpenInAppBrowserUseCaseP",
+            "mangledName": "$s23FintechSDKSafariFeature25FTOpenInAppBrowserUseCaseP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTCloseInAppBrowserUseCase",
+            "printedName": "FTCloseInAppBrowserUseCase",
+            "usr": "s:23FintechSDKSafariFeature26FTCloseInAppBrowserUseCaseP",
+            "mangledName": "$s23FintechSDKSafariFeature26FTCloseInAppBrowserUseCaseP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKSafariFeature"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTOpenInAppBrowserUseCase",
+        "printedName": "FTOpenInAppBrowserUseCase",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "open",
+            "printedName": "open(url:onEvent:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FintechSDKSafariFeature.FTSafariEvent) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTSafariEvent",
+                    "printedName": "FintechSDKSafariFeature.FTSafariEvent",
+                    "usr": "s:23FintechSDKSafariFeature13FTSafariEventO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKSafariFeature25FTOpenInAppBrowserUseCaseP4open3url7onEventy10Foundation3URLV_yAA08FTSafariM0OYbScMYcctYaKF",
+            "mangledName": "$s23FintechSDKSafariFeature25FTOpenInAppBrowserUseCaseP4open3url7onEventy10Foundation3URLV_yAA08FTSafariM0OYbScMYcctYaKF",
+            "moduleName": "FintechSDKSafariFeature",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKSafariFeature.FTOpenInAppBrowserUseCase>",
+            "sugared_genericSig": "<Self where Self : FintechSDKSafariFeature.FTOpenInAppBrowserUseCase>",
+            "protocolReq": true,
+            "declAttributes": [
+              "Custom",
+              "RawDocComment"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isPresenting",
+            "printedName": "isPresenting()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKSafariFeature25FTOpenInAppBrowserUseCaseP12isPresentingSbyF",
+            "mangledName": "$s23FintechSDKSafariFeature25FTOpenInAppBrowserUseCaseP12isPresentingSbyF",
+            "moduleName": "FintechSDKSafariFeature",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKSafariFeature.FTOpenInAppBrowserUseCase>",
+            "sugared_genericSig": "<Self where Self : FintechSDKSafariFeature.FTOpenInAppBrowserUseCase>",
+            "protocolReq": true,
+            "declAttributes": [
+              "Custom"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:23FintechSDKSafariFeature25FTOpenInAppBrowserUseCaseP",
+        "mangledName": "$s23FintechSDKSafariFeature25FTOpenInAppBrowserUseCaseP",
+        "moduleName": "FintechSDKSafariFeature",
+        "genericSig": "<τ_0_0 : AnyObject, τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : AnyObject, Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl",
+          "Custom",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTCloseInAppBrowserUseCase",
+        "printedName": "FTCloseInAppBrowserUseCase",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "close",
+            "printedName": "close()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKSafariFeature26FTCloseInAppBrowserUseCaseP5closeyyYaF",
+            "mangledName": "$s23FintechSDKSafariFeature26FTCloseInAppBrowserUseCaseP5closeyyYaF",
+            "moduleName": "FintechSDKSafariFeature",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKSafariFeature.FTCloseInAppBrowserUseCase>",
+            "sugared_genericSig": "<Self where Self : FintechSDKSafariFeature.FTCloseInAppBrowserUseCase>",
+            "protocolReq": true,
+            "declAttributes": [
+              "Custom",
+              "RawDocComment"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:23FintechSDKSafariFeature26FTCloseInAppBrowserUseCaseP",
+        "mangledName": "$s23FintechSDKSafariFeature26FTCloseInAppBrowserUseCaseP",
+        "moduleName": "FintechSDKSafariFeature",
+        "genericSig": "<τ_0_0 : AnyObject, τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : AnyObject, Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl",
+          "Custom",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "FintechSDKCommonEntity",
         "printedName": "FintechSDKCommonEntity",
         "declKind": "Import",
@@ -175,19 +648,31 @@
           },
           {
             "kind": "Var",
-            "name": "theme",
-            "printedName": "theme",
+            "name": "themeProvider",
+            "printedName": "themeProvider",
             "children": [
               {
-                "kind": "TypeNominal",
-                "name": "FintechSDKTheme",
-                "printedName": "FintechSDKCommonEntity.FintechSDKTheme",
-                "usr": "s:22FintechSDKCommonEntity0A8SDKThemeO"
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> FintechSDKCommonEntity.FintechSDKTheme",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechSDKTheme",
+                    "printedName": "FintechSDKCommonEntity.FintechSDKTheme",
+                    "usr": "s:22FintechSDKCommonEntity0A8SDKThemeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
               }
             ],
             "declKind": "Var",
-            "usr": "s:23FintechSDKSafariFeature21FTSafariConfigurationV5theme0A15SDKCommonEntity0A8SDKThemeOvp",
-            "mangledName": "$s23FintechSDKSafariFeature21FTSafariConfigurationV5theme0A15SDKCommonEntity0A8SDKThemeOvp",
+            "usr": "s:23FintechSDKSafariFeature21FTSafariConfigurationV13themeProvider0A15SDKCommonEntity0A8SDKThemeOyYbScMYccvp",
+            "mangledName": "$s23FintechSDKSafariFeature21FTSafariConfigurationV13themeProvider0A15SDKCommonEntity0A8SDKThemeOyYbScMYccvp",
             "moduleName": "FintechSDKSafariFeature",
             "declAttributes": [
               "HasStorage",
@@ -205,15 +690,27 @@
                 "printedName": "Get()",
                 "children": [
                   {
-                    "kind": "TypeNominal",
-                    "name": "FintechSDKTheme",
-                    "printedName": "FintechSDKCommonEntity.FintechSDKTheme",
-                    "usr": "s:22FintechSDKCommonEntity0A8SDKThemeO"
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> FintechSDKCommonEntity.FintechSDKTheme",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FintechSDKTheme",
+                        "printedName": "FintechSDKCommonEntity.FintechSDKTheme",
+                        "usr": "s:22FintechSDKCommonEntity0A8SDKThemeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:23FintechSDKSafariFeature21FTSafariConfigurationV5theme0A15SDKCommonEntity0A8SDKThemeOvg",
-                "mangledName": "$s23FintechSDKSafariFeature21FTSafariConfigurationV5theme0A15SDKCommonEntity0A8SDKThemeOvg",
+                "usr": "s:23FintechSDKSafariFeature21FTSafariConfigurationV13themeProvider0A15SDKCommonEntity0A8SDKThemeOyYbScMYccvg",
+                "mangledName": "$s23FintechSDKSafariFeature21FTSafariConfigurationV13themeProvider0A15SDKCommonEntity0A8SDKThemeOyYbScMYccvg",
                 "moduleName": "FintechSDKSafariFeature",
                 "implicit": true,
                 "spi_group_names": [
@@ -226,7 +723,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(barCollapsingEnabled:dismissButtonStyle:presentationStyle:theme:)",
+            "printedName": "init(barCollapsingEnabled:dismissButtonStyle:presentationStyle:themeProvider:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -256,16 +753,28 @@
                 "usr": "c:@E@UIModalPresentationStyle"
               },
               {
-                "kind": "TypeNominal",
-                "name": "FintechSDKTheme",
-                "printedName": "FintechSDKCommonEntity.FintechSDKTheme",
-                "hasDefaultArg": true,
-                "usr": "s:22FintechSDKCommonEntity0A8SDKThemeO"
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> FintechSDKCommonEntity.FintechSDKTheme",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechSDKTheme",
+                    "printedName": "FintechSDKCommonEntity.FintechSDKTheme",
+                    "usr": "s:22FintechSDKCommonEntity0A8SDKThemeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "hasDefaultArg": true
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:23FintechSDKSafariFeature21FTSafariConfigurationV20barCollapsingEnabled18dismissButtonStyle012presentationK05themeACSb_So029SFSafariViewControllerDismissjK0VSo019UIModalPresentationK0V0A15SDKCommonEntity0A8SDKThemeOtcfc",
-            "mangledName": "$s23FintechSDKSafariFeature21FTSafariConfigurationV20barCollapsingEnabled18dismissButtonStyle012presentationK05themeACSb_So029SFSafariViewControllerDismissjK0VSo019UIModalPresentationK0V0A15SDKCommonEntity0A8SDKThemeOtcfc",
+            "usr": "s:23FintechSDKSafariFeature21FTSafariConfigurationV20barCollapsingEnabled18dismissButtonStyle012presentationK013themeProviderACSb_So029SFSafariViewControllerDismissjK0VSo019UIModalPresentationK0V0A15SDKCommonEntity0A8SDKThemeOyYbScMYcctcfc",
+            "mangledName": "$s23FintechSDKSafariFeature21FTSafariConfigurationV20barCollapsingEnabled18dismissButtonStyle012presentationK013themeProviderACSb_So029SFSafariViewControllerDismissjK0VSo019UIModalPresentationK0V0A15SDKCommonEntity0A8SDKThemeOyYbScMYcctcfc",
             "moduleName": "FintechSDKSafariFeature",
             "declAttributes": [
               "AccessControl",
@@ -632,6 +1141,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -875,32 +1391,15 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
-      },
-      {
-        "kind": "Import",
-        "name": "FintechSDKCoreUI",
-        "printedName": "FintechSDKCoreUI",
-        "declKind": "Import",
-        "moduleName": "FintechSDKSafariFeature",
-        "declAttributes": [
-          "SPIAccessControl"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "FintechSDKSafariFeature"
-      },
-      {
-        "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "FintechSDKSafariFeature"
       },
       {
         "kind": "Import",
@@ -920,505 +1419,27 @@
         "moduleName": "FintechSDKSafariFeature"
       },
       {
-        "kind": "TypeDecl",
-        "name": "FTSafariService",
-        "printedName": "FTSafariService",
-        "children": [
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(presentationContextProvider:configuration:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "FTSafariService",
-                "printedName": "FintechSDKSafariFeature.FTSafariService",
-                "usr": "c:@M@FintechSDKSafariFeature@objc(cs)FTSafariService"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "FTPresentationContextProviding",
-                "printedName": "any FintechSDKCoreUI.FTPresentationContextProviding",
-                "usr": "s:16FintechSDKCoreUI30FTPresentationContextProvidingP"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "FTSafariConfiguration",
-                "printedName": "FintechSDKSafariFeature.FTSafariConfiguration",
-                "hasDefaultArg": true,
-                "usr": "s:23FintechSDKSafariFeature21FTSafariConfigurationV"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:23FintechSDKSafariFeature15FTSafariServiceC27presentationContextProvider13configurationAC0A9SDKCoreUI014FTPresentationG9Providing_p_AA0D13ConfigurationVtcfc",
-            "mangledName": "$s23FintechSDKSafariFeature15FTSafariServiceC27presentationContextProvider13configurationAC0A9SDKCoreUI014FTPresentationG9Providing_p_AA0D13ConfigurationVtcfc",
-            "moduleName": "FintechSDKSafariFeature",
-            "declAttributes": [
-              "Custom",
-              "Convenience",
-              "AccessControl"
-            ],
-            "spi_group_names": [
-              "Internal"
-            ],
-            "init_kind": "Convenience"
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "FTSafariService",
-                "printedName": "FintechSDKSafariFeature.FTSafariService",
-                "usr": "c:@M@FintechSDKSafariFeature@objc(cs)FTSafariService"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "c:@M@FintechSDKSafariFeature@objc(cs)FTSafariService(im)init",
-            "mangledName": "$s23FintechSDKSafariFeature15FTSafariServiceCACycfc",
-            "moduleName": "FintechSDKSafariFeature",
-            "overriding": true,
-            "implicit": true,
-            "objc_name": "init",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Custom",
-              "Override"
-            ],
-            "spi_group_names": [
-              "Internal"
-            ],
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Function",
-            "name": "open",
-            "printedName": "open(url:onEvent:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "URL",
-                "printedName": "Foundation.URL",
-                "usr": "s:10Foundation3URLV"
-              },
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(FintechSDKSafariFeature.FTSafariEvent) -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "FTSafariEvent",
-                    "printedName": "FintechSDKSafariFeature.FTSafariEvent",
-                    "usr": "s:23FintechSDKSafariFeature13FTSafariEventO"
-                  }
-                ]
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:23FintechSDKSafariFeature15FTSafariServiceC4open3url7onEventy10Foundation3URLV_yAA0dI0OYbScMYcctYaKF",
-            "mangledName": "$s23FintechSDKSafariFeature15FTSafariServiceC4open3url7onEventy10Foundation3URLV_yAA0dI0OYbScMYcctYaKF",
-            "moduleName": "FintechSDKSafariFeature",
-            "declAttributes": [
-              "Custom",
-              "Final",
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "spi_group_names": [
-              "Internal"
-            ],
-            "throwing": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "close",
-            "printedName": "close()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:23FintechSDKSafariFeature15FTSafariServiceC5closeyyYaF",
-            "mangledName": "$s23FintechSDKSafariFeature15FTSafariServiceC5closeyyYaF",
-            "moduleName": "FintechSDKSafariFeature",
-            "declAttributes": [
-              "Custom",
-              "Final",
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "spi_group_names": [
-              "Internal"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "presentationControllerDidDismiss",
-            "printedName": "presentationControllerDidDismiss(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "UIPresentationController",
-                "printedName": "UIKit.UIPresentationController",
-                "usr": "c:objc(cs)UIPresentationController"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@FintechSDKSafariFeature@objc(cs)FTSafariService(im)presentationControllerDidDismiss:",
-            "mangledName": "$s23FintechSDKSafariFeature15FTSafariServiceC32presentationControllerDidDismissyySo014UIPresentationG0CF",
-            "moduleName": "FintechSDKSafariFeature",
-            "objc_name": "presentationControllerDidDismiss:",
-            "declAttributes": [
-              "Final",
-              "ObjC",
-              "Preconcurrency",
-              "Custom",
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "spi_group_names": [
-              "Internal"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "safariViewControllerDidFinish",
-            "printedName": "safariViewControllerDidFinish(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "SFSafariViewController",
-                "printedName": "SafariServices.SFSafariViewController",
-                "usr": "c:objc(cs)SFSafariViewController"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@FintechSDKSafariFeature@objc(cs)FTSafariService(im)safariViewControllerDidFinish:",
-            "mangledName": "$s23FintechSDKSafariFeature15FTSafariServiceC29safariViewControllerDidFinishyySo08SFSafarigH0CF",
-            "moduleName": "FintechSDKSafariFeature",
-            "objc_name": "safariViewControllerDidFinish:",
-            "declAttributes": [
-              "Final",
-              "ObjC",
-              "Custom",
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "spi_group_names": [
-              "Internal"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "safariViewController",
-            "printedName": "safariViewController(_:didCompleteInitialLoad:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "SFSafariViewController",
-                "printedName": "SafariServices.SFSafariViewController",
-                "usr": "c:objc(cs)SFSafariViewController"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@FintechSDKSafariFeature@objc(cs)FTSafariService(im)safariViewController:didCompleteInitialLoad:",
-            "mangledName": "$s23FintechSDKSafariFeature15FTSafariServiceC20safariViewController_22didCompleteInitialLoadySo08SFSafarigH0C_SbtF",
-            "moduleName": "FintechSDKSafariFeature",
-            "objc_name": "safariViewController:didCompleteInitialLoad:",
-            "declAttributes": [
-              "Final",
-              "ObjC",
-              "Custom",
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "spi_group_names": [
-              "Internal"
-            ],
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Class",
-        "usr": "c:@M@FintechSDKSafariFeature@objc(cs)FTSafariService",
-        "mangledName": "$s23FintechSDKSafariFeature15FTSafariServiceC",
-        "moduleName": "FintechSDKSafariFeature",
-        "declAttributes": [
-          "Final",
-          "AccessControl",
-          "Custom",
-          "SPIAccessControl",
-          "ObjC"
-        ],
-        "spi_group_names": [
-          "Internal"
-        ],
-        "superclassUsr": "c:objc(cs)NSObject",
-        "hasMissingDesignatedInitializers": true,
-        "superclassNames": [
-          "ObjectiveC.NSObject"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "FTSafariServicing",
-            "printedName": "FTSafariServicing",
-            "usr": "s:23FintechSDKSafariFeature17FTSafariServicingP",
-            "mangledName": "$s23FintechSDKSafariFeature17FTSafariServicingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Sendable",
-            "printedName": "Sendable",
-            "usr": "s:s8SendableP",
-            "mangledName": "$ss8SendableP"
-          }
-        ]
-      },
-      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "FintechSDKSafariFeature"
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "FTSafariServicing",
-        "printedName": "FTSafariServicing",
-        "children": [
-          {
-            "kind": "Function",
-            "name": "open",
-            "printedName": "open(url:onEvent:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "URL",
-                "printedName": "Foundation.URL",
-                "usr": "s:10Foundation3URLV"
-              },
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(FintechSDKSafariFeature.FTSafariEvent) -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "FTSafariEvent",
-                    "printedName": "FintechSDKSafariFeature.FTSafariEvent",
-                    "usr": "s:23FintechSDKSafariFeature13FTSafariEventO"
-                  }
-                ]
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:23FintechSDKSafariFeature17FTSafariServicingP4open3url7onEventy10Foundation3URLV_yAA0dI0OYbScMYcctYaKF",
-            "mangledName": "$s23FintechSDKSafariFeature17FTSafariServicingP4open3url7onEventy10Foundation3URLV_yAA0dI0OYbScMYcctYaKF",
-            "moduleName": "FintechSDKSafariFeature",
-            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKSafariFeature.FTSafariServicing>",
-            "sugared_genericSig": "<Self where Self : FintechSDKSafariFeature.FTSafariServicing>",
-            "protocolReq": true,
-            "declAttributes": [
-              "Custom",
-              "RawDocComment"
-            ],
-            "spi_group_names": [
-              "Internal"
-            ],
-            "throwing": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "close",
-            "printedName": "close()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:23FintechSDKSafariFeature17FTSafariServicingP5closeyyYaF",
-            "mangledName": "$s23FintechSDKSafariFeature17FTSafariServicingP5closeyyYaF",
-            "moduleName": "FintechSDKSafariFeature",
-            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKSafariFeature.FTSafariServicing>",
-            "sugared_genericSig": "<Self where Self : FintechSDKSafariFeature.FTSafariServicing>",
-            "protocolReq": true,
-            "declAttributes": [
-              "Custom",
-              "RawDocComment"
-            ],
-            "spi_group_names": [
-              "Internal"
-            ],
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Protocol",
-        "usr": "s:23FintechSDKSafariFeature17FTSafariServicingP",
-        "mangledName": "$s23FintechSDKSafariFeature17FTSafariServicingP",
-        "moduleName": "FintechSDKSafariFeature",
-        "genericSig": "<τ_0_0 : AnyObject, τ_0_0 : Swift.Sendable>",
-        "sugared_genericSig": "<Self : AnyObject, Self : Swift.Sendable>",
-        "declAttributes": [
-          "AccessControl",
-          "Custom",
-          "SPIAccessControl"
-        ],
-        "spi_group_names": [
-          "Internal"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Sendable",
-            "printedName": "Sendable",
-            "usr": "s:s8SendableP",
-            "mangledName": "$ss8SendableP"
-          }
-        ]
       }
     ],
     "json_format_version": 8
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/8\/4735721182\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-0aa5c3aa-313d-404c-b091-6159b200ba63\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/Safari\/FTSafariConfiguration.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/Safari\/FTInAppBrowserInteractor.swift",
       "kind": "BooleanLiteral",
-      "offset": 497,
+      "offset": 290,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/5\/6\/4801168565\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-66bd878c-b505-4d07-9bc7-8d99e656eb61\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/Safari\/FTSafariConfiguration.swift",
+      "kind": "BooleanLiteral",
+      "offset": 614,
       "length": 5,
       "value": "false"
     }

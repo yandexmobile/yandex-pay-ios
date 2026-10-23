@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKAuthCoreImplementation -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import CryptoKit
 import CryptoTokenKit
 @_spi(Internal) import FintechSDKAuthInterfaces
@@ -23,15 +23,23 @@ public enum FintechDPoPKeyFactory {
     }
   }
   public static func makeKey(mode: FintechSDKAuthCoreImplementation.FintechDPoPKeyFactory.Mode) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> any FintechSDKAuthInterfaces.FintechDPoPKey
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func existingKey(mode: FintechSDKAuthCoreImplementation.FintechDPoPKeyFactory.Mode) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> (any FintechSDKAuthInterfaces.FintechDPoPKey)?
+  #endif
 }
 @_spi(Internal) extension FintechSDKAuthCoreImplementation.FintechDPoPServiceImpl : FintechSDKAuthInterfaces.FTOfflineKeyProviding {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public func offlineKey(_ type: FintechSDKAuthInterfaces.PublicKeyType) -> (any FintechSDKAuthInterfaces.FTOfflineKeyAgreementPrivateKey)?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public func silentOfflineKey(_ type: FintechSDKAuthInterfaces.PublicKeyType) -> (any FintechSDKAuthInterfaces.FTOfflineKeyAgreementPrivateKey)?
+  #endif
 }
 final public class FintechDPoPServiceImpl : FintechSDKAuthInterfaces.FintechDPoPService, @unchecked Swift.Sendable {
   final public func key(_ type: FintechSDKAuthInterfaces.PublicKeyType) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> any FintechSDKAuthInterfaces.FintechDPoPKey
+  #if compiler(>=5.3) && $NonescapableTypes
   final public func existingKey(_ type: FintechSDKAuthInterfaces.PublicKeyType) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> (any FintechSDKAuthInterfaces.FintechDPoPKey)?
+  #endif
   final public func hasKey(_ type: FintechSDKAuthInterfaces.PublicKeyType) -> Swift.Bool
   public init()
   final public func invalidateKey()
@@ -39,34 +47,44 @@ final public class FintechDPoPServiceImpl : FintechSDKAuthInterfaces.FintechDPoP
   @objc deinit
 }
 @_spi(Internal) public protocol FTDPoPOfflineKeyStoring : Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func load(for keyType: FintechSDKAuthInterfaces.PublicKeyType) -> Swift.String?
+  #endif
   @_spi(Internal) func save(_ publicKey: Swift.String, for keyType: FintechSDKAuthInterfaces.PublicKeyType)
   @_spi(Internal) func removeAll()
 }
 @_spi(Internal) public struct FTDPoPKeychainOfflineKeyStore : FintechSDKAuthCoreImplementation.FTDPoPOfflineKeyStoring {
   @_spi(Internal) public init()
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public func load(for keyType: FintechSDKAuthInterfaces.PublicKeyType) -> Swift.String?
+  #endif
   @_spi(Internal) public func save(_ publicKey: Swift.String, for keyType: FintechSDKAuthInterfaces.PublicKeyType)
   @_spi(Internal) public func removeAll()
 }
 @_spi(Internal) final public class FTDPoPStateHolderImpl : FintechSDKAuthInterfaces.FTDPoPStateHolder, @unchecked Swift.Sendable {
   @_spi(Internal) convenience public init()
   @_spi(Internal) public init(store: any FintechSDKAuthCoreImplementation.FTDPoPOfflineKeyStoring)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public func offlinePublicKey(for keyType: FintechSDKAuthInterfaces.PublicKeyType) -> Swift.String?
+  #endif
   @_spi(Internal) final public func setOfflinePublicKey(_ publicKey: Swift.String, for keyType: FintechSDKAuthInterfaces.PublicKeyType)
   @_spi(Internal) final public func clear()
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) final public class FTExternalAuthTokenHolder : @unchecked Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public var token: Swift.String? {
     @_spi(Internal) get
     @_spi(Internal) set
   }
+  #endif
   @_spi(Internal) public init()
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) final public class FintechCookieExchangerImpl : FintechSDKAuthInterfaces.FintechCookieExchanger {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(puid: Foundation.NSNumber?, cookieExchangerAdapter: any FintechSDKAuthInterfaces.FintechCookieExchangerAdapter)
+  #endif
   @_spi(Internal) final public func exchangeCookie(url: Foundation.URL) async throws(FintechSDKAuthInterfaces.FintechCookieExchangerError) -> Foundation.URL
   @_spi(Internal) @objc deinit
 }
@@ -77,7 +95,9 @@ final public class FintechDPoPServiceImpl : FintechSDKAuthInterfaces.FintechDPoP
 }
 @_spi(Internal) final public class FTGetPuidInteractor : FintechSDKAuthInterfaces.FTGetPuidUseCase, @unchecked Swift.Sendable {
   @_spi(Internal) public init(loginService: any FintechSDKAuthInterfaces.FintechLoginService)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor final public func getPuid() -> Foundation.NSNumber?
+  #endif
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) public struct FTOfflinePayTicketSignerImpl : FintechSDKAuthInterfaces.FTOfflinePayTicketSigner {

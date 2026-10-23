@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechBDUIWrapper -package-name bduiwrapper
-// swift-module-flags-ignorable:  -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import Foundation
 import Swift
 import UIKit
@@ -9,29 +9,57 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 @objc(FBWAdapter) @objcMembers final public class FBWAdapter : ObjectiveC.NSObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(themeKind: Any, requestTimeoutSec: Swift.Int, networkClient: Any, router: Any, fontsAdapter: Any?, errorLogger: Any?, contentFactories: Any?, errorContentFactory: Any, actionHandlers: Any?, divCustomFactories: Any?, localImageProvider: Any?)
+  #endif
   @objc final public var isInitialized: Swift.Bool {
     @objc get
   }
   @objc final public func setThemeKind(_ themeKind: Any)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @objc final public func create(entryPoint: Any, preview: Any) -> Any?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @objc final public func create(document: Any) -> Any?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @objc final public func createDivKitView(source: Any, action: Any?) -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @objc final public func createDivKitView(source: Any, action: Any?, divFlags: Any?) -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @nonobjc final public func createUpdatableDivKitView(source: Any, action: Any?, divFlags: Any?) async -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @objc final public func handleDivAction(cardId: Swift.String, url: Swift.String, logId: Swift.String, payload: Any?) -> Swift.Bool
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @objc final public func handleDivAction(action: Any, path: Any?, sender: Any?)
+  #endif
   @objc final public func releaseDivKitComponents(cardId: Swift.String)
   @objc final public func observeExtensionDescriptors(extensionId: Swift.String, observer: Any) -> Any
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public var externalDivUrlHandler: Any? {
+    @objc get
+    @objc set
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public var payloadExtender: Any? {
     @objc get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public var variableStorage: Any? {
     @objc get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public var expressionResolver: Any? {
     @objc get
   }
+  #endif
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(FBWAdapterFactory) @objcMembers final public class FBWAdapterFactory : ObjectiveC.NSObject {
@@ -42,6 +70,8 @@ import _SwiftConcurrencyShims
   @objc final public var divKitVersion: Swift.String {
     @objc get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public func make(themeKind: Any, requestTimeoutSec: Swift.Int, networkClient: Any, router: Any, fontsAdapter: Any?, errorLogger: Any?, contentFactories: Any?, errorContentFactory: Any, actionHandlers: Any?, divCustomFactories: Any?, localImageProvider: Any?) -> FintechBDUIWrapper.FBWAdapter
+  #endif
   @objc deinit
 }

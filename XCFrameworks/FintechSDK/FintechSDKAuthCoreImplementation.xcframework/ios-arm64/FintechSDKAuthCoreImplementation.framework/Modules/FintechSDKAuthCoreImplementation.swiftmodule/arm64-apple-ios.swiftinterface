@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKAuthCoreImplementation -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import CryptoKit
 import CryptoTokenKit
 import FintechSDKAuthInterfaces
@@ -23,11 +23,15 @@ public enum FintechDPoPKeyFactory {
     }
   }
   public static func makeKey(mode: FintechSDKAuthCoreImplementation.FintechDPoPKeyFactory.Mode) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> any FintechSDKAuthInterfaces.FintechDPoPKey
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func existingKey(mode: FintechSDKAuthCoreImplementation.FintechDPoPKeyFactory.Mode) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> (any FintechSDKAuthInterfaces.FintechDPoPKey)?
+  #endif
 }
 final public class FintechDPoPServiceImpl : FintechSDKAuthInterfaces.FintechDPoPService, @unchecked Swift.Sendable {
   final public func key(_ type: FintechSDKAuthInterfaces.PublicKeyType) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> any FintechSDKAuthInterfaces.FintechDPoPKey
+  #if compiler(>=5.3) && $NonescapableTypes
   final public func existingKey(_ type: FintechSDKAuthInterfaces.PublicKeyType) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> (any FintechSDKAuthInterfaces.FintechDPoPKey)?
+  #endif
   final public func hasKey(_ type: FintechSDKAuthInterfaces.PublicKeyType) -> Swift.Bool
   public init()
   final public func invalidateKey()

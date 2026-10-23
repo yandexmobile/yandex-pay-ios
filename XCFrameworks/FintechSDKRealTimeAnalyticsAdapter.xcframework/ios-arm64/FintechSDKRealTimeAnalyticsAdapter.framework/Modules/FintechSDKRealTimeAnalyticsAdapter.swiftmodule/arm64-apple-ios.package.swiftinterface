@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKRealTimeAnalyticsAdapter -package-name fintechsdkrtmadapter
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import FintechSDKAnalyticsInterfaces
 import Foundation
 import Swift
@@ -19,8 +19,12 @@ public struct NetworkingParams {
   public let parsingQueue: Foundation.OperationQueue
   public let userAgent: FintechSDKRealTimeAnalyticsAdapter.Variable<FintechSDKRealTimeAnalyticsAdapter.UserAgent?>
   public let errorStrategyFactory: FintechSDKRealTimeAnalyticsAdapter.NetworkErrorHandlingStrategyFactory?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(baseURL: FintechSDKRealTimeAnalyticsAdapter.Variable<Foundation.URL> = .constant(defaultBaseUrl), requestPerformer: any FintechSDKRealTimeAnalyticsAdapter.URLRequestPerforming = URLRequestPerformer(urlTransform: nil), operationQueue: Foundation.OperationQueue = makeDefaultQueue(with: operationQueueName), parsingQueue: Foundation.OperationQueue = makeDefaultQueue(with: parsingQueueName), userAgent: FintechSDKRealTimeAnalyticsAdapter.Variable<FintechSDKRealTimeAnalyticsAdapter.UserAgent?>, errorStrategyFactory: FintechSDKRealTimeAnalyticsAdapter.NetworkErrorHandlingStrategyFactory? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(baseURL: FintechSDKRealTimeAnalyticsAdapter.Variable<Foundation.URL> = .constant(defaultBaseUrl), requestPerformer: any FintechSDKRealTimeAnalyticsAdapter.URLRequestPerforming = URLRequestPerformer(urlTransform: nil), operationQueue: Foundation.OperationQueue = makeDefaultQueue(with: operationQueueName), parsingQueue: Foundation.OperationQueue = makeDefaultQueue(with: parsingQueueName), userAgent: FintechSDKRealTimeAnalyticsAdapter.UserAgent, errorStrategyFactory: FintechSDKRealTimeAnalyticsAdapter.NetworkErrorHandlingStrategyFactory? = nil)
+  #endif
   public static func makeDefaultQueue(with name: Swift.String) -> Foundation.OperationQueue
   public static let defaultBaseUrl: Foundation.URL
   public static let operationQueueName: Swift.String
@@ -30,7 +34,9 @@ public struct RealTimeError : Swift.Equatable {
   public enum Silent : FintechSDKRealTimeAnalyticsAdapter.NonEmptyString, Swift.Equatable {
     case no
     case yes
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString)
+    #endif
     public typealias RawValue = FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
     public var rawValue: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString {
       get
@@ -43,7 +49,9 @@ public struct RealTimeError : Swift.Equatable {
     case critical
     case trace
     case debug
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString)
+    #endif
     public typealias RawValue = FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
     public var rawValue: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString {
       get
@@ -62,7 +70,9 @@ public struct RealTimeError : Swift.Equatable {
   public let source: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
   public let location: FintechSDKRealTimeAnalyticsAdapter.RealTimeError.Location?
   public let block: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(params: FintechSDKRealTimeAnalyticsAdapter.RealTimeParams, message: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString, callStack: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString? = nil, level: FintechSDKRealTimeAnalyticsAdapter.RealTimeError.Level? = nil, silent: FintechSDKRealTimeAnalyticsAdapter.RealTimeError.Silent? = nil, type: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString? = nil, source: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString, location: FintechSDKRealTimeAnalyticsAdapter.RealTimeError.Location? = nil, block: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString? = nil)
+  #endif
   public static func == (a: FintechSDKRealTimeAnalyticsAdapter.RealTimeError, b: FintechSDKRealTimeAnalyticsAdapter.RealTimeError) -> Swift.Bool
 }
 public struct RealTimeEvent : Swift.Equatable {
@@ -74,7 +84,9 @@ public struct RealTimeEvent : Swift.Equatable {
   public let path: FintechSDKRealTimeAnalyticsAdapter.Path
   public let type: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString?
   public let customVars: [FintechSDKRealTimeAnalyticsAdapter.NonEmptyString : FintechSDKRealTimeAnalyticsAdapter.NonEmptyString?]
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(params: FintechSDKRealTimeAnalyticsAdapter.RealTimeParams, name: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString, value: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString? = nil, loggedIn: Swift.Bool? = nil, table: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString = defaultTable, path: FintechSDKRealTimeAnalyticsAdapter.Path = defaultPath, type: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString? = "string", customVars: [FintechSDKRealTimeAnalyticsAdapter.NonEmptyString : FintechSDKRealTimeAnalyticsAdapter.NonEmptyString?] = [:])
+  #endif
   public static let defaultTable: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
   public static let defaultPath: FintechSDKRealTimeAnalyticsAdapter.Path
   public static func == (a: FintechSDKRealTimeAnalyticsAdapter.RealTimeEvent, b: FintechSDKRealTimeAnalyticsAdapter.RealTimeEvent) -> Swift.Bool
@@ -84,7 +96,9 @@ public struct RealTimeParams : Swift.Equatable {
   public let page: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString?
   public let referrer: Foundation.URL?
   public let additional: FintechSDKRealTimeAnalyticsAdapter.JSONDictionary?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(service: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString? = nil, page: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString? = nil, referrer: Foundation.URL? = nil, additional: FintechSDKRealTimeAnalyticsAdapter.JSONDictionary? = nil)
+  #endif
   public static func == (a: FintechSDKRealTimeAnalyticsAdapter.RealTimeParams, b: FintechSDKRealTimeAnalyticsAdapter.RealTimeParams) -> Swift.Bool
 }
 final public class RealTimeReporter : FintechSDKRealTimeAnalyticsAdapter.RealTimeReporting {
@@ -98,7 +112,9 @@ public enum RealTimeReporterErrorType : FintechSDKRealTimeAnalyticsAdapter.NonEm
   case parsing
   case badData
   case crash
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString)
+  #endif
   public typealias RawValue = FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
   public var rawValue: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString {
     get
@@ -117,7 +133,9 @@ public struct RealTimeStaticParams {
     case tvapp
     case station
     case unsupported
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString)
+    #endif
     public typealias RawValue = FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
     public var rawValue: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString {
       get
@@ -129,7 +147,9 @@ public struct RealTimeStaticParams {
     case prestable
     case production
     case preproduction
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString)
+    #endif
     public typealias RawValue = FintechSDKRealTimeAnalyticsAdapter.NonEmptyString
     public var rawValue: FintechSDKRealTimeAnalyticsAdapter.NonEmptyString {
       get
@@ -167,11 +187,17 @@ public struct RealTimeStaticParams {
   public let environment: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Environment
   public let reqID: FintechSDKRealTimeAnalyticsAdapter.ReqID
   public let overflowProtection: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.OverflowProtectionParams?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(projectName: FintechSDKRealTimeAnalyticsAdapter.ProjectName, platform: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Platform, appVersion: FintechSDKRealTimeAnalyticsAdapter.AppVersion, region: FintechSDKRealTimeAnalyticsAdapter.Variable<Swift.UInt32?>, userAgent: FintechSDKRealTimeAnalyticsAdapter.Variable<FintechSDKRealTimeAnalyticsAdapter.UserAgent?>, experiments: FintechSDKRealTimeAnalyticsAdapter.Variable<[FintechSDKRealTimeAnalyticsAdapter.NonEmptyString]?>, slots: FintechSDKRealTimeAnalyticsAdapter.Variable<[FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Experiment]?>, userID: FintechSDKRealTimeAnalyticsAdapter.Future<FintechSDKRealTimeAnalyticsAdapter.UserID>, environment: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Environment, reqID: FintechSDKRealTimeAnalyticsAdapter.ReqID, overflowProtection: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.OverflowProtectionParams? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(projectName: FintechSDKRealTimeAnalyticsAdapter.ProjectName, platform: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Platform, appVersion: FintechSDKRealTimeAnalyticsAdapter.AppVersion, region: FintechSDKRealTimeAnalyticsAdapter.Variable<Swift.UInt32?>, userAgent: FintechSDKRealTimeAnalyticsAdapter.UserAgent, experiments: FintechSDKRealTimeAnalyticsAdapter.Variable<[FintechSDKRealTimeAnalyticsAdapter.NonEmptyString]?>, slots: FintechSDKRealTimeAnalyticsAdapter.Variable<[FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Experiment]?>, userID: FintechSDKRealTimeAnalyticsAdapter.Future<FintechSDKRealTimeAnalyticsAdapter.UserID>, environment: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.Environment, reqID: FintechSDKRealTimeAnalyticsAdapter.ReqID, overflowProtection: FintechSDKRealTimeAnalyticsAdapter.RealTimeStaticParams.OverflowProtectionParams? = nil)
+  #endif
 }
 extension FintechSDKRealTimeAnalyticsAdapter.RealTimeReporting {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func withUUID<UUID>(uuidProvider: FintechSDKRealTimeAnalyticsAdapter.Variable<UUID?>) -> any FintechSDKRealTimeAnalyticsAdapter.RealTimeReporting where UUID : Swift.RawRepresentable, UUID.RawValue == Swift.String
+  #endif
 }
 public enum PathTag {
 }
@@ -214,7 +240,9 @@ extension FintechSDKRealTimeAnalyticsAdapter.NonEmpty : Swift.Sendable where C :
 }
 public typealias NonEmptyString = FintechSDKRealTimeAnalyticsAdapter.NonEmpty<Swift.String>
 extension FintechSDKRealTimeAnalyticsAdapter.NonEmpty where C == Swift.String {
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(_ value: some LosslessStringConvertible)
+  #endif
   public var string: Swift.String {
     get
   }
@@ -226,7 +254,9 @@ extension FintechSDKRealTimeAnalyticsAdapter.NonEmpty : Swift.LosslessStringConv
   public var description: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(_ description: Swift.String)
+  #endif
 }
 extension FintechSDKRealTimeAnalyticsAdapter.NonEmpty : Swift.ExpressibleByStringLiteral, Swift.ExpressibleByExtendedGraphemeClusterLiteral, Swift.ExpressibleByUnicodeScalarLiteral where C == Swift.String {
   public init(stringLiteral value: Swift.String)
@@ -290,12 +320,16 @@ extension FintechSDKRealTimeAnalyticsAdapter.Tagged : Swift.ExpressibleByStringL
   public subscript<U>(dynamicMember path: Swift.KeyPath<T, U>) -> FintechSDKRealTimeAnalyticsAdapter.Variable<U> {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public subscript<ValueType, UnderlyingType>(dynamicMember path: Swift.KeyPath<UnderlyingType, ValueType>) -> FintechSDKRealTimeAnalyticsAdapter.Variable<ValueType?> where T == UnderlyingType? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public subscript<ValueType, UnderlyingType>(dynamicMember path: Swift.KeyPath<UnderlyingType, ValueType?>) -> FintechSDKRealTimeAnalyticsAdapter.Variable<ValueType?> where T == UnderlyingType? {
     get
   }
+  #endif
   public static func constant(_ value: T) -> FintechSDKRealTimeAnalyticsAdapter.Variable<T>
   public init<U>(_ object: U, keyPath: Swift.KeyPath<U, T>)
   public func map<U>(_ transform: @escaping (T) -> U) -> FintechSDKRealTimeAnalyticsAdapter.Variable<U>
@@ -304,7 +338,9 @@ extension FintechSDKRealTimeAnalyticsAdapter.Tagged : Swift.ExpressibleByStringL
   public typealias Callback = (T) -> Swift.Void
   public init(payload: T)
   final public func resolved(_ callback: @escaping FintechSDKRealTimeAnalyticsAdapter.Future<T>.Callback)
+  #if compiler(>=5.3) && $NonescapableTypes
   final public func unwrap() -> T?
+  #endif
   public static func resolved(_ payload: T) -> FintechSDKRealTimeAnalyticsAdapter.Future<T>
   final public func map<U>(_ transform: @escaping (T) -> U) -> FintechSDKRealTimeAnalyticsAdapter.Future<U>
   @objc deinit
@@ -375,7 +411,9 @@ public enum HTTPMethod : Swift.String, Swift.Sendable {
   case POST
   case PUT
   case DELETE
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -394,12 +432,16 @@ public struct Resource<T> {
   public let headers: FintechSDKRealTimeAnalyticsAdapter.HTTPHeaders?
   public let body: Foundation.Data?
   public let parser: FintechSDKRealTimeAnalyticsAdapter.Resource<T>.Parser
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(path: Swift.String?, method: FintechSDKRealTimeAnalyticsAdapter.HTTPMethod = .GET, GETParameters: [Swift.String : Swift.String] = [:], headers: FintechSDKRealTimeAnalyticsAdapter.HTTPHeaders? = nil, body: Foundation.Data? = nil, parser: @escaping FintechSDKRealTimeAnalyticsAdapter.Resource<T>.Parser)
+  #endif
 }
 public protocol URLRequestPerforming : AnyObject {
 }
 final public class URLRequestPerformer : FintechSDKRealTimeAnalyticsAdapter.URLRequestPerforming {
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(urlTransform: ((Foundation.URL?) -> Foundation.URL?)?)
+  #endif
   @objc deinit
 }
 public typealias NetworkErrorHandlingStrategyFactory = () -> Swift.AnyObject
@@ -411,10 +453,16 @@ public typealias NetworkErrorHandlingStrategyFactory = () -> Swift.AnyObject
 }
 final public class NetworkOperationServer<RequestArgs, Response> {
   public typealias Completion = (Swift.Result<Response, Foundation.NSError>) -> Swift.Void
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(baseURL: FintechSDKRealTimeAnalyticsAdapter.Variable<Foundation.URL>, resourceFactory: @escaping (RequestArgs) -> FintechSDKRealTimeAnalyticsAdapter.Resource<Response>?, requestPerformer: any FintechSDKRealTimeAnalyticsAdapter.URLRequestPerforming, parsingQueue: any FintechSDKRealTimeAnalyticsAdapter.OperationQueueType, userAgent: FintechSDKRealTimeAnalyticsAdapter.Variable<Swift.String?>, errorStrategyFactory: FintechSDKRealTimeAnalyticsAdapter.NetworkErrorHandlingStrategyFactory? = nil, operationQueue: any FintechSDKRealTimeAnalyticsAdapter.OperationQueueType, shouldCancelCurrentOperation: Swift.Bool = true, networkActivityIndicator: FintechSDKRealTimeAnalyticsAdapter.NetworkActivityIndicatorController)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   convenience public init(baseURL: FintechSDKRealTimeAnalyticsAdapter.Variable<Foundation.URL>, resourceFactory: @escaping (RequestArgs) -> FintechSDKRealTimeAnalyticsAdapter.Resource<Response>?, requestPerformer: any FintechSDKRealTimeAnalyticsAdapter.URLRequestPerforming, parsingQueue: any FintechSDKRealTimeAnalyticsAdapter.OperationQueueType, userAgent: Swift.String, errorStrategyFactory: FintechSDKRealTimeAnalyticsAdapter.NetworkErrorHandlingStrategyFactory? = nil, operationQueue: any FintechSDKRealTimeAnalyticsAdapter.OperationQueueType, shouldCancelCurrentOperation: Swift.Bool = true, networkActivityIndicator: FintechSDKRealTimeAnalyticsAdapter.NetworkActivityIndicatorController)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @discardableResult
   final public func performRequest(_ args: RequestArgs, completion: FintechSDKRealTimeAnalyticsAdapter.NetworkOperationServer<RequestArgs, Response>.Completion? = nil) -> Foundation.Operation
+  #endif
   final public func cancel()
   @objc deinit
 }

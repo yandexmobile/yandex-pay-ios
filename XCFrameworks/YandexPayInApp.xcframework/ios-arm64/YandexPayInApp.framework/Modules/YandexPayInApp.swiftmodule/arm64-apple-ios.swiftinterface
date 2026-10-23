@@ -1,13 +1,12 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name YandexPayInApp -package-name yandexpayinapp
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import ExternalBduiAdapter
 import FintechSDKAuthInterfaces
 import FintechSDKFontsAdapter
 import FintechSDKPayWidget
 import FintechSDKRealTimeAnalyticsAdapter
-import FintechSDKRealUserMonitoringAdapter
 import Foundation
 import Swift
 import SwiftUI
@@ -21,6 +20,7 @@ import _SwiftConcurrencyShims
     get
   }
   @_Concurrency.MainActor final public func setStateDelegate(_ delegate: any YandexPayInApp.YPInAppDelegate)
+  @_Concurrency.MainActor final public func startPaymentWithNewMethod(paymentURL: Foundation.URL, method: YandexPayInApp.YPInAppPaymentMethod, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding) async -> YandexPayInApp.YPInAppPaymentResult
   @_Concurrency.MainActor final public func createPayWidgetView(model: YandexPayInApp.YPPayWidgetModel = YPPayWidgetModel(), presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding) -> any SwiftUICore.View
   @_Concurrency.MainActor final public func enable()
   @_Concurrency.MainActor final public func disable()
@@ -29,6 +29,37 @@ import _SwiftConcurrencyShims
 }
 @_Concurrency.MainActor public protocol YPInAppDelegate : AnyObject {
   @_Concurrency.MainActor func yandexPayInApp(didChangeState state: YandexPayInApp.YPInAppState)
+}
+public enum YPInAppPaymentError : Swift.String, Swift.Error, Swift.Sendable {
+  case authenticationProblem
+  case wrongMerchantId
+  case orderExpired
+  case paymentFailed
+  case appError
+  case invalidArgs
+  case orderNotFound
+  case unknownError
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum YPInAppPaymentMethod : Swift.Sendable {
+  case sbp
+  case card
+  public static func == (a: YandexPayInApp.YPInAppPaymentMethod, b: YandexPayInApp.YPInAppPaymentMethod) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum YPInAppPaymentResult : Swift.Sendable {
+  case succeeded
+  case cancelled
+  case failed(YandexPayInApp.YPInAppPaymentError)
 }
 public enum YPInAppDisabledReason : Swift.Error, Swift.Sendable, Swift.Equatable {
   case disabledByConfig
@@ -59,8 +90,12 @@ public struct YPPayWidgetOrderAmount : Swift.Sendable, Swift.Hashable {
 public struct YPPayWidgetModel : Swift.Sendable, Swift.Hashable {
   public let orderAmount: YandexPayInApp.YPPayWidgetOrderAmount?
   public let cart: YandexPayConfiguration.YPPayCart?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(orderAmount: YandexPayInApp.YPPayWidgetOrderAmount? = nil, cart: YandexPayConfiguration.YPPayCart? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(amount: Foundation.Decimal, currency: YandexPayConfiguration.YPCurrencyCode, cart: YandexPayConfiguration.YPPayCart? = nil)
+  #endif
   public static func == (a: YandexPayInApp.YPPayWidgetModel, b: YandexPayInApp.YPPayWidgetModel) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -96,4 +131,9 @@ public enum YPayInApp {
   @_Concurrency.MainActor final public func configure(with configuration: YandexPayConfiguration.YPay)
   @objc deinit
 }
+extension YandexPayInApp.YPInAppPaymentError : Swift.Equatable {}
+extension YandexPayInApp.YPInAppPaymentError : Swift.Hashable {}
+extension YandexPayInApp.YPInAppPaymentError : Swift.RawRepresentable {}
+extension YandexPayInApp.YPInAppPaymentMethod : Swift.Equatable {}
+extension YandexPayInApp.YPInAppPaymentMethod : Swift.Hashable {}
 extension YandexPayInApp.YPInAppDisabledReason : Swift.Hashable {}

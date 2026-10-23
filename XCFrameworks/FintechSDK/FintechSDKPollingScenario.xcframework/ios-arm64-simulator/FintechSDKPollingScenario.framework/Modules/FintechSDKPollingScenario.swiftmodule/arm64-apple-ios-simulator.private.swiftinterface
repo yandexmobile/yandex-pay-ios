@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKPollingScenario -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import FintechSDKBDUICore
 @_spi(Internal) import FintechSDKBDUIFeatures
 @_spi(Internal) import FintechSDKCoreUI
@@ -15,21 +15,51 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 @_spi(Internal) public typealias FTPollingParamsUseCases = FintechSDKPollingScenario.FTGetPollingParams & FintechSDKPollingScenario.FTProvidePollingParams
 @_spi(Internal) public protocol FTProvidePollingParams : Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func setTransaction(id: Swift.String?) async
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func setCheckoutOrderId(_ id: Swift.String?) async
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func setQuickpayId(_ id: Swift.String?) async
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func setPayment(url: Swift.String?) async
+  #endif
 }
 @_spi(Internal) public protocol FTGetPollingParams : Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func getTransactionId() async -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func getCheckoutOrderId() async -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func getQuickpayId() async -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func getPaymentUrl() async -> Swift.String?
+  #endif
 }
 @_spi(Internal) public protocol FTPollingScreenUseCases : Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor func presentPollingScreen(transactionId: Swift.String?, sessionKey: Swift.String?, entryPoint: FintechSDKBDUICore.FintechBDUIEntryPoint, preview: any FintechSDKBDUICore.FintechBDUIContent) async
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor func removePollingScreen(onDismiss: (@Sendable () -> Swift.Void)?) async
+  #endif
+  @_spi(Internal) @_Concurrency.MainActor func dismissPollingScreen() async
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) @_Concurrency.MainActor func reloadPollingScreen(sessionKey: Swift.String?) async
+  #endif
   @_spi(Internal) @_Concurrency.MainActor func isPresenting() -> Swift.Bool
+}
+@_spi(Internal) extension FintechSDKPollingScenario.FTPollingScreenUseCases {
+  @_spi(Internal) @_Concurrency.MainActor public func dismissPollingScreen() async
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) @_Concurrency.MainActor public func reloadPollingScreen(sessionKey: Swift.String?) async
+  #endif
 }
 @_spi(Internal) public actor FTPollingParamsInteractor {
   @_spi(Internal) public init()
@@ -40,16 +70,32 @@ import _SwiftConcurrencyShims
   }
 }
 @_spi(Internal) extension FintechSDKPollingScenario.FTPollingParamsInteractor : FintechSDKPollingScenario.FTProvidePollingParams {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public func setTransaction(id: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public func setCheckoutOrderId(_ id: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public func setQuickpayId(_ id: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public func setPayment(url: Swift.String?)
+  #endif
 }
 @_spi(Internal) extension FintechSDKPollingScenario.FTPollingParamsInteractor : FintechSDKPollingScenario.FTGetPollingParams {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public func getTransactionId() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public func getCheckoutOrderId() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public func getQuickpayId() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public func getPaymentUrl() -> Swift.String?
+  #endif
 }
 @_spi(Internal) final public class FTPollingMiddleware : FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware {
   @_spi(Internal) public init(getPollingParams: any FintechSDKPollingScenario.FTGetPollingParams)
@@ -57,13 +103,24 @@ import _SwiftConcurrencyShims
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) public typealias FTPollingTransactionID = Swift.String
+@_spi(Internal) public typealias FTPollingScreenSessionKey = Swift.String
 @_spi(Internal) @_Concurrency.MainActor final public class FTPollingScreenRouter : FintechSDKPollingScenario.FTPollingScreenUseCases {
-  @_spi(Internal) @_Concurrency.MainActor final public var onScreenDeinit: (@Sendable () -> Swift.Void)?
-  @_spi(Internal) @_Concurrency.MainActor public init(modalPresenting: any FintechSDKCoreUI.FTModalPresenting, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, onScreenDeinit: (@Sendable () -> Swift.Void)? = nil, onScreenPresented: (@Sendable (FintechSDKPollingScenario.FTPollingTransactionID?) -> Swift.Void)? = nil, configureModal: (@_Concurrency.MainActor (UIKit.UINavigationController) -> Swift.Void)? = nil, dismissalPredicate: @escaping @_Concurrency.MainActor (UIKit.UINavigationController) -> Swift.Bool = {
+  @_spi(Internal) @_Concurrency.MainActor final public var onScreenDeinit: (@Sendable (FintechSDKPollingScenario.FTPollingScreenSessionKey?) -> Swift.Void)?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) @_Concurrency.MainActor public init(modalPresenting: any FintechSDKCoreUI.FTModalPresenting, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, onScreenDeinit: (@Sendable (FintechSDKPollingScenario.FTPollingScreenSessionKey?) -> Swift.Void)? = nil, onScreenPresented: (@Sendable (FintechSDKPollingScenario.FTPollingTransactionID?) -> Swift.Void)? = nil, configureModal: (@_Concurrency.MainActor (UIKit.UINavigationController) -> Swift.Void)? = nil, dismissalPredicate: @escaping @_Concurrency.MainActor (UIKit.UINavigationController) -> Swift.Bool = {
       $0.isBeingDismissed || $0.presentingViewController == nil
     })
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor final public func presentPollingScreen(transactionId: Swift.String?, sessionKey: Swift.String?, entryPoint: FintechSDKBDUICore.FintechBDUIEntryPoint, preview: any FintechSDKBDUICore.FintechBDUIContent) async
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor final public func removePollingScreen(onDismiss: (@Sendable () -> Swift.Void)?) async
+  #endif
+  @_spi(Internal) @_Concurrency.MainActor final public func dismissPollingScreen() async
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) @_Concurrency.MainActor final public func reloadPollingScreen(sessionKey: Swift.String?) async
+  #endif
   @_spi(Internal) @_Concurrency.MainActor final public func isPresenting() -> Swift.Bool
   @_spi(Internal) @objc deinit
 }

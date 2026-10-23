@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechYBSDKInterfaces -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import FintechSDKCommonEntity
 import Foundation
 import Swift
@@ -19,7 +19,9 @@ public struct FintechCreditLimitPurchaseSettings : Swift.Equatable, Swift.Hashab
   public let externalId: Swift.String
   public let orderId: Swift.String?
   public let splitId: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(creditLengthInMonths: Swift.Int, purchaseTimestamp: Foundation.Date, purchaseAmount: Foundation.Decimal, purchaseCurrencyCode: Swift.String, cardId: Swift.String, merchantId: Swift.String, externalId: Swift.String, orderId: Swift.String? = nil, splitId: Swift.String? = nil)
+  #endif
   public static func == (a: FintechYBSDKInterfaces.FintechCreditLimitPurchaseSettings, b: FintechYBSDKInterfaces.FintechCreditLimitPurchaseSettings) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -51,10 +53,18 @@ public enum FintechUpgradeSplitWireConstants {
 public typealias FintechCreditLimitUpgradeCancellation = () -> Swift.Void
 public protocol FintechYBSDKAdapter {
   func setTheme(_ theme: FintechSDKCommonEntity.FintechSDKTheme)
+  #if compiler(>=5.3) && $NonescapableTypes
   func getPayCardTrustId(completion: @escaping (Swift.String?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func openPayCard(amount: Foundation.Decimal?, currency: Swift.String?, presentingViewController: UIKit.UIViewController, completion: @escaping () -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func topUp(amount: Foundation.Decimal?, currency: Swift.String?, presentingViewController: UIKit.UIViewController, completion: @escaping () -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func commandForURL(_ url: Foundation.URL) -> FintechYBSDKInterfaces.FintechYBDeeplinkCommand?
+  #endif
   func handleAction(url: Foundation.URL, presentingViewController: UIKit.UIViewController, flowCompletionHandler: @escaping (FintechYBSDKInterfaces.FintechYBFlowResult) -> Swift.Void)
   func observeCreditLimitUpgradeStatus(handler: @escaping (Swift.String) -> Swift.Void) -> FintechYBSDKInterfaces.FintechCreditLimitUpgradeCancellation
   func setCreditLimitPurchaseSettings(settings: FintechYBSDKInterfaces.FintechCreditLimitPurchaseSettings, completion: @escaping (FintechYBSDKInterfaces.FintechSetCreditLimitPurchaseSettingsResult) -> Swift.Void)
@@ -73,7 +83,9 @@ public enum FintechYBFlowResult : Swift.Equatable, Swift.Sendable {
   }
 }
 public protocol FintechYBSDKAdapterFactory {
+  #if compiler(>=5.3) && $NonescapableTypes
   func make(isProduction: Swift.Bool, userAgent: Swift.String, yandexUID: Foundation.NSNumber?, deeplinkScheme: Swift.String) -> any FintechYBSDKInterfaces.FintechYBSDKAdapter
+  #endif
   var version: Swift.String { get }
 }
 extension FintechYBSDKInterfaces.FintechYBFlowResult : Swift.Hashable {}

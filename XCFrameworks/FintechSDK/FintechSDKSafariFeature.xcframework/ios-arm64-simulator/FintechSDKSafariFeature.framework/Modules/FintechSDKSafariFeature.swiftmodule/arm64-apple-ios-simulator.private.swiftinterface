@@ -1,22 +1,40 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKSafariFeature -package-name FintechSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import FintechSDKCommonEntity
 @_spi(Internal) import FintechSDKCoreUI
 import Foundation
 import SafariServices
 import Swift
-import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+@_spi(Internal) @_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class FTInAppBrowserInteractor {
+  @_spi(Internal) @_Concurrency.MainActor public init(presentationContextProvider: any FintechSDKCoreUI.FTPresentationContextProviding, configuration: FintechSDKSafariFeature.FTSafariConfiguration = .init())
+  @_spi(Internal) @_Concurrency.MainActor final public func updatePresentationContext(_ presentationContextProvider: any FintechSDKCoreUI.FTPresentationContextProviding)
+  @_spi(Internal) @objc deinit
+}
+@_spi(Internal) extension FintechSDKSafariFeature.FTInAppBrowserInteractor : FintechSDKSafariFeature.FTOpenInAppBrowserUseCase {
+  @_spi(Internal) @_Concurrency.MainActor final public func open(url: Foundation.URL, onEvent: @escaping @_Concurrency.MainActor @Sendable (FintechSDKSafariFeature.FTSafariEvent) -> Swift.Void) async throws
+  @_spi(Internal) @_Concurrency.MainActor final public func isPresenting() -> Swift.Bool
+}
+@_spi(Internal) extension FintechSDKSafariFeature.FTInAppBrowserInteractor : FintechSDKSafariFeature.FTCloseInAppBrowserUseCase {
+  @_spi(Internal) @_Concurrency.MainActor final public func close() async
+}
+@_spi(Internal) @_Concurrency.MainActor public protocol FTOpenInAppBrowserUseCase : AnyObject, Swift.Sendable {
+  @_spi(Internal) @_Concurrency.MainActor func open(url: Foundation.URL, onEvent: @escaping @_Concurrency.MainActor @Sendable (FintechSDKSafariFeature.FTSafariEvent) -> Swift.Void) async throws
+  @_spi(Internal) @_Concurrency.MainActor func isPresenting() -> Swift.Bool
+}
+@_spi(Internal) @_Concurrency.MainActor public protocol FTCloseInAppBrowserUseCase : AnyObject, Swift.Sendable {
+  @_spi(Internal) @_Concurrency.MainActor func close() async
+}
 @_spi(Internal) public struct FTSafariConfiguration {
   @_spi(Internal) public let barCollapsingEnabled: Swift.Bool
   @_spi(Internal) public let dismissButtonStyle: SafariServices.SFSafariViewController.DismissButtonStyle
   @_spi(Internal) public let presentationStyle: UIKit.UIModalPresentationStyle
-  @_spi(Internal) public let theme: FintechSDKCommonEntity.FintechSDKTheme
-  @_spi(Internal) public init(barCollapsingEnabled: Swift.Bool = false, dismissButtonStyle: SafariServices.SFSafariViewController.DismissButtonStyle = .close, presentationStyle: UIKit.UIModalPresentationStyle = .fullScreen, theme: FintechSDKCommonEntity.FintechSDKTheme = .system)
+  @_spi(Internal) public let themeProvider: @_Concurrency.MainActor @Sendable () -> FintechSDKCommonEntity.FintechSDKTheme
+  @_spi(Internal) public init(barCollapsingEnabled: Swift.Bool = false, dismissButtonStyle: SafariServices.SFSafariViewController.DismissButtonStyle = .close, presentationStyle: UIKit.UIModalPresentationStyle = .fullScreen, themeProvider: @escaping @_Concurrency.MainActor @Sendable () -> FintechSDKCommonEntity.FintechSDKTheme = { .system })
 }
 @_spi(Internal) public enum FTSafariError : Swift.Error {
   @_spi(Internal) case invalidURL
@@ -37,25 +55,6 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public var hashValue: Swift.Int {
     @_spi(Internal) get
   }
-}
-@_spi(Internal) @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class FTSafariService : ObjectiveC.NSObject {
-  @_spi(Internal) @_Concurrency.MainActor convenience public init(presentationContextProvider: any FintechSDKCoreUI.FTPresentationContextProviding, configuration: FintechSDKSafariFeature.FTSafariConfiguration = .init())
-  @_spi(Internal) @objc deinit
-}
-@_spi(Internal) extension FintechSDKSafariFeature.FTSafariService : FintechSDKSafariFeature.FTSafariServicing {
-  @_spi(Internal) @_Concurrency.MainActor final public func open(url: Foundation.URL, onEvent: @escaping @_Concurrency.MainActor @Sendable (FintechSDKSafariFeature.FTSafariEvent) -> Swift.Void) async throws
-  @_spi(Internal) @_Concurrency.MainActor final public func close() async
-}
-@_spi(Internal) extension FintechSDKSafariFeature.FTSafariService : UIKit.UIAdaptivePresentationControllerDelegate {
-  @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc final public func presentationControllerDidDismiss(_ presentationController: UIKit.UIPresentationController)
-}
-@_spi(Internal) extension FintechSDKSafariFeature.FTSafariService : @preconcurrency SafariServices.SFSafariViewControllerDelegate {
-  @_spi(Internal) @_Concurrency.MainActor @objc final public func safariViewControllerDidFinish(_ controller: SafariServices.SFSafariViewController)
-  @_spi(Internal) @_Concurrency.MainActor @objc final public func safariViewController(_ controller: SafariServices.SFSafariViewController, didCompleteInitialLoad didLoadSuccessfully: Swift.Bool)
-}
-@_spi(Internal) @_Concurrency.MainActor public protocol FTSafariServicing : AnyObject, Swift.Sendable {
-  @_spi(Internal) @_Concurrency.MainActor func open(url: Foundation.URL, onEvent: @escaping @_Concurrency.MainActor @Sendable (FintechSDKSafariFeature.FTSafariEvent) -> Swift.Void) async throws
-  @_spi(Internal) @_Concurrency.MainActor func close() async
 }
 @_spi(Internal) extension FintechSDKSafariFeature.FTSafariError : Swift.Equatable {}
 @_spi(Internal) extension FintechSDKSafariFeature.FTSafariError : Swift.Hashable {}
