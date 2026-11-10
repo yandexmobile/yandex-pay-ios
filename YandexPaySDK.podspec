@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = 'YandexPaySDK'
-  s.version               = '2.10.8'
+  s.version               = '2.11.1'
   s.summary               = 'Yandex Pay Modular SDK for iOS'
   s.homepage              = 'https://pay.yandex.ru'
   s.license               = { :type => 'Proprietary', :text => 'License Agreement is available at https://yandex.ru/legal/ypay_sdk_agreement/?lang=ru.' }
@@ -191,6 +191,10 @@ Pod::Spec.new do |s|
 
   s.subspec 'FintechSDKRedirectScenario' do |ss|
     ss.vendored_frameworks = 'XCFrameworks/FintechSDK/FintechSDKRedirectScenario.xcframework'
+  end
+
+  s.subspec 'FintechSDKMerchantApplinkParsersData' do |ss|
+    ss.vendored_frameworks = 'XCFrameworks/FintechSDK/FintechSDKMerchantApplinkParsersData.xcframework'
   end
 
   s.subspec 'FintechSDKPayFormFeatures' do |ss|
@@ -468,6 +472,7 @@ Pod::Spec.new do |s|
     ss.dependency 'YandexPaySDK/FintechSDKPayOrderData'
     ss.dependency 'YandexPaySDK/FintechSDKPayMerchantData'
     ss.dependency 'YandexPaySDK/FintechSDKRedirectScenario'
+    ss.dependency 'YandexPaySDK/FintechSDKMerchantApplinkParsersData'
     ss.dependency 'YandexPaySDK/FintechSDKPayFormFeatures'
     ss.dependency 'YandexPaySDK/FintechSDKPayButton'
     ss.dependency 'YandexPaySDK/FintechSDKPayBadge'
@@ -542,6 +547,9 @@ Pod::Spec.new do |s|
         fi
         if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRedirectScenario/FintechSDKRedirectScenario.framework"' "${frameworks_script}"; then
           printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRedirectScenario/FintechSDKRedirectScenario.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKMerchantApplinkParsersData/FintechSDKMerchantApplinkParsersData.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKMerchantApplinkParsersData/FintechSDKMerchantApplinkParsersData.framework"\n' >> "${frameworks_script}"
         fi
         if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKPayFormFeatures/FintechSDKPayFormFeatures.framework"' "${frameworks_script}"; then
           printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKPayFormFeatures/FintechSDKPayFormFeatures.framework"\n' >> "${frameworks_script}"
@@ -679,6 +687,7 @@ Pod::Spec.new do |s|
     ss.dependency 'YandexPaySDK/FintechSDKPayOrderData'
     ss.dependency 'YandexPaySDK/FintechSDKPayMerchantData'
     ss.dependency 'YandexPaySDK/FintechSDKRedirectScenario'
+    ss.dependency 'YandexPaySDK/FintechSDKMerchantApplinkParsersData'
     ss.dependency 'YandexPaySDK/FintechSDKPayFormFeatures'
     ss.dependency 'YandexPaySDK/FintechSDKPayButton'
     ss.dependency 'YandexPaySDK/FintechSDKPayBadge'
@@ -753,6 +762,9 @@ Pod::Spec.new do |s|
         fi
         if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRedirectScenario/FintechSDKRedirectScenario.framework"' "${frameworks_script}"; then
           printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRedirectScenario/FintechSDKRedirectScenario.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKMerchantApplinkParsersData/FintechSDKMerchantApplinkParsersData.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKMerchantApplinkParsersData/FintechSDKMerchantApplinkParsersData.framework"\n' >> "${frameworks_script}"
         fi
         if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKPayFormFeatures/FintechSDKPayFormFeatures.framework"' "${frameworks_script}"; then
           printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKPayFormFeatures/FintechSDKPayFormFeatures.framework"\n' >> "${frameworks_script}"
@@ -1065,6 +1077,7 @@ Pod::Spec.new do |s|
     ss.dependency 'YandexPaySDK/FintechSDKPayOrderData'
     ss.dependency 'YandexPaySDK/FintechSDKPayMerchantData'
     ss.dependency 'YandexPaySDK/FintechSDKRedirectScenario'
+    ss.dependency 'YandexPaySDK/FintechSDKMerchantApplinkParsersData'
     ss.dependency 'YandexPaySDK/FintechSDKPayFormFeatures'
     ss.dependency 'YandexPaySDK/FintechSDKPayButton'
     ss.dependency 'YandexPaySDK/FintechSDKPayBadge'
@@ -1139,6 +1152,9 @@ Pod::Spec.new do |s|
         fi
         if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRedirectScenario/FintechSDKRedirectScenario.framework"' "${frameworks_script}"; then
           printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRedirectScenario/FintechSDKRedirectScenario.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKMerchantApplinkParsersData/FintechSDKMerchantApplinkParsersData.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKMerchantApplinkParsersData/FintechSDKMerchantApplinkParsersData.framework"\n' >> "${frameworks_script}"
         fi
         if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKPayFormFeatures/FintechSDKPayFormFeatures.framework"' "${frameworks_script}"; then
           printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKPayFormFeatures/FintechSDKPayFormFeatures.framework"\n' >> "${frameworks_script}"

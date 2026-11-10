@@ -157,6 +157,14 @@ public protocol FintechBDUIDivActionHandler : AnyObject {
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor func handleDivAction(cardId: Swift.String, url: Swift.String, logId: Swift.String, payload: [Swift.String : Any]?) -> Swift.Bool
   #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor func handleDivAction(action: [Swift.String : Any], path: Any?, sender: Swift.AnyObject?, cardId: Swift.String?)
+  #endif
+}
+extension FintechSDKBDUICore.FintechBDUIDivActionHandler {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor public func handleDivAction(action: [Swift.String : Any], path: Any?, sender: Swift.AnyObject?, cardId: Swift.String?)
+  #endif
 }
 public protocol FintechBDUIDivCustom : Swift.Decodable {
   static var customType: Swift.String { get }
