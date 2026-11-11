@@ -1146,6 +1146,59 @@
           },
           {
             "kind": "Var",
+            "name": "retryAfter",
+            "printedName": "retryAfter",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation17FTHeaderConstantsO10retryAfterSSvpZ",
+            "mangledName": "$s31FintechSDKNetworkImplementation17FTHeaderConstantsO10retryAfterSSvpZ",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation17FTHeaderConstantsO10retryAfterSSvgZ",
+                "mangledName": "$s31FintechSDKNetworkImplementation17FTHeaderConstantsO10retryAfterSSvgZ",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "static": true,
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "sourceSDK",
             "printedName": "sourceSDK",
             "children": [
@@ -1704,6 +1757,151 @@
         "moduleName": "FintechSDKNetworkImplementation"
       },
       {
+        "kind": "TypeDecl",
+        "name": "FTNetworkRetryAfterError",
+        "printedName": "FTNetworkRetryAfterError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "delay",
+            "printedName": "delay",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation24FTNetworkRetryAfterErrorV5delaySdvp",
+            "mangledName": "$s31FintechSDKNetworkImplementation24FTNetworkRetryAfterErrorV5delaySdvp",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation24FTNetworkRetryAfterErrorV5delaySdvg",
+                "mangledName": "$s31FintechSDKNetworkImplementation24FTNetworkRetryAfterErrorV5delaySdvg",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(delay:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTNetworkRetryAfterError",
+                "printedName": "FintechSDKNetworkImplementation.FTNetworkRetryAfterError",
+                "usr": "s:31FintechSDKNetworkImplementation24FTNetworkRetryAfterErrorV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:31FintechSDKNetworkImplementation24FTNetworkRetryAfterErrorV5delayACSd_tcfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation24FTNetworkRetryAfterErrorV5delayACSd_tcfc",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:31FintechSDKNetworkImplementation24FTNetworkRetryAfterErrorV",
+        "mangledName": "$s31FintechSDKNetworkImplementation24FTNetworkRetryAfterErrorV",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
         "kind": "Import",
         "name": "FintechSDKNetworkInterfaces",
         "printedName": "FintechSDKNetworkInterfaces",
@@ -1712,6 +1910,13 @@
         "declAttributes": [
           "SPIAccessControl"
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
       },
       {
         "kind": "TypeDecl",
@@ -1819,9 +2024,297 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "retryableStatusCodes",
+            "printedName": "retryableStatusCodes",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Set",
+                "printedName": "Swift.Set<Swift.Int>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sh"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV20retryableStatusCodesShySiGvp",
+            "mangledName": "$s31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV20retryableStatusCodesShySiGvp",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Set",
+                    "printedName": "Swift.Set<Swift.Int>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sh"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV20retryableStatusCodesShySiGvg",
+                "mangledName": "$s31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV20retryableStatusCodesShySiGvg",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "retryAfterStatusCodes",
+            "printedName": "retryAfterStatusCodes",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Set",
+                "printedName": "Swift.Set<Swift.Int>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sh"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV21retryAfterStatusCodesShySiGvp",
+            "mangledName": "$s31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV21retryAfterStatusCodesShySiGvp",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Set",
+                    "printedName": "Swift.Set<Swift.Int>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sh"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV21retryAfterStatusCodesShySiGvg",
+                "mangledName": "$s31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV21retryAfterStatusCodesShySiGvg",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "allowsNonIdempotentRequests",
+            "printedName": "allowsNonIdempotentRequests",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV27allowsNonIdempotentRequestsSbvp",
+            "mangledName": "$s31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV27allowsNonIdempotentRequestsSbvp",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV27allowsNonIdempotentRequestsSbvg",
+                "mangledName": "$s31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV27allowsNonIdempotentRequestsSbvg",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "defaultMaxTransportAttempts",
+            "printedName": "defaultMaxTransportAttempts",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV27defaultMaxTransportAttemptsSivpZ",
+            "mangledName": "$s31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV27defaultMaxTransportAttemptsSivpZ",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV27defaultMaxTransportAttemptsSivgZ",
+                "mangledName": "$s31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV27defaultMaxTransportAttemptsSivgZ",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "static": true,
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "defaultBackoffInterval",
+            "printedName": "defaultBackoffInterval",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV22defaultBackoffIntervalSdvpZ",
+            "mangledName": "$s31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV22defaultBackoffIntervalSdvpZ",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV22defaultBackoffIntervalSdvgZ",
+                "mangledName": "$s31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV22defaultBackoffIntervalSdvgZ",
+                "moduleName": "FintechSDKNetworkImplementation",
+                "static": true,
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(maxTransportAttempts:baseBackoffIntervalInSeconds:)",
+            "printedName": "init(maxTransportAttempts:baseBackoffIntervalInSeconds:retryableStatusCodes:retryAfterStatusCodes:allowsNonIdempotentRequests:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1842,11 +2335,48 @@
                 "printedName": "Swift.Double",
                 "hasDefaultArg": true,
                 "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Set",
+                "printedName": "Swift.Set<Swift.Int>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sh"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Set",
+                "printedName": "Swift.Set<Swift.Int>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sh"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV20maxTransportAttempts28baseBackoffIntervalInSecondsACSi_Sdtcfc",
-            "mangledName": "$s31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV20maxTransportAttempts28baseBackoffIntervalInSecondsACSi_Sdtcfc",
+            "usr": "s:31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV20maxTransportAttempts28baseBackoffIntervalInSeconds20retryableStatusCodes010retryAfterpQ027allowsNonIdempotentRequestsACSi_SdShySiGAISbtcfc",
+            "mangledName": "$s31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV20maxTransportAttempts28baseBackoffIntervalInSeconds20retryableStatusCodes010retryAfterpQ027allowsNonIdempotentRequestsACSi_SdShySiGAISbtcfc",
             "moduleName": "FintechSDKNetworkImplementation",
             "declAttributes": [
               "AccessControl"
@@ -1927,6 +2457,36 @@
               "Internal"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "withMaxAttempts",
+            "printedName": "withMaxAttempts(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTNetworkRetryPolicy",
+                "printedName": "FintechSDKNetworkImplementation.FTNetworkRetryPolicy",
+                "usr": "s:31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV15withMaxAttemptsyACSiF",
+            "mangledName": "$s31FintechSDKNetworkImplementation20FTNetworkRetryPolicyV15withMaxAttemptsyACSiF",
+            "moduleName": "FintechSDKNetworkImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Struct",
@@ -1954,6 +2514,20 @@
             "printedName": "Escapable",
             "usr": "s:s9EscapableP",
             "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -3410,13 +3984,6 @@
       },
       {
         "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "FintechSDKNetworkImplementation"
-      },
-      {
-        "kind": "Import",
         "name": "FintechSDKNetworkInterfaces",
         "printedName": "FintechSDKNetworkInterfaces",
         "declKind": "Import",
@@ -3424,6 +3991,13 @@
         "declAttributes": [
           "SPIAccessControl"
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkImplementation"
       },
       {
         "kind": "TypeDecl",
@@ -6777,532 +7351,567 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTBasicSessionProviderService.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTBasicSessionProviderService.swift",
       "kind": "StringLiteral",
       "offset": 1997,
       "length": 18,
       "value": "\"YANDEX_CLIENT_ID\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTBasicSessionProviderService.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTBasicSessionProviderService.swift",
       "kind": "StringLiteral",
       "offset": 2044,
       "length": 23,
       "value": "\"YANDEX_CLIENT_ID_TEST\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHTTPHeaderSanitizerPipeline.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHTTPHeaderSanitizerPipeline.swift",
       "kind": "Array",
       "offset": 213,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
       "kind": "StringLiteral",
       "offset": 80,
       "length": 7,
       "value": "\"X-BST\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
       "kind": "StringLiteral",
       "offset": 131,
       "length": 20,
       "value": "\"X-CPQR-Merchant-ID\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
       "kind": "StringLiteral",
       "offset": 189,
       "length": 19,
       "value": "\"X-AppMetrica-UUID\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
       "kind": "StringLiteral",
       "offset": 246,
       "length": 20,
       "value": "\"X-System-Device-Id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
       "kind": "StringLiteral",
       "offset": 306,
       "length": 13,
       "value": "\"X-Device-Id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
       "kind": "StringLiteral",
       "offset": 354,
       "length": 16,
       "value": "\"X-SDK-Platform\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
       "kind": "StringLiteral",
       "offset": 404,
       "length": 15,
       "value": "\"X-SDK-Version\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
       "kind": "StringLiteral",
       "offset": 460,
       "length": 23,
       "value": "\"X-Sdk-Installation-Id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
       "kind": "StringLiteral",
       "offset": 519,
       "length": 18,
       "value": "\"X-Sdk-Session-Id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
       "kind": "StringLiteral",
       "offset": 576,
       "length": 20,
       "value": "\"X-Platform-Wrapper\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
       "kind": "StringLiteral",
       "offset": 636,
       "length": 21,
       "value": "\"X-Idempotency-Token\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
       "kind": "StringLiteral",
-      "offset": 690,
+      "offset": 691,
+      "length": 13,
+      "value": "\"Retry-After\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTHeaderConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 737,
       "length": 14,
       "value": "\"X-Source-SDK\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkResourceCacheConfiguration.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkResourceCacheConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 718,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkResourceCacheConfiguration.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkResourceCacheConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 744,
       "length": 2,
       "value": "64"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkResourceCacheConfiguration.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkResourceCacheConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 749,
       "length": 4,
       "value": "1024"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkResourceCacheConfiguration.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkResourceCacheConfiguration.swift",
       "kind": "IntegerLiteral",
       "offset": 756,
       "length": 4,
       "value": "1024"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkResourceCacheConfiguration.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkResourceCacheConfiguration.swift",
       "kind": "StringLiteral",
       "offset": 781,
       "length": 27,
       "value": "\"fintech_sdk_divkit_images\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkResourceLoader.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkResourceLoader.swift",
       "kind": "Array",
       "offset": 497,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkResourceLoader.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkResourceLoader.swift",
       "kind": "IntegerLiteral",
       "offset": 2090,
       "length": 3,
       "value": "200"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkResourceLoader.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkResourceLoader.swift",
       "kind": "IntegerLiteral",
       "offset": 2096,
       "length": 3,
       "value": "300"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkRetryPolicy.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkRetryPolicy.swift",
       "kind": "IntegerLiteral",
-      "offset": 266,
+      "offset": 459,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkRetryPolicy.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkRetryPolicy.swift",
       "kind": "FloatLiteral",
-      "offset": 318,
+      "offset": 520,
       "length": 3,
       "value": "0.3"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Backend\/FTPayBackendAPIFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkRetryPolicy.swift",
+      "kind": "Array",
+      "offset": 753,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkRetryPolicy.swift",
+      "kind": "Array",
+      "offset": 795,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkRetryPolicy.swift",
+      "kind": "BooleanLiteral",
+      "offset": 839,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/FTNetworkRetryPolicy.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3422,
+      "length": 13,
+      "value": "1000000000"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Backend\/FTPayBackendAPIFactory.swift",
       "kind": "Array",
       "offset": 931,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Backend\/FTPayBackendAPIFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Backend\/FTPayBackendAPIFactory.swift",
       "kind": "Array",
       "offset": 1007,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFlexApiFactoryImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFlexApiFactoryImpl.swift",
       "kind": "Array",
       "offset": 1533,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFlexApiFactoryImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFlexApiFactoryImpl.swift",
       "kind": "Array",
       "offset": 1609,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFlexApiFactoryImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFlexApiFactoryImpl.swift",
       "kind": "BooleanLiteral",
       "offset": 1711,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFlexApiFactoryImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFlexApiFactoryImpl.swift",
       "kind": "Array",
       "offset": 2745,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFlexApiFactoryImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFlexApiFactoryImpl.swift",
       "kind": "Array",
       "offset": 2821,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFlexApiFactoryImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFlexApiFactoryImpl.swift",
       "kind": "BooleanLiteral",
       "offset": 2923,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackAPIFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackAPIFactory.swift",
       "kind": "Array",
       "offset": 730,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackAPIFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackAPIFactory.swift",
       "kind": "Array",
       "offset": 806,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackClientFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackClientFactory.swift",
       "kind": "Array",
       "offset": 1692,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackClientFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackClientFactory.swift",
       "kind": "Array",
       "offset": 1768,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackClientFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Factories\/Frontback\/FTFrontbackClientFactory.swift",
       "kind": "Array",
       "offset": 1819,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
       "kind": "StringLiteral",
       "offset": 2414,
       "length": 8,
       "value": "\"reason\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
       "kind": "StringLiteral",
       "offset": 2451,
       "length": 13,
       "value": "\"duration_ms\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
       "kind": "StringLiteral",
       "offset": 2528,
       "length": 30,
       "value": "\"exchange_oauth_token_success\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
       "kind": "StringLiteral",
       "offset": 2597,
       "length": 30,
       "value": "\"exchange_oauth_token_failure\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
       "kind": "StringLiteral",
       "offset": 2669,
       "length": 36,
       "value": "\"passport_token_request_performance\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
       "kind": "StringLiteral",
       "offset": 2740,
       "length": 22,
       "value": "\"network_auth_manager\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkAuthManagerImpl.swift",
       "kind": "Dictionary",
       "offset": 3741,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
       "kind": "Array",
-      "offset": 1196,
+      "offset": 1197,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
       "kind": "Array",
-      "offset": 1261,
+      "offset": 1262,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
       "kind": "Array",
-      "offset": 1312,
+      "offset": 1313,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
       "kind": "Array",
-      "offset": 1508,
+      "offset": 1509,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
       "kind": "Array",
-      "offset": 3197,
+      "offset": 3198,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
       "kind": "Array",
-      "offset": 3262,
+      "offset": 3263,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
       "kind": "Array",
-      "offset": 3313,
+      "offset": 3314,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
       "kind": "Array",
-      "offset": 3509,
+      "offset": 3510,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/NetworkClientImpl.swift",
       "kind": "StringLiteral",
-      "offset": 10485,
+      "offset": 11179,
       "length": 3,
       "value": "\"\/\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Providers\/FTFrontbackComponentsProviderImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/Providers\/FTFrontbackComponentsProviderImpl.swift",
       "kind": "StringLiteral",
       "offset": 822,
       "length": 58,
       "value": "\"yandex_pay_plus_backend_f8c528b768e7421ee0e3258995201aaa\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/DiehardRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/DiehardRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1281,
       "length": 15,
       "value": "\"X-Oauth-Token\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/DiehardRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/DiehardRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1327,
       "length": 22,
       "value": "\"X-Passport-Partition\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/DiehardRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/DiehardRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1374,
       "length": 7,
       "value": "\"X-UID\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/DiehardRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/DiehardRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1417,
       "length": 22,
       "value": "\"X-Ya-Merchant-Domain\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1384,
       "length": 18,
       "value": "\"X-Client-Version\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1434,
       "length": 14,
       "value": "\"X-Client-App\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1486,
       "length": 20,
       "value": "\"X-Platform-Version\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1535,
       "length": 11,
       "value": "\"X-Real-IP\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTPlatformRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1572,
       "length": 5,
       "value": "\"ios\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTRequestBDUIMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTRequestBDUIMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1980,
       "length": 17,
       "value": "\"Accept-Language\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTRequestServiceTokenMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTRequestServiceTokenMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 517,
       "length": 17,
       "value": "\"X-Service-Token\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTRequestUserAgentMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTRequestUserAgentMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 514,
       "length": 12,
       "value": "\"User-Agent\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTSessionRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTSessionRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 775,
       "length": 15,
       "value": "\"X-Merchant-ID\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTSessionRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTSessionRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 829,
       "length": 22,
       "value": "\"X-Merchant-Client-ID\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTSessionRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTSessionRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 883,
       "length": 18,
       "value": "\"X-Pay-Session-ID\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTStatePayloadRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTStatePayloadRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1505,
       "length": 9,
       "value": "\"payload\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTStatePayloadRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FTStatePayloadRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 1539,
       "length": 7,
       "value": "\"state\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FrontbackRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FrontbackRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 2251,
       "length": 15,
       "value": "\"Authorization\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FrontbackRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FrontbackRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 2297,
       "length": 22,
       "value": "\"X-Passport-Partition\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FrontbackRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/FrontbackRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 2344,
       "length": 7,
       "value": "\"X-UID\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/6\/2\/4847394226\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-e4d78c7d-cbe5-4705-95d7-ff9489507d2d\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/TraceparentRequestMiddleware.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/1\/0\/4847950701\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-1cafdb51-0543-44c1-9547-9cde1f68730e\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Implementation\/RequestMiddleware\/TraceparentRequestMiddleware.swift",
       "kind": "StringLiteral",
       "offset": 927,
       "length": 13,

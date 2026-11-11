@@ -42,9 +42,17 @@ import _SwiftConcurrencyShims
   }
   @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
 }
-@_spi(Internal) public protocol FTBDUIExternalDivURLHandling : AnyObject {
+@_spi(Internal) public protocol FTBDUIExternalDivURLHandling : AnyObject, FintechSDKBDUICore.FintechDivUrlHandler {
   #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) var externalDivUrlHandler: (any FintechSDKBDUICore.FintechDivUrlHandler)? { get set }
+  #endif
+}
+@_spi(Internal) extension FintechSDKBDUICore.FTBDUIExternalDivURLHandling {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?, expressionResolver: any FintechSDKBDUICore.FintechDivKitExpressionResolver)
   #endif
 }
 @_spi(Internal) public protocol FTBDUINavigationSourceValidating {
@@ -86,6 +94,16 @@ import _SwiftConcurrencyShims
 }
 @_spi(Internal) @_Concurrency.MainActor public protocol FTBDUIUpdatableView : UIKit.UIView {
   @_spi(Internal) @_Concurrency.MainActor func update(source: FintechSDKBDUICore.FintechDivViewSource) async
+}
+@_spi(Internal) final public class FTCompositeDivUrlHandler : FintechSDKBDUICore.FintechDivUrlHandler {
+  @_spi(Internal) public init(handlers: [any FintechSDKBDUICore.FintechDivUrlHandler])
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) final public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) final public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?, expressionResolver: any FintechSDKBDUICore.FintechDivKitExpressionResolver)
+  #endif
+  @_spi(Internal) @objc deinit
 }
 @_spi(Internal) public protocol FTDivKitComponentsReleasing : AnyObject {
   @_spi(Internal) func releaseDivKitComponents(cardId: Swift.String)
@@ -261,6 +279,14 @@ public protocol FintechBDUICutoutManager : AnyObject {
 public protocol FintechBDUIDivActionHandler : AnyObject {
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor func handleDivAction(cardId: Swift.String, url: Swift.String, logId: Swift.String, payload: [Swift.String : Any]?) -> Swift.Bool
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor func handleDivAction(action: [Swift.String : Any], path: Any?, sender: Swift.AnyObject?, cardId: Swift.String?)
+  #endif
+}
+extension FintechSDKBDUICore.FintechBDUIDivActionHandler {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor public func handleDivAction(action: [Swift.String : Any], path: Any?, sender: Swift.AnyObject?, cardId: Swift.String?)
   #endif
 }
 public protocol FintechBDUIDivCustom : Swift.Decodable {

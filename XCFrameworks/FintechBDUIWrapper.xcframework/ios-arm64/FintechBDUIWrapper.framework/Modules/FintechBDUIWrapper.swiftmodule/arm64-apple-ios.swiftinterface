@@ -10,7 +10,7 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 @objc(FBWAdapter) @objcMembers final public class FBWAdapter : ObjectiveC.NSObject {
   #if compiler(>=5.3) && $NonescapableTypes
-  @objc public init(themeKind: Any, requestTimeoutSec: Swift.Int, networkClient: Any, router: Any, fontsAdapter: Any?, errorLogger: Any?, contentFactories: Any?, errorContentFactory: Any, actionHandlers: Any?, divCustomFactories: Any?, localImageProvider: Any?)
+  @objc public init(themeKind: Any, requestTimeoutSec: Swift.Int, networkClient: Any, router: Any, fontsAdapter: Any?, errorLogger: Any?, contentFactories: Any?, errorContentFactory: Any, actionHandlers: Any?, divCustomFactories: Any?, localImageProvider: Any?, isKeyboardHandlingEnabled: Swift.Bool = true)
   #endif
   @objc final public var isInitialized: Swift.Bool {
     @objc get
@@ -71,7 +71,7 @@ import _SwiftConcurrencyShims
     @objc get
   }
   #if compiler(>=5.3) && $NonescapableTypes
-  @objc final public func make(themeKind: Any, requestTimeoutSec: Swift.Int, networkClient: Any, router: Any, fontsAdapter: Any?, errorLogger: Any?, contentFactories: Any?, errorContentFactory: Any, actionHandlers: Any?, divCustomFactories: Any?, localImageProvider: Any?) -> FintechBDUIWrapper.FBWAdapter
+  @objc final public func make(themeKind: Any, requestTimeoutSec: Swift.Int, networkClient: Any, router: Any, fontsAdapter: Any?, errorLogger: Any?, contentFactories: Any?, errorContentFactory: Any, actionHandlers: Any?, divCustomFactories: Any?, localImageProvider: Any?, isKeyboardHandlingEnabled: Swift.Bool = true) -> FintechBDUIWrapper.FBWAdapter
   #endif
   @objc deinit
 }
