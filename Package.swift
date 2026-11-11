@@ -91,7 +91,6 @@ let package = Package(
         "FintechSDKPayOrderData",
         "FintechSDKPayMerchantData",
         "FintechSDKRedirectScenario",
-        "FintechSDKMerchantApplinkParsersData",
         "FintechSDKPayFormFeatures",
         "FintechSDKPayButton",
         "FintechSDKPayBadge",
@@ -147,7 +146,6 @@ let package = Package(
         "FintechSDKPayOrderData",
         "FintechSDKPayMerchantData",
         "FintechSDKRedirectScenario",
-        "FintechSDKMerchantApplinkParsersData",
         "FintechSDKPayFormFeatures",
         "FintechSDKPayButton",
         "FintechSDKPayBadge",
@@ -249,7 +247,6 @@ let package = Package(
         "FintechSDKPayOrderData",
         "FintechSDKPayMerchantData",
         "FintechSDKRedirectScenario",
-        "FintechSDKMerchantApplinkParsersData",
         "FintechSDKPayFormFeatures",
         "FintechSDKPayButton",
         "FintechSDKPayBadge",
@@ -510,10 +507,6 @@ let package = Package(
     .binaryTarget(
       name: "FintechSDKRedirectScenario",
       path: "XCFrameworks/FintechSDK/FintechSDKRedirectScenario.xcframework"
-    ),
-    .binaryTarget(
-      name: "FintechSDKMerchantApplinkParsersData",
-      path: "XCFrameworks/FintechSDK/FintechSDKMerchantApplinkParsersData.xcframework"
     ),
     .binaryTarget(
       name: "FintechSDKPayFormFeatures",

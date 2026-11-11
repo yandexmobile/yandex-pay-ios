@@ -3,7 +3,6 @@
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKBDUIFeatures -package-name FintechSDK
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import Combine
-import CoreFoundation
 import CoreGraphics
 import CoreHaptics
 import CoreImage
@@ -13,7 +12,6 @@ import FintechPlusSDKInterfaces
 import FintechSDKAnalyticsInterfaces
 import FintechSDKAuthInterfaces
 import FintechSDKBDUICore
-import FintechSDKCommonEntity
 import FintechSDKCoreAnalytics
 import FintechSDKCoreUI
 import FintechSDKCoreUtils
@@ -68,33 +66,6 @@ public struct FintechSDKAuthorizationDependencies {
   public init(accountManager: any FintechSDKAuthInterfaces.FintechAccountManagerAdapter, uid: Foundation.NSNumber?, errorReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter)? = nil)
   #endif
 }
-public struct FTRemoteActionResponse {
-  public let statusCode: Swift.Int
-  public let body: [Swift.String : Any]
-  #if compiler(>=5.3) && $NonescapableTypes
-  public subscript<T>(key: Swift.String) -> T? {
-    get
-  }
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public subscript<T>(path keyPath: Swift.String...) -> T? {
-    get
-  }
-  #endif
-}
-public protocol FTRemoteActionResponseHandler {
-  func canHandle(path: Swift.String) -> Swift.Bool
-  func handle(response: FintechSDKBDUIFeatures.FTRemoteActionResponse, for path: Swift.String)
-}
-final public class FTRemoteDivUrlHandler : @preconcurrency FintechSDKBDUICore.FintechDivUrlHandler {
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(bduiAdapter: any FintechSDKBDUICore.FintechBDUIDivActionHandler, networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, responseHandler: (any FintechSDKBDUIFeatures.FTRemoteActionResponseHandler)? = nil, cardId: Swift.String? = nil)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor final public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
-  #endif
-  @objc deinit
-}
 @_hasMissingDesignatedInitializers public class FintechBDUIFeatures {
   final public let actionHandlers: [any FintechSDKBDUICore.FintechBDUIActionHandler]
   final public let divCustomFactories: [any FintechSDKBDUICore.FintechBDUIDivCustomFactory]
@@ -108,15 +79,10 @@ final public class FTRemoteDivUrlHandler : @preconcurrency FintechSDKBDUICore.Fi
 }
 public protocol FintechBDUIAdapterFactory {
   #if compiler(>=5.3) && $NonescapableTypes
-  func make(networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, router: any FintechSDKBDUICore.FintechBDUIRouter, requestTimeoutSec: Swift.Int, fontAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter, errorLogger: any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter, themeKind: FintechSDKBDUICore.FintechBDUIThemeKind, contentFactories: [any FintechSDKBDUICore.FintechBDUIContentFactory], errorContentFactory: any FintechSDKBDUICore.FintechBDUIContentFactory, actionHandlers: [any FintechSDKBDUICore.FintechBDUIActionHandler], divCustomFactories: [any FintechSDKBDUICore.FintechBDUIDivCustomFactory], localImageProvider: (any FintechSDKBDUICore.FintechBDUILocalImageProviding)?, renderingEventsListener: (any FintechSDKAnalyticsInterfaces.FTRenderingEventsListener)?, firstInteractionListener: (any FintechSDKAnalyticsInterfaces.FTFirstInteractionEventsListener)?, isKeyboardHandlingEnabled: Swift.Bool) -> any FintechSDKBDUICore.FintechBDUIAdapter
+  func make(networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, router: any FintechSDKBDUICore.FintechBDUIRouter, requestTimeoutSec: Swift.Int, fontAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter, errorLogger: any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter, themeKind: FintechSDKBDUICore.FintechBDUIThemeKind, contentFactories: [any FintechSDKBDUICore.FintechBDUIContentFactory], errorContentFactory: any FintechSDKBDUICore.FintechBDUIContentFactory, actionHandlers: [any FintechSDKBDUICore.FintechBDUIActionHandler], divCustomFactories: [any FintechSDKBDUICore.FintechBDUIDivCustomFactory], localImageProvider: (any FintechSDKBDUICore.FintechBDUILocalImageProviding)?, renderingEventsListener: (any FintechSDKAnalyticsInterfaces.FTRenderingEventsListener)?, firstInteractionListener: (any FintechSDKAnalyticsInterfaces.FTFirstInteractionEventsListener)?) -> any FintechSDKBDUICore.FintechBDUIAdapter
   #endif
   var flexVersion: Swift.String { get }
   var divKitVersion: Swift.String { get }
-}
-extension FintechSDKBDUIFeatures.FintechBDUIAdapterFactory {
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func make(networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, router: any FintechSDKBDUICore.FintechBDUIRouter, requestTimeoutSec: Swift.Int, fontAdapter: any FintechSDKFontsInterfaces.FintechFontsAdapter, errorLogger: any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter, themeKind: FintechSDKBDUICore.FintechBDUIThemeKind, contentFactories: [any FintechSDKBDUICore.FintechBDUIContentFactory], errorContentFactory: any FintechSDKBDUICore.FintechBDUIContentFactory, actionHandlers: [any FintechSDKBDUICore.FintechBDUIActionHandler], divCustomFactories: [any FintechSDKBDUICore.FintechBDUIDivCustomFactory], localImageProvider: (any FintechSDKBDUICore.FintechBDUILocalImageProviding)?, renderingEventsListener: (any FintechSDKAnalyticsInterfaces.FTRenderingEventsListener)?, firstInteractionListener: (any FintechSDKAnalyticsInterfaces.FTFirstInteractionEventsListener)?) -> any FintechSDKBDUICore.FintechBDUIAdapter
-  #endif
 }
 @available(*, deprecated, renamed: "FintechAnalyticsEventReporter", message: "Use FintechAnalyticsEventReporter instead")
 public protocol AnalyticsEventHandlerApi {
