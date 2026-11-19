@@ -1,0 +1,413 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKMLCamera -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
+import Accelerate
+import CoreGraphics
+import CoreML
+import CoreVideo
+import CryptoKit
+import Foundation
+import QuartzCore
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_spi(Internal) public enum FTMLCameraDetectionError : Foundation.LocalizedError {
+  @_spi(Internal) case missingModel
+  @_spi(Internal) case unsupportedSystem
+  @_spi(Internal) case invalidConfiguration
+  @_spi(Internal) case modelLoading(any Swift.Error)
+  @_spi(Internal) case incompatibleModel
+  @_spi(Internal) case incompatibleFrame
+  @_spi(Internal) case framePreparation
+  @_spi(Internal) case prediction(any Swift.Error)
+  @_spi(Internal) case incompatibleOutput
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public var errorDescription: Swift.String? {
+    @_spi(Internal) get
+  }
+  #endif
+}
+@_spi(Internal) public struct FTMLCameraCaptureConfiguration : Swift.Codable, Swift.Equatable, Swift.Sendable {
+  @_spi(Internal) public enum Position : Swift.String, Swift.Codable, Swift.Sendable {
+    @_spi(Internal) case back
+    @_spi(Internal) case front
+    #if compiler(>=5.3) && $NonescapableTypes
+    @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
+    @_spi(Internal) public typealias RawValue = Swift.String
+    @_spi(Internal) public var rawValue: Swift.String {
+      @_spi(Internal) get
+    }
+  }
+  @_spi(Internal) public enum Device : Swift.String, Swift.Codable, Swift.Sendable {
+    @_spi(Internal) case wideAngle
+    @_spi(Internal) case ultraWideAngle
+    @_spi(Internal) case telephoto
+    @_spi(Internal) case dual
+    @_spi(Internal) case trueDepth
+    #if compiler(>=5.3) && $NonescapableTypes
+    @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
+    @_spi(Internal) public typealias RawValue = Swift.String
+    @_spi(Internal) public var rawValue: Swift.String {
+      @_spi(Internal) get
+    }
+  }
+  @_spi(Internal) public enum Preset : Swift.String, Swift.Codable, Swift.Sendable {
+    @_spi(Internal) case low
+    @_spi(Internal) case medium
+    @_spi(Internal) case high
+    @_spi(Internal) case hd1280x720
+    @_spi(Internal) case hd1920x1080
+    @_spi(Internal) case hd4K3840x2160
+    @_spi(Internal) case photo
+    #if compiler(>=5.3) && $NonescapableTypes
+    @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
+    @_spi(Internal) public typealias RawValue = Swift.String
+    @_spi(Internal) public var rawValue: Swift.String {
+      @_spi(Internal) get
+    }
+  }
+  @_spi(Internal) public enum Orientation : Swift.String, Swift.Codable, Swift.Sendable {
+    @_spi(Internal) case portrait
+    @_spi(Internal) case portraitUpsideDown
+    @_spi(Internal) case landscapeLeft
+    @_spi(Internal) case landscapeRight
+    #if compiler(>=5.3) && $NonescapableTypes
+    @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
+    @_spi(Internal) public typealias RawValue = Swift.String
+    @_spi(Internal) public var rawValue: Swift.String {
+      @_spi(Internal) get
+    }
+  }
+  @_spi(Internal) public enum Torch : Swift.String, Swift.Codable, Swift.Sendable {
+    @_spi(Internal) case off
+    @_spi(Internal) case on
+    @_spi(Internal) case automatic
+    #if compiler(>=5.3) && $NonescapableTypes
+    @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
+    @_spi(Internal) public typealias RawValue = Swift.String
+    @_spi(Internal) public var rawValue: Swift.String {
+      @_spi(Internal) get
+    }
+  }
+  @_spi(Internal) public var position: FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Position
+  @_spi(Internal) public var device: FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Device
+  @_spi(Internal) public var preset: FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Preset
+  @_spi(Internal) public var orientation: FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Orientation
+  @_spi(Internal) public var mirrored: Swift.Bool
+  @_spi(Internal) public var zoomFactor: Swift.Double
+  @_spi(Internal) public var framesPerSecond: Swift.Double?
+  @_spi(Internal) public var torch: FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Torch
+  @_spi(Internal) public var torchLevel: Swift.Double
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init(position: FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Position = .back, device: FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Device = .wideAngle, preset: FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Preset = .hd1280x720, orientation: FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Orientation = .portrait, mirrored: Swift.Bool = false, zoomFactor: Swift.Double = 1, framesPerSecond: Swift.Double? = nil, torch: FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Torch = .off, torchLevel: Swift.Double = 1)
+  #endif
+  @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
+  @_spi(Internal) public static func == (a: FintechSDKMLCamera.FTMLCameraCaptureConfiguration, b: FintechSDKMLCamera.FTMLCameraCaptureConfiguration) -> Swift.Bool
+  @_spi(Internal) public func encode(to encoder: any Swift.Encoder) throws
+}
+@_spi(Internal) public enum FTMLCameraComputeUnits : Swift.String, Swift.Codable, Swift.CaseIterable, Swift.Sendable {
+  @_spi(Internal) case all
+  @_spi(Internal) case cpuAndNeuralEngine
+  @_spi(Internal) case cpuAndGPU
+  @_spi(Internal) case cpuOnly
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init?(rawValue: Swift.String)
+  #endif
+  @_spi(Internal) public typealias AllCases = [FintechSDKMLCamera.FTMLCameraComputeUnits]
+  @_spi(Internal) public typealias RawValue = Swift.String
+  @_spi(Internal) nonisolated public static var allCases: [FintechSDKMLCamera.FTMLCameraComputeUnits] {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public var rawValue: Swift.String {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public struct FTMLCameraDetection : Swift.Sendable {
+  @_spi(Internal) public let canonicalRect: CoreFoundation.CGRect
+  @_spi(Internal) public let confidence: Swift.Float
+  @_spi(Internal) public let mask: FintechSDKMLCamera.FTMLCameraInstanceMask?
+  @_spi(Internal) public let classID: Swift.Int?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init(canonicalRect: CoreFoundation.CGRect, confidence: Swift.Float, mask: FintechSDKMLCamera.FTMLCameraInstanceMask? = nil, classID: Swift.Int? = nil)
+  #endif
+}
+@_spi(Internal) public struct FTMLCameraDetectionResult : Swift.Sendable {
+  @_spi(Internal) public let detections: [FintechSDKMLCamera.FTMLCameraDetection]
+  @_spi(Internal) public let timings: FintechSDKMLCamera.FTMLCameraInferenceTimings
+  @_spi(Internal) public let queryCount: Swift.Int
+  @_spi(Internal) public init(detections: [FintechSDKMLCamera.FTMLCameraDetection], timings: FintechSDKMLCamera.FTMLCameraInferenceTimings = .init(), queryCount: Swift.Int = 0)
+}
+@_spi(Internal) public protocol FTMLCameraDetector : AnyObject {
+  @_spi(Internal) func detect(pixelBuffer: CoreVideo.CVPixelBuffer) throws -> FintechSDKMLCamera.FTMLCameraDetectionResult
+}
+@_spi(Internal) public protocol FTMLCameraDetectorProvider : Swift.Sendable {
+  @_spi(Internal) func makeDetector(configuration: FintechSDKMLCamera.FTMLCameraProcessingConfiguration) throws -> any FintechSDKMLCamera.FTMLCameraDetector
+}
+@_spi(Internal) public struct FTMLCameraInferenceTimings : Swift.Sendable {
+  @_spi(Internal) public let preprocessing: Foundation.TimeInterval
+  @_spi(Internal) public let inference: Foundation.TimeInterval
+  @_spi(Internal) public let postprocessing: Foundation.TimeInterval
+  @_spi(Internal) public var total: Foundation.TimeInterval {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public init(preprocessing: Foundation.TimeInterval = 0, inference: Foundation.TimeInterval = 0, postprocessing: Foundation.TimeInterval = 0)
+}
+@_spi(Internal) public struct FTMLCameraInstanceMask : Swift.Sendable {
+  @_spi(Internal) public let width: Swift.Int
+  @_spi(Internal) public let height: Swift.Int
+  @_spi(Internal) public let pixels: [Swift.UInt8]
+  @_spi(Internal) public let logits: [Swift.Float]
+  @_spi(Internal) public init(width: Swift.Int, height: Swift.Int, pixels: [Swift.UInt8], logits: [Swift.Float])
+}
+@_spi(Internal) public struct FTMLCameraObservation : Swift.Sendable {
+  @_spi(Internal) public let trackID: Swift.String
+  @_spi(Internal) public let jpegData: Foundation.Data
+  @_spi(Internal) public let pixelWidth: Swift.Int
+  @_spi(Internal) public let pixelHeight: Swift.Int
+  @_spi(Internal) public let preprocessingID: Swift.String
+  @_spi(Internal) public let sourcePixelRect: CoreFoundation.CGRect
+}
+@_spi(Internal) public struct FTMLCameraObservationBatch : Swift.Sendable {
+  @_spi(Internal) public let flowID: Swift.String
+  @_spi(Internal) public let captureGeneration: Swift.UInt64
+  @_spi(Internal) public let detectorID: Swift.String
+  @_spi(Internal) public let frameID: Swift.UInt64
+  @_spi(Internal) public let capturedAt: Foundation.TimeInterval
+  @_spi(Internal) public let sourcePixelWidth: Swift.Int
+  @_spi(Internal) public let sourcePixelHeight: Swift.Int
+  @_spi(Internal) public let captureOrientation: FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Orientation
+  @_spi(Internal) public let mirrored: Swift.Bool
+  @_spi(Internal) public let observations: [FintechSDKMLCamera.FTMLCameraObservation]
+  @_spi(Internal) public let skipped: [FintechSDKMLCamera.FTMLCameraSkippedObservation]
+}
+@_spi(Internal) public struct FTMLCameraObservationConfiguration : Swift.Equatable, Swift.Sendable {
+  @_spi(Internal) public let maximumObservationCount: Swift.Int
+  @_spi(Internal) public let maximumImageBytes: Swift.Int
+  @_spi(Internal) public let maximumImageDimension: Swift.Int
+  @_spi(Internal) public let jpegCompressionQualities: [Swift.Double]
+  @_spi(Internal) public init(maximumObservationCount: Swift.Int = 4, maximumImageBytes: Swift.Int = 256 * 1_024, maximumImageDimension: Swift.Int = 512, jpegCompressionQualities: [Swift.Double] = [0.85, 0.65, 0.45])
+  @_spi(Internal) public static func == (a: FintechSDKMLCamera.FTMLCameraObservationConfiguration, b: FintechSDKMLCamera.FTMLCameraObservationConfiguration) -> Swift.Bool
+}
+@_spi(Internal) public struct FTMLCameraProcessingConfiguration : Swift.Codable, Swift.Equatable, Swift.Sendable {
+  @_spi(Internal) public var computeUnits: FintechSDKMLCamera.FTMLCameraComputeUnits
+  @_spi(Internal) public var scoreThreshold: Swift.Float
+  @_spi(Internal) public var targetHz: Swift.Double
+  @_spi(Internal) public var producesMasks: Swift.Bool
+  @_spi(Internal) public var tracking: FintechSDKMLCamera.FTMLCameraTrackingConfiguration
+  @_spi(Internal) public init(computeUnits: FintechSDKMLCamera.FTMLCameraComputeUnits = .all, scoreThreshold: Swift.Float = 0.5, targetHz: Swift.Double = 5, producesMasks: Swift.Bool = true, tracking: FintechSDKMLCamera.FTMLCameraTrackingConfiguration = .init())
+  @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
+  @_spi(Internal) public static func == (a: FintechSDKMLCamera.FTMLCameraProcessingConfiguration, b: FintechSDKMLCamera.FTMLCameraProcessingConfiguration) -> Swift.Bool
+  @_spi(Internal) public func encode(to encoder: any Swift.Encoder) throws
+}
+@_spi(Internal) public struct FTMLCameraRFDETRConfiguration : Swift.Equatable, Swift.Sendable {
+  @_spi(Internal) public enum FTInputLayout : Swift.String, Swift.Sendable {
+    @_spi(Internal) case nchw, nhwc
+    #if compiler(>=5.3) && $NonescapableTypes
+    @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
+    @_spi(Internal) public typealias RawValue = Swift.String
+    @_spi(Internal) public var rawValue: Swift.String {
+      @_spi(Internal) get
+    }
+  }
+  @_spi(Internal) public enum FTChannelOrder : Swift.String, Swift.Sendable {
+    @_spi(Internal) case rgb, bgr
+    #if compiler(>=5.3) && $NonescapableTypes
+    @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
+    @_spi(Internal) public typealias RawValue = Swift.String
+    @_spi(Internal) public var rawValue: Swift.String {
+      @_spi(Internal) get
+    }
+  }
+  @_spi(Internal) public enum FTScoreActivation : Swift.String, Swift.Sendable {
+    @_spi(Internal) case sigmoid, softmax, probability
+    #if compiler(>=5.3) && $NonescapableTypes
+    @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
+    @_spi(Internal) public typealias RawValue = Swift.String
+    @_spi(Internal) public var rawValue: Swift.String {
+      @_spi(Internal) get
+    }
+  }
+  @_spi(Internal) public enum FTBoxFormat : Swift.String, Swift.Sendable {
+    @_spi(Internal) case centerSize, corners
+    #if compiler(>=5.3) && $NonescapableTypes
+    @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
+    @_spi(Internal) public typealias RawValue = Swift.String
+    @_spi(Internal) public var rawValue: Swift.String {
+      @_spi(Internal) get
+    }
+  }
+  @_spi(Internal) public enum FTCoordinateScale : Swift.String, Swift.Sendable {
+    @_spi(Internal) case normalized, inputPixels
+    #if compiler(>=5.3) && $NonescapableTypes
+    @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
+    @_spi(Internal) public typealias RawValue = Swift.String
+    @_spi(Internal) public var rawValue: Swift.String {
+      @_spi(Internal) get
+    }
+  }
+  @_spi(Internal) public enum FTCoordinateOrigin : Swift.String, Swift.Sendable {
+    @_spi(Internal) case topLeft, bottomLeft
+    #if compiler(>=5.3) && $NonescapableTypes
+    @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
+    @_spi(Internal) public typealias RawValue = Swift.String
+    @_spi(Internal) public var rawValue: Swift.String {
+      @_spi(Internal) get
+    }
+  }
+  @_spi(Internal) public var inputName: Swift.String?
+  @_spi(Internal) public var logitsOutputName: Swift.String?
+  @_spi(Internal) public var boxesOutputName: Swift.String?
+  @_spi(Internal) public var masksOutputName: Swift.String?
+  @_spi(Internal) public var inputLayout: FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTInputLayout
+  @_spi(Internal) public var channelOrder: FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTChannelOrder
+  @_spi(Internal) public var pixelScale: Swift.Float
+  @_spi(Internal) public var normalizationMean: [Swift.Float]
+  @_spi(Internal) public var normalizationStandardDeviation: [Swift.Float]
+  @_spi(Internal) public var scoreActivation: FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTScoreActivation
+  @_spi(Internal) public var boxFormat: FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTBoxFormat
+  @_spi(Internal) public var boxCoordinateScale: FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTCoordinateScale
+  @_spi(Internal) public var boxCoordinateOrigin: FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTCoordinateOrigin
+  @_spi(Internal) public var includedClassIDs: Swift.Set<Swift.Int>?
+  @_spi(Internal) public var excludedClassIDs: Swift.Set<Swift.Int>
+  @_spi(Internal) public var maximumDetections: Swift.Int?
+  @_spi(Internal) public var maskLogitThreshold: Swift.Float
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init(inputName: Swift.String? = nil, logitsOutputName: Swift.String? = nil, boxesOutputName: Swift.String? = nil, masksOutputName: Swift.String? = nil, inputLayout: FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTInputLayout = .nchw, channelOrder: FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTChannelOrder = .rgb, pixelScale: Swift.Float = 1 / 255, normalizationMean: [Swift.Float] = [0.485, 0.456, 0.406], normalizationStandardDeviation: [Swift.Float] = [0.229, 0.224, 0.225], scoreActivation: FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTScoreActivation = .sigmoid, boxFormat: FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTBoxFormat = .centerSize, boxCoordinateScale: FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTCoordinateScale = .normalized, boxCoordinateOrigin: FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTCoordinateOrigin = .topLeft, includedClassIDs: Swift.Set<Swift.Int>? = nil, excludedClassIDs: Swift.Set<Swift.Int> = [], maximumDetections: Swift.Int? = nil, maskLogitThreshold: Swift.Float = 0)
+  #endif
+  @_spi(Internal) public static func == (a: FintechSDKMLCamera.FTMLCameraRFDETRConfiguration, b: FintechSDKMLCamera.FTMLCameraRFDETRConfiguration) -> Swift.Bool
+}
+@_spi(Internal) public struct FTMLCameraRFDETRDetectorProvider : FintechSDKMLCamera.FTMLCameraDetectorProvider {
+  @_spi(Internal) public let modelURL: Foundation.URL?
+  @_spi(Internal) public let modelConfiguration: FintechSDKMLCamera.FTMLCameraRFDETRConfiguration
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init(modelURL: Foundation.URL?, modelConfiguration: FintechSDKMLCamera.FTMLCameraRFDETRConfiguration = .init())
+  #endif
+  @_spi(Internal) public func preload(configuration: FintechSDKMLCamera.FTMLCameraProcessingConfiguration = .init()) async throws
+  @_spi(Internal) public func makeDetector(configuration: FintechSDKMLCamera.FTMLCameraProcessingConfiguration) throws -> any FintechSDKMLCamera.FTMLCameraDetector
+}
+@_spi(Internal) public enum FTMLCameraScanError : Swift.Error, Foundation.LocalizedError, Swift.Sendable {
+  @_spi(Internal) case notPrepared
+  @_spi(Internal) case busy
+  @_spi(Internal) case running
+  @_spi(Internal) case cancelled
+  @_spi(Internal) case processing(Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public var errorDescription: Swift.String? {
+    @_spi(Internal) get
+  }
+  #endif
+}
+@_spi(Internal) public enum FTMLCameraScanEvent : Swift.Sendable {
+  @_spi(Internal) case frame(frameID: Swift.UInt64, timestamp: Foundation.TimeInterval, result: FintechSDKMLCamera.FTMLCameraDetectionResult)
+  @_spi(Internal) case failure(frameID: Swift.UInt64, timestamp: Foundation.TimeInterval, error: FintechSDKMLCamera.FTMLCameraScanError)
+}
+@_spi(Internal) public struct FTMLCameraSkippedObservation : Swift.Sendable {
+  @_spi(Internal) public enum FTReason : Swift.String, Swift.Sendable {
+    @_spi(Internal) case missingMask
+    @_spi(Internal) case staleMask
+    @_spi(Internal) case invalidImage
+    @_spi(Internal) case emptyMask
+    @_spi(Internal) case tooSmall
+    @_spi(Internal) case encodingFailed
+    #if compiler(>=5.3) && $NonescapableTypes
+    @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
+    @_spi(Internal) public typealias RawValue = Swift.String
+    @_spi(Internal) public var rawValue: Swift.String {
+      @_spi(Internal) get
+    }
+  }
+  @_spi(Internal) public let trackID: Swift.String
+  @_spi(Internal) public let reason: FintechSDKMLCamera.FTMLCameraSkippedObservation.FTReason
+}
+@_spi(Internal) public enum FTMLCameraSubmissionStatus : Swift.Sendable {
+  @_spi(Internal) case accepted
+  @_spi(Internal) case droppedBusy
+  @_spi(Internal) case droppedThrottled
+  @_spi(Internal) case invalidTimestamp
+  @_spi(Internal) case notRunning
+  @_spi(Internal) public static func == (a: FintechSDKMLCamera.FTMLCameraSubmissionStatus, b: FintechSDKMLCamera.FTMLCameraSubmissionStatus) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public struct FTMLCameraTrackingConfiguration : Swift.Codable, Swift.Equatable, Swift.Sendable {
+  @_spi(Internal) public var targetHz: Swift.Double
+  @_spi(Internal) public var confirmationLifetime: Foundation.TimeInterval
+  @_spi(Internal) public var detectorCadenceMultiplier: Swift.Double
+  @_spi(Internal) public var minimumConfirmations: Swift.Int
+  @_spi(Internal) public var trackerConfidence: Swift.Float
+  @_spi(Internal) public var associationOverlap: Swift.Double
+  @_spi(Internal) public var ambiguityMargin: Swift.Double
+  @_spi(Internal) public var collisionOverlap: Swift.Double
+  @_spi(Internal) public var minimumRectangleSize: Swift.Double
+  @_spi(Internal) public var minimumAreaRatio: Swift.Double
+  @_spi(Internal) public var maximumAreaRatio: Swift.Double
+  @_spi(Internal) public var maximumCenterDisplacement: Swift.Double
+  @_spi(Internal) public var maskMaximumAge: Foundation.TimeInterval
+  @_spi(Internal) public var usesVisionTracking: Swift.Bool
+  @_spi(Internal) public var usesAccurateTracking: Swift.Bool
+  @_spi(Internal) public var maximumVisionTrackers: Swift.Int?
+  @_spi(Internal) public var requiresMatchingClassIDs: Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init(targetHz: Swift.Double = 12, confirmationLifetime: Foundation.TimeInterval = 0.75, detectorCadenceMultiplier: Swift.Double = 1.5, minimumConfirmations: Swift.Int = 2, trackerConfidence: Swift.Float = 0.4, associationOverlap: Swift.Double = 0.25, ambiguityMargin: Swift.Double = 0.12, collisionOverlap: Swift.Double = 0.65, minimumRectangleSize: Swift.Double = 0.005, minimumAreaRatio: Swift.Double = 0.5, maximumAreaRatio: Swift.Double = 2, maximumCenterDisplacement: Swift.Double = 0.5, maskMaximumAge: Foundation.TimeInterval = 0.45, usesAccurateTracking: Swift.Bool = false, usesVisionTracking: Swift.Bool = true, maximumVisionTrackers: Swift.Int? = nil, requiresMatchingClassIDs: Swift.Bool = true)
+  #endif
+  @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
+  @_spi(Internal) public static func == (a: FintechSDKMLCamera.FTMLCameraTrackingConfiguration, b: FintechSDKMLCamera.FTMLCameraTrackingConfiguration) -> Swift.Bool
+  @_spi(Internal) public func encode(to encoder: any Swift.Encoder) throws
+}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTInputLayout : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTInputLayout : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTInputLayout : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Position : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Position : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Position : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Device : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Device : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Device : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Preset : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Preset : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Preset : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Orientation : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Orientation : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Orientation : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Torch : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Torch : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraCaptureConfiguration.Torch : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraComputeUnits : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraComputeUnits : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraComputeUnits : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTChannelOrder : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTChannelOrder : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTChannelOrder : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTScoreActivation : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTScoreActivation : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTScoreActivation : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTBoxFormat : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTBoxFormat : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTBoxFormat : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTCoordinateScale : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTCoordinateScale : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTCoordinateScale : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTCoordinateOrigin : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTCoordinateOrigin : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraRFDETRConfiguration.FTCoordinateOrigin : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraSkippedObservation.FTReason : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraSkippedObservation.FTReason : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraSkippedObservation.FTReason : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraSubmissionStatus : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKMLCamera.FTMLCameraSubmissionStatus : Swift.Hashable {}

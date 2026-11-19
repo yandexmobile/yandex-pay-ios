@@ -1,0 +1,603 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "YandexPayLens",
+    "printedName": "YandexPayLens",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "YandexPayConfiguration",
+        "printedName": "YandexPayConfiguration",
+        "declKind": "Import",
+        "moduleName": "YandexPayLens",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "YandexPayLens"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "YPLens",
+        "printedName": "YPLens",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "module",
+            "printedName": "module(merchant:presentationContextProvider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "YPayModule",
+                "printedName": "any YandexPayConfiguration.YPayModule",
+                "usr": "s:22YandexPayConfiguration10YPayModuleP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "YPSDKMerchant",
+                "printedName": "YandexPayConfiguration.YPSDKMerchant",
+                "usr": "s:22YandexPayConfiguration13YPSDKMerchantV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "YPPresentationContextProviding",
+                "printedName": "any YandexPayConfiguration.YPPresentationContextProviding",
+                "usr": "s:22YandexPayConfiguration30YPPresentationContextProvidingP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13YandexPayLens6YPLensC6module8merchant27presentationContextProvider0aB13Configuration10YPayModule_pAG13YPSDKMerchantV_AG014YPPresentationH9Providing_ptFZ",
+            "mangledName": "$s13YandexPayLens6YPLensC6module8merchant27presentationContextProvider0aB13Configuration10YPayModule_pAG13YPSDKMerchantV_AG014YPPresentationH9Providing_ptFZ",
+            "moduleName": "YandexPayLens",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "preloadModel",
+            "printedName": "preloadModel()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13YandexPayLens6YPLensC12preloadModelyyYaKF",
+            "mangledName": "$s13YandexPayLens6YPLensC12preloadModelyyYaKF",
+            "moduleName": "YandexPayLens",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "Custom",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "handleLink",
+            "printedName": "handleLink(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13YandexPayLens6YPLensC10handleLinkySb10Foundation3URLVYaF",
+            "mangledName": "$s13YandexPayLens6YPLensC10handleLinkySb10Foundation3URLVYaF",
+            "moduleName": "YandexPayLens",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "DiscardableResult",
+              "Custom",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:13YandexPayLens6YPLensC",
+        "mangledName": "$s13YandexPayLens6YPLensC",
+        "moduleName": "YandexPayLens",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "YandexPayLens"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "YPLensModelPreloadError",
+        "printedName": "YPLensModelPreloadError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "notRegistered",
+            "printedName": "notRegistered",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(YandexPayLens.YPLensModelPreloadError.Type) -> YandexPayLens.YPLensModelPreloadError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "YPLensModelPreloadError",
+                    "printedName": "YandexPayLens.YPLensModelPreloadError",
+                    "usr": "s:13YandexPayLens23YPLensModelPreloadErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "YandexPayLens.YPLensModelPreloadError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YPLensModelPreloadError",
+                        "printedName": "YandexPayLens.YPLensModelPreloadError",
+                        "usr": "s:13YandexPayLens23YPLensModelPreloadErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13YandexPayLens23YPLensModelPreloadErrorO13notRegisteredyA2CmF",
+            "mangledName": "$s13YandexPayLens23YPLensModelPreloadErrorO13notRegisteredyA2CmF",
+            "moduleName": "YandexPayLens",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "unavailable",
+            "printedName": "unavailable",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(YandexPayLens.YPLensModelPreloadError.Type) -> YandexPayLens.YPLensModelPreloadError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "YPLensModelPreloadError",
+                    "printedName": "YandexPayLens.YPLensModelPreloadError",
+                    "usr": "s:13YandexPayLens23YPLensModelPreloadErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "YandexPayLens.YPLensModelPreloadError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YPLensModelPreloadError",
+                        "printedName": "YandexPayLens.YPLensModelPreloadError",
+                        "usr": "s:13YandexPayLens23YPLensModelPreloadErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13YandexPayLens23YPLensModelPreloadErrorO11unavailableyA2CmF",
+            "mangledName": "$s13YandexPayLens23YPLensModelPreloadErrorO11unavailableyA2CmF",
+            "moduleName": "YandexPayLens",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "downloadFailed",
+            "printedName": "downloadFailed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(YandexPayLens.YPLensModelPreloadError.Type) -> (any Swift.Error) -> YandexPayLens.YPLensModelPreloadError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(any Swift.Error) -> YandexPayLens.YPLensModelPreloadError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YPLensModelPreloadError",
+                        "printedName": "YandexPayLens.YPLensModelPreloadError",
+                        "usr": "s:13YandexPayLens23YPLensModelPreloadErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "any Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "YandexPayLens.YPLensModelPreloadError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YPLensModelPreloadError",
+                        "printedName": "YandexPayLens.YPLensModelPreloadError",
+                        "usr": "s:13YandexPayLens23YPLensModelPreloadErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13YandexPayLens23YPLensModelPreloadErrorO14downloadFailedyACs0G0_pcACmF",
+            "mangledName": "$s13YandexPayLens23YPLensModelPreloadErrorO14downloadFailedyACs0G0_pcACmF",
+            "moduleName": "YandexPayLens",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "preparationFailed",
+            "printedName": "preparationFailed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(YandexPayLens.YPLensModelPreloadError.Type) -> (any Swift.Error) -> YandexPayLens.YPLensModelPreloadError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(any Swift.Error) -> YandexPayLens.YPLensModelPreloadError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YPLensModelPreloadError",
+                        "printedName": "YandexPayLens.YPLensModelPreloadError",
+                        "usr": "s:13YandexPayLens23YPLensModelPreloadErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "any Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "YandexPayLens.YPLensModelPreloadError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "YPLensModelPreloadError",
+                        "printedName": "YandexPayLens.YPLensModelPreloadError",
+                        "usr": "s:13YandexPayLens23YPLensModelPreloadErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13YandexPayLens23YPLensModelPreloadErrorO17preparationFailedyACs0G0_pcACmF",
+            "mangledName": "$s13YandexPayLens23YPLensModelPreloadErrorO17preparationFailedyACs0G0_pcACmF",
+            "moduleName": "YandexPayLens",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "errorDescription",
+            "printedName": "errorDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13YandexPayLens23YPLensModelPreloadErrorO16errorDescriptionSSSgvp",
+            "mangledName": "$s13YandexPayLens23YPLensModelPreloadErrorO16errorDescriptionSSSgvp",
+            "moduleName": "YandexPayLens",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13YandexPayLens23YPLensModelPreloadErrorO16errorDescriptionSSSgvg",
+                "mangledName": "$s13YandexPayLens23YPLensModelPreloadErrorO16errorDescriptionSSSgvg",
+                "moduleName": "YandexPayLens",
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:13YandexPayLens23YPLensModelPreloadErrorO",
+        "mangledName": "$s13YandexPayLens23YPLensModelPreloadErrorO",
+        "moduleName": "YandexPayLens",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LocalizedError",
+            "printedName": "LocalizedError",
+            "usr": "s:10Foundation14LocalizedErrorP",
+            "mangledName": "$s10Foundation14LocalizedErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUI",
+        "printedName": "FintechSDKCoreUI",
+        "declKind": "Import",
+        "moduleName": "YandexPayLens",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKLens",
+        "printedName": "FintechSDKLens",
+        "declKind": "Import",
+        "moduleName": "YandexPayLens",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "YandexPayConfiguration",
+        "printedName": "YandexPayConfiguration",
+        "declKind": "Import",
+        "moduleName": "YandexPayLens",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "YandexPayLens"
+      },
+      {
+        "kind": "Import",
+        "name": "YandexPayConfiguration",
+        "printedName": "YandexPayConfiguration",
+        "declKind": "Import",
+        "moduleName": "YandexPayLens",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "YPay",
+        "printedName": "YPay",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "lens",
+            "printedName": "lens",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "YPLens",
+                "printedName": "YandexPayLens.YPLens",
+                "usr": "s:13YandexPayLens6YPLensC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:22YandexPayConfiguration4YPayC0aB4LensE4lensAD6YPLensCvp",
+            "mangledName": "$s22YandexPayConfiguration4YPayC0aB4LensE4lensAD6YPLensCvp",
+            "moduleName": "YandexPayLens",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "Custom",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "YPLens",
+                    "printedName": "YandexPayLens.YPLens",
+                    "usr": "s:13YandexPayLens6YPLensC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:22YandexPayConfiguration4YPayC0aB4LensE4lensAD6YPLensCvg",
+                "mangledName": "$s22YandexPayConfiguration4YPayC0aB4LensE4lensAD6YPLensCvg",
+                "moduleName": "YandexPayLens",
+                "declAttributes": [
+                  "Final"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:22YandexPayConfiguration4YPayC",
+        "mangledName": "$s22YandexPayConfiguration4YPayC",
+        "moduleName": "YandexPayConfiguration",
+        "declAttributes": [
+          "Final",
+          "Custom"
+        ],
+        "isExternal": true,
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": []
+}

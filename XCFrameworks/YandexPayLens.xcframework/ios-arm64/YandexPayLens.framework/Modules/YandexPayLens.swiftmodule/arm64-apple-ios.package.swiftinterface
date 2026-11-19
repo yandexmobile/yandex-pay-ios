@@ -1,0 +1,36 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name YandexPayLens -package-name yandexpaylens
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
+@_spi(Internal) import FintechSDKCoreUI
+@_spi(Internal) import FintechSDKLens
+import Foundation
+import Swift
+import UIKit
+@_spi(Internal) import YandexPayConfiguration
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_hasMissingDesignatedInitializers final public class YPLens {
+  public static func module(merchant: YandexPayConfiguration.YPSDKMerchant, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding) -> any YandexPayConfiguration.YPayModule
+  @_Concurrency.MainActor final public func preloadModel() async throws
+  @discardableResult
+  @_Concurrency.MainActor final public func handleLink(_ url: Foundation.URL) async -> Swift.Bool
+  @objc deinit
+}
+public enum YPLensModelPreloadError : Swift.Error, Foundation.LocalizedError {
+  case notRegistered
+  case unavailable
+  case downloadFailed(any Swift.Error)
+  case preparationFailed(any Swift.Error)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var errorDescription: Swift.String? {
+    get
+  }
+  #endif
+}
+extension YandexPayConfiguration.YPay {
+  @_Concurrency.MainActor final public var lens: YandexPayLens.YPLens {
+    get
+  }
+}

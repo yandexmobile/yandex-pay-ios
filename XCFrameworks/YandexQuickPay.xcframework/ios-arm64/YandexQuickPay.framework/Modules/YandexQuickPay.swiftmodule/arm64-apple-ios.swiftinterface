@@ -76,6 +76,8 @@ extension YandexQuickPay.YQuickPay {
   @_Concurrency.MainActor final public func createPromoBanner(size: YandexQuickPay.YQuickPayPromoBannerSize, placement: Swift.String?, showLoyaltyAction: @escaping () -> Swift.Void) -> any SwiftUICore.View
   #endif
   @_Concurrency.MainActor final public func createPromoBanner(size: YandexQuickPay.YQuickPayPromoBannerSize, showLoyaltyAction: @escaping () -> Swift.Void) -> any SwiftUICore.View
+  @_Concurrency.MainActor final public func createPlusPointsToggle() -> UIKit.UIView
+  @_Concurrency.MainActor final public func createPlusPointsToggle() -> any SwiftUICore.View
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor final public func createPaymentToggle(placement: Swift.String? = nil, showLoyaltyAction: @escaping () -> Swift.Void) -> UIKit.UIView
   #endif

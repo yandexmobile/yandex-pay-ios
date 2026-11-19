@@ -1,0 +1,248 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "FintechSDKLens",
+    "printedName": "FintechSDKLens",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "FintechSDKLens"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUI",
+        "printedName": "FintechSDKCoreUI",
+        "declKind": "Import",
+        "moduleName": "FintechSDKLens",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "FintechSDKLens"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTLensHandler",
+        "printedName": "FTLensHandler",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(presentationContextProvider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTLensHandler",
+                "printedName": "FintechSDKLens.FTLensHandler",
+                "usr": "s:14FintechSDKLens13FTLensHandlerC"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> FintechSDKCoreUI.FTPresentationContext?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "FintechSDKCoreUI.FTPresentationContext?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTPresentationContext",
+                        "printedName": "FintechSDKCoreUI.FTPresentationContext",
+                        "usr": "s:16FintechSDKCoreUI21FTPresentationContextO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:14FintechSDKLens13FTLensHandlerC27presentationContextProviderAC0A9SDKCoreUI014FTPresentationF0OSgyScMYcc_tcfc",
+            "mangledName": "$s14FintechSDKLens13FTLensHandlerC27presentationContextProviderAC0A9SDKCoreUI014FTPresentationF0OSgyScMYcc_tcfc",
+            "moduleName": "FintechSDKLens",
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "canHandle",
+            "printedName": "canHandle(url:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14FintechSDKLens13FTLensHandlerC9canHandle3urlSb10Foundation3URLV_tF",
+            "mangledName": "$s14FintechSDKLens13FTLensHandlerC9canHandle3urlSb10Foundation3URLV_tF",
+            "moduleName": "FintechSDKLens",
+            "declAttributes": [
+              "Custom",
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "handle",
+            "printedName": "handle(url:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14FintechSDKLens13FTLensHandlerC6handle3urlSb10Foundation3URLV_tF",
+            "mangledName": "$s14FintechSDKLens13FTLensHandlerC6handle3urlSb10Foundation3URLV_tF",
+            "moduleName": "FintechSDKLens",
+            "declAttributes": [
+              "Custom",
+              "Final",
+              "AccessControl",
+              "DiscardableResult"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "clear",
+            "printedName": "clear()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14FintechSDKLens13FTLensHandlerC5clearyyF",
+            "mangledName": "$s14FintechSDKLens13FTLensHandlerC5clearyyF",
+            "moduleName": "FintechSDKLens",
+            "declAttributes": [
+              "Custom",
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:14FintechSDKLens13FTLensHandlerC",
+        "mangledName": "$s14FintechSDKLens13FTLensHandlerC",
+        "moduleName": "FintechSDKLens",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "Custom",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/4\/4870954142\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-fab74db9-2dae-4080-a418-866ee17f39fb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/Lens\/Private\/UI\/FTLensPlaceholderViewController.swift",
+      "kind": "StringLiteral",
+      "offset": 1208,
+      "length": 6,
+      "value": "\"Lens\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/4\/4870954142\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-fab74db9-2dae-4080-a418-866ee17f39fb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/Lens\/Private\/UI\/FTLensPlaceholderViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1256,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/4\/4870954142\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-fab74db9-2dae-4080-a418-866ee17f39fb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/Lens\/Public\/FTLensHandler.swift",
+      "kind": "StringLiteral",
+      "offset": 1628,
+      "length": 6,
+      "value": "\"lens\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/4\/4870954142\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-fab74db9-2dae-4080-a418-866ee17f39fb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Flows\/Lens\/Public\/FTLensHandler.swift",
+      "kind": "StringLiteral",
+      "offset": 1659,
+      "length": 3,
+      "value": "\"\/\""
+    }
+  ]
+}

@@ -15,6 +15,10 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 import os
+import zlib
+@_spi(Internal) public enum FTGzipCompressor {
+  @_spi(Internal) public static func compress(_ data: Foundation.Data) throws -> Foundation.Data
+}
 @_spi(Internal) public struct FTDebugLogger {
   @_spi(Internal) public static func print(_ items: Any..., separator: Swift.String = " ", terminator: Swift.String = "\n")
 }
@@ -215,6 +219,9 @@ public protocol FTAnyValueBox {
 }
 @_spi(Internal) public enum FTAppConstants {
   @_spi(Internal) public static let version: Swift.String?
+  @_spi(Internal) public static var isDebugBuild: Swift.Bool {
+    @_spi(Internal) get
+  }
 }
 @_spi(Internal) public enum FTAsyncState<T, E> where E : Swift.Error {
   @_spi(Internal) case idle
@@ -277,6 +284,21 @@ public protocol FTAnyValueBox {
   @_spi(Internal) public func allows(url: Foundation.URL?) -> Swift.Bool
   #endif
 }
+@_spi(Internal) public enum FTJSONValue : Swift.Codable, Swift.Equatable, Swift.Sendable, FintechSDKCoreUtils.FTAnyValueBox {
+  @_spi(Internal) case string(Swift.String)
+  @_spi(Internal) case integer(Swift.Int)
+  @_spi(Internal) case number(Swift.Double)
+  @_spi(Internal) case bool(Swift.Bool)
+  @_spi(Internal) case object([Swift.String : FintechSDKCoreUtils.FTJSONValue])
+  @_spi(Internal) case array([FintechSDKCoreUtils.FTJSONValue])
+  @_spi(Internal) case null
+  @_spi(Internal) public var value: Any {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public init(from decoder: any Swift.Decoder) throws
+  @_spi(Internal) public func encode(to encoder: any Swift.Encoder) throws
+  @_spi(Internal) public static func == (a: FintechSDKCoreUtils.FTJSONValue, b: FintechSDKCoreUtils.FTJSONValue) -> Swift.Bool
+}
 @_spi(Internal) public struct FTObserverList<Observer> {
   @_spi(Internal) public init()
   @_spi(Internal) public mutating func add(_ observer: Observer)
@@ -305,6 +327,11 @@ public protocol FTAnyValueBox {
 @_spi(Internal) public enum FTQueryParametersEncoder {
   @_spi(Internal) public static func encode(_ parameters: [Swift.String : [Swift.String]]) -> [Swift.String : [Swift.String]]
 }
+@_spi(Internal) public enum FTRetryAfterParser {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public static func parse(_ header: Swift.String?, now: Foundation.Date = Date()) -> Foundation.TimeInterval?
+  #endif
+}
 @propertyWrapper public struct FTSafeOptional<Wrapped> : Swift.Codable where Wrapped : Swift.Decodable, Wrapped : Swift.Encodable {
   public var wrappedValue: Wrapped?
   #if compiler(>=5.3) && $NonescapableTypes
@@ -327,6 +354,11 @@ extension Swift.KeyedDecodingContainer {
 }
 extension Swift.KeyedEncodingContainer {
   public mutating func encode<T>(_ value: FintechSDKCoreUtils.FTSafeOptional<T>, forKey key: Swift.KeyedEncodingContainer<K>.Key) throws where T : Swift.Decodable, T : Swift.Encodable
+}
+@_spi(Internal) public struct FTScheduledTask : FintechSDKCoreUtils.FTCancellableTask, Swift.Sendable {
+  @_spi(Internal) public let id: Foundation.UUID
+  @_spi(Internal) public init(delay: Foundation.TimeInterval, operation: @escaping @Sendable (Foundation.UUID) async -> Swift.Void)
+  @_spi(Internal) public func cancel()
 }
 @_spi(Internal) public enum FTSourceSDKValue {
   @_spi(Internal) public static let paymentKit: Swift.String

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = 'YandexPaySDK'
-  s.version               = '2.10.10'
+  s.version               = '2.11.3'
   s.summary               = 'Yandex Pay Modular SDK for iOS'
   s.homepage              = 'https://pay.yandex.ru'
   s.license               = { :type => 'Proprietary', :text => 'License Agreement is available at https://yandex.ru/legal/ypay_sdk_agreement/?lang=ru.' }
@@ -193,6 +193,10 @@ Pod::Spec.new do |s|
     ss.vendored_frameworks = 'XCFrameworks/FintechSDK/FintechSDKRedirectScenario.xcframework'
   end
 
+  s.subspec 'FintechSDKMerchantApplinkParsersData' do |ss|
+    ss.vendored_frameworks = 'XCFrameworks/FintechSDK/FintechSDKMerchantApplinkParsersData.xcframework'
+  end
+
   s.subspec 'FintechSDKPayFormFeatures' do |ss|
     ss.vendored_frameworks = 'XCFrameworks/FintechSDK/FintechSDKPayFormFeatures.xcframework'
   end
@@ -239,6 +243,18 @@ Pod::Spec.new do |s|
 
   s.subspec 'FintechSDKQuickPaymentShared' do |ss|
     ss.vendored_frameworks = 'XCFrameworks/FintechSDK/FintechSDKQuickPaymentShared.xcframework'
+  end
+
+  s.subspec 'FintechSDKLens' do |ss|
+    ss.vendored_frameworks = 'XCFrameworks/FintechSDK/FintechSDKLens.xcframework'
+  end
+
+  s.subspec 'FintechSDKLensData' do |ss|
+    ss.vendored_frameworks = 'XCFrameworks/FintechSDK/FintechSDKLensData.xcframework'
+  end
+
+  s.subspec 'FintechSDKMLCamera' do |ss|
+    ss.vendored_frameworks = 'XCFrameworks/FintechSDK/FintechSDKMLCamera.xcframework'
   end
 
   # Consumer product subspecs — use these in your Podfile.
@@ -468,6 +484,7 @@ Pod::Spec.new do |s|
     ss.dependency 'YandexPaySDK/FintechSDKPayOrderData'
     ss.dependency 'YandexPaySDK/FintechSDKPayMerchantData'
     ss.dependency 'YandexPaySDK/FintechSDKRedirectScenario'
+    ss.dependency 'YandexPaySDK/FintechSDKMerchantApplinkParsersData'
     ss.dependency 'YandexPaySDK/FintechSDKPayFormFeatures'
     ss.dependency 'YandexPaySDK/FintechSDKPayButton'
     ss.dependency 'YandexPaySDK/FintechSDKPayBadge'
@@ -542,6 +559,9 @@ Pod::Spec.new do |s|
         fi
         if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRedirectScenario/FintechSDKRedirectScenario.framework"' "${frameworks_script}"; then
           printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRedirectScenario/FintechSDKRedirectScenario.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKMerchantApplinkParsersData/FintechSDKMerchantApplinkParsersData.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKMerchantApplinkParsersData/FintechSDKMerchantApplinkParsersData.framework"\n' >> "${frameworks_script}"
         fi
         if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKPayFormFeatures/FintechSDKPayFormFeatures.framework"' "${frameworks_script}"; then
           printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKPayFormFeatures/FintechSDKPayFormFeatures.framework"\n' >> "${frameworks_script}"
@@ -679,6 +699,7 @@ Pod::Spec.new do |s|
     ss.dependency 'YandexPaySDK/FintechSDKPayOrderData'
     ss.dependency 'YandexPaySDK/FintechSDKPayMerchantData'
     ss.dependency 'YandexPaySDK/FintechSDKRedirectScenario'
+    ss.dependency 'YandexPaySDK/FintechSDKMerchantApplinkParsersData'
     ss.dependency 'YandexPaySDK/FintechSDKPayFormFeatures'
     ss.dependency 'YandexPaySDK/FintechSDKPayButton'
     ss.dependency 'YandexPaySDK/FintechSDKPayBadge'
@@ -753,6 +774,9 @@ Pod::Spec.new do |s|
         fi
         if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRedirectScenario/FintechSDKRedirectScenario.framework"' "${frameworks_script}"; then
           printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRedirectScenario/FintechSDKRedirectScenario.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKMerchantApplinkParsersData/FintechSDKMerchantApplinkParsersData.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKMerchantApplinkParsersData/FintechSDKMerchantApplinkParsersData.framework"\n' >> "${frameworks_script}"
         fi
         if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKPayFormFeatures/FintechSDKPayFormFeatures.framework"' "${frameworks_script}"; then
           printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKPayFormFeatures/FintechSDKPayFormFeatures.framework"\n' >> "${frameworks_script}"
@@ -1065,6 +1089,7 @@ Pod::Spec.new do |s|
     ss.dependency 'YandexPaySDK/FintechSDKPayOrderData'
     ss.dependency 'YandexPaySDK/FintechSDKPayMerchantData'
     ss.dependency 'YandexPaySDK/FintechSDKRedirectScenario'
+    ss.dependency 'YandexPaySDK/FintechSDKMerchantApplinkParsersData'
     ss.dependency 'YandexPaySDK/FintechSDKPayFormFeatures'
     ss.dependency 'YandexPaySDK/FintechSDKPayButton'
     ss.dependency 'YandexPaySDK/FintechSDKPayBadge'
@@ -1139,6 +1164,9 @@ Pod::Spec.new do |s|
         fi
         if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRedirectScenario/FintechSDKRedirectScenario.framework"' "${frameworks_script}"; then
           printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRedirectScenario/FintechSDKRedirectScenario.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKMerchantApplinkParsersData/FintechSDKMerchantApplinkParsersData.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKMerchantApplinkParsersData/FintechSDKMerchantApplinkParsersData.framework"\n' >> "${frameworks_script}"
         fi
         if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKPayFormFeatures/FintechSDKPayFormFeatures.framework"' "${frameworks_script}"; then
           printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKPayFormFeatures/FintechSDKPayFormFeatures.framework"\n' >> "${frameworks_script}"
@@ -1449,6 +1477,189 @@ Pod::Spec.new do |s|
         fi
         printf 'if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then\n  wait\nfi\n' >> "${frameworks_script}"
         printf '# END YandexPaySDK:YandexQuickPay\n' >> "${frameworks_script}"
+      done
+    SCRIPT
+    }
+  end
+
+  s.subspec 'YandexPayLens' do |ss|
+    ss.vendored_frameworks = 'XCFrameworks/YandexPayLens.xcframework'
+    ss.dependency 'YandexPaySDK/FintechSDKLens'
+    ss.dependency 'YandexPaySDK/FintechSDKLensData'
+    ss.dependency 'YandexPaySDK/FintechSDKMLCamera'
+    ss.dependency 'YandexPaySDK/FintechSDKBDUICore'
+    ss.dependency 'YandexPaySDK/FintechSDKBDUIFeatures'
+    ss.dependency 'YandexPaySDK/FintechSDKFontsInterfaces'
+    ss.dependency 'YandexPaySDK/FintechSDKAnalyticsInterfaces'
+    ss.dependency 'YandexPaySDK/FintechSDKCommonEntity'
+    ss.dependency 'YandexPaySDK/FintechSDKCoreUtils'
+    ss.dependency 'YandexPaySDK/FintechSDKNetworkInterfaces'
+    ss.dependency 'YandexPaySDK/FintechSDKNetworkImplementation'
+    ss.dependency 'YandexPaySDK/FintechSDKAuthInterfaces'
+    ss.dependency 'YandexPaySDK/FintechSDKCoreAnalytics'
+    ss.dependency 'YandexPaySDK/FintechSDKCoreUI'
+    ss.dependency 'YandexPaySDK/FintechYBSDKInterfaces'
+    ss.dependency 'YandexPaySDK/FintechBBPartnerSDKInterfaces'
+    ss.dependency 'YandexPaySDK/FintechPlusSDKInterfaces'
+    ss.dependency 'YandexPaySDK/FintechSDKRemoteResourcesData'
+    ss.dependency 'YandexPaySDK/FintechSDKSafariFeature'
+    ss.dependency 'YandexPaySDK/FintechSDKAuthCoreImplementation'
+    ss.dependency 'YandexPaySDK/FintechSDKAuthorizationScenario'
+    ss.dependency 'YandexPaySDK/FintechSDKNativeErrorFeature'
+    ss.dependency 'YandexPaySDK/FintechSDKDivKitWidgetsFeatures'
+    ss.dependency 'YandexPaySDK/FintechSDKLoaderScreen'
+    ss.dependency 'YandexPaySDK/FintechSDKNavigationInterfaces'
+    ss.dependency 'YandexPaySDK/FintechSDKNavigationImplementation'
+    ss.dependency 'YandexPaySDK/FintechSDKWebViewFeatures'
+    ss.dependency 'YandexPaySDK/FintechSDKExternalAuthWebView'
+    ss.dependency 'YandexPaySDK/FintechSDKPayBoxResources'
+    ss.dependency 'YandexPaySDK/FintechSDKAppTransportSecurityScenario'
+    ss.dependency 'YandexPaySDK/FintechSDKPayBoxEntity'
+    ss.dependency 'YandexPaySDK/FintechSDKRUMImplementation'
+    ss.dependency 'YandexPaySDK/FintechSDKFontsAdapter'
+    ss.dependency 'YandexPaySDK/ExternalBduiAdapter'
+    ss.dependency 'YandexPaySDK/FintechBDUIWrapper'
+    ss.dependency 'YandexPaySDK/FintechSDKLoginAdapter'
+    ss.dependency 'YandexPaySDK/FintechSDKAppMetricaAdapter6'
+    ss.dependency 'YandexPaySDK/FintechSDKNetworkChallengeAdapter'
+    ss.dependency 'YandexPaySDK/FintechSDKRealTimeAnalyticsAdapter'
+    ss.dependency 'YandexPaySDK/YandexPayConfiguration'
+    ss.script_phase = {
+      :name => 'Embed YandexPayLens Runtime Frameworks',
+      :script => <<-'SCRIPT'
+      set -e
+      SUPPORT_FILES_DIR="${PODS_ROOT}/Target Support Files"
+      for frameworks_script in "${SUPPORT_FILES_DIR}"/Pods-*/*-frameworks.sh; do
+        [ -f "${frameworks_script}" ] || continue
+        if grep -Fq "# BEGIN YandexPaySDK:YandexPayLens" "${frameworks_script}"; then
+          continue
+        fi
+        printf "\n# BEGIN YandexPaySDK:YandexPayLens\n" >> "${frameworks_script}"
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/YandexPayLens/YandexPayLens.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/YandexPayLens/YandexPayLens.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKLens/FintechSDKLens.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKLens/FintechSDKLens.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKLensData/FintechSDKLensData.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKLensData/FintechSDKLensData.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKMLCamera/FintechSDKMLCamera.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKMLCamera/FintechSDKMLCamera.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKBDUICore/FintechSDKBDUICore.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKBDUICore/FintechSDKBDUICore.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKBDUIFeatures/FintechSDKBDUIFeatures.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKBDUIFeatures/FintechSDKBDUIFeatures.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKFontsInterfaces/FintechSDKFontsInterfaces.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKFontsInterfaces/FintechSDKFontsInterfaces.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKAnalyticsInterfaces/FintechSDKAnalyticsInterfaces.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKAnalyticsInterfaces/FintechSDKAnalyticsInterfaces.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKCommonEntity/FintechSDKCommonEntity.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKCommonEntity/FintechSDKCommonEntity.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKCoreUtils/FintechSDKCoreUtils.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKCoreUtils/FintechSDKCoreUtils.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKNetworkInterfaces/FintechSDKNetworkInterfaces.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKNetworkInterfaces/FintechSDKNetworkInterfaces.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKNetworkImplementation/FintechSDKNetworkImplementation.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKNetworkImplementation/FintechSDKNetworkImplementation.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKAuthInterfaces/FintechSDKAuthInterfaces.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKAuthInterfaces/FintechSDKAuthInterfaces.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKCoreAnalytics/FintechSDKCoreAnalytics.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKCoreAnalytics/FintechSDKCoreAnalytics.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKCoreUI/FintechSDKCoreUI.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKCoreUI/FintechSDKCoreUI.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechYBSDKInterfaces/FintechYBSDKInterfaces.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechYBSDKInterfaces/FintechYBSDKInterfaces.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechBBPartnerSDKInterfaces/FintechBBPartnerSDKInterfaces.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechBBPartnerSDKInterfaces/FintechBBPartnerSDKInterfaces.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechPlusSDKInterfaces/FintechPlusSDKInterfaces.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechPlusSDKInterfaces/FintechPlusSDKInterfaces.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRemoteResourcesData/FintechSDKRemoteResourcesData.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRemoteResourcesData/FintechSDKRemoteResourcesData.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKSafariFeature/FintechSDKSafariFeature.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKSafariFeature/FintechSDKSafariFeature.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKAuthCoreImplementation/FintechSDKAuthCoreImplementation.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKAuthCoreImplementation/FintechSDKAuthCoreImplementation.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKAuthorizationScenario/FintechSDKAuthorizationScenario.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKAuthorizationScenario/FintechSDKAuthorizationScenario.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKNativeErrorFeature/FintechSDKNativeErrorFeature.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKNativeErrorFeature/FintechSDKNativeErrorFeature.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKDivKitWidgetsFeatures/FintechSDKDivKitWidgetsFeatures.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKDivKitWidgetsFeatures/FintechSDKDivKitWidgetsFeatures.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKLoaderScreen/FintechSDKLoaderScreen.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKLoaderScreen/FintechSDKLoaderScreen.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKNavigationInterfaces/FintechSDKNavigationInterfaces.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKNavigationInterfaces/FintechSDKNavigationInterfaces.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKNavigationImplementation/FintechSDKNavigationImplementation.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKNavigationImplementation/FintechSDKNavigationImplementation.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKWebViewFeatures/FintechSDKWebViewFeatures.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKWebViewFeatures/FintechSDKWebViewFeatures.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKExternalAuthWebView/FintechSDKExternalAuthWebView.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKExternalAuthWebView/FintechSDKExternalAuthWebView.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKPayBoxResources/FintechSDKPayBoxResources.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKPayBoxResources/FintechSDKPayBoxResources.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKAppTransportSecurityScenario/FintechSDKAppTransportSecurityScenario.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKAppTransportSecurityScenario/FintechSDKAppTransportSecurityScenario.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKPayBoxEntity/FintechSDKPayBoxEntity.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKPayBoxEntity/FintechSDKPayBoxEntity.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRUMImplementation/FintechSDKRUMImplementation.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRUMImplementation/FintechSDKRUMImplementation.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKFontsAdapter/FintechSDKFontsAdapter.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKFontsAdapter/FintechSDKFontsAdapter.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/ExternalBduiAdapter/ExternalBduiAdapter.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/ExternalBduiAdapter/ExternalBduiAdapter.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechBDUIWrapper/FintechBDUIWrapper.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechBDUIWrapper/FintechBDUIWrapper.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKLoginAdapter/FintechSDKLoginAdapter.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKLoginAdapter/FintechSDKLoginAdapter.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKAppMetricaAdapter6/FintechSDKAppMetricaAdapter6.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKAppMetricaAdapter6/FintechSDKAppMetricaAdapter6.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKNetworkChallengeAdapter/FintechSDKNetworkChallengeAdapter.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKNetworkChallengeAdapter/FintechSDKNetworkChallengeAdapter.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRealTimeAnalyticsAdapter/FintechSDKRealTimeAnalyticsAdapter.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/FintechSDKRealTimeAnalyticsAdapter/FintechSDKRealTimeAnalyticsAdapter.framework"\n' >> "${frameworks_script}"
+        fi
+        if ! grep -Fq '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/YandexPayConfiguration/YandexPayConfiguration.framework"' "${frameworks_script}"; then
+          printf '  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/YandexPayConfiguration/YandexPayConfiguration.framework"\n' >> "${frameworks_script}"
+        fi
+        printf 'if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then\n  wait\nfi\n' >> "${frameworks_script}"
+        printf '# END YandexPaySDK:YandexPayLens\n' >> "${frameworks_script}"
       done
     SCRIPT
     }

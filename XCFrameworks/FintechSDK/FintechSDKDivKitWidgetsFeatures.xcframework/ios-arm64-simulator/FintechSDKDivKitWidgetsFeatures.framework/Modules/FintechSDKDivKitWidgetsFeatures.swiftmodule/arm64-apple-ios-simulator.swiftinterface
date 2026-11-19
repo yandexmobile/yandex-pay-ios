@@ -21,33 +21,6 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-public struct FTRemoteActionResponse {
-  public let statusCode: Swift.Int
-  public let body: [Swift.String : Any]
-  #if compiler(>=5.3) && $NonescapableTypes
-  public subscript<T>(key: Swift.String) -> T? {
-    get
-  }
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public subscript<T>(path keyPath: Swift.String...) -> T? {
-    get
-  }
-  #endif
-}
-public protocol FTRemoteActionResponseHandler {
-  func canHandle(path: Swift.String) -> Swift.Bool
-  func handle(response: FintechSDKDivKitWidgetsFeatures.FTRemoteActionResponse, for path: Swift.String)
-}
-final public class FTRemoteDivUrlHandler : @preconcurrency FintechSDKBDUICore.FintechDivUrlHandler {
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, responseHandler: (any FintechSDKDivKitWidgetsFeatures.FTRemoteActionResponseHandler)? = nil, cardId: Swift.String? = nil)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor final public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
-  #endif
-  @objc deinit
-}
 public enum FintechWidgetState {
   case loading
   case loaded(CoreFoundation.CGSize)

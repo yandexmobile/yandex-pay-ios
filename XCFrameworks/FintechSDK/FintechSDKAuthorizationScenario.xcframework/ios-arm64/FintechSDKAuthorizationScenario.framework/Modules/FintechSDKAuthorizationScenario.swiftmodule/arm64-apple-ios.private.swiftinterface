@@ -80,6 +80,10 @@ import _SwiftConcurrencyShims
     @_spi(Internal) get
   }
 }
+@_spi(Internal) public protocol FTClearOAuthUseCase : Swift.Sendable {
+  @_spi(Internal) @discardableResult
+  @_Concurrency.MainActor func execute(_ request: FintechSDKAuthorizationScenario.FTOAuthClearRequest) async throws -> FintechSDKAuthorizationScenario.FTOAuthClearResult
+}
 @_spi(Internal) public struct FTAuthLogoutPolicy : Swift.Sendable {
   @_spi(Internal) public init(_ predicate: @escaping @Sendable (FintechSDKAuthorizationScenario.FTSessionError) -> Swift.Bool)
   @_spi(Internal) public func needToLogout(on error: FintechSDKAuthorizationScenario.FTSessionError) -> Swift.Bool
@@ -137,8 +141,14 @@ extension FintechSDKAuthorizationScenario.FTAuthScenarioDelegate {
   public func authScenarioDidChangeStateSilently(_ newState: FintechSDKAuthorizationScenario.FTAuthScenarioState<Self.FTSessionError>)
 }
 @_spi(Internal) extension FintechSDKAuthorizationScenario.FTAuthScenarioImpl {
+  @_spi(Internal) @_Concurrency.MainActor final public func runExternalAuth(with presenter: UIKit.UIViewController, strategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy) async throws(FintechSDKAuthorizationScenario.FTSessionError) -> FintechSDKAuthInterfaces.FintechAuthModel
+}
+@_spi(Internal) extension FintechSDKAuthorizationScenario.FTAuthScenarioImpl {
   @_spi(Internal) @discardableResult
   @_Concurrency.MainActor final public func runInternalAuthWithDeviceBind(with presenter: UIKit.UIViewController, strategy: FintechSDKAuthInterfaces.FintechAuthorizationStrategy) async throws(FintechSDKAuthorizationScenario.FTSessionError) -> FintechSDKAuthInterfaces.FintechAuthModel
+}
+@_spi(Internal) extension FintechSDKAuthorizationScenario.FTAuthScenarioImpl : FintechSDKAuthorizationScenario.FTMerchAuthConfigAPIService {
+  @_spi(Internal) final public func loadMerchAuthConfigState() async -> FintechSDKAuthorizationScenario.FTMerchAuthConfigLoad
 }
 @_spi(Internal) final public class FTAuthScenarioImpl : FintechSDKAuthorizationScenario.FTAuthScenario, @unchecked Swift.Sendable {
   @_spi(Internal) weak final public var delegate: (any FintechSDKAuthorizationScenario.FTAuthScenarioDelegate<FintechSDKAuthorizationScenario.FTSessionError>)?
@@ -250,13 +260,33 @@ public enum FTAuthSessionAcquisitionMode : Swift.Sendable, Swift.Hashable {
   @_spi(Internal) func markDoublePending(_ pending: FintechSDKAuthorizationScenario.FTPendingDoubleOAuth)
   @_spi(Internal) func clearDouble()
 }
-@_spi(Internal) final public class FTOAuthInFlightStoreImpl : FintechSDKAuthorizationScenario.FTOAuthInFlightStore, @unchecked Swift.Sendable {
-  @_spi(Internal) public init(userDefaults: Foundation.UserDefaults = .standard, scope: Swift.String)
+@_spi(Internal) public struct FTOAuthPendingRecovery<Pending> : Swift.Sendable where Pending : Swift.Sendable {
+  @_spi(Internal) public let pending: Pending
+  @_spi(Internal) public let isProcessInterrupted: Swift.Bool
+  @_spi(Internal) public init(pending: Pending, isProcessInterrupted: Swift.Bool)
+}
+@_spi(Internal) public protocol FTProcessAwareOAuthInFlightStore : FintechSDKAuthorizationScenario.FTOAuthInFlightStore {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) func consumePendingRecovery() -> FintechSDKAuthorizationScenario.FTOAuthPendingRecovery<FintechSDKAuthorizationScenario.PendingOAuth>?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) func consumeDoublePendingRecovery() -> FintechSDKAuthorizationScenario.FTOAuthPendingRecovery<FintechSDKAuthorizationScenario.FTPendingDoubleOAuth>?
+  #endif
+}
+@_spi(Internal) final public class FTOAuthInFlightStoreImpl : FintechSDKAuthorizationScenario.FTProcessAwareOAuthInFlightStore, @unchecked Swift.Sendable {
+  @_spi(Internal) convenience public init(userDefaults: Foundation.UserDefaults = .standard, scope: Swift.String)
+  @_spi(Internal) public init(userDefaults: Foundation.UserDefaults = .standard, scope: Swift.String, isProcessAwareRecoveryEnabled: @escaping @Sendable () -> Swift.Bool)
   #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public func peekPending() -> FintechSDKAuthorizationScenario.PendingOAuth?
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public func consumePending() -> FintechSDKAuthorizationScenario.PendingOAuth?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) final public func consumePendingRecovery() -> FintechSDKAuthorizationScenario.FTOAuthPendingRecovery<FintechSDKAuthorizationScenario.PendingOAuth>?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) final public func consumeDoublePendingRecovery() -> FintechSDKAuthorizationScenario.FTOAuthPendingRecovery<FintechSDKAuthorizationScenario.FTPendingDoubleOAuth>?
   #endif
   @_spi(Internal) final public func markPending(_ pending: FintechSDKAuthorizationScenario.PendingOAuth)
   @_spi(Internal) final public func clear()
@@ -280,7 +310,7 @@ public enum FTAuthSessionAcquisitionMode : Swift.Sendable, Swift.Hashable {
 }
 @_spi(Internal) public enum FTSessionError : Foundation.LocalizedError {
   @_spi(Internal) case authForbidden
-  @_spi(Internal) case invalidAuth(FintechSDKNetworkInterfaces.NetworkClientError, revokedToken: Swift.Bool, step: FintechSDKAuthorizationScenario.BstStep)
+  @_spi(Internal) case invalidAuth(FintechSDKNetworkInterfaces.NetworkClientError, revokedToken: FintechSDKAuthorizationScenario.FTTokenRevokeOutcome, step: FintechSDKAuthorizationScenario.BstStep)
   @_spi(Internal) case deviceNotBound(FintechSDKNetworkInterfaces.NetworkClientError, step: FintechSDKAuthorizationScenario.BstStep)
   @_spi(Internal) case cryptoKeyError(FintechSDKAuthInterfaces.FintechCryptoKeyError)
   @_spi(Internal) case loginError(FintechSDKAuthInterfaces.FintechLoginServiceError)
@@ -297,6 +327,128 @@ public enum FTAuthSessionAcquisitionMode : Swift.Sendable, Swift.Hashable {
   }
   @_spi(Internal) public init(with error: FintechSDKAuthorizationScenario.FTAuthServiceError, step: FintechSDKAuthorizationScenario.BstStep)
 }
+@_spi(Internal) public enum FTTokenRevokeOutcome : Swift.Sendable, Swift.Equatable {
+  @_spi(Internal) case notAttempted
+  @_spi(Internal) case failed
+  @_spi(Internal) case succeeded
+  @_spi(Internal) public var isAttempted: Swift.Bool {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public var isSucceeded: Swift.Bool {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public static func == (a: FintechSDKAuthorizationScenario.FTTokenRevokeOutcome, b: FintechSDKAuthorizationScenario.FTTokenRevokeOutcome) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public enum FTMerchAuthConfigLoad : Swift.Sendable, Swift.Equatable {
+  @_spi(Internal) case loaded(isUnifiedAuthEnabled: Swift.Bool)
+  @_spi(Internal) case failed(FintechSDKAuthorizationScenario.FTMerchAuthConfigFailure)
+  @_spi(Internal) public static func == (a: FintechSDKAuthorizationScenario.FTMerchAuthConfigLoad, b: FintechSDKAuthorizationScenario.FTMerchAuthConfigLoad) -> Swift.Bool
+}
+@_spi(Internal) public enum FTMerchAuthConfigFailure : Swift.Error, Swift.Sendable, Swift.Equatable {
+  @_spi(Internal) case cancelled
+  @_spi(Internal) case timeout
+  @_spi(Internal) case unavailable
+  @_spi(Internal) public static func == (a: FintechSDKAuthorizationScenario.FTMerchAuthConfigFailure, b: FintechSDKAuthorizationScenario.FTMerchAuthConfigFailure) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public struct FTOAuthClearContext : Swift.Sendable, Swift.Equatable {
+  @_spi(Internal) public let clearID: Swift.String
+  @_spi(Internal) public let httpStatus: Swift.Int?
+  @_spi(Internal) public let initiator: FintechSDKAuthorizationScenario.FTOAuthClearInitiator
+  @_spi(Internal) public let reason: FintechSDKAuthorizationScenario.FTOAuthClearReason
+  @_spi(Internal) public let triggerStage: FintechSDKAuthorizationScenario.FTOAuthClearTriggerStage
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init(clearID: Swift.String, httpStatus: Swift.Int?, initiator: FintechSDKAuthorizationScenario.FTOAuthClearInitiator, reason: FintechSDKAuthorizationScenario.FTOAuthClearReason, triggerStage: FintechSDKAuthorizationScenario.FTOAuthClearTriggerStage)
+  #endif
+  @_spi(Internal) public static func == (a: FintechSDKAuthorizationScenario.FTOAuthClearContext, b: FintechSDKAuthorizationScenario.FTOAuthClearContext) -> Swift.Bool
+}
+@_spi(Internal) public enum FTOAuthClearInitiator : Swift.String, Swift.Sendable {
+  @_spi(Internal) case backendResponse
+  @_spi(Internal) case host
+  @_spi(Internal) case sdk
+  @_spi(Internal) case user
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init?(rawValue: Swift.String)
+  #endif
+  @_spi(Internal) public typealias RawValue = Swift.String
+  @_spi(Internal) public var rawValue: Swift.String {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public enum FTOAuthClearReason : Swift.String, Swift.Sendable {
+  @_spi(Internal) case explicitLogout
+  @_spi(Internal) case externalLogout
+  @_spi(Internal) case tokenConflict409
+  @_spi(Internal) case unauthorized
+  @_spi(Internal) case unauthorizedOnBind
+  @_spi(Internal) case unauthorizedOnGenerate
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init?(rawValue: Swift.String)
+  #endif
+  @_spi(Internal) public typealias RawValue = Swift.String
+  @_spi(Internal) public var rawValue: Swift.String {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public enum FTOAuthClearTriggerStage : Swift.String, Swift.Sendable {
+  @_spi(Internal) case bind
+  @_spi(Internal) case businessRequest
+  @_spi(Internal) case explicitLogout
+  @_spi(Internal) case generate
+  @_spi(Internal) case policy
+  @_spi(Internal) case revoke
+  @_spi(Internal) case unknown
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init?(rawValue: Swift.String)
+  #endif
+  @_spi(Internal) public typealias RawValue = Swift.String
+  @_spi(Internal) public var rawValue: Swift.String {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public struct FTOAuthClearRequest : Swift.Sendable, Swift.Equatable {
+  @_spi(Internal) public let initiator: FintechSDKAuthorizationScenario.FTOAuthClearInitiator
+  @_spi(Internal) public let reason: FintechSDKAuthorizationScenario.FTOAuthClearReason
+  @_spi(Internal) public let revokeOutcome: FintechSDKAuthorizationScenario.FTTokenRevokeOutcome
+  @_spi(Internal) public let httpStatus: Swift.Int?
+  @_spi(Internal) public let triggerStage: FintechSDKAuthorizationScenario.FTOAuthClearTriggerStage
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init(initiator: FintechSDKAuthorizationScenario.FTOAuthClearInitiator, reason: FintechSDKAuthorizationScenario.FTOAuthClearReason, revokeOutcome: FintechSDKAuthorizationScenario.FTTokenRevokeOutcome = .notAttempted, httpStatus: Swift.Int? = nil, triggerStage: FintechSDKAuthorizationScenario.FTOAuthClearTriggerStage)
+  #endif
+  @_spi(Internal) public static func == (a: FintechSDKAuthorizationScenario.FTOAuthClearRequest, b: FintechSDKAuthorizationScenario.FTOAuthClearRequest) -> Swift.Bool
+}
+@_spi(Internal) public struct FTOAuthClearResult : Swift.Sendable, Swift.Equatable {
+  @_spi(Internal) public let isBstCleared: Swift.Bool
+  @_spi(Internal) public let isLocalTokenRemoved: Swift.Bool?
+  @_spi(Internal) public let isLoginSDKLogoutAttempted: Swift.Bool
+  @_spi(Internal) public let isLoginSDKLogoutSucceeded: Swift.Bool?
+  @_spi(Internal) public let isOAuthPresentAfter: Swift.Bool
+  @_spi(Internal) public let isTokenRevoked: Swift.Bool?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init(isBstCleared: Swift.Bool, isLocalTokenRemoved: Swift.Bool?, isLoginSDKLogoutAttempted: Swift.Bool, isLoginSDKLogoutSucceeded: Swift.Bool?, isOAuthPresentAfter: Swift.Bool, isTokenRevoked: Swift.Bool?)
+  #endif
+  @_spi(Internal) public static func == (a: FintechSDKAuthorizationScenario.FTOAuthClearResult, b: FintechSDKAuthorizationScenario.FTOAuthClearResult) -> Swift.Bool
+}
+@_spi(Internal) public enum FTOAuthClearFailureStage : Swift.String, Swift.Sendable {
+  @_spi(Internal) case bstStorage
+  @_spi(Internal) case loginSdkLogout
+  @_spi(Internal) case revoke
+  @_spi(Internal) case tokenStorage
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init?(rawValue: Swift.String)
+  #endif
+  @_spi(Internal) public typealias RawValue = Swift.String
+  @_spi(Internal) public var rawValue: Swift.String {
+    @_spi(Internal) get
+  }
+}
 @_spi(Internal) public enum FailureReason {
   @_spi(Internal) public static let cancelled: Swift.String
   @_spi(Internal) public static let scopeCancelled: Swift.String
@@ -306,6 +458,7 @@ public enum FTAuthSessionAcquisitionMode : Swift.Sendable, Swift.Hashable {
   @_spi(Internal) public static let concurrency: Swift.String
   @_spi(Internal) public static let authForbidden: Swift.String
   @_spi(Internal) public static let processInterrupted: Swift.String
+  @_spi(Internal) public static let pendingOwnerUnknown: Swift.String
   @_spi(Internal) public static let noOAuth: Swift.String
   @_spi(Internal) public static let clientIdNotSet: Swift.String
   @_spi(Internal) public static let presentationContextNotProvided: Swift.String
@@ -570,7 +723,7 @@ public enum FTAuthSessionAcquisitionMode : Swift.Sendable, Swift.Hashable {
 }
 @_spi(Internal) @_hasMissingDesignatedInitializers public actor FTPartnerTokenInteractor : FintechSDKAuthorizationScenario.FTGetPartnerTokenUseCase {
   #if compiler(>=5.3) && $NonescapableTypes
-  @_spi(Internal) public convenience init(networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, merchantId: Swift.String, oauthTokenProvider: @escaping @Sendable () async -> Swift.String?)
+  @_spi(Internal) public convenience init(networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, oauthTokenProvider: @escaping @Sendable () async -> Swift.String?)
   #endif
   @_spi(Internal) public func getPartnerToken(targetClientId: Swift.String) async throws(FintechSDKAuthorizationScenario.FTPartnerTokenError) -> FintechSDKAuthorizationScenario.FTPartnerToken
   @_spi(Internal) @objc deinit
@@ -624,7 +777,7 @@ public enum FTAuthSessionAcquisitionMode : Swift.Sendable, Swift.Hashable {
   #endif
 }
 @_spi(Internal) public enum FTAuthServiceError : Swift.Error {
-  @_spi(Internal) case invalidAuth(_: FintechSDKNetworkInterfaces.NetworkClientError, revokedToken: Swift.Bool)
+  @_spi(Internal) case invalidAuth(_: FintechSDKNetworkInterfaces.NetworkClientError, revokedToken: FintechSDKAuthorizationScenario.FTTokenRevokeOutcome)
   @_spi(Internal) case deviceNotBound(_: FintechSDKNetworkInterfaces.NetworkClientError)
   @_spi(Internal) case signatureFailed(FintechSDKAuthInterfaces.FintechCryptoKeyError)
   @_spi(Internal) case networkError(FintechSDKNetworkInterfaces.NetworkClientError)
@@ -638,8 +791,20 @@ public enum FTAuthSessionAcquisitionMode : Swift.Sendable, Swift.Hashable {
 @_spi(Internal) extension FintechSDKAuthorizationScenario.FTAuthAPIService {
   @_spi(Internal) public func bind() async throws(FintechSDKAuthorizationScenario.FTAuthServiceError)
 }
-@_spi(Internal) final public class FTAuthFlowAnalyticsImpl : FintechSDKAuthorizationScenario.FTAuthFlowAnalyticsReporting, @unchecked Swift.Sendable {
-  @_spi(Internal) public init(eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, errorReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter, eventType: Swift.String)
+@_spi(Internal) public protocol FTMerchAuthConfigAPIService : Swift.Sendable {
+  @_spi(Internal) func loadMerchAuthConfigState() async -> FintechSDKAuthorizationScenario.FTMerchAuthConfigLoad
+}
+@_spi(Internal) public protocol FTOAuthClearReporting : Swift.Sendable {
+  @_spi(Internal) func reportOAuthClearStarted(context: FintechSDKAuthorizationScenario.FTOAuthClearContext, isOAuthPresentBefore: Swift.Bool)
+  @_spi(Internal) func reportOAuthClearCompleted(context: FintechSDKAuthorizationScenario.FTOAuthClearContext, result: FintechSDKAuthorizationScenario.FTOAuthClearResult)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) func reportOAuthClearFailed(context: FintechSDKAuthorizationScenario.FTOAuthClearContext, error: Swift.String, failureStage: FintechSDKAuthorizationScenario.FTOAuthClearFailureStage?)
+  #endif
+}
+@_spi(Internal) final public class FTAuthFlowAnalyticsImpl : FintechSDKAuthorizationScenario.FTAuthFlowAnalyticsReporting, FintechSDKAuthorizationScenario.FTOAuthClearReporting, @unchecked Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init(eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, errorReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter, eventType: Swift.String, sessionIDProvider: (@Sendable () -> Swift.String?)? = nil)
+  #endif
   #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public func reportOAuthStarted(source: FintechSDKAuthorizationScenario.FTOAuthSource, oauthState: Swift.String?)
   #endif
@@ -665,6 +830,11 @@ public enum FTAuthSessionAcquisitionMode : Swift.Sendable, Swift.Hashable {
   #endif
   @_spi(Internal) final public func reportOAuthFlush(reason: Swift.String)
   @_spi(Internal) final public func reportBstFlush(reason: Swift.String)
+  @_spi(Internal) final public func reportOAuthClearStarted(context: FintechSDKAuthorizationScenario.FTOAuthClearContext, isOAuthPresentBefore: Swift.Bool)
+  @_spi(Internal) final public func reportOAuthClearCompleted(context: FintechSDKAuthorizationScenario.FTOAuthClearContext, result: FintechSDKAuthorizationScenario.FTOAuthClearResult)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) final public func reportOAuthClearFailed(context: FintechSDKAuthorizationScenario.FTOAuthClearContext, error: Swift.String, failureStage: FintechSDKAuthorizationScenario.FTOAuthClearFailureStage?)
+  #endif
   @_spi(Internal) final public func reportBindRetryTriggered()
   @_spi(Internal) final public func reportBindRetryBiometricBstAcquired()
   @_spi(Internal) final public func reportBindRetrySkipped(reason: Swift.String)
@@ -672,6 +842,11 @@ public enum FTAuthSessionAcquisitionMode : Swift.Sendable, Swift.Hashable {
   @_spi(Internal) final public func reportBindRetryFailed(reason: Swift.String, exception: Swift.String?)
   #endif
   @_spi(Internal) @objc deinit
+}
+@_spi(Internal) extension FintechSDKAuthorizationScenario.FTOAuthClearRequest {
+  @_spi(Internal) public static func explicitLogout(initiator: FintechSDKAuthorizationScenario.FTOAuthClearInitiator) -> FintechSDKAuthorizationScenario.FTOAuthClearRequest
+  @_spi(Internal) public static func externalLogout(initiator: FintechSDKAuthorizationScenario.FTOAuthClearInitiator) -> FintechSDKAuthorizationScenario.FTOAuthClearRequest
+  @_spi(Internal) public static func authFailure(_ sessionError: FintechSDKAuthorizationScenario.FTSessionError) -> FintechSDKAuthorizationScenario.FTOAuthClearRequest
 }
 @_spi(Internal) public protocol FTAuthSessionGetUseCase : Swift.Sendable {
   #if compiler(>=5.3) && $NonescapableTypes
@@ -717,6 +892,20 @@ public enum FTAuthSessionAcquisitionMode : Swift.Sendable, Swift.Hashable {
 @_spi(Internal) extension FintechSDKAuthorizationScenario.FTOAuthSource : Swift.RawRepresentable {}
 @_spi(Internal) extension FintechSDKAuthorizationScenario.BstStep : Swift.Equatable {}
 @_spi(Internal) extension FintechSDKAuthorizationScenario.BstStep : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKAuthorizationScenario.FTTokenRevokeOutcome : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKAuthorizationScenario.FTMerchAuthConfigFailure : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKAuthorizationScenario.FTOAuthClearInitiator : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKAuthorizationScenario.FTOAuthClearInitiator : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKAuthorizationScenario.FTOAuthClearInitiator : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKAuthorizationScenario.FTOAuthClearReason : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKAuthorizationScenario.FTOAuthClearReason : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKAuthorizationScenario.FTOAuthClearReason : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKAuthorizationScenario.FTOAuthClearTriggerStage : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKAuthorizationScenario.FTOAuthClearTriggerStage : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKAuthorizationScenario.FTOAuthClearTriggerStage : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKAuthorizationScenario.FTOAuthClearFailureStage : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKAuthorizationScenario.FTOAuthClearFailureStage : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKAuthorizationScenario.FTOAuthClearFailureStage : Swift.RawRepresentable {}
 @_spi(Internal) extension FintechSDKAuthorizationScenario.FTPassportAuthFlowError : Swift.Equatable {}
 @_spi(Internal) extension FintechSDKAuthorizationScenario.FTPassportAuthFlowError : Swift.Hashable {}
 @_spi(Internal) extension FintechSDKAuthorizationScenario.FTUserAuthTokenError : Swift.Equatable {}

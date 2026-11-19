@@ -50,6 +50,7 @@ final public class DiehardNetworkClientFactoryImpl : FintechSDKNetworkInterfaces
   @_spi(Internal) public static let sdkSessionId: Swift.String
   @_spi(Internal) public static let platformWrapper: Swift.String
   @_spi(Internal) public static let idempotencyToken: Swift.String
+  @_spi(Internal) public static let retryAfter: Swift.String
   @_spi(Internal) public static let sourceSDK: Swift.String
 }
 @_spi(Internal) public struct FTNetworkResourceCacheConfiguration : Swift.Sendable {
@@ -66,12 +67,22 @@ final public class DiehardNetworkClientFactoryImpl : FintechSDKNetworkInterfaces
   @_spi(Internal) @objc deinit
   @_spi(Internal) final public func loadResource(at url: Foundation.URL) async throws(FintechSDKNetworkInterfaces.NetworkClientError) -> Foundation.Data
 }
-@_spi(Internal) public struct FTNetworkRetryPolicy {
+@_spi(Internal) public struct FTNetworkRetryAfterError : Swift.Error, Swift.Sendable {
+  @_spi(Internal) public let delay: Foundation.TimeInterval
+  @_spi(Internal) public init(delay: Foundation.TimeInterval)
+}
+@_spi(Internal) public struct FTNetworkRetryPolicy : Swift.Sendable {
   @_spi(Internal) public let maxTransportAttempts: Swift.Int
   @_spi(Internal) public let baseBackoffIntervalInSeconds: Foundation.TimeInterval
-  @_spi(Internal) public init(maxTransportAttempts: Swift.Int = 3, baseBackoffIntervalInSeconds: Foundation.TimeInterval = 0.3)
+  @_spi(Internal) public let retryableStatusCodes: Swift.Set<Swift.Int>
+  @_spi(Internal) public let retryAfterStatusCodes: Swift.Set<Swift.Int>
+  @_spi(Internal) public let allowsNonIdempotentRequests: Swift.Bool
+  @_spi(Internal) public static let defaultMaxTransportAttempts: Swift.Int
+  @_spi(Internal) public static let defaultBackoffInterval: Swift.Double
+  @_spi(Internal) public init(maxTransportAttempts: Swift.Int = FTNetworkRetryPolicy.defaultMaxTransportAttempts, baseBackoffIntervalInSeconds: Foundation.TimeInterval = FTNetworkRetryPolicy.defaultBackoffInterval, retryableStatusCodes: Swift.Set<Swift.Int> = [], retryAfterStatusCodes: Swift.Set<Swift.Int> = [], allowsNonIdempotentRequests: Swift.Bool = false)
   @_spi(Internal) public func backoffNanoseconds(forRetry retry: Swift.Int) -> Swift.UInt64
   @_spi(Internal) public func isRetriable(_ error: FintechSDKNetworkInterfaces.NetworkClientError, taskCancelled: Swift.Bool, request: Foundation.URLRequest) -> Swift.Bool
+  @_spi(Internal) public func withMaxAttempts(_ maxTransportAttempts: Swift.Int) -> FintechSDKNetworkImplementation.FTNetworkRetryPolicy
 }
 @_spi(Internal) public struct FTPayBackendAPIFactory {
   #if compiler(>=5.3) && $NonescapableTypes

@@ -149,6 +149,8 @@ extension FintechSDKQuickPayment.FTQuickPaymentStateListener {
   @_spi(Internal) @_Concurrency.MainActor final public func createPaymentMethodsWidget(allowSilentReload: Swift.Bool = true) -> UIKit.UIView
   @_spi(Internal) @_Concurrency.MainActor final public func createActivePaymentMethodBadge(allowSilentReload: Swift.Bool = true) -> any SwiftUICore.View
   @_spi(Internal) @_Concurrency.MainActor final public func createActivePaymentMethodBadge(allowSilentReload: Swift.Bool = true) -> UIKit.UIView
+  @_spi(Internal) @_Concurrency.MainActor final public func createPlusPointsToggle() -> UIKit.UIView
+  @_spi(Internal) @_Concurrency.MainActor final public func createPlusPointsToggle() -> any SwiftUICore.View
   #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor final public func createPaymentToggle(placement: Swift.String? = nil, showLoyaltyAction: @escaping () -> Swift.Void) -> any SwiftUICore.View
   #endif

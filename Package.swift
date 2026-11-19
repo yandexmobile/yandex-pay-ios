@@ -14,6 +14,7 @@ let package = Package(
     .library(name: "YandexPayAssistant", targets: ["YandexPayAssistantWrapper"]),
     .library(name: "YandexPayInventory", targets: ["YandexPayInventoryWrapper"]),
     .library(name: "YandexQuickPay", targets: ["YandexQuickPayWrapper"]),
+    .library(name: "YandexPayLens", targets: ["YandexPayLensWrapper"]),
   ],
   dependencies: [
     .package(
@@ -91,6 +92,7 @@ let package = Package(
         "FintechSDKPayOrderData",
         "FintechSDKPayMerchantData",
         "FintechSDKRedirectScenario",
+        "FintechSDKMerchantApplinkParsersData",
         "FintechSDKPayFormFeatures",
         "FintechSDKPayButton",
         "FintechSDKPayBadge",
@@ -146,6 +148,7 @@ let package = Package(
         "FintechSDKPayOrderData",
         "FintechSDKPayMerchantData",
         "FintechSDKRedirectScenario",
+        "FintechSDKMerchantApplinkParsersData",
         "FintechSDKPayFormFeatures",
         "FintechSDKPayButton",
         "FintechSDKPayBadge",
@@ -247,6 +250,7 @@ let package = Package(
         "FintechSDKPayOrderData",
         "FintechSDKPayMerchantData",
         "FintechSDKRedirectScenario",
+        "FintechSDKMerchantApplinkParsersData",
         "FintechSDKPayFormFeatures",
         "FintechSDKPayButton",
         "FintechSDKPayBadge",
@@ -339,6 +343,54 @@ let package = Package(
         .product(name: "AppMetricaCore", package: "appmetrica-sdk-ios"),
       ],
       path: "Sources/YandexQuickPayWrapper"
+    ),
+    .target(
+      name: "YandexPayLensWrapper",
+      dependencies: [
+        "YandexPayLens",
+        "FintechSDKLens",
+        "FintechSDKLensData",
+        "FintechSDKMLCamera",
+        "FintechSDKBDUICore",
+        "FintechSDKBDUIFeatures",
+        "FintechSDKFontsInterfaces",
+        "FintechSDKAnalyticsInterfaces",
+        "FintechSDKCommonEntity",
+        "FintechSDKCoreUtils",
+        "FintechSDKNetworkInterfaces",
+        "FintechSDKNetworkImplementation",
+        "FintechSDKAuthInterfaces",
+        "FintechSDKCoreAnalytics",
+        "FintechSDKCoreUI",
+        "FintechYBSDKInterfaces",
+        "FintechBBPartnerSDKInterfaces",
+        "FintechPlusSDKInterfaces",
+        "FintechSDKRemoteResourcesData",
+        "FintechSDKSafariFeature",
+        "FintechSDKAuthCoreImplementation",
+        "FintechSDKAuthorizationScenario",
+        "FintechSDKNativeErrorFeature",
+        "FintechSDKDivKitWidgetsFeatures",
+        "FintechSDKLoaderScreen",
+        "FintechSDKNavigationInterfaces",
+        "FintechSDKNavigationImplementation",
+        "FintechSDKWebViewFeatures",
+        "FintechSDKExternalAuthWebView",
+        "FintechSDKPayBoxResources",
+        "FintechSDKAppTransportSecurityScenario",
+        "FintechSDKPayBoxEntity",
+        "FintechSDKRUMImplementation",
+        "FintechSDKFontsAdapter",
+        "ExternalBduiAdapter",
+        "FintechBDUIWrapper",
+        "FintechSDKLoginAdapter",
+        "FintechSDKAppMetricaAdapter6",
+        "FintechSDKNetworkChallengeAdapter",
+        "FintechSDKRealTimeAnalyticsAdapter",
+        "YandexPayConfiguration",
+        .product(name: "AppMetricaCore", package: "appmetrica-sdk-ios"),
+      ],
+      path: "Sources/YandexPayLensWrapper"
     ),
     .binaryTarget(
       name: "FintechSDKLoginAdapter",
@@ -509,6 +561,10 @@ let package = Package(
       path: "XCFrameworks/FintechSDK/FintechSDKRedirectScenario.xcframework"
     ),
     .binaryTarget(
+      name: "FintechSDKMerchantApplinkParsersData",
+      path: "XCFrameworks/FintechSDK/FintechSDKMerchantApplinkParsersData.xcframework"
+    ),
+    .binaryTarget(
       name: "FintechSDKPayFormFeatures",
       path: "XCFrameworks/FintechSDK/FintechSDKPayFormFeatures.xcframework"
     ),
@@ -571,6 +627,22 @@ let package = Package(
     .binaryTarget(
       name: "FintechSDKQuickPaymentShared",
       path: "XCFrameworks/FintechSDK/FintechSDKQuickPaymentShared.xcframework"
+    ),
+    .binaryTarget(
+      name: "YandexPayLens",
+      path: "XCFrameworks/YandexPayLens.xcframework"
+    ),
+    .binaryTarget(
+      name: "FintechSDKLens",
+      path: "XCFrameworks/FintechSDK/FintechSDKLens.xcframework"
+    ),
+    .binaryTarget(
+      name: "FintechSDKLensData",
+      path: "XCFrameworks/FintechSDK/FintechSDKLensData.xcframework"
+    ),
+    .binaryTarget(
+      name: "FintechSDKMLCamera",
+      path: "XCFrameworks/FintechSDK/FintechSDKMLCamera.xcframework"
     ),
   ]
 )

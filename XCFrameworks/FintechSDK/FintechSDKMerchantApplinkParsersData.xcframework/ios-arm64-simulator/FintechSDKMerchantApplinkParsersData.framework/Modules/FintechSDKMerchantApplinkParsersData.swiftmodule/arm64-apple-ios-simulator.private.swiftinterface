@@ -1,0 +1,96 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKMerchantApplinkParsersData -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
+import FintechSDKCommonEntity
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_spi(Internal) public struct FTMerchantApplinkParser : Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init(clientID: Swift.String, moduleName: Swift.String, environment: FintechSDKCommonEntity.FintechSDKEnvironment? = nil, pathMatching: FintechSDKMerchantApplinkParsersData.FTMerchantApplinkPathMatching = .namespace)
+  #endif
+  @_spi(Internal) public func canHandle(url: Foundation.URL) -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public func environment(from host: Swift.String) -> FintechSDKMerchantApplinkParsersData.FTMerchantApplinkEnvironment?
+  #endif
+}
+@_spi(Internal) public enum FTMerchantApplinkEnvironment : Swift.Equatable, Swift.Sendable {
+  @_spi(Internal) case production
+  @_spi(Internal) case sandbox
+  @_spi(Internal) case testing
+  @_spi(Internal) public static func == (a: FintechSDKMerchantApplinkParsersData.FTMerchantApplinkEnvironment, b: FintechSDKMerchantApplinkParsersData.FTMerchantApplinkEnvironment) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public enum FTMerchantApplinkPathMatching : Swift.Sendable {
+  @_spi(Internal) case namespace
+  @_spi(Internal) case prefix
+  @_spi(Internal) public static func == (a: FintechSDKMerchantApplinkParsersData.FTMerchantApplinkPathMatching, b: FintechSDKMerchantApplinkParsersData.FTMerchantApplinkPathMatching) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public struct FTPaymentResultParser {
+  @_spi(Internal) public init(clientId: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public func parse(_ url: Foundation.URL) -> FintechSDKMerchantApplinkParsersData.FTPaymentResultParser.DeeplinkParams?
+  #endif
+  @_spi(Internal) public func canHandle(url: Foundation.URL) -> Swift.Bool
+}
+@_spi(Internal) extension FintechSDKMerchantApplinkParsersData.FTPaymentResultParser {
+  @_spi(Internal) public typealias Environment = FintechSDKMerchantApplinkParsersData.FTMerchantApplinkEnvironment
+  @_spi(Internal) public struct DeeplinkParams : Swift.Sendable {
+    @_spi(Internal) public let orderId: Swift.String?
+    @_spi(Internal) public let merchantId: Swift.String?
+    @_spi(Internal) public let sessionId: Swift.String?
+    @_spi(Internal) public let paymentResult: FintechSDKMerchantApplinkParsersData.FTPaymentResultParser.PaymentResult
+    @_spi(Internal) public let reason: FintechSDKMerchantApplinkParsersData.FTPaymentResultParser.PaymentErrorReason?
+    @_spi(Internal) public let shortLivedPersonalizationUserToken: Swift.String?
+    @_spi(Internal) public let environment: FintechSDKMerchantApplinkParsersData.FTPaymentResultParser.Environment
+    @_spi(Internal) public let token: Swift.String?
+  }
+  @_spi(Internal) public enum PaymentResult : Swift.String, Swift.Sendable {
+    @_spi(Internal) case success
+    @_spi(Internal) case fail
+    @_spi(Internal) case cancel
+    #if compiler(>=5.3) && $NonescapableTypes
+    @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
+    @_spi(Internal) public typealias RawValue = Swift.String
+    @_spi(Internal) public var rawValue: Swift.String {
+      @_spi(Internal) get
+    }
+  }
+  @_spi(Internal) public enum PaymentErrorReason : Swift.String, Swift.Error, Swift.Sendable {
+    @_spi(Internal) case paymentFailed
+    @_spi(Internal) case appError
+    @_spi(Internal) case invalidArgs
+    @_spi(Internal) case orderExpired
+    @_spi(Internal) case orderNotFound
+    @_spi(Internal) case unknownError
+    @_spi(Internal) case authenticationProblem
+    @_spi(Internal) case wrongMerchantId
+    #if compiler(>=5.3) && $NonescapableTypes
+    @_spi(Internal) public init?(rawValue: Swift.String)
+    #endif
+    @_spi(Internal) public typealias RawValue = Swift.String
+    @_spi(Internal) public var rawValue: Swift.String {
+      @_spi(Internal) get
+    }
+  }
+}
+@_spi(Internal) extension FintechSDKMerchantApplinkParsersData.FTMerchantApplinkEnvironment : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKMerchantApplinkParsersData.FTMerchantApplinkPathMatching : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKMerchantApplinkParsersData.FTMerchantApplinkPathMatching : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKMerchantApplinkParsersData.FTPaymentResultParser.PaymentResult : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKMerchantApplinkParsersData.FTPaymentResultParser.PaymentResult : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKMerchantApplinkParsersData.FTPaymentResultParser.PaymentResult : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKMerchantApplinkParsersData.FTPaymentResultParser.PaymentErrorReason : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKMerchantApplinkParsersData.FTPaymentResultParser.PaymentErrorReason : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKMerchantApplinkParsersData.FTPaymentResultParser.PaymentErrorReason : Swift.RawRepresentable {}
