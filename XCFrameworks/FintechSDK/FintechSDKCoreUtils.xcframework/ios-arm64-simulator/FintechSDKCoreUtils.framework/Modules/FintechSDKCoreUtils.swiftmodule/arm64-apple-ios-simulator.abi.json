@@ -9523,21 +9523,38 @@
         ]
       },
       {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "FintechSDKCoreUtils"
-      },
-      {
         "kind": "TypeDecl",
-        "name": "OAuthTokenCensor",
-        "printedName": "OAuthTokenCensor",
+        "name": "FTPassthroughTextSanitizer",
+        "printedName": "FTPassthroughTextSanitizer",
         "children": [
           {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTPassthroughTextSanitizer",
+                "printedName": "FintechSDKCoreUtils.FTPassthroughTextSanitizer",
+                "usr": "s:19FintechSDKCoreUtils26FTPassthroughTextSanitizerV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19FintechSDKCoreUtils26FTPassthroughTextSanitizerVACycfc",
+            "mangledName": "$s19FintechSDKCoreUtils26FTPassthroughTextSanitizerVACycfc",
+            "moduleName": "FintechSDKCoreUtils",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
             "kind": "Function",
-            "name": "censoredOAuthTokenForLogging",
-            "printedName": "censoredOAuthTokenForLogging(_:)",
+            "name": "sanitize",
+            "printedName": "sanitize(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -9553,10 +9570,9 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:19FintechSDKCoreUtils16OAuthTokenCensorO08censoreddE10ForLoggingyS2SFZ",
-            "mangledName": "$s19FintechSDKCoreUtils16OAuthTokenCensorO08censoreddE10ForLoggingyS2SFZ",
+            "usr": "s:19FintechSDKCoreUtils26FTPassthroughTextSanitizerV8sanitizeyS2SF",
+            "mangledName": "$s19FintechSDKCoreUtils26FTPassthroughTextSanitizerV8sanitizeyS2SF",
             "moduleName": "FintechSDKCoreUtils",
-            "static": true,
             "declAttributes": [
               "AccessControl"
             ],
@@ -9567,27 +9583,54 @@
           },
           {
             "kind": "Function",
-            "name": "prepareURLForLogging",
-            "printedName": "prepareURLForLogging(_:)",
+            "name": "sanitize",
+            "printedName": "sanitize(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "URL",
-                "printedName": "Foundation.URL",
-                "usr": "s:10Foundation3URLV"
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
               },
               {
                 "kind": "TypeNominal",
-                "name": "URL",
-                "printedName": "Foundation.URL",
-                "usr": "s:10Foundation3URLV"
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
               }
             ],
             "declKind": "Func",
-            "usr": "s:19FintechSDKCoreUtils16OAuthTokenCensorO20prepareURLForLoggingy10Foundation3URLVAGFZ",
-            "mangledName": "$s19FintechSDKCoreUtils16OAuthTokenCensorO20prepareURLForLoggingy10Foundation3URLVAGFZ",
+            "usr": "s:19FintechSDKCoreUtils26FTPassthroughTextSanitizerV8sanitizeySDyS2SGAEF",
+            "mangledName": "$s19FintechSDKCoreUtils26FTPassthroughTextSanitizerV8sanitizeySDyS2SGAEF",
             "moduleName": "FintechSDKCoreUtils",
-            "static": true,
             "declAttributes": [
               "AccessControl"
             ],
@@ -9598,27 +9641,54 @@
           },
           {
             "kind": "Function",
-            "name": "prepareValueForLogging",
-            "printedName": "prepareValueForLogging(_:)",
+            "name": "sanitize",
+            "printedName": "sanitize(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "Dictionary",
+                "printedName": "[Swift.String : any Swift.Sendable]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Sendable",
+                    "printedName": "any Swift.Sendable",
+                    "usr": "s:s8SendableP"
+                  }
+                ],
+                "usr": "s:SD"
               },
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "Dictionary",
+                "printedName": "[Swift.String : any Swift.Sendable]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Sendable",
+                    "printedName": "any Swift.Sendable",
+                    "usr": "s:s8SendableP"
+                  }
+                ],
+                "usr": "s:SD"
               }
             ],
             "declKind": "Func",
-            "usr": "s:19FintechSDKCoreUtils16OAuthTokenCensorO22prepareValueForLoggingyS2SFZ",
-            "mangledName": "$s19FintechSDKCoreUtils16OAuthTokenCensorO22prepareValueForLoggingyS2SFZ",
+            "usr": "s:19FintechSDKCoreUtils26FTPassthroughTextSanitizerV8sanitizeySDySSs8Sendable_pGAFF",
+            "mangledName": "$s19FintechSDKCoreUtils26FTPassthroughTextSanitizerV8sanitizeySDySSs8Sendable_pGAFF",
             "moduleName": "FintechSDKCoreUtils",
-            "static": true,
             "declAttributes": [
               "AccessControl"
             ],
@@ -9628,9 +9698,9 @@
             "funcSelfKind": "NonMutating"
           }
         ],
-        "declKind": "Enum",
-        "usr": "s:19FintechSDKCoreUtils16OAuthTokenCensorO",
-        "mangledName": "$s19FintechSDKCoreUtils16OAuthTokenCensorO",
+        "declKind": "Struct",
+        "usr": "s:19FintechSDKCoreUtils26FTPassthroughTextSanitizerV",
+        "mangledName": "$s19FintechSDKCoreUtils26FTPassthroughTextSanitizerV",
         "moduleName": "FintechSDKCoreUtils",
         "declAttributes": [
           "AccessControl",
@@ -9653,6 +9723,596 @@
             "printedName": "Escapable",
             "usr": "s:s9EscapableP",
             "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTSanitizingText",
+            "printedName": "FTSanitizingText",
+            "usr": "s:19FintechSDKCoreUtils16FTSanitizingTextP",
+            "mangledName": "$s19FintechSDKCoreUtils16FTSanitizingTextP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreUtils"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTSanitizingText",
+        "printedName": "FTSanitizingText",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "sanitize",
+            "printedName": "sanitize(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKCoreUtils16FTSanitizingTextP8sanitizeyS2SF",
+            "mangledName": "$s19FintechSDKCoreUtils16FTSanitizingTextP8sanitizeyS2SF",
+            "moduleName": "FintechSDKCoreUtils",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreUtils.FTSanitizingText>",
+            "sugared_genericSig": "<Self where Self : FintechSDKCoreUtils.FTSanitizingText>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sanitize",
+            "printedName": "sanitize(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKCoreUtils16FTSanitizingTextP8sanitizeySDyS2SGAEF",
+            "mangledName": "$s19FintechSDKCoreUtils16FTSanitizingTextP8sanitizeySDyS2SGAEF",
+            "moduleName": "FintechSDKCoreUtils",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreUtils.FTSanitizingText>",
+            "sugared_genericSig": "<Self where Self : FintechSDKCoreUtils.FTSanitizingText>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sanitize",
+            "printedName": "sanitize(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : any Swift.Sendable]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Sendable",
+                    "printedName": "any Swift.Sendable",
+                    "usr": "s:s8SendableP"
+                  }
+                ],
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : any Swift.Sendable]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Sendable",
+                    "printedName": "any Swift.Sendable",
+                    "usr": "s:s8SendableP"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKCoreUtils16FTSanitizingTextP8sanitizeySDySSs8Sendable_pGAFF",
+            "mangledName": "$s19FintechSDKCoreUtils16FTSanitizingTextP8sanitizeySDySSs8Sendable_pGAFF",
+            "moduleName": "FintechSDKCoreUtils",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreUtils.FTSanitizingText>",
+            "sugared_genericSig": "<Self where Self : FintechSDKCoreUtils.FTSanitizingText>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:19FintechSDKCoreUtils16FTSanitizingTextP",
+        "mangledName": "$s19FintechSDKCoreUtils16FTSanitizingTextP",
+        "moduleName": "FintechSDKCoreUtils",
+        "genericSig": "<τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreUtils"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTTextSanitizer",
+        "printedName": "FTTextSanitizer",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(additionalRules:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTTextSanitizer",
+                "printedName": "FintechSDKCoreUtils.FTTextSanitizer",
+                "usr": "s:19FintechSDKCoreUtils15FTTextSanitizerV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKCoreUtils.FTRedactRule]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTRedactRule",
+                    "printedName": "any FintechSDKCoreUtils.FTRedactRule",
+                    "usr": "s:19FintechSDKCoreUtils12FTRedactRuleP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19FintechSDKCoreUtils15FTTextSanitizerV15additionalRulesACSayAA12FTRedactRule_pG_tcfc",
+            "mangledName": "$s19FintechSDKCoreUtils15FTTextSanitizerV15additionalRulesACSayAA12FTRedactRule_pG_tcfc",
+            "moduleName": "FintechSDKCoreUtils",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "sanitize",
+            "printedName": "sanitize(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKCoreUtils15FTTextSanitizerV8sanitizeyS2SF",
+            "mangledName": "$s19FintechSDKCoreUtils15FTTextSanitizerV8sanitizeyS2SF",
+            "moduleName": "FintechSDKCoreUtils",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sanitize",
+            "printedName": "sanitize(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKCoreUtils15FTTextSanitizerV8sanitizeySDyS2SGAEF",
+            "mangledName": "$s19FintechSDKCoreUtils15FTTextSanitizerV8sanitizeySDyS2SGAEF",
+            "moduleName": "FintechSDKCoreUtils",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sanitize",
+            "printedName": "sanitize(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : any Swift.Sendable]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Sendable",
+                    "printedName": "any Swift.Sendable",
+                    "usr": "s:s8SendableP"
+                  }
+                ],
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : any Swift.Sendable]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Sendable",
+                    "printedName": "any Swift.Sendable",
+                    "usr": "s:s8SendableP"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKCoreUtils15FTTextSanitizerV8sanitizeySDySSs8Sendable_pGAFF",
+            "mangledName": "$s19FintechSDKCoreUtils15FTTextSanitizerV8sanitizeySDySSs8Sendable_pGAFF",
+            "moduleName": "FintechSDKCoreUtils",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19FintechSDKCoreUtils15FTTextSanitizerV",
+        "mangledName": "$s19FintechSDKCoreUtils15FTTextSanitizerV",
+        "moduleName": "FintechSDKCoreUtils",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTSanitizingText",
+            "printedName": "FTSanitizingText",
+            "usr": "s:19FintechSDKCoreUtils16FTSanitizingTextP",
+            "mangledName": "$s19FintechSDKCoreUtils16FTSanitizingTextP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreUtils"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreUtils"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKCoreUtils"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTRedactRule",
+        "printedName": "FTRedactRule",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "redact",
+            "printedName": "redact(_:fieldName:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKCoreUtils12FTRedactRuleP6redact_9fieldNameS2S_SSSgtF",
+            "mangledName": "$s19FintechSDKCoreUtils12FTRedactRuleP6redact_9fieldNameS2S_SSSgtF",
+            "moduleName": "FintechSDKCoreUtils",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKCoreUtils.FTRedactRule>",
+            "sugared_genericSig": "<Self where Self : FintechSDKCoreUtils.FTRedactRule>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:19FintechSDKCoreUtils12FTRedactRuleP",
+        "mangledName": "$s19FintechSDKCoreUtils12FTRedactRuleP",
+        "moduleName": "FintechSDKCoreUtils",
+        "genericSig": "<τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -15628,6 +16288,57 @@
               "Internal"
             ],
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(nonNegativeString:allowZero:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Decimal?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Decimal",
+                    "printedName": "Foundation.Decimal",
+                    "usr": "c:@SA@NSDecimal"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:So9NSDecimala19FintechSDKCoreUtilsE17nonNegativeString9allowZeroABSgSSSg_Sbtcfc",
+            "mangledName": "$sSo9NSDecimala19FintechSDKCoreUtilsE17nonNegativeString9allowZeroABSgSSSg_Sbtcfc",
+            "moduleName": "FintechSDKCoreUtils",
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
           }
         ],
         "declKind": "Struct",
@@ -19908,553 +20619,749 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Compression\/FTGzipCompressor.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Compression\/FTGzipCompressor.swift",
       "kind": "IntegerLiteral",
       "offset": 1397,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/DebugPrint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/DebugPrint.swift",
       "kind": "StringLiteral",
-      "offset": 119,
+      "offset": 165,
       "length": 3,
       "value": "\" \""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/DebugPrint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/DebugPrint.swift",
       "kind": "StringLiteral",
-      "offset": 149,
+      "offset": 195,
       "length": 4,
       "value": "\"\n\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/Decimal.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/Decimal.swift",
+      "kind": "BooleanLiteral",
+      "offset": 373,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/Decimal.swift",
       "kind": "StringLiteral",
-      "offset": 362,
+      "offset": 701,
       "length": 3,
       "value": "\",\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/Decimal.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/Decimal.swift",
       "kind": "StringLiteral",
-      "offset": 385,
+      "offset": 724,
       "length": 3,
       "value": "\".\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/FTSequenceExtensions.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/Decimal.swift",
+      "kind": "StringLiteral",
+      "offset": 769,
+      "length": 26,
+      "value": "\"^[0-9]+(?:\\.[0-9]+)?\\z\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/FTSequenceExtensions.swift",
       "kind": "Dictionary",
       "offset": 631,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/Locale.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/Locale.swift",
       "kind": "StringLiteral",
       "offset": 246,
       "length": 13,
       "value": "\"en_US_POSIX\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/Locale.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/Locale.swift",
       "kind": "StringLiteral",
       "offset": 278,
       "length": 7,
       "value": "\"ru_RU\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/String.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Extensions\/String.swift",
       "kind": "StringLiteral",
       "offset": 723,
       "length": 5,
       "value": "\" \""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTDomainPolicy.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTDomainPolicy.swift",
       "kind": "StringLiteral",
       "offset": 138,
       "length": 4,
       "value": "\"*.\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTDomainPolicy.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTDomainPolicy.swift",
       "kind": "StringLiteral",
       "offset": 175,
       "length": 3,
       "value": "\".\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTHTTPDateParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTHTTPDateParser.swift",
       "kind": "StringLiteral",
       "offset": 522,
       "length": 13,
       "value": "\"en_US_POSIX\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTHTTPDateParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTHTTPDateParser.swift",
       "kind": "StringLiteral",
       "offset": 566,
       "length": 31,
       "value": "\"EEE, dd MMM yyyy HH:mm:ss zzz\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTObserverList.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTObserverList.swift",
       "kind": "Array",
       "offset": 373,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
       "kind": "Array",
       "offset": 125,
       "length": 29,
       "value": "[\"fintech-sdk\", \"fintechsdk\"]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
       "kind": "StringLiteral",
       "offset": 187,
       "length": 3,
       "value": "\".\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
       "kind": "StringLiteral",
       "offset": 225,
       "length": 3,
       "value": "\",\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
       "kind": "StringLiteral",
       "offset": 275,
       "length": 3,
       "value": "\"[\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
       "kind": "StringLiteral",
       "offset": 326,
       "length": 3,
       "value": "\"]\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
       "kind": "StringLiteral",
       "offset": 359,
       "length": 3,
       "value": "\"[\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
       "kind": "StringLiteral",
       "offset": 393,
       "length": 3,
       "value": "\"]\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
       "kind": "StringLiteral",
       "offset": 424,
       "length": 3,
       "value": "\"{\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
       "kind": "StringLiteral",
       "offset": 457,
       "length": 4,
       "value": "\"[]\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPKDynamicLinkParser.swift",
       "kind": "StringLiteral",
       "offset": 535,
       "length": 67,
       "value": "\"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_\/\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPlatformWrapperStorage.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPlatformWrapperStorage.swift",
       "kind": "StringLiteral",
       "offset": 337,
       "length": 40,
       "value": "\"com.yandex.fintechsdk.platform_wrapper\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPlatformWrapperStorage.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPlatformWrapperStorage.swift",
       "kind": "StringLiteral",
       "offset": 412,
       "length": 8,
       "value": "\"native\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPlatformWrapperStorage.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPlatformWrapperStorage.swift",
       "kind": "IntegerLiteral",
       "offset": 743,
       "length": 2,
       "value": "32"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPlatformWrapperStorage.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPlatformWrapperStorage.swift",
       "kind": "IntegerLiteral",
       "offset": 748,
       "length": 3,
       "value": "126"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPlatformWrapperStorage.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTPlatformWrapperStorage.swift",
       "kind": "IntegerLiteral",
       "offset": 790,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTRetryAfterParser.swift",
-      "kind": "StringLiteral",
-      "offset": 910,
-      "length": 13,
-      "value": "\"en_US_POSIX\""
-    },
-    {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTRetryAfterParser.swift",
-      "kind": "StringLiteral",
-      "offset": 954,
-      "length": 31,
-      "value": "\"EEE, dd MMM yyyy HH:mm:ss zzz\""
-    },
-    {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTRetryAfterParser.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTRetryAfterParser.swift",
       "kind": "IntegerLiteral",
-      "offset": 1064,
+      "offset": 720,
       "length": 13,
       "value": "1000000000"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTScheduledTask.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTScheduledTask.swift",
       "kind": "IntegerLiteral",
       "offset": 928,
       "length": 13,
       "value": "1000000000"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTScheduledTask.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTScheduledTask.swift",
       "kind": "StringLiteral",
       "offset": 1009,
       "length": 78,
       "value": "\"Scheduled delay must be finite, nonnegative and representable in nanoseconds\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
       "kind": "StringLiteral",
       "offset": 99,
       "length": 13,
       "value": "\"payment_kit\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
       "kind": "StringLiteral",
       "offset": 152,
       "length": 20,
       "value": "\"native_payment_kit\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
       "kind": "StringLiteral",
       "offset": 210,
       "length": 17,
       "value": "\"quickpay_yandex\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
       "kind": "StringLiteral",
       "offset": 257,
       "length": 8,
       "value": "\"wallet\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
       "kind": "StringLiteral",
       "offset": 296,
       "length": 9,
       "value": "\"applink\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
       "kind": "StringLiteral",
       "offset": 337,
       "length": 10,
       "value": "\"quickpay\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
       "kind": "StringLiteral",
       "offset": 378,
       "length": 10,
       "value": "\"pay_auth\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
       "kind": "StringLiteral",
       "offset": 424,
       "length": 15,
       "value": "\"pay_assistant\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
       "kind": "StringLiteral",
       "offset": 472,
       "length": 11,
       "value": "\"inventory\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
       "kind": "StringLiteral",
       "offset": 512,
       "length": 7,
       "value": "\"inapp\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
       "kind": "StringLiteral",
       "offset": 551,
       "length": 19,
       "value": "\"pay_with_redirect\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTSourceSDKValue.swift",
       "kind": "StringLiteral",
       "offset": 610,
       "length": 21,
       "value": "\"yandex_pay_sdk_base\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTTagged.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FTTagged.swift",
       "kind": "StringLiteral",
       "offset": 3475,
       "length": 43,
       "value": "\"You don't need to cast value to same type\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FintechApiBaseUrlType.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FintechApiBaseUrlType.swift",
       "kind": "StringLiteral",
       "offset": 97,
       "length": 34,
       "value": "\"FintechApiBaseUrlType.PayBackend\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FintechApiBaseUrlType.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FintechApiBaseUrlType.swift",
       "kind": "StringLiteral",
       "offset": 151,
       "length": 33,
       "value": "\"FintechApiBaseUrlType.Frontback\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FintechApiBaseUrlType.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FintechApiBaseUrlType.swift",
       "kind": "StringLiteral",
       "offset": 204,
       "length": 33,
       "value": "\"FintechApiBaseUrlType.Tovarisch\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FintechSDKCurrentVersion.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FintechSDKCurrentVersion.swift",
       "kind": "StringLiteral",
       "offset": 227,
       "length": 8,
-      "value": "\"2.11.4\""
+      "value": "\"2.12.2\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FintechSDKCurrentVersion.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/FintechSDKCurrentVersion.swift",
       "kind": "StringLiteral",
       "offset": 282,
       "length": 8,
-      "value": "\"1.16.0\""
+      "value": "\"1.17.0\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/OAuth.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/FTRedactor.swift",
+      "kind": "Array",
+      "offset": 317,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/FTRedactor.swift",
       "kind": "IntegerLiteral",
-      "offset": 109,
+      "offset": 5730,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/OAuth.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/FTRedactor.swift",
+      "kind": "StringLiteral",
+      "offset": 5788,
+      "length": 14,
+      "value": "\"[^\\s<>\"']+\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/FTRedactor.swift",
+      "kind": "StringLiteral",
+      "offset": 5841,
+      "length": 10,
+      "value": "\".,;:!?\\\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/FTRedactor.swift",
+      "kind": "StringLiteral",
+      "offset": 5880,
+      "length": 6,
+      "value": "\"\\\/\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/FTRedactor.swift",
+      "kind": "StringLiteral",
+      "offset": 5908,
+      "length": 3,
+      "value": "\"\/\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/FTRedactor.swift",
+      "kind": "StringLiteral",
+      "offset": 5942,
+      "length": 3,
+      "value": "\"&\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/FTRedactor.swift",
+      "kind": "StringLiteral",
+      "offset": 5979,
+      "length": 3,
+      "value": "\"#\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/FTRedactor.swift",
+      "kind": "StringLiteral",
+      "offset": 6014,
+      "length": 3,
+      "value": "\"=\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/FTRedactor.swift",
+      "kind": "StringLiteral",
+      "offset": 6056,
+      "length": 69,
+      "value": "\"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~*\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/FTRedactor.swift",
+      "kind": "StringLiteral",
+      "offset": 6156,
+      "length": 12,
+      "value": "\"[redacted]\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/FTRedactor.swift",
+      "kind": "Dictionary",
+      "offset": 6243,
+      "length": 30,
+      "value": "[(\")\", \"(\"), (\"]\", \"[\"), (\"}\", \"{\")]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/FTRedactor.swift",
+      "kind": "StringLiteral",
+      "offset": 6306,
+      "length": 3,
+      "value": "\"?\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/FTRedactor.swift",
+      "kind": "StringLiteral",
+      "offset": 6347,
+      "length": 3,
+      "value": "\"=\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/FTTextSanitizer.swift",
+      "kind": "Array",
+      "offset": 173,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/Rules\/FTEmailRedactRule.swift",
+      "kind": "StringLiteral",
+      "offset": 644,
+      "length": 7,
+      "value": "\"email\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/Rules\/FTEmailRedactRule.swift",
+      "kind": "StringLiteral",
+      "offset": 677,
+      "length": 9,
+      "value": "\"[email]\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/Rules\/FTEmailRedactRule.swift",
+      "kind": "StringLiteral",
+      "offset": 719,
+      "length": 78,
+      "value": "\"(?i)(?<![\\p{L}\\p{M}\\p{N}._%+-])[\\p{L}\\p{M}\\p{N}._%+-]+@[\\p{L}\\p{M}\\p{N}-]+\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/Rules\/FTEmailRedactRule.swift",
+      "kind": "StringLiteral",
+      "offset": 804,
+      "length": 96,
+      "value": "\"(?:\\.[\\p{L}\\p{M}\\p{N}-]+)*\\.(?:[\\p{L}\\p{M}]{2,63}|XN--[A-Z0-9-]{1,59})(?![\\p{L}\\p{M}\\p{N}-])\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/Rules\/FTOAuthRedactRule.swift",
       "kind": "IntegerLiteral",
-      "offset": 154,
+      "offset": 103,
+      "length": 1,
+      "value": "8"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/Rules\/FTOAuthRedactRule.swift",
+      "kind": "IntegerLiteral",
+      "offset": 148,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/OAuth.swift",
-      "kind": "IntegerLiteral",
-      "offset": 194,
-      "length": 1,
-      "value": "5"
-    },
-    {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/OAuth.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/Rules\/FTOAuthRedactRule.swift",
       "kind": "StringLiteral",
-      "offset": 235,
+      "offset": 1403,
+      "length": 7,
+      "value": "\"token\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/Rules\/FTOAuthRedactRule.swift",
+      "kind": "StringLiteral",
+      "offset": 1449,
+      "length": 11,
+      "value": "\"usertoken\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/Rules\/FTOAuthRedactRule.swift",
+      "kind": "StringLiteral",
+      "offset": 1486,
+      "length": 9,
+      "value": "\"<token>\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/Rules\/FTOAuthRedactRule.swift",
+      "kind": "StringLiteral",
+      "offset": 1526,
+      "length": 7,
+      "value": "\"*****\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/Rules\/FTOAuthRedactRule.swift",
+      "kind": "StringLiteral",
+      "offset": 1571,
+      "length": 99,
+      "value": "\"(?<![A-Za-z0-9_-])[0-9]+(?:\\.[0-9]+){5,10}\\.[A-Za-z0-9_-]{10,}\\.[A-Za-z0-9_-]+(?![A-Za-z0-9_-])\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/Rules\/FTPhoneRedactRule.swift",
+      "kind": "StringLiteral",
+      "offset": 759,
+      "length": 7,
+      "value": "\"phone\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/Rules\/FTPhoneRedactRule.swift",
+      "kind": "StringLiteral",
+      "offset": 807,
+      "length": 13,
+      "value": "\"phonenumber\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/Rules\/FTPhoneRedactRule.swift",
+      "kind": "StringLiteral",
+      "offset": 846,
+      "length": 9,
+      "value": "\"[phone]\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/Rules\/FTPhoneRedactRule.swift",
+      "kind": "StringLiteral",
+      "offset": 881,
+      "length": 51,
+      "value": "\"(?<![\\p{L}\\p{N}_])\\+[1-9](?:[ ()-]*[0-9]){6,14}\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/Rules\/FTPhoneRedactRule.swift",
+      "kind": "StringLiteral",
+      "offset": 961,
+      "length": 50,
+      "value": "\"(?=[ ()-]+[0-9]{4}-[0-9]{2}-[0-9]{2}(?![0-9]))\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/Rules\/FTPhoneRedactRule.swift",
+      "kind": "StringLiteral",
+      "offset": 1067,
       "length": 3,
-      "value": "\"*\""
+      "value": "\"|\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/OAuth.swift",
-      "kind": "Array",
-      "offset": 304,
-      "length": 22,
-      "value": "[\"token\", \"userToken\"]"
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Redaction\/Rules\/FTPhoneRedactRule.swift",
+      "kind": "StringLiteral",
+      "offset": 1085,
+      "length": 21,
+      "value": "\"(?![\\p{L}\\p{N}_])\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
       "kind": "StringLiteral",
       "offset": 944,
       "length": 42,
       "value": "\"com.yandex.fintech.connectivity-observer\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
       "kind": "BooleanLiteral",
       "offset": 3956,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
       "kind": "BooleanLiteral",
       "offset": 3997,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
       "kind": "BooleanLiteral",
       "offset": 4074,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
       "kind": "BooleanLiteral",
       "offset": 4117,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
       "kind": "IntegerLiteral",
       "offset": 4201,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
       "kind": "Dictionary",
       "offset": 4245,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
       "kind": "Dictionary",
       "offset": 4319,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
       "kind": "Array",
       "offset": 4381,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
       "kind": "IntegerLiteral",
       "offset": 4682,
       "length": 11,
       "value": "300000000"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivityObserver.swift",
       "kind": "IntegerLiteral",
       "offset": 13232,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivitySnapshot.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivitySnapshot.swift",
       "kind": "IntegerLiteral",
       "offset": 1211,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivitySnapshot.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Connectivity\/FTConnectivitySnapshot.swift",
       "kind": "IntegerLiteral",
       "offset": 1239,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/EventusIdGenerator\/LogIdGenerator.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/EventusIdGenerator\/LogIdGenerator.swift",
       "kind": "IntegerLiteral",
       "offset": 82,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
       "kind": "StringLiteral",
       "offset": 1228,
       "length": 16,
       "value": "\"yandex-pay-sdk\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
       "kind": "StringLiteral",
       "offset": 1279,
       "length": 13,
       "value": "\"fintech-sdk\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
       "kind": "StringLiteral",
       "offset": 1330,
       "length": 6,
       "value": "\"INFO\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
       "kind": "StringLiteral",
       "offset": 1360,
       "length": 7,
       "value": "\"DEBUG\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
       "kind": "StringLiteral",
       "offset": 1391,
       "length": 7,
       "value": "\"ERROR\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
       "kind": "StringLiteral",
       "offset": 1440,
       "length": 8,
       "value": "\"ℹ️\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
       "kind": "StringLiteral",
       "offset": 1472,
       "length": 6,
       "value": "\"🔨\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Utils\/Sources\/Services\/Logger\/FTLogger.swift",
       "kind": "StringLiteral",
       "offset": 1502,
       "length": 5,

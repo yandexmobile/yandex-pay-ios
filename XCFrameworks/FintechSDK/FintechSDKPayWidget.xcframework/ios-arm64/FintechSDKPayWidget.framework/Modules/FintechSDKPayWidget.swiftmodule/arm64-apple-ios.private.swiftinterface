@@ -20,6 +20,16 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+@_spi(Internal) @_Concurrency.MainActor public protocol FTPayWidgetUpdateOrderPricingUseCase : AnyObject, Swift.Sendable {
+  @_spi(Internal) @discardableResult
+  @_Concurrency.MainActor func execute(pricing: FintechSDKPayWidget.FTPayWidgetOrderPricing) -> Swift.Bool
+}
+@_spi(Internal) @_Concurrency.MainActor final public class FTPayWidgetOrderPricingInteractor : FintechSDKPayWidget.FTPayWidgetUpdateOrderPricingUseCase {
+  @_spi(Internal) @_Concurrency.MainActor public init(delegate: any FintechSDKPayWidget.FTPayWidgetDelegate)
+  @_spi(Internal) @discardableResult
+  @_Concurrency.MainActor final public func execute(pricing: FintechSDKPayWidget.FTPayWidgetOrderPricing) -> Swift.Bool
+  @_spi(Internal) @objc deinit
+}
 @_spi(Internal) public struct FTPayWidgetEndpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider {
   @_spi(Internal) public typealias Decoder = FintechSDKNetworkImplementation.FTRawDataResponseDecoder
   @_spi(Internal) public typealias ResultModel = Foundation.Data
@@ -38,6 +48,10 @@ import _SwiftConcurrencyShims
   #endif
 }
 @_spi(Internal) public typealias FTPayWidgetAuthorizedEndpoint = FintechSDKPayWidget.FTPayWidgetEndpoint
+@_spi(Internal) @_Concurrency.MainActor public protocol FTPayWidgetDelegate : AnyObject {
+  @_spi(Internal) @_Concurrency.MainActor var hasRecipient: Swift.Bool { get }
+  @_spi(Internal) @_Concurrency.MainActor func yandexPayWidget(didChangeOrderPricing orderPricing: FintechSDKPayWidget.FTPayWidgetOrderPricing)
+}
 @_spi(Internal) public struct FTPayWidgetAnalyticsTracking {
   @_spi(Internal) public let eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter
   @_spi(Internal) public let eventType: Swift.String
@@ -49,11 +63,11 @@ import _SwiftConcurrencyShims
 @_spi(Internal) public enum FTPayWidgetFactory {
   @_spi(Internal) @_Concurrency.MainActor public static func makeAnalyticsTracking(eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, eventType: Swift.String = "payWidget", surface: Swift.String = "checkout", isWidgetAuthorized: @escaping @_Concurrency.MainActor @Sendable () -> Swift.Bool, isMerchantAuthorized: @escaping @_Concurrency.MainActor @Sendable () -> Swift.Bool) -> FintechSDKPayWidget.FTPayWidgetAnalyticsTracking
   #if compiler(>=5.3) && $NonescapableTypes
-  @_spi(Internal) @_Concurrency.MainActor public static func createPayWidgetView(presenterViewController: UIKit.UIViewController, model: FintechSDKPayWidget.FTPayWidgetModel, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, flexClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, widgetReloader: FintechSDKDivKitWidgetsFeatures.FTWidgetReloader, paymentInProgressProvider: @escaping () -> Swift.Bool, onAppearTask: @escaping () async throws -> Swift.Void, authorizeHandler: any FintechSDKBDUIFeatures.FTAuthorizeActionHandling, screenOpener: any FintechSDKBDUIFeatures.FTFlexScreenRouting, logger: any FintechSDKCoreUtils.FTLogger, analyticsTracking: FintechSDKPayWidget.FTPayWidgetAnalyticsTracking? = nil, additionalActionHandlers: [any FintechSDKBDUICore.FintechDivUrlHandler] = []) -> some SwiftUICore.View
+  @_spi(Internal) @_Concurrency.MainActor public static func createPayWidgetView(presenterViewController: UIKit.UIViewController, model: FintechSDKPayWidget.FTPayWidgetModel, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, flexClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, widgetReloader: FintechSDKDivKitWidgetsFeatures.FTWidgetReloader, paymentInProgressProvider: @escaping () -> Swift.Bool, onAppearTask: @escaping () async throws -> Swift.Void, authorizeHandler: any FintechSDKBDUIFeatures.FTAuthorizeActionHandling, screenOpener: any FintechSDKBDUIFeatures.FTFlexScreenRouting, logger: any FintechSDKCoreUtils.FTLogger, analyticsTracking: FintechSDKPayWidget.FTPayWidgetAnalyticsTracking? = nil, updateOrderPricing: (any FintechSDKPayWidget.FTPayWidgetUpdateOrderPricingUseCase)? = nil, additionalActionHandlers: [any FintechSDKBDUICore.FintechDivUrlHandler] = []) -> some SwiftUICore.View
   
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
-  @_spi(Internal) @_Concurrency.MainActor public static func createPayWidgetUIView(presenterViewController: UIKit.UIViewController, model: FintechSDKPayWidget.FTPayWidgetModel, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, flexClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, widgetReloader: FintechSDKDivKitWidgetsFeatures.FTWidgetReloader, paymentInProgressProvider: @escaping () -> Swift.Bool, onAppearTask: @escaping () async throws -> Swift.Void, authorizeHandler: any FintechSDKBDUIFeatures.FTAuthorizeActionHandling, screenOpener: any FintechSDKBDUIFeatures.FTFlexScreenRouting, logger: any FintechSDKCoreUtils.FTLogger, analyticsTracking: FintechSDKPayWidget.FTPayWidgetAnalyticsTracking? = nil, additionalActionHandlers: [any FintechSDKBDUICore.FintechDivUrlHandler] = []) -> UIKit.UIView
+  @_spi(Internal) @_Concurrency.MainActor public static func createPayWidgetUIView(presenterViewController: UIKit.UIViewController, model: FintechSDKPayWidget.FTPayWidgetModel, bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, flexClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, widgetReloader: FintechSDKDivKitWidgetsFeatures.FTWidgetReloader, paymentInProgressProvider: @escaping () -> Swift.Bool, onAppearTask: @escaping () async throws -> Swift.Void, authorizeHandler: any FintechSDKBDUIFeatures.FTAuthorizeActionHandling, screenOpener: any FintechSDKBDUIFeatures.FTFlexScreenRouting, logger: any FintechSDKCoreUtils.FTLogger, analyticsTracking: FintechSDKPayWidget.FTPayWidgetAnalyticsTracking? = nil, updateOrderPricing: (any FintechSDKPayWidget.FTPayWidgetUpdateOrderPricingUseCase)? = nil, additionalActionHandlers: [any FintechSDKBDUICore.FintechDivUrlHandler] = []) -> UIKit.UIView
   #endif
 }
 @_spi(Internal) public struct FTPayWidgetCart : Swift.Sendable {
@@ -78,6 +92,13 @@ import _SwiftConcurrencyShims
   #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(theme: FintechSDKCommonEntity.FintechSDKTheme = .system, paymentInProgress: Swift.Bool = false, orderAmount: FintechSDKPayWidget.FTPayWidgetOrderAmount? = nil, cart: FintechSDKPayWidget.FTPayWidgetCart? = nil)
   #endif
+}
+@_spi(Internal) public struct FTPayWidgetOrderPricing : Swift.Sendable, Swift.Equatable {
+  @_spi(Internal) public let pointsToRedeem: Foundation.Decimal?
+  @_spi(Internal) public let discountAmount: Foundation.Decimal?
+  @_spi(Internal) public let amountToPay: Foundation.Decimal?
+  @_spi(Internal) public init(params: [Swift.String : Swift.String])
+  @_spi(Internal) public static func == (a: FintechSDKPayWidget.FTPayWidgetOrderPricing, b: FintechSDKPayWidget.FTPayWidgetOrderPricing) -> Swift.Bool
 }
 @_spi(Internal) @_Concurrency.MainActor @preconcurrency public struct FTPayWidgetShimmerView : SwiftUICore.View {
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init()

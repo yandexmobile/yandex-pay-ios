@@ -54,6 +54,67 @@
             ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "shouldHandle",
+            "printedName": "shouldHandle(message:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "WKScriptMessage",
+                "printedName": "WebKit.WKScriptMessage",
+                "usr": "c:objc(cs)WKScriptMessage"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:25FintechSDKWebViewFeatures32FTScriptMessageHandlerDataSourceP12shouldHandle7messageSbSo08WKScriptF0C_tF",
+            "mangledName": "$s25FintechSDKWebViewFeatures32FTScriptMessageHandlerDataSourceP12shouldHandle7messageSbSo08WKScriptF0C_tF",
+            "moduleName": "FintechSDKWebViewFeatures",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKWebViewFeatures.FTScriptMessageHandlerDataSource>",
+            "sugared_genericSig": "<Self where Self : FintechSDKWebViewFeatures.FTScriptMessageHandlerDataSource>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "shouldHandle",
+            "printedName": "shouldHandle(message:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "WKScriptMessage",
+                "printedName": "WebKit.WKScriptMessage",
+                "usr": "c:objc(cs)WKScriptMessage"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:25FintechSDKWebViewFeatures32FTScriptMessageHandlerDataSourcePAAE12shouldHandle7messageSbSo08WKScriptF0C_tF",
+            "mangledName": "$s25FintechSDKWebViewFeatures32FTScriptMessageHandlerDataSourcePAAE12shouldHandle7messageSbSo08WKScriptF0C_tF",
+            "moduleName": "FintechSDKWebViewFeatures",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKWebViewFeatures.FTScriptMessageHandlerDataSource>",
+            "sugared_genericSig": "<Self where Self : FintechSDKWebViewFeatures.FTScriptMessageHandlerDataSource>",
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Protocol",
@@ -611,6 +672,9 @@
             "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKWebViewFeatures.FTWebViewActionHandler>",
             "sugared_genericSig": "<Self where Self : FintechSDKWebViewFeatures.FTWebViewActionHandler>",
             "protocolReq": true,
+            "declAttributes": [
+              "Custom"
+            ],
             "spi_group_names": [
               "Internal"
             ],
@@ -740,6 +804,9 @@
             "moduleName": "FintechSDKWebViewFeatures",
             "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKWebViewFeatures.FTWebViewActionHandler>",
             "sugared_genericSig": "<Self where Self : FintechSDKWebViewFeatures.FTWebViewActionHandler>",
+            "declAttributes": [
+              "Custom"
+            ],
             "isFromExtension": true,
             "spi_group_names": [
               "Internal"
@@ -2365,6 +2432,98 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKWebViewFeatures"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTWebViewCookieFactory",
+        "printedName": "FTWebViewCookieFactory",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "make",
+            "printedName": "make(name:value:host:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.HTTPCookie?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPCookie",
+                    "printedName": "Foundation.HTTPCookie",
+                    "usr": "c:objc(cs)NSHTTPCookie"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:25FintechSDKWebViewFeatures05FTWebC13CookieFactoryO4make4name5value4hostSo12NSHTTPCookieCSgSS_S2StFZ",
+            "mangledName": "$s25FintechSDKWebViewFeatures05FTWebC13CookieFactoryO4make4name5value4hostSo12NSHTTPCookieCSgSS_S2StFZ",
+            "moduleName": "FintechSDKWebViewFeatures",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:25FintechSDKWebViewFeatures05FTWebC13CookieFactoryO",
+        "mangledName": "$s25FintechSDKWebViewFeatures05FTWebC13CookieFactoryO",
+        "moduleName": "FintechSDKWebViewFeatures",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           }
         ]
       },

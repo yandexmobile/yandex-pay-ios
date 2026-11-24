@@ -130,6 +130,71 @@
         "moduleName": "FintechSDKExternalAuthWebView"
       },
       {
+        "kind": "TypeDecl",
+        "name": "FTExternalAuthWebViewURLProvider",
+        "printedName": "FTExternalAuthWebViewURLProvider",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "baseURL",
+            "printedName": "baseURL(environment:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechSDKEnvironment",
+                "printedName": "FintechSDKCommonEntity.FintechSDKEnvironment",
+                "usr": "s:22FintechSDKCommonEntity0A14SDKEnvironmentO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29FintechSDKExternalAuthWebView010FTExternalcdE11URLProviderO7baseURL11environment10Foundation0I0V0A15SDKCommonEntity0A14SDKEnvironmentO_tFZ",
+            "mangledName": "$s29FintechSDKExternalAuthWebView010FTExternalcdE11URLProviderO7baseURL11environment10Foundation0I0V0A15SDKCommonEntity0A14SDKEnvironmentO_tFZ",
+            "moduleName": "FintechSDKExternalAuthWebView",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:29FintechSDKExternalAuthWebView010FTExternalcdE11URLProviderO",
+        "mangledName": "$s29FintechSDKExternalAuthWebView010FTExternalcdE11URLProviderO",
+        "moduleName": "FintechSDKExternalAuthWebView",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "FintechSDKCommonEntity",
         "printedName": "FintechSDKCommonEntity",
@@ -2625,6 +2690,70 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "FTExternalAuthWebViewProgrammaticDismissal",
+        "printedName": "FTExternalAuthWebViewProgrammaticDismissal",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "prepareForProgrammaticDismissal",
+            "printedName": "prepareForProgrammaticDismissal()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:29FintechSDKExternalAuthWebView010FTExternalcdE21ProgrammaticDismissalP010prepareForgH0yyF",
+            "mangledName": "$s29FintechSDKExternalAuthWebView010FTExternalcdE21ProgrammaticDismissalP010prepareForgH0yyF",
+            "moduleName": "FintechSDKExternalAuthWebView",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKExternalAuthWebView.FTExternalAuthWebViewProgrammaticDismissal>",
+            "sugared_genericSig": "<Self where Self : FintechSDKExternalAuthWebView.FTExternalAuthWebViewProgrammaticDismissal>",
+            "protocolReq": true,
+            "declAttributes": [
+              "Custom"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:29FintechSDKExternalAuthWebView010FTExternalcdE21ProgrammaticDismissalP",
+        "mangledName": "$s29FintechSDKExternalAuthWebView010FTExternalcdE21ProgrammaticDismissalP",
+        "moduleName": "FintechSDKExternalAuthWebView",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl",
+          "Custom",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "FintechSDKAuthInterfaces",
         "printedName": "FintechSDKAuthInterfaces",
@@ -3578,283 +3707,459 @@
             "mangledName": "$ss8CopyableP"
           }
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAuthInterfaces",
+        "printedName": "FintechSDKAuthInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKExternalAuthWebView"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKExternalAuthWebView"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FintechLoginServiceError",
+        "printedName": "FintechLoginServiceError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "externalAuthMissingMerchAuth",
+            "printedName": "externalAuthMissingMerchAuth",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechLoginServiceError",
+                "printedName": "FintechSDKAuthInterfaces.FintechLoginServiceError",
+                "usr": "s:24FintechSDKAuthInterfaces0A17LoginServiceErrorO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:24FintechSDKAuthInterfaces0A17LoginServiceErrorO0A22SDKExternalAuthWebViewE08externalh12MissingMerchH0ACvpZ",
+            "mangledName": "$s24FintechSDKAuthInterfaces0A17LoginServiceErrorO0A22SDKExternalAuthWebViewE08externalh12MissingMerchH0ACvpZ",
+            "moduleName": "FintechSDKExternalAuthWebView",
+            "static": true,
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechLoginServiceError",
+                    "printedName": "FintechSDKAuthInterfaces.FintechLoginServiceError",
+                    "usr": "s:24FintechSDKAuthInterfaces0A17LoginServiceErrorO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:24FintechSDKAuthInterfaces0A17LoginServiceErrorO0A22SDKExternalAuthWebViewE08externalh12MissingMerchH0ACvgZ",
+                "mangledName": "$s24FintechSDKAuthInterfaces0A17LoginServiceErrorO0A22SDKExternalAuthWebViewE08externalh12MissingMerchH0ACvgZ",
+                "moduleName": "FintechSDKExternalAuthWebView",
+                "static": true,
+                "isFromExtension": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isExternalAuthMissingMerchAuth",
+            "printedName": "isExternalAuthMissingMerchAuth",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:24FintechSDKAuthInterfaces0A17LoginServiceErrorO0A22SDKExternalAuthWebViewE010isExternalh12MissingMerchH0Sbvp",
+            "mangledName": "$s24FintechSDKAuthInterfaces0A17LoginServiceErrorO0A22SDKExternalAuthWebViewE010isExternalh12MissingMerchH0Sbvp",
+            "moduleName": "FintechSDKExternalAuthWebView",
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:24FintechSDKAuthInterfaces0A17LoginServiceErrorO0A22SDKExternalAuthWebViewE010isExternalh12MissingMerchH0Sbvg",
+                "mangledName": "$s24FintechSDKAuthInterfaces0A17LoginServiceErrorO0A22SDKExternalAuthWebViewE010isExternalh12MissingMerchH0Sbvg",
+                "moduleName": "FintechSDKExternalAuthWebView",
+                "isFromExtension": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:24FintechSDKAuthInterfaces0A17LoginServiceErrorO",
+        "mangledName": "$s24FintechSDKAuthInterfaces0A17LoginServiceErrorO",
+        "moduleName": "FintechSDKAuthInterfaces",
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "LocalizedError",
+            "printedName": "LocalizedError",
+            "usr": "s:10Foundation14LocalizedErrorP",
+            "mangledName": "$s10Foundation14LocalizedErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
       }
     ],
     "json_format_version": 8
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/Container\/FTExternalAuthWebViewContainer.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/Container\/FTExternalAuthWebViewContainer.swift",
       "kind": "StringLiteral",
-      "offset": 3919,
+      "offset": 4138,
       "length": 23,
       "value": "\"external_auth_webview\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/Network\/FTExternalAuthWebViewRequestHeadersBuilder.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/Network\/FTExternalAuthWebViewRequestHeadersBuilder.swift",
       "kind": "StringLiteral",
       "offset": 994,
       "length": 5,
       "value": "\"ios\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/Network\/URL\/FTExternalAuthWebViewURLProvider.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/Network\/URL\/FTExternalAuthWebViewURLProvider.swift",
       "kind": "StringLiteral",
-      "offset": 799,
+      "offset": 944,
       "length": 15,
       "value": "\"auth_merchant\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/Network\/URL\/FTExternalAuthWebViewURLProvider.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/Network\/URL\/FTExternalAuthWebViewURLProvider.swift",
       "kind": "StringLiteral",
-      "offset": 846,
+      "offset": 991,
       "length": 13,
       "value": "\"merchant_id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewHostingController.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewHostingController.swift",
       "kind": "BooleanLiteral",
-      "offset": 362,
+      "offset": 407,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "BooleanLiteral",
       "offset": 1270,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "BooleanLiteral",
       "offset": 1313,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "IntegerLiteral",
       "offset": 1571,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "IntegerLiteral",
       "offset": 1624,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "BooleanLiteral",
       "offset": 1741,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "Dictionary",
       "offset": 2225,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 4186,
+      "offset": 4323,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 5960,
+      "offset": 6097,
       "length": 16,
       "value": "\"webview_opened\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 6005,
+      "offset": 6142,
       "length": 27,
       "value": "\"webview_page_load_started\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 6061,
+      "offset": 6198,
       "length": 16,
       "value": "\"webview_loaded\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 6106,
+      "offset": 6243,
       "length": 25,
       "value": "\"webview_page_load_error\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 6160,
+      "offset": 6297,
       "length": 21,
       "value": "\"pay_loginwall_shown\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 6210,
+      "offset": 6347,
       "length": 22,
       "value": "\"pay_loginwall_failed\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 6261,
+      "offset": 6398,
       "length": 25,
       "value": "\"pay_loginwall_cancelled\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 6348,
+      "offset": 6485,
       "length": 23,
       "value": "\"external_auth_webview\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 6401,
+      "offset": 6538,
       "length": 5,
       "value": "\"url\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 6436,
+      "offset": 6573,
       "length": 7,
       "value": "\"error\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 6473,
+      "offset": 6610,
       "length": 16,
       "value": "\"loginwall_type\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 6519,
+      "offset": 6656,
       "length": 8,
       "value": "\"source\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 6589,
+      "offset": 6726,
       "length": 7,
       "value": "\"merch\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/FTExternalAuthWebViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 6658,
+      "offset": 6795,
       "length": 10,
       "value": "\"nativeAM\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/Handlers\/FTExternalAuthWebViewCloseHandler.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/Handlers\/FTExternalAuthWebViewCloseHandler.swift",
       "kind": "StringLiteral",
       "offset": 165,
       "length": 7,
       "value": "\"close\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/Handlers\/FTExternalAuthWebViewLoginHandler.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/Handlers\/FTExternalAuthWebViewLoginHandler.swift",
       "kind": "StringLiteral",
       "offset": 593,
       "length": 7,
       "value": "\"login\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/Handlers\/FTExternalAuthWebViewLoginHandler.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/Handlers\/FTExternalAuthWebViewLoginHandler.swift",
       "kind": "BooleanLiteral",
       "offset": 1055,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/Loading\/FTExternalAuthWebViewLoadingScreenFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/Loading\/FTExternalAuthWebViewLoadingScreenFactory.swift",
       "kind": "StringLiteral",
       "offset": 1747,
       "length": 26,
       "value": "\"auth_loader_screen_shown\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/Loading\/FTExternalAuthWebViewLoadingScreenFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/Loading\/FTExternalAuthWebViewLoadingScreenFactory.swift",
       "kind": "StringLiteral",
       "offset": 1800,
       "length": 30,
       "value": "\"auth_loader_screen_cancelled\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/Loading\/FTExternalAuthWebViewLoadingScreenFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Private\/WebView\/Loading\/FTExternalAuthWebViewLoadingScreenFactory.swift",
       "kind": "BooleanLiteral",
       "offset": 2862,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Public\/FTExternalAuthWebViewFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Public\/FTExternalAuthWebViewFactory.swift",
       "kind": "Array",
       "offset": 381,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Public\/FTExternalAuthWebViewFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Public\/FTExternalAuthWebViewFactory.swift",
       "kind": "BooleanLiteral",
-      "offset": 3743,
+      "offset": 3868,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Public\/FTExternalAuthWebViewInput.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Public\/FTExternalAuthWebViewInput.swift",
       "kind": "BooleanLiteral",
       "offset": 2080,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Public\/FTLoginwallAnalyticsParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Public\/FTLoginwallAnalyticsParams.swift",
       "kind": "StringLiteral",
       "offset": 1093,
       "length": 14,
       "value": "\"login_source\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Public\/FTLoginwallAnalyticsParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Public\/FTLoginwallAnalyticsParams.swift",
       "kind": "StringLiteral",
       "offset": 1140,
       "length": 16,
       "value": "\"source_snippet\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Public\/FTLoginwallAnalyticsParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Public\/FTLoginwallAnalyticsParams.swift",
       "kind": "StringLiteral",
       "offset": 1183,
       "length": 9,
       "value": "\"surface\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Public\/FTLoginwallAnalyticsParams.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Public\/FTLoginwallAnalyticsParams.swift",
       "kind": "StringLiteral",
       "offset": 1221,
       "length": 12,
       "value": "\"target_url\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Public\/FintechLoginServiceError+ExternalAuthMissingMerchAuth.swift",
+      "kind": "StringLiteral",
+      "offset": 677,
+      "length": 23,
+      "value": "\"FTExternalAuthWebView\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/ExternalAuthWebView\/Public\/FintechLoginServiceError+ExternalAuthMissingMerchAuth.swift",
+      "kind": "IntegerLiteral",
+      "offset": 757,
+      "length": 1,
+      "value": "1"
     }
   ]
 }

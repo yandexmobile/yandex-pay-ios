@@ -98,7 +98,7 @@
           {
             "kind": "Function",
             "name": "open",
-            "printedName": "open(url:onEvent:)",
+            "printedName": "open(prepareURL:onEvent:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -106,10 +106,22 @@
                 "printedName": "()"
               },
               {
-                "kind": "TypeNominal",
-                "name": "URL",
-                "printedName": "Foundation.URL",
-                "usr": "s:10Foundation3URLV"
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() async throws -> Foundation.URL",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
               },
               {
                 "kind": "TypeFunc",
@@ -131,8 +143,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:23FintechSDKSafariFeature24FTInAppBrowserInteractorC4open3url7onEventy10Foundation3URLV_yAA08FTSafariK0OYbScMYcctYaKF",
-            "mangledName": "$s23FintechSDKSafariFeature24FTInAppBrowserInteractorC4open3url7onEventy10Foundation3URLV_yAA08FTSafariK0OYbScMYcctYaKF",
+            "usr": "s:23FintechSDKSafariFeature24FTInAppBrowserInteractorC4open10prepareURL7onEventy10Foundation0J0VyYaYbKScMYcc_yAA08FTSafariL0OYbScMYcctYaKF",
+            "mangledName": "$s23FintechSDKSafariFeature24FTInAppBrowserInteractorC4open10prepareURL7onEventy10Foundation0J0VyYaYbKScMYcc_yAA08FTSafariL0OYbScMYcctYaKF",
             "moduleName": "FintechSDKSafariFeature",
             "declAttributes": [
               "Custom",
@@ -191,6 +203,53 @@
             "declAttributes": [
               "Custom",
               "Final",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "startClosing",
+            "printedName": "startClosing(animated:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Task",
+                "printedName": "_Concurrency.Task<(), Swift.Never>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Never",
+                    "printedName": "Swift.Never",
+                    "usr": "s:s5NeverO"
+                  }
+                ],
+                "usr": "s:ScT"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKSafariFeature24FTInAppBrowserInteractorC12startClosing8animatedScTyyts5NeverOGSb_tF",
+            "mangledName": "$s23FintechSDKSafariFeature24FTInAppBrowserInteractorC12startClosing8animatedScTyyts5NeverOGSb_tF",
+            "moduleName": "FintechSDKSafariFeature",
+            "declAttributes": [
+              "Final",
+              "Custom",
               "AccessControl"
             ],
             "isFromExtension": true,
@@ -274,7 +333,7 @@
           {
             "kind": "Function",
             "name": "open",
-            "printedName": "open(url:onEvent:)",
+            "printedName": "open(prepareURL:onEvent:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -282,10 +341,22 @@
                 "printedName": "()"
               },
               {
-                "kind": "TypeNominal",
-                "name": "URL",
-                "printedName": "Foundation.URL",
-                "usr": "s:10Foundation3URLV"
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() async throws -> Foundation.URL",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
               },
               {
                 "kind": "TypeFunc",
@@ -307,8 +378,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:23FintechSDKSafariFeature25FTOpenInAppBrowserUseCaseP4open3url7onEventy10Foundation3URLV_yAA08FTSafariM0OYbScMYcctYaKF",
-            "mangledName": "$s23FintechSDKSafariFeature25FTOpenInAppBrowserUseCaseP4open3url7onEventy10Foundation3URLV_yAA08FTSafariM0OYbScMYcctYaKF",
+            "usr": "s:23FintechSDKSafariFeature25FTOpenInAppBrowserUseCaseP4open10prepareURL7onEventy10Foundation0L0VyYaYbKScMYcc_yAA08FTSafariN0OYbScMYcctYaKF",
+            "mangledName": "$s23FintechSDKSafariFeature25FTOpenInAppBrowserUseCaseP4open10prepareURL7onEventy10Foundation0L0VyYaYbKScMYcc_yAA08FTSafariN0OYbScMYcctYaKF",
             "moduleName": "FintechSDKSafariFeature",
             "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKSafariFeature.FTOpenInAppBrowserUseCase>",
             "sugared_genericSig": "<Self where Self : FintechSDKSafariFeature.FTOpenInAppBrowserUseCase>",
@@ -344,12 +415,64 @@
             "sugared_genericSig": "<Self where Self : FintechSDKSafariFeature.FTOpenInAppBrowserUseCase>",
             "protocolReq": true,
             "declAttributes": [
-              "Custom"
+              "Custom",
+              "RawDocComment"
             ],
             "spi_group_names": [
               "Internal"
             ],
             "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "open",
+            "printedName": "open(url:onEvent:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FintechSDKSafariFeature.FTSafariEvent) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTSafariEvent",
+                    "printedName": "FintechSDKSafariFeature.FTSafariEvent",
+                    "usr": "s:23FintechSDKSafariFeature13FTSafariEventO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23FintechSDKSafariFeature25FTOpenInAppBrowserUseCasePAAE4open3url7onEventy10Foundation3URLV_yAA08FTSafariM0OYbScMYcctYaKF",
+            "mangledName": "$s23FintechSDKSafariFeature25FTOpenInAppBrowserUseCasePAAE4open3url7onEventy10Foundation3URLV_yAA08FTSafariM0OYbScMYcctYaKF",
+            "moduleName": "FintechSDKSafariFeature",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKSafariFeature.FTOpenInAppBrowserUseCase>",
+            "sugared_genericSig": "<Self where Self : FintechSDKSafariFeature.FTOpenInAppBrowserUseCase>",
+            "declAttributes": [
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
             "funcSelfKind": "NonMutating"
           }
         ],
@@ -1430,18 +1553,39 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/Safari\/FTInAppBrowserInteractor.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/Safari\/FTInAppBrowserInteractor.swift",
       "kind": "BooleanLiteral",
-      "offset": 290,
-      "length": 5,
-      "value": "false"
+      "offset": 3388,
+      "length": 4,
+      "value": "true"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/Safari\/FTSafariConfiguration.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/Safari\/FTSafariConfiguration.swift",
       "kind": "BooleanLiteral",
       "offset": 614,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/Safari\/FTSafariRouter.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1660,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/Safari\/FTSafariRouter.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2799,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Features\/Safari\/FTSafariRouter.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3643,
+      "length": 4,
+      "value": "true"
     }
   ]
 }

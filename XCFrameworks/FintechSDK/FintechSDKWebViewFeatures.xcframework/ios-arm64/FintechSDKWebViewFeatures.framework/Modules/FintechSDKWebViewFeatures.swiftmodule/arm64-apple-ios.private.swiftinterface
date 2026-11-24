@@ -16,6 +16,10 @@ import _SwiftConcurrencyShims
   #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func handler(for action: Swift.String) -> (any FintechSDKWebViewFeatures.FTWebViewActionHandler)?
   #endif
+  @_spi(Internal) func shouldHandle(message: WebKit.WKScriptMessage) -> Swift.Bool
+}
+@_spi(Internal) extension FintechSDKWebViewFeatures.FTScriptMessageHandlerDataSource {
+  @_spi(Internal) public func shouldHandle(message: WebKit.WKScriptMessage) -> Swift.Bool
 }
 @_spi(Internal) @objc @_Concurrency.MainActor @preconcurrency final public class FTScriptMessageHandler : ObjectiveC.NSObject, WebKit.WKScriptMessageHandler {
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency final public let name: Swift.String
@@ -28,13 +32,13 @@ import _SwiftConcurrencyShims
   associatedtype Model : Swift.Decodable
   @_spi(Internal) var name: Swift.String { get }
   @_spi(Internal) @_Concurrency.MainActor func handle(model: Self.Model, requestId: Swift.String) async
-  @_spi(Internal) func handle(data: Foundation.Data, requestId: Swift.String) async
+  @_spi(Internal) @_Concurrency.MainActor func handle(data: Foundation.Data, requestId: Swift.String) async
   @_spi(Internal) func parseModel(data: Foundation.Data) throws -> Self.Model
   @_spi(Internal) @_Concurrency.MainActor func attach(to context: any FintechSDKWebViewFeatures.FTWebViewHandlerContext)
 }
 @_spi(Internal) extension FintechSDKWebViewFeatures.FTWebViewActionHandler {
   @_spi(Internal) public func parseModel(data: Foundation.Data) throws -> Self.Model
-  @_spi(Internal) public func handle(data: Foundation.Data, requestId: Swift.String) async
+  @_spi(Internal) @_Concurrency.MainActor public func handle(data: Foundation.Data, requestId: Swift.String) async
   @_spi(Internal) @_Concurrency.MainActor public func attach(to context: any FintechSDKWebViewFeatures.FTWebViewHandlerContext)
 }
 @_spi(Internal) public protocol FTWebViewHandlerContext : AnyObject {
@@ -94,6 +98,11 @@ import _SwiftConcurrencyShims
   }
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(viewModel: WebViewModel, shimmer: Shimmer, errorView: ErrorView, contentInsetAdjustmentBehavior: UIKit.UIScrollView.ContentInsetAdjustmentBehavior = .automatic)
   @_spi(Internal) public typealias Body = @_opaqueReturnTypeOf("$s25FintechSDKWebViewFeatures05FTWebC0V4bodyQrvp", 0) __<WebViewModel, Shimmer, ErrorView>
+}
+@_spi(Internal) public enum FTWebViewCookieFactory {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public static func make(name: Swift.String, value: Swift.String, host: Swift.String) -> Foundation.HTTPCookie?
+  #endif
 }
 @_spi(Internal) public protocol FTWebViewNavigationContext : FintechSDKWebViewFeatures.FTWebViewHandlerContext {
   #if compiler(>=5.3) && $NonescapableTypes

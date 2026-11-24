@@ -16,6 +16,30 @@
         "name": "FintechSDKAuthInterfaces",
         "printedName": "FintechSDKAuthInterfaces",
         "declKind": "Import",
+        "moduleName": "FintechSDKLoginAdapter",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "CryptoKit",
+        "printedName": "CryptoKit",
+        "declKind": "Import",
+        "moduleName": "FintechSDKLoginAdapter"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKLoginAdapter"
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKAuthInterfaces",
+        "printedName": "FintechSDKAuthInterfaces",
+        "declKind": "Import",
         "moduleName": "FintechSDKLoginAdapter"
       },
       {
@@ -1012,6 +1036,46 @@
               "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "authTokenOrigin",
+            "printedName": "authTokenOrigin(forToken:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FintechSDKAuthInterfaces.FTAuthTokenOrigin?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTAuthTokenOrigin",
+                    "printedName": "FintechSDKAuthInterfaces.FTAuthTokenOrigin",
+                    "usr": "s:24FintechSDKAuthInterfaces17FTAuthTokenOriginO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22FintechSDKLoginAdapter16LoginServiceImplC15authTokenOrigin03forH00A17SDKAuthInterfaces06FTAuthhI0OSgSS_tF",
+            "mangledName": "$s22FintechSDKLoginAdapter16LoginServiceImplC15authTokenOrigin03forH00A17SDKAuthInterfaces06FTAuthhI0OSgSS_tF",
+            "moduleName": "FintechSDKLoginAdapter",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -1044,6 +1108,13 @@
             "printedName": "FintechLoginService",
             "usr": "s:24FintechSDKAuthInterfaces0A12LoginServiceP",
             "mangledName": "$s24FintechSDKAuthInterfaces0A12LoginServiceP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTAuthTokenOriginProviding",
+            "printedName": "FTAuthTokenOriginProviding",
+            "usr": "s:24FintechSDKAuthInterfaces26FTAuthTokenOriginProvidingP",
+            "mangledName": "$s24FintechSDKAuthInterfaces26FTAuthTokenOriginProvidingP"
           }
         ]
       },
@@ -1059,51 +1130,58 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/AdapterBinary\/LoginSDK\/Sources\/AuthModelStorage.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/AdapterBinary\/LoginSDK\/Sources\/AuthModelStorage.swift",
       "kind": "StringLiteral",
       "offset": 130,
       "length": 17,
       "value": "\"fintechsdk.auth\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/AdapterBinary\/LoginSDK\/Sources\/LoginService.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/AdapterBinary\/LoginSDK\/Sources\/FTLoginSDKTokenOriginTracker.swift",
+      "kind": "BooleanLiteral",
+      "offset": 469,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/AdapterBinary\/LoginSDK\/Sources\/LoginService.swift",
       "kind": "StringLiteral",
-      "offset": 751,
+      "offset": 814,
       "length": 22,
       "value": "\"YANDEX_PAY_CLIENT_ID\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/AdapterBinary\/LoginSDK\/Sources\/LoginService.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/AdapterBinary\/LoginSDK\/Sources\/LoginService.swift",
       "kind": "StringLiteral",
-      "offset": 804,
+      "offset": 867,
       "length": 27,
       "value": "\"YANDEX_PAY_CLIENT_ID_TEST\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/AdapterBinary\/LoginSDK\/Sources\/LoginService.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/AdapterBinary\/LoginSDK\/Sources\/LoginService.swift",
       "kind": "StringLiteral",
-      "offset": 862,
+      "offset": 925,
       "length": 18,
       "value": "\"YANDEX_CLIENT_ID\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/AdapterBinary\/LoginSDK\/Sources\/LoginService.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/AdapterBinary\/LoginSDK\/Sources\/LoginService.swift",
       "kind": "StringLiteral",
-      "offset": 911,
+      "offset": 974,
       "length": 23,
       "value": "\"YANDEX_CLIENT_ID_TEST\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/AdapterBinary\/LoginSDK\/Sources\/LoginService.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/AdapterBinary\/LoginSDK\/Sources\/LoginService.swift",
       "kind": "StringLiteral",
-      "offset": 994,
+      "offset": 1057,
       "length": 26,
       "value": "\"fintechsdk.auth.external\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/AdapterBinary\/LoginSDK\/Sources\/LoginService.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/AdapterBinary\/LoginSDK\/Sources\/LoginService.swift",
       "kind": "BooleanLiteral",
-      "offset": 11122,
+      "offset": 11811,
       "length": 5,
       "value": "false"
     }

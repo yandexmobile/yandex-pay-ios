@@ -3,6 +3,7 @@
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name FintechSDKLoginAdapter -package-name loginsdk
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import AuthenticationServices
+import CryptoKit
 @_spi(Internal) import FintechSDKAuthInterfaces
 import Foundation
 import Swift
@@ -63,4 +64,9 @@ extension FintechSDKLoginAdapter.FintechCookieExchangerAdapterImpl : FintechSDKA
   final public func isURLRelatedToSDK(url: Foundation.URL) -> Swift.Bool
   final public func handle(_ url: Foundation.URL) -> Swift.Bool
   final public func handle(_ userActivity: Foundation.NSUserActivity) -> Swift.Bool
+}
+@_spi(Internal) extension FintechSDKLoginAdapter.LoginServiceImpl : FintechSDKAuthInterfaces.FTAuthTokenOriginProviding {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) final public func authTokenOrigin(forToken token: Swift.String) -> FintechSDKAuthInterfaces.FTAuthTokenOrigin?
+  #endif
 }

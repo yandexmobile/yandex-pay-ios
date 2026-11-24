@@ -87,8 +87,9 @@ public protocol FTRemoteActionResponseHandler {
   func handle(response: FintechSDKBDUIFeatures.FTRemoteActionResponse, for path: Swift.String)
 }
 final public class FTRemoteDivUrlHandler : @preconcurrency FintechSDKBDUICore.FintechDivUrlHandler {
+  final public let actionName: Swift.String?
   #if compiler(>=5.3) && $NonescapableTypes
-  convenience public init(bduiAdapter: any FintechSDKBDUICore.FintechBDUIDivActionHandler, networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, responseHandler: (any FintechSDKBDUIFeatures.FTRemoteActionResponseHandler)? = nil, cardId: Swift.String? = nil)
+  public init(bduiAdapter: any FintechSDKBDUICore.FintechBDUIDivActionHandler, networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, responseHandler: (any FintechSDKBDUIFeatures.FTRemoteActionResponseHandler)? = nil, cardId: Swift.String? = nil)
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor final public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
@@ -205,8 +206,21 @@ extension FintechSDKBDUIFeatures.FintechNativeRouterApi {
 public protocol FintechPlusApi {
   func openPlus(completion: @escaping (Swift.Bool) -> Swift.Void)
 }
+@_Concurrency.MainActor public protocol FintechWebViewAuthorizationProvider {
+  @_Concurrency.MainActor func prepareAuthorization(for url: Foundation.URL) async throws -> (url: Foundation.URL, cookies: [Foundation.HTTPCookie])
+  @_Concurrency.MainActor func registerWebView(_ webView: any FintechSDKBDUIFeatures.FintechWebViewAuthorizationInvalidating)
+}
+extension FintechSDKBDUIFeatures.FintechWebViewAuthorizationProvider {
+  @_Concurrency.MainActor public func registerWebView(_ webView: any FintechSDKBDUIFeatures.FintechWebViewAuthorizationInvalidating)
+}
+@_Concurrency.MainActor public protocol FintechWebViewAuthorizationInvalidating : AnyObject {
+  @_Concurrency.MainActor func invalidateAuthorization(cookieNames: Swift.Set<Swift.String>) async
+}
 public protocol FintechWebViewConfiguration {
   var cookies: [Foundation.HTTPCookie] { get }
+  #if compiler(>=5.3) && $NonescapableTypes
+  var authorizationProvider: (any FintechSDKBDUIFeatures.FintechWebViewAuthorizationProvider)? { get }
+  #endif
   #if compiler(>=5.3) && $NonescapableTypes
   var userAgent: Swift.String? { get }
   #endif
@@ -232,6 +246,11 @@ public protocol FintechWebViewConfiguration {
   #endif
 }
 extension FintechSDKBDUIFeatures.FintechWebViewConfiguration {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var authorizationProvider: (any FintechSDKBDUIFeatures.FintechWebViewAuthorizationProvider)? {
+    get
+  }
+  #endif
   public var shouldUsePersistentWebDataStore: Swift.Bool {
     get
   }
@@ -329,7 +348,7 @@ public protocol FintechRootViewControllerProvider {
   #endif
 }
 final public class FintechYBSDK : FintechSDKBDUIFeatures.FintechYBSDKApi {
-  public init(rootViewControllerProvider: any FintechSDKBDUIFeatures.FintechRootViewControllerProvider, ybSDKAdapter: any FintechYBSDKInterfaces.FintechYBSDKAdapter)
+  convenience public init(rootViewControllerProvider: any FintechSDKBDUIFeatures.FintechRootViewControllerProvider, ybSDKAdapter: any FintechYBSDKInterfaces.FintechYBSDKAdapter)
   #if compiler(>=5.3) && $NonescapableTypes
   final public func getPayCardTrustId(completion: @escaping (Swift.String?) -> Swift.Void)
   #endif

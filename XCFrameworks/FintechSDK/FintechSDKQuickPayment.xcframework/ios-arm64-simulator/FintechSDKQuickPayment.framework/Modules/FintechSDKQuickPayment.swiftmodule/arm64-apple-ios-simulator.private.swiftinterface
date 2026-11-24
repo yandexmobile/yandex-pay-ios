@@ -17,6 +17,7 @@ import FintechSDKCommonEntity
 @_spi(Internal) import FintechSDKDivKitWidgetsFeatures
 @_spi(Internal) import FintechSDKDivKitWidgetsFeatures/*.FTWidgetExpandState*/
 import FintechSDKFontsInterfaces
+@_spi(Internal) import FintechSDKMerchantApplinkParsersData
 @_spi(Internal) import FintechSDKNetworkImplementation
 @_spi(Internal) import FintechSDKNetworkInterfaces
 @_spi(Internal) import FintechSDKPollingScenario
@@ -25,7 +26,6 @@ import FintechSDKFontsInterfaces
 @_spi(Internal) import FintechSDKRUMImplementation
 @_spi(Internal) import FintechSDKRemoteResourcesData
 import Foundation
-import LocalAuthentication
 import QuartzCore
 import Swift
 import SwiftUI
@@ -36,34 +36,20 @@ import _SwiftConcurrencyShims
 public typealias FintechQuickPayStateChangedHandler = (Swift.Bool) -> Swift.Void
 @_spi(Internal) extension FintechSDKDivKitWidgetsFeatures.FTWidgetRefreshManager : FintechSDKBDUIFeatures.FTWidgetReloading {
 }
-@_spi(Internal) public enum FTQPPaymentMode : Swift.String, Swift.Decodable, Swift.Sendable {
-  @_spi(Internal) case pay
-  @_spi(Internal) case split
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_spi(Internal) public init?(rawValue: Swift.String)
-  #endif
-  @_spi(Internal) public typealias RawValue = Swift.String
-  @_spi(Internal) public var rawValue: Swift.String {
-    @_spi(Internal) get
+@_spi(Internal) public struct FTQPSplitAvailability : Swift.Equatable, Swift.Sendable {
+  @_spi(Internal) public enum Availability : Swift.Sendable {
+    @_spi(Internal) case available
+    @_spi(Internal) case unavailable
+    @_spi(Internal) public static func == (a: FintechSDKQuickPayment.FTQPSplitAvailability.Availability, b: FintechSDKQuickPayment.FTQPSplitAvailability.Availability) -> Swift.Bool
+    @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+    @_spi(Internal) public var hashValue: Swift.Int {
+      @_spi(Internal) get
+    }
   }
-}
-@_spi(Internal) public enum FTQPPaymentModeResult : Swift.Sendable, Swift.Equatable {
-  @_spi(Internal) case success(mode: FintechSDKQuickPayment.FTQPPaymentMode)
-  @_spi(Internal) case apiNotAllowed
-  @_spi(Internal) case splitDisabled
-  @_spi(Internal) case requestFailed
-  @_spi(Internal) public static func == (a: FintechSDKQuickPayment.FTQPPaymentModeResult, b: FintechSDKQuickPayment.FTQPPaymentModeResult) -> Swift.Bool
-}
-@_spi(Internal) public enum FTQPSetPaymentModeResult : Swift.Sendable, Swift.Equatable {
-  @_spi(Internal) case applied
-  @_spi(Internal) case apiNotAllowed
-  @_spi(Internal) case splitDisabled
-  @_spi(Internal) case requestFailed
-  @_spi(Internal) public static func == (a: FintechSDKQuickPayment.FTQPSetPaymentModeResult, b: FintechSDKQuickPayment.FTQPSetPaymentModeResult) -> Swift.Bool
-  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
-  @_spi(Internal) public var hashValue: Swift.Int {
-    @_spi(Internal) get
-  }
+  @_spi(Internal) public let donor: FintechSDKQuickPayment.FTQPSplitAvailability.Availability
+  @_spi(Internal) public let prescore: FintechSDKQuickPayment.FTQPSplitAvailability.Availability
+  @_spi(Internal) public init(donor: FintechSDKQuickPayment.FTQPSplitAvailability.Availability, prescore: FintechSDKQuickPayment.FTQPSplitAvailability.Availability)
+  @_spi(Internal) public static func == (a: FintechSDKQuickPayment.FTQPSplitAvailability, b: FintechSDKQuickPayment.FTQPSplitAvailability) -> Swift.Bool
 }
 public enum FTQuickPayAuthState : Swift.Equatable {
   public enum SecurityCheckFailReason : Swift.Equatable {
@@ -101,9 +87,6 @@ public struct FTQuickPayConfig {
   public let pollingModalSize: FintechSDKQuickPayment.FTQuickPayPollingModalSize?
   #if compiler(>=5.3) && $NonescapableTypes
   public init(merchantId: Swift.String, locale: FintechSDKCoreUI.FintechLocale, theme: FintechSDKCommonEntity.FintechSDKTheme, environment: FintechSDKCommonEntity.FintechSDKEnvironment, enableLogging: Swift.Bool, isActivatedByDefault: Swift.Bool = true, pollingModalSize: FintechSDKQuickPayment.FTQuickPayPollingModalSize? = nil)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_spi(Internal) public init(merchantId: Swift.String, locale: FintechSDKCoreUI.FintechLocale, theme: FintechSDKCommonEntity.FintechSDKTheme, environment: FintechSDKCommonEntity.FintechSDKEnvironment, enableLogging: Swift.Bool, isActivatedByDefault: Swift.Bool = true, pollingModalSize: FintechSDKQuickPayment.FTQuickPayPollingModalSize? = nil, isSeparatePaymentMethodsEnabled: Swift.Bool)
   #endif
 }
 @_spi(Internal) public struct FTQuickPayPaymentMethodType : Swift.Equatable, Swift.Sendable {
@@ -229,11 +212,11 @@ extension FintechSDKQuickPayment.FTQuickPaymentStateListener {
   @_spi(Internal) @_Concurrency.MainActor final public func clearHandler()
   @_spi(Internal) final public func startOrderPolling() async throws
   @_spi(Internal) final public func stopOrderPolling() async throws
-  @_spi(Internal) final public func getPaymentMode() async throws -> FintechSDKQuickPayment.FTQPPaymentModeResult
-  @_spi(Internal) final public func setPaymentMode(_ mode: FintechSDKQuickPayment.FTQPPaymentMode) async throws -> FintechSDKQuickPayment.FTQPSetPaymentModeResult
+  @_spi(Internal) final public func getSplitAvailability() async throws -> FintechSDKQuickPayment.FTQPSplitAvailability
   #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public func showFaqScreen(onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async
   #endif
+  @_spi(Internal) @_Concurrency.MainActor final public func openSplitManagement() async -> Swift.Bool
   #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public func showOnboardingStoriesScreen(onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async
   #endif
@@ -254,6 +237,8 @@ extension FintechSDKQuickPayment.FTQuickPaymentStateListener {
   #endif
   @_spi(Internal) final public func handleUserActivity(_ userActivity: Foundation.NSUserActivity) -> Swift.Bool
   @_spi(Internal) final public func handleOpenURL(_ url: Foundation.URL) -> Swift.Bool
+  @_spi(Internal) final public func canHandle(_ url: Foundation.URL) -> Swift.Bool
+  @_spi(Internal) final public func handle(_ url: Foundation.URL) -> Swift.Bool
   @_spi(Internal) @_Concurrency.MainActor final public func createExpandablePaymentMethodsWidget(expandState: FintechSDKQuickPayment.FTQuickPayWidgetExpandState, allowSilentReload: Swift.Bool = true) -> any SwiftUICore.View
   @_spi(Internal) @_Concurrency.MainActor final public func createExpandablePaymentMethodsWidget(expandState: FintechSDKQuickPayment.FTQuickPayWidgetExpandState, allowSilentReload: Swift.Bool = true) -> UIKit.UIView
   @_spi(Internal) final public func addWidgetExpandChangeObserver(_ callback: @escaping (_ state: FintechSDKQuickPayment.FTQuickPayWidgetExpandState) -> Swift.Void) async -> Foundation.UUID
@@ -279,10 +264,8 @@ public enum FintechQuickPaymentError : Swift.Error {
   case noActivePaymentSession
   case noPaymentMethods
 }
-@_spi(Internal) extension FintechSDKQuickPayment.FTQPPaymentMode : Swift.Equatable {}
-@_spi(Internal) extension FintechSDKQuickPayment.FTQPPaymentMode : Swift.Hashable {}
-@_spi(Internal) extension FintechSDKQuickPayment.FTQPPaymentMode : Swift.RawRepresentable {}
-@_spi(Internal) extension FintechSDKQuickPayment.FTQPSetPaymentModeResult : Swift.Hashable {}
+@_spi(Internal) extension FintechSDKQuickPayment.FTQPSplitAvailability.Availability : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKQuickPayment.FTQPSplitAvailability.Availability : Swift.Hashable {}
 extension FintechSDKQuickPayment.FTQuickPayAuthState.SecurityCheckFailReason : Swift.Hashable {}
 extension FintechSDKQuickPayment.FTQuickPayWidgetExpandState : Swift.Equatable {}
 extension FintechSDKQuickPayment.FTQuickPayWidgetExpandState : Swift.Hashable {}

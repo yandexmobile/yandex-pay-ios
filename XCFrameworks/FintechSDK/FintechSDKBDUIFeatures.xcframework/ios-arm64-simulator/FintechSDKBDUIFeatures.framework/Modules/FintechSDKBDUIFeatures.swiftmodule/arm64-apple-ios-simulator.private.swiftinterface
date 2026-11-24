@@ -150,6 +150,7 @@ public struct FintechSDKAuthorizationDependencies {
   @_spi(Internal) func setLastUsedCardId(_ cardId: Swift.String)
 }
 @_spi(Internal) final public class FTAuthorizationDivUrlHandler : @preconcurrency FintechSDKBDUICore.FintechDivUrlHandler {
+  @_spi(Internal) final public let actionName: Swift.String?
   @_spi(Internal) public init(authorizeHandler: any FintechSDKBDUIFeatures.FTAuthorizeActionHandling)
   #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor final public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
@@ -196,6 +197,7 @@ public struct FintechSDKAuthorizationDependencies {
   @_spi(Internal) public func reportParamResolveFailure(eventParams: [Swift.String : Swift.String], rawExpression: Swift.String, paramKey: Swift.String)
 }
 @_spi(Internal) final public class FTSendAnalyticsDivUrlHandler : @preconcurrency FintechSDKBDUICore.FintechDivUrlHandler {
+  @_spi(Internal) final public let actionName: Swift.String?
   @_spi(Internal) public init(analyticsEventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, resolutionFailureReporter: any FintechSDKBDUIFeatures.FTResolutionFailureReporting)
   #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor final public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
@@ -206,6 +208,7 @@ public struct FintechSDKAuthorizationDependencies {
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) final public class FTSendExternalEventDivUrlHandler : @preconcurrency FintechSDKBDUICore.FintechDivUrlHandler {
+  @_spi(Internal) final public let actionName: Swift.String?
   @_spi(Internal) public init(bduiAdapter: any FintechSDKBDUICore.FintechBDUIAdapter, eventHandler: any FintechSDKBDUIFeatures.ExternalEventHandlerApi)
   #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor final public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
@@ -213,6 +216,7 @@ public struct FintechSDKAuthorizationDependencies {
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) final public class FTSetStateDivUrlHandler : @preconcurrency FintechSDKBDUICore.FintechDivUrlHandler {
+  @_spi(Internal) final public let actionName: Swift.String?
   @_spi(Internal) public init(write: @escaping @Sendable ([Swift.String : Any]) -> Swift.Void)
   #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor final public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
@@ -220,6 +224,7 @@ public struct FintechSDKAuthorizationDependencies {
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) final public class FTListUrlHandler : @preconcurrency FintechSDKBDUICore.FintechDivUrlHandler {
+  @_spi(Internal) final public let actionName: Swift.String?
   #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(bduiAdapter: any FintechSDKBDUICore.FintechBDUIDivActionHandler, cardId: Swift.String? = nil)
   #endif
@@ -238,6 +243,7 @@ public struct FintechSDKAuthorizationDependencies {
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) final public class FTOpenFlexScreenDivUrlHandler : @preconcurrency FintechSDKBDUICore.FintechDivUrlHandler {
+  @_spi(Internal) final public let actionName: Swift.String?
   @_spi(Internal) public static let requiresVisibleSourceKey: Swift.String
   #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) public init(screenOpener: any FintechSDKBDUIFeatures.FTFlexScreenRouting, sceneActivationState: @escaping @_Concurrency.MainActor (UIKit.UIWindow) -> UIKit.UIScene.ActivationState? = { $0.windowScene?.activationState })
@@ -257,6 +263,7 @@ public struct FintechSDKAuthorizationDependencies {
   @_spi(Internal) @_Concurrency.MainActor public static func canPresent(from sourceView: UIKit.UIView) -> Swift.Bool
 }
 @_spi(Internal) final public class FTRefreshBstDivUrlHandler : @preconcurrency FintechSDKBDUICore.FintechDivUrlHandler {
+  @_spi(Internal) final public let actionName: Swift.String?
   @_spi(Internal) public init(handler: any FintechSDKBDUIFeatures.FTRefreshTokenHandling)
   #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor final public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
@@ -281,13 +288,6 @@ public protocol FTRemoteActionResponseHandler {
   func canHandle(path: Swift.String) -> Swift.Bool
   func handle(response: FintechSDKBDUIFeatures.FTRemoteActionResponse, for path: Swift.String)
 }
-@_spi(Internal) public protocol FTRemoteActionResponseProcessing {
-  associatedtype Context : Swift.Sendable
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_spi(Internal) @_Concurrency.MainActor func context(for path: Swift.String, body: [Swift.String : Any]?) -> Self.Context
-  #endif
-  @_spi(Internal) func handle(response: FintechSDKBDUIFeatures.FTRemoteActionResponse, for path: Swift.String, context: Self.Context) async
-}
 @_spi(Internal) final public class FTCompositeRemoteActionResponseHandler : FintechSDKBDUIFeatures.FTRemoteActionResponseHandler {
   @_spi(Internal) public init(handlers: [any FintechSDKBDUIFeatures.FTRemoteActionResponseHandler])
   @_spi(Internal) final public func canHandle(path: Swift.String) -> Swift.Bool
@@ -295,11 +295,9 @@ public protocol FTRemoteActionResponseHandler {
   @_spi(Internal) @objc deinit
 }
 final public class FTRemoteDivUrlHandler : @preconcurrency FintechSDKBDUICore.FintechDivUrlHandler {
+  final public let actionName: Swift.String?
   #if compiler(>=5.3) && $NonescapableTypes
-  convenience public init(bduiAdapter: any FintechSDKBDUICore.FintechBDUIDivActionHandler, networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, responseHandler: (any FintechSDKBDUIFeatures.FTRemoteActionResponseHandler)? = nil, cardId: Swift.String? = nil)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_spi(Internal) public init(bduiAdapter: any FintechSDKBDUICore.FintechBDUIDivActionHandler, networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, responseProcessor: any FintechSDKBDUIFeatures.FTRemoteActionResponseProcessing, cardId: Swift.String? = nil)
+  public init(bduiAdapter: any FintechSDKBDUICore.FintechBDUIDivActionHandler, networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, responseHandler: (any FintechSDKBDUIFeatures.FTRemoteActionResponseHandler)? = nil, cardId: Swift.String? = nil)
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor final public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
@@ -455,8 +453,21 @@ extension FintechSDKBDUIFeatures.FintechNativeRouterApi {
 public protocol FintechPlusApi {
   func openPlus(completion: @escaping (Swift.Bool) -> Swift.Void)
 }
+@_Concurrency.MainActor public protocol FintechWebViewAuthorizationProvider {
+  @_Concurrency.MainActor func prepareAuthorization(for url: Foundation.URL) async throws -> (url: Foundation.URL, cookies: [Foundation.HTTPCookie])
+  @_Concurrency.MainActor func registerWebView(_ webView: any FintechSDKBDUIFeatures.FintechWebViewAuthorizationInvalidating)
+}
+extension FintechSDKBDUIFeatures.FintechWebViewAuthorizationProvider {
+  @_Concurrency.MainActor public func registerWebView(_ webView: any FintechSDKBDUIFeatures.FintechWebViewAuthorizationInvalidating)
+}
+@_Concurrency.MainActor public protocol FintechWebViewAuthorizationInvalidating : AnyObject {
+  @_Concurrency.MainActor func invalidateAuthorization(cookieNames: Swift.Set<Swift.String>) async
+}
 public protocol FintechWebViewConfiguration {
   var cookies: [Foundation.HTTPCookie] { get }
+  #if compiler(>=5.3) && $NonescapableTypes
+  var authorizationProvider: (any FintechSDKBDUIFeatures.FintechWebViewAuthorizationProvider)? { get }
+  #endif
   #if compiler(>=5.3) && $NonescapableTypes
   var userAgent: Swift.String? { get }
   #endif
@@ -482,6 +493,11 @@ public protocol FintechWebViewConfiguration {
   #endif
 }
 extension FintechSDKBDUIFeatures.FintechWebViewConfiguration {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var authorizationProvider: (any FintechSDKBDUIFeatures.FintechWebViewAuthorizationProvider)? {
+    get
+  }
+  #endif
   public var shouldUsePersistentWebDataStore: Swift.Bool {
     get
   }
@@ -710,6 +726,7 @@ extension UIKit.UIImage {
 }
 @_spi(Internal) final public class FTBDUIWebViewConfiguration : FintechSDKBDUIFeatures.FintechWebViewConfiguration {
   @_spi(Internal) final public var cookies: [Foundation.HTTPCookie]
+  @_spi(Internal) final public var authorizationProvider: (any FintechSDKBDUIFeatures.FintechWebViewAuthorizationProvider)?
   @_spi(Internal) final public var userAgent: Swift.String?
   @_spi(Internal) final public var delegate: (any WebKit.WKNavigationDelegate)?
   @_spi(Internal) final public var messageHandlers: [Swift.String : any WebKit.WKScriptMessageHandler]
@@ -737,7 +754,11 @@ public protocol FintechRootViewControllerProvider {
   #endif
 }
 final public class FintechYBSDK : FintechSDKBDUIFeatures.FintechYBSDKApi {
-  public init(rootViewControllerProvider: any FintechSDKBDUIFeatures.FintechRootViewControllerProvider, ybSDKAdapter: any FintechYBSDKInterfaces.FintechYBSDKAdapter)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init(rootViewControllerProvider: any FintechSDKBDUIFeatures.FintechRootViewControllerProvider, ybSDKAdapter: any FintechYBSDKInterfaces.FintechYBSDKAdapter, eventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)?)
+  #endif
+  convenience public init(rootViewControllerProvider: any FintechSDKBDUIFeatures.FintechRootViewControllerProvider, ybSDKAdapter: any FintechYBSDKInterfaces.FintechYBSDKAdapter)
+  @_spi(Internal) @_Concurrency.MainActor final public func handleIncomingURL(_ url: Foundation.URL) -> Swift.Bool
   #if compiler(>=5.3) && $NonescapableTypes
   final public func getPayCardTrustId(completion: @escaping (Swift.String?) -> Swift.Void)
   #endif

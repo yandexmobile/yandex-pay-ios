@@ -27,11 +27,6 @@ public struct YPPartnerToken : Swift.Sendable, Swift.Equatable, Swift.CustomStri
   }
   public static func == (a: YandexPayAuth.YPPartnerToken, b: YandexPayAuth.YPPartnerToken) -> Swift.Bool
 }
-public enum YPSignInResult : Swift.Sendable {
-  case success(partnerToken: YandexPayAuth.YPPartnerToken?, partnerTokenError: YandexPayAuth.YPAuthError?)
-  case cancelled
-  case failed(any Swift.Error)
-}
 public enum YPAuthError : Swift.Error {
   case notAuthorized
   case authorizationExpired
@@ -109,7 +104,6 @@ extension YandexPayAuth.YPayAuth {
   }
   @discardableResult
   @_Concurrency.MainActor final public func authorize(strategy: YandexPayAuth.YPAuthorizationStrategy = .default, with presenter: UIKit.UIViewController) async throws -> YandexPayAuth.YPAuthModel
-  @_Concurrency.MainActor final public func signIn(strategy: YandexPayAuth.YPAuthorizationStrategy = .default, with presenter: UIKit.UIViewController) async -> YandexPayAuth.YPSignInResult
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor final public func getPartnerToken(targetClientId: Swift.String? = nil) async throws -> YandexPayAuth.YPPartnerToken
   #endif

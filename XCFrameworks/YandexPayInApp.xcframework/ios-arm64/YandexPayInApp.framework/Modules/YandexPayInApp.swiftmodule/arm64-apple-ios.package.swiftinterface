@@ -21,10 +21,14 @@ import _SwiftConcurrencyShims
   }
   @_Concurrency.MainActor final public func setStateDelegate(_ delegate: any YandexPayInApp.YPInAppDelegate)
   @_Concurrency.MainActor final public func startPaymentWithNewMethod(paymentURL: Foundation.URL, method: YandexPayInApp.YPInAppPaymentMethod, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding) async -> YandexPayInApp.YPInAppPaymentResult
-  @_Concurrency.MainActor final public func createPayWidgetView(model: YandexPayInApp.YPPayWidgetModel = YPPayWidgetModel(), presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding) -> any SwiftUICore.View
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor final public func createPayWidgetView(model: YandexPayInApp.YPPayWidgetModel = YPPayWidgetModel(), presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, delegate: (any YandexPayInApp.YPPayWidgetDelegate)? = nil) -> any SwiftUICore.View
+  #endif
   @_Concurrency.MainActor final public func enable()
   @_Concurrency.MainActor final public func disable()
-  @_Concurrency.MainActor final public func createPayWidgetUIView(model: YandexPayInApp.YPPayWidgetModel = YPPayWidgetModel(), presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding) -> YandexPayInApp.YPPayWidgetUIView
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor final public func createPayWidgetUIView(model: YandexPayInApp.YPPayWidgetModel = YPPayWidgetModel(), presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, delegate: (any YandexPayInApp.YPPayWidgetDelegate)? = nil) -> YandexPayInApp.YPPayWidgetUIView
+  #endif
   @objc deinit
 }
 @_Concurrency.MainActor public protocol YPInAppDelegate : AnyObject {
@@ -77,6 +81,12 @@ public enum YPInAppState : Swift.Sendable, Swift.Equatable {
   case disabled(YandexPayInApp.YPInAppDisabledReason)
   public static func == (a: YandexPayInApp.YPInAppState, b: YandexPayInApp.YPInAppState) -> Swift.Bool
 }
+@_Concurrency.MainActor public protocol YPPayWidgetDelegate : AnyObject {
+  @_Concurrency.MainActor func yandexPayWidget(didChangeOrderPricing orderPricing: YandexPayInApp.YPPayWidgetOrderPricing)
+}
+extension YandexPayInApp.YPPayWidgetDelegate {
+  @_Concurrency.MainActor public func yandexPayWidget(didChangeOrderPricing orderPricing: YandexPayInApp.YPPayWidgetOrderPricing)
+}
 public struct YPPayWidgetOrderAmount : Swift.Sendable, Swift.Hashable {
   public let amount: Foundation.Decimal
   public let currency: YandexPayConfiguration.YPCurrencyCode
@@ -101,6 +111,15 @@ public struct YPPayWidgetModel : Swift.Sendable, Swift.Hashable {
   public var hashValue: Swift.Int {
     get
   }
+}
+public struct YPPayWidgetOrderPricing : Swift.Sendable, Swift.Equatable {
+  public let pointsToRedeem: Foundation.Decimal?
+  public let discountAmount: Foundation.Decimal?
+  public let amountToPay: Foundation.Decimal?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(pointsToRedeem: Foundation.Decimal?, discountAmount: Foundation.Decimal?, amountToPay: Foundation.Decimal?)
+  #endif
+  public static func == (a: YandexPayInApp.YPPayWidgetOrderPricing, b: YandexPayInApp.YPPayWidgetOrderPricing) -> Swift.Bool
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class YPPayWidgetUIView : UIKit.UIView {
   @_Concurrency.MainActor final public func update(model: YandexPayInApp.YPPayWidgetModel)
@@ -129,6 +148,7 @@ public enum YPayInApp {
     get
   }
   @_Concurrency.MainActor final public func configure(with configuration: YandexPayConfiguration.YPay)
+  @_spi(Internal) @_Concurrency.MainActor final public func update(theme: YandexPayConfiguration.YPSDKThemeColorScheme)
   @_spi(Internal) @_Concurrency.MainActor final public func clear()
   @objc deinit
 }

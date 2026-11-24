@@ -1,0 +1,54 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKApplinkHandlerScenario -package-name FintechSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
+@_spi(Internal) import FintechSDKAnalyticsInterfaces
+@_spi(Internal) import FintechSDKApplinkHandlerData
+@_spi(Internal) import FintechSDKBDUICore
+@_spi(Internal) import FintechSDKMerchantApplinkParsersData
+import FintechSDKNetworkInterfaces
+import Foundation
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_spi(Internal) @_Concurrency.MainActor public protocol FTApplinkHandlerAnalyticsReporting {
+  @_spi(Internal) @_Concurrency.MainActor func reportHandlerUnavailable(error: any Swift.Error)
+  @_spi(Internal) @_Concurrency.MainActor func reportCallbackFailed(error: any Swift.Error)
+  @_spi(Internal) @_Concurrency.MainActor func reportActionDispatched(url: Foundation.URL)
+  @_spi(Internal) @_Concurrency.MainActor func reportActionFailed(url: Swift.String, error: any Swift.Error)
+}
+@_spi(Internal) public protocol FTHandleApplinkUseCase : AnyObject {
+  @_spi(Internal) @discardableResult
+  @_Concurrency.MainActor func execute(url: Foundation.URL) -> Swift.Bool
+  @_spi(Internal) @_Concurrency.MainActor func clear()
+}
+@_spi(Internal) @_Concurrency.MainActor final public class FTApplinkHandlerInteractor : FintechSDKApplinkHandlerScenario.FTHandleApplinkUseCase {
+  @_spi(Internal) @_Concurrency.MainActor public init(apiService: any FintechSDKApplinkHandlerData.FTApplinkHandlerApiService, actionHandlerProvider: @escaping @_Concurrency.MainActor () throws -> FintechSDKBDUICore.FTCompositeDivUrlHandler, analytics: any FintechSDKApplinkHandlerScenario.FTApplinkHandlerAnalyticsReporting)
+  @_spi(Internal) @objc deinit
+  @_spi(Internal) @discardableResult
+  @_Concurrency.MainActor final public func execute(url: Foundation.URL) -> Swift.Bool
+  @_spi(Internal) @_Concurrency.MainActor final public func clear()
+}
+@_spi(Internal) public enum FTApplinkHandlerError : Swift.Error, Swift.Equatable {
+  @_spi(Internal) case actionHandlerUnavailable
+  @_spi(Internal) case invalidCallbackID
+  @_spi(Internal) case duplicateCallback(Swift.String)
+  @_spi(Internal) case invalidActionURL(Swift.String)
+  @_spi(Internal) public static func == (a: FintechSDKApplinkHandlerScenario.FTApplinkHandlerError, b: FintechSDKApplinkHandlerScenario.FTApplinkHandlerError) -> Swift.Bool
+}
+@_spi(Internal) final public class FTApplinkHandler : @unchecked Swift.Sendable {
+  @_spi(Internal) @_Concurrency.MainActor final public var bduiAdapter: (any FintechSDKBDUICore.FintechBDUIAdapter)?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) @_Concurrency.MainActor convenience public init(parser: FintechSDKMerchantApplinkParsersData.FTMerchantApplinkParser, networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, makeBDUIAdapter: @escaping @_Concurrency.MainActor () throws -> any FintechSDKBDUICore.FintechBDUIAdapter, eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter, errorReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter, apiService: (any FintechSDKApplinkHandlerData.FTApplinkHandlerApiService)? = nil)
+  #endif
+  @_spi(Internal) @_Concurrency.MainActor public init(parser: FintechSDKMerchantApplinkParsersData.FTMerchantApplinkParser, apiService: any FintechSDKApplinkHandlerData.FTApplinkHandlerApiService, makeBDUIAdapter: @escaping @_Concurrency.MainActor () throws -> any FintechSDKBDUICore.FintechBDUIAdapter, analytics: any FintechSDKApplinkHandlerScenario.FTApplinkHandlerAnalyticsReporting)
+  @_spi(Internal) final public func canHandleOpen(_ url: Foundation.URL, options: [UIKit.UIApplication.OpenURLOptionsKey : Any]) -> Swift.Bool
+  @_spi(Internal) final public func canHandleUserActivity(_ userActivity: Foundation.NSUserActivity) -> Swift.Bool
+  @_spi(Internal) final public func applicationDidReceiveOpen(_ url: Foundation.URL, options: [UIKit.UIApplication.OpenURLOptionsKey : Any]) -> Swift.Bool
+  @_spi(Internal) final public func applicationDidReceiveUserActivity(_ userActivity: Foundation.NSUserActivity) -> Swift.Bool
+  @_spi(Internal) @_Concurrency.MainActor final public func clear()
+  @_spi(Internal) @objc deinit
+}
+@_spi(Internal) extension FintechSDKApplinkHandlerScenario.FTApplinkHandlerInteractor : Swift.Sendable {}

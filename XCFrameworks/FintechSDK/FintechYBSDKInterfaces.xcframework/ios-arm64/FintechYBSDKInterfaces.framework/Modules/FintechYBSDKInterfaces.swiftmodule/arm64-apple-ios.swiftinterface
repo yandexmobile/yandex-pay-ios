@@ -65,12 +65,14 @@ public protocol FintechYBSDKAdapter {
   #if compiler(>=5.3) && $NonescapableTypes
   func commandForURL(_ url: Foundation.URL) -> FintechYBSDKInterfaces.FintechYBDeeplinkCommand?
   #endif
+  func notify(originalURL: Foundation.URL)
   func handleAction(url: Foundation.URL, presentingViewController: UIKit.UIViewController, flowCompletionHandler: @escaping (FintechYBSDKInterfaces.FintechYBFlowResult) -> Swift.Void)
   func observeCreditLimitUpgradeStatus(handler: @escaping (Swift.String) -> Swift.Void) -> FintechYBSDKInterfaces.FintechCreditLimitUpgradeCancellation
   func setCreditLimitPurchaseSettings(settings: FintechYBSDKInterfaces.FintechCreditLimitPurchaseSettings, completion: @escaping (FintechYBSDKInterfaces.FintechSetCreditLimitPurchaseSettingsResult) -> Swift.Void)
 }
 public enum FintechYBDeeplinkCommand : Swift.Equatable, Swift.Sendable {
   case action(url: Foundation.URL)
+  case notify(originalURL: Foundation.URL)
   public static func == (a: FintechYBSDKInterfaces.FintechYBDeeplinkCommand, b: FintechYBSDKInterfaces.FintechYBDeeplinkCommand) -> Swift.Bool
 }
 public enum FintechYBFlowResult : Swift.Equatable, Swift.Sendable {

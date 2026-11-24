@@ -27,6 +27,9 @@ import zlib
     @_spi(Internal) get
   }
   @_spi(Internal) public init(from string: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init?(nonNegativeString string: Swift.String?, allowZero: Swift.Bool = true)
+  #endif
 }
 extension Swift.Encodable {
   #if compiler(>=5.3) && $NonescapableTypes
@@ -551,10 +554,27 @@ public enum FintechSDKInfo {
   public static let internalVersion: Swift.String
   public static let currentVersion: Swift.String
 }
-@_spi(Internal) public enum OAuthTokenCensor {
-  @_spi(Internal) public static func censoredOAuthTokenForLogging(_ token: Swift.String) -> Swift.String
-  @_spi(Internal) public static func prepareURLForLogging(_ url: Foundation.URL) -> Foundation.URL
-  @_spi(Internal) public static func prepareValueForLogging(_ value: Swift.String) -> Swift.String
+@_spi(Internal) public struct FTPassthroughTextSanitizer : FintechSDKCoreUtils.FTSanitizingText {
+  @_spi(Internal) public init()
+  @_spi(Internal) public func sanitize(_ value: Swift.String) -> Swift.String
+  @_spi(Internal) public func sanitize(_ parameters: [Swift.String : Swift.String]) -> [Swift.String : Swift.String]
+  @_spi(Internal) public func sanitize(_ parameters: [Swift.String : any Swift.Sendable]) -> [Swift.String : any Swift.Sendable]
+}
+@_spi(Internal) public protocol FTSanitizingText : Swift.Sendable {
+  @_spi(Internal) func sanitize(_ value: Swift.String) -> Swift.String
+  @_spi(Internal) func sanitize(_ parameters: [Swift.String : Swift.String]) -> [Swift.String : Swift.String]
+  @_spi(Internal) func sanitize(_ parameters: [Swift.String : any Swift.Sendable]) -> [Swift.String : any Swift.Sendable]
+}
+@_spi(Internal) public struct FTTextSanitizer : FintechSDKCoreUtils.FTSanitizingText {
+  @_spi(Internal) public init(additionalRules: [any FintechSDKCoreUtils.FTRedactRule] = [])
+  @_spi(Internal) public func sanitize(_ value: Swift.String) -> Swift.String
+  @_spi(Internal) public func sanitize(_ parameters: [Swift.String : Swift.String]) -> [Swift.String : Swift.String]
+  @_spi(Internal) public func sanitize(_ parameters: [Swift.String : any Swift.Sendable]) -> [Swift.String : any Swift.Sendable]
+}
+@_spi(Internal) public protocol FTRedactRule : Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) func redact(_ value: Swift.String, fieldName: Swift.String?) -> Swift.String
+  #endif
 }
 @_spi(Internal) public protocol FTConnectivityClock : Swift.Sendable {
   @_spi(Internal) func now() -> Swift.UInt64

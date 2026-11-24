@@ -5,7 +5,7 @@
 @_spi(Internal) import FintechSDKAnalyticsInterfaces
 import FintechSDKCommonEntity
 @_spi(Internal) import FintechSDKCoreUtils
-import FintechSDKNetworkInterfaces
+@_spi(Internal) import FintechSDKNetworkInterfaces
 import Foundation
 import Swift
 import UIKit
@@ -26,27 +26,37 @@ import _SwiftConcurrencyShims
   @_spi(Internal) final public func makeEventReporter(puid: Foundation.NSNumber?) -> any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
-  @_spi(Internal) final public func makeEventReporter(puid: Foundation.NSNumber?, shouldSanitizeSensitiveInfo: Swift.Bool) -> any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public func makeErrorReporter(puid: Foundation.NSNumber?) -> any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_spi(Internal) final public func makeErrorReporter(puid: Foundation.NSNumber?, shouldSanitizeSensitiveInfo: Swift.Bool) -> any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter
   #endif
   @_spi(Internal) @objc deinit
 }
+@_spi(Internal) public struct FTAnalyticsSanitizingReporter : Swift.Sendable {
+  @_spi(Internal) public struct FTPayload : Swift.Sendable {
+    @_spi(Internal) public let name: Swift.String
+    @_spi(Internal) public let params: [Swift.String : any Swift.Sendable]
+    @_spi(Internal) public let type: Swift.String
+    @_spi(Internal) public let context: [Swift.String : Swift.String]
+    @_spi(Internal) public var stringParams: [Swift.String : Swift.String] {
+      @_spi(Internal) get
+    }
+  }
+  @_spi(Internal) public init(paramsProvider: any FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider, contextProvider: @escaping @Sendable () -> [Swift.String : Swift.String] = { [:] })
+  @_spi(Internal) public func reportEvent(name: Swift.String, params: [Swift.String : Swift.String], type: Swift.String, preferProviderParams: Swift.Bool = false, send: @escaping @Sendable (FintechSDKCoreAnalytics.FTAnalyticsSanitizingReporter.FTPayload) async throws -> Swift.Void)
+  @_spi(Internal) public func reportError(message: Swift.String, params: [Swift.String : Swift.String], type: Swift.String, send: @escaping @Sendable (FintechSDKCoreAnalytics.FTAnalyticsSanitizingReporter.FTPayload) async throws -> Swift.Void)
+  @_spi(Internal) public func reportEvent(name: Swift.String, additional: [Swift.String : any Swift.Sendable], type: Swift.String, send: (FintechSDKCoreAnalytics.FTAnalyticsSanitizingReporter.FTPayload) throws -> Swift.Void) rethrows
+  @_spi(Internal) public func reportEvent(name: Swift.String, additional: [Swift.String : any Swift.Sendable], type: Swift.String, send: (FintechSDKCoreAnalytics.FTAnalyticsSanitizingReporter.FTPayload) async throws -> Swift.Void) async rethrows
+}
 final public class FintechAnalyticsAppMetricaReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter {
-  public init(adapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaReportingAdapter, paramsProvider: any FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider)
+  public init(adapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaReportingAdapter, paramsProvider: any FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider, shouldSanitizeSensitiveInfo: Swift.Bool = true)
   final public func reportEvent(name: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
   @objc deinit
 }
-@_hasMissingDesignatedInitializers final public class FintechAnalyticsGeneralErrorReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter {
+final public class FintechAnalyticsGeneralErrorReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter {
   public init(destinations: [any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter])
   final public func reportError(message: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
   @objc deinit
 }
-@_hasMissingDesignatedInitializers final public class FintechAnalyticsGeneralEventReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter {
+final public class FintechAnalyticsGeneralEventReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter {
   public init(destinations: [any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter])
   final public func reportEvent(name: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
   @objc deinit
@@ -57,7 +67,7 @@ final public class FintechAnalyticsRTMReporter : FintechSDKAnalyticsInterfaces.F
   @objc deinit
 }
 final public class FintechAnalyticsTelemetryReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter {
-  public init(adapter: any FintechSDKAnalyticsInterfaces.FintechTelemetryAdapter, paramsProvider: any FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider)
+  public init(adapter: any FintechSDKAnalyticsInterfaces.FintechTelemetryAdapter, paramsProvider: any FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider, shouldSanitizeSensitiveInfo: Swift.Bool = true)
   final public func reportEvent(name: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
   @objc deinit
 }
@@ -87,6 +97,18 @@ final public class FintechAnalyticsTelemetryReporter : FintechSDKAnalyticsInterf
   #endif
   @_spi(Internal) @objc deinit
 }
+@_spi(Internal) final public class FTOpenTelemetryNetworkOperationMiddleware : FintechSDKNetworkInterfaces.FTNetworkOperationMiddleware, @unchecked Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init(telemetryAdapter: (any FintechSDKAnalyticsInterfaces.FintechTelemetryAdapter)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) final public func setTelemetryAdapter(_ adapter: (any FintechSDKAnalyticsInterfaces.FintechTelemetryAdapter)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) final public func start(endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider) -> FintechSDKNetworkInterfaces.FTNetworkOperationScope?
+  #endif
+  @_spi(Internal) @objc deinit
+}
 final public class FintechNetworkReportingObserver : FintechSDKNetworkInterfaces.FintechNetworkEventObserver {
   #if compiler(>=5.3) && $NonescapableTypes
   public init(serviceName: Swift.String, errorReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter, eventReporter: (any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)?, reportOnlyFailures: Swift.Bool = false, networkEventsListener: (any FintechSDKAnalyticsInterfaces.FTNetworkEventsListener)? = nil)
@@ -98,28 +120,6 @@ final public class FintechNetworkReportingObserver : FintechSDKNetworkInterfaces
   final public func didFail(endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider, error: FintechSDKNetworkInterfaces.NetworkClientError, response: Foundation.HTTPURLResponse?, data: Foundation.Data?)
   #endif
   @objc deinit
-}
-@_spi(Internal) final public class FTOpenTelemetryNetworkObserver : FintechSDKNetworkInterfaces.FintechNetworkEventObserver {
-  @_spi(Internal) public init(telemetryAdapter: any FintechSDKAnalyticsInterfaces.FintechTelemetryAdapter, spanStorage: FintechSDKCoreAnalytics.FTRequestSpanStorage = .shared)
-  @_spi(Internal) final public func didStart(endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider)
-  @_spi(Internal) final public func didFinishCollectingMetrics(endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider, metrics: Foundation.URLSessionTaskMetrics)
-  @_spi(Internal) final public func didSucceed(endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider, response: Foundation.HTTPURLResponse, data: Foundation.Data)
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_spi(Internal) final public func didFail(endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider, error: FintechSDKNetworkInterfaces.NetworkClientError, response: Foundation.HTTPURLResponse?, data: Foundation.Data?)
-  #endif
-  @_spi(Internal) @objc deinit
-}
-@_spi(Internal) @_hasMissingDesignatedInitializers final public class FTRequestSpanStorage {
-  @_spi(Internal) nonisolated(unsafe) public static let shared: FintechSDKCoreAnalytics.FTRequestSpanStorage
-  @_spi(Internal) final public func store(span: any FintechSDKAnalyticsInterfaces.FintechRequestSpan, for endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider)
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_spi(Internal) final public func retrieve(for endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider) -> (any FintechSDKAnalyticsInterfaces.FintechRequestSpan)?
-  #endif
-  @_spi(Internal) final public func remove(for endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider)
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_spi(Internal) final public func retrieve(for request: Foundation.URLRequest) -> (any FintechSDKAnalyticsInterfaces.FintechRequestSpan)?
-  #endif
-  @_spi(Internal) @objc deinit
 }
 @_spi(Internal) public struct FTAnalyticsIdentifiersParamsProvider : FintechSDKCoreAnalytics.FintechExtraAnalyticsParamsProvider {
   @_spi(Internal) public init()

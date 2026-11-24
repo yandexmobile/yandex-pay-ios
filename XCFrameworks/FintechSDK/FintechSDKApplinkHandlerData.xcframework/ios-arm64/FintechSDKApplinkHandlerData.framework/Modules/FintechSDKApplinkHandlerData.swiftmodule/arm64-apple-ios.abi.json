@@ -1,0 +1,1066 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "FintechSDKApplinkHandlerData",
+    "printedName": "FintechSDKApplinkHandlerData",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
+        "declKind": "Import",
+        "moduleName": "FintechSDKApplinkHandlerData",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTApplinkHandlerAction",
+        "printedName": "FTApplinkHandlerAction",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "url",
+            "printedName": "url",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC6ActionV3urlSSvp",
+            "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC6ActionV3urlSSvp",
+            "moduleName": "FintechSDKApplinkHandlerData",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC6ActionV3urlSSvg",
+                "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC6ActionV3urlSSvg",
+                "moduleName": "FintechSDKApplinkHandlerData",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "payload",
+            "printedName": "payload",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : FintechSDKCoreUtils.FTJSONValue]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : FintechSDKCoreUtils.FTJSONValue]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTJSONValue",
+                        "printedName": "FintechSDKCoreUtils.FTJSONValue",
+                        "usr": "s:19FintechSDKCoreUtils11FTJSONValueO"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC6ActionV7payloadSDySS0A12SDKCoreUtils11FTJSONValueOGSgvp",
+            "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC6ActionV7payloadSDySS0A12SDKCoreUtils11FTJSONValueOGSgvp",
+            "moduleName": "FintechSDKApplinkHandlerData",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.String : FintechSDKCoreUtils.FTJSONValue]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : FintechSDKCoreUtils.FTJSONValue]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "FTJSONValue",
+                            "printedName": "FintechSDKCoreUtils.FTJSONValue",
+                            "usr": "s:19FintechSDKCoreUtils11FTJSONValueO"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC6ActionV7payloadSDySS0A12SDKCoreUtils11FTJSONValueOGSgvg",
+                "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC6ActionV7payloadSDySS0A12SDKCoreUtils11FTJSONValueOGSgvg",
+                "moduleName": "FintechSDKApplinkHandlerData",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(url:payload:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTApplinkHandlerAction",
+                "printedName": "FintechSDKApplinkHandlerData.FTApplinkHandlerAction",
+                "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC6ActionV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : FintechSDKCoreUtils.FTJSONValue]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : FintechSDKCoreUtils.FTJSONValue]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTJSONValue",
+                        "printedName": "FintechSDKCoreUtils.FTJSONValue",
+                        "usr": "s:19FintechSDKCoreUtils11FTJSONValueO"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC6ActionV3url7payloadACSS_SDySS0A12SDKCoreUtils11FTJSONValueOGSgtcfc",
+            "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC6ActionV3url7payloadACSS_SDySS0A12SDKCoreUtils11FTJSONValueOGSgtcfc",
+            "moduleName": "FintechSDKApplinkHandlerData",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTApplinkHandlerAction",
+                "printedName": "FintechSDKApplinkHandlerData.FTApplinkHandlerAction",
+                "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC6ActionV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC6ActionV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC6ActionV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "FintechSDKApplinkHandlerData",
+            "implicit": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC6ActionV",
+        "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC6ActionV",
+        "moduleName": "FintechSDKApplinkHandlerData",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKApplinkHandlerData"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTApplinkHandlerRequest",
+        "printedName": "FTApplinkHandlerRequest",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "appReturnURL",
+            "printedName": "appReturnURL",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC7RequestV12appReturnURL10Foundation0I0Vvp",
+            "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC7RequestV12appReturnURL10Foundation0I0Vvp",
+            "moduleName": "FintechSDKApplinkHandlerData",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC7RequestV12appReturnURL10Foundation0I0Vvg",
+                "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC7RequestV12appReturnURL10Foundation0I0Vvg",
+                "moduleName": "FintechSDKApplinkHandlerData",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "supportedActions",
+            "printedName": "supportedActions",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Set",
+                "printedName": "Swift.Set<Swift.String>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sh"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC7RequestV16supportedActionsShySSGvp",
+            "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC7RequestV16supportedActionsShySSGvp",
+            "moduleName": "FintechSDKApplinkHandlerData",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Set",
+                    "printedName": "Swift.Set<Swift.String>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sh"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC7RequestV16supportedActionsShySSGvg",
+                "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC7RequestV16supportedActionsShySSGvg",
+                "moduleName": "FintechSDKApplinkHandlerData",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(appReturnURL:supportedActions:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTApplinkHandlerRequest",
+                "printedName": "FintechSDKApplinkHandlerData.FTApplinkHandlerRequest",
+                "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC7RequestV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Set",
+                "printedName": "Swift.Set<Swift.String>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sh"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC7RequestV12appReturnURL16supportedActionsAC10Foundation0I0V_ShySSGtcfc",
+            "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC7RequestV12appReturnURL16supportedActionsAC10Foundation0I0V_ShySSGtcfc",
+            "moduleName": "FintechSDKApplinkHandlerData",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC7RequestV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC7RequestV6encode2toys7Encoder_p_tKF",
+            "moduleName": "FintechSDKApplinkHandlerData",
+            "implicit": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC7RequestV",
+        "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC7RequestV",
+        "moduleName": "FintechSDKApplinkHandlerData",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTApplinkHandlerResponse",
+        "printedName": "FTApplinkHandlerResponse",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "callbackID",
+            "printedName": "callbackID",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC8ResponseV10callbackIDSSvp",
+            "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC8ResponseV10callbackIDSSvp",
+            "moduleName": "FintechSDKApplinkHandlerData",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC8ResponseV10callbackIDSSvg",
+                "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC8ResponseV10callbackIDSSvg",
+                "moduleName": "FintechSDKApplinkHandlerData",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "actions",
+            "printedName": "actions",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[FintechSDKApplinkHandlerData.FTApplinkHandlerAction]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTApplinkHandlerAction",
+                    "printedName": "FintechSDKApplinkHandlerData.FTApplinkHandlerAction",
+                    "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC6ActionV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC8ResponseV7actionsSayAA0eC6ActionVGvp",
+            "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC8ResponseV7actionsSayAA0eC6ActionVGvp",
+            "moduleName": "FintechSDKApplinkHandlerData",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[FintechSDKApplinkHandlerData.FTApplinkHandlerAction]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTApplinkHandlerAction",
+                        "printedName": "FintechSDKApplinkHandlerData.FTApplinkHandlerAction",
+                        "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC6ActionV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC8ResponseV7actionsSayAA0eC6ActionVGvg",
+                "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC8ResponseV7actionsSayAA0eC6ActionVGvg",
+                "moduleName": "FintechSDKApplinkHandlerData",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(callbackID:actions:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTApplinkHandlerResponse",
+                "printedName": "FintechSDKApplinkHandlerData.FTApplinkHandlerResponse",
+                "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC8ResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[FintechSDKApplinkHandlerData.FTApplinkHandlerAction]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTApplinkHandlerAction",
+                    "printedName": "FintechSDKApplinkHandlerData.FTApplinkHandlerAction",
+                    "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC6ActionV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC8ResponseV10callbackID7actionsACSS_SayAA0eC6ActionVGtcfc",
+            "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC8ResponseV10callbackID7actionsACSS_SayAA0eC6ActionVGtcfc",
+            "moduleName": "FintechSDKApplinkHandlerData",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTApplinkHandlerResponse",
+                "printedName": "FintechSDKApplinkHandlerData.FTApplinkHandlerResponse",
+                "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC8ResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC8ResponseV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC8ResponseV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "FintechSDKApplinkHandlerData",
+            "implicit": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC8ResponseV",
+        "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC8ResponseV",
+        "moduleName": "FintechSDKApplinkHandlerData",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKApplinkHandlerData"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKApplinkHandlerData"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTApplinkHandlerApiService",
+        "printedName": "FTApplinkHandlerApiService",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "loadActions",
+            "printedName": "loadActions(request:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTApplinkHandlerResponse",
+                "printedName": "FintechSDKApplinkHandlerData.FTApplinkHandlerResponse",
+                "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC8ResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTApplinkHandlerRequest",
+                "printedName": "FintechSDKApplinkHandlerData.FTApplinkHandlerRequest",
+                "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC7RequestV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC10ApiServiceP11loadActions7requestAA0eC8ResponseVAA0eC7RequestV_tYaKF",
+            "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC10ApiServiceP11loadActions7requestAA0eC8ResponseVAA0eC7RequestV_tYaKF",
+            "moduleName": "FintechSDKApplinkHandlerData",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKApplinkHandlerData.FTApplinkHandlerApiService>",
+            "sugared_genericSig": "<Self where Self : FintechSDKApplinkHandlerData.FTApplinkHandlerApiService>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC10ApiServiceP",
+        "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC10ApiServiceP",
+        "moduleName": "FintechSDKApplinkHandlerData",
+        "genericSig": "<τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "FintechSDKNetworkInterfaces",
+        "printedName": "FintechSDKNetworkInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKApplinkHandlerData"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTApplinkHandlerApiServiceImpl",
+        "printedName": "FTApplinkHandlerApiServiceImpl",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(networkClient:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTApplinkHandlerApiServiceImpl",
+                "printedName": "FintechSDKApplinkHandlerData.FTApplinkHandlerApiServiceImpl",
+                "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC14ApiServiceImplC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkClient",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkClient",
+                "usr": "s:27FintechSDKNetworkInterfaces0A13NetworkClientP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC14ApiServiceImplC13networkClientAC0A20SDKNetworkInterfaces0a7NetworkJ0_p_tcfc",
+            "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC14ApiServiceImplC13networkClientAC0A20SDKNetworkInterfaces0a7NetworkJ0_p_tcfc",
+            "moduleName": "FintechSDKApplinkHandlerData",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "loadActions",
+            "printedName": "loadActions(request:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTApplinkHandlerResponse",
+                "printedName": "FintechSDKApplinkHandlerData.FTApplinkHandlerResponse",
+                "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC8ResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTApplinkHandlerRequest",
+                "printedName": "FintechSDKApplinkHandlerData.FTApplinkHandlerRequest",
+                "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC7RequestV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC14ApiServiceImplC11loadActions7requestAA0eC8ResponseVAA0eC7RequestV_tYaKF",
+            "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC14ApiServiceImplC11loadActions7requestAA0eC8ResponseVAA0eC7RequestV_tYaKF",
+            "moduleName": "FintechSDKApplinkHandlerData",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC14ApiServiceImplC",
+        "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC14ApiServiceImplC",
+        "moduleName": "FintechSDKApplinkHandlerData",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTApplinkHandlerApiService",
+            "printedName": "FTApplinkHandlerApiService",
+            "usr": "s:28FintechSDKApplinkHandlerData09FTApplinkC10ApiServiceP",
+            "mangledName": "$s28FintechSDKApplinkHandlerData09FTApplinkC10ApiServiceP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Data\/ApplinkHandler\/DTO\/FTApplinkHandlerRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 395,
+      "length": 16,
+      "value": "\"app_return_url\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Data\/ApplinkHandler\/DTO\/FTApplinkHandlerRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 440,
+      "length": 19,
+      "value": "\"supported_actions\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Data\/ApplinkHandler\/DTO\/FTApplinkHandlerResponse.swift",
+      "kind": "StringLiteral",
+      "offset": 363,
+      "length": 13,
+      "value": "\"callback_id\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Data\/ApplinkHandler\/Endpoints\/FTMerchantReturnApplinkEndpoint.swift",
+      "kind": "IntegerLiteral",
+      "offset": 644,
+      "length": 2,
+      "value": "30"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Data\/ApplinkHandler\/Endpoints\/FTMerchantReturnApplinkEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 963,
+      "length": 41,
+      "value": "\"\/pay\/v1\/merchant-return-applink\/resolve\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Data\/ApplinkHandler\/Endpoints\/FTMerchantReturnApplinkEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 1031,
+      "length": 9,
+      "value": "\"request\""
+    }
+  ]
+}

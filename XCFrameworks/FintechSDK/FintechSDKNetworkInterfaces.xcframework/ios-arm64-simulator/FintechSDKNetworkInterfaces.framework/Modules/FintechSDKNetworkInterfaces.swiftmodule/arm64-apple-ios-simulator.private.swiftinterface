@@ -20,23 +20,16 @@ public protocol FTAuthorizationProviding : Swift.Sendable {
   @_spi(Internal) func sanitize(_ value: Swift.String, forHeader name: Swift.String) -> Swift.String?
   #endif
 }
-@_spi(Internal) public protocol FTNetworkBiometricRetryEndpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider {
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_spi(Internal) func forbiddenResponseHandler(for request: Foundation.URLRequest) async -> ((Foundation.Data) async -> Swift.Bool)?
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_spi(Internal) var authorizedRetry: (request: Foundation.URLRequest, token: Swift.String)? { get }
-  #endif
-}
-@_spi(Internal) extension FintechSDKNetworkInterfaces.FTNetworkBiometricRetryEndpoint {
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_spi(Internal) public func forbiddenResponseHandler(for request: Foundation.URLRequest) async -> ((Foundation.Data) async -> Swift.Bool)?
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_spi(Internal) public var authorizedRetry: (request: Foundation.URLRequest, token: Swift.String)? {
+@_spi(Internal) public struct FTNetworkErrorResponse : Swift.Sendable, Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+  @_spi(Internal) public let response: Foundation.HTTPURLResponse
+  @_spi(Internal) public let data: Foundation.Data
+  @_spi(Internal) public init(response: Foundation.HTTPURLResponse, data: Foundation.Data)
+  @_spi(Internal) public var description: Swift.String {
     @_spi(Internal) get
   }
-  #endif
+  @_spi(Internal) public var debugDescription: Swift.String {
+    @_spi(Internal) get
+  }
 }
 @_spi(Internal) public protocol FTNetworkErrorResponseMapping : Swift.Sendable {
   #if compiler(>=5.3) && $NonescapableTypes
@@ -46,6 +39,21 @@ public protocol FTAuthorizationProviding : Swift.Sendable {
 @_spi(Internal) public protocol FTNetworkErrorResponseMappingEndpoint {
   #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) var errorResponseMapper: (any FintechSDKNetworkInterfaces.FTNetworkErrorResponseMapping)? { get }
+  #endif
+}
+@_spi(Internal) public protocol FTNetworkOperationMiddleware {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) func start(endpoint: any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider) -> FintechSDKNetworkInterfaces.FTNetworkOperationScope?
+  #endif
+}
+@_spi(Internal) public struct FTNetworkOperationScope {
+  @_spi(Internal) public let requestMiddleware: [any FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware]
+  @_spi(Internal) public let responseMiddleware: [any FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware]
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init(requestMiddleware: [any FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware] = [], responseMiddleware: [any FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware] = [], onFinish: @escaping (Foundation.HTTPURLResponse?, (any Swift.Error)?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public func finish(response: Foundation.HTTPURLResponse?, error: (any Swift.Error)?)
   #endif
 }
 public protocol FTSessionProviderServing : Swift.Sendable {
@@ -142,9 +150,6 @@ public protocol FintechNetworkEndpointProvider {
   var decoder: Self.Decoder { get }
   var isRetriableOnNetworkDrop: Swift.Bool { get }
 }
-@_spi(Internal) public protocol FTNetworkPreflightEndpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider {
-  @_spi(Internal) var submitRequest: @_Concurrency.MainActor @Sendable (_ start: @Sendable () throws -> Swift.Void) throws -> Swift.Void { get }
-}
 extension FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider {
   #if compiler(>=5.3) && $NonescapableTypes
   public var headers: [Swift.String : Swift.String]? {
@@ -191,12 +196,18 @@ public enum NetworkClientError : Swift.Error {
   case invalidRequestBody(any Swift.Error)
   case invalidResponse
   case invalidStatusCode(code: Swift.Int)
+  @_spi(Internal) case invalidStatusCodeWithResponse(FintechSDKNetworkInterfaces.FTNetworkErrorResponse)
   case decodeError(any Swift.Error)
   case processRequestError(any Swift.Error)
   case processResponseError(any Swift.Error)
   case silentError(any Swift.Error)
   case urlError(FintechSDKNetworkInterfaces.URLSessionError)
   case noTokenForAccount(uid: Foundation.NSNumber, error: (any Swift.Error)?)
+}
+@_spi(Internal) extension FintechSDKNetworkInterfaces.NetworkClientError {
+  @_spi(Internal) public var withoutResponse: FintechSDKNetworkInterfaces.NetworkClientError {
+    @_spi(Internal) get
+  }
 }
 public enum URLSessionError : Swift.Error, Swift.Equatable {
   case cancelled

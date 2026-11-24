@@ -13,16 +13,16 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 final public class FintechAnalyticsAppMetricaReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter {
-  public init(adapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaReportingAdapter, paramsProvider: any FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider)
+  public init(adapter: any FintechSDKAnalyticsInterfaces.FintechAppMetricaReportingAdapter, paramsProvider: any FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider, shouldSanitizeSensitiveInfo: Swift.Bool = true)
   final public func reportEvent(name: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
   @objc deinit
 }
-@_hasMissingDesignatedInitializers final public class FintechAnalyticsGeneralErrorReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter {
+final public class FintechAnalyticsGeneralErrorReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter {
   public init(destinations: [any FintechSDKAnalyticsInterfaces.FintechAnalyticsErrorReporter])
   final public func reportError(message: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
   @objc deinit
 }
-@_hasMissingDesignatedInitializers final public class FintechAnalyticsGeneralEventReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter {
+final public class FintechAnalyticsGeneralEventReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter {
   public init(destinations: [any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter])
   final public func reportEvent(name: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
   @objc deinit
@@ -33,7 +33,7 @@ final public class FintechAnalyticsRTMReporter : FintechSDKAnalyticsInterfaces.F
   @objc deinit
 }
 final public class FintechAnalyticsTelemetryReporter : FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter {
-  public init(adapter: any FintechSDKAnalyticsInterfaces.FintechTelemetryAdapter, paramsProvider: any FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider)
+  public init(adapter: any FintechSDKAnalyticsInterfaces.FintechTelemetryAdapter, paramsProvider: any FintechSDKCoreAnalytics.FintechAnalyticsParamsProvider, shouldSanitizeSensitiveInfo: Swift.Bool = true)
   final public func reportEvent(name: Swift.String, params: [Swift.String : Swift.String], type: Swift.String)
   @objc deinit
 }

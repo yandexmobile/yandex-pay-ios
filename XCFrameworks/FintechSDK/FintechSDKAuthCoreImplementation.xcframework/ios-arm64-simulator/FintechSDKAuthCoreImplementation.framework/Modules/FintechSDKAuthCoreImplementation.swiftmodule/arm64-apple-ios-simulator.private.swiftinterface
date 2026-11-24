@@ -37,16 +37,10 @@ public enum FintechDPoPKeyFactory {
       get
     }
   }
-  public static func makeKey(mode: FintechSDKAuthCoreImplementation.FintechDPoPKeyFactory.Mode) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> any FintechSDKAuthInterfaces.FintechDPoPKey
+  @_spi(Internal) public static func makeKey(mode: FintechSDKAuthCoreImplementation.FintechDPoPKeyFactory.Mode, clock: any FintechSDKAuthInterfaces.FTServerClock) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> any FintechSDKAuthInterfaces.FintechDPoPKey
   #if compiler(>=5.3) && $NonescapableTypes
-  @_spi(Internal) public static func makeKey(mode: FintechSDKAuthCoreImplementation.FintechDPoPKeyFactory.Mode, clock: (any FintechSDKAuthInterfaces.FTServerClock)?, authenticationContext: LocalAuthentication.LAContext?) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> any FintechSDKAuthInterfaces.FintechDPoPKey
+  @_spi(Internal) public static func existingKey(mode: FintechSDKAuthCoreImplementation.FintechDPoPKeyFactory.Mode, clock: any FintechSDKAuthInterfaces.FTServerClock) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> (any FintechSDKAuthInterfaces.FintechDPoPKey)?
   #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public static func existingKey(mode: FintechSDKAuthCoreImplementation.FintechDPoPKeyFactory.Mode) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> (any FintechSDKAuthInterfaces.FintechDPoPKey)?
-  #endif
-}
-extension FintechSDKAuthInterfaces.FintechCryptoKeyError {
-  @_spi(Internal) public static func mapSigningError(_ nsError: Foundation.NSError) -> FintechSDKAuthInterfaces.FintechCryptoKeyError
 }
 @_spi(Internal) extension FintechSDKAuthCoreImplementation.FintechDPoPServiceImpl : FintechSDKAuthInterfaces.FTOfflineKeyProviding {
   #if compiler(>=5.3) && $NonescapableTypes
@@ -62,7 +56,7 @@ final public class FintechDPoPServiceImpl : FintechSDKAuthInterfaces.FintechDPoP
   final public func existingKey(_ type: FintechSDKAuthInterfaces.PublicKeyType) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> (any FintechSDKAuthInterfaces.FintechDPoPKey)?
   #endif
   final public func hasKey(_ type: FintechSDKAuthInterfaces.PublicKeyType) -> Swift.Bool
-  public init()
+  @_spi(Internal) public init(serverClock: any FintechSDKAuthInterfaces.FTServerClock)
   final public func invalidateKey()
   final public func checkDeviceAuth() throws(FintechSDKAuthInterfaces.FintechCryptoKeyError)
   @objc deinit

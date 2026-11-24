@@ -16,15 +16,19 @@ import _SwiftConcurrencyShims
   @_spi(Internal) @objc deinit
 }
 @_spi(Internal) extension FintechSDKSafariFeature.FTInAppBrowserInteractor : FintechSDKSafariFeature.FTOpenInAppBrowserUseCase {
-  @_spi(Internal) @_Concurrency.MainActor final public func open(url: Foundation.URL, onEvent: @escaping @_Concurrency.MainActor @Sendable (FintechSDKSafariFeature.FTSafariEvent) -> Swift.Void) async throws
+  @_spi(Internal) @_Concurrency.MainActor final public func open(prepareURL: @escaping @_Concurrency.MainActor @Sendable () async throws -> Foundation.URL, onEvent: @escaping @_Concurrency.MainActor @Sendable (FintechSDKSafariFeature.FTSafariEvent) -> Swift.Void) async throws
   @_spi(Internal) @_Concurrency.MainActor final public func isPresenting() -> Swift.Bool
 }
 @_spi(Internal) extension FintechSDKSafariFeature.FTInAppBrowserInteractor : FintechSDKSafariFeature.FTCloseInAppBrowserUseCase {
   @_spi(Internal) @_Concurrency.MainActor final public func close() async
+  @_spi(Internal) @_Concurrency.MainActor final public func startClosing(animated: Swift.Bool = true) -> _Concurrency.Task<Swift.Void, Swift.Never>
 }
 @_spi(Internal) @_Concurrency.MainActor public protocol FTOpenInAppBrowserUseCase : AnyObject, Swift.Sendable {
-  @_spi(Internal) @_Concurrency.MainActor func open(url: Foundation.URL, onEvent: @escaping @_Concurrency.MainActor @Sendable (FintechSDKSafariFeature.FTSafariEvent) -> Swift.Void) async throws
+  @_spi(Internal) @_Concurrency.MainActor func open(prepareURL: @escaping @_Concurrency.MainActor @Sendable () async throws -> Foundation.URL, onEvent: @escaping @_Concurrency.MainActor @Sendable (FintechSDKSafariFeature.FTSafariEvent) -> Swift.Void) async throws
   @_spi(Internal) @_Concurrency.MainActor func isPresenting() -> Swift.Bool
+}
+@_spi(Internal) extension FintechSDKSafariFeature.FTOpenInAppBrowserUseCase {
+  @_spi(Internal) @_Concurrency.MainActor public func open(url: Foundation.URL, onEvent: @escaping @_Concurrency.MainActor @Sendable (FintechSDKSafariFeature.FTSafariEvent) -> Swift.Void) async throws
 }
 @_spi(Internal) @_Concurrency.MainActor public protocol FTCloseInAppBrowserUseCase : AnyObject, Swift.Sendable {
   @_spi(Internal) @_Concurrency.MainActor func close() async

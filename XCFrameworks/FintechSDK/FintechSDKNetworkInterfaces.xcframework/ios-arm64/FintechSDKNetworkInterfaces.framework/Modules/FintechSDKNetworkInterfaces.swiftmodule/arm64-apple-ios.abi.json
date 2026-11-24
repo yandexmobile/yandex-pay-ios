@@ -280,102 +280,34 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "FTNetworkBiometricRetryEndpoint",
-        "printedName": "FTNetworkBiometricRetryEndpoint",
+        "name": "FTNetworkErrorResponse",
+        "printedName": "FTNetworkErrorResponse",
         "children": [
           {
-            "kind": "Function",
-            "name": "forbiddenResponseHandler",
-            "printedName": "forbiddenResponseHandler(for:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Foundation.Data) async -> Swift.Bool)?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Foundation.Data) async -> Swift.Bool",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Bool",
-                        "printedName": "Swift.Bool",
-                        "usr": "s:Sb"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Data",
-                        "printedName": "Foundation.Data",
-                        "usr": "s:10Foundation4DataV"
-                      }
-                    ]
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "URLRequest",
-                "printedName": "Foundation.URLRequest",
-                "usr": "s:10Foundation10URLRequestV"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:27FintechSDKNetworkInterfaces31FTNetworkBiometricRetryEndpointP24forbiddenResponseHandler3forSb10Foundation4DataVYacSgAF10URLRequestV_tYaF",
-            "mangledName": "$s27FintechSDKNetworkInterfaces31FTNetworkBiometricRetryEndpointP24forbiddenResponseHandler3forSb10Foundation4DataVYacSgAF10URLRequestV_tYaF",
-            "moduleName": "FintechSDKNetworkInterfaces",
-            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKNetworkInterfaces.FTNetworkBiometricRetryEndpoint>",
-            "sugared_genericSig": "<Self where Self : FintechSDKNetworkInterfaces.FTNetworkBiometricRetryEndpoint>",
-            "protocolReq": true,
-            "spi_group_names": [
-              "Internal"
-            ],
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
             "kind": "Var",
-            "name": "authorizedRetry",
-            "printedName": "authorizedRetry",
+            "name": "response",
+            "printedName": "response",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "(request: Foundation.URLRequest, token: Swift.String)?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Tuple",
-                    "printedName": "(request: Foundation.URLRequest, token: Swift.String)",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "URLRequest",
-                        "printedName": "Foundation.URLRequest",
-                        "usr": "s:10Foundation10URLRequestV"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ]
-                  }
-                ],
-                "usr": "s:Sq"
+                "name": "HTTPURLResponse",
+                "printedName": "Foundation.HTTPURLResponse",
+                "usr": "c:objc(cs)NSHTTPURLResponse"
               }
             ],
             "declKind": "Var",
-            "usr": "s:27FintechSDKNetworkInterfaces31FTNetworkBiometricRetryEndpointP010authorizedF010Foundation10URLRequestV7request_SS5tokentSgvp",
-            "mangledName": "$s27FintechSDKNetworkInterfaces31FTNetworkBiometricRetryEndpointP010authorizedF010Foundation10URLRequestV7request_SS5tokentSgvp",
+            "usr": "s:27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV8responseSo17NSHTTPURLResponseCvp",
+            "mangledName": "$s27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV8responseSo17NSHTTPURLResponseCvp",
             "moduleName": "FintechSDKNetworkInterfaces",
-            "protocolReq": true,
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
             "spi_group_names": [
               "Internal"
             ],
+            "isLet": true,
+            "hasStorage": true,
             "accessors": [
               {
                 "kind": "Accessor",
@@ -384,136 +316,128 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "(request: Foundation.URLRequest, token: Swift.String)?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(request: Foundation.URLRequest, token: Swift.String)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "URLRequest",
-                            "printedName": "Foundation.URLRequest",
-                            "usr": "s:10Foundation10URLRequestV"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          }
-                        ]
-                      }
-                    ],
-                    "usr": "s:Sq"
+                    "name": "HTTPURLResponse",
+                    "printedName": "Foundation.HTTPURLResponse",
+                    "usr": "c:objc(cs)NSHTTPURLResponse"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:27FintechSDKNetworkInterfaces31FTNetworkBiometricRetryEndpointP010authorizedF010Foundation10URLRequestV7request_SS5tokentSgvg",
-                "mangledName": "$s27FintechSDKNetworkInterfaces31FTNetworkBiometricRetryEndpointP010authorizedF010Foundation10URLRequestV7request_SS5tokentSgvg",
+                "usr": "s:27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV8responseSo17NSHTTPURLResponseCvg",
+                "mangledName": "$s27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV8responseSo17NSHTTPURLResponseCvg",
                 "moduleName": "FintechSDKNetworkInterfaces",
-                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKNetworkInterfaces.FTNetworkBiometricRetryEndpoint>",
-                "sugared_genericSig": "<Self where Self : FintechSDKNetworkInterfaces.FTNetworkBiometricRetryEndpoint>",
-                "protocolReq": true,
+                "implicit": true,
                 "spi_group_names": [
                   "Internal"
                 ],
-                "reqNewWitnessTableEntry": true,
                 "accessorKind": "get"
               }
             ]
           },
           {
-            "kind": "Function",
-            "name": "forbiddenResponseHandler",
-            "printedName": "forbiddenResponseHandler(for:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Foundation.Data) async -> Swift.Bool)?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Foundation.Data) async -> Swift.Bool",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Bool",
-                        "printedName": "Swift.Bool",
-                        "usr": "s:Sb"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Data",
-                        "printedName": "Foundation.Data",
-                        "usr": "s:10Foundation4DataV"
-                      }
-                    ]
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "URLRequest",
-                "printedName": "Foundation.URLRequest",
-                "usr": "s:10Foundation10URLRequestV"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:27FintechSDKNetworkInterfaces31FTNetworkBiometricRetryEndpointPAAE24forbiddenResponseHandler3forSb10Foundation4DataVYacSgAF10URLRequestV_tYaF",
-            "mangledName": "$s27FintechSDKNetworkInterfaces31FTNetworkBiometricRetryEndpointPAAE24forbiddenResponseHandler3forSb10Foundation4DataVYacSgAF10URLRequestV_tYaF",
-            "moduleName": "FintechSDKNetworkInterfaces",
-            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKNetworkInterfaces.FTNetworkBiometricRetryEndpoint>",
-            "sugared_genericSig": "<Self where Self : FintechSDKNetworkInterfaces.FTNetworkBiometricRetryEndpoint>",
-            "isFromExtension": true,
-            "spi_group_names": [
-              "Internal"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
             "kind": "Var",
-            "name": "authorizedRetry",
-            "printedName": "authorizedRetry",
+            "name": "data",
+            "printedName": "data",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "(request: Foundation.URLRequest, token: Swift.String)?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Tuple",
-                    "printedName": "(request: Foundation.URLRequest, token: Swift.String)",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "URLRequest",
-                        "printedName": "Foundation.URLRequest",
-                        "usr": "s:10Foundation10URLRequestV"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ]
-                  }
-                ],
-                "usr": "s:Sq"
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
               }
             ],
             "declKind": "Var",
-            "usr": "s:27FintechSDKNetworkInterfaces31FTNetworkBiometricRetryEndpointPAAE010authorizedF010Foundation10URLRequestV7request_SS5tokentSgvp",
-            "mangledName": "$s27FintechSDKNetworkInterfaces31FTNetworkBiometricRetryEndpointPAAE010authorizedF010Foundation10URLRequestV7request_SS5tokentSgvp",
+            "usr": "s:27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV4data10Foundation4DataVvp",
+            "mangledName": "$s27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV4data10Foundation4DataVvp",
             "moduleName": "FintechSDKNetworkInterfaces",
-            "isFromExtension": true,
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV4data10Foundation4DataVvg",
+                "mangledName": "$s27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV4data10Foundation4DataVvg",
+                "moduleName": "FintechSDKNetworkInterfaces",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(response:data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTNetworkErrorResponse",
+                "printedName": "FintechSDKNetworkInterfaces.FTNetworkErrorResponse",
+                "usr": "s:27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPURLResponse",
+                "printedName": "Foundation.HTTPURLResponse",
+                "usr": "c:objc(cs)NSHTTPURLResponse"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV8response4dataACSo17NSHTTPURLResponseC_10Foundation4DataVtcfc",
+            "mangledName": "$s27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV8response4dataACSo17NSHTTPURLResponseC_10Foundation4DataVtcfc",
+            "moduleName": "FintechSDKNetworkInterfaces",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "description",
+            "printedName": "description",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV11descriptionSSvp",
+            "mangledName": "$s27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV11descriptionSSvp",
+            "moduleName": "FintechSDKNetworkInterfaces",
+            "declAttributes": [
+              "AccessControl"
+            ],
             "spi_group_names": [
               "Internal"
             ],
@@ -525,39 +449,61 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "(request: Foundation.URLRequest, token: Swift.String)?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(request: Foundation.URLRequest, token: Swift.String)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "URLRequest",
-                            "printedName": "Foundation.URLRequest",
-                            "usr": "s:10Foundation10URLRequestV"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          }
-                        ]
-                      }
-                    ],
-                    "usr": "s:Sq"
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:27FintechSDKNetworkInterfaces31FTNetworkBiometricRetryEndpointPAAE010authorizedF010Foundation10URLRequestV7request_SS5tokentSgvg",
-                "mangledName": "$s27FintechSDKNetworkInterfaces31FTNetworkBiometricRetryEndpointPAAE010authorizedF010Foundation10URLRequestV7request_SS5tokentSgvg",
+                "usr": "s:27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV11descriptionSSvg",
+                "mangledName": "$s27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV11descriptionSSvg",
                 "moduleName": "FintechSDKNetworkInterfaces",
-                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKNetworkInterfaces.FTNetworkBiometricRetryEndpoint>",
-                "sugared_genericSig": "<Self where Self : FintechSDKNetworkInterfaces.FTNetworkBiometricRetryEndpoint>",
-                "isFromExtension": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "debugDescription",
+            "printedName": "debugDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV16debugDescriptionSSvp",
+            "mangledName": "$s27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV16debugDescriptionSSvp",
+            "moduleName": "FintechSDKNetworkInterfaces",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV16debugDescriptionSSvg",
+                "mangledName": "$s27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV16debugDescriptionSSvg",
+                "moduleName": "FintechSDKNetworkInterfaces",
                 "spi_group_names": [
                   "Internal"
                 ],
@@ -566,12 +512,10 @@
             ]
           }
         ],
-        "declKind": "Protocol",
-        "usr": "s:27FintechSDKNetworkInterfaces31FTNetworkBiometricRetryEndpointP",
-        "mangledName": "$s27FintechSDKNetworkInterfaces31FTNetworkBiometricRetryEndpointP",
+        "declKind": "Struct",
+        "usr": "s:27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV",
+        "mangledName": "$s27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV",
         "moduleName": "FintechSDKNetworkInterfaces",
-        "genericSig": "<τ_0_0 : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider>",
-        "sugared_genericSig": "<Self : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider>",
         "declAttributes": [
           "AccessControl",
           "SPIAccessControl"
@@ -582,13 +526,6 @@
         "conformances": [
           {
             "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Copyable",
             "printedName": "Copyable",
             "usr": "s:s8CopyableP",
@@ -596,10 +533,38 @@
           },
           {
             "kind": "Conformance",
-            "name": "FintechNetworkEndpointProvider",
-            "printedName": "FintechNetworkEndpointProvider",
-            "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkEndpointProviderP",
-            "mangledName": "$s27FintechSDKNetworkInterfaces0A23NetworkEndpointProviderP"
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -800,6 +765,404 @@
             "printedName": "Copyable",
             "usr": "s:s8CopyableP",
             "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTNetworkOperationMiddleware",
+        "printedName": "FTNetworkOperationMiddleware",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "start",
+            "printedName": "start(endpoint:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FintechSDKNetworkInterfaces.FTNetworkOperationScope?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTNetworkOperationScope",
+                    "printedName": "FintechSDKNetworkInterfaces.FTNetworkOperationScope",
+                    "usr": "s:27FintechSDKNetworkInterfaces23FTNetworkOperationScopeV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FintechNetworkEndpointProvider",
+                "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider",
+                "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkEndpointProviderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:27FintechSDKNetworkInterfaces28FTNetworkOperationMiddlewareP5start8endpointAA0dE5ScopeVSgAA0A23NetworkEndpointProvider_p_tF",
+            "mangledName": "$s27FintechSDKNetworkInterfaces28FTNetworkOperationMiddlewareP5start8endpointAA0dE5ScopeVSgAA0A23NetworkEndpointProvider_p_tF",
+            "moduleName": "FintechSDKNetworkInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKNetworkInterfaces.FTNetworkOperationMiddleware>",
+            "sugared_genericSig": "<Self where Self : FintechSDKNetworkInterfaces.FTNetworkOperationMiddleware>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:27FintechSDKNetworkInterfaces28FTNetworkOperationMiddlewareP",
+        "mangledName": "$s27FintechSDKNetworkInterfaces28FTNetworkOperationMiddlewareP",
+        "moduleName": "FintechSDKNetworkInterfaces",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKNetworkInterfaces"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTNetworkOperationScope",
+        "printedName": "FTNetworkOperationScope",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "requestMiddleware",
+            "printedName": "requestMiddleware",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkRequestMiddleware",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:27FintechSDKNetworkInterfaces23FTNetworkOperationScopeV17requestMiddlewareSayAA0a14NetworkRequestH0_pGvp",
+            "mangledName": "$s27FintechSDKNetworkInterfaces23FTNetworkOperationScopeV17requestMiddlewareSayAA0a14NetworkRequestH0_pGvp",
+            "moduleName": "FintechSDKNetworkInterfaces",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[any FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FintechNetworkRequestMiddleware",
+                        "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware",
+                        "usr": "s:27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:27FintechSDKNetworkInterfaces23FTNetworkOperationScopeV17requestMiddlewareSayAA0a14NetworkRequestH0_pGvg",
+                "mangledName": "$s27FintechSDKNetworkInterfaces23FTNetworkOperationScopeV17requestMiddlewareSayAA0a14NetworkRequestH0_pGvg",
+                "moduleName": "FintechSDKNetworkInterfaces",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "responseMiddleware",
+            "printedName": "responseMiddleware",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkResponseMiddleware",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A25NetworkResponseMiddlewareP"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:27FintechSDKNetworkInterfaces23FTNetworkOperationScopeV18responseMiddlewareSayAA0a15NetworkResponseH0_pGvp",
+            "mangledName": "$s27FintechSDKNetworkInterfaces23FTNetworkOperationScopeV18responseMiddlewareSayAA0a15NetworkResponseH0_pGvp",
+            "moduleName": "FintechSDKNetworkInterfaces",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[any FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FintechNetworkResponseMiddleware",
+                        "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware",
+                        "usr": "s:27FintechSDKNetworkInterfaces0A25NetworkResponseMiddlewareP"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:27FintechSDKNetworkInterfaces23FTNetworkOperationScopeV18responseMiddlewareSayAA0a15NetworkResponseH0_pGvg",
+                "mangledName": "$s27FintechSDKNetworkInterfaces23FTNetworkOperationScopeV18responseMiddlewareSayAA0a15NetworkResponseH0_pGvg",
+                "moduleName": "FintechSDKNetworkInterfaces",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(requestMiddleware:responseMiddleware:onFinish:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTNetworkOperationScope",
+                "printedName": "FintechSDKNetworkInterfaces.FTNetworkOperationScope",
+                "usr": "s:27FintechSDKNetworkInterfaces23FTNetworkOperationScopeV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkRequestMiddleware",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkRequestMiddleware",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A24NetworkRequestMiddlewareP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[any FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FintechNetworkResponseMiddleware",
+                    "printedName": "any FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware",
+                    "usr": "s:27FintechSDKNetworkInterfaces0A25NetworkResponseMiddlewareP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Foundation.HTTPURLResponse?, (any Swift.Error)?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Foundation.HTTPURLResponse?, (any Swift.Error)?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Foundation.HTTPURLResponse?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "HTTPURLResponse",
+                            "printedName": "Foundation.HTTPURLResponse",
+                            "usr": "c:objc(cs)NSHTTPURLResponse"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "(any Swift.Error)?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "any Swift.Error",
+                            "usr": "s:s5ErrorP"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:27FintechSDKNetworkInterfaces23FTNetworkOperationScopeV17requestMiddleware08responseH08onFinishACSayAA0a14NetworkRequestH0_pG_SayAA0al8ResponseH0_pGySo17NSHTTPURLResponseCSg_s5Error_pSgtctcfc",
+            "mangledName": "$s27FintechSDKNetworkInterfaces23FTNetworkOperationScopeV17requestMiddleware08responseH08onFinishACSayAA0a14NetworkRequestH0_pG_SayAA0al8ResponseH0_pGySo17NSHTTPURLResponseCSg_s5Error_pSgtctcfc",
+            "moduleName": "FintechSDKNetworkInterfaces",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "finish",
+            "printedName": "finish(response:error:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.HTTPURLResponse?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPURLResponse",
+                    "printedName": "Foundation.HTTPURLResponse",
+                    "usr": "c:objc(cs)NSHTTPURLResponse"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any Swift.Error)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:27FintechSDKNetworkInterfaces23FTNetworkOperationScopeV6finish8response5errorySo17NSHTTPURLResponseCSg_s5Error_pSgtF",
+            "mangledName": "$s27FintechSDKNetworkInterfaces23FTNetworkOperationScopeV6finish8response5errorySo17NSHTTPURLResponseCSg_s5Error_pSgtF",
+            "moduleName": "FintechSDKNetworkInterfaces",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:27FintechSDKNetworkInterfaces23FTNetworkOperationScopeV",
+        "mangledName": "$s27FintechSDKNetworkInterfaces23FTNetworkOperationScopeV",
+        "moduleName": "FintechSDKNetworkInterfaces",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           }
         ]
       },
@@ -2870,152 +3233,6 @@
         ]
       },
       {
-        "kind": "TypeDecl",
-        "name": "FTNetworkPreflightEndpoint",
-        "printedName": "FTNetworkPreflightEndpoint",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "submitRequest",
-            "printedName": "submitRequest",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(() throws -> ()) throws -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "() throws -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      }
-                    ],
-                    "typeAttributes": [
-                      "noescape"
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:27FintechSDKNetworkInterfaces26FTNetworkPreflightEndpointP13submitRequestyyyyYbKXEYbKScMYccvp",
-            "mangledName": "$s27FintechSDKNetworkInterfaces26FTNetworkPreflightEndpointP13submitRequestyyyyYbKXEYbKScMYccvp",
-            "moduleName": "FintechSDKNetworkInterfaces",
-            "protocolReq": true,
-            "declAttributes": [
-              "RawDocComment"
-            ],
-            "spi_group_names": [
-              "Internal"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(() throws -> ()) throws -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeFunc",
-                        "name": "Function",
-                        "printedName": "() throws -> ()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Void",
-                            "printedName": "()"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Void",
-                            "printedName": "()"
-                          }
-                        ],
-                        "typeAttributes": [
-                          "noescape"
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:27FintechSDKNetworkInterfaces26FTNetworkPreflightEndpointP13submitRequestyyyyYbKXEYbKScMYccvg",
-                "mangledName": "$s27FintechSDKNetworkInterfaces26FTNetworkPreflightEndpointP13submitRequestyyyyYbKXEYbKScMYccvg",
-                "moduleName": "FintechSDKNetworkInterfaces",
-                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKNetworkInterfaces.FTNetworkPreflightEndpoint>",
-                "sugared_genericSig": "<Self where Self : FintechSDKNetworkInterfaces.FTNetworkPreflightEndpoint>",
-                "protocolReq": true,
-                "spi_group_names": [
-                  "Internal"
-                ],
-                "reqNewWitnessTableEntry": true,
-                "accessorKind": "get"
-              }
-            ]
-          }
-        ],
-        "declKind": "Protocol",
-        "usr": "s:27FintechSDKNetworkInterfaces26FTNetworkPreflightEndpointP",
-        "mangledName": "$s27FintechSDKNetworkInterfaces26FTNetworkPreflightEndpointP",
-        "moduleName": "FintechSDKNetworkInterfaces",
-        "genericSig": "<τ_0_0 : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider>",
-        "sugared_genericSig": "<Self : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider>",
-        "declAttributes": [
-          "AccessControl",
-          "SPIAccessControl"
-        ],
-        "spi_group_names": [
-          "Internal"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "FintechNetworkEndpointProvider",
-            "printedName": "FintechNetworkEndpointProvider",
-            "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkEndpointProviderP",
-            "mangledName": "$s27FintechSDKNetworkInterfaces0A23NetworkEndpointProviderP"
-          }
-        ]
-      },
-      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -3793,6 +4010,62 @@
           },
           {
             "kind": "Var",
+            "name": "invalidStatusCodeWithResponse",
+            "printedName": "invalidStatusCodeWithResponse",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FintechSDKNetworkInterfaces.NetworkClientError.Type) -> (FintechSDKNetworkInterfaces.FTNetworkErrorResponse) -> FintechSDKNetworkInterfaces.NetworkClientError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(FintechSDKNetworkInterfaces.FTNetworkErrorResponse) -> FintechSDKNetworkInterfaces.NetworkClientError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NetworkClientError",
+                        "printedName": "FintechSDKNetworkInterfaces.NetworkClientError",
+                        "usr": "s:27FintechSDKNetworkInterfaces18NetworkClientErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FTNetworkErrorResponse",
+                        "printedName": "FintechSDKNetworkInterfaces.FTNetworkErrorResponse",
+                        "usr": "s:27FintechSDKNetworkInterfaces22FTNetworkErrorResponseV"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "FintechSDKNetworkInterfaces.NetworkClientError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NetworkClientError",
+                        "printedName": "FintechSDKNetworkInterfaces.NetworkClientError",
+                        "usr": "s:27FintechSDKNetworkInterfaces18NetworkClientErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:27FintechSDKNetworkInterfaces18NetworkClientErrorO29invalidStatusCodeWithResponseyAcA09FTNetworkfK0VcACmF",
+            "mangledName": "$s27FintechSDKNetworkInterfaces18NetworkClientErrorO29invalidStatusCodeWithResponseyAcA09FTNetworkfK0VcACmF",
+            "moduleName": "FintechSDKNetworkInterfaces",
+            "declAttributes": [
+              "SPIAccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "decodeError",
             "printedName": "decodeError",
             "children": [
@@ -4111,6 +4384,51 @@
             "usr": "s:27FintechSDKNetworkInterfaces18NetworkClientErrorO17noTokenForAccountyACSo8NSNumberC_s0F0_pSgtcACmF",
             "mangledName": "$s27FintechSDKNetworkInterfaces18NetworkClientErrorO17noTokenForAccountyACSo8NSNumberC_s0F0_pSgtcACmF",
             "moduleName": "FintechSDKNetworkInterfaces"
+          },
+          {
+            "kind": "Var",
+            "name": "withoutResponse",
+            "printedName": "withoutResponse",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NetworkClientError",
+                "printedName": "FintechSDKNetworkInterfaces.NetworkClientError",
+                "usr": "s:27FintechSDKNetworkInterfaces18NetworkClientErrorO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:27FintechSDKNetworkInterfaces18NetworkClientErrorO15withoutResponseACvp",
+            "mangledName": "$s27FintechSDKNetworkInterfaces18NetworkClientErrorO15withoutResponseACvp",
+            "moduleName": "FintechSDKNetworkInterfaces",
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NetworkClientError",
+                    "printedName": "FintechSDKNetworkInterfaces.NetworkClientError",
+                    "usr": "s:27FintechSDKNetworkInterfaces18NetworkClientErrorO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:27FintechSDKNetworkInterfaces18NetworkClientErrorO15withoutResponseACvg",
+                "mangledName": "$s27FintechSDKNetworkInterfaces18NetworkClientErrorO15withoutResponseACvg",
+                "moduleName": "FintechSDKNetworkInterfaces",
+                "isFromExtension": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
           },
           {
             "kind": "Var",
@@ -5797,5 +6115,20 @@
     ],
     "json_format_version": 8
   },
-  "ConstValues": []
+  "ConstValues": [
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Interfaces\/FTNetworkOperationScope.swift",
+      "kind": "Array",
+      "offset": 356,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Network\/Interfaces\/FTNetworkOperationScope.swift",
+      "kind": "Array",
+      "offset": 425,
+      "length": 2,
+      "value": "[]"
+    }
+  ]
 }

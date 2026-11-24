@@ -16,32 +16,20 @@ import YandexPayConfiguration
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-public enum YPQuickPayPaymentMode : Swift.Sendable {
-  case pay
-  case split
-  public static func == (a: YandexQuickPay.YPQuickPayPaymentMode, b: YandexQuickPay.YPQuickPayPaymentMode) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
+public struct YPQuickPaySplitAvailability : Swift.Equatable, Swift.Sendable {
+  public enum Availability : Swift.Sendable {
+    case available
+    case unavailable
+    public static func == (a: YandexQuickPay.YPQuickPaySplitAvailability.Availability, b: YandexQuickPay.YPQuickPaySplitAvailability.Availability) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
   }
-}
-public enum YPQuickPayPaymentModeFailure : Swift.Sendable {
-  case apiNotAllowed
-  case splitDisabled
-  case requestFailed
-  public static func == (a: YandexQuickPay.YPQuickPayPaymentModeFailure, b: YandexQuickPay.YPQuickPayPaymentModeFailure) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public enum YPQuickPayPaymentModeResult : Swift.Sendable {
-  case success(mode: YandexQuickPay.YPQuickPayPaymentMode)
-  case failure(YandexQuickPay.YPQuickPayPaymentModeFailure)
-}
-public enum YPQuickPaySetPaymentModeResult : Swift.Sendable {
-  case applied
-  case failure(YandexQuickPay.YPQuickPayPaymentModeFailure)
+  public let donor: YandexQuickPay.YPQuickPaySplitAvailability.Availability
+  public let prescore: YandexQuickPay.YPQuickPaySplitAvailability.Availability
+  public init(donor: YandexQuickPay.YPQuickPaySplitAvailability.Availability, prescore: YandexQuickPay.YPQuickPaySplitAvailability.Availability)
+  public static func == (a: YandexQuickPay.YPQuickPaySplitAvailability, b: YandexQuickPay.YPQuickPaySplitAvailability) -> Swift.Bool
 }
 public struct YQuickPayBiometryRequiredError : Swift.Error, Swift.Sendable, Swift.Equatable {
   public init()
@@ -63,14 +51,21 @@ extension SwiftUICore.View {
   @_Concurrency.MainActor @preconcurrency public func yQuickPaySorryAnchor(_ anchor: YandexQuickPay.YQuickPaySorryAnchor) -> some SwiftUICore.View
   
 }
+public enum YQuickPaySplitManagementError : Swift.Error, Swift.Equatable, Swift.Sendable {
+  case linksUnavailable
+  public static func == (a: YandexQuickPay.YQuickPaySplitManagementError, b: YandexQuickPay.YQuickPaySplitManagementError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 extension YandexPayConfiguration.YPay {
   @_Concurrency.MainActor final public var quickPay: YandexQuickPay.YQuickPay {
     get
   }
 }
 extension YandexQuickPay.YQuickPay : YandexQuickPay.YQuickPayMerchantExclusiveApi {
-  final public func getPaymentMode() async throws -> YandexQuickPay.YPQuickPayPaymentModeResult
-  final public func setPaymentMode(_ mode: YandexQuickPay.YPQuickPayPaymentMode) async throws -> YandexQuickPay.YPQuickPaySetPaymentModeResult
+  final public func getSplitAvailability() async throws -> YandexQuickPay.YPQuickPaySplitAvailability
   final public func startOrderPolling() async throws
   final public func stopOrderPolling() async throws
 }
@@ -137,6 +132,7 @@ extension YandexQuickPay.YQuickPay {
   #if compiler(>=5.3) && $NonescapableTypes
   final public func showFaqScreen(onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async
   #endif
+  @_Concurrency.MainActor final public func openSplitManagement() async throws
   #if compiler(>=5.3) && $NonescapableTypes
   final public func showOnboardingStoriesScreen(onClose: (@_Concurrency.MainActor @Sendable () async -> Swift.Void)? = nil) async
   #endif
@@ -196,16 +192,11 @@ public enum YQuickPayAuthState : Swift.Equatable {
   @_Concurrency.MainActor func onAuthStateChanged(_ state: YandexQuickPay.YQuickPayAuthState)
 }
 public protocol YQuickPayMerchantExclusiveApi {
-  func getPaymentMode() async throws -> YandexQuickPay.YPQuickPayPaymentModeResult
-  func setPaymentMode(_ mode: YandexQuickPay.YPQuickPayPaymentMode) async throws -> YandexQuickPay.YPQuickPaySetPaymentModeResult
+  func getSplitAvailability() async throws -> YandexQuickPay.YPQuickPaySplitAvailability
   func startOrderPolling() async throws
   func stopOrderPolling() async throws
 }
-extension YandexQuickPay.YQuickPayMerchantExclusiveApi {
-  public func getPaymentMode() async throws -> YandexQuickPay.YPQuickPayPaymentModeResult
-  public func setPaymentMode(_ mode: YandexQuickPay.YPQuickPayPaymentMode) async throws -> YandexQuickPay.YPQuickPaySetPaymentModeResult
-}
-@_hasMissingDesignatedInitializers final public class YQuickPayModuleDescriptor : YandexPayConfiguration.YPayModule {
+final public class YQuickPayModuleDescriptor : YandexPayConfiguration.YPayModule {
   #if compiler(>=5.3) && $NonescapableTypes
   public init(stateListener: any YandexQuickPay.YQuickPaymentStateListener, merchant: YandexPayConfiguration.YPSDKMerchant, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, isActivatedByDefault: Swift.Bool = true, pollingModalSize: YandexQuickPay.YQuickPayPollingModalSize? = nil)
   #endif
@@ -223,9 +214,6 @@ extension YandexQuickPay.YQuickPayModuleDescriptor {
   @_Concurrency.MainActor final public func update(theme: YandexPayConfiguration.YPSDKThemeColorScheme)
 }
 extension YandexQuickPay.YQuickPay {
-  #if compiler(>=5.3) && $NonescapableTypes
-  public static func module(stateListener: any YandexQuickPay.YQuickPaymentStateListener, merchant: YandexPayConfiguration.YPSDKMerchant, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, isActivatedByDefault: Swift.Bool = true, pollingModalSize: YandexQuickPay.YQuickPayPollingModalSize? = nil, isSeparatePaymentMethodsEnabled: Swift.Bool) -> YandexQuickPay.YQuickPayModuleDescriptor
-  #endif
   #if compiler(>=5.3) && $NonescapableTypes
   public static func module(stateListener: any YandexQuickPay.YQuickPaymentStateListener, merchant: YandexPayConfiguration.YPSDKMerchant, presentationContextProvider: any YandexPayConfiguration.YPPresentationContextProviding, isActivatedByDefault: Swift.Bool = true, pollingModalSize: YandexQuickPay.YQuickPayPollingModalSize? = nil) -> YandexQuickPay.YQuickPayModuleDescriptor
   #endif
@@ -299,10 +287,9 @@ extension YandexQuickPay.YQuickPaymentStateListener {
   public func onPaymentMethodSelected()
   public func onPaymentMethodSelectionError()
 }
+extension YandexQuickPay.YPQuickPaySplitAvailability.Availability : Swift.Equatable {}
+extension YandexQuickPay.YPQuickPaySplitAvailability.Availability : Swift.Hashable {}
 extension YandexQuickPay.YQuickPayAuthState.SecurityCheckFailReason : Swift.Hashable {}
 extension YandexQuickPay.YQuickPayWidgetExpandState : Swift.Equatable {}
 extension YandexQuickPay.YQuickPayWidgetExpandState : Swift.Hashable {}
-extension YandexQuickPay.YPQuickPayPaymentMode : Swift.Equatable {}
-extension YandexQuickPay.YPQuickPayPaymentMode : Swift.Hashable {}
-extension YandexQuickPay.YPQuickPayPaymentModeFailure : Swift.Equatable {}
-extension YandexQuickPay.YPQuickPayPaymentModeFailure : Swift.Hashable {}
+extension YandexQuickPay.YQuickPaySplitManagementError : Swift.Hashable {}

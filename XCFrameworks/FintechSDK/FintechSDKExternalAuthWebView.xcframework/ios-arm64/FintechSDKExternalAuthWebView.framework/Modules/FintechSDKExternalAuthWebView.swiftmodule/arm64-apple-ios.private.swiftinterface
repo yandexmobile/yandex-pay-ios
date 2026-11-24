@@ -25,6 +25,9 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+@_spi(Internal) public enum FTExternalAuthWebViewURLProvider {
+  @_spi(Internal) public static func baseURL(environment: FintechSDKCommonEntity.FintechSDKEnvironment) -> Foundation.URL
+}
 @_spi(Internal) final public class FTExternalAuthWebViewLoadingScreenFactory : FintechSDKAuthorizationScenario.FTLoadingScreenFactory {
   @_spi(Internal) public init(eventReporter: any FintechSDKAnalyticsInterfaces.FintechAnalyticsEventReporter)
   @_spi(Internal) @_Concurrency.MainActor final public func makeLoadingScreen(onAction: @escaping @_Concurrency.MainActor @Sendable () -> Swift.Void, onDismiss: @escaping @_Concurrency.MainActor @Sendable () -> Swift.Void) -> any FintechSDKAuthorizationScenario.FTLoadingScreen
@@ -62,6 +65,9 @@ import _SwiftConcurrencyShims
   @_spi(Internal) public init(processCompletedAuthUseCase: (any FintechSDKExternalAuthWebView.FTProcessCompletedAuthUseCase)? = nil)
   #endif
 }
+@_spi(Internal) @_Concurrency.MainActor public protocol FTExternalAuthWebViewProgrammaticDismissal : AnyObject {
+  @_spi(Internal) @_Concurrency.MainActor func prepareForProgrammaticDismissal()
+}
 @_spi(Internal) public struct FTExternalAuthWebViewResult : Swift.Sendable {
   @_spi(Internal) public let merchAuth: FintechSDKAuthInterfaces.FintechAuthModel?
   @_spi(Internal) public let payAuth: FintechSDKAuthInterfaces.FintechAuthModel
@@ -97,4 +103,12 @@ import _SwiftConcurrencyShims
   #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor public func process(result: Swift.Result<FintechSDKExternalAuthWebView.FTExternalAuthWebViewResult, any Swift.Error>, context: any FintechSDKWebViewFeatures.FTWebViewHandlerContext, requestID: Swift.String) async
   #endif
+}
+@_spi(Internal) extension FintechSDKAuthInterfaces.FintechLoginServiceError {
+  @_spi(Internal) public static var externalAuthMissingMerchAuth: FintechSDKAuthInterfaces.FintechLoginServiceError {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public var isExternalAuthMissingMerchAuth: Swift.Bool {
+    @_spi(Internal) get
+  }
 }

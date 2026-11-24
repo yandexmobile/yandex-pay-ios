@@ -5,6 +5,213 @@
     "printedName": "FintechSDKPayWidget",
     "children": [
       {
+        "kind": "TypeDecl",
+        "name": "FTPayWidgetUpdateOrderPricingUseCase",
+        "printedName": "FTPayWidgetUpdateOrderPricingUseCase",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "execute",
+            "printedName": "execute(pricing:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTPayWidgetOrderPricing",
+                "printedName": "FintechSDKPayWidget.FTPayWidgetOrderPricing",
+                "usr": "s:19FintechSDKPayWidget05FTPayC12OrderPricingV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKPayWidget05FTPayC25UpdateOrderPricingUseCaseP7execute7pricingSbAA0dcfG0V_tF",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC25UpdateOrderPricingUseCaseP7execute7pricingSbAA0dcfG0V_tF",
+            "moduleName": "FintechSDKPayWidget",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKPayWidget.FTPayWidgetUpdateOrderPricingUseCase>",
+            "sugared_genericSig": "<Self where Self : FintechSDKPayWidget.FTPayWidgetUpdateOrderPricingUseCase>",
+            "protocolReq": true,
+            "declAttributes": [
+              "Custom",
+              "DiscardableResult"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:19FintechSDKPayWidget05FTPayC25UpdateOrderPricingUseCaseP",
+        "mangledName": "$s19FintechSDKPayWidget05FTPayC25UpdateOrderPricingUseCaseP",
+        "moduleName": "FintechSDKPayWidget",
+        "genericSig": "<τ_0_0 : AnyObject, τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : AnyObject, Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl",
+          "Custom"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTPayWidgetOrderPricingInteractor",
+        "printedName": "FTPayWidgetOrderPricingInteractor",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(delegate:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTPayWidgetOrderPricingInteractor",
+                "printedName": "FintechSDKPayWidget.FTPayWidgetOrderPricingInteractor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC22OrderPricingInteractorC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTPayWidgetDelegate",
+                "printedName": "any FintechSDKPayWidget.FTPayWidgetDelegate",
+                "usr": "s:19FintechSDKPayWidget05FTPayC8DelegateP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19FintechSDKPayWidget05FTPayC22OrderPricingInteractorC8delegateAcA0dC8Delegate_p_tcfc",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC22OrderPricingInteractorC8delegateAcA0dC8Delegate_p_tcfc",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "execute",
+            "printedName": "execute(pricing:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTPayWidgetOrderPricing",
+                "printedName": "FintechSDKPayWidget.FTPayWidgetOrderPricing",
+                "usr": "s:19FintechSDKPayWidget05FTPayC12OrderPricingV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKPayWidget05FTPayC22OrderPricingInteractorC7execute7pricingSbAA0dceF0V_tF",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC22OrderPricingInteractorC7execute7pricingSbAA0dceF0V_tF",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "Custom",
+              "Final",
+              "AccessControl",
+              "DiscardableResult"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:19FintechSDKPayWidget05FTPayC22OrderPricingInteractorC",
+        "mangledName": "$s19FintechSDKPayWidget05FTPayC22OrderPricingInteractorC",
+        "moduleName": "FintechSDKPayWidget",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "SPIAccessControl",
+          "Custom"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTPayWidgetUpdateOrderPricingUseCase",
+            "printedName": "FTPayWidgetUpdateOrderPricingUseCase",
+            "usr": "s:19FintechSDKPayWidget05FTPayC25UpdateOrderPricingUseCaseP",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC25UpdateOrderPricingUseCaseP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "FintechSDKNetworkImplementation",
         "printedName": "FintechSDKNetworkImplementation",
@@ -512,6 +719,127 @@
             ],
             "usr": "s:27FintechSDKNetworkInterfaces0A23NetworkEndpointProviderP",
             "mangledName": "$s27FintechSDKNetworkInterfaces0A23NetworkEndpointProviderP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTPayWidgetDelegate",
+        "printedName": "FTPayWidgetDelegate",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "hasRecipient",
+            "printedName": "hasRecipient",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC8DelegateP12hasRecipientSbvp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC8DelegateP12hasRecipientSbvp",
+            "moduleName": "FintechSDKPayWidget",
+            "protocolReq": true,
+            "declAttributes": [
+              "Custom"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC8DelegateP12hasRecipientSbvg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC8DelegateP12hasRecipientSbvg",
+                "moduleName": "FintechSDKPayWidget",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKPayWidget.FTPayWidgetDelegate>",
+                "sugared_genericSig": "<Self where Self : FintechSDKPayWidget.FTPayWidgetDelegate>",
+                "protocolReq": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "yandexPayWidget",
+            "printedName": "yandexPayWidget(didChangeOrderPricing:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTPayWidgetOrderPricing",
+                "printedName": "FintechSDKPayWidget.FTPayWidgetOrderPricing",
+                "usr": "s:19FintechSDKPayWidget05FTPayC12OrderPricingV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKPayWidget05FTPayC8DelegateP09yandexPayC021didChangeOrderPricingyAA0dcjK0V_tF",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC8DelegateP09yandexPayC021didChangeOrderPricingyAA0dcjK0V_tF",
+            "moduleName": "FintechSDKPayWidget",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKPayWidget.FTPayWidgetDelegate>",
+            "sugared_genericSig": "<Self where Self : FintechSDKPayWidget.FTPayWidgetDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "Custom"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:19FintechSDKPayWidget05FTPayC8DelegateP",
+        "mangledName": "$s19FintechSDKPayWidget05FTPayC8DelegateP",
+        "moduleName": "FintechSDKPayWidget",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl",
+          "Custom"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
           }
         ]
       },
@@ -1101,7 +1429,7 @@
           {
             "kind": "Function",
             "name": "createPayWidgetView",
-            "printedName": "createPayWidgetView(presenterViewController:model:bduiAdapter:flexClient:widgetReloader:paymentInProgressProvider:onAppearTask:authorizeHandler:screenOpener:logger:analyticsTracking:additionalActionHandlers:)",
+            "printedName": "createPayWidgetView(presenterViewController:model:bduiAdapter:flexClient:widgetReloader:paymentInProgressProvider:onAppearTask:authorizeHandler:screenOpener:logger:analyticsTracking:updateOrderPricing:additionalActionHandlers:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1216,6 +1544,21 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKPayWidget.FTPayWidgetUpdateOrderPricingUseCase)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTPayWidgetUpdateOrderPricingUseCase",
+                    "printedName": "any FintechSDKPayWidget.FTPayWidgetUpdateOrderPricingUseCase",
+                    "usr": "s:19FintechSDKPayWidget05FTPayC25UpdateOrderPricingUseCaseP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "Array",
                 "printedName": "[any FintechSDKBDUICore.FintechDivUrlHandler]",
                 "children": [
@@ -1231,8 +1574,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:19FintechSDKPayWidget05FTPayC7FactoryO09createPayC4View09presenterH10Controller5model11bduiAdapter10flexClient14widgetReloader25paymentInProgressProvider12onAppearTask16authorizeHandler12screenOpener6logger17analyticsTracking24additionalActionHandlersQrSo06UIViewJ0C_AA0dC5ModelV0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkO0_p0A24SDKDivKitWidgetsFeatures08FTWidgetQ0CSbycyyYaKc0A15SDKBDUIFeatures25FTAuthorizeActionHandling_pA0_19FTFlexScreenRouting_p0A12SDKCoreUtils8FTLogger_pAA0dC17AnalyticsTrackingVSgSayAU0a6DivUrlZ0_pGtFZ",
-            "mangledName": "$s19FintechSDKPayWidget05FTPayC7FactoryO09createPayC4View09presenterH10Controller5model11bduiAdapter10flexClient14widgetReloader25paymentInProgressProvider12onAppearTask16authorizeHandler12screenOpener6logger17analyticsTracking24additionalActionHandlersQrSo06UIViewJ0C_AA0dC5ModelV0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkO0_p0A24SDKDivKitWidgetsFeatures08FTWidgetQ0CSbycyyYaKc0A15SDKBDUIFeatures25FTAuthorizeActionHandling_pA0_19FTFlexScreenRouting_p0A12SDKCoreUtils8FTLogger_pAA0dC17AnalyticsTrackingVSgSayAU0a6DivUrlZ0_pGtFZ",
+            "usr": "s:19FintechSDKPayWidget05FTPayC7FactoryO09createPayC4View09presenterH10Controller5model11bduiAdapter10flexClient14widgetReloader25paymentInProgressProvider12onAppearTask16authorizeHandler12screenOpener6logger17analyticsTracking18updateOrderPricing24additionalActionHandlersQrSo06UIViewJ0C_AA0dC5ModelV0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkO0_p0A24SDKDivKitWidgetsFeatures08FTWidgetQ0CSbycyyYaKc0A15SDKBDUIFeatures25FTAuthorizeActionHandling_pA1_19FTFlexScreenRouting_p0A12SDKCoreUtils8FTLogger_pAA0dC17AnalyticsTrackingVSgAA0dC25UpdateOrderPricingUseCase_pSgSayAV0a6DivUrlZ0_pGtFZ",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC7FactoryO09createPayC4View09presenterH10Controller5model11bduiAdapter10flexClient14widgetReloader25paymentInProgressProvider12onAppearTask16authorizeHandler12screenOpener6logger17analyticsTracking18updateOrderPricing24additionalActionHandlersQrSo06UIViewJ0C_AA0dC5ModelV0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkO0_p0A24SDKDivKitWidgetsFeatures08FTWidgetQ0CSbycyyYaKc0A15SDKBDUIFeatures25FTAuthorizeActionHandling_pA1_19FTFlexScreenRouting_p0A12SDKCoreUtils8FTLogger_pAA0dC17AnalyticsTrackingVSgAA0dC25UpdateOrderPricingUseCase_pSgSayAV0a6DivUrlZ0_pGtFZ",
             "moduleName": "FintechSDKPayWidget",
             "static": true,
             "declAttributes": [
@@ -1247,7 +1590,7 @@
           {
             "kind": "Function",
             "name": "createPayWidgetUIView",
-            "printedName": "createPayWidgetUIView(presenterViewController:model:bduiAdapter:flexClient:widgetReloader:paymentInProgressProvider:onAppearTask:authorizeHandler:screenOpener:logger:analyticsTracking:additionalActionHandlers:)",
+            "printedName": "createPayWidgetUIView(presenterViewController:model:bduiAdapter:flexClient:widgetReloader:paymentInProgressProvider:onAppearTask:authorizeHandler:screenOpener:logger:analyticsTracking:updateOrderPricing:additionalActionHandlers:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1355,6 +1698,21 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKPayWidget.FTPayWidgetUpdateOrderPricingUseCase)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTPayWidgetUpdateOrderPricingUseCase",
+                    "printedName": "any FintechSDKPayWidget.FTPayWidgetUpdateOrderPricingUseCase",
+                    "usr": "s:19FintechSDKPayWidget05FTPayC25UpdateOrderPricingUseCaseP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "Array",
                 "printedName": "[any FintechSDKBDUICore.FintechDivUrlHandler]",
                 "children": [
@@ -1370,8 +1728,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:19FintechSDKPayWidget05FTPayC7FactoryO09createPayC6UIView23presenterViewController5model11bduiAdapter10flexClient14widgetReloader25paymentInProgressProvider12onAppearTask16authorizeHandler12screenOpener6logger17analyticsTracking24additionalActionHandlersSo0H0CSo0hK0C_AA0dC5ModelV0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkP0_p0A24SDKDivKitWidgetsFeatures08FTWidgetR0CSbycyyYaKc0A15SDKBDUIFeatures25FTAuthorizeActionHandling_pA2_19FTFlexScreenRouting_p0A12SDKCoreUtils8FTLogger_pAA0dC17AnalyticsTrackingVSgSayAW0A13DivUrlHandler_pGtFZ",
-            "mangledName": "$s19FintechSDKPayWidget05FTPayC7FactoryO09createPayC6UIView23presenterViewController5model11bduiAdapter10flexClient14widgetReloader25paymentInProgressProvider12onAppearTask16authorizeHandler12screenOpener6logger17analyticsTracking24additionalActionHandlersSo0H0CSo0hK0C_AA0dC5ModelV0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkP0_p0A24SDKDivKitWidgetsFeatures08FTWidgetR0CSbycyyYaKc0A15SDKBDUIFeatures25FTAuthorizeActionHandling_pA2_19FTFlexScreenRouting_p0A12SDKCoreUtils8FTLogger_pAA0dC17AnalyticsTrackingVSgSayAW0A13DivUrlHandler_pGtFZ",
+            "usr": "s:19FintechSDKPayWidget05FTPayC7FactoryO09createPayC6UIView23presenterViewController5model11bduiAdapter10flexClient14widgetReloader25paymentInProgressProvider12onAppearTask16authorizeHandler12screenOpener6logger17analyticsTracking18updateOrderPricing24additionalActionHandlersSo0H0CSo0hK0C_AA0dC5ModelV0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkP0_p0A24SDKDivKitWidgetsFeatures08FTWidgetR0CSbycyyYaKc0A15SDKBDUIFeatures25FTAuthorizeActionHandling_pA3_19FTFlexScreenRouting_p0A12SDKCoreUtils8FTLogger_pAA0dC17AnalyticsTrackingVSgAA0dC25UpdateOrderPricingUseCase_pSgSayAX0A13DivUrlHandler_pGtFZ",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC7FactoryO09createPayC6UIView23presenterViewController5model11bduiAdapter10flexClient14widgetReloader25paymentInProgressProvider12onAppearTask16authorizeHandler12screenOpener6logger17analyticsTracking18updateOrderPricing24additionalActionHandlersSo0H0CSo0hK0C_AA0dC5ModelV0A11SDKBDUICore0A11BDUIAdapter_p0A20SDKNetworkInterfaces0a7NetworkP0_p0A24SDKDivKitWidgetsFeatures08FTWidgetR0CSbycyyYaKc0A15SDKBDUIFeatures25FTAuthorizeActionHandling_pA3_19FTFlexScreenRouting_p0A12SDKCoreUtils8FTLogger_pAA0dC17AnalyticsTrackingVSgAA0dC25UpdateOrderPricingUseCase_pSgSayAX0A13DivUrlHandler_pGtFZ",
             "moduleName": "FintechSDKPayWidget",
             "static": true,
             "declAttributes": [
@@ -2516,6 +2874,355 @@
       },
       {
         "kind": "Import",
+        "name": "FintechSDKCoreUtils",
+        "printedName": "FintechSDKCoreUtils",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayWidget",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKPayWidget"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTPayWidgetOrderPricing",
+        "printedName": "FTPayWidgetOrderPricing",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "pointsToRedeem",
+            "printedName": "pointsToRedeem",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Decimal?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Decimal",
+                    "printedName": "Foundation.Decimal",
+                    "usr": "c:@SA@NSDecimal"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC12OrderPricingV14pointsToRedeemSo9NSDecimalaSgvp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC12OrderPricingV14pointsToRedeemSo9NSDecimalaSgvp",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.Decimal?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Decimal",
+                        "printedName": "Foundation.Decimal",
+                        "usr": "c:@SA@NSDecimal"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC12OrderPricingV14pointsToRedeemSo9NSDecimalaSgvg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC12OrderPricingV14pointsToRedeemSo9NSDecimalaSgvg",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "discountAmount",
+            "printedName": "discountAmount",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Decimal?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Decimal",
+                    "printedName": "Foundation.Decimal",
+                    "usr": "c:@SA@NSDecimal"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC12OrderPricingV14discountAmountSo9NSDecimalaSgvp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC12OrderPricingV14discountAmountSo9NSDecimalaSgvp",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.Decimal?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Decimal",
+                        "printedName": "Foundation.Decimal",
+                        "usr": "c:@SA@NSDecimal"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC12OrderPricingV14discountAmountSo9NSDecimalaSgvg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC12OrderPricingV14discountAmountSo9NSDecimalaSgvg",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "amountToPay",
+            "printedName": "amountToPay",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Decimal?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Decimal",
+                    "printedName": "Foundation.Decimal",
+                    "usr": "c:@SA@NSDecimal"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19FintechSDKPayWidget05FTPayC12OrderPricingV11amountToPaySo9NSDecimalaSgvp",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC12OrderPricingV11amountToPaySo9NSDecimalaSgvp",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.Decimal?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Decimal",
+                        "printedName": "Foundation.Decimal",
+                        "usr": "c:@SA@NSDecimal"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19FintechSDKPayWidget05FTPayC12OrderPricingV11amountToPaySo9NSDecimalaSgvg",
+                "mangledName": "$s19FintechSDKPayWidget05FTPayC12OrderPricingV11amountToPaySo9NSDecimalaSgvg",
+                "moduleName": "FintechSDKPayWidget",
+                "implicit": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(params:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTPayWidgetOrderPricing",
+                "printedName": "FintechSDKPayWidget.FTPayWidgetOrderPricing",
+                "usr": "s:19FintechSDKPayWidget05FTPayC12OrderPricingV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19FintechSDKPayWidget05FTPayC12OrderPricingV6paramsACSDyS2SG_tcfc",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC12OrderPricingV6paramsACSDyS2SG_tcfc",
+            "moduleName": "FintechSDKPayWidget",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTPayWidgetOrderPricing",
+                "printedName": "FintechSDKPayWidget.FTPayWidgetOrderPricing",
+                "usr": "s:19FintechSDKPayWidget05FTPayC12OrderPricingV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FTPayWidgetOrderPricing",
+                "printedName": "FintechSDKPayWidget.FTPayWidgetOrderPricing",
+                "usr": "s:19FintechSDKPayWidget05FTPayC12OrderPricingV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19FintechSDKPayWidget05FTPayC12OrderPricingV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s19FintechSDKPayWidget05FTPayC12OrderPricingV2eeoiySbAC_ACtFZ",
+            "moduleName": "FintechSDKPayWidget",
+            "static": true,
+            "implicit": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19FintechSDKPayWidget05FTPayC12OrderPricingV",
+        "mangledName": "$s19FintechSDKPayWidget05FTPayC12OrderPricingV",
+        "moduleName": "FintechSDKPayWidget",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "SwiftUI",
         "printedName": "SwiftUI",
         "declKind": "Import",
@@ -2696,200 +3403,242 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
       "kind": "StringLiteral",
-      "offset": 60,
+      "offset": 73,
+      "length": 39,
+      "value": "\"pay_widget_state_subscription_started\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 148,
+      "length": 34,
+      "value": "\"pay_widget_order_pricing_changed\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 210,
       "length": 25,
       "value": "\"pay_widget_load_started\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
       "kind": "StringLiteral",
-      "offset": 113,
+      "offset": 263,
       "length": 25,
       "value": "\"pay_widget_load_success\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
       "kind": "StringLiteral",
-      "offset": 165,
+      "offset": 315,
       "length": 24,
       "value": "\"pay_widget_load_failed\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
       "kind": "StringLiteral",
-      "offset": 211,
+      "offset": 361,
       "length": 18,
       "value": "\"pay_widget_shown\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
       "kind": "StringLiteral",
-      "offset": 253,
+      "offset": 403,
       "length": 20,
       "value": "\"pay_widget_clicked\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
       "kind": "StringLiteral",
-      "offset": 340,
+      "offset": 490,
       "length": 14,
       "value": "\"widget_state\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
       "kind": "StringLiteral",
-      "offset": 389,
+      "offset": 539,
       "length": 22,
       "value": "\"merchant_auth_status\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
       "kind": "StringLiteral",
-      "offset": 435,
+      "offset": 585,
       "length": 9,
       "value": "\"surface\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
       "kind": "StringLiteral",
-      "offset": 466,
+      "offset": 616,
       "length": 7,
       "value": "\"error\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
       "kind": "StringLiteral",
-      "offset": 541,
+      "offset": 691,
       "length": 12,
       "value": "\"authorized\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Analytics\/FTPayWidgetAnalyticsConstants.swift",
       "kind": "StringLiteral",
-      "offset": 582,
+      "offset": 732,
       "length": 14,
       "value": "\"unauthorized\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Endpoints\/FTPayWidgetEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Endpoints\/FTPayWidgetEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 356,
       "length": 35,
       "value": "\"\/pay\/v1\/public\/widgets\/pay-widget\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Endpoints\/FTPayWidgetEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Endpoints\/FTPayWidgetEndpoint.swift",
       "kind": "FloatLiteral",
       "offset": 485,
       "length": 4,
       "value": "30.0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Endpoints\/FTPayWidgetEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Endpoints\/FTPayWidgetEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 1620,
       "length": 6,
       "value": "\"cart\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Endpoints\/FTPayWidgetEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Endpoints\/FTPayWidgetEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 1648,
       "length": 7,
       "value": "\"items\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Endpoints\/FTPayWidgetEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Endpoints\/FTPayWidgetEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 1681,
       "length": 12,
       "value": "\"product_id\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Endpoints\/FTPayWidgetEndpoint.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Endpoints\/FTPayWidgetEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 1715,
       "length": 7,
       "value": "\"total\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
       "kind": "StringLiteral",
       "offset": 748,
       "length": 11,
       "value": "\"payWidget\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
       "kind": "StringLiteral",
       "offset": 1294,
       "length": 11,
       "value": "\"payWidget\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
       "kind": "StringLiteral",
       "offset": 1329,
       "length": 10,
       "value": "\"checkout\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
       "kind": "Array",
-      "offset": 2313,
+      "offset": 2388,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
       "kind": "Array",
-      "offset": 4090,
+      "offset": 4398,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
       "kind": "Array",
-      "offset": 5668,
+      "offset": 6179,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
       "kind": "StringLiteral",
-      "offset": 6848,
+      "offset": 7386,
       "length": 20,
       "value": "\"YandexPayPayWidget\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
+      "kind": "BooleanLiteral",
+      "offset": 7567,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
       "kind": "Dictionary",
-      "offset": 7656,
+      "offset": 8243,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
       "kind": "Dictionary",
-      "offset": 7909,
+      "offset": 8875,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/FTPayWidgetFactory.swift",
       "kind": "StringLiteral",
-      "offset": 9788,
+      "offset": 10832,
       "length": 14,
       "value": "\"widget_shown\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Model\/FTPayWidgetModel.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Model\/FTPayWidgetModel.swift",
       "kind": "BooleanLiteral",
       "offset": 636,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Model\/FTPayWidgetOrderPricing.swift",
+      "kind": "StringLiteral",
+      "offset": 623,
+      "length": 16,
+      "value": "\"pointsToRedeem\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Model\/FTPayWidgetOrderPricing.swift",
+      "kind": "StringLiteral",
+      "offset": 670,
+      "length": 16,
+      "value": "\"discountAmount\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/8\/9\/4884533698\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-d9950468-13b0-404e-9774-d8bfd43779cc\/mobile\/fintech-sdk\/ios\/FintechSDK\/Widgets\/PayWidget\/Model\/FTPayWidgetOrderPricing.swift",
+      "kind": "StringLiteral",
+      "offset": 714,
+      "length": 13,
+      "value": "\"amountToPay\""
     }
   ]
 }

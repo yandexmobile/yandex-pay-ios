@@ -174,6 +174,20 @@ extension FintechSDKAuthInterfaces.FintechAuthAdapterFactory {
   public func make(environment: FintechSDKAuthInterfaces.FintechServiceEnvironment, clientIdentifier: FintechSDKAuthInterfaces.FintechClientIdentifier, authLocale: Swift.String, partition: Swift.String?) -> any FintechSDKAuthInterfaces.FintechAuthAdapter
   #endif
 }
+@_spi(Internal) public enum FTAuthTokenOrigin : Swift.Sendable {
+  @_spi(Internal) case interactive
+  @_spi(Internal) case loginSDKCache
+  @_spi(Internal) public static func == (a: FintechSDKAuthInterfaces.FTAuthTokenOrigin, b: FintechSDKAuthInterfaces.FTAuthTokenOrigin) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+}
+@_spi(Internal) public protocol FTAuthTokenOriginProviding : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) func authTokenOrigin(forToken token: Swift.String) -> FintechSDKAuthInterfaces.FTAuthTokenOrigin?
+  #endif
+}
 public struct FintechAuthModel : Swift.Codable, Swift.Sendable {
   public let token: Swift.String
   public let uid: Swift.Int
@@ -193,8 +207,6 @@ public struct FintechAuthSession : Swift.Sendable {
   public let sessionToken: Swift.String
   public let expiresAt: Foundation.Date
   public init(sessionToken: Swift.String, expiresAt: Foundation.Date)
-  @_spi(Internal) public init(sessionToken: Swift.String, expiresAt: Foundation.Date, issuedForOAuth oauth: Swift.String)
-  @_spi(Internal) public func wasIssued(forOAuth oauth: Swift.String) -> Swift.Bool
 }
 public enum FintechAuthType {
   case `internal`
@@ -311,6 +323,8 @@ extension FintechSDKAuthInterfaces.FintechSilentSigningFailurePolicy : Swift.Has
 extension FintechSDKAuthInterfaces.PublicKeyType : Swift.Equatable {}
 extension FintechSDKAuthInterfaces.PublicKeyType : Swift.Hashable {}
 extension FintechSDKAuthInterfaces.PublicKeyType : Swift.RawRepresentable {}
+@_spi(Internal) extension FintechSDKAuthInterfaces.FTAuthTokenOrigin : Swift.Equatable {}
+@_spi(Internal) extension FintechSDKAuthInterfaces.FTAuthTokenOrigin : Swift.Hashable {}
 extension FintechSDKAuthInterfaces.FintechAuthType : Swift.Equatable {}
 extension FintechSDKAuthInterfaces.FintechAuthType : Swift.Hashable {}
 extension FintechSDKAuthInterfaces.FintechAuthorizationStrategy : Swift.Equatable {}

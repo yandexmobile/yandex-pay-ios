@@ -63,6 +63,10 @@ import _WebKit_SwiftUI
   @_spi(Internal) public init(dismissArea: CoreFoundation.CGFloat = 60, cornerRadius: CoreFoundation.CGFloat = 20, heightParams: FintechSDKCoreUI.FintechCardConfiguration.HeightParams? = nil, decorationView: UIKit.UIView? = nil)
   #endif
 }
+@_spi(Internal) public protocol FTContentHeightProviding : UIKit.UIView {
+  @_spi(Internal) var heightInvalidationPublisher: Combine.AnyPublisher<Swift.Void, Swift.Never> { get }
+  @_spi(Internal) func intrinsicContentHeight(forWidth width: CoreFoundation.CGFloat) -> CoreFoundation.CGFloat
+}
 @_spi(Internal) extension FintechSDKCommonEntity.FintechSDKTheme {
   @_spi(Internal) public func toUIUserInterfaceStyle() -> UIKit.UIUserInterfaceStyle
 }
@@ -368,7 +372,6 @@ import _WebKit_SwiftUI
     @_spi(Internal) case authContinue
     @_spi(Internal) case tryRefreshPage
     @_spi(Internal) case close
-    @_spi(Internal) case confirmIdentity
     @_spi(Internal) public static func == (a: FintechSDKCoreUI.FTLocaleProviderService.LocalizedString, b: FintechSDKCoreUI.FTLocaleProviderService.LocalizedString) -> Swift.Bool
     @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
     @_spi(Internal) public var hashValue: Swift.Int {
@@ -382,9 +385,6 @@ import _WebKit_SwiftUI
   @_spi(Internal) final public func setLocale(_ locale: FintechSDKCoreUI.FintechLocale)
   @_spi(Internal) final public func obtainString(for key: FintechSDKCoreUI.FTLocaleProviderService.LocalizedString) -> Swift.String
   @_spi(Internal) @objc deinit
-}
-@_spi(Internal) extension FintechSDKCoreUI.FTLocaleProviderService.LocalizedString {
-  @_spi(Internal) public func obtain(for locale: FintechSDKCoreUI.FintechLocale) -> Swift.String
 }
 public enum FintechLocale : Swift.String {
   case ru
@@ -553,7 +553,7 @@ public enum FintechLocale : Swift.String {
 }
 @_spi(Internal) @objc @_Concurrency.MainActor @preconcurrency final public class FTBackswipeTransitionDelegate : ObjectiveC.NSObject, UIKit.UIViewControllerTransitioningDelegate {
   #if compiler(>=5.3) && $NonescapableTypes
-  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(backswipeController: FintechSDKCoreUI.FTBackSwipeController, onDismiss: (() -> Swift.Void)? = nil)
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(backswipeController: FintechSDKCoreUI.FTBackSwipeController, onDismiss: (@_Concurrency.MainActor () -> Swift.Void)? = nil)
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
@@ -574,7 +574,7 @@ public enum FintechLocale : Swift.String {
 }
 @_spi(Internal) @objc @_Concurrency.MainActor @preconcurrency final public class FTBackSwipePresentationController : UIKit.UIPresentationController {
   #if compiler(>=5.3) && $NonescapableTypes
-  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(onDismiss: (() -> Swift.Void)?, presentedViewController: UIKit.UIViewController, presenting presentingViewController: UIKit.UIViewController?)
+  @_spi(Internal) @_Concurrency.MainActor @preconcurrency public init(onDismiss: (@_Concurrency.MainActor () -> Swift.Void)?, presentedViewController: UIKit.UIViewController, presenting presentingViewController: UIKit.UIViewController?)
   #endif
   @_spi(Internal) @_Concurrency.MainActor @preconcurrency @objc override final public var shouldRemovePresentersView: Swift.Bool {
     @_spi(Internal) @objc get
@@ -584,8 +584,8 @@ public enum FintechLocale : Swift.String {
 }
 @_spi(Internal) public struct FTPendingJavaScript {
   @_spi(Internal) public let script: Swift.String
-  @_spi(Internal) public let completion: @_Concurrency.MainActor () -> Swift.Void
-  @_spi(Internal) public init(script: Swift.String, completion: @escaping @_Concurrency.MainActor () -> Swift.Void)
+  @_spi(Internal) public let completion: @_Concurrency.MainActor (Swift.Bool) -> Swift.Void
+  @_spi(Internal) public init(script: Swift.String, completion: @escaping @_Concurrency.MainActor (Swift.Bool) -> Swift.Void)
 }
 @_spi(Internal) @_Concurrency.MainActor final public class FTWebViewCookieManager {
   @_spi(Internal) @_Concurrency.MainActor public init()

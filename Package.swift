@@ -86,6 +86,8 @@ let package = Package(
       dependencies: [
         "YandexPayWithRedirect",
         "FintechSDKMerchantRedirect",
+        "FintechSDKApplinkHandlerData",
+        "FintechSDKApplinkHandlerScenario",
         "FintechSDKPollingScenario",
         "FintechSDKPayBoxEntity",
         "FintechSDKPayBoxResources",
@@ -142,6 +144,8 @@ let package = Package(
       dependencies: [
         "YandexPayInApp",
         "FintechSDKMerchantRedirect",
+        "FintechSDKApplinkHandlerData",
+        "FintechSDKApplinkHandlerScenario",
         "FintechSDKPollingScenario",
         "FintechSDKPayBoxEntity",
         "FintechSDKPayBoxResources",
@@ -244,6 +248,8 @@ let package = Package(
       dependencies: [
         "YandexPayInventory",
         "FintechSDKMerchantRedirect",
+        "FintechSDKApplinkHandlerData",
+        "FintechSDKApplinkHandlerScenario",
         "FintechSDKPollingScenario",
         "FintechSDKPayBoxEntity",
         "FintechSDKPayBoxResources",
@@ -302,6 +308,7 @@ let package = Package(
         "FintechSDKQuickPayment",
         "FintechSDKQuickPaymentEntity",
         "FintechSDKQuickPaymentShared",
+        "FintechSDKMerchantApplinkParsersData",
         "FintechSDKPollingScenario",
         "FintechSDKAuthInterfaces",
         "FintechSDKBDUIFeatures",
@@ -543,6 +550,14 @@ let package = Package(
     .binaryTarget(
       name: "FintechSDKMerchantRedirect",
       path: "XCFrameworks/FintechSDK/FintechSDKMerchantRedirect.xcframework"
+    ),
+    .binaryTarget(
+      name: "FintechSDKApplinkHandlerData",
+      path: "XCFrameworks/FintechSDK/FintechSDKApplinkHandlerData.xcframework"
+    ),
+    .binaryTarget(
+      name: "FintechSDKApplinkHandlerScenario",
+      path: "XCFrameworks/FintechSDK/FintechSDKApplinkHandlerScenario.xcframework"
     ),
     .binaryTarget(
       name: "FintechSDKPollingScenario",

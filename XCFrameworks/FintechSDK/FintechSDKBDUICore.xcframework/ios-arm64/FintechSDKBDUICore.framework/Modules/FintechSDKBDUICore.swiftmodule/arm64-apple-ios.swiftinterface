@@ -55,6 +55,9 @@ public protocol FintechBDUIActionHandler {
 public protocol FintechBDUIActionHandlingContext {
   var variableStorage: any FintechSDKBDUICore.FintechBDUIDivVariableStorage { get }
   var variableMapper: any FintechSDKBDUICore.FintechBDUIVariableMapper { get }
+  #if compiler(>=5.3) && $NonescapableTypes
+  var expressionResolver: (any FintechSDKBDUICore.FintechDivKitExpressionResolver)? { get }
+  #endif
   var router: any FintechSDKBDUICore.FintechBDUIRouter { get }
   var overlayManager: any FintechSDKBDUICore.FintechBDUIOverlayManager { get }
   var cutoutManager: any FintechSDKBDUICore.FintechBDUICutoutManager { get }
@@ -64,9 +67,11 @@ public protocol FintechBDUIActionHandlingContext {
   var divActionHandler: any FintechSDKBDUICore.FintechBDUIDivActionHandler { get }
 }
 extension FintechSDKBDUICore.FintechBDUIActionHandlingContext {
-  public var variableMapper: any FintechSDKBDUICore.FintechBDUIVariableMapper {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var expressionResolver: (any FintechSDKBDUICore.FintechDivKitExpressionResolver)? {
     get
   }
+  #endif
 }
 public protocol FintechBDUIAdapter : FintechSDKBDUICore.FintechBDUIDivActionHandler {
   var payloadExtender: any FintechSDKBDUICore.FintechBDUIPayloadExtender { get }
@@ -123,6 +128,16 @@ public protocol FintechBDUIContentFactory {
   func create(actions: FintechSDKBDUICore.FintechBDUIContentActions) -> UIKit.UIViewController
 }
 public struct FintechBDUICustomProps {
+  public enum Transition : Swift.String {
+    case fromBottom
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init?(rawValue: Swift.String)
+    #endif
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
   public let replace: Swift.Bool
   public let clearStack: Swift.Bool
   public let popToRoot: Swift.Bool
@@ -130,6 +145,7 @@ public struct FintechBDUICustomProps {
   public let pageName: Swift.String
   public let backGestureEnabled: Swift.Bool?
   public let reloadPreviousScreenOnPop: Swift.Bool
+  public let transition: FintechSDKBDUICore.FintechBDUICustomProps.Transition?
   public init(rawValue: [Swift.String : Any])
 }
 public enum CutoutAnimationType : Swift.String, Swift.Decodable {
@@ -372,6 +388,9 @@ public protocol FintechDivKitExpressionResolver {
 }
 public protocol FintechDivUrlHandler {
   #if compiler(>=5.3) && $NonescapableTypes
+  var actionName: Swift.String? { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
@@ -379,6 +398,11 @@ public protocol FintechDivUrlHandler {
   #endif
 }
 extension FintechSDKBDUICore.FintechDivUrlHandler {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var actionName: Swift.String? {
+    get
+  }
+  #endif
   #if compiler(>=5.3) && $NonescapableTypes
   public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?, expressionResolver _: any FintechSDKBDUICore.FintechDivKitExpressionResolver)
   #endif
@@ -391,6 +415,9 @@ public struct FintechDivViewSource {
 }
 extension FintechSDKBDUICore.FintechBDUIAnyActionDecoder.DecodingError : Swift.Equatable {}
 extension FintechSDKBDUICore.FintechBDUIAnyActionDecoder.DecodingError : Swift.Hashable {}
+extension FintechSDKBDUICore.FintechBDUICustomProps.Transition : Swift.Equatable {}
+extension FintechSDKBDUICore.FintechBDUICustomProps.Transition : Swift.Hashable {}
+extension FintechSDKBDUICore.FintechBDUICustomProps.Transition : Swift.RawRepresentable {}
 extension FintechSDKBDUICore.CutoutAnimationType : Swift.Equatable {}
 extension FintechSDKBDUICore.CutoutAnimationType : Swift.Hashable {}
 extension FintechSDKBDUICore.CutoutAnimationType : Swift.RawRepresentable {}
