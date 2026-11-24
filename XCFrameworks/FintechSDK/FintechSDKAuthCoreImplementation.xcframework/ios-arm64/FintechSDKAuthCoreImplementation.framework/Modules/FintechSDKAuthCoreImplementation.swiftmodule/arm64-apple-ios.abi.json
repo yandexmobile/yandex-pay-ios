@@ -6,6 +6,455 @@
     "children": [
       {
         "kind": "Import",
+        "name": "FintechSDKAuthInterfaces",
+        "printedName": "FintechSDKAuthInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAuthCoreImplementation",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAuthCoreImplementation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FTServerClockImpl",
+        "printedName": "FTServerClockImpl",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTServerClockImpl",
+                "printedName": "FintechSDKAuthCoreImplementation.FTServerClockImpl",
+                "usr": "s:32FintechSDKAuthCoreImplementation17FTServerClockImplC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:32FintechSDKAuthCoreImplementation17FTServerClockImplC6sharedACvpZ",
+            "mangledName": "$s32FintechSDKAuthCoreImplementation17FTServerClockImplC6sharedACvpZ",
+            "moduleName": "FintechSDKAuthCoreImplementation",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTServerClockImpl",
+                    "printedName": "FintechSDKAuthCoreImplementation.FTServerClockImpl",
+                    "usr": "s:32FintechSDKAuthCoreImplementation17FTServerClockImplC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:32FintechSDKAuthCoreImplementation17FTServerClockImplC6sharedACvgZ",
+                "mangledName": "$s32FintechSDKAuthCoreImplementation17FTServerClockImplC6sharedACvgZ",
+                "moduleName": "FintechSDKAuthCoreImplementation",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "authenticatorPathPrefix",
+            "printedName": "authenticatorPathPrefix",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:32FintechSDKAuthCoreImplementation17FTServerClockImplC23authenticatorPathPrefixSSvpZ",
+            "mangledName": "$s32FintechSDKAuthCoreImplementation17FTServerClockImplC23authenticatorPathPrefixSSvpZ",
+            "moduleName": "FintechSDKAuthCoreImplementation",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:32FintechSDKAuthCoreImplementation17FTServerClockImplC23authenticatorPathPrefixSSvgZ",
+                "mangledName": "$s32FintechSDKAuthCoreImplementation17FTServerClockImplC23authenticatorPathPrefixSSvgZ",
+                "moduleName": "FintechSDKAuthCoreImplementation",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "sampledPathPrefix",
+            "printedName": "sampledPathPrefix",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:32FintechSDKAuthCoreImplementation17FTServerClockImplC17sampledPathPrefixSSvp",
+            "mangledName": "$s32FintechSDKAuthCoreImplementation17FTServerClockImplC17sampledPathPrefixSSvp",
+            "moduleName": "FintechSDKAuthCoreImplementation",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:32FintechSDKAuthCoreImplementation17FTServerClockImplC17sampledPathPrefixSSvg",
+                "mangledName": "$s32FintechSDKAuthCoreImplementation17FTServerClockImplC17sampledPathPrefixSSvg",
+                "moduleName": "FintechSDKAuthCoreImplementation",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(sampledPathPrefix:monotonicNow:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FTServerClockImpl",
+                "printedName": "FintechSDKAuthCoreImplementation.FTServerClockImpl",
+                "usr": "s:32FintechSDKAuthCoreImplementation17FTServerClockImplC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> Swift.Double",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "hasDefaultArg": true
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:32FintechSDKAuthCoreImplementation17FTServerClockImplC17sampledPathPrefix12monotonicNowACSS_SdyYbctcfc",
+            "mangledName": "$s32FintechSDKAuthCoreImplementation17FTServerClockImplC17sampledPathPrefix12monotonicNowACSS_SdyYbctcfc",
+            "moduleName": "FintechSDKAuthCoreImplementation",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "offset",
+            "printedName": "offset(deviceNow:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:32FintechSDKAuthCoreImplementation17FTServerClockImplC6offset9deviceNowSdSg10Foundation4DateV_tF",
+            "mangledName": "$s32FintechSDKAuthCoreImplementation17FTServerClockImplC6offset9deviceNowSdSg10Foundation4DateV_tF",
+            "moduleName": "FintechSDKAuthCoreImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "correction",
+            "printedName": "correction(deviceNow:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "hasDefaultArg": true,
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:32FintechSDKAuthCoreImplementation17FTServerClockImplC10correction9deviceNowSd10Foundation4DateV_tF",
+            "mangledName": "$s32FintechSDKAuthCoreImplementation17FTServerClockImplC10correction9deviceNowSd10Foundation4DateV_tF",
+            "moduleName": "FintechSDKAuthCoreImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "now",
+            "printedName": "now(deviceNow:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:32FintechSDKAuthCoreImplementation17FTServerClockImplC3now9deviceNow10Foundation4DateVAH_tF",
+            "mangledName": "$s32FintechSDKAuthCoreImplementation17FTServerClockImplC3now9deviceNow10Foundation4DateVAH_tF",
+            "moduleName": "FintechSDKAuthCoreImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "record",
+            "printedName": "record(serverDate:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:32FintechSDKAuthCoreImplementation17FTServerClockImplC6record10serverDatey10Foundation0J0V_tF",
+            "mangledName": "$s32FintechSDKAuthCoreImplementation17FTServerClockImplC6record10serverDatey10Foundation0J0V_tF",
+            "moduleName": "FintechSDKAuthCoreImplementation",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "systemMonotonicNow",
+            "printedName": "systemMonotonicNow()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:32FintechSDKAuthCoreImplementation17FTServerClockImplC18systemMonotonicNowSdyFZ",
+            "mangledName": "$s32FintechSDKAuthCoreImplementation17FTServerClockImplC18systemMonotonicNowSdyFZ",
+            "moduleName": "FintechSDKAuthCoreImplementation",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:32FintechSDKAuthCoreImplementation17FTServerClockImplC",
+        "mangledName": "$s32FintechSDKAuthCoreImplementation17FTServerClockImplC",
+        "moduleName": "FintechSDKAuthCoreImplementation",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "SPIAccessControl",
+          "RawDocComment"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FTServerClock",
+            "printedName": "FTServerClock",
+            "usr": "s:24FintechSDKAuthInterfaces13FTServerClockP",
+            "mangledName": "$s24FintechSDKAuthInterfaces13FTServerClockP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -92,6 +541,16 @@
       },
       {
         "kind": "Import",
+        "name": "FintechSDKAuthInterfaces",
+        "printedName": "FintechSDKAuthInterfaces",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAuthCoreImplementation",
+        "declAttributes": [
+          "SPIAccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -99,8 +558,8 @@
       },
       {
         "kind": "Import",
-        "name": "FintechSDKAuthInterfaces",
-        "printedName": "FintechSDKAuthInterfaces",
+        "name": "LocalAuthentication",
+        "printedName": "LocalAuthentication",
         "declKind": "Import",
         "moduleName": "FintechSDKAuthCoreImplementation"
       },
@@ -363,6 +822,67 @@
             "declAttributes": [
               "AccessControl",
               "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "makeKey",
+            "printedName": "makeKey(mode:clock:authenticationContext:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechDPoPKey",
+                "printedName": "any FintechSDKAuthInterfaces.FintechDPoPKey",
+                "usr": "s:24FintechSDKAuthInterfaces0A7DPoPKeyP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Mode",
+                "printedName": "FintechSDKAuthCoreImplementation.FintechDPoPKeyFactory.Mode",
+                "usr": "s:32FintechSDKAuthCoreImplementation0A14DPoPKeyFactoryO4ModeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any FintechSDKAuthInterfaces.FTServerClock)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FTServerClock",
+                    "printedName": "any FintechSDKAuthInterfaces.FTServerClock",
+                    "usr": "s:24FintechSDKAuthInterfaces13FTServerClockP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "LocalAuthentication.LAContext?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LAContext",
+                    "printedName": "LocalAuthentication.LAContext",
+                    "usr": "c:objc(cs)LAContext"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:32FintechSDKAuthCoreImplementation0A14DPoPKeyFactoryO7makeKey4mode5clock21authenticationContext0aB10Interfaces0aeF0_pAC4ModeO_AH13FTServerClock_pSgSo9LAContextCSgtAH0a6CryptoI5ErrorOYKFZ",
+            "mangledName": "$s32FintechSDKAuthCoreImplementation0A14DPoPKeyFactoryO7makeKey4mode5clock21authenticationContext0aB10Interfaces0aeF0_pAC4ModeO_AH13FTServerClock_pSgSo9LAContextCSgtAH0a6CryptoI5ErrorOYKFZ",
+            "moduleName": "FintechSDKAuthCoreImplementation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "SPIAccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
             ],
             "throwing": true,
             "funcSelfKind": "NonMutating"
@@ -3057,118 +3577,243 @@
             "mangledName": "$s7Combine16ObservableObjectP"
           }
         ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FintechCryptoKeyError",
+        "printedName": "FintechCryptoKeyError",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "mapSigningError",
+            "printedName": "mapSigningError(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechCryptoKeyError",
+                "printedName": "FintechSDKAuthInterfaces.FintechCryptoKeyError",
+                "usr": "s:24FintechSDKAuthInterfaces0A14CryptoKeyErrorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSError",
+                "printedName": "Foundation.NSError",
+                "usr": "c:objc(cs)NSError"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKAuthInterfaces0A14CryptoKeyErrorO0aB18CoreImplementationE010mapSigningF0yACSo7NSErrorCFZ",
+            "mangledName": "$s24FintechSDKAuthInterfaces0A14CryptoKeyErrorO0aB18CoreImplementationE010mapSigningF0yACSo7NSErrorCFZ",
+            "moduleName": "FintechSDKAuthCoreImplementation",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "SPIAccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:24FintechSDKAuthInterfaces0A14CryptoKeyErrorO",
+        "mangledName": "$s24FintechSDKAuthInterfaces0A14CryptoKeyErrorO",
+        "moduleName": "FintechSDKAuthInterfaces",
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "LocalizedError",
+            "printedName": "LocalizedError",
+            "usr": "s:10Foundation14LocalizedErrorP",
+            "mangledName": "$s10Foundation14LocalizedErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
       }
     ],
     "json_format_version": 8
   },
   "ConstValues": [
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/4\/4870954142\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-fab74db9-2dae-4080-a418-866ee17f39fb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Key\/FTDPoPKeyInteractionGate.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Clock\/FTServerClockImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 571,
+      "length": 24,
+      "value": "\"\/api\/v1\/authenticator\/\""
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Clock\/FTServerClockImpl.swift",
+      "kind": "IntegerLiteral",
+      "offset": 652,
+      "length": 2,
+      "value": "30"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Clock\/FTServerClockImpl.swift",
+      "kind": "IntegerLiteral",
+      "offset": 829,
+      "length": 2,
+      "value": "24"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Clock\/FTServerClockImpl.swift",
+      "kind": "IntegerLiteral",
+      "offset": 834,
+      "length": 2,
+      "value": "60"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Clock\/FTServerClockImpl.swift",
+      "kind": "IntegerLiteral",
+      "offset": 839,
+      "length": 2,
+      "value": "60"
+    },
+    {
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Key\/FTDPoPKeyInteractionGate.swift",
       "kind": "IntegerLiteral",
       "offset": 151,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/4\/4870954142\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-fab74db9-2dae-4080-a418-866ee17f39fb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Key\/FTDPoPKeyInvalidationState.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Key\/FTDPoPKeyInvalidationState.swift",
       "kind": "BooleanLiteral",
       "offset": 139,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/4\/4870954142\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-fab74db9-2dae-4080-a418-866ee17f39fb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Key\/FintechDPoPKeySimulatorImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Key\/FintechDPoPKeySimulatorImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 584,
+      "offset": 626,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/4\/4870954142\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-fab74db9-2dae-4080-a418-866ee17f39fb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Storage\/FTDPoPOfflineKeyStore.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Storage\/FTDPoPOfflineKeyStore.swift",
       "kind": "StringLiteral",
       "offset": 387,
       "length": 44,
       "value": "\"com.yandex.fintech.dpop.offline-public-key\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/4\/4870954142\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-fab74db9-2dae-4080-a418-866ee17f39fb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Storage\/FTDPoPSimulatorKeyStore.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Storage\/FTDPoPSimulatorKeyStore.swift",
       "kind": "StringLiteral",
       "offset": 115,
       "length": 28,
       "value": "\"com.fintech.dpop.simulator\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/4\/4870954142\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-fab74db9-2dae-4080-a418-866ee17f39fb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Storage\/FTDPoPSimulatorKeyStore.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Storage\/FTDPoPSimulatorKeyStore.swift",
       "kind": "StringLiteral",
       "offset": 184,
       "length": 10,
       "value": "\"dpop_key\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/4\/4870954142\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-fab74db9-2dae-4080-a418-866ee17f39fb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Storage\/FTDPoPSimulatorKeyStore.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Storage\/FTDPoPSimulatorKeyStore.swift",
       "kind": "StringLiteral",
       "offset": 233,
       "length": 22,
       "value": "\"dpop_key.no_biometry\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/4\/4870954142\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-fab74db9-2dae-4080-a418-866ee17f39fb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Storage\/FTDPoPStateHolderImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Storage\/FTDPoPStateHolderImpl.swift",
       "kind": "Dictionary",
       "offset": 288,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/4\/4870954142\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-fab74db9-2dae-4080-a418-866ee17f39fb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Storage\/FintechKeyStoreRef.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Storage\/FintechKeyStoreRef.swift",
       "kind": "StringLiteral",
       "offset": 108,
       "length": 13,
       "value": "\"fintech.sdk\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/4\/4870954142\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-fab74db9-2dae-4080-a418-866ee17f39fb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Storage\/FintechKeyStoreRef.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Storage\/FintechKeyStoreRef.swift",
       "kind": "StringLiteral",
       "offset": 153,
       "length": 13,
       "value": "\"dpop.se.ref\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/4\/4870954142\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-fab74db9-2dae-4080-a418-866ee17f39fb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Storage\/FintechKeyStoreRef.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/DPoP\/Storage\/FintechKeyStoreRef.swift",
       "kind": "StringLiteral",
       "offset": 208,
       "length": 25,
       "value": "\"dpop.se.ref.no_biometry\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/4\/4870954142\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-fab74db9-2dae-4080-a418-866ee17f39fb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/OfflineTicket\/FTOfflinePayTicketSignerImpl.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/OfflineTicket\/FTOfflinePayTicketSignerImpl.swift",
       "kind": "IntegerLiteral",
       "offset": 215,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/4\/4870954142\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-fab74db9-2dae-4080-a418-866ee17f39fb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/OfflineTicket\/FTOfflineTicketAlphabet.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/OfflineTicket\/FTOfflineTicketAlphabet.swift",
       "kind": "StringLiteral",
       "offset": 224,
       "length": 87,
       "value": "\"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-:+=^!\/*?&<>()[]{}@%$#\""
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/4\/4870954142\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-fab74db9-2dae-4080-a418-866ee17f39fb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/OfflineTicket\/FTOfflineTicketTimemarkEncoder.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/OfflineTicket\/FTOfflineTicketTimemarkEncoder.swift",
       "kind": "IntegerLiteral",
       "offset": 235,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/4\/4870954142\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-fab74db9-2dae-4080-a418-866ee17f39fb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/OfflineTicket\/FTOfflineTicketTimemarkEncoder.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/OfflineTicket\/FTOfflineTicketTimemarkEncoder.swift",
       "kind": "IntegerLiteral",
       "offset": 419,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/2\/4\/4870954142\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-fab74db9-2dae-4080-a418-866ee17f39fb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/OfflineTicket\/FTOfflineTicketZ85Encoder.swift",
+      "filePath": "\/usr\/local\/place\/sandbox-data\/tasks\/9\/9\/4883671599\/service_resources\/ARC_TASKLETS_SIDECAR_BINARY\/mount\/mount-cec94b1a-e12a-42e5-8eb4-c6e267b8fccb\/mobile\/fintech-sdk\/ios\/FintechSDK\/Core\/Auth\/Implementation\/OfflineTicket\/FTOfflineTicketZ85Encoder.swift",
       "kind": "IntegerLiteral",
       "offset": 214,
       "length": 1,

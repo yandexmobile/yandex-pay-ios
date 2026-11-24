@@ -20,6 +20,24 @@ public protocol FTAuthorizationProviding : Swift.Sendable {
   @_spi(Internal) func sanitize(_ value: Swift.String, forHeader name: Swift.String) -> Swift.String?
   #endif
 }
+@_spi(Internal) public protocol FTNetworkBiometricRetryEndpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) func forbiddenResponseHandler(for request: Foundation.URLRequest) async -> ((Foundation.Data) async -> Swift.Bool)?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) var authorizedRetry: (request: Foundation.URLRequest, token: Swift.String)? { get }
+  #endif
+}
+@_spi(Internal) extension FintechSDKNetworkInterfaces.FTNetworkBiometricRetryEndpoint {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public func forbiddenResponseHandler(for request: Foundation.URLRequest) async -> ((Foundation.Data) async -> Swift.Bool)?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public var authorizedRetry: (request: Foundation.URLRequest, token: Swift.String)? {
+    @_spi(Internal) get
+  }
+  #endif
+}
 @_spi(Internal) public protocol FTNetworkErrorResponseMapping : Swift.Sendable {
   #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) func mapError(data: Foundation.Data, response: Foundation.HTTPURLResponse) -> FintechSDKNetworkInterfaces.NetworkClientError?
@@ -123,6 +141,9 @@ public protocol FintechNetworkEndpointProvider {
   var timeoutInSeconds: Foundation.TimeInterval { get }
   var decoder: Self.Decoder { get }
   var isRetriableOnNetworkDrop: Swift.Bool { get }
+}
+@_spi(Internal) public protocol FTNetworkPreflightEndpoint : FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider {
+  @_spi(Internal) var submitRequest: @_Concurrency.MainActor @Sendable (_ start: @Sendable () throws -> Swift.Void) throws -> Swift.Void { get }
 }
 extension FintechSDKNetworkInterfaces.FintechNetworkEndpointProvider {
   #if compiler(>=5.3) && $NonescapableTypes

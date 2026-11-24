@@ -284,6 +284,11 @@ public protocol FTAnyValueBox {
   @_spi(Internal) public func allows(url: Foundation.URL?) -> Swift.Bool
   #endif
 }
+@_spi(Internal) public enum FTHTTPDateParser {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public static func date(from value: Swift.String?) -> Foundation.Date?
+  #endif
+}
 @_spi(Internal) public enum FTJSONValue : Swift.Codable, Swift.Equatable, Swift.Sendable, FintechSDKCoreUtils.FTAnyValueBox {
   @_spi(Internal) case string(Swift.String)
   @_spi(Internal) case integer(Swift.Int)

@@ -3,7 +3,7 @@
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FintechSDKNetworkImplementation -package-name FintechSDK
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 @_spi(Internal) import FintechSDKAnalyticsInterfaces
-import FintechSDKAuthInterfaces
+@_spi(Internal) import FintechSDKAuthInterfaces
 import FintechSDKCommonEntity
 @_spi(Internal) import FintechSDKCoreAnalytics
 import FintechSDKCoreUI
@@ -245,6 +245,10 @@ public struct FTRawDataResponseDecoder : FintechSDKNetworkInterfaces.FintechResp
 @_spi(Internal) public struct FTSnakeCaseJsonDecoder<Output> : FintechSDKNetworkInterfaces.FintechResponseDecoder where Output : Swift.Decodable {
   @_spi(Internal) public init()
   @_spi(Internal) public func decode(data: Foundation.Data, response: Foundation.HTTPURLResponse) async throws -> Output
+}
+@_spi(Internal) public struct FTServerDateResponseMiddleware : FintechSDKNetworkInterfaces.FintechNetworkResponseMiddleware {
+  @_spi(Internal) public init(clock: any FintechSDKAuthInterfaces.FTServerClock)
+  @_spi(Internal) public func process(response: Foundation.HTTPURLResponse) throws -> Foundation.HTTPURLResponse
 }
 @_spi(Internal) extension FintechSDKNetworkImplementation.FTAuthHeaderType : Swift.Equatable {}
 @_spi(Internal) extension FintechSDKNetworkImplementation.FTAuthHeaderType : Swift.Hashable {}

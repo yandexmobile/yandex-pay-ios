@@ -1583,6 +1583,199 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "FTServerClock",
+        "printedName": "FTServerClock",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "sampledPathPrefix",
+            "printedName": "sampledPathPrefix",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:24FintechSDKAuthInterfaces13FTServerClockP17sampledPathPrefixSSvp",
+            "mangledName": "$s24FintechSDKAuthInterfaces13FTServerClockP17sampledPathPrefixSSvp",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:24FintechSDKAuthInterfaces13FTServerClockP17sampledPathPrefixSSvg",
+                "mangledName": "$s24FintechSDKAuthInterfaces13FTServerClockP17sampledPathPrefixSSvg",
+                "moduleName": "FintechSDKAuthInterfaces",
+                "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthInterfaces.FTServerClock>",
+                "sugared_genericSig": "<Self where Self : FintechSDKAuthInterfaces.FTServerClock>",
+                "protocolReq": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "now",
+            "printedName": "now(deviceNow:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKAuthInterfaces13FTServerClockP3now9deviceNow10Foundation4DateVAH_tF",
+            "mangledName": "$s24FintechSDKAuthInterfaces13FTServerClockP3now9deviceNow10Foundation4DateVAH_tF",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthInterfaces.FTServerClock>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthInterfaces.FTServerClock>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "record",
+            "printedName": "record(serverDate:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKAuthInterfaces13FTServerClockP6record10serverDatey10Foundation0H0V_tF",
+            "mangledName": "$s24FintechSDKAuthInterfaces13FTServerClockP6record10serverDatey10Foundation0H0V_tF",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthInterfaces.FTServerClock>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthInterfaces.FTServerClock>",
+            "protocolReq": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "now",
+            "printedName": "now()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKAuthInterfaces13FTServerClockPAAE3now10Foundation4DateVyF",
+            "mangledName": "$s24FintechSDKAuthInterfaces13FTServerClockPAAE3now10Foundation4DateVyF",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "genericSig": "<τ_0_0 where τ_0_0 : FintechSDKAuthInterfaces.FTServerClock>",
+            "sugared_genericSig": "<Self where Self : FintechSDKAuthInterfaces.FTServerClock>",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:24FintechSDKAuthInterfaces13FTServerClockP",
+        "mangledName": "$s24FintechSDKAuthInterfaces13FTServerClockP",
+        "moduleName": "FintechSDKAuthInterfaces",
+        "genericSig": "<τ_0_0 : AnyObject, τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : AnyObject, Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAuthInterfaces"
+      },
+      {
+        "kind": "TypeDecl",
         "name": "FintechDPoPKey",
         "printedName": "FintechDPoPKey",
         "children": [
@@ -3942,6 +4135,13 @@
       },
       {
         "kind": "Import",
+        "name": "CryptoKit",
+        "printedName": "CryptoKit",
+        "declKind": "Import",
+        "moduleName": "FintechSDKAuthInterfaces"
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -4072,6 +4272,80 @@
               "AccessControl"
             ],
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(sessionToken:expiresAt:issuedForOAuth:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FintechAuthSession",
+                "printedName": "FintechSDKAuthInterfaces.FintechAuthSession",
+                "usr": "s:24FintechSDKAuthInterfaces0A11AuthSessionV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:24FintechSDKAuthInterfaces0A11AuthSessionV12sessionToken9expiresAt14issuedForOAuthACSS_10Foundation4DateVSStcfc",
+            "mangledName": "$s24FintechSDKAuthInterfaces0A11AuthSessionV12sessionToken9expiresAt14issuedForOAuthACSS_10Foundation4DateVSStcfc",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "declAttributes": [
+              "AccessControl",
+              "SPIAccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "wasIssued",
+            "printedName": "wasIssued(forOAuth:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:24FintechSDKAuthInterfaces0A11AuthSessionV9wasIssued8forOAuthSbSS_tF",
+            "mangledName": "$s24FintechSDKAuthInterfaces0A11AuthSessionV9wasIssued8forOAuthSbSS_tF",
+            "moduleName": "FintechSDKAuthInterfaces",
+            "declAttributes": [
+              "AccessControl",
+              "SPIAccessControl"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Struct",

@@ -88,7 +88,7 @@ public protocol FTRemoteActionResponseHandler {
 }
 final public class FTRemoteDivUrlHandler : @preconcurrency FintechSDKBDUICore.FintechDivUrlHandler {
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(bduiAdapter: any FintechSDKBDUICore.FintechBDUIDivActionHandler, networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, responseHandler: (any FintechSDKBDUIFeatures.FTRemoteActionResponseHandler)? = nil, cardId: Swift.String? = nil)
+  convenience public init(bduiAdapter: any FintechSDKBDUICore.FintechBDUIDivActionHandler, networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, responseHandler: (any FintechSDKBDUIFeatures.FTRemoteActionResponseHandler)? = nil, cardId: Swift.String? = nil)
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor final public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)

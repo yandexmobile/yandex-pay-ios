@@ -81,6 +81,14 @@ public enum FintechCookieExchangerError : Foundation.LocalizedError {
   @_spi(Internal) func setOfflinePublicKey(_ publicKey: Swift.String, for keyType: FintechSDKAuthInterfaces.PublicKeyType)
   @_spi(Internal) func clear()
 }
+@_spi(Internal) public protocol FTServerClock : AnyObject, Swift.Sendable {
+  @_spi(Internal) var sampledPathPrefix: Swift.String { get }
+  @_spi(Internal) func now(deviceNow: Foundation.Date) -> Foundation.Date
+  @_spi(Internal) func record(serverDate: Foundation.Date)
+}
+@_spi(Internal) extension FintechSDKAuthInterfaces.FTServerClock {
+  @_spi(Internal) public func now() -> Foundation.Date
+}
 public protocol FintechDPoPKey {
   var publicKey: FintechSDKAuthInterfaces.FintechJWK { get }
   var isInvalid: Swift.Bool { get }
@@ -185,6 +193,8 @@ public struct FintechAuthSession : Swift.Sendable {
   public let sessionToken: Swift.String
   public let expiresAt: Foundation.Date
   public init(sessionToken: Swift.String, expiresAt: Foundation.Date)
+  @_spi(Internal) public init(sessionToken: Swift.String, expiresAt: Foundation.Date, issuedForOAuth oauth: Swift.String)
+  @_spi(Internal) public func wasIssued(forOAuth oauth: Swift.String) -> Swift.Bool
 }
 public enum FintechAuthType {
   case `internal`

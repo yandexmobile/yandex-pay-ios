@@ -12,6 +12,21 @@ import Swift
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+@_spi(Internal) final public class FTServerClockImpl : FintechSDKAuthInterfaces.FTServerClock, @unchecked Swift.Sendable {
+  @_spi(Internal) public typealias MonotonicNow = @Sendable () -> Foundation.TimeInterval
+  @_spi(Internal) public static let shared: FintechSDKAuthCoreImplementation.FTServerClockImpl
+  @_spi(Internal) public static let authenticatorPathPrefix: Swift.String
+  @_spi(Internal) final public let sampledPathPrefix: Swift.String
+  @_spi(Internal) public init(sampledPathPrefix: Swift.String, monotonicNow: @escaping FintechSDKAuthCoreImplementation.FTServerClockImpl.MonotonicNow = { FTServerClockImpl.systemMonotonicNow() })
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) final public func offset(deviceNow: Foundation.Date) -> Foundation.TimeInterval?
+  #endif
+  @_spi(Internal) final public func correction(deviceNow: Foundation.Date = Date()) -> Foundation.TimeInterval
+  @_spi(Internal) final public func now(deviceNow: Foundation.Date) -> Foundation.Date
+  @_spi(Internal) final public func record(serverDate: Foundation.Date)
+  @_spi(Internal) public static func systemMonotonicNow() -> Foundation.TimeInterval
+  @_spi(Internal) @objc deinit
+}
 public enum FintechDPoPKeyFactory {
   public enum Mode : Swift.Sendable {
     case withBiometry
@@ -24,8 +39,14 @@ public enum FintechDPoPKeyFactory {
   }
   public static func makeKey(mode: FintechSDKAuthCoreImplementation.FintechDPoPKeyFactory.Mode) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> any FintechSDKAuthInterfaces.FintechDPoPKey
   #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public static func makeKey(mode: FintechSDKAuthCoreImplementation.FintechDPoPKeyFactory.Mode, clock: (any FintechSDKAuthInterfaces.FTServerClock)?, authenticationContext: LocalAuthentication.LAContext?) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> any FintechSDKAuthInterfaces.FintechDPoPKey
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func existingKey(mode: FintechSDKAuthCoreImplementation.FintechDPoPKeyFactory.Mode) throws(FintechSDKAuthInterfaces.FintechCryptoKeyError) -> (any FintechSDKAuthInterfaces.FintechDPoPKey)?
   #endif
+}
+extension FintechSDKAuthInterfaces.FintechCryptoKeyError {
+  @_spi(Internal) public static func mapSigningError(_ nsError: Foundation.NSError) -> FintechSDKAuthInterfaces.FintechCryptoKeyError
 }
 @_spi(Internal) extension FintechSDKAuthCoreImplementation.FintechDPoPServiceImpl : FintechSDKAuthInterfaces.FTOfflineKeyProviding {
   #if compiler(>=5.3) && $NonescapableTypes

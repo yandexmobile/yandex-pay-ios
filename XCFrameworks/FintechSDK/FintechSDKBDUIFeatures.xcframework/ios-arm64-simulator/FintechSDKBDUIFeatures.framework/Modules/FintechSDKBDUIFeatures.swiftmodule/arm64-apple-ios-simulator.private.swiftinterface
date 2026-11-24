@@ -281,6 +281,13 @@ public protocol FTRemoteActionResponseHandler {
   func canHandle(path: Swift.String) -> Swift.Bool
   func handle(response: FintechSDKBDUIFeatures.FTRemoteActionResponse, for path: Swift.String)
 }
+@_spi(Internal) public protocol FTRemoteActionResponseProcessing {
+  associatedtype Context : Swift.Sendable
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) @_Concurrency.MainActor func context(for path: Swift.String, body: [Swift.String : Any]?) -> Self.Context
+  #endif
+  @_spi(Internal) func handle(response: FintechSDKBDUIFeatures.FTRemoteActionResponse, for path: Swift.String, context: Self.Context) async
+}
 @_spi(Internal) final public class FTCompositeRemoteActionResponseHandler : FintechSDKBDUIFeatures.FTRemoteActionResponseHandler {
   @_spi(Internal) public init(handlers: [any FintechSDKBDUIFeatures.FTRemoteActionResponseHandler])
   @_spi(Internal) final public func canHandle(path: Swift.String) -> Swift.Bool
@@ -289,7 +296,10 @@ public protocol FTRemoteActionResponseHandler {
 }
 final public class FTRemoteDivUrlHandler : @preconcurrency FintechSDKBDUICore.FintechDivUrlHandler {
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(bduiAdapter: any FintechSDKBDUICore.FintechBDUIDivActionHandler, networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, responseHandler: (any FintechSDKBDUIFeatures.FTRemoteActionResponseHandler)? = nil, cardId: Swift.String? = nil)
+  convenience public init(bduiAdapter: any FintechSDKBDUICore.FintechBDUIDivActionHandler, networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, responseHandler: (any FintechSDKBDUIFeatures.FTRemoteActionResponseHandler)? = nil, cardId: Swift.String? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public init(bduiAdapter: any FintechSDKBDUICore.FintechBDUIDivActionHandler, networkClient: any FintechSDKNetworkInterfaces.FintechNetworkClient, responseProcessor: any FintechSDKBDUIFeatures.FTRemoteActionResponseProcessing, cardId: Swift.String? = nil)
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor final public func handle(_ url: Foundation.URL, payload: [Swift.String : Any]?, path: Any?, sender: Swift.AnyObject?)
